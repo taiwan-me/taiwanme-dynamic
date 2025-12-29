@@ -1,0 +1,82 @@
+const express = require('express');
+const path = require('path');
+const app = express();
+
+// ==========================================
+// 1. 設定 View Engine (EJS 模板引擎)
+// ==========================================
+app.set('view engine', 'ejs');
+// 設定 EJS 檔案的存放位置 (views 資料夾)
+app.set('views', path.join(__dirname, 'views'));
+
+// ==========================================
+// 2. 設定靜態檔案 (CSS, JS, Images)
+// ==========================================
+// 將 'public' 資料夾設為靜態資源目錄
+// 這樣在 HTML 寫 /style.css 或 /image/logo.png 才能抓到檔案
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ==========================================
+// 3. 設定頁面路由 (Routes)
+// ==========================================
+// 重要：每個路由都必須傳入 { pageName: '...' }
+// 這是讓 header.ejs 知道當前頁面，以便讓導覽列按鈕變色
+
+// 首頁
+app.get('/', (req, res) => {
+    res.render('index', { pageName: 'index' });
+});
+
+// 搜尋頁 (Search By City)
+app.get('/search_by_city', (req, res) => {
+    res.render('search_by_city', { pageName: 'search_by_city' });
+});
+
+// 節慶頁 (Festivals)
+app.get('/festivals', (req, res) => {
+    res.render('festivals', { pageName: 'festivals' });
+});
+
+// 交通頁 (Transport)
+app.get('/transport', (req, res) => {
+    res.render('transport', { pageName: 'transport' });
+});
+
+// 文化頁 (Culture)
+app.get('/culture', (req, res) => {
+    res.render('culture', { pageName: 'culture' });
+});
+
+// 餐飲頁 (Dining)
+app.get('/dining', (req, res) => {
+    res.render('dining', { pageName: 'dining' });
+});
+
+// 娛樂頁 (Entertainment)
+app.get('/entertainment', (req, res) => {
+    res.render('entertainment', { pageName: 'entertainment' });
+});
+
+// ==========================================
+// 4. 404 錯誤處理 (找不到頁面時)
+// ==========================================
+app.use((req, res) => {
+    res.status(404).send(`
+        <div style="text-align:center; padding:50px; font-family: sans-serif;">
+            <h1>404 - Page Not Found</h1>
+            <p>抱歉，找不到您要的頁面。</p>
+            <a href="/" style="color: #E8A2A2; text-decoration: none; font-weight: bold;">回首頁 (Back to Home)</a>
+        </div>
+    `);
+});
+
+// ==========================================
+// 5. 啟動伺服器
+// ==========================================
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`=========================================`);
+    console.log(`✅ TaiwanMe 伺服器已成功啟動！`);
+    console.log(`🌍 請在瀏覽器輸入網址：http://localhost:${PORT}`);
+    console.log(`=========================================`);
+});

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaiwanMe | The Real Taste of Taiwan for travel/trip/tour</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+        /* 首頁專屬樣式修正 */
+        
+        /* 手機版地圖區塊修正 */
+        @media (max-width: 768px) {
+            .desktop-map-container { display: block !important; width: 100%; aspect-ratio: 0.7; margin: 20px auto; }
+            .mobile-region-list { display: none !important; }
+            .region-circle { width: 18%; font-size: 12px; }
+            .region-square { width: 18%; font-size: 12px; }
+            
+            /* 手機版地圖按鈕位置微調 */
+            .pos-north { top: 2%; left: 52%; }
+            .pos-central { top: 38%; left: 20%; }
+            .pos-south { bottom: 20%; left: 40%; }
+            .pos-east { top: 42%; right: 5%; }
+            .pos-islands { top: 5%; left: 10%; }
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <section class="hero-slider">
+        <div class="slider-wrapper">
+            <div class="slide active" style="background-image: url('/image/banner1.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/banner2.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/banner3.jpg');"></div>
+        </div>
+        <button class="prev-btn">❮</button>
+        <button class="next-btn">❯</button>
+    </section>
+
+    <section class="map-section" id="mapSection">
+        <h2 class="section-title">
+            HIDDEN GEMS<br>
+            <span style="font-size: 0.6em; letter-spacing: 1px; color: #777;">— CATEGORIZED BY REGIONS —</span>
+        </h2>
+        
+        <div class="desktop-map-container">
+            <div class="taiwan-map">
+                <img src="/image/map.png" alt="Taiwan Map" class="main-map-img">
+                
+                <a href="/search_by_city#north" class="region-circle pos-north">North</a>
+                <a href="/search_by_city#central" class="region-circle pos-central">Central</a>
+                <a href="/search_by_city#south" class="region-circle pos-south">South</a>
+                <a href="/search_by_city#east" class="region-circle pos-east">East</a>
+
+                <a href="/search_by_city#islands" class="region-square pos-islands">Outlying<br>Islands</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="articles-section">
+        <h2 class="section-title">LATEST STORIES</h2>
+        <div class="article-grid" id="articleGrid">
+            
+            <div class="article-card">
+                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Taipei+Market" alt="活動"></div>
+                <div class="card-info">
+                    <span class="date">2025.12.25</span>
+                    <h3>Taipei Christmas Market Guide</h3>
+                    <p class="tag">#Festival #Taipei</p>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Alishan" alt="活動"></div>
+                <div class="card-info">
+                    <span class="date">2026.01.01</span>
+                    <h3>Alishan Sunrise New Year Trip</h3>
+                    <p class="tag">#Nature #Chiayi</p>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Tainan+Lantern" alt="活動"></div>
+                <div class="card-info">
+                    <span class="date">2026.02.10</span>
+                    <h3>Tainan Lantern Festival Preview</h3>
+                    <p class="tag">#Culture #Tainan</p>
+                </div>
+            </div>
+
+            <div class="article-card hidden-card">
+                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Hualien+Flower" alt="活動"></div>
+                <div class="card-info">
+                    <span class="date">2026.03.20</span>
+                    <h3>Hualien Rift Valley Flower Sea</h3>
+                    <p class="tag">#Flowers #Hualien</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="load-more-container">
+            <button id="loadMoreBtn">View More ▾</button>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+# 這是 Node.js 專案必須排除的資料夾
+node_modules/
+
+# 這是作業系統產生的暫存檔
+.DS_Store
+Thumbs.db
+
+# 這是環境變數檔案（如果你以後有用到的話）
+.env

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusive Dining | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    </head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <div class="page-banner" style="background-image: url('/image/dining/banner.png');">
+        <div class="banner-overlay">
+            <h1>Inclusive Dining</h1>
+            <p>Taste the diversity of Taiwan without boundaries.</p>
+        </div>
+    </div>
+
+    <div class="disclaimer-container">
+        <div class="disclaimer-box">
+            <span class="disclaimer-icon">⚠️</span>
+            <div class="disclaimer-text">
+                <strong>Editorial Disclaimer:</strong> This page was last updated on <span>December 26, 2025</span>.
+                <br>Store hours and menus are subject to change. We recommend checking official websites or calling ahead before your visit.
+            </div>
+        </div>
+    </div>
+
+    <section class="filter-section">
+        <div class="search-bar-container">
+            <input type="text" id="diningSearchInput" placeholder="Enter area (e.g. Xinyi) or street name...">
+            <button id="diningSearchBtn">Search</button>
+        </div>
+
+        <div class="tags-container">
+            <span class="tags-label">Preferences (Multi-select):</span>
+            <label class="filter-tag">
+                <input type="checkbox" value="halal" class="diet-checkbox">
+                <span class="tag-visual">Halal Friendly</span>
+            </label>
+            <label class="filter-tag">
+                <input type="checkbox" value="vegetarian" class="diet-checkbox">
+                <span class="tag-visual">Vegetarian Friendly</span>
+            </label>
+            <label class="filter-tag">
+                <input type="checkbox" value="no-beef" class="diet-checkbox">
+                <span class="tag-visual">No Beef</span>
+            </label>
+        </div>
+    </section>
+
+    <section class="restaurant-section">
+        <div class="restaurant-grid" id="restaurantGrid">
+            
+            <div class="res-card" data-area="Xinyi District Songshou Road" data-diet="halal no-beef">
+                <div class="res-img">
+                    <img src="/image/dining/res1.jpg" alt="Restaurant Image">
+                </div>
+                <div class="res-info">
+                    <div class="res-tags">
+                        <span class="tag-pill halal">Halal</span>
+                        <span class="tag-pill no-beef">No Beef</span>
+                    </div>
+                    <h3>Saffron 46</h3>
+                    <p class="res-location">Xinyi Dist. · Songshou Rd.</p>
+                    <a href="#" class="res-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="res-card" data-area="Da'an District Zhongxiao East Road" data-diet="vegetarian">
+                <div class="res-img">
+                    <img src="/image/dining/res2.jpg" alt="Restaurant Image">
+                </div>
+                <div class="res-info">
+                    <div class="res-tags">
+                        <span class="tag-pill vegetarian">Vegetarian</span>
+                    </div>
+                    <h3>Miacucina</h3>
+                    <p class="res-location">Da'an Dist. · Zhongxiao E. Rd.</p>
+                    <a href="#" class="res-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="res-card" data-area="Zhongshan District Zhongshan North Road" data-diet="">
+                <div class="res-img">
+                    <img src="/image/dining/res3.jpg" alt="Restaurant Image">
+                </div>
+                <div class="res-info">
+                    <div class="res-tags">
+                        </div>
+                    <h3>Taiwan Bistro</h3>
+                    <p class="res-location">Zhongshan Dist. · Zhongshan N. Rd.</p>
+                    <a href="#" class="res-link">View Details</a>
+                </div>
+            </div>
+
+        </div>
+        
+        <div id="noResults" style="display:none; text-align:center; padding:40px; color:#999;">
+            No restaurants found matching your criteria. Try adjusting your search or filters.
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

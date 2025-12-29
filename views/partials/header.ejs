@@ -1,0 +1,82 @@
+<% 
+// --- EJS 邏輯區 ---
+
+// 1. 定義判斷「當前頁面」的函式，回傳 active 樣式
+// 這樣做的好處是：當使用者在 "Dining" 頁面時，Dining 的按鈕會自動變色
+const getActiveStyle = (targetPage) => {
+    return (typeof pageName !== 'undefined' && pageName === targetPage) 
+        ? 'color: var(--accent-color); font-weight: bold;' 
+        : '';
+}
+
+// 2. 處理 Hidden Gems (地圖) 的連結邏輯
+// 如果是首頁 ('index') -> 滑動到 #mapSection
+// 如果是子頁面 -> 跳轉回首頁 /#mapSection
+const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';
+%>
+
+<header id="header">
+    <div class="logo">
+        <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+            <img src="/image/logo.png" alt="TaiwanMe Logo">
+            <span class="logo-text">THE REAL TASTE OF TAIWAN</span>
+        </a>
+    </div>
+
+    <div class="header-links">
+        <a href="#" class="h-link" id="tippingBtn">BUY US<br>A BOBA</a>
+        <a href="#" class="h-link" id="philosophyBtn">TAIWANME'S<br>PHILOSOPHY</a>
+        <a href="#" class="h-link" id="bizInquiryBtn">BUSINESS<br>INQUIRY</a>
+    </div>
+
+    <div class="nav-icons">
+        <button id="searchBtn">🔍 Search</button>
+    </div>
+</header>
+
+<div id="searchModal" class="search-modal">
+    <div class="close-search">&times;</div>
+    <div class="search-content">
+        <h2>Where to explore?</h2>
+        <input type="text" placeholder="Enter keywords (e.g. Taipei, Food)...">
+        <button class="submit-search">Search</button>
+    </div>
+</div>
+
+<nav class="mobile-grid-nav">
+    <a href="/search_by_city" class="grid-btn" style="<%= getActiveStyle('search_by_city') %>">SEARCH BY CITY</a>
+    <a href="/transport" class="grid-btn" style="<%= getActiveStyle('transport') %>">TRANSPORT</a>
+    <a href="/dining" class="grid-btn" style="<%= getActiveStyle('dining') %>">INCLUSIVE DINING</a>
+    
+    <a href="#" class="grid-btn menu-btn" id="mobileMoreBtn">MORE +</a>
+</nav>
+
+<div id="mobileMoreMenu" style="display:none; background:#f9f9f9; border-bottom:2px solid var(--lace-border);">
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); padding:10px; gap:8px;">
+        <a href="<%= mapLink %>" class="grid-btn scroll-to-map">HIDDEN GEMS</a>
+        <a href="/festivals" class="grid-btn" style="<%= getActiveStyle('festivals') %>">SEASONAL FESTIVALS</a>
+        <a href="/culture" class="grid-btn" style="<%= getActiveStyle('culture') %>">CULTURE &<br>DAILY LIFE</a>
+        <a href="/entertainment" class="grid-btn" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a>
+    </div>
+</div>
+
+<nav class="desktop-nav">
+    <ul>
+        <li><a href="<%= mapLink %>" class="scroll-to-map">HIDDEN GEMS</a></li>
+        
+        <li><a href="/search_by_city" style="<%= getActiveStyle('search_by_city') %>">SEARCH BY CITY</a></li>
+        <li><a href="/festivals" style="<%= getActiveStyle('festivals') %>">SEASONAL FESTIVALS</a></li>
+        <li><a href="/transport" style="<%= getActiveStyle('transport') %>">TRANSPORT</a></li>
+        <li><a href="/culture" style="<%= getActiveStyle('culture') %>">CULTURE & DAILY LIFE</a></li>
+        <li><a href="/dining" style="<%= getActiveStyle('dining') %>">INCLUSIVE DINING</a></li>
+        <li><a href="/entertainment" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a></li>
+        
+        <li class="dropdown-item">
+            <a href="#" class="dropbtn">MORE ▾</a>
+            <div class="dropdown-content">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+        </li>
+    </ul>
+</nav>
