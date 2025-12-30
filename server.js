@@ -13,18 +13,22 @@ app.set('views', path.join(__dirname, 'views'));
 // 2. 設定靜態檔案 (CSS, JS, Images)
 // ==========================================
 // 將 'public' 資料夾設為靜態資源目錄
-// 這樣在 HTML 寫 /style.css 或 /image/logo.png 才能抓到檔案
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ==========================================
 // 3. 設定頁面路由 (Routes)
 // ==========================================
-// 重要：每個路由都必須傳入 { pageName: '...' }
-// 這是讓 header.ejs 知道當前頁面，以便讓導覽列按鈕變色
 
 // 首頁
 app.get('/', (req, res) => {
     res.render('index', { pageName: 'index' });
+});
+
+// [修正] Hidden Gems 頁面
+// 網址維持 /hidden_gems (配合 header 的連結)
+// 但讀取檔案改為 'hiddengems' (配合你的 hiddengems.ejs 檔名)
+app.get('/hidden_gems', (req, res) => {
+    res.render('hiddengems', { pageName: 'hidden_gems' });
 });
 
 // 搜尋頁 (Search By City)

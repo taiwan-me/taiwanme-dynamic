@@ -1,17 +1,16 @@
 <% 
 // --- EJS 邏輯區 ---
 
-// 1. 定義判斷「當前頁面」的函式，回傳 active 樣式
-// 這樣做的好處是：當使用者在 "Dining" 頁面時，Dining 的按鈕會自動變色
+// 1. 定義判斷「當前頁面」的函式
 const getActiveStyle = (targetPage) => {
     return (typeof pageName !== 'undefined' && pageName === targetPage) 
         ? 'color: var(--accent-color); font-weight: bold;' 
         : '';
 }
 
-// 2. 處理 Hidden Gems (地圖) 的連結邏輯
+// 2. [新增] 地圖連結邏輯 (實現您的需求)
 // 如果是首頁 ('index') -> 滑動到 #mapSection
-// 如果是子頁面 -> 跳轉回首頁 /#mapSection
+// 如果是子頁面 -> 跳轉回首頁的 /#mapSection
 const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';
 %>
 
@@ -53,7 +52,8 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 
 <div id="mobileMoreMenu" style="display:none; background:#f9f9f9; border-bottom:2px solid var(--lace-border);">
     <div style="display:grid; grid-template-columns:repeat(3, 1fr); padding:10px; gap:8px;">
-        <a href="<%= mapLink %>" class="grid-btn scroll-to-map">HIDDEN GEMS</a>
+        <a href="<%= mapLink %>" class="grid-btn" style="<%= getActiveStyle('hidden_gems') %>">HIDDEN GEMS</a>
+        
         <a href="/festivals" class="grid-btn" style="<%= getActiveStyle('festivals') %>">SEASONAL FESTIVALS</a>
         <a href="/culture" class="grid-btn" style="<%= getActiveStyle('culture') %>">CULTURE &<br>DAILY LIFE</a>
         <a href="/entertainment" class="grid-btn" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a>
@@ -62,7 +62,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 
 <nav class="desktop-nav">
     <ul>
-        <li><a href="<%= mapLink %>" class="scroll-to-map">HIDDEN GEMS</a></li>
+        <li><a href="<%= mapLink %>" style="<%= getActiveStyle('hidden_gems') %>">HIDDEN GEMS</a></li>
         
         <li><a href="/search_by_city" style="<%= getActiveStyle('search_by_city') %>">SEARCH BY CITY</a></li>
         <li><a href="/festivals" style="<%= getActiveStyle('festivals') %>">SEASONAL FESTIVALS</a></li>
