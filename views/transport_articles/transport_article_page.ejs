@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* --- 交通攻略頁面專屬樣式 --- */
+        
+        body { background-color: #f9f9f9; }
+
+        /* 1. Hero Banner */
+        .guide-hero {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+        }
+        .guide-hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+        }
+        .guide-title-box {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: white;
+        }
+        .guide-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .guide-title { font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
+        .guide-meta { font-size: 0.95rem; opacity: 0.9; }
+
+        /* 2. 頁面佈局 (Sidebar + Main) */
+        .guide-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+
+        /* 側邊目錄 (Table of Contents) */
+        .guide-sidebar {
+            flex: 0 0 280px;
+            display: none; /* Mobile 預設隱藏 */
+        }
+        @media (min-width: 992px) {
+            .guide-sidebar { display: block; }
+        }
+
+        .toc-sticky-box {
+            position: sticky;
+            top: 100px; /* 距離頂部 */
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        .toc-title { font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; color: #333; }
+        .toc-list { list-style: none; padding: 0; margin: 0; }
+        .toc-list li { margin-bottom: 10px; }
+        .toc-list a {
+            text-decoration: none; color: #666; font-size: 0.95rem; transition: 0.3s; display: block;
+            border-left: 3px solid transparent; padding-left: 10px;
+        }
+        .toc-list a:hover { color: var(--accent-color); border-left-color: var(--accent-color); }
+
+        /* 主要內容區 */
+        .guide-content {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            min-width: 0; /* 防止內容撐爆 flex */
+        }
+
+        /* 文章樣式 */
+        .section-block { margin-bottom: 60px; scroll-margin-top: 100px; }
+        .section-title {
+            font-size: 1.8rem; color: #333; margin-bottom: 20px; padding-bottom: 10px;
+            border-bottom: 2px solid #eee; font-family: var(--font-eng);
+        }
+        .guide-text { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 20px; }
+        
+        .guide-img {
+            width: 100%; height: auto; border-radius: 8px; margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 重點提示框 (Tip Box) */
+        .tip-box {
+            background-color: #fff8e1; /* 淺黃色 */
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+            color: #555;
+        }
+        .tip-title { font-weight: bold; color: #d39e00; margin-bottom: 5px; display: block; }
+
+        /* 比較表格 (Comparison Table) */
+        .table-responsive { overflow-x: auto; margin: 25px 0; }
+        .guide-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        .guide-table th { background: #333; color: white; padding: 12px; text-align: left; }
+        .guide-table td { padding: 12px; border-bottom: 1px solid #ddd; color: #555; }
+        .guide-table tr:hover { background-color: #f5f5f5; }
+
+        /* 手機版調整 */
+        @media (max-width: 768px) {
+            .guide-container { flex-direction: column; padding: 0 15px; }
+            .guide-content { padding: 25px 20px; }
+            .guide-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <header class="guide-hero" style="background-image: url('<%= data.heroImage %>');">
+        <div class="guide-title-box">
+            <span class="guide-tag"><%= data.tag %> Guide</span>
+            <h1 class="guide-title"><%= data.title %></h1>
+            <div class="guide-meta">Last Updated: <%= data.updatedAt %></div>
+        </div>
+    </header>
+
+    <div class="guide-container">
+        
+        <aside class="guide-sidebar">
+            <div class="toc-sticky-box">
+                <div class="toc-title">Table of Contents</div>
+                <ul class="toc-list">
+                    <% data.sections.forEach(function(section) { %>
+                        <li><a href="#<%= section.id %>"><%= section.heading %></a></li>
+                    <% }); %>
+                </ul>
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <a href="/transport" style="text-decoration: none; font-weight: bold; color: #333;">← Back to All Guides</a>
+                </div>
+            </div>
+        </aside>
+
+        <article class="guide-content">
+            
+            <div class="guide-text" style="font-size: 1.1rem; color: #666; margin-bottom: 40px;">
+                <%= data.intro %>
+            </div>
+
+            <% data.sections.forEach(function(section) { %>
+                <section id="<%= section.id %>" class="section-block">
+                    <h2 class="section-title"><%= section.heading %></h2>
+                    
+                    <div class="guide-text">
+                        <%- section.content %>
+                    </div>
+
+                    <% if (section.image) { %>
+                        <img src="<%= section.image %>" alt="<%= section.heading %>" class="guide-img">
+                    <% } %>
+
+                    <% if (section.table) { %>
+                        <div class="table-responsive">
+                            <table class="guide-table">
+                                <thead>
+                                    <tr>
+                                        <% section.table.headers.forEach(function(th) { %>
+                                            <th><%= th %></th>
+                                        <% }); %>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% section.table.rows.forEach(function(row) { %>
+                                        <tr>
+                                            <% row.forEach(function(cell) { %>
+                                                <td><%= cell %></td>
+                                            <% }); %>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    <% } %>
+
+                    <% if (section.tip) { %>
+                        <div class="tip-box">
+                            <span class="tip-title">💡 Travel Tip:</span>
+                            <%= section.tip %>
+                        </div>
+                    <% } %>
+
+                </section>
+            <% }); %>
+
+        </article>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

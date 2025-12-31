@@ -92,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const address = btn.getAttribute('data-addr');
                 
                 try {
-                    // 優先使用現代 Clipboard API
                     if (navigator.clipboard && navigator.clipboard.writeText) {
                         await navigator.clipboard.writeText(address);
                         handleCopyFeedback(btn);
@@ -100,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         throw new Error('Clipboard API unavailable');
                     }
                 } catch (err) {
-                    // 備用方案 (針對較舊手機瀏覽器)
                     const textArea = document.createElement("textarea");
                     textArea.value = address;
                     textArea.style.position = "fixed"; 
@@ -119,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 複製成功的視覺回饋處理
     function handleCopyFeedback(btn) {
         const originalText = btn.textContent;
         if (btn.classList.contains('copy-success')) return;
@@ -143,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. 全域點擊背景與 ESC 鍵關閉功能
     // ==============================================
     window.addEventListener('click', (e) => {
-        // 如果點擊的是任何一個 Modal 本身(背景層)，就關閉全部
         if (e.target.classList.contains('search-modal') || 
             e.target.classList.contains('philosophy-modal') || 
             e.target.classList.contains('tipping-modal') ||
@@ -165,15 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMoreBtn && mobileMoreMenu) {
         mobileMoreBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            // 切換顯示狀態
             if (mobileMoreMenu.style.display === 'none' || mobileMoreMenu.style.display === '') {
                 mobileMoreMenu.style.display = 'block';
                 mobileMoreBtn.textContent = 'CLOSE -';
-                mobileMoreBtn.style.color = '#333'; // 強調色
+                mobileMoreBtn.style.color = '#333';
             } else {
                 mobileMoreMenu.style.display = 'none';
                 mobileMoreBtn.textContent = 'MORE +';
-                mobileMoreBtn.style.color = ''; // 恢復原色
+                mobileMoreBtn.style.color = '';
             }
         });
     }
@@ -248,24 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==============================================
-    // 9. 地圖按鈕捲動功能
-    // ==============================================
-    const mapRegions = document.querySelectorAll('.region-circle, .region-card, .region-square');
-    const articlesSection = document.querySelector('.articles-section');
-
-    if (mapRegions.length > 0 && articlesSection) {
-        mapRegions.forEach(region => {
-            region.addEventListener('click', (e) => {
-                // 如果是首頁的地圖按鈕，且有點擊事件，這裡其實已經被連結取代了
-                // 但保留這段代碼不影響
-                // e.preventDefault(); 
-                // articlesSection.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    }
-
-    // ==============================================
-    // 10. 導覽列 "Hidden Gems" 連結邏輯
+    // 10. 導覽列 "Hidden Gems" 連結邏輯 (首頁捲動)
     // ==============================================
     const hiddenGemLinks = document.querySelectorAll('.scroll-to-map'); 
     const mapSection = document.getElementById('mapSection');           
@@ -273,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hiddenGemLinks.length > 0) {
         hiddenGemLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                // 如果目前頁面有地圖區塊 (首頁)，則平滑捲動
                 if (mapSection) {
                     e.preventDefault();
                     mapSection.scrollIntoView({ 
@@ -281,7 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         block: 'start'
                     });
                 } 
-                // 否則(子頁面)執行預設跳轉 behavior (因為 href 已經設為 /#mapSection)
             });
         });
     }
@@ -299,13 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const filterRestaurants = () => {
             const keyword = diningSearchInput.value.toLowerCase().trim();
             const cards = document.querySelectorAll('.res-card');
-            
             const selectedDiets = Array.from(dietCheckboxes)
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
 
             let visibleCount = 0;
-
             cards.forEach(card => {
                 const areaData = card.getAttribute('data-area') || '';
                 const dietData = card.getAttribute('data-diet') || '';
@@ -328,16 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (diningSearchBtn) diningSearchBtn.addEventListener('click', filterRestaurants);
-        
-        if (diningSearchInput) {
-            diningSearchInput.addEventListener('keyup', (e) => {
-                filterRestaurants(); 
-            });
-        }
-
-        dietCheckboxes.forEach(cb => {
-            cb.addEventListener('change', filterRestaurants);
-        });
+        if (diningSearchInput) diningSearchInput.addEventListener('keyup', filterRestaurants);
+        dietCheckboxes.forEach(cb => cb.addEventListener('change', filterRestaurants));
     }
 
     // ==============================================
@@ -349,8 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPosition = window.scrollY;
-
-            // 捲動超過 50% 顯示
             if (scrollPosition > totalHeight / 2) {
                 backToTopBtn.classList.add('show');
             } else {
@@ -360,11 +324,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         backToTopBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // ==============================================
+    // [重要更新] 13. 處理跨頁面錨點平滑捲動 (例如首頁地圖點擊 North)
+    // ==============================================
+    // 當頁面資源完全載入（ Swiper, 圖片等）後執行，確保捲動位置準確
+    window.addEventListener('load', () => {
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1); 
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // 延遲執行以避開 Swiper 渲染導致的高計算錯誤
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 300);
+            }
+        }
+    });
 
 });

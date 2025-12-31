@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <%- include('../partials/header') %>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* --- Hidden Gems 專屬沉浸式樣式 --- */
+        .gem-hero {
+            height: 70vh;
+            background-image: url('<%= article.heroImage %>');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .gem-hero::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+        .gem-hero-content { position: relative; z-index: 2; padding: 20px; }
+        .gem-category { font-family: var(--font-eng); text-transform: uppercase; letter-spacing: 3px; background: var(--accent-color); padding: 5px 15px; border-radius: 50px; font-size: 0.9rem; }
+        .gem-title { font-size: 4rem; font-weight: 900; margin: 20px 0; font-family: var(--font-eng); }
+
+        /* 特色區塊：為什麼是隱藏景點 */
+        .hidden-factor-box {
+            background-color: var(--lace-bg);
+            border: 2px dashed var(--lace-border);
+            padding: 40px;
+            border-radius: 15px;
+            margin: -60px auto 60px;
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .hidden-label { font-size: 3rem; opacity: 0.3; font-weight: 900; line-height: 1; }
+        .hidden-text { font-style: italic; font-size: 1.2rem; color: #555; }
+
+        .gem-body { max-width: 800px; margin: 0 auto 100px; padding: 0 20px; }
+        .gem-text-block { font-size: 1.1rem; line-height: 2; color: #444; margin-bottom: 40px; text-align: justify; }
+        
+        /* 地圖區塊 */
+        .map-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .map-info { margin-bottom: 15px; font-weight: bold; color: #333; }
+        
+        .back-btn-container { text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <header class="gem-hero">
+        <div class="gem-hero-content">
+            <span class="gem-category"><%= article.category %></span>
+            <h1 class="gem-title"><%= article.title %></h1>
+        </div>
+    </header>
+
+    <main class="gem-body">
+        <div class="hidden-factor-box">
+            <div class="hidden-label">?</div>
+            <div class="hidden-text">
+                <strong>Why it's a hidden gem:</strong><br>
+                "<%= article.worthGoing %>"
+            </div>
+        </div>
+
+        <% article.content.forEach(function(item) { %>
+            <% if (item.type === 'text') { %>
+                <div class="gem-text-block"><%= item.body %></div>
+            <% } else if (item.type === 'image') { %>
+                <figure style="margin: 40px 0;">
+                    <img src="<%= item.url %>" style="width: 100%; border-radius: 8px;">
+                    <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 10px;"><%= item.caption %></figcaption>
+                </figure>
+            <% } %>
+        <% }); %>
+
+        <div class="map-card">
+            <div class="map-info">📍 Location: <%= article.location.address %></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=<%= article.location.lat %>,<%= article.location.lng %>" target="_blank" class="city-btn">Open in Google Maps ↗</a>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="/hidden_gems" class="btn-back">← Back to Exploring Gems</a>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

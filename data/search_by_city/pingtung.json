@@ -1,0 +1,226 @@
+[
+  {
+    "id": "pt-01",
+    "type": "1-Day Tour",
+    "theme": "Theme A",
+    "title": "Urban Aesthetics & Creative Rebirth",
+    "subTitle": "城市美學與文創再生：屏東市一日遊",
+    "tags": ["#PingtungCity", "#Culture", "#Arts"],
+    "heroImage": "/image/hiddengems/pingtung/banner_city.jpg",
+    "intro": "For travelers who love photography, history, and a relaxed pace. Explore the 'renaissance' of Pingtung City, visiting the top-rated spots of 2025: the Victory Star Village and Heito 1909.",
+    "transportation": "Take the train to **Pingtung Station (屏東火車站)**, then rent a P-Bike (public bicycle) or take a short taxi ride.",
+    "spots": [
+      {
+        "time": "Morning",
+        "name": "Pingtung Public Library (屏東縣立圖書館總館)",
+        "address": "No. 69, Dalian Rd., Pingtung City, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleLibrary",
+        "description": "Known as the 'Library in the Forest', this 30-year-old cultural center was transformed into a glass-walled marvel surrounded by a 5-hectare camphor tree forest. It perfectly blends reading with nature."
+      },
+      {
+        "time": "Lunch",
+        "name": "Victory Star Village (勝利星村創意生活園區)",
+        "address": "No. 106, Qingdao St., Pingtung City, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleVictory",
+        "description": "Historically known as the 'General's Village', this is the largest preserved cluster of Japanese-style military dormitories in Taiwan. It ranked No. 1 in 2025 for its vibrant mix of independent bookstores, cafes, and artisan shops."
+      },
+      {
+        "time": "Afternoon",
+        "name": "Heito 1909 (屏東縣民公園)",
+        "address": "Fuxing Rd., Pingtung City, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleHeito",
+        "description": "'Heito' is the old Japanese name for Pingtung. This site was once a restricted paper pulp factory hidden underground for decades. Now, it's a cyberpunk-style park featuring rusty steel structures and industrial ruins."
+      }
+    ]
+  },
+  {
+    "id": "pt-02",
+    "type": "1-Day Tour",
+    "theme": "Theme B",
+    "title": "Tribes Above the Clouds: Shenshan Line",
+    "subTitle": "雲端上的部落：神山線深度一日遊",
+    "tags": ["#WutaiTownship", "#Indigenous", "#Nature"],
+    "heroImage": "/image/hiddengems/pingtung/banner_mountain.jpg",
+    "intro": "Designed for travelers seeking 'cultural authenticity'. This tour takes you deep into the mountains to experience the Rukai and Paiwan tribes using the convenient 'Taiwan Trip 508' bus.",
+    "transportation": "Take the **Taiwan Trip Bus 508 (Shenshan Line)** from **Pingtung Transfer Station (屏東轉運站)**. *Reservation required.*",
+    "spots": [
+      {
+        "time": "Morning",
+        "name": "Guchuan Bridge (谷川大橋)",
+        "address": "Wutai Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleBridge",
+        "description": "Standing 99 meters tall (about 33 stories), this is the highest bridge in Taiwan. The pillars are decorated with the 'Hundred-Pacer Snake' pattern, a sacred guardian spirit in Rukai mythology."
+      },
+      {
+        "time": "Lunch",
+        "name": "Wutai Tribe (霧台部落)",
+        "address": "Yanban Ln., Wutai Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleWutai",
+        "description": "A Rukai settlement famous for its 'breathing' slate houses built from local black shale. Don't miss the 'Shenshan Aiyu Jelly', a dessert made from wild figs native to Taiwan's high mountains."
+      },
+      {
+        "time": "Afternoon",
+        "name": "Rinari Tribe (禮納里部落)",
+        "address": "Majia Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleRinari",
+        "description": "Known as the 'Provence of Taiwan', this village features European-style wooden cottages built for the indigenous people after Typhoon Morakot. It offers a unique visual contrast with traditional totem decorations."
+      }
+    ]
+  },
+  {
+    "id": "pt-03",
+    "type": "1-Day Tour",
+    "theme": "Theme C",
+    "title": "Faith & Flavors: Peninsula Gateway",
+    "subTitle": "信仰與海味：半島入口美食巡禮",
+    "tags": ["#DonggangTownship", "#ChechengTownship", "#Food"],
+    "heroImage": "/image/hiddengems/pingtung/banner_temple.jpg",
+    "intro": "A perfect route for families and food lovers, visiting the top-ranking 'Faith Economy' center and enjoying the best seafood in Pingtung.",
+    "transportation": "Take **Taiwan Trip Bus 9189 (Kenting Express)** from Pingtung Station.",
+    "spots": [
+      {
+        "time": "Morning",
+        "name": "Dapeng Bay (大鵬灣遊憩區)",
+        "address": "No. 631, Dapeng Bay Ring Rd., Donggang Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleDapeng",
+        "description": "Once a Japanese seaplane base during WWII, it is now Taiwan's largest lagoon. The cross-sea bridge puts on a spectacular 'opening show' to let boats pass."
+      },
+      {
+        "time": "Lunch",
+        "name": "Donggang Seafood Market (東港)",
+        "address": "Donggang Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleDonggang",
+        "description": "Famous for Bluefin Tuna (May-July), known as the 'Porsche of the Sea'. Also try 'Rou-Guo' (肉粿), a savory rice cake soup unique to this town."
+      },
+      {
+        "time": "Afternoon",
+        "name": "Checheng Fu'an Temple (車城福安宮)",
+        "address": "No. 51, Fu'an Rd., Checheng Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleFuan",
+        "description": "The largest Land God temple in Southeast Asia. It features a unique 'money-counting' furnace that uses aerodynamics to suck joss paper in automatically."
+      }
+    ]
+  },
+  {
+    "id": "pt-04",
+    "type": "2-Day Tour",
+    "theme": "Nature",
+    "title": "Ecological Serenity: Escaping Crowds",
+    "subTitle": "國境之南的生態與靜謐",
+    "tags": ["#HengchunTownship", "#Nature", "#Ocean"],
+    "heroImage": "/image/hiddengems/pingtung/banner_ocean.jpg",
+    "intro": "Designed to avoid the commercialized areas, focusing on what international travelers love most: raw nature, marine education, and quiet coastlines.",
+    "transportation": "Take **Bus 9189 (Kenting Express)** to Hengchun, then use the **Kenting Shuttle (Orange/Blue Line)**.",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Wanlitong (萬里桐)",
+        "address": "Wanlitong, Hengchun Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleWanlitong",
+        "description": "A quiet fishing village and a top snorkeling spot with rich coral reefs. Unlike crowded beaches, it offers peace and was a filming location for 'Cape No. 7'."
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Longpan Park (龍磐公園)",
+        "address": "Provincial Hwy 26, Hengchun Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleLongpan",
+        "description": "A vast limestone tableland with no trees or buildings, offering unobstructed views of the Pacific Ocean. It is a world-class spot for sunrise and stargazing."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "Eluanbi Lighthouse (鵝鑾鼻燈塔)",
+        "address": "No. 90, Dengta Rd., Hengchun Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleLighthouse",
+        "description": "Known as the 'Light of East Asia'. Built in 1881 (Qing Dynasty) as a fortress to protect against indigenous raids, making it the only armed lighthouse in the world."
+      }
+    ]
+  },
+  {
+    "id": "pt-05",
+    "type": "2-Day Tour",
+    "theme": "Island Life",
+    "title": "Sea Turtles & Low-Carbon Island",
+    "subTitle": "海龜與離島低碳行：小琉球",
+    "tags": ["#LiuqiuTownship", "#Island", "#EcoFriendly"],
+    "heroImage": "/image/hiddengems/pingtung/banner_turtle.jpg",
+    "intro": "A trip to Xiaoliuqiu, a coral island haven for Green Sea Turtles promoting low-carbon tourism.",
+    "transportation": "Take **Bus 9127/9189** to **Donggang Ferry Terminal**, take a ferry (20 mins), then rent an **e-scooter**.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Vase Rock (花瓶岩)",
+        "address": "Liuqiu Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleVaseRock",
+        "description": "The iconic landmark of the island. Snorkeling here gives you a 90% chance of seeing wild Green Sea Turtles grazing on seagrass."
+      },
+      {
+        "time": "Day 2",
+        "name": "Intertidal Zone (潮間帶)",
+        "address": "Liuqiu Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleTidal",
+        "description": "A guided eco-tour during low tide to see sea urchins, sea cucumbers, and starfish up close. Must be accompanied by a certified guide to protect the ecosystem."
+      }
+    ]
+  },
+  {
+    "id": "pt-06",
+    "type": "3-Day Tour (Part 1)",
+    "theme": "Full Perspective",
+    "title": "Time Tunnel: From Military Villages to Hakka Culture",
+    "subTitle": "從眷村到客家文化：屏東全域透視 (Day 1)",
+    "tags": ["#PingtungCity", "#NeipuTownship", "#History"],
+    "heroImage": "/image/hiddengems/pingtung/banner_history.jpg",
+    "intro": "Part 1 of a comprehensive journey covering the transformation of Pingtung, focusing on the cultural renaissance in the north.",
+    "transportation": "Car rental is recommended for this 3-day itinerary for maximum flexibility.",
+    "spots": [
+      {
+        "time": "Morning",
+        "name": "Heito 1909 (屏東縣民公園)",
+        "address": "Fuxing Rd., Pingtung City, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleHeito",
+        "description": "Witness the transformation of a sugar factory ruin into a modern design masterpiece. The rusty structures tell the story of Pingtung's industrial past."
+      },
+      {
+        "time": "Afternoon",
+        "name": "Liudui Hakka Cultural Park (六堆客家文化園區)",
+        "address": "No. 588, Xinyi Rd., Neipu Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleLiudui",
+        "description": "'Liudui' refers to the six militia units formed by Hakka people to defend their homes. The park showcases umbrella-shaped solar structures and traditional paper umbrella crafts."
+      }
+    ]
+  },
+  {
+    "id": "pt-07",
+    "type": "3-Day Tour (Part 2&3)",
+    "theme": "Full Perspective",
+    "title": "Railways, Ocean & Secret Sands",
+    "subTitle": "鐵道、海洋與秘境沙灘 (Day 2 & 3)",
+    "tags": ["#ChaozhouTownship", "#HengchunTownship", "#Adventure"],
+    "heroImage": "/image/hiddengems/pingtung/banner_rail.jpg",
+    "intro": "Continuing south to explore railway history, a world-class aquarium sleepover, and secret nature spots.",
+    "transportation": "Drive south via Provincial Highway 1 and 26.",
+    "spots": [
+      {
+        "time": "Day 2 Morning",
+        "name": "Chaozhou Railway Park (潮州鐵道園區)",
+        "address": "Guangfu Rd., Chaozhou Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleRail",
+        "description": "The only railway maintenance depot in Taiwan open to tourists. It features 'Giant' train models and offers a peek into the history of Taiwan's railways."
+      },
+      {
+        "time": "Day 2 Night",
+        "name": "Overnight at NMMBA (夜宿海生館)",
+        "address": "Checheng Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleNMMBA",
+        "description": "A bucket-list experience where you sleep in the underwater tunnel, waking up to sharks and rays swimming above you."
+      },
+      {
+        "time": "Day 3 Afternoon",
+        "name": "Fengchuisha (風吹砂)",
+        "address": "Provincial Hwy 26, Hengchun Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleFeng",
+        "description": "Meaning 'Wind Blowing Sand'. In winter, strong winds blow sand from the riverbed up the cliffs, creating unique sand dunes on top of the coastal tableland."
+      }
+    ]
+  }
+]

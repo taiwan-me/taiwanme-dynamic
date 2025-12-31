@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaiwanMe | The Real Taste of Taiwan for travel/trip/tour</title>
+    <title>TaiwanMe | The Real Taste of Taiwan</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -26,11 +26,14 @@
             .pos-east { top: 42%; right: 5%; }
             .pos-islands { top: 5%; left: 10%; }
         }
+
+        /* 增加平滑捲動支援 */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
 
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
     <section class="hero-slider">
         <div class="slider-wrapper">
@@ -63,44 +66,52 @@
     </section>
 
     <section class="articles-section">
-        <h2 class="section-title">LATEST STORIES</h2>
+        <h2 class="section-title">EXPLORE TAIWAN</h2>
         <div class="article-grid" id="articleGrid">
             
-            <div class="article-card">
-                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Taipei+Market" alt="活動"></div>
-                <div class="card-info">
-                    <span class="date">2025.12.25</span>
-                    <h3>Taipei Christmas Market Guide</h3>
-                    <p class="tag">#Festival #Taipei</p>
+            <a href="/search_by_city" class="article-card" style="text-decoration: none; color: inherit;">
+                <div class="card-img">
+                    <img src="/image/search_by_city/banner.png" alt="City Guide" onerror="this.src='https://placehold.co/400x300/eee/333?text=City+Guide'">
                 </div>
-            </div>
+                <div class="card-info">
+                    <span class="date">TRAVEL GUIDE</span>
+                    <h3>Explore Major Cities</h3>
+                    <p class="tag">#Taipei #Tainan #Kaohsiung</p>
+                </div>
+            </a>
 
-            <div class="article-card">
-                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Alishan" alt="活動"></div>
-                <div class="card-info">
-                    <span class="date">2026.01.01</span>
-                    <h3>Alishan Sunrise New Year Trip</h3>
-                    <p class="tag">#Nature #Chiayi</p>
+            <a href="/transport" class="article-card" style="text-decoration: none; color: inherit;">
+                <div class="card-img">
+                    <img src="/image/transport/banner.png" alt="Transport" onerror="this.src='https://placehold.co/400x300/eee/333?text=Transport'">
                 </div>
-            </div>
+                <div class="card-info">
+                    <span class="date">LOGISTICS</span>
+                    <h3>Transportation Guide</h3>
+                    <p class="tag">#HSR #MRT #Buses</p>
+                </div>
+            </a>
 
-            <div class="article-card">
-                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Tainan+Lantern" alt="活動"></div>
-                <div class="card-info">
-                    <span class="date">2026.02.10</span>
-                    <h3>Tainan Lantern Festival Preview</h3>
-                    <p class="tag">#Culture #Tainan</p>
+            <a href="/dining" class="article-card" style="text-decoration: none; color: inherit;">
+                <div class="card-img">
+                    <img src="/image/dining/banner.png" alt="Dining" onerror="this.src='https://placehold.co/400x300/eee/333?text=Dining'">
                 </div>
-            </div>
+                <div class="card-info">
+                    <span class="date">CUISINE</span>
+                    <h3>Inclusive Dining</h3>
+                    <p class="tag">#Halal #NoBeef #Vegetarian</p>
+                </div>
+            </a>
 
-            <div class="article-card hidden-card">
-                <div class="card-img"><img src="https://placehold.co/400x300/eee/333?text=Hualien+Flower" alt="活動"></div>
-                <div class="card-info">
-                    <span class="date">2026.03.20</span>
-                    <h3>Hualien Rift Valley Flower Sea</h3>
-                    <p class="tag">#Flowers #Hualien</p>
+            <a href="/entertainment" class="article-card hidden-card" style="text-decoration: none; color: inherit;">
+                <div class="card-img">
+                    <img src="/image/entertainment/banner.png" alt="Entertainment" onerror="this.src='https://placehold.co/400x300/eee/333?text=Entertainment'">
                 </div>
-            </div>
+                <div class="card-info">
+                    <span class="date">FUN & RELAX</span>
+                    <h3>Entertainment Spots</h3>
+                    <p class="tag">#NightMarkets #Culture</p>
+                </div>
+            </a>
 
         </div>
 
@@ -109,7 +120,7 @@
         </div>
     </section>
 
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
     
     <script src="/script.js"></script>
 

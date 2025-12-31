@@ -1,0 +1,56 @@
+[
+  {
+    "id": "d001",
+    "title": "Saffron 46 (番紅花46)",
+    "image": "https://placehold.co/600x400/333/fff?text=Saffron+46",
+    "tags": ["Halal", "No Beef", "Taipei"],
+    "intro": "Located in Xinyi District with a view of Taipei 101. Offers authentic fine dining Indian cuisine with Halal-friendly options.",
+    "mapUrl": "https://goo.gl/maps/example1",
+    "websiteUrl": "http://www.saffron46.com/"
+  },
+  {
+    "id": "d002",
+    "title": "Miacucina (My Kitchen)",
+    "image": "https://placehold.co/600x400/27ae60/fff?text=Miacucina",
+    "tags": ["Vegetarian", "Taipei", "Taichung"],
+    "intro": "A popular Italian vegetarian restaurant serving salads, pasta, and paninis. Great for families and health-conscious travelers.",
+    "mapUrl": "https://goo.gl/maps/example2",
+    "websiteUrl": "https://www.facebook.com/Miacucinafamily/"
+  },
+  {
+    "id": "d003",
+    "title": "Yang Shin Vegetarian (養心茶樓)",
+    "image": "https://placehold.co/600x400/f39c12/fff?text=Yang+Shin",
+    "tags": ["Vegetarian", "No Beef", "Taipei"],
+    "intro": "The first vegetarian Dim Sum restaurant in Taipei. Experience traditional Hong Kong style cuisine without meat.",
+    "mapUrl": "https://goo.gl/maps/example3",
+    "websiteUrl": "http://www.ysvege.com/"
+  },
+  {
+    "id": "d004",
+    "title": "Really Good Seafood (Really Good 海鮮)",
+    "image": "https://placehold.co/600x400/2980b9/fff?text=Seafood",
+    "tags": ["No Beef", "Taipei"],
+    "intro": "Upscale seafood restaurant in Daan District. Famous for fresh ingredients and traditional Taiwanese cooking methods.",
+    "mapUrl": "https://goo.gl/maps/example4",
+    "websiteUrl": ""
+  },
+  {
+    "id": "d005",
+    "title": "Halal Bismilla Restaurant",
+    "image": "https://placehold.co/600x400/8e44ad/fff?text=Halal+Bismilla",
+    "tags": ["Halal", "No Beef", "Taipei"],
+    "intro": "A hidden gem near Taipower Building station serving authentic Thai and Muslim-friendly dishes.",
+    "mapUrl": "https://goo.gl/maps/example5",
+    "websiteUrl": ""
+  },
+  {
+    "id": "d006",
+    "title": "Chun Shui Tang (春水堂)",
+    "image": "https://placehold.co/600x400/d35400/fff?text=Bubble+Tea",
+    "tags": ["No Beef", "Taichung", "Taipei"],
+    "intro": "The birthplace of Pearl Milk Tea. Serves tea, snacks, and noodles. Many pork and chicken options available.",
+    "mapUrl": "https://goo.gl/maps/example6",
+    "websiteUrl": "https://chunshuitang.com.tw/"
+  }
+]

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= cityName %> Guide | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        /* --- City Feed (列表頁) 專屬樣式 --- */
+        
+        /* 1. 城市主視覺 Banner */
+        .city-hero-banner {
+            width: 100%;
+            height: 40vh;
+            min-height: 300px;
+            
+            /* [重要修正] 使用 citySlug 動態讀取對應城市的 banner */
+            /* 例如: /image/search_by_city/taipei/banner_city.jpg */
+            background-image: url('/image/search_by_city/<%= citySlug %>/banner_city.jpg'); 
+            
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        
+        .city-hero-overlay {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 60px;
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 90%;
+        }
+
+        .city-name-title {
+            font-family: var(--font-eng);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* 2. 卡片網格容器 */
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px; 
+            margin: 0 auto 100px; 
+            padding: 0 20px;
+        }
+
+        /* 3. 單張卡片設計 */
+        .feed-card {
+            background: #fff; 
+            border-radius: 12px; 
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex; 
+            flex-direction: column;
+            border: 1px solid #eee;
+            height: 100%;
+        }
+        .feed-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        /* 卡片圖片 */
+        .feed-img-box {
+            width: 100%; 
+            height: 220px; 
+            overflow: hidden;
+            position: relative;
+        }
+        .feed-img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .feed-card:hover .feed-img {
+            transform: scale(1.05);
+        }
+
+        /* 卡片內容 */
+        .feed-content { 
+            padding: 25px; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        /* 標籤區 */
+        .feed-tags { 
+            margin-bottom: 12px; 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag-pill {
+            background-color: var(--lace-bg);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* 標題與簡介 */
+        .feed-title { 
+            font-family: var(--font-eng);
+            font-size: 1.5rem; 
+            font-weight: 700;
+            margin: 0 0 10px; 
+            color: #333; 
+            line-height: 1.3;
+        }
+        .feed-intro { 
+            font-size: 0.95rem; 
+            color: #666; 
+            line-height: 1.6; 
+            margin-bottom: 20px; 
+            flex: 1; 
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* 閱讀更多按鈕 */
+        .feed-btn {
+            align-self: flex-start;
+            padding: 10px 24px; 
+            background: #333; 
+            color: #fff;
+            border-radius: 30px; 
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .feed-card:hover .feed-btn {
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %> 
+    
+    <div class="city-hero-banner">
+        <div class="city-hero-overlay">
+            <h1 class="city-name-title"><%= cityName %></h1>
+            <p style="margin: 10px 0 0; color: #666; font-family: var(--font-eng); letter-spacing: 1px;">
+                THE HIDDEN GEMS OF <%= cityName.toUpperCase() %>
+            </p>
+        </div>
+    </div>
+
+    <div class="feed-grid">
+        <% if (typeof cityData !== 'undefined' && cityData.length > 0) { %>
+            
+            <% cityData.forEach(function(article) { %>
+                
+                <a href="/search_by_city/<%= citySlug %>/<%= article.id %>" class="feed-card">
+                    
+                    <div class="feed-img-box">
+                        <img src="<%= article.heroImage %>" class="feed-img" alt="<%= article.title %>">
+                    </div>
+                    
+                    <div class="feed-content">
+                        <div class="feed-tags">
+                            <% article.tags.slice(0, 2).forEach(function(tag){ %> 
+                                <span class="tag-pill"><%= tag %></span> 
+                            <% }); %>
+                        </div>
+                        
+                        <h2 class="feed-title">[<%= article.type %>] <%= article.title %></h2>
+                        
+                        <p class="feed-intro"><%= article.intro %></p>
+                        
+                        <span class="feed-btn">Read Itinerary ➝</span>
+                    </div>
+                </a>
+            <% }); %>
+
+        <% } else { %>
+            <div style="text-align: center; grid-column: 1 / -1; padding: 50px;">
+                <h3>Coming Soon...</h3>
+                <p>We are currently exploring this city to bring you the best guides.</p>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

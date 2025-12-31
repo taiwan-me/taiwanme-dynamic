@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Guide | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+        /* --- Transport Feed 專屬樣式 --- */
+        
+        .transport-banner {
+            width: 100%;
+            height: 40vh;
+            min-height: 300px;
+            background-image: url('/image/transport/banner.png'); 
+            background-size: cover;
+            background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .transport-banner::after {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.3);
+        }
+        .banner-text {
+            position: relative; z-index: 2; text-align: center; color: #fff;
+        }
+        .banner-text h1 {
+            font-family: 'Lato', sans-serif; font-size: 3rem; margin: 0; text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        .transport-feed-container {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* 標籤顏色定義 */
+        .tag-airport { background-color: #2d5a27; }      /* 機場 - 深綠 */
+        .tag-essentials { background-color: #d4a373; }   /* 必備 - 卡其 */
+        .tag-inter-city { background-color: #e76f51; }   /* 城際 - 橘紅 */
+        .tag-island-wide { background-color: #264653; }  /* 環島 - 深藍綠 */
+        .tag-urban { background-color: #2a9d8f; }        /* 市區 - 湖水綠 */
+        .tag-local { background-color: #f4a261; }        /* 在地 - 橘黃 */
+        .tag-adventure { background-color: #457b9d; }    /* 冒險 - 藍色 */
+        .tag-tips { background-color: #6d6875; }         /* 貼士 - 紫灰 */
+
+        .category-tag {
+            position: absolute;
+            top: 15px; left: 15px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem; font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <div class="transport-banner">
+        <div class="banner-text">
+            <h1>Transportation Guide</h1>
+            <p>Master the ways to travel like a local.</p>
+        </div>
+    </div>
+
+    <main class="transport-feed-container">
+        <div class="transport-grid">
+            <% 
+            const articles = [
+                { 
+                    tag: 'AIRPORT', category: 'airport', 
+                    title: 'From Taoyuan Airport (TPE) to Cities', 
+                    desc: 'The main gateway to Taiwan. Learn how to get to Taipei, Taichung, and other major cities via Airport MRT, HSR shuttle, and buses.', 
+                    link: 'taoyuan-airport', img: 'taoyuan-airport.jpg'
+                },
+                { 
+                    tag: 'AIRPORT', category: 'airport', 
+                    title: 'From Kaohsiung Airport (KHH) to Cities', 
+                    desc: 'Arriving in the South? Discover the quickest ways to connect from KHH to downtown Kaohsiung, Tainan, and Kenting.', 
+                    link: 'kaohsiung-airport', img: 'kaohsiung-airport.jpg'
+                },
+                { 
+                    tag: 'AIRPORT', category: 'airport', 
+                    title: 'Regional Airports (TSA, RMQ, & Others)', 
+                    desc: 'Guides for Taipei Songshan (TSA), Taichung (RMQ), and Hualien airports for domestic and regional flights.', 
+                    link: 'regional-airports', img: 'regional-airports.jpg'
+                },
+                { 
+                    tag: 'ESSENTIALS', category: 'essentials', 
+                    title: 'Smart Payment: EasyCard & iPASS', 
+                    desc: 'The "Must-Have" item for Taiwan travel. How to buy, top-up, and use these cards for MRT, buses, and convenience stores.', 
+                    link: 'smart-payment', img: 'smart-payment.jpg'
+                },
+                { 
+                    tag: 'INTER-CITY', category: 'inter-city', 
+                    title: 'Taiwan High Speed Rail (THSR)', 
+                    desc: 'The fastest way to travel along the West Coast. Tips on booking early bird tickets, rail passes, and station guides.', 
+                    link: 'thsr', img: 'thsr.jpg'
+                },
+                { 
+                    tag: 'ISLAND-WIDE', category: 'island-wide', 
+                    title: 'Taiwan Railways (TRA) Guide', 
+                    desc: 'Perfect for round-island trips and accessing the East Coast (Hualien, Taitung). Understanding train types and booking.', 
+                    link: 'tra-guide', img: 'tra-guide.jpg'
+                },
+                { 
+                    tag: 'URBAN', category: 'urban', 
+                    title: 'Metro Systems (MRT) Guide', 
+                    desc: 'Navigating the subway systems in Taipei, Taoyuan, Taichung, and Kaohsiung. Maps, pricing, and etiquette.', 
+                    link: 'mrt-guide', img: 'mrt-guide.jpg'
+                },
+                { 
+                    tag: 'LOCAL', category: 'local', 
+                    title: 'Getting Around the City', 
+                    desc: 'Short-distance options: Renting a YouBike, taking city buses, and using Uber or local Taxis.', 
+                    link: 'local-transport', img: 'local-transport.jpg'
+                },
+                { 
+                    tag: 'ADVENTURE', category: 'adventure', 
+                    title: 'Traveling to Offshore Islands', 
+                    desc: 'Flights and ferries to Penghu, Kinmen, Matsu, Green Island, and Lanyu. Seasonal tips and booking info.', 
+                    link: 'offshore-islands', img: 'offshore-islands.jpg'
+                },
+                { 
+                    tag: 'TIPS', category: 'tips', 
+                    title: 'Luggage Storage & Logistics', 
+                    desc: 'Where to store your bags at stations, airports, and city lockers so you can travel light and hands-free.', 
+                    link: 'luggage-logistics', img: 'luggage-logistics.jpg'
+                }
+            ];
+            %>
+
+            <% articles.forEach(article => { %>
+                <a href="/transport/<%= article.link %>" class="feed-card">
+                    <div class="feed-img-box">
+                        <span class="category-tag tag-<%= article.category %>"><%= article.tag %></span>
+                        <img src="/image/transport/<%= article.img %>" class="feed-img" alt="<%= article.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=Transport'">
+                    </div>
+                    <div class="feed-content">
+                        <h3 class="feed-title" style="font-size: 1.3rem;"><%= article.title %></h3>
+                        <p class="feed-intro"><%= article.desc %></p>
+                        <span class="feed-btn">Read More ➝</span>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script src="/script.js"></script>
+</body>
+</html>

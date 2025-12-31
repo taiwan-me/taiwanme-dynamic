@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusive Dining | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+        /* 1. Banner 視覺同步 (與 Entertainment 同步) */
+        .dining-banner {
+            width: 100%;
+            height: 40vh;
+            min-height: 300px;
+            background-image: url('/image/dining/banner.png'); 
+            background-size: cover;
+            background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+        .dining-banner::after {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.4); /* 暗化處理 */
+            z-index: 1;
+        }
+        .banner-text { position: relative; z-index: 2; text-align: center; color: #fff; }
+        .banner-text h1 { font-family: 'Lato', sans-serif; font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 4px; font-weight: 900; }
+
+        /* 2. 免責聲明樣式 (補回時效性說明) */
+        .disclaimer-container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        .disclaimer-box { 
+            background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404; 
+            padding: 15px 20px; border-radius: 8px; display: flex; align-items: flex-start; 
+            gap: 15px; font-size: 0.9rem; line-height: 1.5; text-align: left;
+        }
+
+        /* 3. 篩選與搜尋區 */
+        .filter-container { max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; text-align: center; }
+        .search-box { margin-bottom: 20px; }
+        .search-box input {
+            width: 100%; max-width: 500px; padding: 12px 25px;
+            border-radius: 30px; border: 1px solid #ddd; outline: none;
+        }
+        .filter-groups { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+        .filter-btn {
+            background: #fff; border: 1px solid #ddd; padding: 8px 18px;
+            border-radius: 20px; cursor: pointer; font-weight: bold; color: #555; transition: 0.3s;
+        }
+        .filter-btn.active { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+
+        /* 4. Dining Grid 列表佈局修正 */
+        .dining-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .dining-card {
+            background: #fff; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;
+            border: 1px solid #eee; display: flex; flex-direction: column;
+            text-decoration: none; color: inherit;
+        }
+        .dining-card:hover { transform: translateY(-8px); }
+        .dining-card.hidden { display: none; }
+
+        .dining-img-box { width: 100%; height: 200px; overflow: hidden; }
+        .dining-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .dining-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; text-align: left; }
+        .dining-title { font-size: 1.4rem; margin: 0 0 10px; color: #333; }
+        .dining-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+        .tag { font-size: 0.75rem; background: #f0f0f0; padding: 3px 10px; border-radius: 15px; color: #777; font-weight: bold; }
+        .dining-desc { font-size: 0.95rem; color: #666; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .banner-text h1 { font-size: 2.2rem; }
+            .dining-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <div class="dining-banner">
+        <div class="banner-text">
+            <h1>Inclusive Dining</h1>
+            <p>Taste the diversity of Taiwan without boundaries.</p>
+        </div>
+    </div>
+
+    <div class="disclaimer-container">
+        <div class="disclaimer-box">
+            <span class="disclaimer-icon">⚠️</span>
+            <div class="disclaimer-text">
+                <strong>Editorial Disclaimer:</strong> This page was last updated on <span>December 26, 2025</span>. [cite: 351]
+                <br>Store hours and menus are subject to change. We recommend checking official websites or calling ahead before your visit. [cite: 351]
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-container">
+        <div class="search-box">
+            <input type="text" id="diningSearch" placeholder="Search by name, cuisine, or area...">
+        </div>
+
+        <div class="filter-groups">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="halal">Halal Friendly</button>
+            <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+            <button class="filter-btn" data-filter="no beef">No Beef</button>
+            <button class="filter-btn" data-filter="seafood">Seafood</button>
+        </div>
+    </div>
+
+    <main class="dining-grid" id="diningGrid">
+        <% items.forEach(item => { %>
+            <div class="dining-card" 
+                 data-title="<%= item.title.toLowerCase() %>" 
+                 data-tags="<%= item.tags.join(',').toLowerCase() %>">
+                
+                <div class="dining-img-box">
+                    <img src="/image/dining/<%= item.image %>" alt="<%= item.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=Dining'">
+                </div>
+                <div class="dining-info">
+                    <h3 class="dining-title"><%= item.title %></h3>
+                    <div class="dining-tags">
+                        <% item.tags.forEach(tag => { %>
+                            <span class="tag"><%= tag %></span>
+                        <% }); %>
+                    </div>
+                    <p class="dining-desc"><%= item.description %></p>
+                </div>
+            </div>
+        <% }); %>
+    </main>
+
+    <div id="noResults" style="display: none; text-align: center; padding: 50px; color: #999;">
+        <h3>No restaurants found matching your criteria.</h3>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('diningSearch');
+            const cards = document.querySelectorAll('.dining-card');
+            const noResults = document.getElementById('noResults');
+
+            let currentFilter = 'all';
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.getAttribute('data-filter').toLowerCase();
+                    filterItems();
+                });
+            });
+
+            searchInput.addEventListener('input', filterItems);
+
+            function filterItems() {
+                const searchText = searchInput.value.toLowerCase();
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const cardTitle = card.getAttribute('data-title');
+                    const cardTags = card.getAttribute('data-tags');
+                    const matchesSearch = cardTitle.includes(searchText);
+                    const matchesFilter = (currentFilter === 'all') || cardTags.includes(currentFilter);
+
+                    if (matchesSearch && matchesFilter) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                if (noResults) {
+                    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

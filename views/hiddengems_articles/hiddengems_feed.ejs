@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Gems | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        /* --- Hidden Gems 專屬樣式 --- */
+        .hg-banner {
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            background-image: url('/image/hiddengems/banner.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .hg-hero-section { text-align: center; padding: 0 20px 60px; max-width: 1000px; margin: 0 auto; }
+        .hg-title-box {
+            background-color: var(--lace-bg); border: 1px solid var(--lace-border);
+            padding: 40px 20px; margin-bottom: 30px; border-radius: 4px; display: inline-block; width: 100%;
+        }
+        .hg-main-title { font-family: 'Lato', sans-serif; font-size: 2.5rem; font-weight: 900; color: #333; text-transform: uppercase; letter-spacing: 3px; margin: 0; line-height: 1.2; }
+        .hg-slogan { font-family: 'Noto Serif TC', serif; color: #555; font-size: 1.2rem; font-style: italic; margin-top: 15px; line-height: 1.6; }
+        .hg-slogan span { display: block; font-size: 1rem; color: #777; margin-top: 5px; font-style: normal; }
+        .hg-intro-text { max-width: 800px; margin: 40px auto 0; line-height: 2; color: #555; font-size: 1.05rem; text-align: justify; }
+
+        /* [關鍵修正] 設定捲動邊距，避免標題被 Header 遮住 */
+        .hg-region-section { 
+            padding: 60px 20px; 
+            scroll-margin-top: 100px; 
+        }
+
+        .hg-region-header { text-align: center; margin-bottom: 50px; }
+        .hg-region-title-box { background-color: var(--lace-bg); padding: 15px 40px; display: inline-block; border-radius: 30px; margin-bottom: 20px; }
+        .hg-region-title { font-family: 'Lato', sans-serif; font-size: 1.8rem; font-weight: 700; color: #333; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .hg-region-desc { max-width: 600px; margin: 0 auto; color: #666; font-size: 1rem; line-height: 1.8; }
+
+        .swiper { width: 100%; padding-bottom: 50px; }
+        .hg-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; height: 100%; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+        .hg-card:hover { transform: translateY(-5px); }
+        .hg-img-box { width: 100%; height: 250px; overflow: hidden; position: relative; }
+        .hg-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .hg-card:hover .hg-img-box img { transform: scale(1.1); }
+        .hg-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        
+        .tags-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag.city { background-color: #f0f0f0; color: #555; border: 1px solid #ddd; }
+        .tag.gem { background-color: var(--accent-color); color: #fff; }
+        
+        .hg-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 10px; color: #333; line-height: 1.4; }
+        
+        .view-all-container { text-align: center; margin-top: 30px; }
+        .btn-view-all { display: inline-block; border: 1px solid #333; color: #333; padding: 10px 30px; text-decoration: none; font-family: 'Lato', sans-serif; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .btn-view-all:hover { background-color: #333; color: #fff; }
+
+        @media (max-width: 768px) {
+            .hg-banner { height: 40vh; }
+            .hg-main-title { font-size: 1.8rem; }
+            .hg-title-box { padding: 30px 15px; }
+            .hg-img-box { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <div class="hg-banner"></div>
+
+    <section class="hg-hero-section">
+        <div class="hg-title-box">
+            <h1 class="hg-main-title">Ultimate Hidden Gems Guide</h1>
+            <div class="hg-slogan">
+                "Discovering the emotions that guidebooks don't tell you about."
+                <span>發覺不旅遊手冊上的感動</span>
+            </div>
+        </div>
+        <div class="hg-intro-text">
+            <p>
+                Taiwan is an island of endless surprises.
+                Beyond the bustling night markets and Taipei 101, there lies a world of misty mountains, ancient trails, and silent coastlines waiting to be heard.
+                This guide is your key to unlocking the real, unfiltered beauty of Taiwan.
+            </p>
+        </div>
+    </section>
+
+    <% 
+    const regions = [
+        {
+            id: 'north',
+            title: 'North Region',
+            desc: 'Where history meets modernity in the misty valleys.',
+            gems: [
+                { title: 'The Forgotten Valley of Keelung', city: 'Keelung 基隆', img: 'https://placehold.co/600x400?text=Keelung+Valley' },
+                { title: 'Silent Morning at Shiding Old Street', city: 'New Taipei 新北', img: 'https://placehold.co/600x400?text=Old+Street' },
+                { title: 'The Secret Beach Only Locals Know', city: 'Yilan 宜蘭', img: 'https://placehold.co/600x400?text=Secret+Beach' },
+                { title: 'Nangang Tea Mountain Trails', city: 'Taipei 台北', img: 'https://placehold.co/600x400?text=Tea+Farm' }
+            ]
+        },
+        {
+            id: 'central',
+            title: 'Central Region',
+            desc: "The heart of Taiwan's arts, mountains, and culture.",
+            gems: [
+                { title: 'Broken Rail Bridge Sunset', city: 'Miaoli 苗栗', img: 'https://placehold.co/600x400?text=Miaoli+Rail' },
+                { title: 'Hidden Galleries in Old Market', city: 'Taichung 台中', img: 'https://placehold.co/600x400?text=Taichung+Art' },
+                { title: 'Starry Nights at Hehuanshan', city: 'Nantou 南投', img: 'https://placehold.co/600x400?text=Nantou+Sky' },
+                { title: 'Traditional Puppet Theater Secrets', city: 'Yunlin 雲林', img: 'https://placehold.co/600x400?text=Yunlin+Puppet' }
+            ]
+        },
+        {
+            id: 'south',
+            title: 'South Region',
+            desc: 'Ancient capitals, warm hospitality, and tropical vibes.',
+            gems: [
+                { title: "Lost in Tainan's Ancient Alleys", city: 'Tainan 台南', img: 'https://placehold.co/600x400?text=Tainan+Alley' },
+                { title: 'The Old Warehouse Revival', city: 'Kaohsiung 高雄', img: 'https://placehold.co/600x400?text=Kaohsiung+Port' },
+                { title: 'Indigenous Tribe Ceremony', city: 'Pingtung 屏東', img: 'https://placehold.co/600x400?text=Pingtung+Tribes' },
+                { title: 'Sleeping in the Alishan Forest', city: 'Chiayi 嘉義', img: 'https://placehold.co/600x400?text=Chiayi+Forest' }
+            ]
+        },
+        {
+            id: 'east',
+            title: 'East Region',
+            desc: 'Majestic cliffs, pacific winds, and untouched nature.',
+            gems: [
+                { title: 'Secret Trail above Taroko', city: 'Hualien 花蓮', img: 'https://placehold.co/600x400?text=Hualien+Cliff' },
+                { title: 'Cycling through Golden Rice Fields', city: 'Taitung 台東', img: 'https://placehold.co/600x400?text=Taitung+Rice' },
+                { title: 'Wild Hot Springs in the Valley', city: 'Taitung 台東', img: 'https://placehold.co/600x400?text=Hot+Spring' },
+                { title: 'Kayaking the Pacific Sunrise', city: 'Hualien 花蓮', img: 'https://placehold.co/600x400?text=Hualien+Ocean' }
+            ]
+        },
+        {
+            id: 'islands',
+            title: 'Outlying Islands',
+            desc: 'Penghu, Kinmen, Matsu, and the tropical jewels.',
+            gems: [
+                { title: 'Basalt Columns and Blue Caves', city: 'Penghu 澎湖', img: 'https://placehold.co/600x400?text=Penghu+Basalt' },
+                { title: 'Chasing the Blue Tears', city: 'Matsu 馬祖', img: 'https://placehold.co/600x400?text=Matsu+Tears' },
+                { title: 'Flying Fish Festival', city: 'Lanyu 蘭嶼', img: 'https://placehold.co/600x400?text=Lanyu+Boat' },
+                { title: 'Sunrise at Zhaori Hot Spring', city: 'Green Island 綠島', img: 'https://placehold.co/600x400?text=Green+Island' }
+            ]
+        }
+    ];
+    %>
+
+    <% regions.forEach(region => { %>
+        <section class="hg-region-section" id="<%= region.id %>">
+            <div class="hg-region-header">
+                <div class="hg-region-title-box">
+                    <h2 class="hg-region-title"><%= region.title %></h2>
+                </div>
+                <p class="hg-region-desc"><%= region.desc %></p>
+            </div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <% region.gems.forEach(gem => { %>
+                        <div class="swiper-slide">
+                            <a href="#" class="hg-card">
+                                <div class="hg-img-box">
+                                    <img src="<%= gem.img %>" alt="<%= gem.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=No+Image'">
+                                </div>
+                                <div class="hg-info">
+                                    <div class="tags-row">
+                                        <span class="tag city"><%= gem.city %></span>
+                                        <span class="tag gem">Hidden Gem ✦</span>
+                                    </div>
+                                    <h3 class="hg-title"><%= gem.title %></h3>
+                                </div>
+                            </a>
+                        </div>
+                    <% }); %>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="view-all-container">
+                <a href="#" class="btn-view-all">View All <%= region.title %> Gems</a>
+            </div>
+        </section>
+    <% }); %>
+
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1, 
+                spaceBetween: 20,
+                loop: true,       
+                speed: 1500,      
+                autoplay: {
+                    delay: 4000, 
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, spaceBetween: 30 },
+                },
+            });
+        });
+    </script>
+
+</body>
+</html>
