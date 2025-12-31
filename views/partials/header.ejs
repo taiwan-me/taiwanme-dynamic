@@ -8,7 +8,7 @@ const getActiveStyle = (targetPage) => {
         : '';
 }
 
-// 2. [新增] 地圖連結邏輯 (實現您的需求)
+// 2. 地圖連結邏輯
 // 如果是首頁 ('index') -> 滑動到 #mapSection
 // 如果是子頁面 -> 跳轉回首頁的 /#mapSection
 const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';

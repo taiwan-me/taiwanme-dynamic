@@ -64,6 +64,23 @@
             <div class="tipping-section">
                 <h3 class="tipping-subtitle">Crypto</h3>
                 <div class="table-container">
+                    
+                    <style>
+                        .addr-flex-wrapper {
+                            display: flex; 
+                            justify-content: space-between; /* 左右對齊 */
+                            align-items: center; 
+                            width: 100%;
+                            gap: 10px; /* 地址與按鈕之間的間距 */
+                        }
+                        .addr-text {
+                            font-family: monospace; /* 讓地址字體等寬 */
+                            word-break: break-all; /* 防止地址太長跑版 */
+                            text-align: left;
+                            font-size: 0.9rem;
+                        }
+                    </style>
+
                     <table class="tipping-table">
                         <thead>
                             <tr>
@@ -77,69 +94,92 @@
                                 <td class="coin-col">BTC</td>
                                 <td>Bitcoin</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">393SydmjKD8fKYSaiFhZYvxPNi4rgSyzGA</span>
-                                    <button class="copy-btn" data-addr="393SydmjKD8fKYSaiFhZYvxPNi4rgSyzGA">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">393SydmjKD8fKYSaiFhZYvxPNi4rgSyzGA</span>
+                                        <button class="copy-btn" data-addr="393SydmjKD8fKYSaiFhZYvxPNi4rgSyzGA">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
+                            
                             <tr>
                                 <td class="coin-col">ETH</td>
                                 <td>ERC20</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
-                                    <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
+                                        <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td rowspan="2" class="coin-col">BNB</td>
                                 <td>BSC (BEP20)</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
-                                    <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
+                                        <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>ERC20</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
-                                    <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
+                                        <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td rowspan="2" class="coin-col">USDT</td>
                                 <td>BSC (BEP20)</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
-                                    <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
+                                        <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>ERC20</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
-                                    <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
+                                        <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td rowspan="2" class="coin-col">USDC</td>
                                 <td>BSC (BEP20)</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
-                                    <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
+                                        <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>ERC20</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
-                                    <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C</span>
+                                        <button class="copy-btn" data-addr="0x7563Fa328f07373cb8F458EefDcc5e9FFF657D3C">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td class="coin-col">BCH</td>
                                 <td>Bitcoin Cash</td>
                                 <td class="addr-col">
-                                    <span class="addr-text">qprnfkc6x5k2zc5wrfv0x78zv34dvs7nlswhfmzep0</span>
-                                    <button class="copy-btn" data-addr="qprnfkc6x5k2zc5wrfv0x78zv34dvs7nlswhfmzep0">Copy</button>
+                                    <div class="addr-flex-wrapper">
+                                        <span class="addr-text">qprnfkc6x5k2zc5wrfv0x78zv34dvs7nlswhfmzep0</span>
+                                        <button class="copy-btn" data-addr="qprnfkc6x5k2zc5wrfv0x78zv34dvs7nlswhfmzep0">Copy</button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

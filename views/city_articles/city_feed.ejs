@@ -10,152 +10,107 @@
     <link rel="stylesheet" href="/style.css">
 
     <style>
-        /* --- City Feed (列表頁) 專屬樣式 --- */
+        /* --- City Feed 專屬樣式 --- */
         
-        /* 1. 城市主視覺 Banner */
+        /* 1. 統一 Banner 風格 (同步 Transport/Entertainment) */
         .city-hero-banner {
             width: 100%;
             height: 40vh;
             min-height: 300px;
             
-            /* [重要修正] 使用 citySlug 動態讀取對應城市的 banner */
-            /* 例如: /image/search_by_city/taipei/banner_city.jpg */
-            background-image: url('/image/search_by_city/<%= citySlug %>/banner_city.jpg'); 
+            /* [關鍵修正] 動態路徑邏輯：增加高雄 (kaohsiung) 的判斷 */
+            background-image: <% if (citySlug === 'pingtung') { %>
+                url('/image/search_by_city/pingtung_banner.png');
+            <% } else if (citySlug === 'kaohsiung') { %>
+                url('/image/search_by_city/kaohsiung_banner.png');
+            <% } else { %>
+                url('/image/search_by_city/<%= citySlug %>/banner_city.jpg');
+            <% } %>;
             
             background-size: cover;
             background-position: center;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             margin-bottom: 60px;
+            background-color: #333; /* 底色設深，防止圖片加載前閃白 */
+        }
+
+        /* 圖片暗化遮罩：確保白色文字跳脫出來 */
+        .city-hero-banner::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* 暗化處理 */
+            z-index: 1;
         }
         
-        .city-hero-overlay {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px 60px;
+        /* 標題文字置中樣式 */
+        .banner-text {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            border: 1px solid #ccc;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 90%;
+            color: #fff; /* 強制白色 */
+            padding: 0 20px;
         }
 
         .city-name-title {
             font-family: var(--font-eng);
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 8vw, 3.5rem); /* RWD 動態字體 */
             font-weight: 900;
-            color: #333;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             margin: 0;
+            color: #ffffff !important; /* 確保是白色 */
+            text-shadow: 0 2px 15px rgba(0,0,0,0.6); /* 加深陰影增加對比度 */
         }
 
-        /* 2. 卡片網格容器 */
+        .city-subtitle {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            font-family: var(--font-eng);
+            letter-spacing: 2px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9); /* 半透明白 */
+            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+        }
+
+        /* 2. 卡片網格與其餘樣式 */
         .feed-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 40px;
             max-width: 1200px; 
             margin: 0 auto 100px; 
             padding: 0 20px;
         }
 
-        /* 3. 單張卡片設計 */
         .feed-card {
-            background: #fff; 
-            border-radius: 12px; 
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex; 
-            flex-direction: column;
-            border: 1px solid #eee;
-            height: 100%;
+            background: #fff; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s ease;
+            text-decoration: none; color: inherit; display: flex; flex-direction: column;
+            border: 1px solid #eee; height: 100%;
         }
-        .feed-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
+        .feed-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
 
-        /* 卡片圖片 */
-        .feed-img-box {
-            width: 100%; 
-            height: 220px; 
-            overflow: hidden;
-            position: relative;
-        }
-        .feed-img {
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .feed-card:hover .feed-img {
-            transform: scale(1.05);
-        }
+        .feed-img-box { width: 100%; height: 220px; overflow: hidden; }
+        .feed-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+        .feed-card:hover .feed-img { transform: scale(1.05); }
 
-        /* 卡片內容 */
-        .feed-content { 
-            padding: 25px; 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
-        }
+        .feed-content { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+        .feed-tags { margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag-pill { background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
 
-        /* 標籤區 */
-        .feed-tags { 
-            margin-bottom: 12px; 
-            font-size: 0.8rem; 
-            font-weight: bold; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tag-pill {
-            background-color: var(--lace-bg);
-            color: var(--accent-color);
-            padding: 4px 10px;
-            border-radius: 4px;
-        }
+        .feed-title { font-family: var(--font-eng); font-size: 1.5rem; font-weight: 700; margin: 0 0 10px; color: #333; line-height: 1.3; }
+        .feed-intro { font-size: 0.95rem; color: #666; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-        /* 標題與簡介 */
-        .feed-title { 
-            font-family: var(--font-eng);
-            font-size: 1.5rem; 
-            font-weight: 700;
-            margin: 0 0 10px; 
-            color: #333; 
-            line-height: 1.3;
-        }
-        .feed-intro { 
-            font-size: 0.95rem; 
-            color: #666; 
-            line-height: 1.6; 
-            margin-bottom: 20px; 
-            flex: 1; 
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+        .feed-btn { align-self: flex-start; padding: 10px 24px; background: #333; color: #fff; border-radius: 30px; font-size: 0.9rem; font-weight: bold; transition: 0.3s; }
+        .feed-card:hover .feed-btn { background: var(--accent-color); }
 
-        /* 閱讀更多按鈕 */
-        .feed-btn {
-            align-self: flex-start;
-            padding: 10px 24px; 
-            background: #333; 
-            color: #fff;
-            border-radius: 30px; 
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .feed-card:hover .feed-btn {
-            background: var(--accent-color);
+        @media (max-width: 768px) {
+            .city-hero-banner { height: 250px; }
+            .feed-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -163,23 +118,18 @@
     <%- include('../partials/header') %> 
     
     <div class="city-hero-banner">
-        <div class="city-hero-overlay">
+        <div class="banner-text">
             <h1 class="city-name-title"><%= cityName %></h1>
-            <p style="margin: 10px 0 0; color: #666; font-family: var(--font-eng); letter-spacing: 1px;">
-                THE HIDDEN GEMS OF <%= cityName.toUpperCase() %>
-            </p>
+            <p class="city-subtitle">THE HIDDEN GEMS OF <%= cityName.toUpperCase() %></p>
         </div>
     </div>
 
     <div class="feed-grid">
         <% if (typeof cityData !== 'undefined' && cityData.length > 0) { %>
-            
             <% cityData.forEach(function(article) { %>
-                
                 <a href="/search_by_city/<%= citySlug %>/<%= article.id %>" class="feed-card">
-                    
                     <div class="feed-img-box">
-                        <img src="<%= article.heroImage %>" class="feed-img" alt="<%= article.title %>">
+                        <img src="<%= article.heroImage %>" class="feed-img" alt="<%= article.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=TaiwanMe'">
                     </div>
                     
                     <div class="feed-content">
@@ -190,18 +140,16 @@
                         </div>
                         
                         <h2 class="feed-title">[<%= article.type %>] <%= article.title %></h2>
-                        
                         <p class="feed-intro"><%= article.intro %></p>
                         
                         <span class="feed-btn">Read Itinerary ➝</span>
                     </div>
                 </a>
             <% }); %>
-
         <% } else { %>
-            <div style="text-align: center; grid-column: 1 / -1; padding: 50px;">
-                <h3>Coming Soon...</h3>
-                <p>We are currently exploring this city to bring you the best guides.</p>
+            <div style="text-align: center; grid-column: 1 / -1; padding: 100px 20px;">
+                <h3 style="color: #999;">Coming Soon...</h3>
+                <p style="color: #bbb;">We are currently exploring this city to bring you the best guides.</p>
             </div>
         <% } %>
     </div>

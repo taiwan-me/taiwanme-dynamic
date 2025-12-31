@@ -1,0 +1,256 @@
+[
+  {
+    "id": "kh-01",
+    "type": "1-Day Tour",
+    "title": "Industrial Heritage & Digital Art",
+    "subTitle": "工業遺產與數位藝術：港區美學一日遊",
+    "tags": ["#Art", "#Harbor", "#Instagrammable"],
+    "heroImage": "/image/search_by_city/kaohsiung/industrial_art.jpg",
+    "intro": "Experience how Kaohsiung transformed abandoned warehouses and active port areas into contemporary art spaces. This route is the most convenient for transportation and perfect for social media photography.",
+    "transportation": "Take the **KMRT (Red/Orange Line)** and transfer to the **LRT (Light Rail)**. Highly recommended to use an electronic ticket (EasyCard/iPass).",
+    "spots": [
+      {
+        "time": "09:00",
+        "name": "Formosa Boulevard Station (捷運美麗島站)",
+        "address": "Sinsing District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleFormosa",
+        "description": "Start at the 'Dome of Light', the world's largest public art installation made of individual pieces of colored glass."
+      },
+      {
+        "time": "11:00",
+        "name": "The Pier-2 Art Center (駁二藝術特區)",
+        "address": "Dayi St., Yancheng District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/examplePier2",
+        "description": "Walk through the Dayi Warehouse cluster to see boutique shops and digital art galleries housed in renovated old sugar warehouses."
+      },
+      {
+        "time": "15:00",
+        "name": "Great Harbor Bridge (大港橋)",
+        "address": "Yancheng District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleBridge",
+        "description": "Wait for the 3 PM rotation show! It is the longest horizontal swing bridge in Asia, connecting Pier-2 with the Penglai Commercial Port area."
+      },
+      {
+        "time": "16:30",
+        "name": "Kaohsiung Port Cruise Terminal (高雄港埠旅運中心)",
+        "address": "Lingya District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleCruise",
+        "description": "Check out the iconic 3D Whale Wall and the futuristic architecture resembling waves, a new landmark for international cruises."
+      },
+      {
+        "time": "18:00",
+        "name": "KW2 (棧貳庫)",
+        "address": "Gushan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleKW2",
+        "description": "Enjoy dinner at this historic warehouse turned waterfront complex. Don't miss the pure white carousel with the sunset backdrop."
+      }
+    ]
+  },
+  {
+    "id": "kh-02",
+    "type": "1-Day Tour",
+    "title": "Oriental Mysteries & Military Village Life",
+    "subTitle": "東方祕境與眷村日常：歷史層次之旅",
+    "tags": ["#History", "#Culture", "#Religion"],
+    "heroImage": "/image/search_by_city/kaohsiung/cultural_mix.jpg",
+    "intro": "From the religious mythos of Lotus Pond to the unique circular architecture of military communities, this route offers the strongest sense of historical layering in Taiwan.",
+    "transportation": "Take KMRT to **Zuoying Station**, then use buses or **YouBike 2.0** for short distances.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Dragon and Tiger Pagodas (蓮池潭龍虎塔)",
+        "address": "Zuoying District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/examplePagodas",
+        "description": "Enter through the Dragon's mouth and exit through the Tiger's to turn bad luck into good. (Note: Renovation completed in 2025)."
+      },
+      {
+        "time": "13:30",
+        "name": "Confucius Temple (左營孔廟)",
+        "address": "Zuoying District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleConfucius",
+        "description": "The largest Confucius Temple in Taiwan, showcasing majestic Song Dynasty architectural style and a peaceful atmosphere."
+      },
+      {
+        "time": "15:30",
+        "name": "Guomao Community (果貿社區)",
+        "address": "Zuoying District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleGuomao",
+        "description": "Nicknamed 'Little Hong Kong' for its dense, circular apartment buildings. It preserves the nostalgic atmosphere and food of old military dependents' villages."
+      },
+      {
+        "time": "19:00",
+        "name": "Shoushan LOVE Lookout (壽山LOVE觀景台)",
+        "address": "Gushan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleLove",
+        "description": "The ultimate spot to witness the sparkling night views of the entire Kaohsiung city and harbor from above."
+      }
+    ]
+  },
+  {
+    "id": "kh-03",
+    "type": "2-Day Tour",
+    "title": "Urban Lifestyle & Healing Farms",
+    "subTitle": "南國都會與療癒農場：親子二日遊",
+    "tags": ["#Family", "#Nature", "#Shopping"],
+    "heroImage": "/image/search_by_city/kaohsiung/family_nature.jpg",
+    "intro": "Transition from 'Hardcore Industry' to 'Healing Economy'. This journey is specially designed for families, featuring art, shopping, and animal interactions.",
+    "transportation": "Day 1: LRT & Walk. Day 2: KMRT to **Gangshan South** + Taxi/Charter.",
+    "spots": [
+      {
+        "time": "Day 1 14:00",
+        "name": "LRT Totoro Tunnel (輕軌龍貓隧道)",
+        "address": "Gushan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleTotoro",
+        "description": "Ride the Light Rail through the 'Museum of Fine Arts' station section, where trees form a green tunnel resembling scenes from Studio Ghibli."
+      },
+      {
+        "time": "Day 1 16:00",
+        "name": "Neiwei Arts Center (內惟藝術中心)",
+        "address": "Gushan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleNeiwei",
+        "description": "A sleek, white lifestyle-oriented art space that blends cinema, dining, and reading. Perfect for a relaxing afternoon."
+      },
+      {
+        "time": "Day 1 Evening",
+        "name": "Dream Mall (夢時代購物中心)",
+        "address": "Qianzhen District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleDreamMall",
+        "description": "Kaohsiung's premier shopping destination and the main venue for the New Year's Eve countdown. Enjoy dinner and the rooftop Ferris wheel."
+      },
+      {
+        "time": "Day 2 10:00",
+        "name": "Kaohsiung Interactive Farm (嘎逼＆牛奶互動園區)",
+        "address": "Gangshan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleFarm",
+        "description": "Get up close with adorable capybaras and alpacas in this popular healing farm."
+      },
+      {
+        "time": "Day 2 15:00",
+        "name": "Siaogangshan Skywalk Park (崗山之眼)",
+        "address": "Gangshan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleSkywalk",
+        "description": "Walk along the violin-shaped skybridge for a panoramic view of the Agongdian Reservoir and the plains below."
+      }
+    ]
+  },
+  {
+    "id": "kh-04",
+    "type": "2-Day Tour",
+    "title": "Showa Romance & Old Town Lights",
+    "subTitle": "昭和浪漫與老城光影：文青深度行",
+    "tags": ["#Architecture", "#History", "#NightView"],
+    "heroImage": "/image/search_by_city/kaohsiung/showa_romance.jpg",
+    "intro": "Explore the exquisite aesthetics of Japanese colonial villas and the woven history of Fengshan's ancient Qing Dynasty walls.",
+    "transportation": "Accessible via **KMRT Orange Line**.",
+    "spots": [
+      {
+        "time": "Day 1 10:00",
+        "name": "Syo-yo-en (逍遙園)",
+        "address": "Sinsing District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleSyoyoen",
+        "description": "The restored historic villa of Kozui Otani, featuring rare architectural styles from the Showa era with a distinct green ambiance."
+      },
+      {
+        "time": "Day 1 15:00",
+        "name": "Sanfeng Temple (三鳳宮)",
+        "address": "Sanmin District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleSanfeng",
+        "description": "Famous for its sea of red lanterns, offering a spectacular visual experience and a great photo spot."
+      },
+      {
+        "time": "Day 2 18:00",
+        "name": "Fengshan Festival of Light (鳳山光之季)",
+        "address": "Fengshan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleLightFest",
+        "description": "A seasonal winter event (Dec-Feb) lighting up the old city canals and Dadong Wetlands Park with beautiful lanterns."
+      },
+      {
+        "time": "Day 2 20:00",
+        "name": "Weiwuying Center for the Arts (衛武營)",
+        "address": "Fengshan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleWeiwuying",
+        "description": "The world's largest single-roof performing arts center. Its undulating structure is inspired by banyan trees."
+      }
+    ]
+  },
+  {
+    "id": "kh-05",
+    "type": "3-Day Tour",
+    "title": "Mountains, Sea, Buddha & City",
+    "subTitle": "山海佛城全覽：國際旅客首選",
+    "tags": ["#Landmarks", "#Buddhism", "#Geology"],
+    "heroImage": "/image/search_by_city/kaohsiung/full_loop.jpg",
+    "intro": "Combining world-class landmarks, religious wonders, and lunar-like geological landscapes, this route shows the diverse depth of Kaohsiung.",
+    "transportation": "City MRT + **Chartered Car** for Day 2 (Fo Guang Shan & Moon World).",
+    "spots": [
+      {
+        "time": "Day 1 14:00",
+        "name": "Cijin Island (旗津)",
+        "address": "Cijin District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleCijin",
+        "description": "Take a ferry to this narrow island. Visit the Rainbow Church, eat fresh seafood, and watch the sunset from the Cihou Lighthouse."
+      },
+      {
+        "time": "Day 2 10:00",
+        "name": "Fo Guang Shan Buddha Museum (佛光山佛陀紀念館)",
+        "address": "Dashu District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleBuddha",
+        "description": "A magnificent Buddhist complex featuring a giant bronze Big Buddha and eight monumental pagodas. A place of peace and grandeur."
+      },
+      {
+        "time": "Day 2 15:00",
+        "name": "Tianliao Moon World (田寮月世界)",
+        "address": "Tianliao District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleMoonWorld",
+        "description": "Witness the surreal badland topography that resembles the surface of the moon, created by crustal movement and erosion."
+      },
+      {
+        "time": "Day 3 14:00",
+        "name": "SKM Park (草衙道賽車樂園)",
+        "address": "Qianzhen District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleSKM",
+        "description": "An outlet mall with the world's only authorized overseas Suzuka Circuit karting track. Great for a thrilling finish to your trip."
+      }
+    ]
+  },
+  {
+    "id": "kh-06",
+    "type": "3-Day Tour",
+    "title": "Wildlife & Indigenous Aesthetics",
+    "subTitle": "南台灣野生與原民美學：山海共榮",
+    "tags": ["#Nature", "#Adventure", "#Indigenous"],
+    "heroImage": "/image/search_by_city/kaohsiung/indigenous_wild.jpg",
+    "intro": "Emphasizing the harmony of mountains and sea. Discover the limestone trails of Shoushan and the stone-slab houses of the Maolin tribes.",
+    "transportation": "Hiking gear recommended. **Car rental** is essential for Maolin (Day 2).",
+    "spots": [
+      {
+        "time": "Day 1 09:00",
+        "name": "Shoushan National Nature Park (壽山國家自然公園)",
+        "address": "Gushan District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleShoushan",
+        "description": "Hike through limestone caves and observe Formosan Macaques in their natural habitat. (Remember: Do not feed the monkeys!)."
+      },
+      {
+        "time": "Day 2 10:00",
+        "name": "Maolin National Scenic Area (茂林國家風景區)",
+        "address": "Maolin District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleMaolin",
+        "description": "Famous for the purple crow butterflies (winter) and the Dragon Head Mountain trail."
+      },
+      {
+        "time": "Day 2 14:00",
+        "name": "Dona Tribe (多納部落)",
+        "address": "Maolin District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleDona",
+        "description": "One of the best-preserved Rukai indigenous villages featuring traditional stone-slab houses."
+      },
+      {
+        "time": "Day 3 17:00",
+        "name": "Ruifeng Night Market (瑞豐夜市)",
+        "address": "Zuoying District, Kaohsiung City",
+        "mapLink": "https://goo.gl/maps/exampleRuifeng",
+        "description": "The locals' favorite night market. Try the Angel Chicken Cutlet and various creative street snacks."
+      }
+    ]
+  }
+]
