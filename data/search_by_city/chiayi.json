@@ -1,0 +1,221 @@
+[
+  {
+    "id": "cy-01",
+    "type": "1-Day Tour",
+    "title": "Urban Aesthetics & The Wood City",
+    "subTitle": "城市散步線：木都美學與 2025 博覽會",
+    "tags": ["#WoodCity", "#Culture", "#WalkingTour"],
+    "heroImage": "/image/search_by_city/chiayi/city_walk.jpg",
+    "intro": "Chiayi has been the core of Taiwan's forestry industry since the Japanese colonial era, preserving over 6,000 wooden buildings. This route explores the 'Renaissance of the Wood City' and the 2025 City Expo.",
+    "transportation": "Fully accessible via **YouBike 2.0**, E-scooters, or walking.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Chiayi Art Museum (嘉義市立美術館)",
+        "address": "West District, Chiayi City",
+        "mapLink": "https://goo.gl/maps/exampleCAM",
+        "description": "Originally the Tobacco and Wine Monopoly Bureau. Designed by architect Huang Ming-wei, it creates a dialogue between historical timber structures and modern glass walls."
+      },
+      {
+        "time": "11:30",
+        "name": "Chiayi East Market (東市場)",
+        "address": "East District, Chiayi City",
+        "mapLink": "https://goo.gl/maps/exampleEastMarket",
+        "description": "Known as the 'Kitchen of Chiayi People'. Don't miss Wang's Beef Soup (王家牛雜湯) and traditional meat rolls to taste local history."
+      },
+      {
+        "time": "14:00",
+        "name": "Hinoki Village & Beimen Station (檜意森活村 & 北門驛)",
+        "address": "East District, Chiayi City",
+        "mapLink": "https://goo.gl/maps/exampleHinoki",
+        "description": "Taiwan's largest cluster of Japanese-style dormitories. Beimen Station is the historic starting point of the Alishan Railway."
+      },
+      {
+        "time": "16:00",
+        "name": "2025 City Expo (2025 城市博覽會展區)",
+        "address": "Chiayi Cultural & Creative Industries Park",
+        "mapLink": "https://goo.gl/maps/exampleExpo",
+        "description": "Visit the 'Sustainable Vision Pavilion' designed by MVRDV to understand the future vision of Chiayi's wooden architecture."
+      },
+      {
+        "time": "18:00",
+        "name": "Wenhua Road Night Market (文化路夜市)",
+        "address": "Wenhua Rd., Chiayi City",
+        "mapLink": "https://goo.gl/maps/exampleWenhua",
+        "description": "Finish your day with the famous Smart Fish Head (林聰明沙鍋魚頭), a must-try local delicacy."
+      }
+    ]
+  },
+  {
+    "id": "cy-02",
+    "type": "1-Day Tour",
+    "title": "Fantasy Castles & European Gardens",
+    "subTitle": "城堡奇幻線：歐風莊園與美妝產業",
+    "tags": ["#Photography", "#Family", "#EuropeanStyle"],
+    "heroImage": "/image/search_by_city/chiayi/castles.jpg",
+    "intro": "Dalin Township has transformed its biotech industry into tourism art. These castles feature Baroque and Greek themes, creating a rare European landscape in Taiwan.",
+    "transportation": "Recommended to **Drive** or take a **Shuttle** to Dalin Dapumei Park.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Jourdeness Castle (佐登妮絲城堡)",
+        "address": "Dalin Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleJourdeness",
+        "description": "Built with a budget of 3 billion TWD, featuring the highest European-style dome in Taiwan and the Brian Garden. A true Baroque experience."
+      },
+      {
+        "time": "13:00",
+        "name": "GAIA Manor (蓋婭莊園)",
+        "address": "Dalin Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleGAIA",
+        "description": "Greek mythology themed with pure white architecture and a Venus Wishing Fountain. Offers DIY beauty workshops."
+      },
+      {
+        "time": "15:30",
+        "name": "Old Worth Dream Castle (歐樂沃築夢城堡)",
+        "address": "Dalin Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleOldWorth",
+        "description": "Known as the 'Chocolate Disney' of Chiayi. Perfect for family interactions and fairytale-style photography."
+      },
+      {
+        "time": "17:30",
+        "name": "Three Little Pigs Farm (三隻小豬觀光農場)",
+        "address": "Minxiong Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/examplePigs",
+        "description": "Located near the Minxiong Interchange. Get close to meerkats and alpacas—a great place for kids to release energy."
+      }
+    ]
+  },
+  {
+    "id": "cy-03",
+    "type": "2-Day Tour",
+    "title": "Legend of Alishan Railway",
+    "subTitle": "林鐵全線通車：睽違15年的登山傳奇",
+    "tags": ["#Railway", "#Forest", "#History"],
+    "heroImage": "/image/search_by_city/chiayi/alishan_train.jpg",
+    "intro": "The Alishan Forest Railway is a world-class industrial heritage. Fully reopened in 2025 after 15 years, allowing travelers to ascend from the plains to 2,216m high mountains.",
+    "transportation": "Day 1: **Alishan Forest Railway** (Reservation required). Day 2: Walk or Park Shuttle.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Formosensis Train (福森號)",
+        "address": "Chiayi Station to Alishan Station",
+        "mapLink": "https://goo.gl/maps/exampleTrain",
+        "description": "Depart from Chiayi Station, enjoy a railway bento box at Fenqihu (奮起湖), and check in at Alishan House to watch the starry sky at night."
+      },
+      {
+        "time": "Day 2",
+        "name": "Shuishan Giant Tree Trail (水山巨木步道)",
+        "address": "Alishan National Forest Recreation Area",
+        "mapLink": "https://goo.gl/maps/exampleShuishan",
+        "description": "Take the Zhushan Line for sunrise or the 2025 Maple Theme Train. Walk through the forest to see the Sister Ponds and ancient giant trees for deep healing."
+      }
+    ]
+  },
+  {
+    "id": "cy-04",
+    "type": "2-Day Tour",
+    "title": "Arts & Ocean Sunset",
+    "subTitle": "藝文海洋線：故宮美學與西海岸",
+    "tags": ["#Museum", "#Seafood", "#Sunset"],
+    "heroImage": "/image/search_by_city/chiayi/npm_south.jpg",
+    "intro": "Visit the Southern Branch of the National Palace Museum, a center of Asian art, and explore the salt and fishing history of the west coast in Dongshi and Budai.",
+    "transportation": "Recommended: **Taiwan Tourist Shuttle (NPM Route)** or **Self-drive**.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Southern Branch of NPM (故宮南院)",
+        "address": "Taibao City, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleNPM",
+        "description": "Explore Asian textiles and tea culture exhibitions. The architecture itself is a massive piece of landscape art."
+      },
+      {
+        "time": "Day 1",
+        "name": "Suantou Sugar Factory (蒜頭糖廠)",
+        "address": "Lioujiao Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleSugar",
+        "description": "Ride the 'Wufen Che' (sugar train), experiencing the intersection of the slowest train and the fastest High-Speed Rail."
+      },
+      {
+        "time": "Day 2",
+        "name": "High-Heel Wedding Church (布袋高跟鞋教堂)",
+        "address": "Budai Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleHeel",
+        "description": "A giant glass installation symbolizing history and rebirth from the Blackfoot disease era."
+      },
+      {
+        "time": "Day 2",
+        "name": "Dongshi Fisherman's Wharf (東石漁人碼頭)",
+        "address": "Dongshi Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleDongshi",
+        "description": "Enjoy a fresh seafood feast and visit the Haomeili 3D Painting Village nearby."
+      }
+    ]
+  },
+  {
+    "id": "cy-05",
+    "type": "3-Day Tour",
+    "title": "Classic Chiayi Research",
+    "subTitle": "經典嘉義研究：山、城、海全景漫遊",
+    "tags": ["#DeepDive", "#FullPanoramic", "#International"],
+    "heroImage": "/image/search_by_city/chiayi/full_view.jpg",
+    "intro": "Designed for travelers who want to understand Chiayi's three geographic characteristics: Sea, Plains, and High Mountains in one trip.",
+    "transportation": "Public transport + Train + Bus.",
+    "spots": [
+      {
+        "time": "Day 1 (City)",
+        "name": "Chiayi Old Prison (嘉義舊監獄)",
+        "address": "East District, Chiayi City",
+        "mapLink": "https://goo.gl/maps/examplePrison",
+        "description": "Visit the 2025 City Expo venues and dive deep into the only preserved radial prison architecture in Taiwan."
+      },
+      {
+        "time": "Day 2 (Mountain)",
+        "name": "Vivid Train (栩悅號)",
+        "address": "Alishan Railway",
+        "mapLink": "https://goo.gl/maps/exampleVivid",
+        "description": "Take the theme train 'Vivid' up to Alishan. Explore Shouzhen Temple (受鎮宮) and the sacred tree clusters, and experience Tsou indigenous culture."
+      },
+      {
+        "time": "Day 3 (Cloud)",
+        "name": "Taiping Suspension Bridge (梅山太平雲梯)",
+        "address": "Meishan Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleTaiping",
+        "description": "Walk on the Cloud Trail (雲之南道) and enjoy fern-inspired dining at the Air Library (空氣圖書館) before heading down."
+      }
+    ]
+  },
+  {
+    "id": "cy-06",
+    "type": "3-Day Tour",
+    "title": "Slow Living Aesthetics",
+    "subTitle": "生活美學線：慢城慢活與秘境探索",
+    "tags": ["#SlowTravel", "#Tea", "#HiddenGems"],
+    "heroImage": "/image/search_by_city/chiayi/tea_plantation.jpg",
+    "intro": "Chiayi is recognized as Taiwan's slowest-living city. This route avoids queues and focuses on the quality of life, coffee, and secret trails.",
+    "transportation": "Car rental highly recommended for flexibility in mountainous areas.",
+    "spots": [
+      {
+        "time": "Day 1 (Slow Life)",
+        "name": "Showa J18 (昭和十八 J18)",
+        "address": "Chiayi Park, Chiayi City",
+        "mapLink": "https://goo.gl/maps/exampleJ18",
+        "description": "Visit 'Tao City Douhua' (renovated old clinic) and wear a Kimono at Showa J18. Explore independent bookstores on Lanjing Street at night."
+      },
+      {
+        "time": "Day 2 (Tea Way)",
+        "name": "Shizhuo Trails (石棹步道群)",
+        "address": "Zhuqi Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleShizhuo",
+        "description": "Walk the 'Cloud Trail' or 'Tea Trail' amidst the sea of clouds and enjoy tea tasting in a mountain tea house."
+      },
+      {
+        "time": "Day 3 (Nature)",
+        "name": "Veoveoana Deer Park (逐鹿傳說梅花鹿園)",
+        "address": "Fanlu Township, Chiayi County",
+        "mapLink": "https://goo.gl/maps/exampleDeer",
+        "description": "Feed Sika deer, visit the Chiayi University Insect Museum (giant spherical greenhouse), and find the spirit of 'KANO' in Chiayi Park."
+      }
+    ]
+  }
+]

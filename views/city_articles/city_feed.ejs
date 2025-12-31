@@ -12,17 +12,19 @@
     <style>
         /* --- City Feed 專屬樣式 --- */
         
-        /* 1. 統一 Banner 風格 (同步 Transport/Entertainment) */
+        /* 1. 統一 Banner 風格 */
         .city-hero-banner {
             width: 100%;
             height: 40vh;
             min-height: 300px;
             
-            /* [關鍵修正] 動態路徑邏輯：增加高雄 (kaohsiung) 的判斷 */
+            /* [關鍵修正] 動態路徑邏輯：加入嘉義 (chiayi) */
             background-image: <% if (citySlug === 'pingtung') { %>
                 url('/image/search_by_city/pingtung_banner.png');
             <% } else if (citySlug === 'kaohsiung') { %>
                 url('/image/search_by_city/kaohsiung_banner.png');
+            <% } else if (citySlug === 'chiayi') { %>
+                url('/image/search_by_city/chiayi_banner.png');
             <% } else { %>
                 url('/image/search_by_city/<%= citySlug %>/banner_city.jpg');
             <% } %>;
