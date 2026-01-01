@@ -1,0 +1,193 @@
+[
+  {
+    "id": "ch-01",
+    "type": "1-Day Tour",
+    "title": "Time Machine of the Old City",
+    "subTitle": "鐵道與大佛：彰化舊城區時光機械",
+    "tags": ["#Railway", "#History", "#Foodie"],
+    "heroImage": "/image/search_by_city/changhua/roundhouse.jpg",
+    "intro": "A journey for railway fans and history lovers. Visit the only operating roundhouse in Taiwan and walk through the living history of Changhua City.",
+    "transportation": "**Train** to Changhua Station + **YouBike** / Walking.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Changhua Roundhouse (扇形車庫)",
+        "address": "Changhua City, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleRoundhouse",
+        "description": "Built in 1922, it's a living industrial heritage where steam trains rest. Watch the turntable in action—a true mechanical marvel."
+      },
+      {
+        "time": "14:00",
+        "name": "Changhua Confucius Temple (彰化孔子廟)",
+        "address": "Changhua City, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleConfucius",
+        "description": "A serene Qing Dynasty official building with red walls and green shade, perfect for a quiet afternoon walk."
+      },
+      {
+        "time": "15:30",
+        "name": "Bagua Mountain Great Buddha (八卦山大佛)",
+        "address": "Changhua City, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleBuddha",
+        "description": "Walk the Skywalk at sunset to overlook the Changhua Plain. Visit the Silver Bridge Waterfalls nearby."
+      }
+    ]
+  },
+  {
+    "id": "ch-02",
+    "type": "1-Day Tour",
+    "title": "Lukang: The Open-Air Museum",
+    "subTitle": "鹿港風華：穿梭百年的露天博物館",
+    "tags": ["#Culture", "#OldStreet", "#Craft"],
+    "heroImage": "/image/search_by_city/changhua/lukang.jpg",
+    "intro": "Lukang is the epitome of traditional Minnan culture. Explore the winding alleys and temples of what was once Taiwan's second-largest city.",
+    "transportation": "**Taiwan Tourist Shuttle 6936** from Taichung HSR or Changhua Station.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Lukang Longshan Temple (鹿港龍山寺)",
+        "address": "Lukang Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleLongshan",
+        "description": "Known as the 'Forbidden City of Taiwan'. Admire the exquisite wooden spider web ceiling (zaojing) over the theater stage."
+      },
+      {
+        "time": "11:30",
+        "name": "Nine Turns Lane (九曲巷)",
+        "address": "Lukang Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleNineTurns",
+        "description": "Experience the wisdom of ancestors. The curved alleys were designed to break the strong northeast monsoon winds."
+      },
+      {
+        "time": "17:30",
+        "name": "Lukang Tianhou Temple (鹿港天后宮)",
+        "address": "Lukang Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleTianhou",
+        "description": "Worship the Meizhou Mazu. The temple is always bustling with incense and devotees. Try the Oyster Omelet nearby."
+      }
+    ]
+  },
+  {
+    "id": "ch-03",
+    "type": "2-Day Tour",
+    "title": "Tale of Two Cities",
+    "subTitle": "雙城記：彰化市歷史x鹿港工藝",
+    "tags": ["#Classic", "#NightView", "#DeepDive"],
+    "heroImage": "/image/search_by_city/changhua/two_cities.jpg",
+    "intro": "The classic route connecting the two cores of Northern Changhua. From the railway heritage of the city to the craftsmanship of the port town.",
+    "transportation": "**Train** + **Taiwan Tourist Shuttle**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Nanyao Temple (南瑤宮)",
+        "address": "Changhua City, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleNanyao",
+        "description": "A Mazu temple with a twist. The Guanyin Hall features Baroque architecture with Greek columns and Japanese dormer windows."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Bagua Mountain Skywalk (八卦山天空步道)",
+        "address": "Changhua City, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleSkywalk",
+        "description": "Walk among the tree canopy and enjoy the night view of Changhua City. Finish the night with a bowl of Braised Pork Rice."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Lukang Artist Village (桂花巷藝術村)",
+        "address": "Lukang Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleArtistVillage",
+        "description": "Interact with resident artists. Try DIY lion heads or lanterns in this revitalized Japanese dormitory area."
+      }
+    ]
+  },
+  {
+    "id": "ch-04",
+    "type": "2-Day Tour",
+    "title": "Flowers & Glass Fantasy",
+    "subTitle": "海陸雙拼：田尾花園x玻璃幻境",
+    "tags": ["#Flowers", "#Industry", "#Photography"],
+    "heroImage": "/image/search_by_city/changhua/glass_flower.jpg",
+    "intro": "A mix of soft floral landscapes and hard industrial beauty. Visit the flower capital of Tianwei and the unique Glass Temple by the sea.",
+    "transportation": "**Car Rental** is recommended.",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Tianwei Highway Garden (田尾公路花園)",
+        "address": "Tianwei Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleTianwei",
+        "description": "Rent a quadricycle to roam the flower fields. In season, witness the 'Electric Chrysanthemum' night view."
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Cheng Mei Cultural Park (成美文化園)",
+        "address": "Yongjing Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleChengMei",
+        "description": "Known as the 'Kenrokuen of Taiwan'. A stunning garden featuring century-old black pines and a restored Hakka mansion."
+      },
+      {
+        "time": "Day 2 Sunset",
+        "name": "Glass Mazu Temple (玻璃媽祖廟)",
+        "address": "Lukang Township (Changbin Industrial Park)",
+        "mapLink": "https://goo.gl/maps/exampleGlassTemple",
+        "description": "The only glass temple in the world. Wait for the lights to turn on after sunset for a breathtaking reflection photo."
+      }
+    ]
+  },
+  {
+    "id": "ch-05",
+    "type": "3-Day Tour",
+    "title": "Changhua Grand Traverse",
+    "subTitle": "全境精華：山海線大縱走",
+    "tags": ["#GrandTour", "#AllInOne", "#Foodie"],
+    "heroImage": "/image/search_by_city/changhua/grand_traverse.jpg",
+    "intro": "A complete pilgrimage covering the North, West, and South. From the ancient capital to the flower country, experience the full spectrum of Changhua.",
+    "transportation": "**Car Rental** is essential.",
+    "spots": [
+      {
+        "time": "Day 1 Night",
+        "name": "Lukang Old Street (鹿港老街)",
+        "address": "Lukang Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleOldStreet",
+        "description": "Stay overnight in a renovated old house B&B to experience the quiet morning atmosphere of the historic town."
+      },
+      {
+        "time": "Day 2 Night",
+        "name": "Yuanlin City Food (員林美食)",
+        "address": "Yuanlin City, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleYuanlin",
+        "description": "Yuanlin has a refined food culture. Try the Rice Moss Noodles (Mi-Tai-Mu) and Chicken Feet Jelly."
+      },
+      {
+        "time": "Day 3 Afternoon",
+        "name": "Changhua Meat Ba-wan (彰化肉圓)",
+        "address": "Changhua City",
+        "mapLink": "https://goo.gl/maps/exampleBaWan",
+        "description": "End your trip with the iconic fried meat dumpling. A must-eat culinary symbol of Changhua."
+      }
+    ]
+  },
+  {
+    "id": "ch-06",
+    "type": "3-Day Tour",
+    "title": "Forest Breath & Old Railways",
+    "subTitle": "森呼吸與鐵道：二水跑水x八卦山",
+    "tags": ["#Nature", "#Hiking", "#SlowTravel"],
+    "heroImage": "/image/search_by_city/changhua/ershui_rail.jpg",
+    "intro": "Avoid the crowds and focus on nature. Hike the Bagua Mountain trails and explore the rural charm of the Jiji Line railway starting point.",
+    "transportation": "**Train** to Ershui/Tianzhong + **YouBike**.",
+    "spots": [
+      {
+        "time": "Day 2 Morning",
+        "name": "Ershui Old Street (二水老街)",
+        "address": "Ershui Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleErshui",
+        "description": "The starting point of the Jiji Line. Visit the Steam Train Display Field and learn about the Babbau Canal irrigation history."
+      },
+      {
+        "time": "Day 3 Morning",
+        "name": "Tianzhong Forest Park (田中森林公園)",
+        "address": "Tianzhong Township, Changhua County",
+        "mapLink": "https://goo.gl/maps/exampleTianzhong",
+        "description": "Hike the trail for a panoramic view of the Changhua Plain. Tianzhong is also known as the hometown of socks."
+      }
+    ]
+  }
+]

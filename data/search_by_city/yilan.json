@@ -1,0 +1,200 @@
+[
+  {
+    "id": "yl-01",
+    "type": "1-Day Tour",
+    "title": "Railway & Hot Springs",
+    "subTitle": "鐵道海線：山海對話與礁溪療癒",
+    "tags": ["#HotSpring", "#Ocean", "#Architecture"],
+    "heroImage": "/image/search_by_city/yilan/lanyang_museum.jpg",
+    "intro": "A dialogue between the mountains and the sea. Visit the architectural marvel of Lanyang Museum and soak in the 'Beauty Soup' of Jiaoxi.",
+    "transportation": "**Train** to Toucheng/Jiaoxi + **Taxi**.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Lanyang Museum (蘭陽博物館)",
+        "address": "Toucheng Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleLanyang",
+        "description": "Designed by Kris Yao, the 'Cuesta' shape architecture emerges from the wetland, symbolizing Yilan's rock formations. A gateway to understanding local culture."
+      },
+      {
+        "time": "14:00",
+        "name": "Tangweigou Hot Spring Park (湯圍溝溫泉公園)",
+        "address": "Jiaoxi Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleTangweigou",
+        "description": "Experience the unique 'Dr. Fish' foot spa. Jiaoxi's sodium bicarbonate spring is one of the few flatland hot springs in Taiwan."
+      },
+      {
+        "time": "16:00",
+        "name": "Waiao Beach (外澳沙灘)",
+        "address": "Toucheng Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleWaiao",
+        "description": "Gaze at Turtle Island (Guishan Island) across the ocean. A perfect spot for surfing or just relaxing by the black sand beach."
+      }
+    ]
+  },
+  {
+    "id": "yl-02",
+    "type": "1-Day Tour",
+    "title": "Scallion Farming & Capybaras",
+    "subTitle": "田園療癒：蔥田綠意與萌寵互動",
+    "tags": ["#Family", "#Farm", "#Animals"],
+    "heroImage": "/image/search_by_city/yilan/sanshing_onion.jpg",
+    "intro": "Experience farm-to-table education in Sanshing. Pull your own scallions, make pancakes, and feed adorable capybaras.",
+    "transportation": "**Car Rental** or **Scooter** is recommended.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Sanshing Scallion Farm (三星蔥農場)",
+        "address": "Sanshing Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleOnion",
+        "description": "Wear rain boots and step into the fields. Learn to harvest and wash the famous Sanshing scallions, then make your own scallion pancake."
+      },
+      {
+        "time": "14:00",
+        "name": "Zhang Mei Ama's Farm (張美阿嬤農場)",
+        "address": "Sanshing Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleZhangMei",
+        "description": "A hit with kids and couples. Feed capybaras and sika deer in a Japanese-style garden setting."
+      },
+      {
+        "time": "16:30",
+        "name": "Luodong Forestry Culture Park (羅東林業文化園區)",
+        "address": "Luodong Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleForestry",
+        "description": "Witness the history of the timber industry. The park preserves old log ponds, steam trains, and Japanese-style dormitories."
+      }
+    ]
+  },
+  {
+    "id": "yl-03",
+    "type": "2-Day Tour",
+    "title": "Crafts & Whisky Legend",
+    "subTitle": "文藝復興：傳藝經典與威士忌傳奇",
+    "tags": ["#Culture", "#Whisky", "#Craft"],
+    "heroImage": "/image/search_by_city/yilan/ncfta.jpg",
+    "intro": "From traditional indigo dyeing to world-class whisky. A journey through Yilan's cultural heritage and modern industrial pride.",
+    "transportation": "**Taiwan Tourist Shuttle** + **Taxi**.",
+    "spots": [
+      {
+        "time": "Day 1 Full Day",
+        "name": "National Center for Traditional Arts (國立傳統藝術中心)",
+        "address": "Wujie Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleNCFTA",
+        "description": "A living museum of Taiwanese crafts. Experience indigo dyeing, woodcarving, and watch traditional opera performances."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Kavalan Whisky Distillery (金車噶瑪蘭威士忌酒廠)",
+        "address": "Yuanshan Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleKavalan",
+        "description": "Visit the distillery that beat Scotland in blind tastings. Admire the copper pot stills and taste the award-winning Solist series."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Jimmy Park (幾米廣場)",
+        "address": "Yilan City, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleJimmy",
+        "description": "Located near Yilan Station. Life-sized sculptures from Jimmy Liao's picture books create a whimsical photo spot."
+      }
+    ]
+  },
+  {
+    "id": "yl-04",
+    "type": "2-Day Tour",
+    "title": "Cloud Forest & Cold Spring",
+    "subTitle": "雲端秘境：太平山鐵道與蘇澳冷泉",
+    "tags": ["#Nature", "#Train", "#ColdSpring"],
+    "heroImage": "/image/search_by_city/yilan/taipingshan.jpg",
+    "intro": "Ascend to 2000m for the misty forest railway and descend to sea level for the world-rare cold springs. A vertical journey of temperature.",
+    "transportation": "**Car Rental** is essential for Taipingshan.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Taipingshan Bong Bong Train (太平山蹦蹦車)",
+        "address": "Datong Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleBongBong",
+        "description": "Ride the open-air yellow train through the cypress forest. Walk the Jianqing Historic Trail, one of the world's most beautiful paths."
+      },
+      {
+        "time": "Day 1 PM",
+        "name": "Jiuzhize Hot Spring (鳩之澤溫泉)",
+        "address": "Datong Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleJiuzhize",
+        "description": "Boil corn and eggs in the volcanic hot spring water. The unique flavor is a must-try mountain experience."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Suao Cold Spring (蘇澳冷泉)",
+        "address": "Suao Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleColdSpring",
+        "description": "One of only two carbonated cold springs in the world. The 22°C water feels cold at first but warms you up from the inside."
+      }
+    ]
+  },
+  {
+    "id": "yl-05",
+    "type": "3-Day Tour",
+    "title": "Yilan Grand Tour",
+    "subTitle": "經典全覽：從北疆海洋到南方平原",
+    "tags": ["#GrandTour", "#AllInOne", "#Family"],
+    "heroImage": "/image/search_by_city/yilan/grand_tour.jpg",
+    "intro": "The ultimate triangle route covering the head (Toucheng), heart (Yilan City), and foot (Suao) of Yilan. Ideal for first-timers.",
+    "transportation": "**Car Rental** is recommended.",
+    "spots": [
+      {
+        "time": "Day 2 Night",
+        "name": "Luodong Night Market (羅東夜市)",
+        "address": "Luodong Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleLuodongNight",
+        "description": "Try the famous 'Mutton Soup' and 'Gao Zha' (fried broth). A true taste of Yilan's warm hospitality."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Dongshan River Ecoark (冬山河生態綠舟)",
+        "address": "Dongshan Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleEcoark",
+        "description": "Take a boat through the 'Mysterious River Channel'. A stunning view of trains passing overhead and limestone caves."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "Nanfangao Fishing Port (南方澳漁港)",
+        "address": "Suao Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleNanfangao",
+        "description": "Visit the Golden Mazu Temple and enjoy fresh seafood. The home of the mackerel fish industry."
+      }
+    ]
+  },
+  {
+    "id": "yl-06",
+    "type": "3-Day Tour",
+    "title": "Tribal Wisdom & Hidden Gems",
+    "subTitle": "深度慢旅：原民智慧與職人三日",
+    "tags": ["#Indigenous", "#SlowFood", "#HiddenGems"],
+    "heroImage": "/image/search_by_city/yilan/tribal.jpg",
+    "intro": "For the seasoned traveler seeking authenticity. Deep dive into Atayal tribal life and visit the meditative Zhuangwei Sand Dunes.",
+    "transportation": "**Car Rental** + **Reservation**.",
+    "spots": [
+      {
+        "time": "Day 1 Full Day",
+        "name": "Bulao Tribe (不老部落)",
+        "address": "Datong Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleBulao",
+        "description": "Requires booking months in advance. Experience a self-sufficient ecosystem, weaving culture, and French-style indigenous fine dining."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Wanglongpi (望龍埤)",
+        "address": "Yuanshan Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleWanglongpi",
+        "description": "A serene lake surrounded by mountains. Visit 'Crab Bubbling' (natural spring) nearby."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Zhuangwei Sand Dune Park (壯圍沙丘旅遊服務園區)",
+        "address": "Zhuangwei Township, Yilan County",
+        "mapLink": "https://goo.gl/maps/exampleZhuangwei",
+        "description": "Designed by Huang Sheng-Yuan, featuring exhibitions by director Tsai Ming-Liang. A space for solitude and artistic reflection."
+      }
+    ]
+  }
+]

@@ -1,0 +1,214 @@
+[
+  {
+    "id": "tt-01",
+    "type": "1-Day Tour",
+    "title": "Pacific Drifters & Myth Road",
+    "subTitle": "太平洋漂鳥與神話之旅：台11線海線",
+    "tags": ["#Coastline", "#Art", "#Indigenous"],
+    "heroImage": "/image/search_by_city/taitung/coast_art.jpg",
+    "intro": "Focusing on marine landscapes and the free-spirited atmosphere loved by international travelers. Experience the 'Drifters' art culture in Dulan and the geological wonders of the coast.",
+    "transportation": "Car rental or **Taiwan Tourist Shuttle (East Coast Line)** is recommended.",
+    "spots": [
+      {
+        "time": "09:00",
+        "name": "Jialulan & Fushan (加路蘭遊憩區 & 富山護魚區)",
+        "address": "Taitung City / Beinan Township",
+        "mapLink": "https://goo.gl/maps/exampleJialulan",
+        "description": "Admire driftwood art installations at Jialulan, then walk on the sea path at Fushan to observe wild fish up close."
+      },
+      {
+        "time": "11:00",
+        "name": "Dulan Sugar Factory (新東糖廠文化園區)",
+        "address": "Donghe Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleDulan",
+        "description": "The center of the 'Drifters' culture. This indigenous sacred ground turned art hub features the 'Sintung Sugar Factory' and the famous 'Dulan Small House' for burgers."
+      },
+      {
+        "time": "14:30",
+        "name": "Sanxiantai (三仙台)",
+        "address": "Chenggong Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleSanxiantai",
+        "description": "Originally a cape, now an offshore island due to erosion. Walking across the eight-arch bridge offers a lesson in plate tectonics."
+      },
+      {
+        "time": "17:00",
+        "name": "Donghe Old Street (東河舊街)",
+        "address": "Donghe Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleDonghe",
+        "description": "Grab a famous 'Donghe Bun' (steamed bun) and admire the entrance to the Taiyuan Valley."
+      }
+    ]
+  },
+  {
+    "id": "tt-02",
+    "type": "1-Day Tour",
+    "title": "Valley Rice Waves & Tea Aroma",
+    "subTitle": "縱谷稻浪與茶鄉漫遊：台9線山線",
+    "tags": ["#RiftValley", "#Cycling", "#SlowLiving"],
+    "heroImage": "/image/search_by_city/taitung/valley_rice.jpg",
+    "intro": "Enter the rift valley between the Central Mountain Range and the Coastal Mountain Range to experience extreme agricultural aesthetics and tranquility.",
+    "transportation": "Rent a car or take a train to **Chishang** and rent an E-bike.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Brown Boulevard & Paradise Road (池上伯朗大道)",
+        "address": "Chishang Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleBrown",
+        "description": "Famous for the 'Takeshi Kaneshiro Tree' and the community's consensus to have zero utility poles, creating an uninterrupted view of rice paddies."
+      },
+      {
+        "time": "13:00",
+        "name": "Chishang Rice Box Museum (池上飯包文化故事館)",
+        "address": "Chishang Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleRiceBox",
+        "description": "Taste the authentic Chishang rice box and learn about the history of rice farming in this region."
+      },
+      {
+        "time": "15:30",
+        "name": "Luye Highland (鹿野高台)",
+        "address": "Luye Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleLuye",
+        "description": "An alluvial fan uplifted by tectonic plates. Perfect for grass sliding or paragliding, offering a panoramic view of the Beinan River valley."
+      }
+    ]
+  },
+  {
+    "id": "tt-03",
+    "type": "2-Day Tour",
+    "title": "Urban History & Indigenous Flavors",
+    "subTitle": "都會文史與部落美食：市區深度行",
+    "tags": ["#Architecture", "#History", "#Foodie"],
+    "heroImage": "/image/search_by_city/taitung/city_art.jpg",
+    "intro": "Solves transportation pain points by focusing on the city center. Combines historical architecture with top-tier indigenous fine dining.",
+    "transportation": "**Scooter** or **Taxi/Uber** within Taitung City.",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Taitung White House (台東小白屋)",
+        "address": "Taitung City",
+        "mapLink": "https://goo.gl/maps/exampleWhiteHouse",
+        "description": "A miracle of architecture built by a veteran over 40 years using scavenged materials without steel bars. Resembles 'Howl's Moving Castle'."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Tiehua Music Village (鐵花新聚落)",
+        "address": "Taitung City",
+        "mapLink": "https://goo.gl/maps/exampleTiehua",
+        "description": "The core of Taitung's slow nightlife. Visit the 'Wave Building' which symbolizes the Pacific waves."
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Museum of Prehistory (國立臺灣史前文化博物館)",
+        "address": "Taitung City",
+        "mapLink": "https://goo.gl/maps/examplePrehistory",
+        "description": "One of the best museums in Taiwan, showcasing the rich prehistoric culture of the island."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "South-Link Blue Train (南迴藍皮解憂號)",
+        "address": "Taitung Station to Taimali",
+        "mapLink": "https://goo.gl/maps/exampleBlueTrain",
+        "description": "Take a vintage train ride to Taimali to see the 'Slam Dunk' railway crossing and the azure coast."
+      }
+    ]
+  },
+  {
+    "id": "tt-04",
+    "type": "2-Day Tour",
+    "title": "Mountains, Sea & Hot Springs",
+    "subTitle": "山海雙享與溫泉療癒：知本+縱谷",
+    "tags": ["#HotSpring", "#Nature", "#Relax"],
+    "heroImage": "/image/search_by_city/taitung/hotspring.jpg",
+    "intro": "Combines the magnificence of the Rift Valley with the relaxation of Zhiben Hot Springs.",
+    "transportation": "**Car Rental** is recommended.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Guanshan Bike Trail (關山環鎮自行車道)",
+        "address": "Guanshan Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleGuanshan",
+        "description": "Taiwan's first town-encircling bike path. Explore the Japanese-grid style town layout and the old train station."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Zhiben Hot Spring (知本溫泉)",
+        "address": "Beinan Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleZhiben",
+        "description": "Enjoy the sodium bicarbonate springs, known as 'Beauty Soup', to relax your muscles."
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Zhiben National Forest Recreation Area (知本國家森林遊樂區)",
+        "address": "Beinan Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleForest",
+        "description": "Take a forest bath among giant White Banyan trees, observing the tropical monsoon rainforest vegetation."
+      }
+    ]
+  },
+  {
+    "id": "tt-05",
+    "type": "3-Day Tour",
+    "title": "The Great Yuchang Loop",
+    "subTitle": "玉長公路大環線：山海全覽",
+    "tags": ["#RoadTrip", "#GrandTour", "#Landscape"],
+    "heroImage": "/image/search_by_city/taitung/grand_loop.jpg",
+    "intro": "Use the Yuchang Highway (Hwy 30) to connect the mountain and sea lines, seeing two distinct landscapes in one trip without backtracking.",
+    "transportation": "**Car Rental** is essential for this route.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Dulan & Donghe (都蘭 & 東河)",
+        "address": "East Coast (Hwy 11)",
+        "mapLink": "https://goo.gl/maps/exampleCoast",
+        "description": "Wander north along the Pacific. Stop at Dulan for its exotic vibe and Donghe to watch surfers."
+      },
+      {
+        "time": "Day 2",
+        "name": "Yuchang Highway (玉長公路)",
+        "address": "Changbin to Yuli",
+        "mapLink": "https://goo.gl/maps/exampleYuchang",
+        "description": "A strategic road cutting through the Coastal Mountain Range. Experience the dramatic change in climate and vegetation as you exit the tunnel."
+      },
+      {
+        "time": "Day 3",
+        "name": "Luanshan Tribe (鸞山部落)",
+        "address": "Yanping Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleLuanshan",
+        "description": "Reservation required. Visit the 'Walking Trees' (White Banyan) and learn the wisdom of the Bunun tribe's coexistence with the forest."
+      }
+    ]
+  },
+  {
+    "id": "tt-06",
+    "type": "3-Day Tour",
+    "title": "Surfing, Art & Tribal Secrets",
+    "subTitle": "極限探索與藝術文化：數位遊牧行",
+    "tags": ["#Surfing", "#Art", "#DigitalNomad"],
+    "heroImage": "/image/search_by_city/taitung/surfing_art.jpg",
+    "intro": "Designed for young travelers and digital nomads. Focuses on surfing, paleolithic history, and the vibrant local art scene.",
+    "transportation": "**Car** or **Scooter** recommended.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Jinzun Recreation Area (金樽遊憩區)",
+        "address": "Donghe Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleJinzun",
+        "description": "A world-class surfing venue. Watch the waves or grab a coffee at 'Moonlight Inn' nearby for a stunning sea view."
+      },
+      {
+        "time": "Day 2",
+        "name": "Baxian Cave (八仙洞)",
+        "address": "Changbin Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleBaxian",
+        "description": "Explore sea caves that house the 'Changbin Culture', the oldest known Paleolithic site in Taiwan."
+      },
+      {
+        "time": "Day 3",
+        "name": "Taitung Art Museum (台東美術館)",
+        "address": "Taitung City",
+        "mapLink": "https://goo.gl/maps/exampleArtMuseum",
+        "description": "Wind down with an art walk in the city and hunt for treasures at the Tiehua Music Village before heading home."
+      }
+    ]
+  }
+]

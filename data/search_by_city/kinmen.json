@@ -1,0 +1,200 @@
+[
+  {
+    "id": "km-01",
+    "type": "1-Day Tour",
+    "title": "Battlefield & Ancient City",
+    "subTitle": "戰地風雲與古城巡禮：經典歷史路線",
+    "tags": ["#History", "#Military", "#Classic"],
+    "heroImage": "/image/search_by_city/kinmen/zhaishan.jpg",
+    "intro": "Focus on the western part of Kinmen. Explore the Guningtou Battle Museum and the awe-inspiring Zhaishan Tunnel.",
+    "transportation": "**Scooter/Car Rental** is recommended.",
+    "spots": [
+      {
+        "time": "09:00",
+        "name": "Guningtou Battle Museum (古寧頭戰史館)",
+        "address": "Jinning Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleGuningtou",
+        "description": "Commemorates the decisive 1949 battle. See the anti-landing spikes on the beach and the nearby Beishan Broadcasting Wall."
+      },
+      {
+        "time": "13:30",
+        "name": "Zhaishan Tunnel (翟山坑道)",
+        "address": "Jincheng Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleZhaishan",
+        "description": "An A-shaped granite tunnel built for supply boats during wartime. The reflection on the water is breathtaking."
+      },
+      {
+        "time": "18:00",
+        "name": "Qing Kinmen Military Headquarters (清金門鎮總兵署)",
+        "address": "Jincheng Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleHeadquarters",
+        "description": "The only remaining Qing Dynasty military headquarters in Taiwan-Fujian area. Visit the dungeon wax museum in the basement."
+      }
+    ]
+  },
+  {
+    "id": "km-02",
+    "type": "1-Day Tour",
+    "title": "Exotic Vibes & Sunset",
+    "subTitle": "異國風情與夕陽大片：網美打卡路線",
+    "tags": ["#Photography", "#Sunset", "#Architecture"],
+    "heroImage": "/image/search_by_city/kinmen/shamei_morocco.jpg",
+    "intro": "Skip the heavy history and focus on visual impact. Visit 'Shamei Morocco' and the European-style Chen Jing-lan Western House.",
+    "transportation": "**Scooter/Car Rental**.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Shamei Morocco (沙美摩洛哥)",
+        "address": "Jinsha Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleShamei",
+        "description": "Ruins reinforced with earth-colored cement, creating a North African desert vibe. A top IG spot."
+      },
+      {
+        "time": "14:00",
+        "name": "Chen Jing-lan Western House (陳景蘭洋樓)",
+        "address": "Jinhu Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleChen",
+        "description": "The largest western-style house in Kinmen, built by a Singaporean merchant. Facing the sea with beautiful white arches."
+      },
+      {
+        "time": "16:30",
+        "name": "Jiangong Islet (建功嶼)",
+        "address": "Jincheng Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleJiangong",
+        "description": "Accessible only at low tide via a stone path. Famous for the 'Oystermen' art installation and sunset views."
+      }
+    ]
+  },
+  {
+    "id": "km-03",
+    "type": "2-Day Tour",
+    "title": "War & Diaspora Culture",
+    "subTitle": "穿越古今：戰地與僑鄉文化之旅",
+    "tags": ["#Culture", "#Architecture", "#History"],
+    "heroImage": "/image/search_by_city/kinmen/shanhou.jpg",
+    "intro": "Day 1 focuses on western battlefields; Day 2 explores eastern Minnan settlements and Wind Lion Gods.",
+    "transportation": "**Car Rental**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Beishan Ancient Western House (北山古洋樓)",
+        "address": "Jinning Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleBeishan",
+        "description": "A western-style house riddled with bullet holes from the Guningtou Battle. A stark reminder of war."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Shanhou Folk Culture Village (山后民俗文化村)",
+        "address": "Jinsha Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleShanhou",
+        "description": "The most complete Minnan settlement in Kinmen, featuring 18 orderly traditional houses. Try the oyster omelet here."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Mashan Observation Post (馬山觀測所)",
+        "address": "Jinsha Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleMashan",
+        "description": "The closest point to mainland China. You can see fishing boats on the other side through telescopes."
+      }
+    ]
+  },
+  {
+    "id": "km-04",
+    "type": "2-Day Tour",
+    "title": "Bridge & Lieyu Hopping",
+    "subTitle": "大橋通車限定：大小金門跳島遊",
+    "tags": ["#IslandHopping", "#Bridge", "#Taro"],
+    "heroImage": "/image/search_by_city/kinmen/kinmen_bridge.jpg",
+    "intro": "Utilize the new Kinmen Bridge to explore Lieyu (Little Kinmen). Visit landmine museums and enjoy taro ice.",
+    "transportation": "**Scooter** (Watch out for strong winds on the bridge).",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Shuitou Settlement (水頭聚落)",
+        "address": "Jincheng Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleShuitou",
+        "description": "Famous for the Deyue Gun Tower and western-style mansions built by wealthy overseas Chinese."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Landmine Exhibition Center (地雷主題館)",
+        "address": "Lieyu Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleLandmine",
+        "description": "Located in Lieyu. Walk through tunnels connecting two forts and learn about the history of demining."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Shaxi Fort (沙溪堡)",
+        "address": "Lieyu Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleShaxi",
+        "description": "The westernmost point of Little Kinmen. The wooden boardwalk offers a stunning view of Xiamen's skyline."
+      }
+    ]
+  },
+  {
+    "id": "km-05",
+    "type": "3-Day Tour",
+    "title": "Grand Tour: Land, Sea & Air",
+    "subTitle": "全島制霸：海陸空全體驗",
+    "tags": ["#GrandTour", "#AllInOne", "#Adventure"],
+    "heroImage": "/image/search_by_city/kinmen/taiwu_mountain.jpg",
+    "intro": "Cover all 5 townships. Hike Mt. Taiwu, see the abandoned tank on the beach, and cross the bridge to Lieyu.",
+    "transportation": "**Car Rental**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Oucuo Beach Tank (歐厝戰車)",
+        "address": "Jincheng Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleTank",
+        "description": "An abandoned M18 Hellcat tank half-buried in the sand. Only visible at low tide. A cinematic photo spot."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Mt. Taiwu (太武山)",
+        "address": "Jinhu Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleTaiwu",
+        "description": "Hike to the highest peak. See the famous 'Wu Wang Zai Ju' inscription and the ancient Haiyin Temple."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "Maestro Wu Knife Factory (金合利鋼刀)",
+        "address": "Jinning Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleKnife",
+        "description": "Witness how artillery shells fired during the war are turned into high-quality kitchen knives."
+      }
+    ]
+  },
+  {
+    "id": "km-06",
+    "type": "3-Day Tour",
+    "title": "Slow Living: Old House & Eco",
+    "subTitle": "慢活金門：生態、古厝與咖啡",
+    "tags": ["#OldHouse", "#Ecology", "#Relax"],
+    "heroImage": "/image/search_by_city/kinmen/cormorant.jpg",
+    "intro": "Stay in a traditional Minnan house B&B. Watch cormorants return to their nests at dusk (winter) and enjoy local coffee.",
+    "transportation": "**Car Rental**.",
+    "spots": [
+      {
+        "time": "Day 1 Night",
+        "name": "Zhushan Settlement (珠山聚落)",
+        "address": "Jincheng Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleZhushan",
+        "description": "Stay in a restored old house. Experience the tranquility of the village and traditional architecture."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Special Tea House Museum (特約茶室展示館)",
+        "address": "Jinhu Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleTeaHouse",
+        "description": "Formerly a military brothel (Unit 831), now a museum and cafe with a unique atmosphere."
+      },
+      {
+        "time": "Day 2 Evening",
+        "name": "Cihu Lake (慈湖)",
+        "address": "Jinning Township, Kinmen County",
+        "mapLink": "https://goo.gl/maps/exampleCihu",
+        "description": "In winter, thousands of cormorants return here at sunset. A spectacular ecological sight."
+      }
+    ]
+  }
+]

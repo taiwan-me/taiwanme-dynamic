@@ -1,0 +1,200 @@
+[
+  {
+    "id": "tc-01",
+    "type": "1-Day Tour",
+    "title": "MRT Green Line & Arts",
+    "subTitle": "都會脈動：沿著捷運綠線的文藝復興",
+    "tags": ["#MRT", "#Architecture", "#Arts"],
+    "heroImage": "/image/search_by_city/taichung/opera_house.jpg",
+    "intro": "Designed for travelers who love architecture and convenient transport. Travel via Taichung MRT and YouBike to explore the National Taichung Theater and Calligraphy Greenway.",
+    "transportation": "**Taichung MRT Green Line** + **YouBike**.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "National Taichung Theater (臺中國家歌劇院)",
+        "address": "Xitun District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleOpera",
+        "description": "Designed by Toyo Ito. Admire the 'Sound Cave' concept and the stunning curved wall architecture that defies traditional construction."
+      },
+      {
+        "time": "14:00",
+        "name": "Shenji New Village (審計新村)",
+        "address": "West District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleShenji",
+        "description": "Former government dormitories turned into a vibrant creative cluster. Perfect for finding handmade crafts and unique desserts."
+      },
+      {
+        "time": "17:30",
+        "name": "Calligraphy Greenway & PARK2 (草悟道)",
+        "address": "West District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleCalligraphy",
+        "description": "A green corridor connecting the Science Museum and Art Museum. Chill at PARK2 Caowu Square for an adult-style park experience."
+      }
+    ]
+  },
+  {
+    "id": "tc-02",
+    "type": "1-Day Tour",
+    "title": "Blue Highway & Wetlands",
+    "subTitle": "藍色公路：2026海線新地標與夕陽",
+    "tags": ["#Ocean", "#Sunset", "#Ecology"],
+    "heroImage": "/image/search_by_city/taichung/gaomei.jpg",
+    "intro": "Explore the new 2026 Taichung Marine Ecology Hall and the world-famous Gaomei Wetlands. A route designed for bus travelers.",
+    "transportation": "**Bus 309** from Taichung Station.",
+    "spots": [
+      {
+        "time": "11:00",
+        "name": "Wuqi Fishing Port (梧棲漁港)",
+        "address": "Qingshui District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleWuqi",
+        "description": "Visit the fish market for fresh seafood brunch. Try the grilled squid and oyster omelet."
+      },
+      {
+        "time": "13:00",
+        "name": "Taichung Marine Ecology Hall (台中市海洋生態館)",
+        "address": "Qingshui District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleMarine",
+        "description": "The newest hotspot in 2026. Explore the giant ocean tank and learn about the ecology of the Dajia River."
+      },
+      {
+        "time": "16:00",
+        "name": "Gaomei Wetlands (高美濕地)",
+        "address": "Qingshui District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleGaomei",
+        "description": "Walk on the wooden boardwalk to see fiddler crabs and witness one of the most beautiful sunsets in the world."
+      }
+    ]
+  },
+  {
+    "id": "tc-03",
+    "type": "2-Day Tour",
+    "title": "Time Traveler in Old City",
+    "subTitle": "時光旅人：舊城探索與文創再生",
+    "tags": ["#History", "#Culture", "#OldCity"],
+    "heroImage": "/image/search_by_city/taichung/old_station.jpg",
+    "intro": "Deep dive into the lifestyle and history of Central District. From the old train station to the colorful Rainbow Village.",
+    "transportation": "**Bus** + **Walking**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Miyahara (宮原眼科)",
+        "address": "Central District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleMiyahara",
+        "description": "A former eye clinic turned into a Harry Potter-esque dessert shop. Famous for its massive ice cream sundaes and pineapple cakes."
+      },
+      {
+        "time": "Day 1 PM",
+        "name": "Taichung Prefectural Hall (台中市役所)",
+        "address": "West District, Taichung City",
+        "mapLink": "https://goo.gl/maps/examplePrefectural",
+        "description": "Enjoy afternoon tea in this beautiful Tatsuno-style building from the Japanese colonial era."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Rainbow Village (彩虹眷村)",
+        "address": "Nantun District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleRainbow",
+        "description": "A vibrant village painted by 'Grandpa Rainbow'. A colorful testament to military dependents' village culture."
+      }
+    ]
+  },
+  {
+    "id": "tc-04",
+    "type": "2-Day Tour",
+    "title": "Forest Breath & Urban Leisure",
+    "subTitle": "森呼吸：大坑步道與都會休閒",
+    "tags": ["#Hiking", "#Nature", "#Family"],
+    "heroImage": "/image/search_by_city/taichung/dakeng.jpg",
+    "intro": "Balance hiking in Taichung's back garden with urban exploration. Visit the unique wooden trails of Dakeng and the Science Museum.",
+    "transportation": "**Bus** or **Car Rental**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Dakeng Trail No. 9 (大坑9號步道)",
+        "address": "Beitun District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleDakeng",
+        "description": "A friendly trail with a farmer's market at the entrance. Great for families and tasting local produce."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Hanxi Night Market (旱溪夜市)",
+        "address": "East District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleHanxi",
+        "description": "A local favorite open on Tue/Thu/Fri/Sat. Experience the authentic atmosphere of a traditional Taiwanese night market."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "National Museum of Natural Science (科博館)",
+        "address": "North District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleScience",
+        "description": "Explore the Botanical Garden and Dinosaur Hall. Don't miss the pan-fried buns nearby for a quick snack."
+      }
+    ]
+  },
+  {
+    "id": "tc-05",
+    "type": "3-Day Tour",
+    "title": "Taichung Grand Tour",
+    "subTitle": "山海屯全覽：台中旅遊終極版圖",
+    "tags": ["#GrandTour", "#ThemePark", "#AllInOne"],
+    "heroImage": "/image/search_by_city/taichung/grand_tour.jpg",
+    "intro": "The ultimate collection of Taichung's highlights: Wetlands, Theme Parks, and Urban landmarks. Cross from the coast to the city center.",
+    "transportation": "**Car Rental** is highly recommended.",
+    "spots": [
+      {
+        "time": "Day 2 Full Day",
+        "name": "Lihpao Resort (麗寶樂園渡假區)",
+        "address": "Houli District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleLihpao",
+        "description": "Home to the gravitational tilt coaster and a huge outlet mall. Ride the Sky Dream Ferris Wheel for a night view."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Maple Garden (秋紅谷)",
+        "address": "Xitun District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleMaple",
+        "description": "A unique sunken ecological park in the city center, acting as a green lung amidst skyscrapers."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "National Taichung Theater (國家歌劇院)",
+        "address": "Xitun District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleOpera2",
+        "description": "End your trip admiring the architectural marvel and shopping for cultural creatives inside."
+      }
+    ]
+  },
+  {
+    "id": "tc-06",
+    "type": "3-Day Tour",
+    "title": "Cultural Origins & Modern Art",
+    "subTitle": "文化溯源：霧峰林家與現代藝術",
+    "tags": ["#History", "#Art", "#Architecture"],
+    "heroImage": "/image/search_by_city/taichung/wufeng.jpg",
+    "intro": "A deep dive into Taiwan's modern history and art. Visit the majestic Wufeng Lin Family Mansion and the Ando Tadao Art Museum.",
+    "transportation": "**Bus** or **Car Rental**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Wufeng Lin Family Mansion (霧峰林家宮保第園區)",
+        "address": "Wufeng District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleLinFamily",
+        "description": "The only surviving Qing Dynasty first-rank official residence in Taiwan. The 'Grand Flower Hall' features an exquisite theatrical stage."
+      },
+      {
+        "time": "Day 1 PM",
+        "name": "Asia Museum of Modern Art (亞洲大學現代美術館)",
+        "address": "Wufeng District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleAsiaMuseum",
+        "description": "Designed by Tadao Ando using triangular geometry. A masterpiece of concrete architecture."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Taichung Literature Museum (台中文學館)",
+        "address": "West District, Taichung City",
+        "mapLink": "https://goo.gl/maps/exampleLiterature",
+        "description": "A renovated Japanese police dormitory complex centered around a magnificent old banyan tree."
+      }
+    ]
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "ml-01",
+    "type": "1-Day Tour",
+    "title": "Woodcarving & Rail Bike",
+    "subTitle": "舊山線時光軌跡：三義木雕與鐵道自行車",
+    "tags": ["#Railway", "#History", "#WoodArt"],
+    "heroImage": "/image/search_by_city/miaoli/railbike.jpg",
+    "intro": "Explore the soul of Sanyi: Wood and Iron. Ride the unique Rail Bike on the Old Mountain Line and witness the 'Pompeii of Taiwan' - Longteng Bridge.",
+    "transportation": "**Train** to Sanyi Station + **Taxi/Scooter** or **Taiwan Tourist Shuttle**.",
+    "spots": [
+      {
+        "time": "09:00",
+        "name": "Sanyi Wood Sculpture Museum (三義木雕博物館)",
+        "address": "Sanyi Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleWoodMuseum",
+        "description": "The only museum in Taiwan dedicated to wood sculpture. Walk through Shuimei Street to smell the cypress aroma."
+      },
+      {
+        "time": "13:00",
+        "name": "Old Mountain Line Rail Bike (舊山線鐵道自行車)",
+        "address": "Sanyi Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleRailBike",
+        "description": "Must book 30 days in advance! Route A takes you over the stunning Yutengping Iron Bridge; Route C goes through tunnels to Liyutan Reservoir."
+      },
+      {
+        "time": "15:00",
+        "name": "Longteng Broken Bridge (龍騰斷橋)",
+        "address": "Sanyi Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleLongteng",
+        "description": "A masterpiece of railway engineering destroyed by the 1935 earthquake. The red brick ruins are a hauntingly beautiful historical site."
+      }
+    ]
+  },
+  {
+    "id": "ml-02",
+    "type": "1-Day Tour",
+    "title": "Slow City Life Lab",
+    "subTitle": "慢城生活實驗室：南庄老街與神仙谷",
+    "tags": ["#SlowCity", "#OldStreet", "#Nature"],
+    "heroImage": "/image/search_by_city/miaoli/nanzhuang.jpg",
+    "intro": "Experience the coexistence of Hakka, Saisiyat, and Atayal cultures in Nanzhuang, a certified International Slow City.",
+    "transportation": "**Taiwan Tourist Shuttle (Nanzhuang Line)** from Zhunan Station.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Nanzhuang Old Street (南庄老街)",
+        "address": "Nanzhuang Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleNanzhuang",
+        "description": "Walk through Osmanthus Alley (Guihua Lane) and see the historic 'Washing Pit' (Xishankeng), a traditional community social hub."
+      },
+      {
+        "time": "14:00",
+        "name": "Shenxianggu (神仙谷)",
+        "address": "Nanzhuang Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleShenxianggu",
+        "description": "A sacred place for the Atayal people and a filming location for 'Seediq Bale'. Witness the magnificent canyon and waterfalls."
+      },
+      {
+        "time": "16:30",
+        "name": "Kangji Suspension Bridge (康濟吊橋)",
+        "address": "Nanzhuang Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleKangji",
+        "description": "Enjoy the sunset over the Zhonggang River and explore the cultural shops in the Shisanjian Old Street area."
+      }
+    ]
+  },
+  {
+    "id": "ml-03",
+    "type": "2-Day Tour",
+    "title": "Strawberry & Beauty Soup",
+    "subTitle": "冬日草莓與美人湯：大湖泰安療癒",
+    "tags": ["#HotSpring", "#Strawberry", "#Foodie"],
+    "heroImage": "/image/search_by_city/miaoli/strawberry_hotspring.jpg",
+    "intro": "Perfect for winter (Dec-Apr). Pick fresh strawberries in Dahu and soak in the carbonated 'Beauty Soup' of Tai'an Hot Springs.",
+    "transportation": "**Car Rental** is recommended.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Dahu Wineland Resort (大湖酒莊)",
+        "address": "Dahu Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleDahu",
+        "description": "Pick your own strawberries (Fengxiang or Xiangshui varieties) and try strawberry sausage and wine."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Tai'an Hot Spring (泰安溫泉)",
+        "address": "Tai'an Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleTaian",
+        "description": "Discovered in 1908. The weak alkaline carbonate spring leaves skin smooth. Stay in hotels that blend architecture with nature."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Qingan Tofu Street (清安豆腐街)",
+        "address": "Tai'an Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleTofu",
+        "description": "Also known as Xishuikeng Old Street. Famous for various tofu dishes, including the unique black stinky tofu."
+      }
+    ]
+  },
+  {
+    "id": "ml-04",
+    "type": "2-Day Tour",
+    "title": "Wind & Pasture Dialogue",
+    "subTitle": "海風與風車的對話：海線風能與牧場",
+    "tags": ["#Ocean", "#WindPower", "#Family"],
+    "heroImage": "/image/search_by_city/miaoli/windmill.jpg",
+    "intro": "From the giant wind turbines of the coast to the European-style pastures. A journey of green energy and leisure.",
+    "transportation": "**Car Rental** is essential.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Cape of Good Hope (後龍好望角)",
+        "address": "Houlong Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleCape",
+        "description": "Stand beneath giant wind turbines and watch trains pass by the coastline. A stunning visual impact."
+      },
+      {
+        "time": "Day 1 PM",
+        "name": "Baishatun Gongtian Temple (白沙屯拱天宮)",
+        "address": "Tongxiao Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleBaishatun",
+        "description": "Home to the 'Pink Supercar' Mazu. Experience the unique and spontaneous pilgrimage culture of Taiwan."
+      },
+      {
+        "time": "Day 2 Full Day",
+        "name": "Flying Cow Ranch (飛牛牧場)",
+        "address": "Tongxiao Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleFlyingCow",
+        "description": "A pioneer in leisure agriculture. Feed calves, milk cows, and enjoy a picnic on the vast green grassland."
+      }
+    ]
+  },
+  {
+    "id": "ml-05",
+    "type": "3-Day Tour",
+    "title": "Badlands & Glamping",
+    "subTitle": "山岳與廢墟美學：火炎山探險與豪華露營",
+    "tags": ["#Hiking", "#Glamping", "#Geology"],
+    "heroImage": "/image/search_by_city/miaoli/huoyanshan.jpg",
+    "intro": "For the adventurous. Hike the 'Grand Canyon of Taiwan' and stay in world-class glamping sites.",
+    "transportation": "**Car Rental** is essential.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Huoyanshan (火炎山)",
+        "address": "Sanyi Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleHuoyan",
+        "description": "Listed as one of the '100 Minor Peaks'. The gravel badlands create a dramatic, flame-like landscape."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Miaoli Glamping (苗栗豪華露營)",
+        "address": "Sanyi/Zhuolan Area",
+        "mapLink": "https://goo.gl/maps/exampleGlamping",
+        "description": "Miaoli has the highest density of glamping sites in Taiwan. Enjoy camping without the hassle of bringing equipment."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Shishan Historic Trail (獅山古道)",
+        "address": "Nanzhuang Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleShishan",
+        "description": "Visit Quanhua Temple, built into the rock face. A perfect example of architecture harmonizing with nature."
+      }
+    ]
+  },
+  {
+    "id": "ml-06",
+    "type": "3-Day Tour",
+    "title": "Hakka Food & Craft",
+    "subTitle": "客家食旅與工藝巡禮：舌尖上的苗栗",
+    "tags": ["#HakkaFood", "#Craft", "#Tea"],
+    "heroImage": "/image/search_by_city/miaoli/indigo_dye.jpg",
+    "intro": "A journey of taste and touch. Savor authentic Hakka cuisine, experience indigo dyeing, and drink Oriental Beauty Tea.",
+    "transportation": "**HSR** + **Car Rental**.",
+    "spots": [
+      {
+        "time": "Day 1 Lunch",
+        "name": "Crystal Dumpling (阿蘭姐水晶餃)",
+        "address": "Miaoli City, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleCrystal",
+        "description": "A unique breakfast memory for locals. Try the chewy crystal dumplings or the giant meatballs with shaved ice."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Zhuo Ye Cottage (卓也小屋)",
+        "address": "Sanyi Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleZhuoYe",
+        "description": "Experience DIY Indigo Dyeing. Create your own unique scarf or bag in this eco-friendly park."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "Tongluo Tea Factory (銅鑼茶廠)",
+        "address": "Tongluo Township, Miaoli County",
+        "mapLink": "https://goo.gl/maps/exampleTongluoTea",
+        "description": "Taste the honey-scented Oriental Beauty Tea and chase trains passing through the tea plantations."
+      }
+    ]
+  }
+]

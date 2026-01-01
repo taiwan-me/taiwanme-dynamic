@@ -1,0 +1,200 @@
+[
+  {
+    "id": "yl-01",
+    "type": "1-Day Tour",
+    "title": "Puppets & Pilgrimage",
+    "subTitle": "神工與戲夢：虎尾北港雙城文化巡禮",
+    "tags": ["#Culture", "#History", "#Puppetry"],
+    "heroImage": "/image/search_by_city/yunlin/culture.jpg",
+    "intro": "Connect the 'Cultural Brain' of Huwei with the 'Spiritual Heart' of Beigang. Witness the evolution of puppetry and the grandeur of Mazu pilgrimage.",
+    "transportation": "High Speed Rail Yunlin Station -> **Taiwan Tourist Shuttle Y02**.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Huwei Cultural District (虎尾文化三館)",
+        "address": "Huwei Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleHuwei",
+        "description": "Visit the Puppet Theatre Museum (former Magistrate House), Story House, and the Eslite Bookstore in the old Police Station. A blend of colonial history and art."
+      },
+      {
+        "time": "14:30",
+        "name": "Beigang Chaotian Temple (北港朝天宮)",
+        "address": "Beigang Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleChaotian",
+        "description": "The Vatican of Taiwanese folk religion. Founded in 1694, it features exquisite 'Cut-and-Paste' porcelain art on its roof."
+      },
+      {
+        "time": "15:30",
+        "name": "Beigang Old Street (北港老街)",
+        "address": "Beigang Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleBeigangStreet",
+        "description": "Try the famous Duck Rice and traditional bridal cakes. Visit the Zhenxing Theater, a historic cinema turned cultural space."
+      }
+    ]
+  },
+  {
+    "id": "yl-02",
+    "type": "1-Day Tour",
+    "title": "Coffee & Green Tunnel Slow Travel",
+    "subTitle": "啡嚐不可：古坑綠色隧道與咖啡莊園",
+    "tags": ["#Coffee", "#Nature", "#SlowTravel"],
+    "heroImage": "/image/search_by_city/yunlin/coffee.jpg",
+    "intro": "Gukeng is the renaissance base of Taiwanese coffee. Walk through the mango tree tunnel and visit estates that once served the Japanese Emperor.",
+    "transportation": "Train to Douliu Station -> **Taiwan Tourist Shuttle Y01**.",
+    "spots": [
+      {
+        "time": "10:30",
+        "name": "Gukeng Green Tunnel (古坑綠色隧道)",
+        "address": "Gukeng Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleGreenTunnel",
+        "description": "A 2km long tunnel formed by 50-year-old mango trees. bustling with a farmer's market on weekends."
+      },
+      {
+        "time": "14:30",
+        "name": "Huasan Coffee Area (華山咖啡大街)",
+        "address": "Gukeng Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleHuasan",
+        "description": "Visit a local estate to experience roasting or brewing Gukeng Arabica coffee, known for its low acidity and nutty aroma."
+      },
+      {
+        "time": "16:30",
+        "name": "Literature Trail (文學步道)",
+        "address": "Gukeng Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleLiterature",
+        "description": "Take a refreshing walk near the Huasan Stream Suspension Bridge, surrounded by poetry and nature."
+      }
+    ]
+  },
+  {
+    "id": "yl-03",
+    "type": "2-Day Tour",
+    "title": "Mountain & Sea Concerto",
+    "subTitle": "山海協奏曲：從咖啡香到糖都鐵道",
+    "tags": ["#NightView", "#Photography", "#Romance"],
+    "heroImage": "/image/search_by_city/yunlin/nightview.jpg",
+    "intro": "A journey for photographers and couples. Capture the million-dollar night view from Huasan and explore the industrial aesthetics of the Sugar Capital.",
+    "transportation": "**Car/Scooter Rental** is recommended for flexibility.",
+    "spots": [
+      {
+        "time": "Day 1 Night",
+        "name": "Huasan Night View (華山夜景)",
+        "address": "Gukeng Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleHuasanNight",
+        "description": "Dine at a landscape restaurant overlooking the glittering plains of Yunlin, Chiayi, and Tainan."
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Douliu Taiping Old Street (斗六太平老街)",
+        "address": "Douliu City, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleTaiping",
+        "description": "Admire the preserved Baroque-style architecture and hunt for local snacks like 'Ba-wan' (Meat Dumpling) in the West Market."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "Huwei Iron Bridge (虎尾鐵橋)",
+        "address": "Huwei Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleIronBridge",
+        "description": "A steel truss bridge built during the Japanese era for transporting sugar cane. A symbol of the industrial age."
+      }
+    ]
+  },
+  {
+    "id": "yl-04",
+    "type": "2-Day Tour",
+    "title": "Pilgrimage & Wetlands",
+    "subTitle": "朝聖之路：從國定古蹟到濕地夕陽",
+    "tags": ["#Religion", "#Ecology", "#Sunset"],
+    "heroImage": "/image/search_by_city/yunlin/wetland.jpg",
+    "intro": "Experience spiritual healing at the Wude Temple and witness the resilience of nature at the Chenglong Wetlands.",
+    "transportation": "**Car Rental** is recommended.",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Beigang Wude Temple (北港武德宮)",
+        "address": "Beigang Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleWude",
+        "description": "The ancestral temple of the God of Wealth. Witness the world's largest 'Heavenly Treasury' (incense burner), a Guinness Record holder."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "Yiwu Detention Pond (宜梧滯洪池)",
+        "address": "Kouhu Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleYiwu",
+        "description": "Known as 'Little Sun Moon Lake'. A beautiful ecological park formed from land subsidence, now a haven for waterbirds."
+      },
+      {
+        "time": "Day 2 Sunset",
+        "name": "Chenglong Wetlands (成龍濕地)",
+        "address": "Kouhu Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleChenglong",
+        "description": "Enjoy the sunset over the wetlands, adorned with environmental art installations reflecting the coexistence of land and sea."
+      }
+    ]
+  },
+  {
+    "id": "yl-05",
+    "type": "3-Day Tour",
+    "title": "Classic Yunlin Grand Tour",
+    "subTitle": "經典雲林全覽：縱貫山海文化長征",
+    "tags": ["#GrandTour", "#Family", "#AllInOne"],
+    "heroImage": "/image/search_by_city/yunlin/grand_tour.jpg",
+    "intro": "The most complete authentic Taiwan experience, covering mountains, plains, and the sea. Ideal for first-time visitors.",
+    "transportation": "**Car Rental** is essential.",
+    "spots": [
+      {
+        "time": "Day 1 Morning",
+        "name": "Caoling Geopark (草嶺地質公園)",
+        "address": "Gukeng Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleCaoling",
+        "description": "Explore the majestic Ten Thousand Year Canyon or Penglai Waterfall to see nature's sculpture."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "Xiluo Bridge (西螺大橋)",
+        "address": "Xiluo Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleXiluo",
+        "description": "Once the second-longest bridge in the world. Visit the nearby Wuan Chuang Soy Sauce Factory to see traditional fermentation jars."
+      },
+      {
+        "time": "Day 3 Afternoon",
+        "name": "Santiaolun Beach (三條崙海水浴場)",
+        "address": "Sihu Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleSantiaolun",
+        "description": "Relax by the windmills and the sea before heading home, completing your journey from the mountains to the ocean."
+      }
+    ]
+  },
+  {
+    "id": "yl-06",
+    "type": "3-Day Tour",
+    "title": "Hidden Gems & Forest Healing",
+    "subTitle": "慢遊隱藏版：深度探索與森林療癒",
+    "tags": ["#HiddenGems", "#Forest", "#DeepDive"],
+    "heroImage": "/image/search_by_city/yunlin/forest.jpg",
+    "intro": "Avoid the crowds and dive deep. From the oyster culture of Taixi to the bamboo forests of Shibi, discover the hidden side of Yunlin.",
+    "transportation": "**Car Rental** is essential.",
+    "spots": [
+      {
+        "time": "Day 1 Morning",
+        "name": "Taixi Fishing Harbor (台西漁港)",
+        "address": "Taixi Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleTaixi",
+        "description": "See the 'Oyster Shell Mountain' and take a raft tour. Experience the rugged and authentic life of the oyster farmers."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "Tuku Old Street (土庫老街)",
+        "address": "Tuku Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleTuku",
+        "description": "A quiet town famous for Duck Vermicelli and traditional 'Shuang Gao Run' (rice cake). Enjoy the slow pace of life."
+      },
+      {
+        "time": "Day 3 Morning",
+        "name": "Five Yuan Two Jiao (五元兩角)",
+        "address": "Gukeng Township, Yunlin County",
+        "mapLink": "https://goo.gl/maps/exampleFiveYuan",
+        "description": "A secluded bamboo forest trail resembling scenes from a martial arts movie. The ultimate summer retreat."
+      }
+    ]
+  }
+]

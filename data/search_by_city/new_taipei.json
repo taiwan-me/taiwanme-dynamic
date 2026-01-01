@@ -1,0 +1,200 @@
+[
+  {
+    "id": "ntp-01",
+    "type": "1-Day Tour",
+    "title": "Echoes of the Gold Rush",
+    "subTitle": "黃金歲月的迴響：瑞芳與九份垂直美學",
+    "tags": ["#History", "#Mining", "#NightView"],
+    "heroImage": "/image/search_by_city/new_taipei/jiufen.jpg",
+    "intro": "Explore the 'Asian Gold Capital'. From the industrial heritage of Jinguashi to the lantern-lit alleys of Jiufen, experience the vertical beauty of the mountain town.",
+    "transportation": "**Bus 965** from Ximen/Banqiao or **Bus 1062** from Zhongxiao Fuxing.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Gold Museum (黃金博物館)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleGoldMuseum",
+        "description": "Enter the Benshan Fifth Tunnel to experience the miner's life. Touch the 220kg gold bar and hike to the Golden Shinto Shrine ruins."
+      },
+      {
+        "time": "14:30",
+        "name": "Jiufen Old Street (九份老街)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleJiufen",
+        "description": "Wander through the narrow alleys. Visit 'A-Mei Tea House' for the iconic view and taste taro balls while overlooking the ocean."
+      },
+      {
+        "time": "17:30",
+        "name": "Blue Hour at A-Mei Tea House (阿妹茶樓藍調時刻)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleAmei",
+        "description": "The best time for photography. The red lanterns against the deep blue sky create a magical atmosphere."
+      }
+    ]
+  },
+  {
+    "id": "ntp-02",
+    "type": "1-Day Tour",
+    "title": "Ceramics & Eastern Art",
+    "subTitle": "工藝復興與藝術新地標：鶯歌與三峽雙城記",
+    "tags": ["#Art", "#Ceramics", "#Architecture"],
+    "heroImage": "/image/search_by_city/new_taipei/sanxia.jpg",
+    "intro": "A journey of craftsmanship. Visit the new Art Museum in Yingge and the 'Temple of Eastern Art' in Sanxia. Experience indigo dyeing.",
+    "transportation": "**Train** to Yingge Station + **Bus** to Sanxia.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "New Taipei City Art Museum (新北市美術館)",
+        "address": "Yingge District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleArtMuseum",
+        "description": "A new landmark with reed-inspired architecture. Explore contemporary art exhibitions and the surrounding ceramic park."
+      },
+      {
+        "time": "14:30",
+        "name": "Sanxia Zushi Temple (三峽祖師廟)",
+        "address": "Sanxia District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleZushi",
+        "description": "Known as the 'Palace of Eastern Art'. Every stone pillar is hand-carved, a masterpiece supervised by artist Li Mei-shu."
+      },
+      {
+        "time": "16:00",
+        "name": "Sanxia Indigo Dyeing Center (三峽藍染中心)",
+        "address": "Sanxia District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleIndigo",
+        "description": "Experience the traditional craft that once made Sanxia prosperous. Create your own blue-dyed fabric souvenir."
+      }
+    ]
+  },
+  {
+    "id": "ntp-03",
+    "type": "2-Day Tour",
+    "title": "Railway, Cats & Waterfalls",
+    "subTitle": "鐵道迷朝聖：平溪支線與貓村療癒之旅",
+    "tags": ["#Railway", "#Cats", "#Waterfall"],
+    "heroImage": "/image/search_by_city/new_taipei/pingxi.jpg",
+    "intro": "Ride the Pingxi Line train deep into the mountains. Visit the Cat Village, walk through ecological tunnels, and release sky lanterns.",
+    "transportation": "**Pingxi Line One-Day Pass** or **TPASS**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Sandiaoling Eco-Friendly Tunnel (三貂嶺生態友善隧道)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleSandiao",
+        "description": "A forgotten railway tunnel turned into a bike path. See bats and stalactites in this preserved ecological site. Reservation required."
+      },
+      {
+        "time": "Day 1 PM",
+        "name": "Houtong Cat Village (猴硐貓村)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleHoutong",
+        "description": "A paradise for cat lovers. Explore the coal mining history museum and interact with hundreds of friendly cats."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Shifen Waterfall (十分瀑布)",
+        "address": "Pingxi District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleShifen",
+        "description": "Known as the 'Niagara Falls of Taiwan'. The widest waterfall in Taiwan, creating rainbows on sunny days."
+      }
+    ]
+  },
+  {
+    "id": "ntp-04",
+    "type": "2-Day Tour",
+    "title": "River Mouth to Ocean",
+    "subTitle": "從河口到海洋：淡水古蹟與北海岸奇觀",
+    "tags": ["#History", "#Geology", "#Sunset"],
+    "heroImage": "/image/search_by_city/new_taipei/yehliu.jpg",
+    "intro": "Trace the history of northern Taiwan in Tamsui and witness the geological wonders of Yehliu carved by wind and sea.",
+    "transportation": "**MRT Red Line** + **Taiwan Tourist Shuttle (Crown Northern Coast)**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Fort San Domingo (紅毛城)",
+        "address": "Tamsui District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleFort",
+        "description": "A 17th-century Spanish fortress later used by the Dutch and British. A symbol of Taiwan's colonial history."
+      },
+      {
+        "time": "Day 1 Sunset",
+        "name": "Tamsui Fisherman's Wharf (淡水漁人碼頭)",
+        "address": "Tamsui District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleWharf",
+        "description": "Watch one of Taiwan's most famous sunsets from the Lover's Bridge. Enjoy 'Ah-Gei' (stuffed tofu) nearby."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Yehliu Geopark (野柳地質公園)",
+        "address": "Wanli District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleYehliu",
+        "description": "Home to the iconic 'Queen's Head' rock. Explore the surreal landscape of mushroom rocks and sea candles."
+      }
+    ]
+  },
+  {
+    "id": "ntp-05",
+    "type": "3-Day Tour",
+    "title": "Golden Ridge Deep Dive",
+    "subTitle": "山海經完整篇章：東北角黃金稜線",
+    "tags": ["#Hiking", "#Ruins", "#Ocean"],
+    "heroImage": "/image/search_by_city/new_taipei/13_ruins.jpg",
+    "intro": "A comprehensive tour of the Ruifang ecosystem. Stay overnight in Jiufen, hike the Teapot Mountain, and see the illuminated 13-Layer Remains.",
+    "transportation": "**TPASS** is highly recommended.",
+    "spots": [
+      {
+        "time": "Day 2 AM",
+        "name": "Remains of the 13 Levels (水湳洞十三層遺址)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/example13Levels",
+        "description": "Often called the 'Castle in the Sky'. An imposing industrial ruin overlooking the Yin-Yang Sea. Illuminated at night."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Teapot Mountain Trail (無耳茶壺山步道)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleTeapot",
+        "description": "A challenging but rewarding hike. The summit offers a breathtaking panoramic view of the Pacific Ocean and the mountain towns."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Wanggu Waterfall (望古瀑布)",
+        "address": "Pingxi District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleWanggu",
+        "description": "A hidden gem on the Pingxi Line. A serene waterfall pool perfect for meditation and photography, away from the crowds."
+      }
+    ]
+  },
+  {
+    "id": "ntp-06",
+    "type": "3-Day Tour",
+    "title": "Tribes, Springs & City",
+    "subTitle": "原民溫泉與都市夜色：新北多樣性之旅",
+    "tags": ["#Indigenous", "#HotSpring", "#NightMarket"],
+    "heroImage": "/image/search_by_city/new_taipei/wulai.jpg",
+    "intro": "Experience the diversity of New Taipei. From the Atayal culture in Wulai mountains to the bustling night markets of the city.",
+    "transportation": "**MRT** + **Bus 849**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Wulai Log Cart & Waterfall (烏來台車&瀑布)",
+        "address": "Wulai District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleWulai",
+        "description": "Ride the historic log cart to see the majestic Wulai Waterfall. Soak in the odorless 'Beauty Soup' (sodium bicarbonate spring)."
+      },
+      {
+        "time": "Day 2 Night",
+        "name": "Lehua Night Market (樂華夜市)",
+        "address": "Yonghe District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleLehua",
+        "description": "A local favorite. Try the 'Daddy's Taro Balls' and Thai Papaya Salad. A true taste of New Taipei's nightlife."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Lin Family Mansion and Garden (林本源園邸)",
+        "address": "Banqiao District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleLinGarden",
+        "description": "The most complete surviving Qing Dynasty garden in Taiwan. A testament to the wealth and lifestyle of early elites."
+      }
+    ]
+  }
+]

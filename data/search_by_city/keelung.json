@@ -1,0 +1,200 @@
+[
+  {
+    "id": "kl-01",
+    "type": "1-Day Tour",
+    "title": "Maritime Romance & Night Market",
+    "subTitle": "海派浪漫經典線：色彩、奇岩與夜市巡禮",
+    "tags": ["#Photography", "#Geology", "#NightMarket"],
+    "heroImage": "/image/search_by_city/keelung/colorful_houses.jpg",
+    "intro": "A classic route connecting the most colorful spots in Keelung. Visit the 'Taiwanese Venice', the strange rocks of Heping Island, and the famous Miaokou Night Market.",
+    "transportation": "**Taiwan Tourist Shuttle T99 (Coastal Keelung Shuttle Bus)**.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Zhengbin Fishing Port (正濱漁港色彩屋)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleZhengbin",
+        "description": "Known as the 'Venice of Taiwan'. The colorful houses reflect beautifully on the water. Don't miss the nearby Agenna Shipyard ruins."
+      },
+      {
+        "time": "11:30",
+        "name": "Heping Island Geopark (和平島地質公園)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleHeping",
+        "description": "Features unique geological formations like the 'Ten Guardian Rocks'. It was also the first place in Northern Taiwan to encounter the West (Spain)."
+      },
+      {
+        "time": "17:30",
+        "name": "Keelung Miaokou Night Market (基隆廟口夜市)",
+        "address": "Ren'ai District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleMiaokou",
+        "description": "One of Taiwan's most famous food hubs. Try the Nutritious Sandwich (Stall 58) and Tempura (Stall 16)."
+      }
+    ]
+  },
+  {
+    "id": "kl-02",
+    "type": "1-Day Tour",
+    "title": "West Coast Cave Adventure",
+    "subTitle": "西岸秘境探險線：洞穴、砲台與大船入港",
+    "tags": ["#Adventure", "#History", "#Cave"],
+    "heroImage": "/image/search_by_city/keelung/fairy_cave.jpg",
+    "intro": "Avoid the crowds and explore the historic west bank. Crawl through natural sea caves and visit ancient forts overlooking the harbor.",
+    "transportation": "**Bus 301/302** from Keelung Station.",
+    "spots": [
+      {
+        "time": "09:40",
+        "name": "Baimiweng Fort (白米甕砲台)",
+        "address": "Zhongshan District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleBaimiweng",
+        "description": "Also known as 'Holland City'. The three large chimneys nearby create a unique industrial landscape against the blue ocean."
+      },
+      {
+        "time": "11:30",
+        "name": "Fairy Cave & Buddha Hand Cave (仙洞巖 & 佛手洞)",
+        "address": "Zhongshan District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleFairyCave",
+        "description": "A natural sea-eroded cave temple. Explore the maze-like Buddha Hand Cave to find the giant handprint formation on the ceiling."
+      },
+      {
+        "time": "15:30",
+        "name": "Keelung Shelter (信二防空洞)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleShelter",
+        "description": "Experience the air-raid shelter elevator that takes you directly up to Fan-shaped Square for a view of the city."
+      }
+    ]
+  },
+  {
+    "id": "kl-03",
+    "type": "2-Day Tour",
+    "title": "Mountain, Sea & Railway",
+    "subTitle": "山海深度與鐵道慢旅：八斗子與市區",
+    "tags": ["#RailBike", "#Ecology", "#Museum"],
+    "heroImage": "/image/search_by_city/keelung/chaojing.jpg",
+    "intro": "Combine the ecology of Badouzi with the bustle of the city. Ride the rail bike and visit the National Museum of Marine Science and Technology.",
+    "transportation": "**Bus 1579** + **Rail Bike**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Shen'ao Rail Bike (深澳鐵道自行車)",
+        "address": "Ruifang District (Border of Keelung)",
+        "mapLink": "https://goo.gl/maps/exampleRailBike",
+        "description": "Ride a cute pufferfish bike along the coast. Enjoy the sea breeze and mountain views. Reservation is required."
+      },
+      {
+        "time": "Day 1 PM",
+        "name": "Chaojing Park (潮境公園)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleChaojing",
+        "description": "Originally a landfill, now a beautiful sea park. Famous for the giant broomstick art installation and great views of Keelung Islet."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Keelung Tower (基隆塔)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleTower",
+        "description": "Inspired by harbor cranes. This vertical lift takes you to the hilltop for a panoramic view of the port."
+      }
+    ]
+  },
+  {
+    "id": "kl-04",
+    "type": "2-Day Tour",
+    "title": "Rainy City Vibe & History",
+    "subTitle": "雨都情調與文史散策：巷弄與咖啡",
+    "tags": ["#Coffee", "#History", "#WalkingTour"],
+    "heroImage": "/image/search_by_city/keelung/coffee_shop.jpg",
+    "intro": "Discover the charm of the 'Rainy City'. Wander through old commission stores, visit hidden forts, and enjoy Keelung's strong coffee culture.",
+    "transportation": "**Walking** + **Bus**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Commission Store District (委託行街區)",
+        "address": "Ren'ai District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleCommission",
+        "description": "Once the hub for imported goods in Taiwan. Now a retro cultural block filled with cafes and vintage shops."
+      },
+      {
+        "time": "Day 1 PM",
+        "name": "Ershawan Fort (二沙灣砲台)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleErshawan",
+        "description": "Also known as 'Gate of the Sea'. Hidden in the forest, it preserves the complete layout of a Qing Dynasty coastal fort."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Loka Cafe (港邊咖啡)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleLoka",
+        "description": "Enjoy a cup of coffee while watching large ships enter and leave the harbor. A quintessential Keelung experience."
+      }
+    ]
+  },
+  {
+    "id": "kl-05",
+    "type": "3-Day Tour",
+    "title": "Island, Lighthouse & Food",
+    "subTitle": "全境制霸：島嶼、燈塔與美食",
+    "tags": ["#Island", "#Lighthouse", "#Curry"],
+    "heroImage": "/image/search_by_city/keelung/keelung_islet.jpg",
+    "intro": "A complete land, sea, and air experience. Hike up Keelung Islet (seasonal) and taste the unique curry dishes of the west bank.",
+    "transportation": "**Ferry** + **Bus**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Keelung Islet (基隆嶼)",
+        "address": "Offshore Keelung",
+        "mapLink": "https://goo.gl/maps/exampleIslet",
+        "description": "Known as the 'Dragon Pearl of Taiwan'. Open from April to October. Hiking to the lighthouse offers a 360-degree sea view."
+      },
+      {
+        "time": "Day 3 Noon",
+        "name": "Liulangtou Curry Street (流浪頭咖哩街)",
+        "address": "Zhongshan District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleCurry",
+        "description": "Famous for Satay Curry Beef fried noodles. A unique local flavor developed by early dock workers."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "Keelung Lighthouse (基隆燈塔)",
+        "address": "Zhongshan District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleLighthouse",
+        "description": "A white lighthouse overlooking the container terminal. Watch giant cranes and ships in action."
+      }
+    ]
+  },
+  {
+    "id": "kl-06",
+    "type": "3-Day Tour",
+    "title": "Slow Living in Rainy City",
+    "subTitle": "慢活雨都：在地生活與感官體驗",
+    "tags": ["#LocalLife", "#Bookstore", "#HiddenGems"],
+    "heroImage": "/image/search_by_city/keelung/bookstore.jpg",
+    "intro": "Live like a local. Visit traditional markets, the most beautiful sea-view bookstore, and historical battlefields.",
+    "transportation": "**Walking** + **Bus**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Ren'ai Market (仁愛市場)",
+        "address": "Ren'ai District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleRenai",
+        "description": "A foodie paradise. The second floor is filled with sushi bars, cafes, and local eateries. Try 'Cherry Sushi' or 'Duo Hao Cafe'."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Wangyou Valley (望幽谷)",
+        "address": "Zhongzheng District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleWangyou",
+        "description": "A V-shaped valley trail offering stunning coastal views. The name means 'Forget Worry Valley'."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "Taiping Bluebird Bookstore (太平青鳥書店)",
+        "address": "Zhongshan District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleBluebird",
+        "description": "Converted from an abandoned elementary school. Located right next to the 'KEELUNG' sign, offering the best view of the harbor."
+      }
+    ]
+  }
+]

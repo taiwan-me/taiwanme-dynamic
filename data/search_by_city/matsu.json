@@ -1,0 +1,200 @@
+[
+  {
+    "id": "mt-01",
+    "type": "1-Day Tour",
+    "title": "Nangan Battlefield Tour",
+    "subTitle": "南竿戰地巡禮：地下坑道與媽祖信仰",
+    "tags": ["#Military", "#Tunnel", "#Culture"],
+    "heroImage": "/image/search_by_city/matsu/beihai_tunnel.jpg",
+    "intro": "A shocking journey into the Cold War front line. Explore the Beihai Tunnel dug by hand and the Iron Fort on a reef.",
+    "transportation": "**Scooter** or **Taiwan Tourist Shuttle**.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Matsu Giant Statue (媽祖巨神像)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleMatsuStatue",
+        "description": "A 28.8m high statue overlooking the sea. The deck is shaped like a ship, symbolizing Matsu protecting fishermen."
+      },
+      {
+        "time": "13:30",
+        "name": "Beihai Tunnel (北海坑道)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleBeihai",
+        "description": "An underground dock carved into granite. Take a boat ride to see the chisel marks and (at night) the Blue Tears."
+      },
+      {
+        "time": "15:00",
+        "name": "Iron Fort (鐵堡)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleIronFort",
+        "description": "An independent reef fortress. See the soldiers' living quarters and even a military dog shelter carved inside."
+      }
+    ]
+  },
+  {
+    "id": "mt-02",
+    "type": "1-Day Tour",
+    "title": "Beigan Mediterranean Vibe",
+    "subTitle": "北竿地中海風情：芹壁石屋與壁山",
+    "tags": ["#Architecture", "#View", "#Relax"],
+    "heroImage": "/image/search_by_city/matsu/qinbi.jpg",
+    "intro": "Visit the 'Mediterranean of the East'. Qinbi Village offers the best-preserved Eastern Min architecture and stunning sea views.",
+    "transportation": "**Scooter** or **Taxi**.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Bishan Observatory (壁山觀景台)",
+        "address": "Beigan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleBishan",
+        "description": "The highest peak in Matsu. Enjoy a panoramic view of the airport runway and the surrounding islands."
+      },
+      {
+        "time": "14:00",
+        "name": "Qinbi Village (芹壁聚落)",
+        "address": "Beigan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleQinbi",
+        "description": "Stone houses built along the hillside. Look for the 'anti-communist slogans' on the walls and enjoy coffee by the sea."
+      },
+      {
+        "time": "16:30",
+        "name": "Tanghoudao Beach (塘后道沙灘)",
+        "address": "Beigan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleTanghou",
+        "description": "A sandbar connecting the airport and Houao Mountain. The sand is incredibly fine and white. Great for plane spotting."
+      }
+    ]
+  },
+  {
+    "id": "mt-03",
+    "type": "2-Day Tour",
+    "title": "Classic Twin Islands",
+    "subTitle": "經典雙星：南竿北竿全覽與藍眼淚",
+    "tags": ["#BlueTears", "#IslandHopping", "#Deer"],
+    "heroImage": "/image/search_by_city/matsu/blue_tears.jpg",
+    "intro": "The standard Matsu itinerary. Chase the Blue Tears in Nangan and meet the Sika Deer on Daqiu Island.",
+    "transportation": "**Ferry** (Nangan-Beigan) + **Scooter**.",
+    "spots": [
+      {
+        "time": "Day 1 Night",
+        "name": "Blue Tears at Beihai Tunnel (北海坑道藍眼淚)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleBlueTears",
+        "description": "The only guaranteed spot to see Blue Tears (noctiluca scintillans) via a guided night boat tour. Reservation required."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Daqiu Island (大坵島)",
+        "address": "Beigan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleDaqiu",
+        "description": "An uninhabited island inhabited by wild Sika Deer. Take a short boat ride from Beigan to feed the deer."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Tunnel 88 (八八坑道)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleTunnel88",
+        "description": "Smell the aroma of aging Kaoliang liquor. The tunnel maintains a constant cool temperature perfect for storage."
+      }
+    ]
+  },
+  {
+    "id": "mt-04",
+    "type": "2-Day Tour",
+    "title": "Matsu Art Island Tour",
+    "subTitle": "藝文慢旅：馬祖國際藝術島巡禮",
+    "tags": ["#Art", "#Design", "#Military"],
+    "heroImage": "/image/search_by_city/matsu/art_island.jpg",
+    "intro": "Turning cold war heritage into art spaces. Stay in a bunker hostel and explore art installations in old power plants.",
+    "transportation": "**Scooter** or **Bus**.",
+    "spots": [
+      {
+        "time": "Day 1 Night",
+        "name": "55 Hostel (55據點背包客棧)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/example55Hostel",
+        "description": "Sleep inside a former military bunker. The windows are original gun embrasures offering stunning sea views."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Jinsha Village (津沙聚落)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleJinsha",
+        "description": "A revitalized golden sand village. Explore the alleyways and try local old wine (Laojiu) products."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Beigan Power Plant (北竿電廠)",
+        "address": "Beigan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/examplePowerPlant",
+        "description": "A retired power plant transformed into an art exhibition space, telling the story of the island's energy history."
+      }
+    ]
+  },
+  {
+    "id": "mt-05",
+    "type": "3-Day Tour",
+    "title": "Ecology & Mythology",
+    "subTitle": "生態與神話：南竿、北竿、大坵深度",
+    "tags": ["#EcoTour", "#Hiking", "#Coffee"],
+    "heroImage": "/image/search_by_city/matsu/daqiu_deer.jpg",
+    "intro": "Slow down and dive deep. Read books in a sea-cliff bunker, hike the Luobang Mountain, and stay in a stone house.",
+    "transportation": "**Scooter** is best.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Thorn Bird Coffee (刺鳥咖啡書店)",
+        "address": "Nangan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleThornBird",
+        "description": "A cafe located in the former Stronghold 12. Enjoy coffee and books underground with the sound of waves."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Luobang Mountain Trail (螺蚌山自然步道)",
+        "address": "Beigan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleLuobang",
+        "description": "A scenic trail along the ridge line. Requires some physical fitness but offers breathtaking cliff views."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "War and Peace Memorial Park (戰爭和平紀念公園)",
+        "address": "Beigan Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleWarPark",
+        "description": "Learn about the military history of Matsu. The park offers great vantage points over the surrounding islets."
+      }
+    ]
+  },
+  {
+    "id": "mt-06",
+    "type": "3-Day Tour",
+    "title": "Dongju Lighthouse Nostalgia",
+    "subTitle": "遺世獨立：南竿+東莒島燈塔懷舊",
+    "tags": ["#Lighthouse", "#StarGazing", "#SlowTravel"],
+    "heroImage": "/image/search_by_city/matsu/dongju_lighthouse.jpg",
+    "intro": "Travel to the remote Dongju Island where time stands still. Perfect for photography, stargazing, and finding inner peace.",
+    "transportation": "**Ferry** (Nangan-Juguang). Limited schedule.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Dongju Lighthouse (東莒島燈塔)",
+        "address": "Juguang Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleDongjuLight",
+        "description": "Built in 1872 with granite. Notice the unique white windbreak wall designed to protect the keeper's kerosene lamp."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Fuzheng Settlement (福正聚落)",
+        "address": "Juguang Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleFuzheng",
+        "description": "A quiet village below the lighthouse. At night, you can step on 'star sand' (bioluminescent algae) on the beach."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Mysterious Little Bay (神祕小海灣)",
+        "address": "Juguang Township, Lienchiang County",
+        "mapLink": "https://goo.gl/maps/exampleMysteriousBay",
+        "description": "A secluded bay with dramatic sea erosion landscapes. A legendary spot associated with Lu Dongbin."
+      }
+    ]
+  }
+]

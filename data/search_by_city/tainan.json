@@ -1,0 +1,235 @@
+[
+  {
+    "id": "tn-01",
+    "type": "1-Day Tour",
+    "title": "Walkable Ancient Capital",
+    "subTitle": "古都文青散策：巷弄與建築",
+    "tags": ["#History", "#Architecture", "#WalkingTour"],
+    "heroImage": "/image/search_by_city/tainan/walking.jpg",
+    "intro": "Designed for those who love walking, architecture, and photography. Explore the high density of historic sites in the West Central District without the need for a car.",
+    "transportation": "Fully walkable. **YouBike 2.0** is highly recommended for short distances.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Chihkan Tower & God of War Temple (赤崁樓 & 祀典武廟)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleChihkan",
+        "description": "The center of power during the Dutch and Zheng eras. The gardens of Chihkan and the red walls of the War Temple are visual highlights."
+      },
+      {
+        "time": "11:30",
+        "name": "West Market (西市場 - 大菜市)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleWestMarket",
+        "description": "Reopened in 2025 after restoration. A century-old market combining traditional fabric stores with modern creativity in a beautiful white Mansard-style building."
+      },
+      {
+        "time": "13:30",
+        "name": "Tainan Art Museum Bldg 2 (台南市美術館2館)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleMuseum2",
+        "description": "A modern white landmark perfect for escaping the midday sun. Afterwards, walk to the nearby Confucius Temple district."
+      },
+      {
+        "time": "16:00",
+        "name": "Hayashi Department Store (林百貨)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleHayashi",
+        "description": "Visit the rooftop shrine of this 1930s department store at sunset. Great for buying high-quality souvenirs."
+      },
+      {
+        "time": "20:00",
+        "name": "Shennong Street (神農街)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleShennong",
+        "description": "A beautifully preserved old street lit by lanterns at night. Book a spot at 'Bar TCRC' in advance for world-class cocktails."
+      }
+    ]
+  },
+  {
+    "id": "tn-02",
+    "type": "1-Day Tour",
+    "title": "Eco-Tunnel & Maritime History",
+    "subTitle": "生態與海洋歷史：台版亞馬遜",
+    "tags": ["#Nature", "#Anping", "#Family"],
+    "heroImage": "/image/search_by_city/tainan/sicao.jpg",
+    "intro": "From the 'Mini Amazon' green tunnel to the historic roots of Anping. This route is perfect for families and nature lovers.",
+    "transportation": "Take a **Taxi/Uber** to Sicao (public transport is infrequent), then return to Anping.",
+    "spots": [
+      {
+        "time": "09:00",
+        "name": "Sicao Green Tunnel (四草綠色隧道)",
+        "address": "Annangu District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleSicao",
+        "description": "Arrive early! Take a bamboo raft through the mangrove forest. The reflections on the water create a dreamlike 'Mini Amazon' scene."
+      },
+      {
+        "time": "12:30",
+        "name": "Anping Tree House (安平樹屋)",
+        "address": "Anping District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleTreeHouse",
+        "description": "A former warehouse swallowed by banyan roots. The skywalk allows you to wander through the tree canopy."
+      },
+      {
+        "time": "14:30",
+        "name": "Anping Old Fort (安平古堡)",
+        "address": "Anping District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleFort",
+        "description": "The origin of Taiwan's history. Explore the remnants of Fort Zeelandia and the surrounding old streets (Yan-zhi Lane is quieter)."
+      },
+      {
+        "time": "17:00",
+        "name": "Big Fish Blessing (大魚的祝福)",
+        "address": "Anping District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleBigFish",
+        "description": "Enjoy the sunset at this iconic whale-shaped installation or head to Yuguang Island nearby."
+      }
+    ]
+  },
+  {
+    "id": "tn-03",
+    "type": "2-Day Tour",
+    "title": "Art Hub & Old City Life",
+    "subTitle": "藝文特區 x 古都生活：經典與現代",
+    "tags": ["#Museum", "#NightLife", "#Art"],
+    "heroImage": "/image/search_by_city/tainan/chimei.jpg",
+    "intro": "Combines Tainan's two strongest museum parks with deep city exploration. Experience the contrast between European grandeur and old Taiwanese alleys.",
+    "transportation": "Day 1: Train to **Bao'an Station** or Taxi. Day 2: **Walking/YouBike**.",
+    "spots": [
+      {
+        "time": "Day 1 Morning",
+        "name": "Chimei Museum (奇美博物館)",
+        "address": "Rende District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleChimei",
+        "description": "Houses Asia's strongest collection of Western art and weaponry. The architecture resembles a grand European palace."
+      },
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Ten Drum Rende Creative Park (十鼓仁糖文創園區)",
+        "address": "Rende District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleTenDrum",
+        "description": "An old sugar factory turned into a creative park with extreme slides and world-class drum performances. Stay for the night lights."
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Guohua Street Food (國華街美食)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleGuohua",
+        "description": "Start your day like a local. Try 'Fusheng Bowl Rice Cake' (富盛號碗粿) or 'Jinde Spring Rolls' (金得春捲)."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "Tainan Art Museum Bldg 1 (台南市美術館1館)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleMuseum1",
+        "description": "A classic Art Deco building integrated with modern design. Don't forget to visit the Confucius Temple across the street."
+      }
+    ]
+  },
+  {
+    "id": "tn-04",
+    "type": "2-Day Tour",
+    "title": "Salt Fields & Mud Springs",
+    "subTitle": "山海連線：鹽田夕陽 x 泥漿溫泉",
+    "tags": ["#Sunset", "#HotSpring", "#Relax"],
+    "heroImage": "/image/search_by_city/tainan/salt_field.jpg",
+    "intro": "A journey from the coastal salt fields to the mountain hot springs. Perfect for travelers seeking grand landscapes and relaxation.",
+    "transportation": "**Car Rental** is essential for this route.",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Jingzaijiao Tile-paved Salt Fields (井仔腳瓦盤鹽田)",
+        "address": "Beimen District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleSalt",
+        "description": "Taiwan's oldest salt field. The sunset reflecting on the grid-like salt pans is a photographer's dream."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Garden Night Market (花園夜市)",
+        "address": "North District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleNightMarket",
+        "description": "Open Thu/Sat/Sun. Remember the chant 'Da-Da-Wu-Hua-Da-Hua-Hua' to know which night market is open!"
+      },
+      {
+        "time": "Day 2 Noon",
+        "name": "Guanziling Hot Spring (關子嶺溫泉)",
+        "address": "Baihe District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleHotSpring",
+        "description": "One of the few mud hot springs in the world. Enjoy the 'Weng Zai Ji' (Roast Chicken in Jar) for lunch nearby."
+      },
+      {
+        "time": "Day 2 Afternoon",
+        "name": "Water and Fire Spring (水火同源)",
+        "address": "Baihe District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleWaterFire",
+        "description": "A geological wonder where natural gas and spring water coexist, allowing fire to burn on water."
+      }
+    ]
+  },
+  {
+    "id": "tn-05",
+    "type": "3-Day Tour",
+    "title": "The Full Tainan Experience",
+    "subTitle": "台南完全攻略：全方位深度遊",
+    "tags": ["#DeepDive", "#Classic", "#AllInOne"],
+    "heroImage": "/image/search_by_city/tainan/full_experience.jpg",
+    "intro": "Covering history, art, nature, and nightlife. The best choice for first-time visitors wanting a deep understanding of Tainan.",
+    "transportation": "Mix of **Taxi/Uber** (for Anping/Rende) and **Walking** (City Center).",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Anping Tree House & Old Fort (安平樹屋 & 古堡)",
+        "address": "Anping District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleAnpingFull",
+        "description": "Spend the afternoon exploring the roots of Taiwan's history. Try 'Win Chang Beef Soup' (文章牛肉湯) for dinner."
+      },
+      {
+        "time": "Day 2 Full Day",
+        "name": "Chimei Museum & Ten Drum (奇美博物館 & 十鼓)",
+        "address": "Rende District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleRendeFull",
+        "description": "Dedicate a full day to these two massive parks. They offer completely different vibes: Classical Art vs. Industrial Cool."
+      },
+      {
+        "time": "Day 3 Morning",
+        "name": "West Market & Snail Alley (西市場 & 蝸牛巷)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleSnail",
+        "description": "Experience the texture of life in Tainan. Hunt for art installations in Snail Alley and buy souvenirs at Hayashi Dept. Store."
+      }
+    ]
+  },
+  {
+    "id": "tn-06",
+    "type": "3-Day Tour",
+    "title": "Foodie & Photographer Route",
+    "subTitle": "老饕與攝影師路線：巷弄光影",
+    "tags": ["#Foodie", "#Photography", "#HiddenGems"],
+    "heroImage": "/image/search_by_city/tainan/foodie.jpg",
+    "intro": "Focuses on 'Eating' and 'Shooting'. Avoids overcrowded spots to find the real atmosphere of Tainan's alleys and ecology.",
+    "transportation": "**Scooter Rental** or **Uber** is highly recommended for flexibility.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Xiluodian Beef Soup (西羅殿牛肉湯)",
+        "address": "North District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleBeefSoup",
+        "description": "A great alternative to the overcrowded Liuqian Beef Soup. Pair it with a photo walk to the nearby 'Xufeng House' (旭峯號)."
+      },
+      {
+        "time": "Day 2",
+        "name": "Taijiang National Park Visitor Center (台江遊客中心)",
+        "address": "Annangu District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleTaijiang",
+        "description": "Famous for its white stilt houses on water, perfect for photography. Combine this with the Sicao Green Tunnel boat ride."
+      },
+      {
+        "time": "Day 3",
+        "name": "Jiuling Restaurant (鷲嶺食肆 - 鶯料理)",
+        "address": "West Central District, Tainan City",
+        "mapLink": "https://goo.gl/maps/exampleJiuling",
+        "description": "A restored Japanese garden restaurant behind the Weather Museum. Enjoy a refined afternoon tea before heading home."
+      }
+    ]
+  }
+]

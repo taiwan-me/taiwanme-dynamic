@@ -1,0 +1,186 @@
+[
+  {
+    "id": "ty-01",
+    "type": "1-Day Tour",
+    "title": "Future Aesthetics of the Gateway",
+    "subTitle": "國門之都的未來美學：青埔現代藝術與水族奇觀",
+    "tags": ["#Modern", "#Aquarium", "#Shopping"],
+    "heroImage": "/image/search_by_city/taoyuan/xpark.jpg",
+    "intro": "Designed for layover travelers and modern art lovers. Explore the calligraphy art museum and the urban aquarium right next to the HSR station.",
+    "transportation": "**Taoyuan Airport MRT** + **Walking**.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Hengshan Calligraphy Art Center (橫山書法藝術館)",
+        "address": "Dayuan District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleHengshan",
+        "description": "Situated by a pond, the architecture resembles an inkstone. A serene place combining traditional calligraphy with modern design."
+      },
+      {
+        "time": "11:30",
+        "name": "Gloria Outlets (華泰名品城)",
+        "address": "Zhongli District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleGloria",
+        "description": "An open-air American style outlet mall. Perfect for lunch and shopping for international brands at discounted prices."
+      },
+      {
+        "time": "14:30",
+        "name": "Xpark Aquarium (Xpark 都會型水族館)",
+        "address": "Zhongli District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleXpark",
+        "description": "A collaborative project with Yokohama Hakkeijima. Don't miss the kaleidoscopic jellyfish zone and the penguin café."
+      }
+    ]
+  },
+  {
+    "id": "ty-02",
+    "type": "1-Day Tour",
+    "title": "Baroque Time Travel",
+    "subTitle": "穿越百年的巴洛克時光：大溪老街文化巡禮",
+    "tags": ["#OldStreet", "#History", "#Foodie"],
+    "heroImage": "/image/search_by_city/taoyuan/daxi.jpg",
+    "intro": "Visit Daxi, once a bustling river port. Admire the Baroque facades of the old street and taste the famous dried tofu.",
+    "transportation": "**Taiwan Tourist Shuttle 501 (Daxi Express)** from HSR Taoyuan Station.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Daxi Old Street (大溪老街)",
+        "address": "Daxi District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleDaxi",
+        "description": "Walk along Heping Road to see the intricate stone carvings of mythical beasts on the Baroque facades."
+      },
+      {
+        "time": "12:30",
+        "name": "Old Abe Dried Tofu (老阿伯現滷豆干)",
+        "address": "Daxi District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleTofu",
+        "description": "Challenge your taste buds with the 'Full Set' of braised tofu products, served with a signature garlic sauce."
+      },
+      {
+        "time": "14:30",
+        "name": "Cihu Sculpture Park (慈湖雕塑公園)",
+        "address": "Daxi District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleCihu",
+        "description": "A surreal park gathering hundreds of statues of Chiang Kai-shek, reflecting Taiwan's transitional justice history."
+      }
+    ]
+  },
+  {
+    "id": "ty-03",
+    "type": "2-Day Tour",
+    "title": "Urban Wild & Nightlife",
+    "subTitle": "都會野性與跨國界夜生活：青埔x中壢不夜城",
+    "tags": ["#NightLife", "#MultiCultural", "#Shopping"],
+    "heroImage": "/image/search_by_city/taoyuan/zhongli_night.jpg",
+    "intro": "Experience the contrast between the polished Qingpu and the raw energy of Zhongli. Enjoy expat bars and Southeast Asian cuisine.",
+    "transportation": "**MRT** + **Train** + **Taxi**.",
+    "spots": [
+      {
+        "time": "Day 1 Night",
+        "name": "Zhongli Night Market (中壢觀光夜市)",
+        "address": "Zhongli District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleNightMarket",
+        "description": "A bustling night market. Must-try: Jian's Spicy Stinky Tofu and Ribao Scallion Pancake."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Zhongli Southeast Asian District (中壢火車站前)",
+        "address": "Zhongli District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleSEA",
+        "description": "Explore the vibrant area filled with Vietnamese, Indonesian, and Thai shops. A testament to Taiwan's multicultural society."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Matsu New Village (馬祖新村眷村文創園區)",
+        "address": "Zhongli District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleMatsu",
+        "description": "A preserved military dependents' village. Wander through the retro houses and visit local craft shops."
+      }
+    ]
+  },
+  {
+    "id": "ty-04",
+    "type": "2-Day Tour",
+    "title": "Forest & Tea Aroma",
+    "subTitle": "山林與茶香的療癒之旅：大溪x小烏來",
+    "tags": ["#Tea", "#Nature", "#Skywalk"],
+    "heroImage": "/image/search_by_city/taoyuan/tea_factory.jpg",
+    "intro": "Dive into the history of Taiwan's 'Tea Gold' era and challenge your courage on the transparent skywalk over a waterfall.",
+    "transportation": "**Taiwan Tourist Shuttle 501 & 502**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Daxi Tea Factory (大溪老茶廠)",
+        "address": "Daxi District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleTeaFactory",
+        "description": "A fusion of Japanese and English architecture. Learn about the tea-making process and enjoy organic black tea in a vintage setting."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Xiao Wulai Skywalk (小烏來天空步道)",
+        "address": "Fuxing District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleSkywalk",
+        "description": "Stand on a glass platform 70 meters above the waterfall bottom. A thrilling experience surrounded by lush forests."
+      }
+    ]
+  },
+  {
+    "id": "ty-05",
+    "type": "3-Day Tour",
+    "title": "Ancient Trees & Peaches",
+    "subTitle": "北橫神木與雲端上的水蜜桃：拉拉山深呼吸",
+    "tags": ["#GiantTrees", "#Hiking", "#Mountain"],
+    "heroImage": "/image/search_by_city/taoyuan/lalashan.jpg",
+    "intro": "A journey deep into the Central Mountain Range. Walk among millennial red cypress trees and taste the famous Lalashan peaches (seasonal).",
+    "transportation": "**Bus 5090/5091** (Check schedule carefully) or **Car Rental**.",
+    "spots": [
+      {
+        "time": "Day 2 Full Day",
+        "name": "Lalashan Giant Tree Trail (拉拉山巨木群步道)",
+        "address": "Fuxing District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleLalaTree",
+        "description": "Home to 24 giant red cypress trees, some over 2000 years old. The trail is cool and refreshing, perfect for forest bathing."
+      },
+      {
+        "time": "Day 2 Evening",
+        "name": "Upper Baling (上巴陵)",
+        "address": "Fuxing District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleBaling",
+        "description": "Stay in a homestay with a view. On clear nights, enjoy stargazing; in the morning, wake up to a sea of clouds."
+      }
+    ]
+  },
+  {
+    "id": "ty-06",
+    "type": "3-Day Tour",
+    "title": "Taoyuan Panorama",
+    "subTitle": "桃園全景：時光旅人的足跡",
+    "tags": ["#GrandTour", "#AllInOne", "#Culture"],
+    "heroImage": "/image/search_by_city/taoyuan/panorama.jpg",
+    "intro": "From the futuristic Qingpu to the historic Daxi and the grassroots Zhongli. A complete spectrum of Taoyuan's personality.",
+    "transportation": "**MRT** + **Bus** + **Train**.",
+    "spots": [
+      {
+        "time": "Day 1 Night",
+        "name": "COZZI Blu (和逸飯店)",
+        "address": "Zhongli District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleCozzi",
+        "description": "An ocean-themed hotel near Xpark. Offers a unique staycation experience with a 24-hour aquarium channel in the room."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Daxi Wood Art Ecomuseum (木藝生態博物館)",
+        "address": "Daxi District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleWoodArt",
+        "description": "A museum without walls. Explore various historical buildings scattered throughout Daxi, including the Butokuden (Martial Arts Hall)."
+      },
+      {
+        "time": "Day 3 AM",
+        "name": "Chen Qiugang Shaved Ice (陳秋剛綿綿冰)",
+        "address": "Guishan District, Taoyuan City",
+        "mapLink": "https://goo.gl/maps/exampleIce",
+        "description": "A hidden gem in Guishan. Famous for its natural fruit flavors like Dragon Fruit and Passion Fruit. A refreshing end to the trip."
+      }
+    ]
+  }
+]

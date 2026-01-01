@@ -18,14 +18,49 @@
             height: 40vh;
             min-height: 300px;
             
-            /* [關鍵修正] 動態路徑邏輯：加入嘉義 (chiayi) */
+            /* [全台灣 20 縣市 Banner 邏輯終極整合] */
             background-image: <% if (citySlug === 'pingtung') { %>
                 url('/image/search_by_city/pingtung_banner.png');
             <% } else if (citySlug === 'kaohsiung') { %>
                 url('/image/search_by_city/kaohsiung_banner.png');
             <% } else if (citySlug === 'chiayi') { %>
                 url('/image/search_by_city/chiayi_banner.png');
+            <% } else if (citySlug === 'tainan') { %>
+                url('/image/search_by_city/tainan_banner.png');
+            <% } else if (citySlug === 'taitung') { %>
+                url('/image/search_by_city/taitung_banner.png');
+            <% } else if (citySlug === 'hualien') { %>
+                url('/image/search_by_city/hualien_banner.png');
+            <% } else if (citySlug === 'yunlin') { %>
+                url('/image/search_by_city/yunlin_banner.png');
+            <% } else if (citySlug === 'nantou') { %>
+                url('/image/search_by_city/nantou_banner.png');
+            <% } else if (citySlug === 'changhua') { %>
+                url('/image/search_by_city/changhua_banner.png');
+            <% } else if (citySlug === 'taichung') { %>
+                url('/image/search_by_city/taichung_banner.png');
+            <% } else if (citySlug === 'miaoli') { %>
+                url('/image/search_by_city/miaoli_banner.png');
+            <% } else if (citySlug === 'hsinchu') { %>
+                url('/image/search_by_city/hsinchu_banner.png');
+            <% } else if (citySlug === 'yilan') { %>
+                url('/image/search_by_city/yilan_banner.png');
+            <% } else if (citySlug === 'taoyuan') { %>
+                url('/image/search_by_city/taoyuan_banner.png');
+            <% } else if (citySlug === 'keelung') { %>
+                url('/image/search_by_city/keelung_banner.png');
+            <% } else if (citySlug === 'new_taipei') { %>
+                url('/image/search_by_city/new_taipei_banner.png');
+            <% } else if (citySlug === 'taipei') { %>
+                url('/image/search_by_city/taipei_banner.png');
+            <% } else if (citySlug === 'penghu') { %>
+                url('/image/search_by_city/penghu_banner.png');
+            <% } else if (citySlug === 'kinmen') { %>
+                url('/image/search_by_city/kinmen_banner.png');
+            <% } else if (citySlug === 'matsu') { %>
+                url('/image/search_by_city/matsu_banner.png');
             <% } else { %>
+                /* 預設 fallback：若未來有新城市但還沒做 banner，會抓這個路徑 */
                 url('/image/search_by_city/<%= citySlug %>/banner_city.jpg');
             <% } %>;
             

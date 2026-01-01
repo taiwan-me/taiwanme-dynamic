@@ -1,0 +1,179 @@
+[
+  {
+    "id": "nt-01",
+    "type": "1-Day Tour",
+    "title": "Sun Moon Lake Cycling & Tea",
+    "subTitle": "水沙連的茶香與單車：日月潭環湖慢活",
+    "tags": ["#Cycling", "#LakeView", "#TeaCulture"],
+    "heroImage": "/image/search_by_city/nantou/sunmoonlake.jpg",
+    "intro": "Experience one of the world's most beautiful cycling paths and the rich black tea culture of Yuchi. Perfect for international travelers and families.",
+    "transportation": "Take **Taiwan Tourist Shuttle (Sun Moon Lake Route)**.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Xiangshan Bikeway (向山自行車道)",
+        "address": "Yuchi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleXiangshan",
+        "description": "Ride on the water! This section is rated by CNN as one of the world's top 10 most beautiful bikeways. Visit the Xiangshan Visitor Center for its stunning architecture."
+      },
+      {
+        "time": "14:00",
+        "name": "Lake Cruise (玄光寺/伊達邵)",
+        "address": "Yuchi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleCruise",
+        "description": "Take a boat to eat 'Grandma's Tea Egg' at Xuanguang Temple and stroll through the Ita Thao aboriginal shopping district."
+      },
+      {
+        "time": "16:00",
+        "name": "Hohocha (喝喝茶)",
+        "address": "Yuchi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleHohocha",
+        "description": "Learn about Ruby Black Tea (Taiwan Tea No. 18). Experience a traditional tea serving ceremony and buy high-quality tea souvenirs."
+      }
+    ]
+  },
+  {
+    "id": "nt-02",
+    "type": "1-Day Tour",
+    "title": "Garden City & Puli Foodie Tour",
+    "subTitle": "花園城市與在地儀式：中興新村x埔里",
+    "tags": ["#Foodie", "#Architecture", "#Culture"],
+    "heroImage": "/image/search_by_city/nantou/chung_hsing.jpg",
+    "intro": "Explore the nostalgic 'Garden City' of Chung Hsing New Village and dive into Puli's unique culinary rituals.",
+    "transportation": "**Car Rental** or **Bus** is recommended.",
+    "spots": [
+      {
+        "time": "10:00",
+        "name": "Chung Hsing New Village (中興新村)",
+        "address": "Nantou City, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleChungHsing",
+        "description": "The former seat of the Taiwan Provincial Government. A well-planned garden city with green tunnels and Baroque-style architecture."
+      },
+      {
+        "time": "15:00",
+        "name": "Puli Meat Dumpling (埔里肉圓)",
+        "address": "Puli Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleBaWan",
+        "description": "Experience the local ritual: eat the skin first, then pour the teapot soup into the bowl to finish the meat and sauce."
+      },
+      {
+        "time": "16:30",
+        "name": "18 Degree C Chocolate (18度C巧克力工房)",
+        "address": "Puli Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/example18C",
+        "description": "Famous for its Nama Chocolate and 'Shokupan' (raw toast). A must-visit spot for dessert lovers."
+      }
+    ]
+  },
+  {
+    "id": "nt-03",
+    "type": "2-Day Tour",
+    "title": "Starry Sky & High Altitude",
+    "subTitle": "垂直景觀與星空對話：清境x合歡山",
+    "tags": ["#Stargazing", "#Mountain", "#Nature"],
+    "heroImage": "/image/search_by_city/nantou/hehuanshan.jpg",
+    "intro": "Ascend from 1700m to 3275m. Witness the 'Dark Sky Park' and the magnificent Central Mountain Range.",
+    "transportation": "**Nantou Bus** (Qingjing Line) + **Sunrise Bus**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Qingjing Farm (清境農場)",
+        "address": "Ren'ai Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleQingjing",
+        "description": "Walk on the Skywalk and watch the Sheep Show at Green Green Grassland. Enjoy Yunnan-style cuisine for dinner."
+      },
+      {
+        "time": "Day 2 Dawn",
+        "name": "Hehuanshan Dark Sky Park (合歡山暗空公園)",
+        "address": "Ren'ai Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleDarkSky",
+        "description": "Take a sunrise bus to Wuling (3275m). Watch the sunrise over the sea of clouds and hike the beginner-friendly Shimen Mountain."
+      }
+    ]
+  },
+  {
+    "id": "nt-04",
+    "type": "2-Day Tour",
+    "title": "Aboriginal Myth & Cable Car",
+    "subTitle": "原民神話與空中纜車：日月潭x九族",
+    "tags": ["#Family", "#ThemePark", "#Indigenous"],
+    "heroImage": "/image/search_by_city/nantou/ropeway.jpg",
+    "intro": "A 3D land, sea, and air experience. Ride the Michelin 3-star view cable car and immerse yourself in indigenous culture.",
+    "transportation": "**Sun Moon Lake Ropeway** + **Boat**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Ita Thao Pier (伊達邵碼頭)",
+        "address": "Yuchi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleItaThao",
+        "description": "The main settlement of the Thao people. Enjoy street food like millet wine and wild boar sausage by the lake."
+      },
+      {
+        "time": "Day 2 Full Day",
+        "name": "Formosan Aboriginal Culture Village (九族文化村)",
+        "address": "Yuchi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleFACV",
+        "description": "Accessible via ropeway. Features authentic reconstructions of indigenous architecture and exciting amusement rides."
+      }
+    ]
+  },
+  {
+    "id": "nt-05",
+    "type": "3-Day Tour",
+    "title": "Mountain & Lake Grand Tour",
+    "subTitle": "山盟海誓全覽：清境合歡山x日月潭",
+    "tags": ["#GrandTour", "#Classic", "#AllInOne"],
+    "heroImage": "/image/search_by_city/nantou/grand_mountain_lake.jpg",
+    "intro": "The most efficient route connecting Nantou's two biggest international IPs: The high mountains and the alpine lake.",
+    "transportation": "**Nantou Bus** (Puli Transfer Station is key).",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Cingjing Skywalk (清境高空觀景步道)",
+        "address": "Ren'ai Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleSkywalk",
+        "description": "Walk among the clouds with a view of the Central Mountain Range before heading to Hehuanshan for stargazing."
+      },
+      {
+        "time": "Day 2",
+        "name": "Sun Moon Lake SUP (日月潭立槳)",
+        "address": "Yuchi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleSUP",
+        "description": "After descending from the mountains, enjoy a peaceful SUP session on the calm waters of Sun Moon Lake."
+      },
+      {
+        "time": "Day 3",
+        "name": "Maolan Mountain Trail (貓囒山步道)",
+        "address": "Yuchi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleMaolan",
+        "description": "Visit the Tea Research and Extension Station to see historic Japanese tea factories and enjoy panoramic lake views."
+      }
+    ]
+  },
+  {
+    "id": "nt-06",
+    "type": "3-Day Tour",
+    "title": "Cloud Hometown & Tribal Secrets",
+    "subTitle": "雲的故鄉與部落秘境：武界x雙龍",
+    "tags": ["#Adventure", "#Waterfall", "#DeepDive"],
+    "heroImage": "/image/search_by_city/nantou/wujie.jpg",
+    "intro": "For explorers seeking non-touristy paths. Discover the 'Home of Clouds' in Wujie and the rainbow suspension bridge.",
+    "transportation": "**Private Charter** or **Guided Tour** is essential.",
+    "spots": [
+      {
+        "time": "Day 1",
+        "name": "Wujie Tribe (武界部落)",
+        "address": "Ren'ai Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleWujie",
+        "description": "Trace the river to Momonar Waterfall. See the 'Red Azolla' covering the riverbed (seasonal) and the historic Wujie Dam."
+      },
+      {
+        "time": "Day 3",
+        "name": "Shuanglong Rainbow Suspension Bridge (雙龍瀑布七彩吊橋)",
+        "address": "Xinyi Township, Nantou County",
+        "mapLink": "https://goo.gl/maps/exampleShuanglong",
+        "description": "The longest suspension bridge in Taiwan. Walk across the colorful bridge deep into the canyon to see the twin waterfalls."
+      }
+    ]
+  }
+]

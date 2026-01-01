@@ -1,0 +1,200 @@
+[
+  {
+    "id": "tp-01",
+    "type": "1-Day Tour",
+    "title": "Time Travel & Skyline",
+    "subTitle": "時光交錯的城市：從昭和赤峰街到垂直天際線",
+    "tags": ["#Photography", "#Skyline", "#Michelin"],
+    "heroImage": "/image/search_by_city/taipei/101_view.jpg",
+    "intro": "A journey blending the retro Showa atmosphere of Chifeng Street with the futuristic heights of Taipei 101. End the day with Michelin street food.",
+    "transportation": "**MRT Red Line** + **Walking**. Taipei Fun Pass recommended.",
+    "spots": [
+      {
+        "time": "09:00",
+        "name": "National Palace Museum (故宮博物院)",
+        "address": "Shilin District, Taipei City",
+        "mapLink": "https://goo.gl/maps/examplePalaceMuseum",
+        "description": "Home to the world's largest collection of Chinese art treasures. Don't miss the Jadeite Cabbage and the serene Zhishan Garden."
+      },
+      {
+        "time": "12:00",
+        "name": "Chifeng Street (赤峰街)",
+        "address": "Datong District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleChifeng",
+        "description": "Once a street for blacksmiths, now a hip area filled with vintage shops and cafes. A perfect blend of old iron window grills and modern lifestyle."
+      },
+      {
+        "time": "15:00",
+        "name": "Taipei 101 Skyline 460 (台北101)",
+        "address": "Xinyi District, Taipei City",
+        "mapLink": "https://goo.gl/maps/example101",
+        "description": "Experience the outdoor observation deck at 460 meters. See the world's largest wind damper that protects the tower from earthquakes."
+      }
+    ]
+  },
+  {
+    "id": "tp-02",
+    "type": "1-Day Tour",
+    "title": "Tea Scent & Hidden Falls",
+    "subTitle": "自然與茶香：貓空雲端與銀河洞秘境",
+    "tags": ["#Tea", "#Nature", "#Hiking"],
+    "heroImage": "/image/search_by_city/taipei/maokong.jpg",
+    "intro": "Escape the city bustle. Hike to a temple embedded in a cliffside waterfall and sip Tie Guanyin tea overlooking the Taipei Basin.",
+    "transportation": "**MRT Green Line** + **Bus Green 12** + **Maokong Gondola**.",
+    "spots": [
+      {
+        "time": "08:30",
+        "name": "Yinhe Cave Waterfall (銀河洞瀑布)",
+        "address": "Xindian District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleYinhe",
+        "description": "A mystical temple built into a cliff face behind a waterfall. The name 'Galaxy Cave' comes from the waterfall resembling the Milky Way."
+      },
+      {
+        "time": "12:00",
+        "name": "Maokong Tea House (貓空茶坊)",
+        "address": "Wenshan District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleMaokong",
+        "description": "Famous for 'Potholes' geology and Tie Guanyin tea. Enjoy a meal with a view and try tea-infused ice cream."
+      },
+      {
+        "time": "17:30",
+        "name": "Dream Plaza (信義區新地標)",
+        "address": "Xinyi District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleDreamPlaza",
+        "description": "Scheduled to open in 2025. Experience the 24-hour bookstore and the vibrant nightlife of the Xinyi District."
+      }
+    ]
+  },
+  {
+    "id": "tp-03",
+    "type": "2-Day Tour",
+    "title": "2026 New Era & Sunset",
+    "subTitle": "交通新紀元：三鶯線工藝與淡水夕陽",
+    "tags": ["#NewMetro", "#Architecture", "#Sunset"],
+    "heroImage": "/image/search_by_city/taipei/tamsui_sunset.jpg",
+    "intro": "Leverage the new Sanying MRT Line (2026) and Danjiang Bridge. A route connecting ceramics, old streets, and world-class architecture.",
+    "transportation": "**MRT Sanying Line** + **MRT Red Line**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Yingge Ceramics Museum (鶯歌陶瓷博物館)",
+        "address": "Yingge District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleYingge",
+        "description": "The heart of Taiwan's ceramic art. Visit the nearby New Taipei City Art Museum for a dose of modern aesthetics."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Danjiang Bridge (淡江大橋)",
+        "address": "Tamsui/Bali, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleDanjiang",
+        "description": "Designed by Zaha Hadid. The world's longest single-tower cable-stayed bridge, scheduled to open in May 2026. Perfect for sunset viewing."
+      },
+      {
+        "time": "Day 2 Night",
+        "name": "Shilin Night Market (士林夜市)",
+        "address": "Shilin District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleShilin",
+        "description": "Taipei's most famous night market. Try the giant fried chicken steak and oyster omelet."
+      }
+    ]
+  },
+  {
+    "id": "tp-04",
+    "type": "2-Day Tour",
+    "title": "Classic & Trendy Taipei",
+    "subTitle": "經典與潮流：大稻埕旗袍與西門町彩虹",
+    "tags": ["#History", "#LGBTQ", "#Fashion"],
+    "heroImage": "/image/search_by_city/taipei/dadaocheng.jpg",
+    "intro": "From the 1920s trading port to the vibrant youth culture hub. Experience the diversity of Taipei through qipaos and rainbows.",
+    "transportation": "**MRT Green Line** + **MRT Blue Line**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Dihua Street (迪化街)",
+        "address": "Datong District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleDihua",
+        "description": "Rent a Qipao and stroll through the historic baroque architecture. Visit the Xiahai City God Temple for blessings."
+      },
+      {
+        "time": "Day 1 Sunset",
+        "name": "Dadaocheng Wharf (大稻埕碼頭)",
+        "address": "Datong District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleWharf",
+        "description": "Enjoy drinks at the container market while watching the sunset over the Tamsui River."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Ximending Rainbow Landscape (西門町彩虹地景)",
+        "address": "Wanhua District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleRainbow",
+        "description": "A symbol of Taiwan's open society and LGBTQ+ rights. Shop at Don Don Donki and feel the youth energy."
+      }
+    ]
+  },
+  {
+    "id": "tp-05",
+    "type": "3-Day Tour",
+    "title": "Deep Mountain & Rail",
+    "subTitle": "深度山海戀：黃金山城與鐵道秘境",
+    "tags": ["#Hiking", "#Railway", "#HotSpring"],
+    "heroImage": "/image/search_by_city/taipei/teapot_mountain.jpg",
+    "intro": "For the adventurous. Hike the Teapot Mountain, explore the Sandiaoling waterfalls, and relax in the world-class Beitou hot springs.",
+    "transportation": "**Train** + **Bus** + **MRT**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Teapot Mountain Trail (無耳茶壺山步道)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleTeapot",
+        "description": "A challenging hike rewarding you with a panoramic view of the Yin-Yang Sea and the gold mining towns."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Sandiaoling Waterfall Trail (三貂嶺瀑布群)",
+        "address": "Ruifang District, New Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleSandiaoFalls",
+        "description": "A primitive forest trail accessible by train. Visit the Hegu, Motian, and Pipa Cave waterfalls."
+      },
+      {
+        "time": "Day 3 PM",
+        "name": "Beitou Thermal Valley (北投地熱谷)",
+        "address": "Beitou District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleBeitou",
+        "description": "The source of Beitou's hot springs. Experience the rare Green Sulfur Spring, found only here and in Akita, Japan."
+      }
+    ]
+  },
+  {
+    "id": "tp-06",
+    "type": "3-Day Tour",
+    "title": "Metropolitan Full Experience",
+    "subTitle": "都會全體驗：美食、購物與夜生活",
+    "tags": ["#Luxury", "#NightLife", "#Michelin"],
+    "heroImage": "/image/search_by_city/taipei/songshan_culture.jpg",
+    "intro": "A luxurious tour for foodies and shoppers. Visit the new LaLaport Nangang, enjoy Michelin-starred street food, and party in Xinyi District.",
+    "transportation": "**MRT** + **Uber**.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Songshan Cultural Park (松山文創園區)",
+        "address": "Xinyi District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleSongshan",
+        "description": "A former tobacco factory turned into a design hub. Visit the Eslite Spectrum for books and crafts."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Fuhang Soy Milk (阜杭豆漿)",
+        "address": "Zhongzheng District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleFuhang",
+        "description": "A Michelin-recommended breakfast spot. The thick clay oven roll is worth the wait."
+      },
+      {
+        "time": "Day 2 Night",
+        "name": "Taipei Performing Arts Center (台北表演藝術中心)",
+        "address": "Shilin District, Taipei City",
+        "mapLink": "https://goo.gl/maps/exampleTPAC",
+        "description": "Known as the 'Century Egg Tofu' building. A CNN-listed transformative architecture breaking theatrical boundaries."
+      }
+    ]
+  }
+]

@@ -1,0 +1,193 @@
+[
+  {
+    "id": "hc-01",
+    "type": "1-Day Tour",
+    "title": "Windy City Time Machine",
+    "subTitle": "風城時光機：舊城古蹟與市場文藝復興",
+    "tags": ["#OldCity", "#Market", "#Culture"],
+    "heroImage": "/image/search_by_city/hsinchu/east_gate.jpg",
+    "intro": "Explore the oldest developed area in Northern Taiwan. From the Qing Dynasty East Gate to the revitalized Dongmen Market.",
+    "transportation": "**Walking** + **YouBike**.",
+    "spots": [
+      {
+        "time": "09:30",
+        "name": "Hsinchu Train Station (新竹火車站)",
+        "address": "East District, Hsinchu City",
+        "mapLink": "https://goo.gl/maps/exampleStation",
+        "description": "Admire the Baroque architecture of Taiwan's oldest surviving train station and walk along the moat park."
+      },
+      {
+        "time": "12:00",
+        "name": "City God Temple (城隍廟)",
+        "address": "North District, Hsinchu City",
+        "mapLink": "https://goo.gl/maps/exampleChenghuang",
+        "description": "The highest-ranking City God Temple in Taiwan. Try the famous Red Yeast Meatball and Spring Roll at the temple square."
+      },
+      {
+        "time": "16:30",
+        "name": "Dongmen Market (東門市場)",
+        "address": "East District, Hsinchu City",
+        "mapLink": "https://goo.gl/maps/exampleDongmen",
+        "description": "An old market turned hipster hub. Enjoy creative cuisine like 'Gout Vermicelli' and visit hidden bars at night."
+      }
+    ]
+  },
+  {
+    "id": "hc-02",
+    "type": "1-Day Tour",
+    "title": "Hakka Tea Gold Era",
+    "subTitle": "客家茶金歲月：北埔老街與擂茶體驗",
+    "tags": ["#Hakka", "#Tea", "#History"],
+    "heroImage": "/image/search_by_city/hsinchu/beipu.jpg",
+    "intro": "Travel back to the Gold Tea Era in Beipu. Visit the filming location of 'Gold Leaf' and experience traditional Lei Cha DIY.",
+    "transportation": "**Taiwan Tourist Shuttle (Lion's Head Mountain Line)** from HSR Hsinchu Station.",
+    "spots": [
+      {
+        "time": "11:00",
+        "name": "Chiang A-Hsin Mansion (姜阿新洋樓)",
+        "address": "Beipu Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleChiang",
+        "description": "A baroque-style mansion witnessing the glorious tea export history. Pre-booking for guided tours is recommended."
+      },
+      {
+        "time": "14:00",
+        "name": "Lei Cha DIY (擂茶體驗)",
+        "address": "Beipu Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleLeiCha",
+        "description": "Grind tea leaves, peanuts, and sesame seeds with a guava tree pestle. A hands-on experience of Hakka hospitality."
+      },
+      {
+        "time": "16:00",
+        "name": "Green World Ecological Farm (綠世界生態農場)",
+        "address": "Beipu Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleGreenWorld",
+        "description": "Optional: A great place for families to see alpacas and tropical rainforest plants."
+      }
+    ]
+  },
+  {
+    "id": "hc-03",
+    "type": "2-Day Tour",
+    "title": "Mountain & Sea Duet",
+    "subTitle": "山海雙響炮：尖石天空步道與南寮夕陽",
+    "tags": ["#Skywalk", "#Ocean", "#Cycling"],
+    "heroImage": "/image/search_by_city/hsinchu/frog_rock.jpg",
+    "intro": "From the glass skywalk in the indigenous mountains to the fish scale stairway by the sea. A perfect weekend getaway.",
+    "transportation": "**Car Rental** is recommended.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Frog Rock Skywalk (青蛙石天空步道)",
+        "address": "Jianshi Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleFrogRock",
+        "description": "Walk on the transparent glass platform overlooking the Nalou River valley and waterfalls."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Nanliao Fishing Port (南寮漁港)",
+        "address": "North District, Hsinchu City",
+        "mapLink": "https://goo.gl/maps/exampleNanliao",
+        "description": "Ride a bike along the 17km coastline. Visit the 'Fish Scale Stairway' and the wave-shaped market."
+      },
+      {
+        "time": "Day 2 Sunset",
+        "name": "Xiangshan Wetlands (香山濕地)",
+        "address": "Xiangshan District, Hsinchu City",
+        "mapLink": "https://goo.gl/maps/exampleXiangshan",
+        "description": "Walk on the crab-watching trail to see thousands of fiddler crabs and a stunning sunset."
+      }
+    ]
+  },
+  {
+    "id": "hc-04",
+    "type": "2-Day Tour",
+    "title": "Monastery Above Clouds",
+    "subTitle": "雲端上的修道院：五峰觀霧與張學良故居",
+    "tags": ["#Hiking", "#History", "#Fog"],
+    "heroImage": "/image/search_by_city/hsinchu/guanwu.jpg",
+    "intro": "Visit the foggy forest at 2000m altitude and the historical site where General Zhang Xueliang was under house arrest.",
+    "transportation": "**Taiwan Tourist Shuttle (Guanwu Line)**. Reservation required.",
+    "spots": [
+      {
+        "time": "Day 1 Noon",
+        "name": "Zhang Xueliang Cultural Park (張學良文化園區)",
+        "address": "Wufeng Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleZhang",
+        "description": "Learn about the general's life in seclusion. Soak your feet in the General's Hot Spring nearby."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Guanwu National Forest (觀霧國家森林遊樂區)",
+        "address": "Tai'an Township (Border of Hsinchu/Miaoli)",
+        "mapLink": "https://goo.gl/maps/exampleGuanwu",
+        "description": "Walk the Yulun Trail to see the Holy Ridge of Xueshan. Look for the endemic Guanwu Salamander."
+      }
+    ]
+  },
+  {
+    "id": "hc-05",
+    "type": "3-Day Tour",
+    "title": "God's Tribe: Smangus",
+    "subTitle": "上帝的部落：司馬庫斯巨木群朝聖",
+    "tags": ["#Indigenous", "#GiantTrees", "#DeepDive"],
+    "heroImage": "/image/search_by_city/hsinchu/smangus.jpg",
+    "intro": "Deep into the most remote tribe in Taiwan. Experience the communal living system and stand before the 2500-year-old giant cypress.",
+    "transportation": "**Private Charter** or **High-Chassis Vehicle**. Strict traffic control.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Smangus Tribe (司馬庫斯部落)",
+        "address": "Jianshi Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleSmangus",
+        "description": "The last place in Taiwan to receive electricity. Tour the eco-friendly elementary school and church."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Giant Tree Trail (巨木群步道)",
+        "address": "Smangus, Jianshi Township",
+        "mapLink": "https://goo.gl/maps/exampleGiantTree",
+        "description": "A 4-5 hour hike to see Yaya Qparung, the giant red cypress resembling a mother with open arms."
+      },
+      {
+        "time": "Day 3 Noon",
+        "name": "6 Garden (六號花園)",
+        "address": "Jianshi Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/example6Garden",
+        "description": "A hidden glasshouse café in the bamboo forest. Perfect for a relaxing lunch on the way back."
+      }
+    ]
+  },
+  {
+    "id": "hc-06",
+    "type": "3-Day Tour",
+    "title": "Hsinchu Grand Tour",
+    "subTitle": "竹縣全境巡禮：從湖光山色到科技夜生活",
+    "tags": ["#GrandTour", "#Lake", "#NightLife"],
+    "heroImage": "/image/search_by_city/hsinchu/emei_lake.jpg",
+    "intro": "A complete journey covering Hakka villages, scenic lakes, and the modern nightlife of Hsinchu City.",
+    "transportation": "**Car Rental** is essential.",
+    "spots": [
+      {
+        "time": "Day 1 AM",
+        "name": "Emei Lake (峨眉湖)",
+        "address": "Emei Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleEmei",
+        "description": "Walk the suspension bridge and admire the world's tallest bronze Maitreya Buddha statue."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Dong'an Ancient Bridge (東安古橋)",
+        "address": "Guanshi Township, Hsinchu County",
+        "mapLink": "https://goo.gl/maps/exampleDongan",
+        "description": "A 5-arch stone bridge built in 1933. A scenic spot famous for the movie 'Our Times'."
+      },
+      {
+        "time": "Day 2 Night",
+        "name": "Hsinchu Bar Hopping (新竹酒吧巡禮)",
+        "address": "East District, Hsinchu City",
+        "mapLink": "https://goo.gl/maps/exampleBar",
+        "description": "Experience the international vibe of the tech city. Visit speakeasies or British-style pubs."
+      }
+    ]
+  }
+]
