@@ -6,7 +6,7 @@
     "title": "Urban Aesthetics & Creative Rebirth",
     "subTitle": "城市美學與文創再生：屏東市一日遊",
     "tags": ["#PingtungCity", "#Culture", "#Arts"],
-    "heroImage": "/image/hiddengems/pingtung/banner_city.jpg",
+    "heroImage": "/image/search_by_city/pingtung/library.jpg",
     "intro": "For travelers who love photography, history, and a relaxed pace. Explore the 'renaissance' of Pingtung City, visiting the top-rated spots of 2025: the Victory Star Village and Heito 1909.",
     "transportation": "Take the train to **Pingtung Station (屏東火車站)**, then rent a P-Bike (public bicycle) or take a short taxi ride.",
     "spots": [
@@ -40,7 +40,7 @@
     "title": "Tribes Above the Clouds: Shenshan Line",
     "subTitle": "雲端上的部落：神山線深度一日遊",
     "tags": ["#WutaiTownship", "#Indigenous", "#Nature"],
-    "heroImage": "/image/hiddengems/pingtung/banner_mountain.jpg",
+    "heroImage": "/image/search_by_city/pingtung/guchuan_bridge.jpg",
     "intro": "Designed for travelers seeking 'cultural authenticity'. This tour takes you deep into the mountains to experience the Rukai and Paiwan tribes using the convenient 'Taiwan Trip 508' bus.",
     "transportation": "Take the **Taiwan Trip Bus 508 (Shenshan Line)** from **Pingtung Transfer Station (屏東轉運站)**. *Reservation required.*",
     "spots": [
@@ -74,7 +74,7 @@
     "title": "Faith & Flavors: Peninsula Gateway",
     "subTitle": "信仰與海味：半島入口美食巡禮",
     "tags": ["#DonggangTownship", "#ChechengTownship", "#Food"],
-    "heroImage": "/image/hiddengems/pingtung/banner_temple.jpg",
+    "heroImage": "/image/search_by_city/pingtung/dapeng_bay.jpg",
     "intro": "A perfect route for families and food lovers, visiting the top-ranking 'Faith Economy' center and enjoying the best seafood in Pingtung.",
     "transportation": "Take **Taiwan Trip Bus 9189 (Kenting Express)** from Pingtung Station.",
     "spots": [
@@ -108,7 +108,7 @@
     "title": "Ecological Serenity: Escaping Crowds",
     "subTitle": "國境之南的生態與靜謐",
     "tags": ["#HengchunTownship", "#Nature", "#Ocean"],
-    "heroImage": "/image/hiddengems/pingtung/banner_ocean.jpg",
+    "heroImage": "/image/search_by_city/pingtung/kenting_lighthouse.jpg",
     "intro": "Designed to avoid the commercialized areas, focusing on what international travelers love most: raw nature, marine education, and quiet coastlines.",
     "transportation": "Take **Bus 9189 (Kenting Express)** to Hengchun, then use the **Kenting Shuttle (Orange/Blue Line)**.",
     "spots": [
@@ -137,39 +137,12 @@
   },
   {
     "id": "pt-05",
-    "type": "2-Day Tour",
-    "theme": "Island Life",
-    "title": "Sea Turtles & Low-Carbon Island",
-    "subTitle": "海龜與離島低碳行：小琉球",
-    "tags": ["#LiuqiuTownship", "#Island", "#EcoFriendly"],
-    "heroImage": "/image/hiddengems/pingtung/banner_turtle.jpg",
-    "intro": "A trip to Xiaoliuqiu, a coral island haven for Green Sea Turtles promoting low-carbon tourism.",
-    "transportation": "Take **Bus 9127/9189** to **Donggang Ferry Terminal**, take a ferry (20 mins), then rent an **e-scooter**.",
-    "spots": [
-      {
-        "time": "Day 1",
-        "name": "Vase Rock (花瓶岩)",
-        "address": "Liuqiu Township, Pingtung County",
-        "mapLink": "https://goo.gl/maps/exampleVaseRock",
-        "description": "The iconic landmark of the island. Snorkeling here gives you a 90% chance of seeing wild Green Sea Turtles grazing on seagrass."
-      },
-      {
-        "time": "Day 2",
-        "name": "Intertidal Zone (潮間帶)",
-        "address": "Liuqiu Township, Pingtung County",
-        "mapLink": "https://goo.gl/maps/exampleTidal",
-        "description": "A guided eco-tour during low tide to see sea urchins, sea cucumbers, and starfish up close. Must be accompanied by a certified guide to protect the ecosystem."
-      }
-    ]
-  },
-  {
-    "id": "pt-06",
     "type": "3-Day Tour (Part 1)",
     "theme": "Full Perspective",
     "title": "Time Tunnel: From Military Villages to Hakka Culture",
     "subTitle": "從眷村到客家文化：屏東全域透視 (Day 1)",
     "tags": ["#PingtungCity", "#NeipuTownship", "#History"],
-    "heroImage": "/image/hiddengems/pingtung/banner_history.jpg",
+    "heroImage": "/image/search_by_city/pingtung/liudui_hakka.jpg",
     "intro": "Part 1 of a comprehensive journey covering the transformation of Pingtung, focusing on the cultural renaissance in the north.",
     "transportation": "Car rental is recommended for this 3-day itinerary for maximum flexibility.",
     "spots": [
@@ -190,13 +163,13 @@
     ]
   },
   {
-    "id": "pt-07",
+    "id": "pt-06",
     "type": "3-Day Tour (Part 2&3)",
     "theme": "Full Perspective",
     "title": "Railways, Ocean & Secret Sands",
     "subTitle": "鐵道、海洋與秘境沙灘 (Day 2 & 3)",
     "tags": ["#ChaozhouTownship", "#HengchunTownship", "#Adventure"],
-    "heroImage": "/image/hiddengems/pingtung/banner_rail.jpg",
+    "heroImage": "/image/search_by_city/pingtung/aquarium.jpg",
     "intro": "Continuing south to explore railway history, a world-class aquarium sleepover, and secret nature spots.",
     "transportation": "Drive south via Provincial Highway 1 and 26.",
     "spots": [
@@ -220,6 +193,40 @@
         "address": "Provincial Hwy 26, Hengchun Township, Pingtung County",
         "mapLink": "https://goo.gl/maps/exampleFeng",
         "description": "Meaning 'Wind Blowing Sand'. In winter, strong winds blow sand from the riverbed up the cliffs, creating unique sand dunes on top of the coastal tableland."
+      }
+    ]
+  },
+  {
+    "id": "pt-07",
+    "type": "2-Day Tour",
+    "theme": "Island Life",
+    "title": "Offshore Island: Xiao Liuqiu",
+    "subTitle": "小琉球：與海龜共游的珊瑚之島",
+    "tags": ["#XiaoLiuqiu", "#Snorkeling", "#EcoTour"],
+    "heroImage": "/image/search_by_city/pingtung/liuqiu.jpg",
+    "intro": "A coral island just a short ferry ride away. Famous for having one of the highest densities of sea turtles in the world. Enjoy a 2-day eco-tour.",
+    "transportation": "**Ferry** from Donggang Harbor (20 mins) + **Scooter/E-bike Rental**.",
+    "spots": [
+      {
+        "time": "Day 1 PM",
+        "name": "Vase Rock (花瓶岩)",
+        "address": "Liuqiu Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleVaseRock",
+        "description": "The landmark of Xiao Liuqiu. A perfect spot for snorkeling to see green sea turtles up close in shallow waters."
+      },
+      {
+        "time": "Day 2 AM",
+        "name": "Black Dwarf Cave (烏鬼洞)",
+        "address": "Liuqiu Township, Pingtung County",
+        "mapLink": "https://goo.gl/maps/exampleBlackDwarf",
+        "description": "A limestone cave maze formed by coral reefs. The surrounding coastal boardwalk offers stunning ocean views and sounds of waves."
+      },
+      {
+        "time": "Day 2 PM",
+        "name": "Intertidal Zone (潮間帶生態導覽)",
+        "address": "Dafuping/Shanfu/Yuchengwei, Liuqiu Township",
+        "mapLink": "https://goo.gl/maps/exampleIntertidal",
+        "description": "Join a guided tour during low tide to see sea urchins, sea cucumbers, and starfish. A strict 'Look but Don't Touch' policy applies to protect the ecosystem."
       }
     ]
   }

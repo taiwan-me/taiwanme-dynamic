@@ -693,6 +693,37 @@ h2.section-title {
 .btn-back { display: inline-block; text-decoration: none; color: #333; border: 1px solid #333; padding: 12px 35px; border-radius: 30px; font-weight: bold; font-family: var(--font-eng); transition: 0.3s; text-transform: capitalize; }
 .btn-back:hover { background: #333; color: #fff; }
 
+/* --- 離島特殊排版樣式 (Islands Specific) --- */
+.island-section-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.island-separator {
+    width: 100%;
+    border-top: 2px dashed #ddd; /* 虛線 */
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+.separator-label {
+    position: absolute;
+    top: -12px;
+    left: 0;
+    background-color: #fff; /* 蓋住虛線 */
+    padding-right: 15px;
+    color: #d9534f; /* 紅字 */
+    font-size: 0.85rem;
+    font-weight: bold;
+    font-family: var(--font-eng);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* =========================================
    9. Back to Top Button (回到頂端按鈕)
    ========================================= */

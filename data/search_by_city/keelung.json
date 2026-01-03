@@ -133,34 +133,27 @@
   },
   {
     "id": "kl-05",
-    "type": "3-Day Tour",
-    "title": "Island, Lighthouse & Food",
+    "type": "Half-Day Tour",
+    "title": "Offshore Island: Keelung Islet",
     "subTitle": "全境制霸：島嶼、燈塔與美食",
-    "tags": ["#Island", "#Lighthouse", "#Curry"],
+    "tags": ["#Island", "#Lighthouse", "#Hiking"],
     "heroImage": "/image/search_by_city/keelung/keelung_islet.jpg",
-    "intro": "A complete land, sea, and air experience. Hike up Keelung Islet (seasonal) and taste the unique curry dishes of the west bank.",
-    "transportation": "**Ferry** + **Bus**.",
+    "intro": "Known as the 'Dragon Pearl of Taiwan'. A volcanic island offering a challenging hike to the lighthouse and 360-degree ocean views.",
+    "transportation": "**Ferry** from Bisha Harbor (Bus 1579 from Taipei).",
     "spots": [
       {
-        "time": "Day 1 AM",
-        "name": "Keelung Islet (基隆嶼)",
+        "time": "09:00",
+        "name": "Keelung Islet Lighthouse (基隆島燈塔)",
         "address": "Offshore Keelung",
         "mapLink": "https://goo.gl/maps/exampleIslet",
-        "description": "Known as the 'Dragon Pearl of Taiwan'. Open from April to October. Hiking to the lighthouse offers a 360-degree sea view."
+        "description": "Climb 1,137 steps to reach the summit. The black-and-white octagonal lighthouse is the first in Taiwan to use solar power."
       },
       {
-        "time": "Day 3 Noon",
-        "name": "Liulangtou Curry Street (流浪頭咖哩街)",
-        "address": "Zhongshan District, Keelung City",
-        "mapLink": "https://goo.gl/maps/exampleCurry",
-        "description": "Famous for Satay Curry Beef fried noodles. A unique local flavor developed by early dock workers."
-      },
-      {
-        "time": "Day 3 PM",
-        "name": "Keelung Lighthouse (基隆燈塔)",
-        "address": "Zhongshan District, Keelung City",
-        "mapLink": "https://goo.gl/maps/exampleLighthouse",
-        "description": "A white lighthouse overlooking the container terminal. Watch giant cranes and ships in action."
+        "time": "12:00",
+        "name": "Keelung Miaokou Night Market (基隆廟口夜市)",
+        "address": "Ren'ai District, Keelung City",
+        "mapLink": "https://goo.gl/maps/exampleMiaokou",
+        "description": "After returning to the main island, enjoy the famous night market food."
       }
     ]
   },

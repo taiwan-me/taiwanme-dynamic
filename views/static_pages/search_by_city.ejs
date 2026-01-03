@@ -103,6 +103,35 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
+        /* --- 離島特殊排版樣式 --- */
+        .island-section-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .island-separator {
+            width: 100%;
+            border-top: 2px dashed #ddd; /* 虛線 */
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .separator-label {
+            position: absolute;
+            top: -12px;
+            left: 0;
+            background-color: #fff; /* 蓋住虛線 */
+            padding-right: 15px;
+            color: #d9534f; /* 紅字 */
+            font-size: 0.9rem;
+            font-weight: bold;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+        }
+
         @media (min-width: 768px) {
             .region-block {
                 flex-direction: row;
@@ -167,13 +196,31 @@
 
         <div class="region-block" id="islands">
             <div class="region-title">OUTLYING<br>ISLANDS</div>
-            <div class="city-tags">
-                <a href="/search_by_city/penghu" class="city-btn">澎湖 (Penghu)</a>
-                <a href="/search_by_city/kinmen" class="city-btn">金門 (Kinmen)</a>
-                <a href="/search_by_city/matsu" class="city-btn">馬祖 (Matsu)</a>
-                <a href="/search_by_city/green_island" class="city-btn">綠島 (Green Island)</a>
-                <a href="/search_by_city/lanyu" class="city-btn">蘭嶼 (Lanyu)</a>
-                <a href="/search_by_city/liuqiu" class="city-btn">小琉球 (Liuqiu)</a>
+            
+            <div class="island-section-wrapper">
+                
+                <div class="city-tags">
+                    <a href="/search_by_city/penghu" class="city-btn">澎湖 (Penghu)</a>
+                    <a href="/search_by_city/kinmen" class="city-btn">金門 (Kinmen)</a>
+                    <a href="/search_by_city/matsu" class="city-btn">馬祖 (Matsu)</a>
+                </div>
+
+                <div class="island-separator">
+                    <span class="separator-label">Islands affiliated with other counties</span>
+                </div>
+
+                <div class="city-tags">
+                    <a href="/search_by_city/pingtung/pt-07" class="city-btn">小琉球 (Xiao Liuqiu)</a> 
+                    
+                    <a href="/search_by_city/taitung/tt-07" class="city-btn">綠島 (Green Island)</a>   
+                    
+                    <a href="/search_by_city/taitung/tt-08" class="city-btn">蘭嶼 (Orchid Island)</a>  
+                    
+                    <a href="/search_by_city/yilan/yl-07" class="city-btn">龜山島 (Guishan Island)</a> 
+                    
+                    <a href="/search_by_city/keelung/kl-05" class="city-btn">基隆嶼 (Keelung Islet)</a>
+                </div>
+
             </div>
         </div>
 

@@ -196,5 +196,38 @@
         "description": "Designed by Huang Sheng-Yuan, featuring exhibitions by director Tsai Ming-Liang. A space for solitude and artistic reflection."
       }
     ]
+  },
+  {
+    "id": "yl-07",
+    "type": "Half-Day Tour",
+    "title": "Offshore Island: Guishan Island",
+    "subTitle": "龜山島：登島賞鯨與牛奶海",
+    "tags": ["#GuishanIsland", "#WhaleWatching", "#Volcano"],
+    "heroImage": "/image/search_by_city/yilan/guishan.jpg",
+    "intro": "An active volcano island shaped like a turtle. Famous for the 'Milk Sea' phenomenon and whale/dolphin watching cruises.",
+    "transportation": "**Boat Tour** from Wushi Harbor (Toucheng) is required. Pre-booking is essential.",
+    "spots": [
+      {
+        "time": "09:00",
+        "name": "Milk Sea (牛奶海)",
+        "address": "Offshore Guishan Island",
+        "mapLink": "https://goo.gl/maps/exampleMilkSea",
+        "description": "A stunning phenomenon where sulfur from the underwater volcano mixes with seawater, creating a Tiffany-blue color."
+      },
+      {
+        "time": "10:30",
+        "name": "401 Highland (401高地)",
+        "address": "Guishan Island",
+        "mapLink": "https://goo.gl/maps/example401",
+        "description": "Challenge the 1706 steps to the summit for a 360-degree view of the turtle's head and the surrounding ocean. (Requires permit)."
+      },
+      {
+        "time": "13:00",
+        "name": "Whale & Dolphin Watching (賞鯨豚)",
+        "address": "Offshore Guishan Island",
+        "mapLink": "https://goo.gl/maps/exampleWhale",
+        "description": "The waters around the island are rich in marine life. Spinner dolphins are frequently seen jumping out of the water."
+      }
+    ]
   }
 ]

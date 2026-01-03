@@ -210,5 +210,71 @@
         "description": "Wind down with an art walk in the city and hunt for treasures at the Tiehua Music Village before heading home."
       }
     ]
+  },
+  {
+    "id": "tt-07",
+    "type": "2-Day Tour",
+    "title": "Offshore Island: Green Island (Ludao)",
+    "subTitle": "綠島：火燒島的歷史與海底溫泉",
+    "tags": ["#GreenIsland", "#HotSpring", "#Diving"],
+    "heroImage": "/image/search_by_city/taitung/green_island.jpg",
+    "intro": "A volcanic island famous for its world-class saltwater hot springs and coral reefs. Explore the history of the White Terror era and dive into the crystal-clear Pacific Ocean.",
+    "transportation": "**Ferry** from Fugang Harbor (50 mins) or **Plane** (15 mins). Renting a **Scooter** or **E-bike** is essential on the island.",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "National Human Rights Museum (國家人權博物館)",
+        "address": "Green Island, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleHumanRights",
+        "description": "Visit the former Oasis Villa and New Life Correction Center. A solemn place to learn about Taiwan's martial law history and the fight for human rights."
+      },
+      {
+        "time": "Day 1 Night",
+        "name": "Zhaori Hot Spring (朝日溫泉)",
+        "address": "Green Island, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleZhaori",
+        "description": "One of only three saltwater hot springs in the world. Soaking in the warm pools right next to the ocean while watching the sunrise or stargazing is a must-do."
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Chaikou Snorkeling Area (柴口浮潛區)",
+        "address": "Green Island, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleChaikou",
+        "description": "Walking on the stone walkway extending into the sea feels like walking on water. The underwater world here is rich with coral reefs and friendly sea turtles."
+      }
+    ]
+  },
+  {
+    "id": "tt-08",
+    "type": "3-Day Tour",
+    "title": "Offshore Island: Orchid Island (Lanyu)",
+    "subTitle": "蘭嶼：達悟族飛魚文化與地下屋",
+    "tags": ["#OrchidIsland", "#Indigenous", "#Nature"],
+    "heroImage": "/image/search_by_city/taitung/lanyu.jpg",
+    "intro": "Home to the Tao (Yami) people, the only oceanic indigenous tribe in Taiwan. Experience the unique semi-underground houses, flying fish culture, and the pure 'Lanyu Blue' ocean.",
+    "transportation": "**Ferry** from Fugang Harbor/Houbihu or **Plane** from Taitung. **Scooter rental** is highly recommended.",
+    "spots": [
+      {
+        "time": "Day 1 Afternoon",
+        "name": "Dongqing Bay (東清灣)",
+        "address": "Lanyu Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleDongqing",
+        "description": "The best spot for sunrise in Taiwan. Admire the beautifully carved traditional Tatala boats (canoes) resting on the beach. (Please do not touch the boats without permission). "
+      },
+      {
+        "time": "Day 2 Morning",
+        "name": "Ivalino Tribe Underground Houses (野銀地下屋)",
+        "address": "Lanyu Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleIvalino",
+        "description": "The best-preserved traditional settlement. Join a guided tour to enter a semi-underground house and learn how the Tao people adapted to typhoons."
+      },
+      {
+        "time": "Day 3 Morning",
+        "name": "Lanyu Weather Station (蘭嶼氣象站)",
+        "address": "Lanyu Township, Taitung County",
+        "mapLink": "https://goo.gl/maps/exampleWeatherStation",
+        "description": "Located at a high altitude, it offers a breathtaking 360-degree view of the island's coastline and the surrounding Pacific Ocean. The white ruins add a nostalgic touch."
+      }
+    ]
   }
 ]
