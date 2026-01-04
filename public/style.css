@@ -233,7 +233,7 @@ body {
 /* =========================================
    3. 電腦版導覽列 (Desktop Nav)
    ========================================= */
-.mobile-grid-nav { display: none; }
+.mobile-grid-nav, .mobile-more-menu { display: none; }
 
 .desktop-nav {
     background-color: var(--lace-bg);
@@ -746,14 +746,99 @@ h2.section-title {
     /* Banner */
     .hero-slider { width: 96%; height: 50vh; margin: 20px auto; border-width: 3px; padding: 4px; border-radius: 15px; }
     
-    /* Nav */
-    .mobile-grid-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 20px; background-color: var(--lace-bg); border-top: 2px solid var(--lace-border); border-bottom: 2px solid var(--lace-border); }
-    .grid-btn { background: #fff; border: 1px solid var(--lace-border); padding: 10px 5px; text-align: center; text-decoration: none; color: #333; border-radius: 5px; font-size: 0.7rem; font-family: var(--font-eng); font-weight: bold; display: flex; justify-content: center; align-items: center; min-height: 60px; word-break: break-word; }
-    .menu-btn { background-color: rgba(255,255,255,0.7); color: var(--accent-color); }
-
-    .article-grid, .restaurant-grid, .genre-grid { grid-template-columns: 1fr; }
+    /* Mobile Nav Grid */
+    .mobile-grid-nav { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 8px; 
+        padding: 20px; 
+        background-color: var(--lace-bg); 
+        border-top: 2px solid var(--lace-border); 
+        border-bottom: 2px solid var(--lace-border); 
+    }
     
-    /* Page Specific */
+    .grid-btn { 
+        background: #fff; 
+        border: 1px solid var(--lace-border); 
+        padding: 10px 5px; 
+        text-align: center; 
+        text-decoration: none; 
+        color: #333; 
+        border-radius: 5px; 
+        font-size: 0.7rem; 
+        font-family: var(--font-eng); 
+        font-weight: bold; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        min-height: 60px; 
+        word-break: break-word; 
+    }
+    
+    .menu-btn { 
+        background-color: rgba(255,255,255,0.7); 
+        color: var(--accent-color); 
+    }
+
+    /* Mobile More Menu (下拉選單樣式修正) */
+    .mobile-more-menu {
+        background-color: #f9f9f9;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 2px solid var(--lace-border);
+    }
+    .mobile-more-menu a {
+        display: block;
+        padding: 15px;
+        color: #555;
+        text-decoration: none;
+        font-family: var(--font-eng);
+        font-weight: bold;
+        border-bottom: 1px solid #eee;
+    }
+    .mobile-more-menu a:last-child { border-bottom: none; }
+
+    /* --- [手機版地圖按鈕位置微調] --- */
+    /* 這裡的調整不會影響電腦版，因為包在 media query 裡面 */
+
+    /* 1. Outlying Islands: 放在 North 左邊一點點 */
+    .pos-islands { 
+        top: 8% !important;    /* 稍微往下調整，對齊 North */
+        left: 28% !important;  /* 移到 North (約53%) 的左側，保持距離 */
+        right: auto !important; 
+        width: 13%;            /* 手機版按鈕稍微大一點好按 */
+    }
+
+    /* 2. North: 保持置中 (參考基準點) */
+    .pos-north {
+        top: 5% !important;
+        left: 55% !important;
+        width: 13%;
+    }
+
+    /* 3. Central: 往左上移動 */
+    .pos-central { 
+        top: 35% !important;   /* 原本約 40%，往上移 */
+        left: 30% !important;  /* 原本可能更靠右，往左移 */
+        width: 13%;
+    }
+
+    /* 4. East: 往下一點點 */
+    .pos-east { 
+        top: 55% !important;   /* 原本約 45%，往下移 */
+        right: 8% !important; 
+        width: 13%;
+    }
+
+    /* 5. South: 往左移動一個按鈕直徑 */
+    .pos-south { 
+        bottom: 15% !important;
+        left: 32% !important;  /* 原本約 42%，往左移約 10% */
+        width: 13%;
+    }
+
+    /* 其他頁面調整 */
+    .article-grid, .restaurant-grid, .genre-grid { grid-template-columns: 1fr; }
     .page-banner, .city-banner, .festivals-banner, .transport-banner, .ent-banner, .city-hero-banner { height: 250px; aspect-ratio: auto; }
     .culture-row { flex-direction: column; gap: 30px; }
     .region-block, .compact-block { flex-direction: column; align-items: flex-start; }
@@ -761,7 +846,6 @@ h2.section-title {
     .festival-table th, .festival-table td { white-space: nowrap; }
     .genre-grid { grid-template-columns: repeat(2, 1fr); }
     
-    /* City Feed & Article Mobile */
     .hero-title { font-size: 2rem; }
     .hero-subtitle { font-size: 1rem; }
     .feed-grid { grid-template-columns: 1fr; }

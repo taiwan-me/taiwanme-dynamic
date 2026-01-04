@@ -10,16 +10,18 @@
     <link rel="stylesheet" href="/style.css">
 
     <style>
-        /* --- City Feed 專屬樣式 --- */
-        
-        /* 1. 統一 Banner 風格 */
+        /* --- 頁面專屬動態樣式 --- */
+        /* 注意：大部分排版樣式已移至 style.css (.feed-grid, .feed-card 等)。
+           此處僅保留需要根據 citySlug 動態改變的 Banner 背景圖邏輯。
+        */
+
         .city-hero-banner {
-            width: 100%;
-            height: 40vh;
-            min-height: 300px;
+            /* 預設背景色，防止圖片載入前閃白 */
+            background-color: #333; 
             
-            /* [全台灣 20 縣市 Banner 邏輯終極整合] */
-            background-image: <% if (citySlug === 'pingtung') { %>
+            /* [全台灣 20 縣市 Banner 邏輯整合] */
+            background-image: 
+            <% if (citySlug === 'pingtung') { %>
                 url('/image/search_by_city/pingtung_banner.png');
             <% } else if (citySlug === 'kaohsiung') { %>
                 url('/image/search_by_city/kaohsiung_banner.png');
@@ -60,104 +62,22 @@
             <% } else if (citySlug === 'matsu') { %>
                 url('/image/search_by_city/matsu_banner.png');
             <% } else { %>
-                /* 預設 fallback：若未來有新城市但還沒做 banner，會抓這個路徑 */
+                /* 預設 Fallback：如果沒有特定 Banner，嘗試讀取該城市資料夾下的預設圖 */
                 url('/image/search_by_city/<%= citySlug %>/banner_city.jpg');
             <% } %>;
-            
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin-bottom: 60px;
-            background-color: #333; /* 底色設深，防止圖片加載前閃白 */
-        }
-
-        /* 圖片暗化遮罩：確保白色文字跳脫出來 */
-        .city-hero-banner::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* 暗化處理 */
-            z-index: 1;
-        }
-        
-        /* 標題文字置中樣式 */
-        .banner-text {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: #fff; /* 強制白色 */
-            padding: 0 20px;
-        }
-
-        .city-name-title {
-            font-family: var(--font-eng);
-            font-size: clamp(2rem, 8vw, 3.5rem); /* RWD 動態字體 */
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin: 0;
-            color: #ffffff !important; /* 確保是白色 */
-            text-shadow: 0 2px 15px rgba(0,0,0,0.6); /* 加深陰影增加對比度 */
-        }
-
-        .city-subtitle {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
-            font-family: var(--font-eng);
-            letter-spacing: 2px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.9); /* 半透明白 */
-            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-        }
-
-        /* 2. 卡片網格與其餘樣式 */
-        .feed-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1200px; 
-            margin: 0 auto 100px; 
-            padding: 0 20px;
-        }
-
-        .feed-card {
-            background: #fff; border-radius: 12px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s ease;
-            text-decoration: none; color: inherit; display: flex; flex-direction: column;
-            border: 1px solid #eee; height: 100%;
-        }
-        .feed-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
-
-        .feed-img-box { width: 100%; height: 220px; overflow: hidden; }
-        .feed-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
-        .feed-card:hover .feed-img { transform: scale(1.05); }
-
-        .feed-content { padding: 25px; flex: 1; display: flex; flex-direction: column; }
-        .feed-tags { margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag-pill { background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
-
-        .feed-title { font-family: var(--font-eng); font-size: 1.5rem; font-weight: 700; margin: 0 0 10px; color: #333; line-height: 1.3; }
-        .feed-intro { font-size: 0.95rem; color: #666; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-        .feed-btn { align-self: flex-start; padding: 10px 24px; background: #333; color: #fff; border-radius: 30px; font-size: 0.9rem; font-weight: bold; transition: 0.3s; }
-        .feed-card:hover .feed-btn { background: var(--accent-color); }
-
-        @media (max-width: 768px) {
-            .city-hero-banner { height: 250px; }
-            .feed-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    
     <%- include('../partials/header') %> 
     
     <div class="city-hero-banner">
-        <div class="banner-text">
+        <div class="city-hero-overlay">
             <h1 class="city-name-title"><%= cityName %></h1>
-            <p class="city-subtitle">THE HIDDEN GEMS OF <%= cityName.toUpperCase() %></p>
+            <p style="margin: 10px 0 0; font-family: 'Lato'; letter-spacing: 2px; font-weight: 700; color: #555;">
+                THE HIDDEN GEMS
+            </p>
         </div>
     </div>
 
@@ -165,6 +85,7 @@
         <% if (typeof cityData !== 'undefined' && cityData.length > 0) { %>
             <% cityData.forEach(function(article) { %>
                 <a href="/search_by_city/<%= citySlug %>/<%= article.id %>" class="feed-card">
+                    
                     <div class="feed-img-box">
                         <img src="<%= article.heroImage %>" class="feed-img" alt="<%= article.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=TaiwanMe'">
                     </div>
@@ -172,7 +93,9 @@
                     <div class="feed-content">
                         <div class="feed-tags">
                             <% article.tags.slice(0, 2).forEach(function(tag){ %> 
-                                <span class="tag-pill"><%= tag %></span> 
+                                <span style="background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; text-transform: uppercase;">
+                                    #<%= tag %>
+                                </span> 
                             <% }); %>
                         </div>
                         
@@ -185,12 +108,14 @@
             <% }); %>
         <% } else { %>
             <div style="text-align: center; grid-column: 1 / -1; padding: 100px 20px;">
-                <h3 style="color: #999;">Coming Soon...</h3>
-                <p style="color: #bbb;">We are currently exploring this city to bring you the best guides.</p>
+                <h3 style="color: #999; font-family: 'Lato'; font-size: 2rem;">Coming Soon...</h3>
+                <p style="color: #bbb;">We are currently exploring <%= cityName %> to bring you the best guides.</p>
             </div>
         <% } %>
     </div>
 
     <%- include('../partials/footer') %>
+
+    <script src="/script.js"></script>
 </body>
 </html>

@@ -4,9 +4,10 @@ const fs = require('fs');
 const app = express();
 
 // ==========================================
-// 1. 設定 View Engine (EJS 模板引擎)
+// 1. 設定 View Engine
 // ==========================================
 app.set('view engine', 'ejs');
+// 設定 views 的根目錄
 app.set('views', path.join(__dirname, 'views'));
 
 // ==========================================
@@ -15,7 +16,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ==========================================
-// 3. 基礎頁面路由 (指向 static_pages 資料夾)
+// 3. 靜態頁面路由 (Static Pages)
+// 對應資料夾: views/static_pages/
 // ==========================================
 
 // 首頁
@@ -23,36 +25,36 @@ app.get('/', (req, res) => {
     res.render('static_pages/index', { pageName: 'index' });
 });
 
-// 文化介紹頁
+// 文化介紹
 app.get('/culture', (req, res) => {
     res.render('static_pages/culture', { pageName: 'culture' });
 });
 
-// 節慶總覽頁
+// 節慶總覽
 app.get('/festivals', (req, res) => {
     res.render('static_pages/festivals', { pageName: 'festivals' });
 });
 
-// 搜尋選擇頁 (地圖導航頁)
+// 搜尋選擇頁 (地圖)
 app.get('/search_by_city', (req, res) => {
     res.render('static_pages/search_by_city', { pageName: 'search_by_city' });
 });
 
 // ==========================================
-// [核心功能 A] City Guide (動態文章)
+// 4. City Guide (縣市旅遊)
+// 對應資料夾: views/city_articles/
 // ==========================================
 
-// 1. 縣市列表頁 (Feed)
+// 縣市列表頁 (Feed)
 app.get('/search_by_city/:city', (req, res) => {
     const city = req.params.city.toLowerCase();
     const jsonPath = path.join(__dirname, 'data', 'search_by_city', `${city}.json`);
 
     if (fs.existsSync(jsonPath)) {
         try {
-            const fileContent = fs.readFileSync(jsonPath, 'utf8');
-            const cityData = JSON.parse(fileContent);
+            const cityData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
             
-            // 格式化顯示名稱 (例如: new_taipei -> New Taipei)
+            // 格式化顯示名稱 (如: new_taipei -> New Taipei)
             const displayCityName = city.split('_')
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(' ');
@@ -64,21 +66,15 @@ app.get('/search_by_city/:city', (req, res) => {
                 citySlug: city
             });
         } catch (err) {
-            console.error('JSON Error:', err);
-            res.status(500).send('Error parsing city data.');
+            console.error(err);
+            res.status(500).send('Error parsing data');
         }
     } else {
-        res.status(404).send(`
-            <div style="text-align:center; padding:50px;">
-                <h1>City Not Found</h1>
-                <p>Sorry, we don't have a guide for "${city}" yet.</p>
-                <a href="/search_by_city">Back to Map</a>
-            </div>
-        `);
+        res.status(404).send('City Not Found');
     }
 });
 
-// 2. 縣市文章內文頁 (Article)
+// 縣市文章內頁 (Article)
 app.get('/search_by_city/:city/:id', (req, res) => {
     const city = req.params.city.toLowerCase();
     const articleId = req.params.id;
@@ -96,67 +92,59 @@ app.get('/search_by_city/:city/:id', (req, res) => {
                     citySlug: city
                 });
             } else {
-                res.status(404).send('Article not found.');
+                res.status(404).send('Article not found');
             }
         } catch (err) {
-            console.error('Article Load Error:', err);
-            res.status(500).send('Error loading article.');
+            console.error(err);
+            res.status(500).send('Error loading article');
         }
     } else {
-        res.status(404).send('City data not found.');
+        res.status(404).send('City data not found');
     }
 });
 
 // ==========================================
-// [核心功能 B] Transport Guide (交通專題)
+// 5. Transport Guide (交通攻略)
+// 對應資料夾: views/transport_articles/
 // ==========================================
 
-// 1. 交通總覽頁 (Feed)
+// 交通總覽頁
 app.get('/transport', (req, res) => {
-    // 指向 transport_articles 資料夾下的 feed 檔案
     res.render('transport_articles/transport_feed', { pageName: 'transport' });
 });
 
-// 2. 交通攻略內文頁 (Article)
+// 交通文章內頁
 app.get('/transport/:topic', (req, res) => {
     const topic = req.params.topic;
     const jsonPath = path.join(__dirname, 'data', 'transport', `${topic}.json`);
 
     if (fs.existsSync(jsonPath)) {
         try {
-            const fileContent = fs.readFileSync(jsonPath, 'utf8');
-            const topicData = JSON.parse(fileContent);
-
+            const topicData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
             res.render('transport_articles/transport_article_page', { 
                 pageName: 'transport',
                 data: topicData 
             });
         } catch (err) {
-            console.error('Transport JSON Error:', err);
-            res.status(500).send('Error parsing transport data.');
+            console.error(err);
+            res.status(500).send('Error parsing transport data');
         }
     } else {
-        res.status(404).send(`
-            <div style="text-align:center; padding:50px;">
-                <h1>Topic Not Found</h1>
-                <p>Sorry, the guide for "${topic}" is currently unavailable.</p>
-                <a href="/transport">Back to Transport Hub</a>
-            </div>
-        `);
+        res.status(404).send('Transport Guide Not Found');
     }
 });
 
 // ==========================================
-// [核心功能 C] Hidden Gems (隱藏景點)
+// 6. Hidden Gems (隱藏景點)
+// 對應資料夾: views/hiddengems_articles/
 // ==========================================
 
-// 1. 隱藏景點列表頁 (Feed) --> [本次修正]
+// 隱藏景點列表
 app.get('/hidden_gems', (req, res) => {
-    // 改為指向 hiddengems_articles 資料夾下的 feed
     res.render('hiddengems_articles/hiddengems_feed', { pageName: 'hidden_gems' });
 });
 
-// 2. 隱藏景點內文頁 (Article)
+// 隱藏景點內頁
 app.get('/hidden_gems/:id', (req, res) => {
     const gemId = req.params.id;
     const jsonPath = path.join(__dirname, 'data', 'hiddengems', `${gemId}.json`);
@@ -164,64 +152,44 @@ app.get('/hidden_gems/:id', (req, res) => {
     if (fs.existsSync(jsonPath)) {
         try {
             const gemData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-            
             res.render('hiddengems_articles/hiddengems_article_page', { 
                 pageName: 'hidden_gems',
                 article: gemData 
             });
         } catch (err) {
-            console.error('Gem JSON Error:', err);
-            res.status(500).send('Error parsing gem data.');
+            console.error(err);
+            res.status(500).send('Error parsing gem data');
         }
     } else {
-        res.status(404).send(`
-            <div style="text-align:center; padding:50px;">
-                <h1>Gem Not Found</h1>
-                <p>We haven't discovered this place yet.</p>
-                <a href="/hidden_gems">Back to Hidden Gems</a>
-            </div>
-        `);
+        res.status(404).send('Gem Not Found');
     }
 });
 
 // ==========================================
-// [核心功能 D] Dining & Entertainment (清單模式)
+// 7. Dining & Entertainment (列表)
+// 對應資料夾: views/dining_lists/ & views/entertainment_lists/
 // ==========================================
 
-// 1. 美食列表 (Dining List)
+// Dining
 app.get('/dining', (req, res) => {
     const diningPath = path.join(__dirname, 'data', 'dining.json');
     let diningData = [];
-    
     if (fs.existsSync(diningPath)) {
-        try {
-            diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8'));
-        } catch (err) {
-            console.error('Dining JSON Error:', err);
-        }
+        diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8'));
     }
-    
-    // 指向 dining_lists 資料夾
     res.render('dining_lists/dining_feed', { 
         pageName: 'dining',
         items: diningData 
     });
 });
 
-// 2. 娛樂列表 (Entertainment List)
+// Entertainment
 app.get('/entertainment', (req, res) => {
     const entPath = path.join(__dirname, 'data', 'entertainment.json');
     let entData = [];
-    
     if (fs.existsSync(entPath)) {
-        try {
-            entData = JSON.parse(fs.readFileSync(entPath, 'utf8'));
-        } catch (err) {
-            console.error('Entertainment JSON Error:', err);
-        }
+        entData = JSON.parse(fs.readFileSync(entPath, 'utf8'));
     }
-    
-    // 指向 entertainment_lists 資料夾
     res.render('entertainment_lists/entertainment_feed', { 
         pageName: 'entertainment',
         items: entData 
@@ -229,31 +197,21 @@ app.get('/entertainment', (req, res) => {
 });
 
 // ==========================================
-// 4. 404 錯誤處理
+// 8. 404 & Server Start
 // ==========================================
 app.use((req, res) => {
     res.status(404).send(`
         <div style="text-align:center; padding:50px; font-family: sans-serif;">
-            <h1>404 - Page Not Found</h1>
-            <p>抱歉，找不到您要的頁面。</p>
-            <a href="/" style="color: #E8A2A2; text-decoration: none; font-weight: bold;">回首頁 (Back to Home)</a>
+            <h1 style="font-size: 3rem; color: #333;">404</h1>
+            <h2>Page Not Found</h2>
+            <p>Oops! The page you are looking for does not exist.</p>
+            <a href="/" style="color: #E8A2A2; text-decoration: none; font-weight: bold;">Back to Home</a>
         </div>
     `);
 });
 
-// ==========================================
-// 5. 啟動伺服器
-// ==========================================
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`=========================================`);
-    console.log(`✅ TaiwanMe 伺服器運作中`);
-    console.log(`   - 基礎頁面:       static_pages`);
-    console.log(`   - City Guide:     city_articles`);
-    console.log(`   - Transport:      transport_articles`);
-    console.log(`   - Hidden Gems:    hiddengems_articles`);
-    console.log(`   - Dining:         dining_lists`);
-    console.log(`   - Entertainment:  entertainment_lists`);
-    console.log(`🌍 URL: http://localhost:${PORT}`);
-    console.log(`=========================================`);
+    console.log(`✅ TaiwanMe 伺服器運作中: http://localhost:${PORT}`);
+    console.log(`📁 請確認您的 views 資料夾已依照結構分類完畢`);
 });

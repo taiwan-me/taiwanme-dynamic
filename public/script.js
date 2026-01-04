@@ -53,40 +53,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==============================================
-    // 3. Business Inquiry 彈窗功能
+    // 3. Business Inquiry 彈窗功能 (含手機版 ID)
     // ==============================================
     const bizBtn = document.getElementById('bizInquiryBtn');
+    const bizBtnMobile = document.getElementById('bizInquiryBtnMobile'); // 手機版按鈕
     const bizModal = document.getElementById('businessInquiryModal');
     const closeBiz = document.querySelector('.close-biz');
 
+    // 綁定電腦版按鈕
     if (bizBtn && bizModal) {
         bizBtn.addEventListener('click', (e) => {
             e.preventDefault();
             bizModal.style.display = 'flex';
         });
-        if (closeBiz) {
-            closeBiz.addEventListener('click', () => bizModal.style.display = 'none');
-        }
+    }
+
+    // [新增] 綁定手機版按鈕
+    if (bizBtnMobile && bizModal) {
+        bizBtnMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            bizModal.style.display = 'flex';
+        });
+    }
+
+    if (closeBiz && bizModal) {
+        closeBiz.addEventListener('click', () => bizModal.style.display = 'none');
     }
 
     // ==============================================
-    // 4. 打賞 (Tipping) 彈窗邏輯 & 複製功能
+    // 4. 打賞 (Tipping) 彈窗邏輯 & 複製功能 (含手機版 ID)
     // ==============================================
     const tippingBtn = document.getElementById('tippingBtn');
+    const tippingBtnMobile = document.getElementById('tippingBtnMobile'); // 手機版按鈕
     const tippingModal = document.getElementById('tippingModal');
     const closeTipping = document.querySelector('.close-tipping');
 
+    // 綁定電腦版按鈕
     if (tippingBtn && tippingModal) {
         tippingBtn.addEventListener('click', (e) => {
             e.preventDefault();
             tippingModal.style.display = 'flex';
         });
-        if (closeTipping) {
-            closeTipping.addEventListener('click', () => tippingModal.style.display = 'none');
-        }
+    }
 
-        // --- 複製地址功能 ---
-        const copyButtons = document.querySelectorAll('.copy-btn');
+    // [新增] 綁定手機版按鈕
+    if (tippingBtnMobile && tippingModal) {
+        tippingBtnMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            tippingModal.style.display = 'flex';
+        });
+    }
+
+    if (closeTipping && tippingModal) {
+        closeTipping.addEventListener('click', () => tippingModal.style.display = 'none');
+    }
+
+    // --- 複製地址功能 ---
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    if (copyButtons.length > 0) {
         copyButtons.forEach(btn => {
             btn.addEventListener('click', async () => {
                 const address = btn.getAttribute('data-addr');
@@ -153,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================================
-    // 6. 手機版 MORE 選單開關
+    // 6. 手機版 MORE 選單開關 (Updated for Unified Header)
     // ==============================================
     const mobileMoreBtn = document.getElementById('mobileMoreBtn');
     const mobileMoreMenu = document.getElementById('mobileMoreMenu');
@@ -329,16 +353,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==============================================
-    // [重要更新] 13. 處理跨頁面錨點平滑捲動 (例如首頁地圖點擊 North)
+    // 13. 處理跨頁面錨點平滑捲動
     // ==============================================
-    // 當頁面資源完全載入（ Swiper, 圖片等）後執行，確保捲動位置準確
     window.addEventListener('load', () => {
         if (window.location.hash) {
             const targetId = window.location.hash.substring(1); 
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
-                // 延遲執行以避開 Swiper 渲染導致的高計算錯誤
                 setTimeout(() => {
                     targetElement.scrollIntoView({ 
                         behavior: 'smooth', 

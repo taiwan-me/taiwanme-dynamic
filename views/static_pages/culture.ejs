@@ -82,7 +82,16 @@
             line-height: 1.4;
         }
 
-        .culture-text p {
+        .culture-text h4 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .culture-text p, .culture-text li {
             font-family: 'Noto Sans TC', sans-serif;
             font-size: 1.05rem;
             color: #555;
@@ -91,7 +100,12 @@
             margin-bottom: 15px;
         }
 
-        /* --- 圖片與 SEO 註解樣式 --- */
+        .culture-text ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* --- 圖片與影片樣式 --- */
         .culture-image {
             flex: 1;
             position: relative;
@@ -116,7 +130,27 @@
             transform: scale(1.02);
         }
 
-        /* 圖片下方說明文字 (Caption) */
+        /* 響應式影片容器 (16:9) */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 10px 10px 0px rgba(232, 162, 162, 0.3);
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* 圖片/影片下方說明文字 */
         .culture-image figcaption {
             margin-top: 15px;
             font-family: 'Noto Sans TC', sans-serif;
@@ -152,6 +186,29 @@
             border-left: 5px solid var(--accent-color);
         }
 
+        /* 表格樣式 */
+        .language-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .language-table th, .language-table td {
+            border: 1px solid #eee;
+            padding: 12px;
+            text-align: left;
+        }
+        .language-table th {
+            background-color: var(--accent-color);
+            color: #fff;
+            font-weight: bold;
+        }
+        .language-table tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
         /* 按鈕容器 */
         .read-more-wrapper {
             text-align: center;
@@ -160,7 +217,7 @@
             z-index: 10;
         }
 
-        #read-more-btn {
+        .read-more-btn {
             background-color: #fff;
             border: 2px solid var(--accent-color);
             color: var(--accent-color);
@@ -174,14 +231,14 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        #read-more-btn:hover {
+        .read-more-btn:hover {
             background-color: var(--accent-color);
             color: #fff;
             transform: translateY(-2px);
         }
 
         /* 隱藏區塊 */
-        #full-history-content {
+        #full-history-content, #full-language-content {
             display: none;
             animation: fadeIn 0.8s ease;
         }
@@ -201,7 +258,7 @@
                 margin-bottom: 60px;
             }
             .culture-text h2 { font-size: 1.6rem; }
-            .culture-image img { 
+            .culture-image img, .video-container { 
                 box-shadow: 5px 5px 0px rgba(232, 162, 162, 0.3); 
                 max-height: 300px;
             }
@@ -242,11 +299,10 @@
         </div>
 
         <div class="read-more-wrapper">
-            <button id="read-more-btn" onclick="toggleHistory()">Read More History</button>
+            <button id="history-btn" class="read-more-btn" onclick="toggleHistory()">Read More History</button>
         </div>
 
         <div id="full-history-content">
-            
             <div class="culture-row" style="flex-direction: row-reverse;">
                 <div class="culture-text">
                     <h3>Chapter 1: The Ancient Call—Austronesian Ancestors</h3>
@@ -255,18 +311,11 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch1.jpg" 
-                             alt="Paiwan females doing traditional needlework" 
-                             title="Traditional Craftsmanship of Paiwan People"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Traditional needlework by Paiwan women.<br>
-                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Paiwan_females_doing_needlework.jpg" target="_blank" rel="nofollow">Torii Ryūzō (鳥居龍藏)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch1.jpg" alt="Paiwan females doing traditional needlework" title="Traditional Craftsmanship of Paiwan People" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Traditional needlework by Paiwan women.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Paiwan_females_doing_needlework.jpg" target="_blank" rel="nofollow">Torii Ryūzō (鳥居龍藏)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small></figcaption>
                     </figure>
                 </div>
             </div>
-
             <div class="culture-row">
                 <div class="culture-text">
                     <h3>Chapter 2: Awe and the Legend of the Red Hairs</h3>
@@ -275,18 +324,11 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch2.jpg" 
-                             alt="Fort San Domingo in Tamsui" 
-                             title="Historical Fort San Domingo (Red Hair Castle)"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Fort San Domingo in Tamsui, a legacy of Spanish and Dutch presence.<br>
-                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E6%B7%A1%E6%B0%B4%E7%B4%85%E6%AF%9B%E5%9F%8E20170809.jpg" target="_blank" rel="nofollow">Tuhsun</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch2.jpg" alt="Fort San Domingo in Tamsui" title="Historical Fort San Domingo (Red Hair Castle)" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Fort San Domingo in Tamsui.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E6%B7%A1%E6%B0%B4%E7%B4%85%E6%AF%9B%E5%9F%8E20170809.jpg" target="_blank" rel="nofollow">Tuhsun</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small></figcaption>
                     </figure>
                 </div>
             </div>
-
             <div class="culture-row" style="flex-direction: row-reverse;">
                 <div class="culture-text">
                     <h3>Chapter 3: Taking Root—The Localization of "Old Taiwanese"</h3>
@@ -295,18 +337,11 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch3.jpg" 
-                             alt="Remains of Fort Zeelandia (Anping Old Fort)" 
-                             title="Anping Old Fort Walls"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Remains of the historic Fort Zeelandia (Anping Old Fort).<br>
-                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E5%8F%B0%E7%81%A3%E5%9F%8E%E6%AE%98%E8%B9%9F%EF%BC%88%E5%AE%89%E5%B9%B3%E5%8F%A4%E5%A0%A1%E6%AE%98%E8%B9%9F%EF%BC%89-1.jpg" target="_blank" rel="nofollow">WEI, WAN-CHEN（魏琬臻）</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch3.jpg" alt="Remains of Fort Zeelandia (Anping Old Fort)" title="Anping Old Fort Walls" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Remains of the historic Fort Zeelandia.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E5%8F%B0%E7%81%A3%E5%9F%8E%E6%AE%98%E8%B9%9F%EF%BC%88%E5%AE%89%E5%B9%B3%E5%8F%A4%E5%A0%A1%E6%AE%98%E8%B9%9F%EF%BC%89-1.jpg" target="_blank" rel="nofollow">WEI, WAN-CHEN（魏琬臻）</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small></figcaption>
                     </figure>
                 </div>
             </div>
-
             <div class="culture-row">
                 <div class="culture-text">
                     <h3>Chapter 4: Rupture Under the Rising Sun Flag</h3>
@@ -315,18 +350,11 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch4.jpg" 
-                             alt="Taipei Three-Lane Road during Japanese Era" 
-                             title="Historical Taipei under Japanese Rule"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Taipei's cityscape development during the Japanese colonial era.<br>
-                            <small>Source: <a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F%E5%8F%B0%E5%8C%97%E4%B8%89%E7%B7%9A%E8%B7%AF.jpg" target="_blank" rel="nofollow">Wikimedia Commons</a> (Public Domain)</small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch4.jpg" alt="Taipei Three-Lane Road during Japanese Era" title="Historical Taipei under Japanese Rule" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Taipei's cityscape during the Japanese colonial era.<br><small>Photo by Unknown Author / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small></figcaption>
                     </figure>
                 </div>
             </div>
-
             <div class="culture-row" style="flex-direction: row-reverse;">
                 <div class="culture-text">
                     <h3>Chapter 5: Quasi-Colonial Re-migration (1949)</h3>
@@ -335,18 +363,11 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch5.jpg" 
-                             alt="Artwork depicting the 228 Incident by Li Jun" 
-                             title="Historical Reflection on 228 Incident"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Artistic depiction reflecting the tragedy of the 228 Incident.<br>
-                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:228_by_Li_Jun_(cropped).jpg" target="_blank" rel="nofollow">Li Jun (李雋)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch5.jpg" alt="Artwork depicting the 228 Incident by Li Jun" title="Historical Reflection on 228 Incident" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Artistic depiction reflecting the tragedy of the 228 Incident.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:228_by_Li_Jun_(cropped).jpg" target="_blank" rel="nofollow">Li Jun (李雋)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small></figcaption>
                     </figure>
                 </div>
             </div>
-
             <div class="culture-row">
                 <div class="culture-text">
                     <h3>Chapter 6: Generational Confusion & Youthful Clarity</h3>
@@ -355,18 +376,11 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch6.jpg" 
-                             alt="Huan Min Military Dependents Village" 
-                             title="Huan Min Village Community"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Huan Min Village: A symbol of the military dependents' history.<br>
-                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Huan_Min_Village,_The_Toad_Hill_community_2023.jpg" target="_blank" rel="nofollow">Taipei City Government</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">Attribution</a></small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch6.jpg" alt="Huan Min Military Dependents Village" title="Huan Min Village Community" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Huan Min Village: A symbol of the military dependents' history.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Huan_Min_Village,_The_Toad_Hill_community_2023.jpg" target="_blank" rel="nofollow">Taipei City Government</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">Attribution</a></small></figcaption>
                     </figure>
                 </div>
             </div>
-
             <div class="culture-row" style="flex-direction: row-reverse;">
                 <div class="culture-text">
                     <h3>Chapter 7: Conclusion—The Definition of Freedom</h3>
@@ -375,18 +389,11 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch7.jpg" 
-                             alt="Liberty Square Main Gate" 
-                             title="Liberty Square Symbolizing Democracy"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Liberty Square: The icon of Taiwan's democracy.<br>
-                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:20190416_Liberty_Square_main_gate-3.jpg" target="_blank" rel="nofollow">Supanut Arunoprayote</a> / <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="nofollow">CC0 1.0</a></small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch7.jpg" alt="Liberty Square Main Gate" title="Liberty Square Symbolizing Democracy" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Liberty Square: The icon of Taiwan's democracy.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/User:Supanut_Arunoprayote" target="_blank" rel="nofollow">Supanut Arunoprayote</a> / <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="nofollow">CC0 1.0</a></small></figcaption>
                     </figure>
                 </div>
             </div>
-
             <div class="culture-row">
                 <div class="culture-text special-supplement">
                     <h3>[Special Supplement: The Soul of the Land]</h3>
@@ -396,27 +403,136 @@
                 </div>
                 <div class="culture-image">
                     <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch8.jpg" 
-                             alt="Vice President at 2025 Taiwan Women's Baseball League Closing Ceremony" 
-                             title="Modern Indigenous Glory in Sports"
-                             itemprop="contentUrl">
-                        <figcaption itemprop="caption">
-                            Indigenous athletes shining in Taiwan's women's baseball league.<br>
-                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:11.30_%E5%89%AF%E7%B8%BD%E7%B5%B1%E5%87%BA%E5%B8%AD%E3%80%8C2025%E5%8F%B0%E7%81%A3%E5%A5%B3%E5%AD%90%E6%A3%92%E7%90%83%E8%81%AF%E8%B3%BD%E9%96%89%E5%B9%95%E6%9A%A8%E9%A0%92%E7%8D%8E%E5%85%B8%E7%A6%AE%E3%80%8D_-_54953847137.jpg" target="_blank" rel="nofollow">Taiwan Presidential Office</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">CC BY 4.0</a></small>
-                        </figcaption>
+                        <img src="/image/culture/history_ch8.jpg" alt="Vice President at 2025 Taiwan Women's Baseball League Closing Ceremony" title="Modern Indigenous Glory in Sports" itemprop="contentUrl">
+                        <figcaption itemprop="caption">Indigenous athletes shining in Taiwan's women's baseball league.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:11.30_%E5%89%AF%E7%B8%BD%E7%B5%B1%E5%87%BA%E5%B8%AD%E3%80%8C2025%E5%8F%B0%E7%81%A3%E5%A5%B3%E5%AD%90%E6%A3%92%E7%90%83%E8%81%AF%E8%B3%BD%E9%96%89%E5%B9%95%E6%9A%A8%E9%A0%92%E7%8D%8E%E5%85%B8%E7%A6%AE%E3%80%8D_-_54953847137.jpg" target="_blank" rel="nofollow">Taiwan Presidential Office</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">CC BY 4.0</a></small></figcaption>
                     </figure>
                 </div>
             </div>
+        </div>
 
-        </div> <div class="culture-row" style="flex-direction: row-reverse; margin-top: 100px;">
+        <div class="culture-row" style="margin-top: 100px; border-top: 1px solid #ddd; padding-top: 60px;">
             <div class="culture-text">
-                <h2>在台語言與生活日語介紹</h2>
-                <p>The official language is Mandarin Chinese (Huayu), but distinct local languages like Taiwanese (Hokkien) and Hakka are widely spoken. Due to the colonial history, many older generations also speak fluent Japanese.</p>
-                <p>Interestingly, many Taiwanese words related to daily life are borrowed from Japanese, such as "Obasan" (auntie) or "Bento" (boxed meal). English is becoming increasingly common in major cities and transportation systems.</p>
+                <h2>Languages of Taiwan: The Breath of the Land</h2>
+                <h3>1. Taiwanese Mandarin: Unique Accents</h3>
+                <p>This is the primary official and common language in Taiwan. Used in government, education, and business, Taiwanese Mandarin has developed its own unique accent and vocabulary, often described as gentler than in other regions.</p>
+                
+                <h4>Distinctive Habits:</h4>
+                <ul>
+                    <li><strong>Slurred Phonetics:</strong> Words are often slurred. For example, "motorcycle" (mó-tuō-chē) often evolves into "mó-o-chē".</li>
+                    <li><strong>Merging of Sounds:</strong> Speakers often do not distinguish between "en" and "eng", or "an" and "ang".</li>
+                    <li><strong>Local Pronunciations:</strong> A notable quirk is pronouncing "very cold" (hěn lěng) as "hěn něng".</li>
+                </ul>
             </div>
+            
             <div class="culture-image">
-                <img src="/image/culture/language.jpg" alt="Language in Taiwan" onerror="this.src='https://placehold.co/600x400/eee/333?text=Language+Image'">
+                <figure itemscope itemtype="http://schema.org/ImageObject">
+                    <img src="/image/culture/language.png" alt="Languages of Taiwan Illustration" title="Languages of Taiwan" itemprop="contentUrl">
+                    <figcaption itemprop="caption">Taiwan's linguistic landscape is a symphony of voices.</figcaption>
+                </figure>
             </div>
+        </div>
+
+        <div class="read-more-wrapper">
+            <button id="language-btn" class="read-more-btn" onclick="toggleLanguage()">Read More Languages</button>
+        </div>
+
+        <div id="full-language-content">
+            
+            <div class="culture-row">
+                <div class="culture-image">
+                    <figure>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/PvIfBkD6njg" title="Taiwanese Hokkien Accent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <figcaption>One of the many accents.</figcaption>
+                    </figure>
+                </div>
+                <div class="culture-text">
+                    <h3>2. Taiwanese Hokkien: Identity Shaped by History</h3>
+                    <p>This is the most widely spoken native mother tongue. It is specifically referred to as "Taiwanese Hokkien" or simply "Taiwanese" because, over centuries, it has been influenced by Japanese.</p>
+                    <p>Many loanwords (e.g., ballpoint pen, gas, truck) are derived from Japanese. While usage among the youth is declining, the government is actively promoting a "Mother Tongue Revival" to preserve this cultural legacy rooted in traditional markets and daily life.</p>
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-image">
+                    <figure>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Rw9We9UqI2Q" title="Taiwanese Hakka Accent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <figcaption>One of the many accents.</figcaption>
+                    </figure>
+                </div>
+                <div class="culture-text">
+                    <h3>3. Taiwanese Hakka: Spirit of the Hills</h3>
+                    <p>The Hakka people traditionally settled in Taiwan's hilly regions. Although both Hakka and Hokkien originated from southern China, they are mutually unintelligible.</p>
+                    <p>An interesting phenomenon exists for Hakka people born between 1966-1976. Due to the social environment of that era favoring Mandarin and Hokkien, this generation is often bilingual, speaking fluent Hokkien alongside their native Hakka tongue.</p>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-image">
+                    <figure>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/X_dH8TChy3c" title="Amis Language" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <figcaption>Amis language, one of the 16 officially recognized tribes.</figcaption>
+                    </figure>
+                </div>
+                <div class="culture-text">
+                    <h3>4. Indigenous Languages: Ancient Names</h3>
+                    <p>Before massive Han migration, Taiwan was home to diverse tribes. The western plains were inhabited by "Plains Indigenous" peoples. City names like Tainan's "Tayouan", Kaohsiung's "Takao", and Taipei's "Bangka" have roots in Indigenous languages.</p>
+                    <p>Today, the languages of the 16 officially recognized tribes (like Amis, Paiwan, Atayal) are protected as national languages and taught in schools.</p>
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>5. Japanese and Foreign Languages</h3>
+                    <p>Before 1945, Japanese proficiency in Taiwan reached 70%. Due to historical ties and cultural influx, Japanese remains the most popular second foreign language after English.</p>
+                    <p>Additionally, with the rise of new immigrants, languages such as Vietnamese, Indonesian, and Thai are becoming increasingly visible.</p>
+
+                    <h4>📊 Demographics & Linguistics Summary</h4>
+                    <table class="language-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Approx. Population</th>
+                                <th>Key Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Taiwanese Mandarin</td>
+                                <td>95%</td>
+                                <td>Universal usage; soft accent.</td>
+                            </tr>
+                            <tr>
+                                <td>Taiwanese Hokkien</td>
+                                <td>70%</td>
+                                <td>Largest mother tongue; dominant in markets.</td>
+                            </tr>
+                            <tr>
+                                <td>Taiwanese Hakka</td>
+                                <td>19%</td>
+                                <td>Concentrated in hilly regions (Taoyuan, Miaoli).</td>
+                            </tr>
+                            <tr>
+                                <td>New Immigrant Langs</td>
+                                <td>3.5%</td>
+                                <td>Vietnamese, Indonesian, Thai (Growing).</td>
+                            </tr>
+                            <tr>
+                                <td>Indigenous Langs</td>
+                                <td>2.5%</td>
+                                <td>16 recognized tribes; roots of place names.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="culture-image" style="display:none;"></div> 
+            </div>
+
         </div>
 
     </div>
@@ -426,7 +542,7 @@
     <script>
         function toggleHistory() {
             var content = document.getElementById("full-history-content");
-            var btn = document.getElementById("read-more-btn");
+            var btn = document.getElementById("history-btn");
 
             if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
@@ -434,11 +550,27 @@
             } else {
                 content.style.display = "none";
                 btn.innerHTML = "Read More History";
-                // 收起時滑動回到標題
-                document.querySelector('.culture-text h2').scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('.culture-row h2').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function toggleLanguage() {
+            var content = document.getElementById("full-language-content");
+            var btn = document.getElementById("language-btn");
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                btn.innerHTML = "Show Less Languages";
+            } else {
+                content.style.display = "none";
+                btn.innerHTML = "Read More Languages";
+                // 捲動回語言標題
+                btn.parentElement.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
             }
         }
     </script>
+
+    <script src="/script.js"></script>
 
 </body>
 </html>

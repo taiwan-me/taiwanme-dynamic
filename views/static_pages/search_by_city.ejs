@@ -8,141 +8,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
-
-    <style>
-        /* Banner 設定 */
-        .city-banner {
-            width: 90%;           
-            max-width: 900px;     
-            margin: 40px auto 20px; 
-
-            aspect-ratio: 1344 / 768; 
-            
-            border-radius: 25px;
-            border: 8px solid #fff;
-            outline: 2px dashed #dcb5b5; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-
-            /* 路徑修正 */
-            background-image: url('/image/search_by_city/banner.png'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .page-main-title {
-            text-align: center;
-            font-family: 'Lato', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #5d5d5d; 
-            margin: 20px 0 40px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .region-list-container {
-            max-width: 1000px;
-            margin: 0 auto 60px;
-            padding: 0 20px;
-        }
-
-        .region-block {
-            display: flex;
-            flex-direction: column;
-            border-bottom: 1px solid #eee;
-            padding: 40px 0;
-            /* 為了讓錨點定位更準確（避免被 Header 擋住），可以加一點 scroll-margin */
-            scroll-margin-top: 100px;
-        }
-        .region-block:last-child { border-bottom: none; }
-
-        .region-title {
-            font-family: 'Lato', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #333;
-            min-width: 200px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .region-title::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background-color: var(--accent-color);
-            margin-top: 10px;
-        }
-
-        .city-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            flex: 1;
-        }
-
-        .city-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: #555;
-            border: 1px solid #ccc;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-family: 'Noto Sans TC', sans-serif;
-            font-weight: 500;
-            transition: 0.3s;
-            background: #fff;
-        }
-
-        .city-btn:hover {
-            background-color: var(--accent-color);
-            color: #fff;
-            border-color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* --- 離島特殊排版樣式 --- */
-        .island-section-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .island-separator {
-            width: 100%;
-            border-top: 2px dashed #ddd; /* 虛線 */
-            position: relative;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .separator-label {
-            position: absolute;
-            top: -12px;
-            left: 0;
-            background-color: #fff; /* 蓋住虛線 */
-            padding-right: 15px;
-            color: #d9534f; /* 紅字 */
-            font-size: 0.9rem;
-            font-weight: bold;
-            font-family: 'Lato', sans-serif;
-            text-transform: uppercase;
-        }
-
-        @media (min-width: 768px) {
-            .region-block {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .region-title {
-                margin-bottom: 0;
-            }
-        }
-    </style>
-</head>
+    
+    </head>
 <body>
 
     <%- include('../partials/header') %>
@@ -227,6 +94,8 @@
     </section>
 
     <%- include('../partials/footer') %>
+
+    <script src="/script.js"></script>
 
 </body>
 </html>

@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <%- include('../partials/header') %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= article.title %> | Hidden Gem Taiwan</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+    
     <style>
         /* --- Hidden Gems 專屬沉浸式樣式 --- */
         .gem-hero {
             height: 70vh;
+            min-height: 450px;
             background-image: url('<%= article.heroImage %>');
             background-size: cover;
             background-position: center;
@@ -22,8 +29,25 @@
             background: rgba(0,0,0,0.4);
         }
         .gem-hero-content { position: relative; z-index: 2; padding: 20px; }
-        .gem-category { font-family: var(--font-eng); text-transform: uppercase; letter-spacing: 3px; background: var(--accent-color); padding: 5px 15px; border-radius: 50px; font-size: 0.9rem; }
-        .gem-title { font-size: 4rem; font-weight: 900; margin: 20px 0; font-family: var(--font-eng); }
+        
+        .gem-category { 
+            font-family: var(--font-eng); 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            background: var(--accent-color); 
+            padding: 5px 15px; 
+            border-radius: 50px; 
+            font-size: 0.9rem; 
+            font-weight: bold;
+        }
+        
+        .gem-title { 
+            font-size: 4rem; 
+            font-weight: 900; 
+            margin: 20px 0; 
+            font-family: var(--font-eng); 
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
 
         /* 特色區塊：為什麼是隱藏景點 */
         .hidden-factor-box {
@@ -38,18 +62,62 @@
             display: flex;
             align-items: center;
             gap: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        .hidden-label { font-size: 3rem; opacity: 0.3; font-weight: 900; line-height: 1; }
-        .hidden-text { font-style: italic; font-size: 1.2rem; color: #555; }
+        .hidden-label { 
+            font-size: 3rem; 
+            opacity: 0.2; 
+            font-weight: 900; 
+            line-height: 1; 
+            font-family: var(--font-eng);
+        }
+        .hidden-text { 
+            font-style: italic; 
+            font-size: 1.15rem; 
+            color: #555; 
+            line-height: 1.6;
+        }
 
         .gem-body { max-width: 800px; margin: 0 auto 100px; padding: 0 20px; }
-        .gem-text-block { font-size: 1.1rem; line-height: 2; color: #444; margin-bottom: 40px; text-align: justify; }
+        .gem-text-block { 
+            font-size: 1.1rem; 
+            line-height: 1.9; 
+            color: #444; 
+            margin-bottom: 40px; 
+            text-align: justify; 
+        }
         
         /* 地圖區塊 */
-        .map-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .map-info { margin-bottom: 15px; font-weight: bold; color: #333; }
+        .map-card { 
+            background: #fff; 
+            border: 1px solid #eee; 
+            border-left: 5px solid var(--accent-color);
+            border-radius: 8px; 
+            padding: 25px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            margin-top: 60px;
+        }
+        .map-info { margin-bottom: 15px; font-weight: bold; color: #333; font-size: 1.1rem; }
         
-        .back-btn-container { text-align: center; margin-top: 50px; }
+        .back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eee; padding-top: 40px; }
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #333;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-family: var(--font-eng);
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #333; color: #fff; }
+
+        @media (max-width: 768px) {
+            .gem-title { font-size: 2.5rem; }
+            .hidden-factor-box { flex-direction: column; text-align: center; padding: 30px; gap: 15px; }
+            .hidden-label { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -64,34 +132,42 @@
 
     <main class="gem-body">
         <div class="hidden-factor-box">
-            <div class="hidden-label">?</div>
+            <div class="hidden-label">SECRET</div>
             <div class="hidden-text">
-                <strong>Why it's a hidden gem:</strong><br>
+                <strong style="color: var(--accent-color); font-family: var(--font-eng); text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 5px;">Why it's a hidden gem</strong>
                 "<%= article.worthGoing %>"
             </div>
         </div>
 
         <% article.content.forEach(function(item) { %>
             <% if (item.type === 'text') { %>
-                <div class="gem-text-block"><%= item.body %></div>
+                <div class="gem-text-block"><%- item.body %></div>
             <% } else if (item.type === 'image') { %>
                 <figure style="margin: 40px 0;">
-                    <img src="<%= item.url %>" style="width: 100%; border-radius: 8px;">
-                    <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 10px;"><%= item.caption %></figcaption>
+                    <img src="<%= item.url %>" style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <% if (item.caption) { %>
+                        <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 10px; font-style: italic;">
+                            <%= item.caption %>
+                        </figcaption>
+                    <% } %>
                 </figure>
             <% } %>
         <% }); %>
 
         <div class="map-card">
             <div class="map-info">📍 Location: <%= article.location.address %></div>
-            <a href="https://www.google.com/maps/search/?api=1&query=<%= article.location.lat %>,<%= article.location.lng %>" target="_blank" class="city-btn">Open in Google Maps ↗</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=<%= article.location.lat %>,<%= article.location.lng %>" target="_blank" class="btn-back" style="font-size: 0.9rem; padding: 8px 20px;">
+                Open in Google Maps ↗
+            </a>
         </div>
 
         <div class="back-btn-container">
-            <a href="/hidden_gems" class="btn-back">← Back to Exploring Gems</a>
+            <a href="/#mapSection" class="btn-back">← Back to Exploring Gems</a>
         </div>
     </main>
 
     <%- include('../partials/footer') %>
+    
+    <script src="/script.js"></script>
 </body>
 </html>

@@ -43,21 +43,20 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 </div>
 
 <nav class="mobile-grid-nav">
-    <a href="/search_by_city" class="grid-btn" style="<%= getActiveStyle('search_by_city') %>">SEARCH BY CITY</a>
+    <a href="/dining" class="grid-btn" style="<%= getActiveStyle('dining') %>">DINING</a>
     <a href="/transport" class="grid-btn" style="<%= getActiveStyle('transport') %>">TRANSPORT</a>
-    <a href="/dining" class="grid-btn" style="<%= getActiveStyle('dining') %>">INCLUSIVE DINING</a>
+    <a href="/culture" class="grid-btn" style="<%= getActiveStyle('culture') %>">CULTURE</a>
+    
+    <a href="/festivals" class="grid-btn" style="<%= getActiveStyle('festivals') %>">FESTIVALS</a>
+    <a href="/entertainment" class="grid-btn" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a>
     
     <a href="#" class="grid-btn menu-btn" id="mobileMoreBtn">MORE +</a>
 </nav>
 
-<div id="mobileMoreMenu" style="display:none; background:#f9f9f9; border-bottom:2px solid var(--lace-border);">
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); padding:10px; gap:8px;">
-        <a href="<%= mapLink %>" class="grid-btn" style="<%= getActiveStyle('hidden_gems') %>">HIDDEN GEMS</a>
-        
-        <a href="/festivals" class="grid-btn" style="<%= getActiveStyle('festivals') %>">SEASONAL FESTIVALS</a>
-        <a href="/culture" class="grid-btn" style="<%= getActiveStyle('culture') %>">CULTURE &<br>DAILY LIFE</a>
-        <a href="/entertainment" class="grid-btn" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a>
-    </div>
+<div id="mobileMoreMenu" class="mobile-more-menu" style="display: none;">
+    <a href="/search_by_city" style="<%= getActiveStyle('search_by_city') %>">SEARCH BY CITY</a>
+    <a href="#" id="bizInquiryBtnMobile">BUSINESS INQUIRY</a>
+    <a href="#" id="tippingBtnMobile">DONATE (Buy us a Boba)</a>
 </div>
 
 <nav class="desktop-nav">
@@ -74,8 +73,8 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         <li class="dropdown-item">
             <a href="#" class="dropbtn">MORE ▾</a>
             <div class="dropdown-content">
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
+                <a href="#" onclick="document.getElementById('philosophyBtn').click(); return false;">Philosophy</a>
+                <a href="#" onclick="document.getElementById('bizInquiryBtn').click(); return false;">Business</a>
             </div>
         </li>
     </ul>

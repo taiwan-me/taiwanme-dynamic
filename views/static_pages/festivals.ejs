@@ -6,48 +6,36 @@
     <title>Festivals | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     
     <style>
-        /* --- Festivals 頁面 Banner 視覺統整 (同步 Entertainment 邏輯) --- */
+        /* --- Festivals 頁面專屬樣式 --- */
+        
+        /* 1. Banner 設定 */
         .festivals-banner {
             width: 100%;
-            /* 1. 使用固定比例高度，確保在各裝置上視覺一致 */
             height: 40vh; 
             min-height: 300px;
             background-image: url('/image/festivals/banner.png'); 
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            
-            /* 2. 使用 Flexbox 確保標題置中 */
             display: flex; 
             align-items: center; 
             justify-content: center;
             position: relative;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
-        /* 3. 圖片暗化遮罩 (Overlay) */
         .festivals-banner::after {
             content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* 調整暗度，讓文字突顯 */
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* 暗化遮罩 */
             z-index: 1;
         }
 
-        /* 4. 標題文字樣式 */
         .banner-text {
-            position: relative; 
-            z-index: 2; 
-            text-align: center; 
-            color: #fff;
-            padding: 0 20px;
+            position: relative; z-index: 2; text-align: center; color: #fff;
         }
 
         .banner-text h1 {
@@ -57,10 +45,17 @@
             text-transform: uppercase; 
             letter-spacing: 4px;
             font-weight: 900;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.5);
         }
 
-        /* --- 頁面其餘樣式保持不變 --- */
+        /* 2. 免責聲明樣式 (與其他頁面統一) */
+        .disclaimer-container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        .disclaimer-box { 
+            background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404; 
+            padding: 15px 20px; border-radius: 8px; display: flex; align-items: flex-start; 
+            gap: 15px; font-size: 0.9rem; line-height: 1.5; text-align: left;
+        }
+
+        /* 3. 季節區塊與表格 */
         .season-section {
             max-width: 1100px;
             margin: 0 auto 80px;
@@ -70,55 +65,69 @@
         .season-title {
             font-family: 'Lato', sans-serif;
             font-size: 2rem;
-            color: #5d5d5d;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 15px;
+            color: #333;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
             margin-bottom: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
         }
 
         .season-title span {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: #999;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #777;
             margin-left: 10px;
+            text-transform: none;
         }
 
-        .table-responsive { width: 100%; overflow-x: auto; margin-bottom: 30px; }
+        .table-responsive { width: 100%; overflow-x: auto; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 
         .festival-table {
             width: 100%;
             border-collapse: collapse;
             font-family: 'Noto Sans TC', sans-serif;
+            background: #fff;
+            min-width: 600px; /* 防止手機版表格過度擠壓 */
         }
 
         .festival-table th, .festival-table td {
             text-align: left;
-            padding: 15px;
+            padding: 18px 20px;
             border-bottom: 1px solid #eee;
         }
 
         .festival-table th {
-            background-color: #fcfcfc;
-            color: #777;
-            font-weight: 500;
-            font-size: 0.9rem;
+            background-color: var(--accent-color);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
+
+        .festival-table tr:hover { background-color: #fcfcfc; }
 
         .season-summary-img {
             width: 100%;
-            height: 200px;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ccc;
-            border-radius: 4px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        
+        .season-summary-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .season-summary-img:hover img { transform: scale(1.05); }
 
         @media (max-width: 768px) {
             .festivals-banner { height: 250px; }
             .banner-text h1 { font-size: 2.2rem; }
-            .festival-table th, .festival-table td { padding: 10px; font-size: 0.9rem; }
+            .festival-table th, .festival-table td { padding: 12px 15px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -132,6 +141,15 @@
         </div>
     </div>
 
+    <div class="disclaimer-container">
+        <div class="disclaimer-box">
+            <span class="disclaimer-icon">⚠️</span>
+            <div class="disclaimer-text">
+                <strong>Note on Dates:</strong> Many traditional festivals follow the Lunar Calendar, so Gregorian dates vary each year. Please confirm exact dates with official event websites before booking your trip.
+            </div>
+        </div>
+    </div>
+
     <section class="season-section">
         <h2 class="season-title">SPRING <span>(Mar. - May)</span></h2>
         
@@ -139,9 +157,9 @@
             <table class="festival-table">
                 <thead>
                     <tr>
-                        <th>日期 (Date)</th>
-                        <th>活動名稱 (Event Name)</th>
-                        <th>地點 (Location)</th>
+                        <th width="20%">日期 (Date)</th>
+                        <th width="50%">活動名稱 (Event Name)</th>
+                        <th width="30%">地點 (Location)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -165,11 +183,13 @@
         </div>
 
         <div class="season-summary-img">
-            [ Spring Summary Image Placeholder ]
+            <img src="/image/festivals/spring.jpg" alt="Spring Festivals in Taiwan" onerror="this.src='https://placehold.co/1200x400/eee/999?text=Spring+Festivals+Highlight'">
         </div>
     </section>
 
     <%- include('../partials/footer') %>
+
+    <script src="/script.js"></script>
 
 </body>
 </html>
