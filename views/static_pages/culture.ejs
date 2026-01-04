@@ -10,18 +10,15 @@
     <link rel="stylesheet" href="/style.css">
     
     <style>
-        /* --- 完全同步 Entertainment 的 Banner 邏輯 --- */
+        /* --- Banner 設定 --- */
         .culture-banner {
             width: 100%;
-            /* 1. 使用固定高度比例，確保不會變成滿版 */
             height: 40vh; 
             min-height: 300px;
             background-image: url('/image/culture/banner.png'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            
-            /* 2. 確保文字能絕對居中 */
             display: flex; 
             align-items: center; 
             justify-content: center;
@@ -29,33 +26,24 @@
             margin-bottom: 60px;
         }
 
-        /* 3. 加入暗化遮罩 (Overlay)，讓白色標題清晰可見 */
         .culture-banner::after {
             content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* 調整暗度 */
+            position: absolute; top: 0; left: 0; 
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
             z-index: 1;
         }
 
-        /* 4. 標題文字層級 */
         .banner-text {
-            position: relative; 
-            z-index: 2; 
-            text-align: center; 
-            color: #fff;
+            position: relative; z-index: 2; 
+            text-align: center; color: #fff;
         }
 
         .banner-text h1 {
             font-family: 'Lato', sans-serif; 
-            font-size: 3rem; 
-            margin: 0; 
+            font-size: 3rem; margin: 0; 
             text-transform: uppercase; 
-            letter-spacing: 2px;
-            font-weight: 900;
+            letter-spacing: 2px; font-weight: 900;
         }
 
         /* --- 內容區塊排版 --- */
@@ -65,11 +53,12 @@
             padding: 0 20px;
         }
 
+        /* 單個圖文 Row */
         .culture-row {
             display: flex;
-            align-items: flex-start;
-            gap: 60px;
-            margin-bottom: 100px;
+            align-items: center; /* 垂直置中 */
+            gap: 50px;
+            margin-bottom: 80px; /* 章節間距 */
         }
 
         .culture-text { flex: 1; }
@@ -84,37 +73,138 @@
             padding-bottom: 10px;
         }
 
+        .culture-text h3 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
         .culture-text p {
             font-family: 'Noto Sans TC', sans-serif;
             font-size: 1.05rem;
-            color: #666;
+            color: #555;
             line-height: 1.8;
             text-align: justify;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
+        /* --- 圖片與 SEO 註解樣式 --- */
         .culture-image {
             flex: 1;
             position: relative;
         }
 
+        .culture-image figure {
+            margin: 0;
+            width: 100%;
+        }
+
         .culture-image img {
             width: 100%;
             height: auto;
-            border-radius: 4px;
+            max-height: 400px; 
+            object-fit: cover;
+            border-radius: 8px;
             box-shadow: 10px 10px 0px rgba(232, 162, 162, 0.3);
+            transition: transform 0.3s ease;
         }
 
+        .culture-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* 圖片下方說明文字 (Caption) */
+        .culture-image figcaption {
+            margin-top: 15px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .culture-image figcaption small {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        .culture-image figcaption a {
+            color: #888;
+            text-decoration: none;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .culture-image figcaption a:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* 特別補充章節樣式 */
+        .special-supplement {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        /* 按鈕容器 */
+        .read-more-wrapper {
+            text-align: center;
+            margin: -40px 0 80px; /* 調整位置 */
+            position: relative;
+            z-index: 10;
+        }
+
+        #read-more-btn {
+            background-color: #fff;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 12px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #read-more-btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* 隱藏區塊 */
+        #full-history-content {
+            display: none;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 手機版響應式 */
         @media (max-width: 768px) {
             .culture-banner { height: 250px; }
             .banner-text h1 { font-size: 2rem; }
             .culture-row {
-                flex-direction: column;
+                flex-direction: column !important; /* 強制垂直排列 */
                 gap: 30px;
                 margin-bottom: 60px;
             }
             .culture-text h2 { font-size: 1.6rem; }
-            .culture-image img { box-shadow: 5px 5px 0px rgba(232, 162, 162, 0.3); }
+            .culture-image img { 
+                box-shadow: 5px 5px 0px rgba(232, 162, 162, 0.3); 
+                max-height: 300px;
+            }
         }
     </style>
 </head>
@@ -129,18 +219,196 @@
     </div>
 
     <div class="content-container">
+        
         <div class="culture-row">
             <div class="culture-text">
-                <h2>台灣歷史簡介</h2>
-                <p>Taiwan's history is a tapestry of diverse influences. Originally inhabited by Austronesian indigenous peoples, the island later saw waves of immigration from mainland China, periods of European trade (Dutch and Spanish), and fifty years of Japanese colonial rule (1895-1945).</p>
-                <p>Today, Taiwan is a vibrant democracy. This multilayered past has created a unique cultural identity where ancient traditions blend seamlessly with modern innovation, reflected in everything from architecture to cuisine.</p>
+                <h2>Taiwan History: The Island's Memory and Identity</h2>
+                <h3>Prologue: Memories of the Island</h3>
+                <p>This is an island floating on the edge of the Pacific. Its story is not written by a single ethnic group, but is a long epic about flow, conflict, the blending of bloodlines, and finally, learning to embrace freedom.</p>
+                <p><em>(Click "Read More" below to explore the full chapters)</em></p>
             </div>
             <div class="culture-image">
-                <img src="/image/culture/history.jpg" alt="Taiwan History" onerror="this.src='https://placehold.co/600x400/eee/333?text=History+Image'">
+                <figure itemscope itemtype="http://schema.org/ImageObject">
+                    <img src="/image/culture/amis.jpg" 
+                         alt="Indigenous group dancers at Amis Music Festival 2016" 
+                         title="Amis Dancers representing Taiwan's Austronesian Roots"
+                         itemprop="contentUrl">
+                    <figcaption itemprop="caption">
+                        Amis dancers celebrating at the Music Festival.<br>
+                        <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Indigenous_group_dancers_at_Amis_Music_Festival_2016_IMF0936.jpg" target="_blank" rel="nofollow">HaeB</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small>
+                    </figcaption>
+                </figure>
             </div>
         </div>
 
-        <div class="culture-row" style="flex-direction: row-reverse;">
+        <div class="read-more-wrapper">
+            <button id="read-more-btn" onclick="toggleHistory()">Read More History</button>
+        </div>
+
+        <div id="full-history-content">
+            
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>Chapter 1: The Ancient Call—Austronesian Ancestors</h3>
+                    <p>Thousands of years before written records, the western plains and eastern mountains of this land were already inhabited by the island's original masters. According to modern anthropology and linguistics, this land nurtured dozens of different tribal groups (currently 16 are officially recognized).</p>
+                    <p>They belong to the vast "Austronesian language family." Starting from Taiwan, they spread across the Pacific in dugout canoes, extending as far as New Zealand and Hawaii. At that time, Taiwan was the ancestral homeland of the Austronesian world.</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch1.jpg" 
+                             alt="Paiwan females doing traditional needlework" 
+                             title="Traditional Craftsmanship of Paiwan People"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Traditional needlework by Paiwan women.<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Paiwan_females_doing_needlework.jpg" target="_blank" rel="nofollow">Torii Ryūzō (鳥居龍藏)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text">
+                    <h3>Chapter 2: Awe and the Legend of the Red Hairs</h3>
+                    <p>As the Age of Discovery began, Portuguese sailors exclaimed "Ilha Formosa!" (Beautiful Island). Soon after, the Dutch occupied Tainan (Fort Zeelandia) and the Spanish occupied Tamsui (Fort San Domingo).</p>
+                    <p>This is why legends of the "Red Hairs" still circulate today. When the Dutch asked the Siraya people "Where is this place?", the answer "Tayouan" eventually evolved into the name of this island—"Taiwan."</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch2.jpg" 
+                             alt="Fort San Domingo in Tamsui" 
+                             title="Historical Fort San Domingo (Red Hair Castle)"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Fort San Domingo in Tamsui, a legacy of Spanish and Dutch presence.<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E6%B7%A1%E6%B0%B4%E7%B4%85%E6%AF%9B%E5%9F%8E20170809.jpg" target="_blank" rel="nofollow">Tuhsun</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>Chapter 3: Taking Root—The Localization of "Old Taiwanese"</h3>
+                    <p>With Koxinga's expulsion of the Dutch and the Qing Dynasty's rule, ancestors from Fujian and Guangdong crossed the "Black Ditch" to escape poverty.</p>
+                    <p>Due to the ban on bringing families, they intermarried with Plains Indigenous women. Over centuries, they evolved from sojourners into "Old Taiwanese," with Taiwan becoming their true home rather than just a temporary settlement.</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch3.jpg" 
+                             alt="Remains of Fort Zeelandia (Anping Old Fort)" 
+                             title="Anping Old Fort Walls"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Remains of the historic Fort Zeelandia (Anping Old Fort).<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E5%8F%B0%E7%81%A3%E5%9F%8E%E6%AE%98%E8%B9%9F%EF%BC%88%E5%AE%89%E5%B9%B3%E5%8F%A4%E5%A0%A1%E6%AE%98%E8%B9%9F%EF%BC%89-1.jpg" target="_blank" rel="nofollow">WEI, WAN-CHEN（魏琬臻）</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text">
+                    <h3>Chapter 4: Rupture Under the Rising Sun Flag</h3>
+                    <p>In 1895, Taiwan was ceded to Japan. This 50-year rule severed the political link with China. While bringing suppression, Japan also introduced modernization: sanitation, railways, and electricity.</p>
+                    <p>This was a critical turning point. Taiwanese people retained Han culture but absorbed Japanese modern civilization, creating a unique hybrid identity distinct from China.</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch4.jpg" 
+                             alt="Taipei Three-Lane Road during Japanese Era" 
+                             title="Historical Taipei under Japanese Rule"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Taipei's cityscape development during the Japanese colonial era.<br>
+                            <small>Source: <a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F%E5%8F%B0%E5%8C%97%E4%B8%89%E7%B7%9A%E8%B7%AF.jpg" target="_blank" rel="nofollow">Wikimedia Commons</a> (Public Domain)</small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>Chapter 5: Quasi-Colonial Re-migration (1949)</h3>
+                    <p>In 1949, the Nationalist government retreated to Taiwan. Unlike earlier settlers, these were "ruling-type immigrants" arriving with a regime and an army.</p>
+                    <p>For locals, this felt like "re-colonization." Martial law and the White Terror suppressed local culture to enforce a Chinese identity. This top-down imposition sowed the seeds of future conflict and the scars of the February 28 Incident.</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch5.jpg" 
+                             alt="Artwork depicting the 228 Incident by Li Jun" 
+                             title="Historical Reflection on 228 Incident"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Artistic depiction reflecting the tragedy of the 228 Incident.<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:228_by_Li_Jun_(cropped).jpg" target="_blank" rel="nofollow">Li Jun (李雋)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text">
+                    <h3>Chapter 6: Generational Confusion & Youthful Clarity</h3>
+                    <p>The older generation often faced a tug-of-war between "paternal nostalgia" for a distant China and their reality in Taiwan, creating identity anxiety. This is often reflected in the Military Dependents' Villages.</p>
+                    <p>However, for today's youth born in a democratic Taiwan, this confusion is non-existent. They do not need a distant ancestral origin to define themselves; the land beneath their feet is their only home.</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch6.jpg" 
+                             alt="Huan Min Military Dependents Village" 
+                             title="Huan Min Village Community"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Huan Min Village: A symbol of the military dependents' history.<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Huan_Min_Village,_The_Toad_Hill_community_2023.jpg" target="_blank" rel="nofollow">Taipei City Government</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">Attribution</a></small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>Chapter 7: Conclusion—The Definition of Freedom</h3>
+                    <p>When Taiwan elected its first president directly, we finally ended the destiny of "being defined" by others. The scars of history are healing as time passes.</p>
+                    <p>Today's Taiwan is no longer just adapting for survival, but is a free nation capable of embracing different memories, where a new generation can confidently say, "I am Taiwanese."</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch7.jpg" 
+                             alt="Liberty Square Main Gate" 
+                             title="Liberty Square Symbolizing Democracy"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Liberty Square: The icon of Taiwan's democracy.<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:20190416_Liberty_Square_main_gate-3.jpg" target="_blank" rel="nofollow">Supanut Arunoprayote</a> / <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="nofollow">CC0 1.0</a></small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text special-supplement">
+                    <h3>[Special Supplement: The Soul of the Land]</h3>
+                    <p><strong>Modern Glory of Indigenous Peoples</strong></p>
+                    <p>We must turn our gaze back to the original inhabitants. Indigenous culture demonstrates breathtaking vitality, preserving unique social systems and embracing life with "spirited souls."</p>
+                    <p>Whether shining on the international sports stage or serving on the front lines to defend our home, our Indigenous friends have made indelible contributions to the peace and glory of this island.</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/history_ch8.jpg" 
+                             alt="Vice President at 2025 Taiwan Women's Baseball League Closing Ceremony" 
+                             title="Modern Indigenous Glory in Sports"
+                             itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Indigenous athletes shining in Taiwan's women's baseball league.<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:11.30_%E5%89%AF%E7%B8%BD%E7%B5%B1%E5%87%BA%E5%B8%AD%E3%80%8C2025%E5%8F%B0%E7%81%A3%E5%A5%B3%E5%AD%90%E6%A3%92%E7%90%83%E8%81%AF%E8%B3%BD%E9%96%89%E5%B9%95%E6%9A%A8%E9%A0%92%E7%8D%8E%E5%85%B8%E7%A6%AE%E3%80%8D_-_54953847137.jpg" target="_blank" rel="nofollow">Taiwan Presidential Office</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">CC BY 4.0</a></small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+        </div> <div class="culture-row" style="flex-direction: row-reverse; margin-top: 100px;">
             <div class="culture-text">
                 <h2>在台語言與生活日語介紹</h2>
                 <p>The official language is Mandarin Chinese (Huayu), but distinct local languages like Taiwanese (Hokkien) and Hakka are widely spoken. Due to the colonial history, many older generations also speak fluent Japanese.</p>
@@ -150,9 +418,27 @@
                 <img src="/image/culture/language.jpg" alt="Language in Taiwan" onerror="this.src='https://placehold.co/600x400/eee/333?text=Language+Image'">
             </div>
         </div>
+
     </div>
 
     <%- include('../partials/footer') %>
+
+    <script>
+        function toggleHistory() {
+            var content = document.getElementById("full-history-content");
+            var btn = document.getElementById("read-more-btn");
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                btn.innerHTML = "Show Less History";
+            } else {
+                content.style.display = "none";
+                btn.innerHTML = "Read More History";
+                // 收起時滑動回到標題
+                document.querySelector('.culture-text h2').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 
 </body>
 </html>
