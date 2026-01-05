@@ -155,50 +155,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================================
-    // 6. 手機版 MORE 選單開關 & 手機版 Modal 綁定 (Updated)
+    // 6. 強力修復：手機版 MORE 選單 & Modal 綁定
     // ==============================================
-    const mobileMoreBtn = document.getElementById('mobileMoreBtn');
-    const mobileMoreMenu = document.getElementById('mobileMoreMenu');
+    const mBtn = document.getElementById('mobileMoreBtn');
+    const mMenu = document.getElementById('mobileMoreMenu');
 
-    if (mobileMoreBtn && mobileMoreMenu) {
-        mobileMoreBtn.addEventListener('click', (e) => {
+    if (mBtn && mMenu) {
+        // 先移除舊的監聽器 (防止重複綁定)
+        const newBtn = mBtn.cloneNode(true);
+        mBtn.parentNode.replaceChild(newBtn, mBtn);
+        
+        newBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            // 切換顯示與隱藏
-            if (mobileMoreMenu.style.display === 'none' || mobileMoreMenu.style.display === '') {
-                mobileMoreMenu.style.display = 'block';
-                mobileMoreBtn.textContent = 'CLOSE -';
-                mobileMoreBtn.style.color = '#333';
+            e.stopPropagation(); // 阻止事件冒泡
+            console.log("Mobile More Clicked"); // 測試用
+
+            if (mMenu.style.display === 'none' || mMenu.style.display === '') {
+                mMenu.style.display = 'block';
+                newBtn.innerText = 'CLOSE -';
+                newBtn.style.color = '#333';
             } else {
-                mobileMoreMenu.style.display = 'none';
-                mobileMoreBtn.textContent = 'MORE +';
-                mobileMoreBtn.style.color = '';
+                mMenu.style.display = 'none';
+                newBtn.innerText = 'MORE +';
+                newBtn.style.color = '';
             }
         });
     }
 
-    // [新增] 讓手機版選單內的按鈕也能觸發電腦版的彈窗
-    // 綁定函式：傳入按鈕ID與目標彈窗元素
-    const bindMobileModal = (btnId, modalEl) => {
+    // 手機版選單內的按鈕觸發彈窗
+    const bindMobileModal = (btnId, modalId) => {
         const btn = document.getElementById(btnId);
-        if (btn && modalEl) {
+        const modal = document.getElementById(modalId);
+        if (btn && modal) {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (modalEl) modalEl.style.display = 'flex'; // 顯示彈窗
+                modal.style.display = 'flex';
+                // 點開 Modal 後自動收起 MORE 選單
+                if (mMenu) mMenu.style.display = 'none';
                 
-                // 順便把手機選單收起來，體驗更好
-                if (mobileMoreMenu) mobileMoreMenu.style.display = 'none';
-                if (mobileMoreBtn) {
-                    mobileMoreBtn.textContent = 'MORE +';
-                    mobileMoreBtn.style.color = '';
+                // 重新抓取按鈕 (因為上面可能被 cloneNode 換掉了)
+                const currentBtn = document.getElementById('mobileMoreBtn');
+                if (currentBtn) {
+                    currentBtn.innerText = 'MORE +';
+                    currentBtn.style.color = '';
                 }
             });
         }
     };
 
-    // 執行綁定 (對應 header.ejs 裡的 ID)
-    bindMobileModal('philosophyBtnMobile', document.getElementById('philosophyModal'));
-    bindMobileModal('bizInquiryBtnMobile', document.getElementById('businessInquiryModal'));
-    bindMobileModal('tippingBtnMobile', document.getElementById('tippingModal'));
+    bindMobileModal('philosophyBtnMobile', 'philosophyModal');
+    bindMobileModal('bizInquiryBtnMobile', 'businessInquiryModal');
+    bindMobileModal('tippingBtnMobile', 'tippingModal');
 
 
     // ==============================================
