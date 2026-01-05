@@ -799,42 +799,36 @@ h2.section-title {
     .mobile-more-menu a:last-child { border-bottom: none; }
 
     /* --- [手機版地圖按鈕位置微調] --- */
-    /* 這裡的調整不會影響電腦版，因為包在 media query 裡面 */
+    
+    /* 1. North: 往上面移動一點點 */
+    .pos-north { 
+        top: 0% !important; 
+        left: 52% !important; 
+    }
 
-    /* 1. Outlying Islands: 放在 North 左邊一點點 */
+    /* 2. Outlying Islands: 位置不變 (28% 剛好在 North 左邊) */
     .pos-islands { 
-        top: 8% !important;    /* 稍微往下調整，對齊 North */
-        left: 28% !important;  /* 移到 North (約53%) 的左側，保持距離 */
-        right: auto !important; 
-        width: 13%;            /* 手機版按鈕稍微大一點好按 */
+        top: 5% !important; 
+        left: 28% !important; 
+        right: auto !important;
     }
 
-    /* 2. North: 保持置中 (參考基準點) */
-    .pos-north {
-        top: 5% !important;
-        left: 55% !important;
-        width: 13%;
-    }
-
-    /* 3. Central: 往左上移動 */
+    /* 3. Central: 往左移動一個圓形直徑 (18%) */
     .pos-central { 
-        top: 35% !important;   /* 原本約 40%，往上移 */
-        left: 30% !important;  /* 原本可能更靠右，往左移 */
-        width: 13%;
+        top: 35% !important; 
+        left: 2% !important; 
     }
 
-    /* 4. East: 往下一點點 */
+    /* 4. East: 往上一個半徑 (9%) 多一點 */
     .pos-east { 
-        top: 55% !important;   /* 原本約 45%，往下移 */
-        right: 8% !important; 
-        width: 13%;
+        top: 38% !important; 
+        right: 5% !important; 
     }
 
-    /* 5. South: 往左移動一個按鈕直徑 */
+    /* 5. South: 位置很好 */
     .pos-south { 
-        bottom: 15% !important;
-        left: 32% !important;  /* 原本約 42%，往左移約 10% */
-        width: 13%;
+        bottom: 20% !important; 
+        left: 22% !important; 
     }
 
     /* 其他頁面調整 */

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Gems | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        /* --- Hidden Gems 專屬樣式 --- */
+        
+        /* 1. 頂部大 Banner */
+        .hg-banner {
+            width: 100%;
+            height: 60vh; /* 佔據螢幕高度的 60% */
+            min-height: 400px;
+            background-image: url('/image/hiddengems/banner.png'); /* 您的圖片路徑 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* 2. Hero 標題區塊 (模仿提供的圖片風格) */
+        .hg-hero-section {
+            text-align: center;
+            padding: 0 20px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 標題的底色方塊 */
+        .hg-title-box {
+            background-color: var(--lace-bg);
+            /* 使用導覽列的米色 */
+            border: 1px solid var(--lace-border);
+            /* 加上細邊框增加精緻感 */
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            border-radius: 4px; /* 稍微圓角 */
+            display: inline-block;
+            /* 讓方塊隨著內容寬度調整，或設 width:100% */
+            width: 100%;
+        }
+
+        .hg-main-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .hg-slogan {
+            font-family: 'Noto Serif TC', serif;
+            color: #555;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 0;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        
+        .hg-slogan span {
+            display: block;
+            font-size: 1rem;
+            color: #777;
+            margin-top: 5px;
+            font-style: normal;
+        }
+
+        .hg-intro-text {
+            max-width: 800px;
+            margin: 40px auto 0;
+            line-height: 2;
+            color: #555;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* 3. 區域區塊 */
+        .hg-region-section {
+            padding: 60px 20px;
+            /* 為了讓錨點定位準確，加上 scroll-margin */
+            scroll-margin-top: 100px;
+        }
+
+        .hg-region-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* 區域標題的底色方塊 */
+        .hg-region-title-box {
+            background-color: var(--lace-bg);
+            /* 與主標題一樣的底色 */
+            padding: 15px 40px;
+            display: inline-block;
+            /* 讓方塊包覆文字即可，不要滿版 */
+            border-radius: 30px;
+            /* 區域標題用圓潤一點的造型 */
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            /* 預留邊框位置 */
+        }
+
+        .hg-region-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333; /* 深灰色文字 */
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hg-region-desc {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666; /* 敘述文字顏色 */
+            font-size: 1rem;
+            line-height: 1.8;
+            /* 確保這裡沒有底色 */
+            background: transparent;
+        }
+
+        /* 4. 輪播卡片樣式 */
+        .swiper {
+            width: 100%;
+            padding-bottom: 50px; /* 留給分頁點 */
+        }
+        .hg-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            height: 100%;
+            /* 等高 */
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            /* 移除連結底線 */
+            color: inherit;
+        }
+        .hg-card:hover { transform: translateY(-5px);
+        }
+        
+        .hg-img-box {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        .hg-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .hg-card:hover .hg-img-box img { transform: scale(1.1);
+        }
+
+        .hg-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 標籤樣式 */
+        .tags-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag.city {
+            background-color: #f0f0f0;
+            color: #555;
+            border: 1px solid #ddd;
+        }
+        .tag.gem {
+            background-color: var(--accent-color);
+            /* 你的粉色主題色 */
+            color: #fff;
+        }
+
+        .hg-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        /* View All 按鈕 */
+        .view-all-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn-view-all {
+            display: inline-block;
+            border: 1px solid #333;
+            color: #333;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-view-all:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* 手機版調整 */
+        @media (max-width: 768px) {
+            .hg-banner { height: 40vh;
+            }
+            .hg-main-title { font-size: 1.8rem;
+            }
+            .hg-title-box { padding: 30px 15px;
+            }
+            .hg-img-box { height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <div class="hg-banner"></div>
+
+    <section class="hg-hero-section">
+        <div class="hg-title-box">
+            <h1 class="hg-main-title">Ultimate Hidden Gems Guide</h1>
+            <div class="hg-slogan">
+                "Discovering the emotions that guidebooks don't tell you about."
+                <span>發覺不旅遊手冊上的感動</span>
+            </div>
+        </div>
+        
+        <div class="hg-intro-text">
+            <p>
+                Taiwan is an island of endless surprises.
+                Beyond the bustling night markets and Taipei 101, there lies a world of misty mountains, ancient trails, and silent coastlines waiting to be heard.
+                This guide is your key to unlocking the real, unfiltered beauty of Taiwan.
+            </p>
+        </div>
+    </section>
+
+    <section class="hg-region-section" id="north">
+        <div class="hg-region-header">
+            <div class="hg-region-title-box">
+                <h2 class="hg-region-title">North Region</h2>
+            </div>
+            <p class="hg-region-desc">Where history meets modernity in the misty valleys.</p>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="hg-card">
+                        <div class="hg-img-box">
+                             <img src="https://placehold.co/600x400?text=Keelung+Valley" alt="Hidden Gem">
+                        </div>
+                        <div class="hg-info">
+                            <div class="tags-row">
+                                <span class="tag city">Keelung 基隆</span>
+                                <span class="tag gem">Hidden Gem ✦</span>
+                            </div>
+                             <h3 class="hg-title">The Forgotten Valley of Keelung</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box">
+                            <img src="https://placehold.co/600x400?text=Old+Street" alt="Hidden Gem">
+                        </div>
+                        <div class="hg-info">
+                            <div class="tags-row">
+                                <span class="tag city">New Taipei 新北</span>
+                                <span class="tag gem">Hidden Gem ✦</span>
+                            </div>
+                            <h3 class="hg-title">Silent Morning at Shiding Old Street</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box">
+                            <img src="https://placehold.co/600x400?text=Secret+Beach" alt="Hidden Gem">
+                        </div>
+                        <div class="hg-info">
+                             <div class="tags-row">
+                                <span class="tag city">Yilan 宜蘭</span>
+                                <span class="tag gem">Hidden Gem ✦</span>
+                             </div>
+                            <h3 class="hg-title">The Secret Beach Only Locals Know</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box">
+                            <img src="https://placehold.co/600x400?text=Tea+Farm" alt="Hidden Gem">
+                        </div>
+                        <div class="hg-info">
+                            <div class="tags-row">
+                                <span class="tag city">Taipei 台北</span>
+                                <span class="tag gem">Hidden Gem ✦</span>
+                            </div>
+                            <h3 class="hg-title">Nangang Tea Mountain Trails</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="view-all-container">
+            <a href="#" class="btn-view-all">View All North Gems</a>
+        </div>
+    </section>
+
+    <section class="hg-region-section" id="central">
+        <div class="hg-region-header">
+            <div class="hg-region-title-box">
+                <h2 class="hg-region-title">Central Region</h2>
+             </div>
+            <p class="hg-region-desc">The heart of Taiwan's arts, mountains, and culture.</p>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Miaoli+Rail" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Miaoli 苗栗</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Broken Rail Bridge Sunset</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                     <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Taichung+Art" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Taichung 台中</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Hidden Galleries in Old Market</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Nantou+Sky" alt="Gem"></div>
+                        <div class="hg-info">
+                             <div class="tags-row"><span class="tag city">Nantou 南投</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Starry Nights at Hehuanshan</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Yunlin+Puppet" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Yunlin 雲林</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Traditional Puppet Theater Secrets</h3>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="view-all-container">
+            <a href="#" class="btn-view-all">View All Central Gems</a>
+        </div>
+    </section>
+
+    <section class="hg-region-section" id="south">
+        <div class="hg-region-header">
+            <div class="hg-region-title-box">
+                <h2 class="hg-region-title">South Region</h2>
+            </div>
+            <p class="hg-region-desc">Ancient capitals, warm hospitality, and tropical vibes.</p>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Tainan+Alley" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Tainan 台南</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Lost in Tainan's Ancient Alleys</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Kaohsiung+Port" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Kaohsiung 高雄</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">The Old Warehouse Revival</h3>
+                         </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Pingtung+Tribes" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Pingtung 屏東</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Indigenous Tribe Ceremony</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Chiayi+Forest" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Chiayi 嘉義</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Sleeping in the Alishan Forest</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="view-all-container">
+            <a href="#" class="btn-view-all">View All South Gems</a>
+        </div>
+    </section>
+
+    <section class="hg-region-section" id="east">
+        <div class="hg-region-header">
+            <div class="hg-region-title-box">
+                <h2 class="hg-region-title">East Region</h2>
+            </div>
+            <p class="hg-region-desc">Majestic cliffs, pacific winds, and untouched nature.</p>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Hualien+Cliff" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Hualien 花蓮</span><span class="tag gem">Hidden Gem ✦</span></div>
+                             <h3 class="hg-title">Secret Trail above Taroko</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Taitung+Rice" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Taitung 台東</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Cycling through Golden Rice Fields</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Hot+Spring" alt="Gem"></div>
+                        <div class="hg-info">
+                             <div class="tags-row"><span class="tag city">Taitung 台東</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Wild Hot Springs in the Valley</h3>
+                        </div>
+                     </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Hualien+Ocean" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Hualien 花蓮</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Kayaking the Pacific Sunrise</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="view-all-container">
+            <a href="#" class="btn-view-all">View All East Gems</a>
+        </div>
+    </section>
+
+    <section class="hg-region-section" id="islands">
+        <div class="hg-region-header">
+            <div class="hg-region-title-box">
+                <h2 class="hg-region-title">Outlying Islands</h2>
+            </div>
+            <p class="hg-region-desc">Penghu, Kinmen, Matsu, and the tropical jewels.</p>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Penghu+Basalt" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Penghu 澎湖</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Basalt Columns and Blue Caves</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Matsu+Tears" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Matsu 馬祖</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Chasing the Blue Tears</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Lanyu+Boat" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Lanyu 蘭嶼</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Flying Fish Festival</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hg-card">
+                        <div class="hg-img-box"><img src="https://placehold.co/600x400?text=Green+Island" alt="Gem"></div>
+                        <div class="hg-info">
+                            <div class="tags-row"><span class="tag city">Green Island 綠島</span><span class="tag gem">Hidden Gem ✦</span></div>
+                            <h3 class="hg-title">Sunrise at Zhaori Hot Spring</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="view-all-container">
+            <a href="#" class="btn-view-all">View All Island Gems</a>
+        </div>
+    </section>
+
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1, // 手機版顯示 1 張
+                spaceBetween: 20,
+                loop: true,       // 循環播放
+                speed: 1500,      // 切換速度 (慢一點)
+                autoplay: {
+                    delay: 4000,  // 停留時間 (4秒)
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2, // 平板顯示 2 張
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3, // 電腦版顯示 3 張
+                        spaceBetween: 30,
+                    },
+                },
+            });
+        });
+    </script>
+
+</body>
+</html>

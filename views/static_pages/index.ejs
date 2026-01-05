@@ -8,66 +8,6 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
-    
-    <style>
-        /* 首頁專屬樣式修正 */
-        
-        /* 手機版地圖區塊修正 */
-        @media (max-width: 768px) {
-            .desktop-map-container { 
-                display: block !important; 
-                width: 100%; 
-                aspect-ratio: 0.7; 
-                margin: 20px auto; 
-            }
-            .mobile-region-list { 
-                display: none !important; 
-            }
-            .region-circle { 
-                width: 18%; 
-                font-size: 12px; 
-            }
-            .region-square { 
-                width: 18%; 
-                font-size: 12px; 
-            }
-            
-            /* --- 手機版地圖按鈕位置微調 (Updated) --- */
-            
-            /* 1. North: 保持上方置中 */
-            .pos-north { 
-                top: 2%; 
-                left: 52%; 
-            }
-
-            /* 2. Islands: 放在 North 的左邊一點點 (不重疊) */
-            .pos-islands { 
-                top: 5%; 
-                left: 28%; /* 移到 North 左側 */
-            }
-
-            /* 3. Central: 往左上移動 */
-            .pos-central { 
-                top: 30%; /* 往上移 */
-                left: 15%; /* 往左移 */
-            }
-
-            /* 4. South: 往左移動一個按鈕寬度 */
-            .pos-south { 
-                bottom: 20%; 
-                left: 22%; /* 原本約 40%，向左位移 */
-            }
-
-            /* 5. East: 往下一點點 */
-            .pos-east { 
-                top: 50%; /* 往下移 */
-                right: 5%; 
-            }
-        }
-
-        /* 增加平滑捲動支援 */
-        html { scroll-behavior: smooth; }
-    </style>
 </head>
 <body>
 
