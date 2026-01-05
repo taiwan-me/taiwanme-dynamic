@@ -113,7 +113,7 @@ app.get('/transport', (req, res) => {
     res.render('transport_articles/transport_feed', { pageName: 'transport' });
 });
 
-// 交通文章內頁
+// 交通文章內頁 (讀取 JSON)
 app.get('/transport/:topic', (req, res) => {
     const topic = req.params.topic;
     const jsonPath = path.join(__dirname, 'data', 'transport', `${topic}.json`);
@@ -130,7 +130,14 @@ app.get('/transport/:topic', (req, res) => {
             res.status(500).send('Error parsing transport data');
         }
     } else {
-        res.status(404).send('Transport Guide Not Found');
+        // 優化 404 頁面，引導回列表
+        res.status(404).send(`
+            <div style="text-align:center; padding:50px;">
+                <h1>Topic Not Found</h1>
+                <p>Sorry, the guide for "${topic}" is currently unavailable.</p>
+                <a href="/transport">Back to Transport Hub</a>
+            </div>
+        `);
     }
 });
 
@@ -212,6 +219,11 @@ app.use((req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`✅ TaiwanMe 伺服器運作中: http://localhost:${PORT}`);
-    console.log(`📁 請確認您的 views 資料夾已依照結構分類完畢`);
+    console.log(`=========================================`);
+    console.log(`✅ TaiwanMe 伺服器運作中`);
+    console.log(`   - 基礎頁面:       static_pages`);
+    console.log(`   - Transport:      /transport`);
+    console.log(`   - TPE Guide:      /transport/taoyuan-airport`);
+    console.log(`🌍 URL: http://localhost:${PORT}`);
+    console.log(`=========================================`);
 });

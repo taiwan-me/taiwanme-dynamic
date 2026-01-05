@@ -1,0 +1,40 @@
+{
+  "id": "kaohsiung-airport",
+  "title": "From Kaohsiung airport(KHH) to every city or county",
+  "tag": "AIRPORT",
+  "heroImage": "/image/transport/khh_banner.jpg",
+  "heroImageCredit": "<a href='https://commons.wikimedia.org/wiki/File:Kaohsiung_International_Airport_Restrict_Area_Shops_2015.JPG' target='_blank'>Wpcpey</a>, <a href='https://creativecommons.org/licenses/by/4.0' target='_blank'>CC BY 4.0</a>, via Wikimedia Commons",
+  "updatedAt": "2026/01/06",
+  "intro": "Welcome to Southern Taiwan! Kaohsiung International Airport (KHH) is incredibly user-friendly. Unlike other massive airports, you don't need to overthink your transport here. The airport is directly connected to the Kaohsiung MRT (Red Line), which seamlessly links you to both the conventional Train Station (TRA) and the High Speed Rail (HSR).",
+  "sections": [
+    {
+      "id": "simple-rule",
+      "heading": "The Golden Rule: Hop on the Red Line (MRT)",
+      "content": "<p>Navigating out of Kaohsiung Airport is straightforward. Once you arrive at the International Terminal, just follow the signs to the <strong>MRT (Kaohsiung Metro)</strong>. The station is <strong>R4 (Kaohsiung Int'l Airport)</strong>.</p><p>The MRT Red Line is your lifeline. It connects the Airport (R4), the City Center, the Train Station (R11), and the High Speed Rail (R16) all on a single line. No confusing transfers required!</p>",
+      "image": "/image/transport/kaohsiungmetro.jpg",
+      "enableZoom": true,
+      "links": [
+        {"text": "Kaohsiung MRT Official Route Map", "url": "https://www.krtc.com.tw/eng/KLRT/guide_map"}
+      ],
+      "tip": "Get an EasyCard or iPASS at the airport convenience store or service counter immediately. You will need it for the MRT."
+    },
+    {
+      "id": "heading-north",
+      "heading": "Heading North (Taichung, Taipei) - Go to R16",
+      "content": "<p>If your destination is far north, take the MRT from the Airport (R4) directly to <strong>R16 Zuoying Station</strong>. This acts as the terminal for the <strong>Taiwan High Speed Rail (HSR)</strong>.</p><p>From Zuoying, you can take the bullet train north to these major cities:</p><ul><li><strong>Tainan</strong></li><li><strong>Chiayi</strong> (Gateway to Alishan)</li><li><strong>Yunlin</strong></li><li><strong>Changhua</strong></li><li><strong>Taichung</strong> (Major Hub)</li><li><strong>Miaoli</strong></li><li><strong>Hsinchu</strong></li><li><strong>Taoyuan</strong></li><li><strong>Taipei</strong> (Main Station & Nangang)</li></ul><p style='color: #d9534f; font-weight: bold; background: #fdfdfd; padding: 15px; border-left: 5px solid #d9534f; margin: 20px 0;'>⚠️ IMPORTANT: HSR tickets are divided into 'Reserved Seat' and 'Non-Reserved Seat'. Make sure you enter the correct car number!</p><p>For a complete guide on how to book tickets and ride the HSR, please read our dedicated guide:</p><a href='/transport/thsr' class='feed-btn' style='display:inline-block; margin-top:10px; text-decoration:none; text-align:center; width:100%;'>👉 How to Book & Ride Taiwan High Speed Rail</a>"
+    },
+    {
+      "id": "tainan-exception",
+      "heading": "The Tainan Exception: Do NOT take the HSR!",
+      "content": "<p><strong>Important Local Tip:</strong> If you are going to <strong>Tainan City</strong> for its famous food and history, do NOT take the High Speed Rail.</p><p>Why? The Tainan HSR station is far from the city center (about 30-40 mins by shuttle). The best way is to take the MRT to <strong>R11 Kaohsiung Main Station</strong>, and then take a regular <strong>TRA Train</strong> (Northbound) to <strong>Tainan Station</strong>. The TRA station is right in the middle of the commercial district, saving you time and money.</p>",
+      "image": "/image/transport/tainan-transport-comparison.jpg",
+      "table": {
+        "headers": ["Destination", "Recommended Route", "Why?"],
+        "rows": [
+          ["Tainan City Center", "MRT to R11 Kaohsiung Stn -> TRA Train", "Directly into downtown commercial area."],
+          ["Tainan HSR Area", "MRT to R16 Zuoying -> HSR", "Only if you are visiting the exhibition center or outlets."]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "taoyuan-airport",
+  "title": "From Taoyuan airport(TPE) to every city or county",
+  "tag": "AIRPORT",
+  "heroImage": "/image/transport/tpe_banner.jpg",
+  "heroImageCredit": "<a href='https://commons.wikimedia.org/wiki/File:Taiwan_Taoyuan_Airport_T2_Departure_Area.JPG' target='_blank'>KCS</a>, <a href='https://creativecommons.org/licenses/by-sa/4.0' target='_blank'>CC BY-SA 4.0</a>, via Wikimedia Commons",
+  "updatedAt": "2026/01/06",
+  "intro": "Welcome to Taiwan! Taoyuan International Airport (TPE) is located in northern Taiwan. From here, you can easily reach any city. The most important rule: Once you check out, look for the MRT (Taoyuan Metro) immediately unless you are going to nearby Hsinchu or Taoyuan city center.",
+  "sections": [
+    {
+      "id": "golden-rule",
+      "heading": "The Golden Rule: Check Out & Find the MRT",
+      "content": "<p>After passing immigration, follow the signs to the <strong>Taoyuan Airport MRT</strong>. It connects Terminal 1 and Terminal 2 directly. This is your starting point for almost every destination.</p>",
+      "image": "/image/transport/taoyuanmetro.png",
+      "links": [
+        {"text": "Taoyuan International Airport Official Site", "url": "https://www.taoyuan-airport.com/Airport_MRT"},
+        {"text": "Taoyuan Metro Route & Guide", "url": "https://www.tymetro.com.tw/tymetro-new/tw/_pages/travel-guide/road.html"}
+      ],
+      "tip": "The Purple Express train is faster (35 mins to Taipei), while the Blue Commuter train stops at every station."
+    },
+    {
+      "id": "heading-north-east",
+      "heading": "Heading North or East (Taipei, Keelung, Yilan, Hualien)",
+      "content": "<p>To reach <strong>Taipei City</strong>, take the Airport MRT to <strong>A1 Taipei Main Station</strong>. From there, you can transfer to the Taipei Metro (MRT) to reach hotels in Ximending, Xinyi District, or Shilin.</p><p>If you are going to <a href='https://maps.google.com/?cid=4515503973903239248&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ' target='_blank' style='color:#E8A2A2;font-weight:bold;text-decoration:none;'>Keelung</a>, <a href='https://maps.google.com/?cid=16407579474467119961&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ' target='_blank' style='color:#E8A2A2;font-weight:bold;text-decoration:none;'>Yilan</a>, or <a href='https://maps.google.com/?cid=397377816164750583&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ' target='_blank' style='color:#E8A2A2;font-weight:bold;text-decoration:none;'>Hualien</a>, transfer to the TRA (Train) at Taipei Main Station.</p>",
+      "image": "/image/transport/taipeimetro.jpg",
+      "enableZoom": true,
+      "links": [
+        {"text": "Taipei Metro (MRT) Official Map", "url": "https://english.metro.taipei/cp.aspx?n=1BE0AF76C79F9A38"}
+      ]
+    },
+    {
+      "id": "heading-south",
+      "heading": "Heading South (Taichung, Tainan, Kaohsiung)",
+      "content": "<p>To travel south, take the Airport MRT to <strong>A18 Taoyuan HSR Station</strong>. From here, you can take the Taiwan High Speed Rail (THSR) to the following major cities:</p><ul><li><strong>Hsinchu</strong></li><li><strong>Miaoli</strong></li><li><strong>Taichung</strong> (Major Hub)</li><li><strong>Changhua</strong></li><li><strong>Yunlin</strong></li><li><strong>Chiayi</strong> (Gateway to Alishan)</li><li><strong>Tainan</strong></li><li><strong>Kaohsiung</strong> (Zuoying Station)</li></ul><p style='color: #d9534f; font-weight: bold; background: #fdfdfd; padding: 15px; border-left: 5px solid #d9534f; margin: 20px 0;'>⚠️ IMPORTANT: HSR tickets are divided into 'Reserved Seat' and 'Non-Reserved Seat'. Make sure you enter the correct car number!</p><p>For a complete guide on how to book tickets and ride the HSR, please read our dedicated guide:</p><a href='/transport/thsr' class='feed-btn' style='display:inline-block; margin-top:10px; text-decoration:none; text-align:center; width:100%;'>👉 How to Book & Ride Taiwan High Speed Rail</a>",
+      "tip": "If you buy a Non-Reserved ticket, you can only sit in cars 10-12. If you want a guaranteed seat, buy a Reserved ticket."
+    },
+    {
+      "id": "nearby-cities",
+      "heading": "Nearby Cities: Taoyuan City Center, Zhongli & Hsinchu",
+      "content": "<p>For destinations close to the airport, buses are often more direct. For <strong>Taoyuan City Center</strong> (Bus 706) or <strong>Zhongli</strong> (Bus 5089), head to the bus station. For <strong>Hsinchu</strong>, many travelers also prefer the direct bus (Route 1250) to avoid the transfer at the HSR station.</p>",
+      "image": "/image/transport/bus-platform-guide.jpg",
+      "table": {
+        "headers": ["Destination", "Transport", "Note"],
+        "rows": [
+          ["Taoyuan City", "Bus 706", "Direct to Train Station"],
+          ["Zhongli", "Bus 5089", "Direct to Train Station"],
+          ["Hsinchu", "Bus 1250", "Convenient for University Areas"]
+        ]
+      }
+    }
+  ]
+}
