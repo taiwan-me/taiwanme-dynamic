@@ -1,0 +1,36 @@
+{
+  "id": "tra-guide",
+  "title": "Taiwan Railways (TRA) Guide",
+  "tag": "ISLAND-WIDE",
+  "heroImage": "/image/transport/tra_banner.png",
+  "updatedAt": "2026/01/06",
+  "intro": "Why choose the slower Taiwan Railways (TRA)? Three reasons: It saves money, you can enjoy a railway bento while watching the scenery, and it goes where the High Speed Rail cannot—such as <strong>Keelung</strong>, <strong>Nantou</strong>, <strong>Pingtung</strong>, <strong>Hualien</strong>, and <strong>Taitung</strong>.",
+  "sections": [
+    {
+      "id": "intro-comfort",
+      "heading": "Before You Board: The Comfort Rule",
+      "content": "<p>Unlike the High Speed Rail, TRA trains vary hugely in age and rules. Most travelers simply swipe their <strong>EasyCard</strong> to enter the gate, check if the train is going North or South, and then look at the platform screens. However, to ensure a comfortable trip (and avoid fines), you must recognize the train types.</p>"
+    },
+    {
+      "id": "category-1-local",
+      "heading": "1. Always OK: Local Trains",
+      "content": "<p>These correspond to the \"Commuter\" trains. You can always use your EasyCard/iPASS. There are no reserved seats; you just hop on and find a spot.</p><h3>Local Train (區間車)</h3><p>Stops at every station. Cheap and slow.</p><img src='/image/transport/tra-local1.jpg' class='guide-img' alt='Local Train - Shalun Station'><small style='display:block; color:#666; margin-bottom:10px; font-size: 0.85em;'>Photo by: <a href='https://commons.wikimedia.org/wiki/File:TRA_EMU610_at_Platform_1,_Shalun_Station_20130721b.jpg' target='_blank' style='color:#666; text-decoration: underline;'>Chi-Hung Lin</a> | License: <a href='https://creativecommons.org/licenses/by-sa/3.0' target='_blank' style='color:#666; text-decoration: underline;'>CC BY-SA 3.0</a></small><img src='/image/transport/tra-local2.jpg' class='guide-img' alt='Local Train - Taian Station'><small style='display:block; color:#666; margin-bottom:10px; font-size: 0.85em;'>Photo by: <a href='https://commons.wikimedia.org/wiki/File:TRA_Local_Train_2234_and_Local_Train_2223_met_at_the_north_of_Tai%27an_Station.jpg' target='_blank' style='color:#666; text-decoration: underline;'>Lokseng01</a> | License: <a href='https://creativecommons.org/licenses/by-sa/4.0' target='_blank' style='color:#666; text-decoration: underline;'>CC BY-SA 4.0</a></small><h3>Fast Local Train (區間快)</h3><p>Skips smaller stations but costs the same as a local train. A hidden gem for budget travelers!</p><img src='/image/transport/tra-fast-local.jpg' class='guide-img' alt='Fast Local Train'><small style='display:block; color:#666; margin-bottom:10px; font-size: 0.85em;'>Source: <a href='https://www.rb.gov.tw/showpage.php?lmenuid=4&smenuid=86&tmenuid=310#gsc.tab=0' target='_blank' style='color:#666; text-decoration: underline;'>交通部鐵路局</a></small>"
+    },
+    {
+      "id": "category-2-standing",
+      "heading": "2. Standing OK: Old Express Trains",
+      "content": "<p>These are the older generation of express trains. You have two choices: Buy a reserved seat ticket, OR swipe your EasyCard and stand.</p><h3>Old Tze-Chiang (舊自強號)</h3><p>Recognizable by its older, often push-pull style engine.</p><img src='/image/transport/tra-old-tzechiang.png' class='guide-img' alt='Old Tze-Chiang'><small style='display:block; color:#666; margin-bottom:10px; font-size: 0.85em;'>Source: <a href='https://www.rb.gov.tw/showpage.php?lmenuid=4&smenuid=86&tmenuid=310#gsc.tab=0' target='_blank' style='color:#666; text-decoration: underline;'>交通部鐵路局</a></small><h3>Chu-Kuang (莒光號)</h3><p>The orange train. Slower than Tze-Chiang but stops at fewer stations than Local trains.</p><img src='/image/transport/tra-chukuang.png' class='guide-img' alt='Chu-Kuang'><h3>Where to Stand? (The Deck)</h3><p>If you use an EasyCard, you generally cannot sit down. You should stand in the area between carriages (the deck/vestibule area) so you don't block the aisle.</p><img src='/image/transport/tra-standing-area.png' class='guide-img' alt='Standing Area'>"
+    },
+    {
+      "id": "category-3-reserved",
+      "heading": "3. ⚠️ RESERVED ONLY: The 'Forbidden' Trains",
+      "content": "<p><strong>Warning:</strong> You CANNOT use an EasyCard/iPASS for these trains. You MUST buy a specific ticket (via App, Kiosk, or Counter). If you swipe in and board these, you will be fined and asked to leave. Conductors check tickets very frequently here.</p><h3>New Tze-Chiang 3000 (新自強3000)</h3><p>The newest white and black minimalist train. Very comfortable, but strict rules.</p><img src='/image/transport/tra-new-tzechiang.jpg' class='guide-img' alt='New Tze-Chiang'><small style='display:block; color:#666; margin-bottom:10px; font-size: 0.85em;'>Source: <a href='https://www.rb.gov.tw/showpage.php?lmenuid=4&smenuid=86&tmenuid=310#gsc.tab=0' target='_blank' style='color:#666; text-decoration: underline;'>交通部鐵路局</a></small><h3>Puyuma (普悠瑪)</h3><p>The red-nosed train, famous for speed on the East Coast.</p><img src='/image/transport/tra-puyuma.jpg' class='guide-img' alt='Puyuma'><small style='display:block; color:#666; margin-bottom:10px; font-size: 0.85em;'>Source: <a href='https://www.rb.gov.tw/showpage.php?lmenuid=4&smenuid=86&tmenuid=310#gsc.tab=0' target='_blank' style='color:#666; text-decoration: underline;'>交通部鐵路局</a></small><h3>Taroko (太魯閣)</h3><p>The rounded white train, also built for East Coast speed.</p><img src='/image/transport/tra-taroko.png' class='guide-img' alt='Taroko'><small style='display:block; color:#666; margin-bottom:10px; font-size: 0.85em;'>Source: <a href='https://www.rb.gov.tw/showpage.php?lmenuid=4&smenuid=86&tmenuid=310#gsc.tab=0' target='_blank' style='color:#666; text-decoration: underline;'>交通部鐵路局</a></small>",
+      "tip": "How to tell? Listen to the broadcast or look at the scrolling LED text on the platform/train body. It will explicitly say 'Electronic tickets not allowed'."
+    },
+    {
+      "id": "booking-tips",
+      "heading": "Summary: How Locals Do It",
+      "content": "<p>Most people just tap their card to enter the station first. Then they stand on the platform and observe. If an older train comes, they hop on (standing). If a shiny new EMU3000 comes, they wait for the next one. Of course, for long trips (like Taipei to Hualien), we strongly recommend booking a ticket in advance via the 'TRA e-booking' App to ensure you have a seat.</p>"
+    }
+  ]
+}

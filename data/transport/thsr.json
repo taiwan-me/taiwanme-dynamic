@@ -1,0 +1,59 @@
+{
+  "id": "thsr",
+  "title": "Taiwan High Speed Rail (THSR)",
+  "tag": "INTER-CITY",
+  "heroImage": "/image/transport/thsr_banner.png",
+  "updatedAt": "2026/01/06",
+  "intro": "The Taiwan High Speed Rail (THSR) is the backbone of travel along the West Coast. It is the ultimate tool for long-distance travel, shrinking the island significantly. While the standard train (TRA) is nostalgic, the HSR is all about speed and efficiency.",
+  "sections": [
+    {
+      "id": "speed-comparison",
+      "heading": "Why Choose HSR? Speed vs. TRA",
+      "content": "<p>The biggest difference between the HSR and the conventional Taiwan Railways (TRA) is travel time. For example, traveling from <strong>Taipei to Kaohsiung (Zuoying)</strong> takes as little as <strong>1.5 hours</strong> on the HSR. In contrast, the TRA train can take <strong>4 to 6 hours</strong> for the same distance!</p><p><strong>Our Recommendation:</strong></p><ul><li><strong>Long Distance (e.g., Taipei to Taichung/Tainan/Kaohsiung):</strong> Definitely take the HSR. It saves you half a day of travel.</li><li><strong>Short Distance (e.g., Tainan to Pingtung):</strong> Take the TRA (local train). It is cheaper and the time difference is negligible for crossing just 1-2 counties.</li></ul>"
+    },
+    {
+      "id": "hsr-network",
+      "heading": "The West Coast Network",
+      "content": "<p>The HSR runs exclusively along the <strong>West Coast</strong> of Taiwan. Here is a quick breakdown of the coverage:</p><h3>✅ Counties with HSR Stations</h3><ul><li><strong>Taipei</strong> (Nangang, Taipei Main, Banqiao)</li><li><strong>Taoyuan</strong></li><li><strong>Hsinchu</strong></li><li><strong>Miaoli</strong></li><li><strong>Taichung</strong></li><li><strong>Changhua</strong></li><li><strong>Yunlin</strong></li><li><strong>Chiayi</strong></li><li><strong>Tainan</strong></li><li><strong>Kaohsiung</strong> (Zuoying Terminal)</li></ul><h3>❌ Western Counties WITHOUT HSR</h3><ul><li><strong>Keelung</strong> (Use TRA or Bus from Taipei)</li><li><strong>Nantou</strong> (Inland; take Bus from Taichung HSR)</li><li><strong>Pingtung</strong> (South; transfer to TRA at Zuoying HSR)</li></ul>"
+    },
+    {
+      "id": "check-the-board",
+      "heading": "Not Every Train Stops Everywhere!",
+      "content": "<p>This is a common mistake for first-timers. <strong>HSR trains have different stopping patterns.</strong> Some are \"Express\" trains that only stop at major hubs (Taipei - Taichung - Kaohsiung), while others stop at every single station.</p><p>Before you enter the gate, look at the <strong>Large Departure Board</strong> in the main hall. It will tell you the departure time and exactly which stations that train will stop at.</p>",
+      "image": "/image/transport/thsr-departure-board.jpg",
+      "links": [
+        {"text": "Photo by: 鐵路1", "url": "https://commons.wikimedia.org/wiki/File:20220717_%E9%AB%98%E9%90%B5%E8%87%BA%E4%B8%AD%E7%AB%99%E8%BB%8A%E7%AB%99%E5%A4%A7%E5%BB%B3_09.jpg"},
+        {"text": "License: CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/"}
+      ],
+      "tip": "Train numbers starting with '1' (e.g., 109) are usually the fastest express trains."
+    },
+    {
+      "id": "ticket-types",
+      "heading": "Crucial: Reserved vs. Non-Reserved",
+      "content": "<p>When buying a ticket, you must choose between two types. Mixing them up can lead to fines or standing for the whole trip.</p><ul><li><strong>Reserved Seat (對號座):</strong> You are guaranteed a specific seat in a specific car. Recommended for long trips or peak hours. <a href='https://www.thsrc.com.tw/' target='_blank' style='font-weight:bold; color:#e76f51;'>👉 You can book tickets online here.</a></li><li><strong>Non-Reserved / Free Seating (自由座):</strong> These tickets are slightly cheaper, but you do not have a guaranteed seat. You must find an empty seat yourself, and you are <strong>restricted to specific cars</strong> (usually cars 10-12).</li></ul><p>Once you scan your ticket and enter the gate, look for the <strong>Platform Screens</strong> hanging from the ceiling. They will clearly indicate which cars are for Non-Reserved passengers.</p>",
+      "image": "/image/transport/thsr-car-guide-screen.png",
+      "tip": "If you have a Non-Reserved ticket, DO NOT sit in the Reserved cars, even if they are empty."
+    },
+    {
+      "id": "buying-tickets",
+      "heading": "How to Buy Tickets",
+      "content": "<p>You have two main options at the station:</p><h3>1. Automatic Ticket Machines</h3><p>These machines have an English interface and accept cash or credit cards. They are usually faster than the counter.</p><h3>2. Ticket Counter</h3><p>If you need help or have special requirements, go to the staffed counter. The staff generally speak English.</p>",
+      "image": "/image/transport/thsr-ticket-seller.jpg",
+      "links": [
+        {"text": "Photo by: Solomon203", "url": "https://commons.wikimedia.org/wiki/File:THSR_passenger_service_counter_and_ticket_vending_machine,_Taipei_Station_1F_20170624.jpg"},
+        {"text": "License: CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/"}
+      ]
+    },
+    {
+      "id": "luggage-tips",
+      "heading": "Traveling with Luggage",
+      "content": "<p>Worrying about your large suitcases? Don't be! The Taiwan High Speed Rail is very luggage-friendly.</p><p><strong>Large Suitcases:</strong> Every train car has a designated <strong>Luggage Storage Area</strong> located at the front or rear of the cabin (near the automatic doors). You can safely stow your large bags (28-32 inch) there.</p><p><strong>Carry-on Bags:</strong> For smaller backpacks or cabin bags, simply place them on the overhead racks above your seat.</p>",
+      "image": "/image/transport/luggage_area.jpg",
+      "links": [
+        {"text": "Photo by: Tbatb", "url": "https://commons.wikimedia.org/wiki/File:Luggage_area_in_a_THSR_700T_train.jpg"},
+        {"text": "License: CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/"}
+      ],
+      "tip": "Keep your valuables with you. While Taiwan is safe, it is always better to keep your passport and wallet on your person, not in the luggage rack."
+    }
+  ]
+}
