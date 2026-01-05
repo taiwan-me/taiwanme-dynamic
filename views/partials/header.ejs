@@ -5,6 +5,7 @@ const getActiveStyle = (targetPage) => {
         ? 'color: var(--accent-color); font-weight: bold;' 
         : '';
 }
+// 判斷是否在首頁，決定地圖連結是錨點(#)還是路徑(/#)
 const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';
 %>
 
@@ -47,8 +48,10 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 
 <div id="mobileMoreMenu" class="mobile-more-menu" style="display: none;">
     <a href="/entertainment" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a>
+    
+    <a href="#" id="philosophyBtnMobile">TAIWANME'S PHILOSOPHY</a>
     <a href="#" id="bizInquiryBtnMobile">BUSINESS INQUIRY</a>
-    <a href="#" id="tippingBtnMobile">DONATE (Buy us a Boba)</a>
+    <a href="#" id="tippingBtnMobile">BUY US A BOBA (DONATE)</a>
 </div>
 
 <nav class="desktop-nav">

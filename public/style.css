@@ -741,22 +741,21 @@ h2.section-title {
 @media (max-width: 768px) {
     #header { padding: 15px; }
     .logo-text { font-size: 0.7rem; }
-    .header-links, .desktop-nav, .desktop-map-container { display: none; }
+    
+    /* [修正點] 移除 .desktop-map-container，不要讓它被隱藏 */
+    .header-links, .desktop-nav { display: none; }
 
-    /* Banner */
+    /* Banner 調整 */
     .hero-slider { width: 96%; height: 50vh; margin: 20px auto; border-width: 3px; padding: 4px; border-radius: 15px; }
     
-    /* Mobile Nav Grid */
+    /* 導覽列網格 */
     .mobile-grid-nav { 
         display: grid; 
         grid-template-columns: repeat(3, 1fr); 
         gap: 8px; 
         padding: 20px; 
         background-color: var(--lace-bg); 
-        border-top: 2px solid var(--lace-border); 
-        border-bottom: 2px solid var(--lace-border); 
     }
-    
     .grid-btn { 
         background: #fff; 
         border: 1px solid var(--lace-border); 
@@ -774,52 +773,72 @@ h2.section-title {
         min-height: 60px; 
         word-break: break-word; 
     }
-    
     .menu-btn { 
         background-color: rgba(255,255,255,0.7); 
         color: var(--accent-color); 
     }
 
-    /* Mobile More Menu (下拉選單樣式修正) */
+    /* MORE 選單樣式優化 */
     .mobile-more-menu {
-        background-color: #f9f9f9;
+        background-color: var(--lace-bg);
         text-align: center;
-        padding: 10px 0;
         border-bottom: 2px solid var(--lace-border);
+        box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
     }
     .mobile-more-menu a {
         display: block;
-        padding: 15px;
-        color: #555;
+        padding: 18px;
+        color: #333;
         text-decoration: none;
         font-family: var(--font-eng);
-        font-weight: bold;
-        border-bottom: 1px solid #eee;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        text-transform: uppercase;
     }
-    .mobile-more-menu a:last-child { border-bottom: none; }
-
-    /* --- [手機版地圖按鈕位置微調] --- */
+    .mobile-more-menu a:hover {
+        background-color: #fff;
+        color: var(--accent-color);
+    }
     
-    /* 1. North: 往上面移動一點點 */
+    /* --- [地圖區塊在手機版重新顯示] --- */
+    .desktop-map-container { 
+        display: block !important; /* 強制顯示 */
+        width: 100%; 
+        aspect-ratio: 0.7; 
+        margin: 20px auto; 
+        position: relative;
+    }
+
+    .region-circle, .region-square { 
+        width: 18%; 
+        font-size: 11px; 
+        padding: 5px;
+    }
+
+    /* --- [地圖按鈕座標微調 - 您滿意的位置] --- */
+    
+    /* 1. North: 往上面移動 */
     .pos-north { 
         top: 0% !important; 
         left: 52% !important; 
     }
 
-    /* 2. Outlying Islands: 位置不變 (28% 剛好在 North 左邊) */
+    /* 2. Outlying Islands: 位置不變 (North 左側) */
     .pos-islands { 
         top: 5% !important; 
         left: 28% !important; 
         right: auto !important;
     }
 
-    /* 3. Central: 往左移動一個圓形直徑 (18%) */
+    /* 3. Central: 往左移動一個圓形直徑 */
     .pos-central { 
         top: 35% !important; 
         left: 2% !important; 
     }
 
-    /* 4. East: 往上一個半徑 (9%) 多一點 */
+    /* 4. East: 往上一個半徑多一點 */
     .pos-east { 
         top: 38% !important; 
         right: 5% !important; 
@@ -831,19 +850,11 @@ h2.section-title {
         left: 22% !important; 
     }
 
-    /* 其他頁面調整 */
+    /* 其他頁面 RWD 調整 */
     .article-grid, .restaurant-grid, .genre-grid { grid-template-columns: 1fr; }
-    .page-banner, .city-banner, .festivals-banner, .transport-banner, .ent-banner, .city-hero-banner { height: 250px; aspect-ratio: auto; }
-    .culture-row { flex-direction: column; gap: 30px; }
-    .region-block, .compact-block { flex-direction: column; align-items: flex-start; }
-    .region-title, .compact-title { margin-bottom: 20px; }
-    .festival-table th, .festival-table td { white-space: nowrap; }
-    .genre-grid { grid-template-columns: repeat(2, 1fr); }
-    
     .hero-title { font-size: 2rem; }
     .hero-subtitle { font-size: 1rem; }
     .feed-grid { grid-template-columns: 1fr; }
-    .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
 }
 
 @media (min-width: 769px) {

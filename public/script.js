@@ -53,59 +53,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==============================================
-    // 3. Business Inquiry 彈窗功能 (含手機版 ID)
+    // 3. Business Inquiry 彈窗功能
     // ==============================================
     const bizBtn = document.getElementById('bizInquiryBtn');
-    const bizBtnMobile = document.getElementById('bizInquiryBtnMobile'); // 手機版按鈕
     const bizModal = document.getElementById('businessInquiryModal');
     const closeBiz = document.querySelector('.close-biz');
 
-    // 綁定電腦版按鈕
     if (bizBtn && bizModal) {
         bizBtn.addEventListener('click', (e) => {
             e.preventDefault();
             bizModal.style.display = 'flex';
         });
-    }
-
-    // [新增] 綁定手機版按鈕
-    if (bizBtnMobile && bizModal) {
-        bizBtnMobile.addEventListener('click', (e) => {
-            e.preventDefault();
-            bizModal.style.display = 'flex';
-        });
-    }
-
-    if (closeBiz && bizModal) {
-        closeBiz.addEventListener('click', () => bizModal.style.display = 'none');
+        if (closeBiz) {
+            closeBiz.addEventListener('click', () => bizModal.style.display = 'none');
+        }
     }
 
     // ==============================================
-    // 4. 打賞 (Tipping) 彈窗邏輯 & 複製功能 (含手機版 ID)
+    // 4. 打賞 (Tipping) 彈窗邏輯 & 複製功能
     // ==============================================
     const tippingBtn = document.getElementById('tippingBtn');
-    const tippingBtnMobile = document.getElementById('tippingBtnMobile'); // 手機版按鈕
     const tippingModal = document.getElementById('tippingModal');
     const closeTipping = document.querySelector('.close-tipping');
 
-    // 綁定電腦版按鈕
     if (tippingBtn && tippingModal) {
         tippingBtn.addEventListener('click', (e) => {
             e.preventDefault();
             tippingModal.style.display = 'flex';
         });
-    }
-
-    // [新增] 綁定手機版按鈕
-    if (tippingBtnMobile && tippingModal) {
-        tippingBtnMobile.addEventListener('click', (e) => {
-            e.preventDefault();
-            tippingModal.style.display = 'flex';
-        });
-    }
-
-    if (closeTipping && tippingModal) {
-        closeTipping.addEventListener('click', () => tippingModal.style.display = 'none');
+        if (closeTipping) {
+            closeTipping.addEventListener('click', () => tippingModal.style.display = 'none');
+        }
     }
 
     // --- 複製地址功能 ---
@@ -177,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================================
-    // 6. 手機版 MORE 選單開關 (Updated for Unified Header)
+    // 6. 手機版 MORE 選單開關 & 手機版 Modal 綁定 (Updated)
     // ==============================================
     const mobileMoreBtn = document.getElementById('mobileMoreBtn');
     const mobileMoreMenu = document.getElementById('mobileMoreMenu');
@@ -185,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMoreBtn && mobileMoreMenu) {
         mobileMoreBtn.addEventListener('click', (e) => {
             e.preventDefault();
+            // 切換顯示與隱藏
             if (mobileMoreMenu.style.display === 'none' || mobileMoreMenu.style.display === '') {
                 mobileMoreMenu.style.display = 'block';
                 mobileMoreBtn.textContent = 'CLOSE -';
@@ -196,6 +175,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // [新增] 讓手機版選單內的按鈕也能觸發電腦版的彈窗
+    // 綁定函式：傳入按鈕ID與目標彈窗元素
+    const bindMobileModal = (btnId, modalEl) => {
+        const btn = document.getElementById(btnId);
+        if (btn && modalEl) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (modalEl) modalEl.style.display = 'flex'; // 顯示彈窗
+                
+                // 順便把手機選單收起來，體驗更好
+                if (mobileMoreMenu) mobileMoreMenu.style.display = 'none';
+                if (mobileMoreBtn) {
+                    mobileMoreBtn.textContent = 'MORE +';
+                    mobileMoreBtn.style.color = '';
+                }
+            });
+        }
+    };
+
+    // 執行綁定 (對應 header.ejs 裡的 ID)
+    bindMobileModal('philosophyBtnMobile', document.getElementById('philosophyModal'));
+    bindMobileModal('bizInquiryBtnMobile', document.getElementById('businessInquiryModal'));
+    bindMobileModal('tippingBtnMobile', document.getElementById('tippingModal'));
+
 
     // ==============================================
     // 7. 自動輪播圖 (Hero Slider) - 只在首頁運作
