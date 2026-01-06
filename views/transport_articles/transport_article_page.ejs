@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title><%= data.title %> | TaiwanMe</title>
+    <meta name="description" content="<%= data.intro ? data.intro.substring(0, 150) + '...' : 'Travel guide by TaiwanMe' %>">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="<%= data.title %>">
+    <meta property="og:description" content="<%= data.intro ? data.intro.substring(0, 150) + '...' : '' %>">
+    <meta property="og:image" content="<%= data.heroImage %>">
+    <meta property="og:url" content="<%= data.currentUrl || '' %>">
+
     <link rel="icon" href="/image/logo.png" type="image/png">
     
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     
     <style>
-        body { background-color: #f9f9f9; }
+        :root {
+            --accent-color: #e53935;
+            --font-eng: 'Lato', sans-serif;
+            --font-tc: 'Noto Sans TC', sans-serif;
+        }
+
+        body { background-color: #f9f9f9; font-family: var(--font-tc); scroll-behavior: smooth; }
 
         /* Hero Banner */
         .guide-hero {
@@ -28,27 +43,20 @@
             background-color: var(--accent-color); color: white; padding: 5px 12px; border-radius: 4px;
             font-size: 0.9rem; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; display: inline-block;
         }
-        .guide-title { font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; font-family: var(--font-eng); }
+        .guide-title { font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; font-family: var(--font-eng); text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .guide-meta { font-size: 0.95rem; opacity: 0.9; }
 
-        /* --- 新增：Banner 版權標示樣式 --- */
+        /* Banner Credit */
         .banner-credit {
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            z-index: 5;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.7);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 4px 8px;
-            border-radius: 4px;
-            max-width: 80%;
-            text-align: right;
+            position: absolute; bottom: 10px; right: 20px; z-index: 5;
+            font-size: 0.75rem; color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(0, 0, 0, 0.4); padding: 4px 8px; border-radius: 4px;
+            max-width: 80%; text-align: right;
         }
         .banner-credit a { color: #fff; text-decoration: underline; }
 
         /* Layout */
-        .guide-container { display: flex; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; }
+        .guide-container { display: flex; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; align-items: flex-start; }
         .guide-sidebar { flex: 0 0 280px; display: none; }
         @media (min-width: 992px) { .guide-sidebar { display: block; } }
 
@@ -56,6 +64,7 @@
         .toc-sticky-box {
             position: sticky; top: 100px; background: white; padding: 25px;
             border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee;
+            max-height: 80vh; overflow-y: auto;
         }
         .toc-title { font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; color: #333; }
         .toc-list { list-style: none; padding: 0; margin: 0; }
@@ -65,6 +74,13 @@
             border-left: 3px solid transparent; padding-left: 10px;
         }
         .toc-list a:hover { color: var(--accent-color); border-left-color: var(--accent-color); }
+        
+        .toc-list a.active {
+            color: var(--accent-color);
+            border-left-color: var(--accent-color);
+            font-weight: bold;
+            background: linear-gradient(90deg, rgba(0,0,0,0.03), transparent);
+        }
 
         /* Content */
         .guide-content { flex: 1; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); min-width: 0; }
@@ -95,7 +111,9 @@
         .lightbox {
             display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: zoom-out;
+            opacity: 0; transition: opacity 0.3s ease;
         }
+        .lightbox.show { opacity: 1; }
         .lightbox-img { max-width: 95%; max-height: 95%; object-fit: contain; cursor: default; }
         .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
 
@@ -105,18 +123,12 @@
         }
         .tip-title { font-weight: bold; color: #d39e00; margin-bottom: 5px; display: block; }
         
-        .table-responsive { overflow-x: auto; margin: 25px 0; }
+        .table-responsive { overflow-x: auto; margin: 25px 0; border-radius: 8px; border: 1px solid #eee; }
         .guide-table { width: 100%; border-collapse: collapse; min-width: 500px; font-family: 'Noto Sans TC', sans-serif; }
-        .guide-table th { background: #333; color: white; padding: 12px; text-align: left; }
+        .guide-table th { background: #333; color: white; padding: 12px; text-align: left; white-space: nowrap; }
         .guide-table td { padding: 12px; border-bottom: 1px solid #ddd; color: #555; }
         .guide-table tr:hover { background-color: #f5f5f5; }
-
-        .link-box {
-            background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #4a90e2;
-        }
-        .link-box a { display: block; color: #4a90e2; text-decoration: none; font-weight: bold; margin-bottom: 5px; }
-        .link-box a:hover { text-decoration: underline; }
-        .link-box a::before { content: '🔗 '; }
+        .guide-table tr:last-child td { border-bottom: none; }
 
         @media (max-width: 768px) {
             .guide-container { flex-direction: column; padding: 0 15px; }
@@ -147,10 +159,12 @@
         <aside class="guide-sidebar">
             <div class="toc-sticky-box">
                 <div class="toc-title">Table of Contents</div>
-                <ul class="toc-list">
-                    <% data.sections.forEach(function(section) { %>
-                        <li><a href="#<%= section.id %>"><%= section.heading %></a></li>
-                    <% }); %>
+                <ul class="toc-list" id="toc-list">
+                    <% if (data.sections && data.sections.length > 0) { %>
+                        <% data.sections.forEach(function(section) { %>
+                            <li><a href="#<%= section.id %>" class="toc-link" data-target="<%= section.id %>"><%= section.heading %></a></li>
+                        <% }); %>
+                    <% } %>
                 </ul>
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
                     <a href="/transport" style="text-decoration: none; font-weight: bold; color: #333; font-size: 0.9rem;">← Back to All Guides</a>
@@ -159,72 +173,99 @@
         </aside>
 
         <article class="guide-content">
-            <div class="guide-text" style="font-size: 1.1rem; color: #666; margin-bottom: 40px; font-style: italic;">
-                <%= data.intro %>
-            </div>
+            <% if (data.intro) { %>
+                <div class="guide-text" style="font-size: 1.1rem; color: #666; margin-bottom: 40px; font-style: italic;">
+                    <%- data.intro %>
+                </div>
+            <% } %>
 
-            <% data.sections.forEach(function(section) { %>
-                <section id="<%= section.id %>" class="section-block">
-                    <h2 class="section-title"><%= section.heading %></h2>
-                    
-                    <div class="guide-text">
-                        <%- section.content %>
-                    </div>
-
-                    <% if (section.image) { %>
-                        <img src="<%= section.image %>" 
-                             alt="<%= section.heading %>" 
-                             class="guide-img <%= section.enableZoom ? 'zoomable' : '' %>"
-                             data-src="<%= section.image %>">
+            <% if (data.sections && data.sections.length > 0) { %>
+                <% data.sections.forEach(function(section) { %>
+                    <section id="<%= section.id %>" class="section-block">
+                        <h2 class="section-title"><%= section.heading %></h2>
                         
-                        <% if (section.links && section.links.length > 0) { %>
-                            <div class="img-caption">
-                                Source / Official Info:
-                                <% section.links.forEach(function(link, index) { %>
-                                    <% if (index > 0) { %> | <% } %>
-                                    <a href="<%= link.url %>" target="_blank">🔗 <%= link.text %></a>
+                        <div class="guide-text">
+                            <%- section.content %>
+                        </div>
+
+                        <% /* 情況 A：新的多張圖片模式 (Images Array) */ %>
+                        <% if (section.images && section.images.length > 0) { %>
+                            <div class="section-gallery">
+                                <% section.images.forEach(function(img) { %>
+                                    <div class="image-wrapper" style="margin-bottom: 30px;">
+                                        <img src="<%= img.path %>" 
+                                             alt="<%= section.heading %>" 
+                                             class="guide-img zoomable"
+                                             data-src="<%= img.path %>"
+                                             loading="lazy">
+                                        
+                                        <div class="img-caption">
+                                            Photo Credit: <%= img.credit %>
+                                            <% if (img.source_url) { %>
+                                                | <a href="<%= img.source_url %>" target="_blank" rel="noopener noreferrer">Official Source 🔗</a>
+                                            <% } %>
+                                        </div>
+                                    </div>
                                 <% }); %>
                             </div>
-                        <% } %>
-                    <% } %>
 
-                    <% if (section.table) { %>
-                        <div class="table-responsive">
-                            <table class="guide-table">
-                                <thead>
-                                    <tr>
-                                        <% section.table.headers.forEach(function(th) { %>
-                                            <th><%= th %></th>
-                                        <% }); %>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% section.table.rows.forEach(function(row) { %>
+                        <% /* 情況 B：舊的單張圖片模式 (Backward Compatibility) */ %>
+                        <% } else if (section.image) { %>
+                            <img src="<%= section.image %>" 
+                                 alt="<%= section.heading %>" 
+                                 class="guide-img <%= section.enableZoom ? 'zoomable' : '' %>"
+                                 data-src="<%= section.image %>"
+                                 loading="lazy"> 
+                                 
+                            <% if (section.links && section.links.length > 0) { %>
+                                <div class="img-caption">
+                                    Source / Official Info:
+                                    <% section.links.forEach(function(link, index) { %>
+                                        <% if (index > 0) { %> | <% } %>
+                                        <a href="<%= link.url %>" target="_blank" rel="noopener noreferrer">🔗 <%= link.text %></a>
+                                    <% }); %>
+                                </div>
+                            <% } %>
+                        <% } %>
+
+                        <% if (section.table) { %>
+                            <div class="table-responsive">
+                                <table class="guide-table">
+                                    <thead>
                                         <tr>
-                                            <% row.forEach(function(cell) { %>
-                                                <td><%= cell %></td>
+                                            <% section.table.headers.forEach(function(th) { %>
+                                                <th><%= th %></th>
                                             <% }); %>
                                         </tr>
-                                    <% }); %>
-                                </tbody>
-                            </table>
-                        </div>
-                    <% } %>
+                                    </thead>
+                                    <tbody>
+                                        <% section.table.rows.forEach(function(row) { %>
+                                            <tr>
+                                                <% row.forEach(function(cell) { %>
+                                                    <td><%= cell %></td>
+                                                <% }); %>
+                                            </tr>
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <% } %>
 
-                    <% if (section.tip) { %>
-                        <div class="tip-box">
-                            <span class="tip-title">💡 Travel Tip:</span>
-                            <%= section.tip %>
-                        </div>
-                    <% } %>
-                </section>
-            <% }); %>
+                        <% if (section.tip) { %>
+                            <div class="tip-box">
+                                <span class="tip-title">💡 Travel Tip:</span>
+                                <%= section.tip %>
+                            </div>
+                        <% } %>
+                    </section>
+                <% }); %>
+            <% } %>
         </article>
     </div>
 
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-img" id="lightbox-img" src="">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Enlarged view">
     </div>
 
     <%- include('../partials/footer') %>
@@ -232,6 +273,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Lightbox & ScrollSpy Logic
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const closeBtn = document.querySelector('.lightbox-close');
@@ -240,13 +282,32 @@
                 img.addEventListener('click', function() {
                     lightboxImg.src = this.getAttribute('data-src');
                     lightbox.style.display = 'flex';
+                    setTimeout(() => lightbox.classList.add('show'), 10);
                 });
             });
 
-            const closeBox = () => { lightbox.style.display = 'none'; };
+            const closeBox = () => { 
+                lightbox.classList.remove('show');
+                setTimeout(() => lightbox.style.display = 'none', 300);
+            };
+            
             closeBtn.addEventListener('click', closeBox);
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeBox();
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeBox(); });
+            document.addEventListener('keydown', (e) => { if (e.key === "Escape" && lightbox.style.display === 'flex') closeBox(); });
+
+            const sections = document.querySelectorAll('.section-block');
+            const navLinks = document.querySelectorAll('.toc-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= (sectionTop - 150)) { current = section.getAttribute('id'); }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-target') === current) { link.classList.add('active'); }
+                });
             });
         });
     </script>

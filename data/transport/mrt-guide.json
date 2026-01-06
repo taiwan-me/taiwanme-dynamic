@@ -1,9 +1,86 @@
 {
   "id": "mrt-guide",
-  "title": "Metro Systems (MRT) Guide",
-  "tag": "URBAN",
+  "title": "Taiwan MRT & Light Rail Guide",
+  "tag": "CITY-TRANSIT",
   "heroImage": "/image/transport/mrt_banner.png",
   "updatedAt": "2026/01/06",
-  "intro": "Content coming soon...",
-  "sections": []
+  "intro": "Taiwan currently has operational MRT systems in <strong>Taipei, New Taipei, Taoyuan, Taichung, and Kaohsiung</strong>. While Taipei and Kaohsiung have the most mature networks, Taoyuan and Taichung are actively expanding. Other cities like Keelung, Hsinchu, Chiayi, and especially <strong>Tainan</strong>—the cultural capital with high tourist density—are currently planning their own networks.<br><br><strong>A Note on Light Rail (LRT):</strong> You will also see Light Rail Transit in New Taipei and Kaohsiung. These are slower, similar to <strong>streetcars in Australia</strong>. They are favored for their lower cost, shorter construction time, and ability to weave through city streets, making them excellent for connecting High Speed Rail stations to city centers.",
+  "sections": [
+    {
+      "id": "mrt-rule-no-food",
+      "heading": "⚠️ CRUCIAL RULE: No Eating or Drinking",
+      "content": "<p>Before we start, there is one golden rule for all Metro and Light Rail systems in Taiwan: <strong>NO Eating, and NO Drinking (not even water/gum).</strong></p><p>Once you cross the yellow line on the floor at the station gate, or board the Light Rail, consumption is strictly prohibited. This rule is strictly enforced, and violators face heavy fines. This unique cleanliness culture is why Taiwan's metro is famous for being spotless.</p>",
+      "images": []
+    },
+    {
+      "id": "taipei-new-taipei",
+      "heading": "1. Taipei & New Taipei Metro (The Dual Network)",
+      "content": "<p>The Taipei (Taipei Metro) and New Taipei (New Taipei Metro) systems form a massive interconnected network. For travelers, they function almost as one, but the <strong>Yellow Line (Circular Line)</strong> and the <strong>Light Rails (Danhai/Ankeng)</strong> are operated by New Taipei Metro.</p><h3>Payment & Passes</h3><p>For the general Taipei Metro, you can use various <a href='https://english.metro.taipei/cp.aspx?n=BECC2E7AC426F659' target='_blank'>payment methods</a>. However, for the <strong>New Taipei Metro</strong> (Circular Line & Light Rails), please note that they currently primarily accept <strong>IC Cards (EasyCard, iPASS)</strong> or <a href='https://www.ntmetro.com.tw/basic/?node=10091' target='_blank'>Single Journey Tickets</a>.</p><ul><li><strong>Taipei Fun Pass:</strong> <a href='https://web.metro.taipei/event/enjoytaipeianytime/index-en.html' target='_blank'>Taipei Metro Multi-day Passes</a></li><li><strong>New Taipei LRT Pass:</strong> Currently, only the Light Rail offers a <a href='https://www.kkday.com/zh-tw/product/101081' target='_blank'>1-Day Pass (via KKDay)</a>.</li></ul><h3>Luggage & Bikes</h3><p>General luggage rules apply (<a href='https://english.metro.taipei/Content_List.aspx?n=B2A3CBBA644E153D' target='_blank'>Read here</a>). If you are bringing a bicycle on the New Taipei lines, check the <a href='https://www.ntmetro.com.tw/basic/?node=10017' target='_blank'>specific regulations here</a>.</p>",
+      "images": [
+        {
+          "id": "mrt-taipei",
+          "filename": "taipeimetro.jpg",
+          "path": "/image/transport/taipeimetro.jpg",
+          "credit": "Taipei Metro (臺北捷運)",
+          "source_url": "https://english.metro.taipei/"
+        },
+        {
+          "id": "mrt-newtaipei-lrt1",
+          "filename": "nt-lrt-1.png",
+          "path": "/image/transport/nt-lrt-1.png",
+          "credit": "New Taipei Metro (新北捷運)",
+          "source_url": "https://www.ntmetro.com.tw/basic/?node=10071"
+        },
+        {
+          "id": "mrt-newtaipei-lrt2",
+          "filename": "nt-lrt-2.png",
+          "path": "/image/transport/nt-lrt-2.png",
+          "credit": "New Taipei Metro (新北捷運)",
+          "source_url": "https://www.ntmetro.com.tw/basic/?node=10071"
+        }
+      ]
+    },
+    {
+      "id": "taoyuan-metro",
+      "heading": "2. Taoyuan Metro (Airport Line)",
+      "content": "<p>This is the line most travelers use to get from Taoyuan International Airport (TPE) to Taipei Main Station. It offers both Express (purple) and Commuter (blue) trains.</p><h3>Payment</h3><p>The payment systems are largely compatible with Taipei Metro (Credit cards, IC Cards, QR codes). <a href='https://www.tymetro.com.tw/tymetro-new/tw/_pages/travel-guide/ticket.html' target='_blank'>See ticket types here</a>.</p>",
+      "images": [
+        {
+          "id": "mrt-taoyuan",
+          "filename": "taoyuanmetro.png",
+          "path": "/image/transport/taoyuanmetro.png",
+          "credit": "Taoyuan Metro (桃園捷運)",
+          "source_url": "https://www.tymetro.com.tw/tymetro-new/tw/index.php"
+        }
+      ]
+    },
+    {
+      "id": "taichung-metro",
+      "heading": "3. Taichung Metro (Green Line)",
+      "content": "<p>Taichung currently operates the Green Line, which connects the High Speed Rail station to the city center. It is a convenient way to bypass Taichung's heavy traffic.</p><h3>Payment</h3><p>Accepted tools are similar to Taipei (EasyCard, iPass, ICash). Taichung also offers various <a href='https://www.tmrt.com.tw/metro-life/ticket-types' target='_blank'>ticket types</a>, including tourist passes that may integrate with the local bus network.</p>",
+      "images": [
+        {
+          "id": "mrt-taichung",
+          "filename": "taichungmetro.jpg",
+          "path": "/image/transport/taichungmetro.jpg",
+          "credit": "Taichung Metro (台中捷運)",
+          "source_url": "https://www.tmrt.com.tw/"
+        }
+      ]
+    },
+    {
+      "id": "kaohsiung-metro",
+      "heading": "4. Kaohsiung MRT & Light Rail",
+      "content": "<p>Kaohsiung has a fully mature network consisting of the Red and Orange MRT lines, plus a circular Light Rail (LRT) that runs above ground, offering great harbor views.</p><h3>Payment & Tickets</h3><p>Payment methods are similar to Taipei. However, Kaohsiung has specific ticketing pages for different systems:</p><ul><li><strong>MRT Tickets:</strong> <a href='https://www.krtc.com.tw/Ticket/ticket_list?id=9eebd8b0b5244004a495d4a01c3576c0' target='_blank'>View Price & Types</a></li><li><strong>Light Rail (LRT) Tickets:</strong> <a href='https://www.krtc.com.tw/Ticket/KLRT_ticket_list?id=7cdc3aa912bd400aa6731298e619ea04' target='_blank'>View Price & Types</a></li></ul><p><strong>Unique Multi-Transport Passes:</strong> Unlike other cities, Kaohsiung offers \"MeN Go\" or Joint Tickets that combine MRT, LRT, Ferry, and Bus access. <a href='https://www.krtc.com.tw/Ticket/joint_ticket_list' target='_blank'>Check Joint Tickets here</a>.</p><h3>Large Items</h3><p>Bringing a bike or large board? Rules may require you to ask a station master or buy a specific ticket. <a href='https://www.krtc.com.tw/Guide/regulations?id=caf3666fcddc47b1a9ccf224c6ab677a' target='_blank'>Read the regulations here</a>.</p>",
+      "images": [
+        {
+          "id": "mrt-kaohsiung",
+          "filename": "kaohsiungmetro.jpg",
+          "path": "/image/transport/kaohsiungmetro.jpg",
+          "credit": "Kaohsiung Metro (高雄捷運)",
+          "source_url": "https://www.krtc.com.tw/"
+        }
+      ]
+    }
+  ]
 }

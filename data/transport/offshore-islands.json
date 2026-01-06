@@ -1,9 +1,91 @@
 {
-  "id": "offshore-islands",
-  "title": "Traveling to Offshore Islands",
-  "tag": "ADVENTURE",
+  "id": "offshore-islands-guide",
+  "title": "Taiwan Offshore Islands Transport Guide",
+  "tag": "ISLAND-HOPPING",
   "heroImage": "/image/transport/offshore_banner.png",
   "updatedAt": "2026/01/06",
-  "intro": "Content coming soon...",
-  "sections": []
+  "intro": "Taiwan's beauty extends far beyond the main island. From the basalt columns of Penghu to the historic battlefields of Kinmen, and the diving paradises of Green Island and Orchid Island. Each island requires specific transport planning. This guide covers the essential flight and ferry information for <strong>Penghu, Kinmen, Matsu, Xiao Liuqiu, Green Island, Orchid Island, Guishan Island, and Keelung Islet</strong>.",
+  "sections": [
+    {
+      "id": "penghu-transport",
+      "heading": "1. Penghu (澎湖) - The Archipelago",
+      "content": "<p>Penghu is the most popular island destination, famous for its fireworks festival and beaches.</p><h3>✈️ By Plane (Fastest)</h3><p>Flights land at <strong>Penghu Magong Airport (MZG)</strong>. Flight time is approx. 30-60 minutes.</p><ul><li><strong>Airlines:</strong> UNI Air (立榮), Mandarin Airlines (華信).</li><li><strong>Departure:</strong> Taipei (TSA), Taichung (RMQ), Chiayi (CYA), Tainan (TNN), Kaohsiung (KHH).</li></ul><h3>⛴️ By Ferry (Detailed Guide)</h3><p>Taking a boat is a popular option, especially from Chiayi.</p><h4>1. Chiayi Budai Harbor (嘉義布袋港) - Most Popular</h4><ul><li><strong>Operators:</strong> Mantianxing (滿天星), Taijet (海有航運/太吉之星), Triumphant (凱旋海運).</li><li><strong>Features:</strong> Shortest ride (~80-90 mins). High frequency.</li><li><strong>Note:</strong> These three companies often operate a joint schedule; you usually cannot specify a particular boat.</li><li><strong>Contacts:</strong><br>- Mantianxing: (05) 3470948<br>- Triumphant: (05) 3471886<br>- Taijet: (05) 3475501</li></ul><h4>2. Kaohsiung New Bin Pier (高雄新濱碼頭)</h4><ul><li><strong>Operator:</strong> <a href='https://tnc-kao.com.tw/' target='_blank'>Penghu Ferry (澎湖輪)</a>.</li><li><strong>Features:</strong> Large luxury liner. Can transport cars/motorcycles. Offers sleeper cabins. Slower (4-5 hours).</li></ul><h4>3. Tainan & Taichung (Seasonal)</h4><ul><li><strong>Operators:</strong> Pescadores Ferry (百麗航運 - Blue Magpie/Leopard).</li><li><strong>Note:</strong> Taichung routes are seasonal and less frequent. Check schedules ahead.</li></ul><div class='tip-box'><strong>Booking Tip:</strong> Use <a href='https://www.ferry.com.tw/' target='_blank'>Flyfish (飛魚船票網)</a> to check schedules and book tickets easily.</div>",
+      "images": [
+        {
+          "filename": "Penghu_Fireworks.png",
+          "path": "/image/transport/Penghu_Fireworks.png",
+          "credit": "Penghu International Fireworks Festival"
+        },
+        {
+          "filename": "penghu_ferry.jpg",
+          "path": "/image/transport/penghu_ferry.jpg",
+          "credit": "舟集 Boattoad, CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:An_Tong_No.6%EF%BD%9C%E5%AE%89%E9%80%9A%E9%99%B8%E8%99%9F_12.jpg"
+        }
+      ]
+    },
+    {
+      "id": "kinmen-transport",
+      "heading": "2. Kinmen (金門) - Battlefield Culture",
+      "content": "<p>Kinmen is historically significant and lies very close to Xiamen, China. There are <strong>NO passenger ferries</strong> from Taiwan main island to Kinmen; you must fly.</p><h3>✈️ By Plane Only</h3><p>Flights land at <strong>Kinmen Shangyi Airport (KNH)</strong>.</p><ul><li><strong>Airlines:</strong> UNI Air (立榮), Mandarin Airlines (華信).</li><li><strong>Departure Airports:</strong> Taipei Songshan (TSA), Taichung (RMQ), Chiayi (CYA), Tainan (TNN), Kaohsiung (KHH).</li><li><strong>Flight Time:</strong> Approx. 50-70 minutes.</li></ul><div class='tip-box'><strong>Mini Three Links (小三通):</strong> From Kinmen, you can take a 30-minute ferry to Xiamen (China). Passport and Visa/Mainland Travel Permit are required.</div>",
+      "images": [
+        {
+          "filename": "kinmen_airport.jpg",
+          "path": "/image/transport/kinmen_airport.jpg",
+          "credit": "riNux from Taipei, Taiwan, CC BY-SA 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kinmen_Airport_front_view_20090401a.jpg"
+        }
+      ]
+    },
+    {
+      "id": "matsu-transport",
+      "heading": "3. Matsu (馬祖) - The Blue Tears",
+      "content": "<p>Matsu consists of Nangan, Beigan, and other islets. It is famous for the 'Blue Tears' phenomenon in spring.</p><h3>✈️ By Plane</h3><ul><li><strong>Airlines:</strong> UNI Air (立榮), Mandarin Airlines (華信).</li><li><strong>Routes:</strong><br>- Taipei (TSA) ➝ Nangan (LZN) or Beigan (MFK).<br>- Taichung (RMQ) ➝ Nangan (LZN).<br>- Kaohsiung (KHH) ➝ Nangan (LZN) (Operated by Mandarin Airlines).</li><li><strong>Note:</strong> Matsu airports are often affected by heavy fog in spring (March-May), leading to cancellations.</li></ul><h3>⛴️ By Ferry (Keelung)</h3><p>For a unique experience or when flights are cancelled, take the boat from <strong>Keelung Harbor</strong>.</p><ul><li><strong>Vessel:</strong> <a href='https://www.shintaima.com/' target='_blank'>New Taima Ferry (新臺馬輪)</a> or Taima Star.</li><li><strong>Schedule:</strong> Usually an overnight trip (approx. 8-10 hours). Departs Keelung at night (around 10 PM) and arrives in Matsu the next morning. It allows you to sleep on the ship.</li></ul>",
+      "images": [
+        {
+          "filename": "matsu_airport.jpg",
+          "path": "/image/transport/matsu_airport.jpg",
+          "credit": "lienyuan lee, CC BY 3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Matsu_Nangan_Airport_%E9%A6%AC%E7%A5%96%E5%8D%97%E7%AB%BF%E6%A9%9F%E5%A0%B4_-_panoramio.jpg"
+        }
+      ]
+    },
+    {
+      "id": "xiao-liuqiu-transport",
+      "heading": "4. Xiao Liuqiu (小琉球) - Sea Turtles",
+      "content": "<p>A coral island near Pingtung. <strong>No airport.</strong> You must take a ferry from <strong>Donggang (東港)</strong>.</p><h3>Step 1: Getting to Donggang Harbor</h3><p>Since there is no train station in Donggang, you need to transfer:</p><ul><li><strong>From HSR Zuoying Station (Recommended):</strong> Take the <strong>Taiwan Trip Bus 9127D (大鵬灣琉球線)</strong>. It departs from Exit 2 of Zuoying Station and goes directly to the Donggang Ferry Terminal. (~50 mins).</li><li><strong>From Kaohsiung Main Station:</strong> Take buses operated by Kaohsiung Bus or Pingtung Bus towards Donggang.</li><li><strong>Via Train + Taxi:</strong> Take a train to <strong>Chaozhou Station (潮州火車站)</strong> or Pingtung Station, then take a taxi (approx. 20-30 mins) to Donggang.</li></ul><h3>Step 2: The Ferry</h3><p>Ride time is approx. 20-30 minutes.</p><ul><li><strong>Private Boats (民營交通船):</strong> Frequent (every 20-30 mins). Arrives at Baishawan Harbor (Tourist favorite).</li><li><strong>Public Boats (公營交通船):</strong> Less frequent. Arrives at DaFu Harbor.</li></ul>",
+      "images": [
+        {
+          "filename": "liuqiu_sand.png",
+          "path": "/image/transport/liuqiu_sand.png",
+          "credit": "Special Star Sand (特別的星沙)"
+        }
+      ]
+    },
+    {
+      "id": "green-orchid-transport",
+      "heading": "5. Green Island (綠島) & Orchid Island (蘭嶼)",
+      "content": "<p>Both islands are accessed primarily from <strong>Taitung</strong>.</p><h3>To Green Island (Ludao)</h3><ul><li><strong>⛴️ Ferry:</strong> Departs from <strong>Taitung Fugang Fishery Harbor (富岡漁港)</strong>. Ride time ~50 mins. Seas can be rough; prepare motion sickness medicine.</li><li><strong>✈️ Plane:</strong> Operated by <a href='https://www.dailyair.com.tw/' target='_blank'>Daily Air (德安航空)</a> from Taitung Airport. Only 19 seats per plane. Extremely hard to book. Flight time ~15 mins.</li></ul><h3>To Orchid Island (Lanyu)</h3><ul><li><strong>⛴️ Ferry:</strong><br>1. From <strong>Taitung Fugang Harbor</strong> (~2.5 hours).<br>2. From <strong>Kenting Houbihu Harbor</strong> (Seasonal: April-Sept only, ~2 hours).</li><li><strong>✈️ Plane:</strong> Daily Air from Taitung Airport. ~25 mins. Highly recommended to book 2 months prior.</li></ul><h3>How to get to Fugang Harbor?</h3><p>Take a train to <strong>Taitung Station</strong>, then take the 'Dongland' Bus (普悠瑪客運) or a Taxi (approx. 15-20 mins, ~NT$300) to the harbor.</p>",
+      "images": [
+        {
+          "filename": "lanyu_tao.png",
+          "path": "/image/transport/lanyu_tao.png",
+          "credit": "Tao People of Orchid Island (蘭嶼達悟族)"
+        }
+      ]
+    },
+    {
+      "id": "guishan-keelung-islet",
+      "heading": "6. Guishan Island (龜山島) & Keelung Islet (基隆嶼)",
+      "content": "<p>These are restricted ecological islands. You cannot stay overnight (mostly), and <strong>permits are required</strong>.</p><h3>🐢 Guishan Island (Turtle Island)</h3><ul><li><strong>Departure:</strong> Wushi Harbor (Yilan).</li><li><strong>Transport:</strong> Take Train to <strong>Toucheng Station</strong> (transfer to bus/taxi) OR take <strong>Bus 1877</strong> from Taipei Nangang Exhibition Center directly to Wushi Harbor.</li><li><strong>Note:</strong> Open March-November. Wednesday is for academic research only. You must book a tour boat that handles the landing permit for you.</li></ul><h3>🌊 Keelung Islet</h3><ul><li><strong>Departure:</strong> Bisha Fishery Harbor (Keelung Badouzi).</li><li><strong>Transport:</strong> Take Train to <strong>Keelung Station</strong>, then transfer to <strong>Bus 103 or 104</strong> to Bisha Harbor.</li><li><strong>Note:</strong> Hiking to the lighthouse requires an advanced permit application via boat operators. Boat ride is ~20 mins.</li></ul>",
+      "images": [
+        {
+          "filename": "keelung_lighthouse.jpg",
+          "path": "/image/transport/keelung_lighthouse.jpg",
+          "credit": "Keelung Islet Lighthouse (基隆嶼燈塔) - Chien-Ping KAO, CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:%E5%9F%BA%E9%9A%86%E7%87%88%E5%A1%94_Keelung_Lighthouse.jpg"
+        }
+      ]
+    }
+  ]
 }

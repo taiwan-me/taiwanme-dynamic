@@ -1,10 +1,48 @@
 {
-  "id": "regional-airports",
-  "title": "From Regional airports to every city or county",
-  "tag": "AIRPORT",
+  "id": "regional-airports-guide",
+  "title": "From The Rest of international & Regional Airports to City or County",
+  "tag": "AIR-TRAVEL",
   "heroImage": "/image/transport/airport_banner.jpg",
-  "heroImageCredit": "<a href='https://commons.wikimedia.org/wiki/File:China_Airlines_Lineup_TPE.jpg' target='_blank'>KCS</a>, <a href='https://creativecommons.org/licenses/by-sa/4.0' target='_blank'>CC BY-SA 4.0</a>, via Wikimedia Commons",
   "updatedAt": "2026/01/06",
-  "intro": "Guide coming soon! Covering Taipei Songshan (TSA), Taichung (RMQ), and Hualien (HUN).",
-  "sections": []
+  "intro": "While Taoyuan (TPE) is the main gateway, Taiwan has two other key international airports closer to city centers: <strong>Taipei Songshan (TSA)</strong> and <strong>Taichung (RMQ)</strong>. Additionally, a network of domestic airports connects the main island to the beautiful offshore islands and the scenic East Coast. This guide breaks down how to use them and how to get to the city.",
+  "sections": [
+    {
+      "id": "intl-songshan",
+      "heading": "1. Taipei Songshan Airport (TSA) - The City Center Hub",
+      "content": "<p><strong>Positioning: Northeast Asia Golden Business Circle (東北亞黃金商務圈).</strong></p><p>TSA is a unique 'City Center Airport' serving high-end business travelers. Its international routes are highly concentrated on other downtown airports: <strong>Tokyo Haneda, Seoul Gimpo, and Shanghai Hongqiao</strong>.</p><h3>🚇 Metro Connection (Fastest)</h3><p>The airport is directly connected to the <strong>Brown Line (Wenhu Line)</strong> at <strong>Songshan Airport Station (BR13)</strong>.</p><ul><li><strong>Transfer at Nanjing Fuxing (BR11):</strong> Switch to Green Line (Ximen, Songshan).</li><li><strong>Transfer at Zhongxiao Fuxing (BR10):</strong> Switch to Blue Line (Taipei Main Station, Xinyi District).</li></ul>",
+      "images": [
+        {
+          "filename": "taipeimetro.jpg",
+          "path": "/image/transport/taipeimetro.jpg",
+          "credit": "Taipei Metro (臺北捷運)",
+          "source_url": "https://english.metro.taipei/"
+        }
+      ]
+    },
+    {
+      "id": "intl-taichung",
+      "heading": "2. Taichung International Airport (RMQ) - Central Gateway",
+      "content": "<p><strong>Positioning: Central Taiwan Regional Airport (中臺灣區域機場).</strong></p><p>Currently focuses on Cross-strait routes, Hong Kong, Macau, Vietnam, and seasonal charters to Japan/Korea.</p><h3>🚌 Transport to City (No MRT at Airport)</h3><p>Please note: <strong>There is currently NO MRT station at the airport.</strong> You must take a bus or taxi first.</p><ul><li><strong>To MRT Green Line:</strong> Take <strong>Bus 555</strong> to <em>MRT Wenhua High School</em> or <em>Taichung City Hall</em> station.</li><li><strong>To HSR Station:</strong> Take <strong>Bus 156</strong> directly to Taichung HSR Station.</li><li><strong>To City Center:</strong> Take <strong>Bus 500 or 302</strong>.</li></ul>",
+      "images": [
+        {
+          "filename": "taichungmetro.jpg",
+          "path": "/image/transport/taichungmetro.jpg",
+          "credit": "Taichung Metro (台中捷運)",
+          "source_url": "https://www.tmrt.com.tw/"
+        }
+      ]
+    },
+    {
+      "id": "domestic-mainland",
+      "heading": "3. Domestic Airports (Mainland Taiwan)",
+      "content": "<p>These airports primarily serve domestic flights connecting the East and West coasts or serving dual military-civil purposes.</p><ul><li><strong>Hualien Airport (HUN):</strong><br>✈️ <em>Routes:</em> Taipei (TSA), Kaohsiung (KHH), Taichung (RMQ).</li><li><strong>Tainan Airport (TNN):</strong><br>✈️ <em>Routes:</em> Penghu (MZG), Kinmen (KNH).</li><li><strong>Taitung Airport (TTT):</strong><br>✈️ <em>Routes:</em> Taipei (TSA), Lanyu (LNY), Green Island (GNI).</li><li><strong>Chiayi Airport (CYI):</strong><br>✈️ <em>Routes:</em> Penghu (MZG), Kinmen (KNH).</li><li><strong>⚠️ Hengchun Airport (HCN):</strong><br><em>Status:</em> <strong>Almost no civil use.</strong> No scheduled flights due to strong downhill winds.</li></ul>",
+      "images": []
+    },
+    {
+      "id": "domestic-offshore",
+      "heading": "4. Offshore Island Airports",
+      "content": "<p>Air travel is the lifeline for Taiwan's outer islands.</p><ul><li><strong>Penghu Airport (MZG):</strong> The busiest offshore hub.<br>✈️ <em>Routes:</em> Taipei, Taichung, Tainan, Chiayi, Kaohsiung, Kinmen.</li><li><strong>Kinmen Airport (KNH):</strong><br>✈️ <em>Routes:</em> Taipei, Taichung, Tainan, Chiayi, Kaohsiung, Penghu.</li><li><strong>Matsu Nangan (LZN):</strong><br>✈️ <em>Routes:</em> Taipei, Taichung, Kaohsiung.</li><li><strong>Matsu Beigan (MFK):</strong><br>✈️ <em>Routes:</em> Taipei.</li><li><strong>Lanyu Airport (LNY):</strong><br>✈️ <em>Routes:</em> Taitung (TTT) only.</li><li><strong>Green Island Airport (GNI):</strong><br>✈️ <em>Routes:</em> Taitung (TTT) only.</li><li><strong>Qimei Airport (CMJ) (Penghu):</strong><br>✈️ <em>Routes:</em> Kaohsiung, Penghu (Magong).</li><li><strong>Wang-an Airport (WAG) (Penghu):</strong><br>✈️ <em>Routes:</em> Kaohsiung.</li></ul>",
+      "images": []
+    }
+  ]
 }
