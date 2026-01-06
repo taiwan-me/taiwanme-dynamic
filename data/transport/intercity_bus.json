@@ -1,0 +1,41 @@
+{
+  "id": "intercity-bus-guide",
+  "title": "Intercity Buses: The Budget-Friendly Choice",
+  "tag": "ISLAND-WIDE",
+  "heroImage": "/image/transport/intercity_bus_hub.png",
+  "updatedAt": "2026/01/06",
+  "intro": "While the High Speed Rail (THSR) has reduced the frequency of some ultra-long-haul bus routes, the <strong>Intercity Highway Bus</strong> network remains the backbone of Taiwan's transport. It is the cheapest way to travel and essential for reaching areas without trains. For medium distances, it often functions like a 'commuter metro' for locals.",
+  "sections": [
+    {
+      "id": "bus-types-identification",
+      "heading": "1. How to Identify: The 4-Digit Code",
+      "content": "<p>In Taiwan, you can distinguish the type of bus by its route number:</p><ul><li><strong>City Bus (市區公車):</strong> Usually <strong>1 to 3 digits</strong> (e.g., Bus 307). These stay within one city/county.</li><li><strong>Highway/Intercity Bus (國道/公路客運):</strong> Usually <strong>4 digits</strong> (e.g., 1815, 9006). These travel via highways to cross city/county borders.</li></ul><h3>The 'Commuter' Culture</h3><p>Don't be surprised to see long queues for these 4-digit buses during rush hour. Many locals live in neighboring cities (like Keelung or Yilan) but work in Taipei. They take these highway buses daily just like taking a subway. For example, <strong>Bus 1550</strong> whisks people from Keelung directly to Taipei in 30-40 minutes.</p>",
+      "images": []
+    },
+    {
+      "id": "bus-terminals",
+      "heading": "2. Bus Transfer Stations (轉運站)",
+      "content": "<p>Unlike city buses that stop curbside, long-distance buses usually depart from large, indoor <strong>Bus Transfer Stations</strong>. These are often co-located with Train or MRT stations.</p><ul><li><strong>Taipei:</strong> Taipei Bus Station (Q Square) and Taipei City Hall Bus Station.</li><li><strong>Taichung:</strong> Chaoma (朝馬) and Taichung Station Transfer Hub.</li><li><strong>Pingtung:</strong> Pingtung Transfer Station (next to the Train Station).</li></ul>",
+      "images": [
+        {
+          "filename": "pingtung_bus_hub.jpg",
+          "path": "/image/transport/pingtung_bus_hub.jpg",
+          "credit": "Pingtung Bus Station outside TRA station (屏東台鐵外的轉運站) - Littlebtc, CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Pingtung_Bus_Station_20181230.jpg"
+        }
+      ]
+    },
+    {
+      "id": "major-operators",
+      "heading": "3. Major Operators: Features & Packages",
+      "content": "<p>Different companies offer different levels of luxury and route types.</p><ul><li><strong><a href='https://www.kingbus.com.tw/' target='_blank'>Kuo-Kuang (國光客運)</a>:</strong><br><em>Color:</em> Purple/White.<br><em>Features:</em> Extensive network reaching tourist spots like <strong>Sun Moon Lake, Alishan, and Yeliu</strong> that others don't cover.<br><em>Packages:</em> Frequently sells <strong>'Bus + Attraction' combos</strong> (e.g., Alishan forest entry + return ticket).</li><li><strong><a href='https://www.ubus.com.tw/' target='_blank'>Ubus (統聯客運)</a>:</strong><br><em>Color:</em> Green.<br><em>Features:</em> Budget king. Very high frequency between major cities (Taipei-Taichung-Tainan-Kaohsiung).<br><em>Packages:</em> Occasional joint tickets with local city buses.</li><li><strong><a href='https://www.ebus.com.tw/' target='_blank'>Ho-Hsin (和欣客運)</a>:</strong><br><em>Color:</em> White/Red.<br><em>Features:</em> The 'Luxury' choice. Famous for their 2-row <a href='https://www.ebus.com.tw/RideInfo/Equipments' target='_blank'>Business Class' seats</a> with massage functions and personal TVs. Great for sleeping on long hauls.<br><em>Packages:</em> Focuses on comfort upgrades rather than tourist combos.</li><li><strong><a href='https://www.kamalan.com.tw/' target='_blank'>Kamalan (葛瑪蘭)</a>:</strong><br><em>Scope:</em> The expert for <strong>Taipei ↔ Yilan</strong>.<br><em>Packages:</em> Offers 'Bus + Taiwan Tourist Shuttle' combos for exploring Yilan.</li></ul>",
+      "images": []
+    },
+    {
+      "id": "how-to-ride",
+      "heading": "4. How to Ride: Do I need a ticket?",
+      "content": "<p>The most confusing part for travelers is knowing when to buy a ticket and when to just tap a card. Here is the rule of thumb:</p><h3>🛑 Scenario A: 'Reserved Seat' (對號座)</h3><p><strong>Usually for:</strong> Long-distance (e.g., Taipei to Kaohsiung/Taichung) or trips via National Highway 5 (to Yilan).</p><ul><li><strong>Rule:</strong> You <strong>MUST buy a ticket</strong> beforehand (Counter/Kiosk/App/7-11).</li><li><strong>Why:</strong> Standing is illegal on highways for these distances, and every passenger needs a guaranteed seat number.</li><li><strong>Process:</strong> Buy ticket ➝ Wait at gate ➝ Show ticket to driver ➝ Sit in your assigned seat.</li></ul><h3>🏃 Scenario B: 'Free Seating' (自由座 / 排隊上車)</h3><p><strong>Usually for:</strong> Commuter routes (e.g., Taipei to Keelung/Taoyuan) or shorter inter-city hops.</p><ul><li><strong>Rule:</strong> First come, first served. <strong>No ticket needed</strong> if you have an EasyCard/iPASS.</li><li><strong>Process:</strong> Queue up ➝ Tap card upon boarding ➝ Find any empty seat ➝ Tap card again when exiting.</li><li><strong>Tip:</strong> Look at the bus LED sign or ask the driver: 'Swipe card?' (逼卡? Bī-Kǎ?).</li></ul>",
+      "images": []
+    }
+  ]
+}

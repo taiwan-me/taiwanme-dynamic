@@ -1,9 +1,53 @@
 {
   "id": "luggage-logistics",
-  "title": "Luggage Storage & Logistics",
+  "title": "Luggage Storage & Logistics: Travel Hands-Free",
   "tag": "TIPS",
   "heroImage": "/image/transport/luggage_banner.png",
   "updatedAt": "2026/01/06",
-  "intro": "Content coming soon...",
-  "sections": []
+  "intro": "Don't let heavy bags drag you down. Taiwan has an incredibly convenient network of coin lockers, manned baggage rooms, and luggage delivery services. Whether you need to store a suitcase for a few hours at a station or ship your bicycle across the island, this guide covers everything a traveler needs to know.",
+  "sections": [
+    {
+      "id": "storage-lockers",
+      "heading": "1. Station Lockers (The Most Common Option)",
+      "content": "<p>You will find automatic lockers at almost every <strong>HSR station, major TRA train station, and key MRT stations</strong>.</p><h3>📍 Where to find them?</h3><ul><li><strong>Taipei Main Station:</strong> B1 level is a maze of lockers. Look near the HSR/TRA gate entrances and the hallways connecting to MRT.</li><li><strong>HSR Stations:</strong> Usually located near the exits or convenience stores (7-11/FamilyMart) inside the station.</li><li><strong>MRT Stations:</strong> Major tourist stops (e.g., Ximen, Taipei 101, Tamsui, Kaohsiung Formosa Boulevard) usually have them near the information counter.</li></ul><h3>💰 Price & Sizes (approx.)</h3><ul><li><strong>Small (fits backpack):</strong> NT$30-40 / 3 hours.</li><li><strong>Medium (carry-on):</strong> NT$50-60 / 3 hours.</li><li><strong>Large (28\"+ suitcase):</strong> NT$70-80 / 3 hours.</li><li><em>Note: Most lockers charge by '3-hour blocks'. If you exceed the time, you pay the difference when retrieving.</em></li></ul><h3>📝 How to use (Foreigner Friendly)</h3><ol><li><strong>Select Language:</strong> Touch screens usually support English, Japanese, and Korean.</li><li><strong>Deposit:</strong> Place bag inside, close door firmly.</li><li><strong>Payment:</strong> <strong>EasyCard/iPASS</strong> is the best method (tap and go). Some older machines only accept NT$50 coins (cashier can change money).</li><li><strong>Receipt:</strong> Take the printout! It has the <strong>Code</strong> to open the door (if you paid by cash). If you paid by card, just tap the same card to open.</li></ol>",
+      "images": []
+    },
+    {
+      "id": "storage-baggage-room",
+      "heading": "2. TRA Baggage Room (Storage Service)",
+      "content": "<p>For oversized items (surfboards, bike boxes, massive trunks) that won't fit in lockers, look for the <strong>TRA Baggage Room (行李房)</strong>. This is a manned service specifically for <strong>Temporary Storage (暫時寄放)</strong>.</p><ul><li><strong>Location:</strong> Often located slightly outside the main station hall (e.g., near the East Exit at Taipei Main Station).</li><li><strong>Price:</strong> Very cheap! Approx. NT$30-70 per item per day.</li><li><strong>Hours:</strong> Usually 8:00 AM to 8:00 PM. <strong>Warning:</strong> You usually cannot retrieve items after hours.</li></ul><p>For a detailed list of stations with baggage rooms, check this guide: <a href='https://roasterpig.blogspot.com/2020/09/baggage-services-room-taiwan-railway.html' target='_blank'>TRA Baggage Services Room List</a>.</p>",
+      "images": [
+        {
+          "filename": "baggage_room.png",
+          "path": "/image/transport/baggage_room.png",
+          "credit": "Wanhua Station Baggage Room (萬華車站行李房)"
+        }
+      ]
+    },
+    {
+      "id": "delivery-tra",
+      "heading": "3. Shipping Luggage & Bicycles via Train",
+      "content": "<p>The Taiwan Railways (TRA) offers services to move your gear across the island.</p><h3>📦 Shipping Service (託運)</h3><p>You can ship luggage or bicycles as cargo on specific trains without riding them yourself.</p><ul><li><strong>Where:</strong> Go to the Baggage Room.</li><li><strong>Bicycles:</strong> A naked bike (without a bag) can be shipped. <em>Price Example:</em> Shipping a bicycle from <strong>Pingtung to Wanhua (Taipei)</strong> costs approx. <strong>NT$800</strong>.</li><li><strong>Speed:</strong> Usually arrives the next day.</li></ul><h3>🚲 Carry-on (隨車)</h3><p>If you put your bike in a bike bag, it counts as luggage and is free on most trains. If you want to roll a naked bike onto the train with you, you must buy a half-price ticket for the bike on 'Bicycle-Friendly Trains' (兩鐵列車).</p>",
+      "images": []
+    },
+    {
+      "id": "delivery-services",
+      "heading": "4. Delivery Services: Airport & Domestic",
+      "content": "<p>Travel hands-free by using professional logistics services.</p><h3>✈️ Airport Luggage Delivery (Send to/from Airport)</h3><p>Services like <strong>Pelican Express (台灣宅配通)</strong> and <strong><a href='https://luggagent.com/zh_TW/products/Taiwan-c145129787' target='_blank'>LuggAgent (行李特工)</a></strong> allow you to skip the baggage drag.</p><ul><li><strong>Departure (Home/Hotel ➝ Airport):</strong><br>- <strong>Pelican:</strong> Must book <strong>3 days in advance</strong> via phone or website. Driver picks up from your home.<br>- <strong>LuggAgent:</strong> Global concierge service. Book online, agents pick up from your hotel lobby. Includes insurance.</li><li><strong>Arrival (Airport ➝ Home/Hotel):</strong><br>- Visit the service counters at Taoyuan Airport (T1/T2) after landing. They will deliver your bags to your hotel/home (usually next day or same day depending on the service).</li><li><strong>Note:</strong> Check size limits (usually max 180cm/20kg for standard rates).</li></ul><h3>🚚 Domestic Delivery (Within Taiwan)</h3><p>Sending bags from Taipei to Kenting? Use local logistics.</p><ul><li><strong>Large Items (Suitcases):</strong> Use <strong>Black Cat (黑貓)</strong>, <strong>Pelican (宅配通)</strong>, or the <strong>Post Office</strong>.<br>- <a href='https://www.e-can.com.tw/serviceNormalTemp.aspx?id=1&sys_id=5' target='_blank'>Check Pelican Rates</a>.</li><li><strong>Small Items (Cheap):</strong> Use <strong>7-11 (ibon)</strong> or <strong>FamilyMart</strong> Store-to-Store delivery.<br>- Very cheap (approx. NT$60), but size is limited (45x30x30cm).<br>- <a href='https://www.7-11.com.tw/service/accept.aspx' target='_blank'>7-11 Delivery Info</a>.</li></ul><div class='tip-box'><strong>⚠️ Safety Warning:</strong> Do NOT ship precision electronics (Laptops, Cameras) via general logistics. They may be damaged by shaking during transport. Carry these with you.</div>",
+      "images": [
+        {
+          "filename": "taoyuan_airport_pellcan.jpg",
+          "path": "/image/transport/taoyuan_airport_pellcan.jpg",
+          "credit": "Pelican & Taiwan Mobile Counter at Taoyuan Airport - Meutnake Ah ManHO, CC0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97_Taipei_%E8%87%BA%E7%81%A3%E6%A1%83%E5%9C%92%E6%A9%9F%E5%A0%B4_Taoyuan_Airport_Terminal_One_%E5%85%A5%E5%A2%83%E5%8D%80_shop_Pellcan_n_Taiwan_Mobile_March_2024_R12S.jpg"
+        }
+      ]
+    },
+    {
+      "id": "foreigner-faq",
+      "heading": "5. Common Questions from Travelers",
+      "content": "<div class='tip-box'><strong>Q: Can I leave luggage in lockers overnight?</strong><br>A: Yes, usually up to 3 days (72 hours). However, you cannot access them when the station is closed (midnight to 6 AM). If you leave it >24 hours, the screen will ask for the extra payment before opening.</div><div class='tip-box'><strong>Q: What if I lose my QR code/PIN?</strong><br>A: Don't panic. Find the station information counter or call the support number on the locker. You will need to prove ownership (describe contents) and pay a penalty fee (approx. NT$200) + storage fee. <strong>Tip: Always take a photo of your receipt!</strong></div>",
+      "images": []
+    }
+  ]
 }

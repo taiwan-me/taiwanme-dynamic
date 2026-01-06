@@ -1,9 +1,79 @@
 {
   "id": "local-transport",
-  "title": "Getting Around the City",
+  "title": "Getting Around the City: Bikes, Buses & Taxis",
   "tag": "LOCAL",
   "heroImage": "/image/transport/intercity_banner.png",
   "updatedAt": "2026/01/06",
-  "intro": "Content coming soon...",
-  "sections": []
+  "intro": "Once you arrive in a city, you need to master the 'Last Mile' transport. Whether it's the ubiquitous yellow YouBikes, the extensive bus networks, or navigating the taxi apps without speaking Chinese. This guide covers everything you need to know about navigating Taiwan's streets like a local.",
+  "sections": [
+    {
+      "id": "shared-bikes-youbike",
+      "heading": "1. Shared Bicycles: YouBike (The King of Roads)",
+      "content": "<p><strong>YouBike</strong> is the dominant public bike system in almost every major city (Taipei, New Taipei, Taoyuan, Hsinchu, Taichung, Tainan, Kaohsiung, Pingtung). <strong>Note:</strong> Keelung City does NOT have YouBike due to its steep, hilly terrain.</p><h3>🚴‍♂️ Membership vs. Single Rental</h3><ul><li><strong>For Residents / Long-term:</strong> Download the <a href='https://www.youbike.com.tw/region/main/' target='_blank'>YouBike 2.0 App</a>. Register with a <strong>Taiwan Mobile Number</strong>. You can bind an EasyCard, iPASS, or Credit Card for payment.</li><li><strong>For Short-term Tourists (Single Rental):</strong> If you don't have a local number, choose <strong>'Single Rental' (單次租車)</strong> in the App.<br>1. Bind a Credit Card.<br>2. A pre-authorization deposit of <strong>NT$3,000</strong> will be held (refunded automatically after returning the bike, processing time depends on the bank).<br>3. Scan the QR code on the bike to ride.</li></ul><h3>🟡 Bike Types</h3><ul><li><strong>Yellow (2.0):</strong> Standard bike. 3-speed gears. Cheap and reliable.</li><li><strong>Orange/White (2.0E):</strong> Electric-assist bike. Provides power when you pedal. Great for hills or long distances but costs slightly more.</li></ul><h3>📍 Finding & Returning</h3><ul><li><strong>Find a Station:</strong> Use Google Maps (search 'YouBike') or the App map.</li><li><strong>Cross-City Return:</strong> You CAN return bikes across neighboring cities (e.g., rent in Taipei, return in New Taipei). *Check the app for fees if crossing distant regions.*</li><li><strong>Cost:</strong> Very affordable. Short rides usually cost around <strong>NT$30</strong> or less.</li></ul>",
+      "images": [
+        {
+          "filename": "youbike1.jpg",
+          "path": "/image/transport/youbike1.jpg",
+          "credit": "YouBike 2.0 Sensor Screen (youbike感應租借畫面) - Rryyaann0523, CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Youbike_2.0%E8%BB%8A%E6%A9%9F.jpg"
+        },
+        {
+          "filename": "youbike2.jpg",
+          "path": "/image/transport/youbike2.jpg",
+          "credit": "YouBike 2.0E - Rryyaann0523, CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:YouBike_2.0E_%E5%BA%A7%E6%A4%85.jpg"
+        }
+      ]
+    },
+    {
+      "id": "shared-bikes-moovo",
+      "heading": "2. Moovo (Changhua & Yunlin)",
+      "content": "<p>In <strong>Changhua</strong> and <strong>Yunlin</strong>, you won't see YouBike. Instead, they use <strong>Moovo</strong>, a dockless electric-assist bike system.</p><h3>How to use Moovo</h3><ul><li><strong>Dockless System:</strong> They don't use physical locking poles. Instead, you park them in designated 'virtual zones' painted on the ground.</li><li><strong>Rental:</strong> Download the <a href='https://www.ridemoovo.com/' target='_blank'>Moovo App</a> to register and scan to ride.</li><li><strong>Features:</strong> Most bikes are electric-assist, making them very comfortable.</li></ul>",
+      "images": [
+        {
+          "filename": "moovo.jpg",
+          "path": "/image/transport/moovo.jpg",
+          "credit": "Moovo Bike - M940504, CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:MOOVO_Station_in_Xihu_Sugar_Factory.jpg"
+        }
+      ]
+    },
+    {
+      "id": "city-buses",
+      "heading": "3. City Buses: Rules & Etiquette",
+      "content": "<p>Buses cover areas the MRT misses. However, there are strict unwritten rules you must follow.</p><h3>⚠️ Critical Rules</h3><ul><li><strong>Wave Your Hand:</strong> You MUST wave at the driver as the bus approaches. If you just stand there looking at your phone, the driver will not stop.</li><li><strong>Tap On & Tap Off:</strong> Swipe your IC Card (EasyCard/iPASS) when you get on AND when you get off. Failing to do so will lock your card.</li><li><strong>The Bell:</strong> Press the red/yellow bell button before your stop. <strong>WARNING:</strong> Do NOT press the button covered with a plastic cap or labeled 'Sexual Harassment Prevention' (性騷擾防治). This triggers a loud emergency alarm.</li></ul><h3>📱 Tracking the Bus</h3><p><strong>Do not rely solely on Google Maps ETA</strong> during rush hours; it can be delayed by 5-10 minutes. </p><ul><li><strong>Bus Tracker Apps:</strong> Use apps like 'Bus+ (Bus Plus)' or 'Taiwan Bus' for real-time GPS tracking.</li><li><strong>Electronic Signs:</strong> Most city bus stops have LED signs showing 'Min to arrival'. These are usually the most accurate.</li></ul>",
+      "images": [
+        {
+          "filename": "wavingforbus.png",
+          "path": "/image/transport/wavingforbus.png",
+          "credit": "Waving to hail a bus (揮手叫公車)"
+        }
+      ]
+    },
+    {
+      "id": "taxis-uber",
+      "heading": "4. Taxis & Ride-Hailing",
+      "content": "<p>Taxis are everywhere in Taiwan. You can hail a yellow cab on the street, call by phone, or use an App.</p><h3>📱 App-based (Recommended)</h3><ul><li><strong><a href='https://www.uber.com/tw/en/' target='_blank'>Uber</a>:</strong> Highly recommended for tourists. You can set the destination in English and pay via credit card in the app, avoiding language barriers and cash handling.</li><li><strong><a href='https://www.linego.me/' target='_blank'>LINE GO</a>:</strong> A service built into the LINE app (Taiwan's main chat app). Often offers coupons and cheaper rates than Uber, utilizing a large fleet of taxis.</li><li><strong>55688 (Taiwan Taxi):</strong> The largest local fleet. Good availability but the app interface varies in English support.</li></ul><h3>🖐️ Street Hail (Yellow Cabs)</h3><ul><li>Available everywhere in cities. Look for the red 'Vacant' (空車) light.</li><li>Payment is mostly <strong>Cash</strong>. Some accept EasyCard or Credit Card, but don't count on it unless you ask first.</li></ul>",
+      "images": [
+        {
+          "filename": "yellowcab.jpg",
+          "path": "/image/transport/yellowcab.jpg",
+          "credit": "Hsinchu Taxi - T Gordon Cheng, CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hsinchu_Bus_%E5%B9%B8%E7%A6%8F%E5%B0%8F%E9%BB%83%E6%B5%B8%E6%B0%B4%E7%B7%9A_2024-09-30.jpg"
+        }
+      ]
+    },
+    {
+      "id": "vehicle-rental",
+      "heading": "5. Vehicle Rental: Scooter & Car",
+      "content": "<p>Want to drive yourself? There is a big distinction between 'App Sharing' and 'Traditional Rental'.</p><h3>📱 Shared Apps (iRent / WeMo / GoShare)</h3><p>You will see shared scooters (WeMo/GoShare) and cars (iRent) parked on the streets, popular in Taipei and major cities.</p><ul><li><strong>The Catch:</strong> These apps typically require an <strong>Alien Resident Certificate (ARC)</strong> and a local Taiwan Driving License. Short-term tourists usually <strong>cannot</strong> register for these services.</li></ul><h3>🏪 Traditional Rental Shops</h3><p>For tourists, your best bet is traditional rental shops, usually located near Train Stations (TRA/HSR).</p><ul><li><strong>Requirements:</strong> Passport + <strong>International Driving Permit (IDP)</strong>.</li><li><strong>Car Rental:</strong> Chains like <a href='https://www.car-plus.com.tw/EN/index.html' target='_blank'>Car-Plus</a> or <a href='https://www.easyrent.com.tw/index.aspx' target='_blank'>IWS</a> are reliable.</li><li><strong>Scooter Rental:</strong> Small local shops near stations. <strong>Important:</strong> Check if your IDP specifically covers 'Motorcycles'. Many shops are strict about this legality.</li></ul>",
+      "images": [
+        {
+          "filename": "carrental.png",
+          "path": "/image/transport/carrental.png",
+          "credit": "Traditional Rental Shop (傳統無居留證租車行)"
+        }
+      ]
+    }
+  ]
 }
