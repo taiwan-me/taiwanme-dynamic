@@ -7,7 +7,7 @@ const app = express();
 // 1. 設定 View Engine
 // ==========================================
 app.set('view engine', 'ejs');
-// 設定 views 的根目錄
+// 設定 views 的根目錄使用絕對路徑，確保 Vercel 能正確讀取
 app.set('views', path.join(__dirname, 'views'));
 
 // ==========================================
@@ -17,7 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ==========================================
 // 3. 靜態頁面路由 (Static Pages)
-// 對應資料夾: views/static_pages/
 // ==========================================
 
 // 首頁
@@ -42,10 +41,8 @@ app.get('/search_by_city', (req, res) => {
 
 // ==========================================
 // 4. City Guide (縣市旅遊)
-// 對應資料夾: views/city_articles/
 // ==========================================
 
-// 縣市列表頁 (Feed)
 app.get('/search_by_city/:city', (req, res) => {
     const city = req.params.city.toLowerCase();
     const jsonPath = path.join(__dirname, 'data', 'search_by_city', `${city}.json`);
@@ -53,8 +50,6 @@ app.get('/search_by_city/:city', (req, res) => {
     if (fs.existsSync(jsonPath)) {
         try {
             const cityData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-            
-            // 格式化顯示名稱 (如: new_taipei -> New Taipei)
             const displayCityName = city.split('_')
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(' ');
@@ -74,7 +69,6 @@ app.get('/search_by_city/:city', (req, res) => {
     }
 });
 
-// 縣市文章內頁 (Article)
 app.get('/search_by_city/:city/:id', (req, res) => {
     const city = req.params.city.toLowerCase();
     const articleId = req.params.id;
@@ -105,15 +99,12 @@ app.get('/search_by_city/:city/:id', (req, res) => {
 
 // ==========================================
 // 5. Transport Guide (交通攻略)
-// 對應資料夾: views/transport_articles/
 // ==========================================
 
-// 交通總覽頁
 app.get('/transport', (req, res) => {
     res.render('transport_articles/transport_feed', { pageName: 'transport' });
 });
 
-// 交通文章內頁 (讀取 JSON)
 app.get('/transport/:topic', (req, res) => {
     const topic = req.params.topic;
     const jsonPath = path.join(__dirname, 'data', 'transport', `${topic}.json`);
@@ -131,7 +122,7 @@ app.get('/transport/:topic', (req, res) => {
         }
     } else {
         res.status(404).send(`
-            <div style="text-align:center; padding:50px;">
+            <div style="text-align:center; padding:50px; font-family: sans-serif;">
                 <h1>Topic Not Found</h1>
                 <p>Sorry, the guide for "${topic}" is currently unavailable.</p>
                 <a href="/transport">Back to Transport Hub</a>
@@ -142,15 +133,12 @@ app.get('/transport/:topic', (req, res) => {
 
 // ==========================================
 // 6. Hidden Gems (隱藏景點)
-// 對應資料夾: views/hiddengems_articles/
 // ==========================================
 
-// 隱藏景點列表
 app.get('/hidden_gems', (req, res) => {
     res.render('hiddengems_articles/hiddengems_feed', { pageName: 'hidden_gems' });
 });
 
-// 隱藏景點內頁
 app.get('/hidden_gems/:id', (req, res) => {
     const gemId = req.params.id;
     const jsonPath = path.join(__dirname, 'data', 'hiddengems', `${gemId}.json`);
@@ -172,20 +160,14 @@ app.get('/hidden_gems/:id', (req, res) => {
 });
 
 // ==========================================
-// 7. Dining & Entertainment (列表)
-// 對應資料夾: views/dining_lists/ & views/entertainment_lists/
+// 7. Dining & Entertainment
 // ==========================================
 
-// Dining
+// Dining: 資料已由前端 script 渲染，此處僅負責渲染頁面
 app.get('/dining', (req, res) => {
-    const diningPath = path.join(__dirname, 'data', 'dining.json');
-    let diningData = [];
-    if (fs.existsSync(diningPath)) {
-        diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8'));
-    }
     res.render('dining_lists/dining_feed', { 
         pageName: 'dining',
-        items: diningData 
+        items: [] // 留空，讓前端 Script 接手渲染
     });
 });
 
@@ -218,10 +200,7 @@ app.use((req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`=========================================`);
-    console.log(`✅ TaiwanMe 伺服器運作中`);
-    console.log(`🌍 URL: http://localhost:${PORT}`);
-    console.log(`=========================================`);
+    console.log(`✅ TaiwanMe 伺服器運作中 - Port: ${PORT}`);
 });
 
 // ▼▼▼ 為了讓 Vercel 正常運作，務必匯出 app ▼▼▼
