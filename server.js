@@ -130,7 +130,6 @@ app.get('/transport/:topic', (req, res) => {
             res.status(500).send('Error parsing transport data');
         }
     } else {
-        // 優化 404 頁面，引導回列表
         res.status(404).send(`
             <div style="text-align:center; padding:50px;">
                 <h1>Topic Not Found</h1>
@@ -221,9 +220,9 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`=========================================`);
     console.log(`✅ TaiwanMe 伺服器運作中`);
-    console.log(`   - 基礎頁面:       static_pages`);
-    console.log(`   - Transport:      /transport`);
-    console.log(`   - TPE Guide:      /transport/taoyuan-airport`);
     console.log(`🌍 URL: http://localhost:${PORT}`);
     console.log(`=========================================`);
 });
+
+// ▼▼▼ 為了讓 Vercel 正常運作，務必匯出 app ▼▼▼
+module.exports = app;
