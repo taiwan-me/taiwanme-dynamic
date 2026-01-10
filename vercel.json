@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "functions": {
-    "api/server.js": {
-      "includeFiles": "views/**,data/**",
-      "excludeFiles": "public/**"
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/api/server"
     }
-  ]
+  ],
+  "functions": {
+    "api/server.js": {
+      "includeFiles": "views/**,data/**",
+      "excludeFiles": "public/**"
+    }
+  }
 }
