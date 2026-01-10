@@ -6,11 +6,12 @@
     <title>[<%= article.type %>] <%= article.title %> | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 
     <style>
-        /* --- 文章內頁專屬樣式 (繼承自 style.css) --- */
+        /* =========================================
+           文章內頁專屬樣式 (繼承自 style.css)
+           ========================================= */
 
         /* 1. 沉浸式 Hero Header */
         .article-hero {
@@ -57,6 +58,7 @@
             margin: 0 5px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-family: var(--font-eng);
         }
 
         .hero-title {
@@ -90,6 +92,7 @@
             margin-bottom: 40px;
             padding-bottom: 30px;
             border-bottom: 1px solid #eee;
+            font-family: var(--font-main);
         }
 
         /* 交通資訊卡 */
@@ -114,6 +117,7 @@
             font-size: 1rem;
             color: #555;
             line-height: 1.6;
+            font-family: var(--font-main);
         }
 
         /* 3. 景點時間軸樣式 */
@@ -173,6 +177,7 @@
             font-weight: 700;
             margin: 0 0 5px;
             color: #222;
+            font-family: var(--font-main);
         }
 
         .spot-address {
@@ -182,6 +187,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            font-family: var(--font-main);
         }
 
         .spot-desc {
@@ -189,6 +195,7 @@
             color: #555;
             line-height: 1.7;
             background: #fff;
+            font-family: var(--font-main);
         }
 
         /* Google Map 按鈕 */
@@ -204,6 +211,7 @@
             transition: 0.3s;
             margin-left: 10px;
             vertical-align: middle;
+            font-family: var(--font-eng);
         }
         .btn-map-link:hover {
             background: #4285F4;

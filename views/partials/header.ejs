@@ -9,22 +9,84 @@ const getActiveStyle = (targetPage) => {
 const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';
 %>
 
-<header id="header">
-    <div class="logo">
-        <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
-            <img src="/image/logo.png" alt="TaiwanMe Logo">
-            <span class="logo-text">THE REAL TASTE OF TAIWAN</span>
-        </a>
-    </div>
+<style>
+    #backToTopBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999; /* 層級最高 */
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--accent-color, #e63946); /* 使用全域變數或紅色 */
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        
+        /* 隱藏狀態 */
+        opacity: 0; 
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    <div class="header-links">
-        <a href="#" class="h-link" id="tippingBtn">BUY US<br>A BOBA</a>
-        <a href="#" class="h-link" id="philosophyBtn">TAIWANME'S<br>PHILOSOPHY</a>
-        <a href="#" class="h-link" id="bizInquiryBtn">BUSINESS<br>INQUIRY</a>
-    </div>
+    /* 顯示狀態 (由 JS 添加) */
+    #backToTopBtn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
-    <div class="nav-icons">
-        <button id="searchBtn">🔍 Search</button>
+    #backToTopBtn:hover {
+        background-color: #333;
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 768px) {
+        #backToTopBtn {
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+<header id="header" class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="/" class="logo-link">
+                <img src="/image/logo.png" alt="TaiwanMe Logo" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="brand-name">TaiwanMe</span>
+                    <span class="brand-slogan">THE REAL TASTE OF TAIWAN</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="header-links desktop-only">
+            <a href="#" class="h-link" id="tippingBtn">BUY US<br>A BOBA</a>
+            <a href="#" class="h-link" id="philosophyBtn">TAIWANME'S<br>PHILOSOPHY</a>
+            <a href="#" class="h-link" id="bizInquiryBtn">BUSINESS<br>INQUIRY</a>
+        </div>
+
+        <div class="nav-icons">
+            <button id="searchBtn" class="search-trigger">🔍 <span class="desktop-only">Search</span></button>
+            
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </div>
 </header>
 
@@ -37,22 +99,38 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     </div>
 </div>
 
-<nav class="mobile-grid-nav">
-    <a href="/search_by_city" class="grid-btn" style="<%= getActiveStyle('search_by_city') %>">SEARCH BY CITY</a>
-    <a href="/festivals" class="grid-btn" style="<%= getActiveStyle('festivals') %>">SEASONAL FESTIVALS</a>
-    <a href="/transport" class="grid-btn" style="<%= getActiveStyle('transport') %>">TRANSPORT</a>
-    <a href="/culture" class="grid-btn" style="<%= getActiveStyle('culture') %>">CULTURE & DAILY LIFE</a>
-    <a href="/dining" class="grid-btn" style="<%= getActiveStyle('dining') %>">INCLUSIVE DINING</a>
+<div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
     
-    <a href="javascript:void(0)" class="grid-btn menu-btn" id="mobileMoreBtn">MORE +</a>
-</nav>
+    <div class="drawer-header">
+        <span class="drawer-title">MENU</span>
+        <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+    </div>
 
-<div id="mobileMoreMenu" class="mobile-more-menu" style="display: none;">
-    <a href="/entertainment" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a>
-    
-    <a href="javascript:void(0)" id="philosophyBtnMobile">TAIWANME'S PHILOSOPHY</a>
-    <a href="javascript:void(0)" id="bizInquiryBtnMobile">BUSINESS INQUIRY</a>
-    <a href="javascript:void(0)" id="tippingBtnMobile">BUY US A BOBA (DONATE)</a>
+    <div class="drawer-content">
+        <div class="drawer-section">
+            <h3 class="drawer-cat-title">EXPLORE</h3>
+            <ul class="drawer-list">
+                <li><a href="/souvenirs" class="drawer-link" style="<%= getActiveStyle('souvenirs') %>">Souvenir Guide <span class="arrow">›</span></a></li>
+                <li><a href="/search_by_city" class="drawer-link" style="<%= getActiveStyle('search_by_city') %>">Search By City <span class="arrow">›</span></a></li>
+                <li><a href="<%= mapLink %>" class="drawer-link" style="<%= getActiveStyle('hidden_gems') %>">Hidden Gems <span class="arrow">›</span></a></li>
+                <li><a href="/transport" class="drawer-link" style="<%= getActiveStyle('transport') %>">Transport Guide <span class="arrow">›</span></a></li>
+                <li><a href="/festivals" class="drawer-link" style="<%= getActiveStyle('festivals') %>">Seasonal Festivals <span class="arrow">›</span></a></li>
+                <li><a href="/culture" class="drawer-link" style="<%= getActiveStyle('culture') %>">Culture & Daily Life <span class="arrow">›</span></a></li>
+                <li><a href="/dining" class="drawer-link" style="<%= getActiveStyle('dining') %>">Inclusive Dining <span class="arrow">›</span></a></li>
+                <li><a href="/entertainment" class="drawer-link" style="<%= getActiveStyle('entertainment') %>">Entertainment <span class="arrow">›</span></a></li>
+            </ul>
+        </div>
+
+        <div class="drawer-section">
+            <h3 class="drawer-cat-title">ABOUT TAIWANME</h3>
+            <ul class="drawer-list">
+                <li><a href="/philosophy" class="drawer-link">TaiwanMe's Philosophy <span class="arrow">›</span></a></li>
+                <li><a href="/support" class="drawer-link">Buy Us a Boba <span class="arrow">›</span></a></li>
+                <li><a href="/contact" class="drawer-link">Business Inquiry <span class="arrow">›</span></a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <nav class="desktop-nav">
@@ -68,9 +146,59 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         <li class="dropdown-item">
             <a href="#" class="dropbtn">MORE ▾</a>
             <div class="dropdown-content">
-                <a href="#" onclick="document.getElementById('philosophyBtn').click(); return false;">Philosophy</a>
-                <a href="#" onclick="document.getElementById('bizInquiryBtn').click(); return false;">Business</a>
+                <a href="/souvenirs" style="<%= getActiveStyle('souvenirs') %>">Souvenir Guide</a>
             </div>
         </li>
     </ul>
 </nav>
+
+<button id="backToTopBtn" aria-label="Back to Top">↑</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const header = document.getElementById('header'); // 上方 Logo 區塊
+        const nav = document.querySelector('.desktop-nav'); // 下方灰色導航列
+
+        // 計算觸發距離
+        function calculateThreshold() {
+            // 取得 Logo 區塊高度
+            const headerHeight = header ? header.offsetHeight : 0;
+            // 取得 Nav 區塊高度 (若手機版隱藏則為 0)
+            const navHeight = nav ? nav.offsetHeight : 0;
+            
+            // 總導覽列高度
+            const totalNavHeight = headerHeight + navHeight;
+
+            // 如果總高度為 0 (極端情況)，給預設值 150px
+            const baseHeight = totalNavHeight > 0 ? totalNavHeight : 150;
+
+            // 設定觸發點為：導覽列總高度的 0.5 倍 (1/2)
+            return baseHeight * 0.5;
+        }
+
+        let scrollThreshold = calculateThreshold();
+
+        // 監聽滾動事件
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // 視窗大小改變時重新計算 (適應 RWD)
+        window.addEventListener('resize', () => {
+            scrollThreshold = calculateThreshold();
+        });
+
+        // 點擊回到頂部
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>

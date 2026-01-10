@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inclusive Dining | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     
     <style>
-        /* 頁面專屬樣式整合 (其餘通用樣式已移至 style.css) */
+        /* =========================================
+           Page Specific Styles: Inclusive Dining
+           ========================================= */
         
-        /* 1. Dining Banner */
+        /* 1. Banner */
         .dining-banner {
             width: 100%;
             height: 40vh;
@@ -30,53 +31,198 @@
             z-index: 1;
         }
         .banner-text { position: relative; z-index: 2; text-align: center; color: #fff; }
-        .banner-text h1 { font-family: 'Lato', sans-serif; font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 4px; font-weight: 900; }
+        .banner-text h1 { 
+            font-family: var(--font-eng);
+            font-size: 3.5rem; margin: 0; 
+            text-transform: uppercase; letter-spacing: 4px; font-weight: 900; 
+        }
 
-        /* 2. 篩選與搜尋區 */
-        .filter-container { max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; text-align: center; }
-        .search-box { margin-bottom: 20px; }
+        /* 2. Disclaimer */
+        .disclaimer-container { max-width: 1000px; margin: 0 auto 30px; padding: 0 20px; }
+        .disclaimer-box { 
+            background: #fff3cd; border: 1px solid #ffeeba; color: #856404; 
+            padding: 15px; border-radius: 8px; display: flex; gap: 10px; font-size: 0.9rem;
+            align-items: center; justify-content: center;
+        }
+
+        /* 3. Filter Section */
+        .filter-container { max-width: 1000px; margin: 0 auto 40px; padding: 0 20px; text-align: center; }
+        .search-box { margin-bottom: 20px; position: relative; }
         .search-box input {
-            width: 100%; max-width: 500px; padding: 12px 25px;
-            border-radius: 30px; border: 1px solid #ddd; outline: none;
+            width: 100%; max-width: 600px; padding: 15px 25px;
+            border-radius: 30px; border: 1px solid #ccc; outline: none;
+            font-family: var(--font-main); font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-        .filter-groups { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+        .filter-groups { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 40px; }
         .filter-btn {
-            background: #fff; border: 1px solid #ddd; padding: 8px 18px;
-            border-radius: 20px; cursor: pointer; font-weight: bold; color: #555; transition: 0.3s;
+            background: #fff; border: 1px solid #ddd; padding: 10px 25px;
+            border-radius: 25px; cursor: pointer; font-weight: bold; color: #555; transition: 0.3s;
+            font-family: var(--font-main); font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .filter-btn.active, .filter-btn:hover { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+        .filter-btn.active, .filter-btn:hover { 
+            background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); 
+            transform: translateY(-2px);
+        }
 
-        /* 3. Grid 列表樣式 (繼承 style.css 但微調) */
-        .dining-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+        /* 4. List Layout Styles (Table-like structure) */
+        .dining-list-container {
             max-width: 1200px;
             margin: 0 auto 100px;
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .dining-card {
-            background: #fff; border-radius: 12px; overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;
-            border: 1px solid #eee; display: flex; flex-direction: column;
-            text-decoration: none; color: inherit;
+        .dining-item {
+            display: grid;
+            /* Grid Layout: Image | Content | Meta Info */
+            grid-template-columns: 220px 1fr 200px; 
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
-        .dining-card:hover { transform: translateY(-8px); }
-        .dining-card.hidden { display: none; }
 
-        .dining-img-box { width: 100%; height: 200px; overflow: hidden; }
-        .dining-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .dining-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .dining-item.hidden { display: none; }
+
+        /* Left: Image */
+        .item-img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .dining-item:hover .item-img img { transform: scale(1.05); }
+
+        /* Middle: Content */
+        .item-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .item-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .cert-badge {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        /* Style for different certs */
+        .cert-halal { background-color: #e3f2fd; color: #1565c0; border: 1px solid #1565c0; }
+        .cert-michelin { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; }
+        .cert-local { background-color: #fff3e0; color: #ef6c00; border: 1px solid #ef6c00; }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .item-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #f5f5f5;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Right: Meta Info (Area & Category) */
+        .item-meta {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fafafa;
+        }
+
+        .meta-area {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
         
-        .dining-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; text-align: left; }
-        .dining-title { font-size: 1.4rem; margin: 0 0 10px; color: #333; }
-        .dining-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
-        .tag { font-size: 0.75rem; background: #f0f0f0; padding: 3px 10px; border-radius: 15px; color: #777; font-weight: bold; }
-        .dining-desc { font-size: 0.95rem; color: #666; line-height: 1.6; }
+        .meta-area::before { content: '📍'; font-size: 1rem; }
 
+        .meta-type {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* RWD: Mobile Styles */
         @media (max-width: 768px) {
             .banner-text h1 { font-size: 2.2rem; }
-            .dining-grid { grid-template-columns: 1fr; }
+            
+            .dining-item {
+                grid-template-columns: 1fr; /* Stack vertically */
+                grid-template-rows: 200px auto auto;
+            }
+            
+            .item-content { border-right: none; border-bottom: 1px solid #f0f0f0; padding: 20px; }
+            
+            .item-meta {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 15px 20px;
+                background-color: #fff;
+            }
+        }
+
+        /* No Results Message */
+        #noResults {
+            display: none; text-align: center; padding: 60px; color: #999; font-size: 1.2rem;
         }
     </style>
 </head>
@@ -87,7 +233,7 @@
     <div class="dining-banner">
         <div class="banner-text">
             <h1>Inclusive Dining</h1>
-            <p>Taste the diversity of Taiwan without boundaries.</p>
+            <p>Taste the diversity of Taiwan: Halal, Vegetarian, and More.</p>
         </div>
     </div>
 
@@ -95,47 +241,338 @@
         <div class="disclaimer-box">
             <span class="disclaimer-icon">⚠️</span>
             <div class="disclaimer-text">
-                <strong>Editorial Disclaimer:</strong> This page was last updated on <span>December 26, 2025</span>.
-                <br>Store hours and menus are subject to change. We recommend checking official websites or calling ahead before your visit.
+                <strong>Data Disclaimer:</strong> Data compiled from the 2025 Michelin Guide, Taiwan Tourism Bureau, and Islamic Association of Taiwan. Please verify Halal certification status on-site as policies may change.
             </div>
         </div>
     </div>
 
     <div class="filter-container">
         <div class="search-box">
-            <input type="text" id="diningSearch" placeholder="Search by name, cuisine, or area...">
+            <input type="text" id="diningSearch" placeholder="Search by restaurant name, city (e.g. Taipei, Tainan), or food type...">
         </div>
 
         <div class="filter-groups">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="halal">Halal Friendly</button>
             <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
-            <button class="filter-btn" data-filter="no beef">No Beef</button>
-            <button class="filter-btn" data-filter="seafood">Seafood</button>
         </div>
     </div>
 
-    <main class="dining-grid" id="diningGrid">
-        <% items.forEach(item => { %>
-            <div class="dining-card" 
-                 data-title="<%= item.title.toLowerCase() %>" 
-                 data-tags="<%= item.tags.join(',').toLowerCase() %>">
-                
-                <div class="dining-img-box">
-                    <img src="/image/dining/<%= item.image %>" alt="<%= item.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=Dining'">
-                </div>
-                <div class="dining-info">
-                    <h3 class="dining-title"><%= item.title %></h3>
-                    <div class="dining-tags">
-                        <% item.tags.forEach(tag => { %>
-                            <span class="tag"><%= tag %></span>
-                        <% }); %>
-                    </div>
-                    <p class="dining-desc"><%= item.description %></p>
-                </div>
-            </div>
-        <% }); %>
-    </main>
+    <script>
+        const diningData = [
+            // --- TAIPEI (Vegetarian) ---
+            {
+                title: "Yangming Spring (Shilin)",
+                area: "Taipei City",
+                category: "Vegetarian",
+                tags: ["Michelin Green Star", "Bib Gourmand", "Slow Food", "No Five Pungents"],
+                cert: "Michelin Green Star",
+                desc: "A pioneer of slow food culture located in the mountains. Famous for their 'Monkey Head Mushroom Steak' which mimics the texture of meat using intricate culinary techniques.",
+                image: "yangming_spring.jpg"
+            },
+            {
+                title: "Little Tree Food (Da'an Road)",
+                area: "Taipei City",
+                category: "Vegetarian",
+                tags: ["Michelin Green Star", "Bib Gourmand", "Modern Vegetarian", "Californian"],
+                cert: "Michelin Green Star",
+                desc: "Stylish Californian-style vegetarian cuisine. Known for their nutritious Buddha Bowls and the creative 'Red Oil Preserved Egg Tofu Dumplings'.",
+                image: "little_tree.jpg"
+            },
+            {
+                title: "Serenity (Zhongzheng)",
+                area: "Taipei City",
+                category: "Vegetarian",
+                tags: ["Bib Gourmand", "Sichuan Cuisine", "Spicy"],
+                cert: "Bib Gourmand",
+                desc: "The first vegetarian Sichuan restaurant recommended by Michelin. Signature dishes include 'Crispy Intestine with Basil' (made from King Oyster Mushroom).",
+                image: "serenity.jpg"
+            },
+            {
+                title: "Yang Shin Vegetarian Restaurant",
+                area: "Taipei City",
+                category: "Vegetarian",
+                tags: ["Dim Sum", "Hong Kong Style", "Family Friendly"],
+                cert: "Local Favorite",
+                desc: "The first full-vegetarian Dim Sum parlor in Taipei. Famous for 'Loofah Xiao Long Bao' and 'Barbecue Puff Pastry'.",
+                image: "yang_shin.jpg"
+            },
+            {
+                title: "Yu Shan Ge (Taipei)",
+                area: "Taipei City",
+                category: "Vegetarian",
+                tags: ["Fine Dining", "Kaiseki", "Business Dining"],
+                cert: "Premium",
+                desc: "Known as the 'Kaiseki of Vegetarian Food'. Offers a ceremonial dining experience with their signature charcoal-grilled Monkey Head Mushroom.",
+                image: "yushange.jpg"
+            },
+            {
+                title: "BaganHood Bistro",
+                area: "Taipei City",
+                category: "Vegetarian",
+                tags: ["Vegan", "Bistro", "Western", "OmniPork"],
+                cert: "Vegan Friendly",
+                desc: "A trendy bistro utilizing plant-based meats (OmniPork/Beyond Meat). Great for nightlife and pairing with drinks.",
+                image: "baganhood.jpg"
+            },
+            {
+                title: "The Green Room",
+                area: "Taipei City",
+                category: "Vegetarian",
+                tags: ["Vegan", "Thai Cuisine", "Curry"],
+                cert: "Vegan Thai",
+                desc: "Rare Vegan Thai cuisine in Taipei. Uses fermented bean paste to replace fish sauce, creating authentic Green Curry and Tom Yum flavors.",
+                image: "green_room.jpg"
+            },
+            
+            // --- TAIPEI (Halal) ---
+            {
+                title: "Kunming Islamic Restaurant",
+                area: "Taipei City",
+                category: "Halal",
+                tags: ["Halal Certified", "Exotic Cuisine", "No Pork"],
+                cert: "Muslim Friendly",
+                desc: "A renowned international Halal restaurant offering diverse dishes from Indian, Thai, to Middle Eastern flavors.",
+                image: "kunming.jpg"
+            },
+            {
+                title: "Chang's Beef Noodle Shop",
+                area: "Taipei City",
+                category: "Halal",
+                tags: ["Halal Certified", "Beef Noodle", "Taiwanese"],
+                cert: "Halal Certified",
+                desc: "A classic spot for Taiwanese Beef Noodles, adhering to strict Halal preparation standards. Rich broth and tender beef.",
+                image: "chang_beef.jpg"
+            },
+            {
+                title: "Safranbolu Turkish Restaurant",
+                area: "Taipei City",
+                category: "Halal",
+                tags: ["Halal Certified", "Turkish", "Kebabs"],
+                cert: "Halal Certified",
+                desc: "Authentic Turkish cuisine in Taipei. Famous for their grilled meats, hummus, and Turkish tea.",
+                image: "safranbolu.jpg"
+            },
+            {
+                title: "Halal Chinese Beef Noodle Restaurant",
+                area: "Taipei City",
+                category: "Halal",
+                tags: ["Halal Certified", "Michelin Bib Gourmand", "Beef Noodle"],
+                cert: "Bib Gourmand",
+                desc: "Over 60 years of history. Known for clear broth beef noodles and flatbreads, strictly Halal.",
+                image: "halal_beef_noodle.jpg"
+            },
+
+            // --- TAICHUNG (Vegetarian & Halal) ---
+            {
+                title: "Tu Pang",
+                area: "Taichung City",
+                category: "Vegetarian",
+                tags: ["Michelin Green Star", "French Style", "Fine Dining"],
+                cert: "Michelin Green Star",
+                desc: "A modern vegetarian restaurant applying French cooking logic (Saucing) to local Taiwanese produce. A visual and gustatory delight.",
+                image: "tu_pang.jpg"
+            },
+            {
+                title: "Chun Shui Tang (Vegetarian Menu)",
+                area: "Taichung City",
+                category: "Vegetarian",
+                tags: ["Tea House", "Local Snacks", "Pearl Milk Tea"],
+                cert: "Veg Options",
+                desc: "The birthplace of Bubble Tea. Offers a dedicated and rich vegetarian menu including braised tofu and mushroom meat sauce rice.",
+                image: "chun_shui_tang.jpg"
+            },
+            {
+                title: "Enrich Restaurant & Café",
+                area: "Taichung City",
+                category: "Vegetarian",
+                tags: ["Modern European", "Pasta", "Risotto"],
+                cert: "Local Gem",
+                desc: "A hidden gem in West District offering rustic European vegetarian dishes with seasonal ingredients.",
+                image: "enrich.jpg"
+            },
+            {
+                title: "Anatolia Turkish Restaurant",
+                area: "Taichung City",
+                category: "Halal",
+                tags: ["Halal Certified", "Turkish", "No Pork"],
+                cert: "Halal Certified",
+                desc: "The most authentic Turkish dining experience in Taichung, offering Pide (Turkish Pizza) and various Halal grilled dishes.",
+                image: "anatolia.jpg"
+            },
+
+            // --- TAINAN (Vegetarian & Halal) ---
+            {
+                title: "Huijiang Vegetarian (Danzai Noodles)",
+                area: "Tainan City",
+                category: "Vegetarian",
+                tags: ["Street Food", "Traditional", "Snack"],
+                cert: "Local Snack",
+                desc: "Reinterprets the classic Tainan Danzai Noodle using radish and corn broth instead of shrimp, topped with mushroom-based meat sauce.",
+                image: "huijiang.jpg"
+            },
+            {
+                title: "Chihkan Coffin Bread (Veg Option)",
+                area: "Tainan City",
+                category: "Vegetarian",
+                tags: ["Street Food", "Coffin Bread", "Fusion"],
+                cert: "Veg Option",
+                desc: "Offers a vegetarian version of the famous 'Coffin Bread'—fried toast filled with creamy corn and vegetable chowder.",
+                image: "coffin_bread.jpg"
+            },
+            {
+                title: "Garden Night Market (Veg Stalls)",
+                area: "Tainan City",
+                category: "Vegetarian",
+                tags: ["Night Market", "Street Food", "Multiple Stalls"],
+                cert: "Night Market",
+                desc: "Look for the '素' (Su) flag. Highlights include Vegetarian Stinky Tofu, Sweet Potato Balls, and Braised Snacks.",
+                image: "garden_night_market.jpg"
+            },
+            {
+                title: "O.E.C. Indonesian Food",
+                area: "Tainan City",
+                category: "Halal",
+                tags: ["Halal Friendly", "Indonesian", "South East Asian"],
+                cert: "Muslim Friendly",
+                desc: "Popular among locals and visitors for authentic Halal Indonesian dishes like Rendang and Nasi Goreng.",
+                image: "oec_indo.jpg"
+            },
+
+            // --- KAOHSIUNG (Vegetarian & Halal) ---
+            {
+                title: "Double Veggie Buffet",
+                area: "Kaohsiung City",
+                category: "Vegetarian",
+                tags: ["Buffet", "All You Can Eat", "International"],
+                cert: "High CP Value",
+                desc: "High-value vegetarian buffet with clear labeling for Vegan and Lacto-Ovo. Famous for Truffle Risotto and fresh pasta.",
+                image: "double_veggie.jpg"
+            },
+            {
+                title: "Hi-Lai Vegetarian",
+                area: "Kaohsiung City",
+                category: "Vegetarian",
+                tags: ["Dim Sum", "Fine Dining", "Organic"],
+                cert: "Premium",
+                desc: "Located in Hanshin Arena. Represents Southern Taiwan's exquisite vegetarian cuisine with natural ingredients.",
+                image: "hilai_veg.jpg"
+            },
+            {
+                title: "Xiantaosu (Fine Dining)",
+                area: "Kaohsiung City",
+                category: "Vegetarian",
+                tags: ["Michelin Selected", "Creative", "Fermentation"],
+                cert: "Michelin Selected",
+                desc: "Michelin selected restaurant. The chef masters fermentation and smoking techniques to create artistic plant-based dishes.",
+                image: "xiantaosu.jpg"
+            },
+            {
+                title: "Jawawa Indonesian Restaurant",
+                area: "Kaohsiung City",
+                category: "Halal",
+                tags: ["Halal Certified", "Indonesian", "Spicy"],
+                cert: "Halal Certified",
+                desc: "Certified Halal restaurant serving authentic Javanese cuisine near Kaohsiung Main Station.",
+                image: "jawawa.jpg"
+            },
+            {
+                title: "Chen Lili Indonesian Restaurant",
+                area: "Kaohsiung City",
+                category: "Halal",
+                tags: ["Halal Friendly", "Indonesian"],
+                cert: "Muslim Friendly",
+                desc: "A long-standing favorite in the Yancheng District for Halal-friendly Satay and Curry.",
+                image: "chen_lili.jpg"
+            },
+
+            // --- EASTERN & CENTRAL TAIWAN (Others) ---
+            {
+                title: "Guoxiangyuan Vegetarian",
+                area: "Hualien County",
+                category: "Vegetarian",
+                tags: ["Bento", "Affordable", "Local"],
+                cert: "Local Favorite",
+                desc: "A traveler's favorite near Hualien Station. Known for large portions and tasty vegetarian bentos.",
+                image: "guoxiangyuan.jpg"
+            },
+            {
+                title: "Time Travel Bistro",
+                area: "Hualien County",
+                category: "Vegetarian",
+                tags: ["Historic Building", "Organic", "Set Meal"],
+                cert: "Atmosphere",
+                desc: "Located in a renovated Japanese-era wooden house. Serves exquisite sets using local Hualien wild vegetables.",
+                image: "time_travel.jpg"
+            },
+            {
+                title: "Taroko Village Hotel Restaurant",
+                area: "Hualien County",
+                category: "Halal",
+                tags: ["Halal Certified", "Indigenous", "Hotel Dining"],
+                cert: "Halal Certified",
+                desc: "Offers Halal-certified set meals within the stunning Taroko Gorge, combining tribal flavors with Halal standards.",
+                image: "taroko_village.jpg"
+            },
+            {
+                title: "Jixiangxuan Vegetarian (Chishang)",
+                area: "Taitung County",
+                category: "Vegetarian",
+                tags: ["Bento", "Chishang Rice", "Local"],
+                cert: "Local Specialty",
+                desc: "Vegetarian version of the famous Chishang Bento. Uses premium local rice served in traditional wooden boxes.",
+                image: "jixiangxuan.jpg"
+            },
+            {
+                title: "Dulan Dinner",
+                area: "Taitung County",
+                category: "Vegetarian",
+                tags: ["Western", "Bohemian", "Sourdough"],
+                cert: "Traveler Pick",
+                desc: "Located in the artistic Dulan village. Offers sourdough bread, hummus, and pasta in a relaxed atmosphere.",
+                image: "dulan_dinner.jpg"
+            },
+            {
+                title: "Lin's Tomato Restaurant",
+                area: "Nantou County",
+                category: "Vegetarian",
+                tags: ["Puli", "Tomato Noodles", "Farm to Table"],
+                cert: "Local Farm",
+                desc: "Located in Puli. Famous for tomato broth made from home-grown tomatoes, paired with knife-cut noodles.",
+                image: "lins_tomato.jpg"
+            },
+            {
+                title: "Shan Shui Yuan",
+                area: "Nantou County",
+                category: "Vegetarian",
+                tags: ["Cingjing Farm", "Mountain Vegetables", "View"],
+                cert: "Mountain Dining",
+                desc: "A key vegetarian spot in Cingjing Farm, offering dishes made with fresh high-altitude cabbage.",
+                image: "shan_shui_yuan.jpg"
+            },
+            {
+                title: "Changhua Vegetarian Meatball (Ba-wan)",
+                area: "Changhua County",
+                category: "Vegetarian",
+                tags: ["Street Food", "Traditional", "Snack"],
+                cert: "Local Specialty",
+                desc: "Traditional Ba-wan with a twist. Bamboo shoots and mushroom filling wrapped in a chewy sweet potato starch skin.",
+                image: "changhua_bawan.jpg"
+            },
+            {
+                title: "Longgang Mosque Area Restaurants",
+                area: "Taoyuan City",
+                category: "Halal",
+                tags: ["Halal Friendly", "Yunnan Cuisine", "Myanmar Cuisine"],
+                cert: "Muslim Hub",
+                desc: "The area around Longgang Mosque hosts numerous Halal-friendly stalls selling Rice Noodles (Mixian) and Pea Jelly.",
+                image: "longgang.jpg"
+            }
+        ];
+    </script>
+
+    <main class="dining-list-container" id="diningGrid">
+        </main>
 
     <div id="noResults" style="display: none; text-align: center; padding: 50px; color: #999;">
         <h3>No restaurants found matching your criteria.</h3>
@@ -146,57 +583,103 @@
     <script src="/script.js"></script>
 
     <script>
-        // 頁面專屬篩選邏輯
+        // Data Rendering and Filtering Logic
         document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('diningGrid');
             const filterBtns = document.querySelectorAll('.filter-btn');
             const searchInput = document.getElementById('diningSearch');
-            const cards = document.querySelectorAll('.dining-card');
             const noResults = document.getElementById('noResults');
 
-            let currentFilter = 'all';
+            // 1. Initial Render
+            renderItems(diningData);
 
+            // 2. Filter Button Logic
+            let currentFilter = 'all';
+            
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    currentFilter = btn.getAttribute('data-filter').toLowerCase();
-                    filterItems();
+                    currentFilter = btn.getAttribute('data-filter');
+                    applyFilters();
                 });
             });
 
-            searchInput.addEventListener('input', filterItems);
+            // 3. Search Input Logic
+            searchInput.addEventListener('input', applyFilters);
 
-            function filterItems() {
+            // 4. Render Function
+            function renderItems(data) {
+                container.innerHTML = '';
+                if (data.length === 0) {
+                    noResults.style.display = 'block';
+                    return;
+                } else {
+                    noResults.style.display = 'none';
+                }
+
+                data.forEach(item => {
+                    const certClass = getCertClass(item.category); // Helper for styling
+                    
+                    const html = `
+                        <div class="dining-item">
+                            <div class="item-img">
+                                <img src="/image/dining/${item.image}" alt="${item.title}" onerror="this.src='https://placehold.co/300x200/eee/999?text=Dining'">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3 class="item-name">${item.title}</h3>
+                                    <span class="cert-badge ${certClass}">${item.cert}</span>
+                                </div>
+                                <p class="item-desc">${item.desc}</p>
+                                <div class="item-tags">
+                                    ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="item-meta">
+                                <div class="meta-area">${item.area}</div>
+                                <div class="meta-type" style="color: ${item.category === 'Halal' ? '#1565c0' : '#2e7d32'}">
+                                    ${item.category}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+            }
+
+            // 5. Apply Filters Function
+            function applyFilters() {
                 const searchText = searchInput.value.toLowerCase().trim();
-                let visibleCount = 0;
-
-                cards.forEach(card => {
-                    const cardTitle = card.getAttribute('data-title');
-                    const cardTags = card.getAttribute('data-tags'); // e.g. "halal,no beef"
-                    
-                    const matchesSearch = cardTitle.includes(searchText);
-                    
-                    // 修正篩選邏輯：確保 "no beef" 能被完整匹配
-                    let matchesFilter = false;
+                
+                const filteredData = diningData.filter(item => {
+                    // Filter Category Matching
+                    let categoryMatch = false;
                     if (currentFilter === 'all') {
-                        matchesFilter = true;
-                    } else {
-                        // 將標籤字串轉為陣列，精確比對
-                        const tagsArray = cardTags.split(',').map(t => t.trim());
-                        matchesFilter = tagsArray.includes(currentFilter);
+                        categoryMatch = true;
+                    } else if (currentFilter === 'halal') {
+                        categoryMatch = item.category === 'Halal';
+                    } else if (currentFilter === 'vegetarian') {
+                        categoryMatch = item.category === 'Vegetarian';
                     }
 
-                    if (matchesSearch && matchesFilter) {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    } else {
-                        card.classList.add('hidden');
-                    }
+                    // Search Text Matching (Name, Area, or Tags)
+                    const searchMatch = 
+                        item.title.toLowerCase().includes(searchText) || 
+                        item.area.toLowerCase().includes(searchText) ||
+                        item.tags.some(tag => tag.toLowerCase().includes(searchText));
+
+                    return categoryMatch && searchMatch;
                 });
 
-                if (noResults) {
-                    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-                }
+                renderItems(filteredData);
+            }
+
+            // Helper: Determine badge color class based on type/cert
+            function getCertClass(category) {
+                if (category === 'Halal') return 'cert-halal';
+                if (category === 'Vegetarian') return 'cert-michelin'; // Reuse green style
+                return 'cert-local';
             }
         });
     </script>

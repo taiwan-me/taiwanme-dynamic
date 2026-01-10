@@ -155,57 +155,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================================
-    // 6. 強力修復：手機版 MORE 選單 & Modal 綁定
+    // 6. [Updated] 手機版側邊抽屜 (Mobile Drawer) 邏輯
     // ==============================================
-    const mBtn = document.getElementById('mobileMoreBtn');
-    const mMenu = document.getElementById('mobileMoreMenu');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileDrawerOverlay');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
-    if (mBtn && mMenu) {
-        // 先移除舊的監聽器 (防止重複綁定)
-        const newBtn = mBtn.cloneNode(true);
-        mBtn.parentNode.replaceChild(newBtn, mBtn);
-        
-        newBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation(); // 阻止事件冒泡
-            console.log("Mobile More Clicked"); // 測試用
-
-            if (mMenu.style.display === 'none' || mMenu.style.display === '') {
-                mMenu.style.display = 'block';
-                newBtn.innerText = 'CLOSE -';
-                newBtn.style.color = '#333';
-            } else {
-                mMenu.style.display = 'none';
-                newBtn.innerText = 'MORE +';
-                newBtn.style.color = '';
-            }
-        });
+    // 開啟抽屜
+    function openDrawer() {
+        if (drawer && overlay) {
+            drawer.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // 鎖定背景捲動
+        }
     }
 
-    // 手機版選單內的按鈕觸發彈窗
-    const bindMobileModal = (btnId, modalId) => {
-        const btn = document.getElementById(btnId);
-        const modal = document.getElementById(modalId);
-        if (btn && modal) {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.style.display = 'flex';
-                // 點開 Modal 後自動收起 MORE 選單
-                if (mMenu) mMenu.style.display = 'none';
-                
-                // 重新抓取按鈕 (因為上面可能被 cloneNode 換掉了)
-                const currentBtn = document.getElementById('mobileMoreBtn');
-                if (currentBtn) {
-                    currentBtn.innerText = 'MORE +';
-                    currentBtn.style.color = '';
-                }
-            });
+    // 關閉抽屜
+    function closeDrawer() {
+        if (drawer && overlay) {
+            drawer.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = ''; // 恢復背景捲動
         }
-    };
+    }
 
-    bindMobileModal('philosophyBtnMobile', 'philosophyModal');
-    bindMobileModal('bizInquiryBtnMobile', 'businessInquiryModal');
-    bindMobileModal('tippingBtnMobile', 'tippingModal');
+    // 事件綁定
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+    if (overlay) overlay.addEventListener('click', closeDrawer);
+
+    // 點擊抽屜內的連結後自動關閉抽屜
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeDrawer();
+        });
+    });
+
+    const interceptDrawerModalLinks = () => {
+        const linkMap = {
+            '/philosophy': 'philosophyModal',
+            '/support': 'tippingModal',
+            '/contact': 'businessInquiryModal'
+        };
+
+        drawerLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (linkMap[href]) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // 阻止跳轉
+                    closeDrawer();      // 關閉抽屜
+                    const targetModal = document.getElementById(linkMap[href]);
+                    if (targetModal) targetModal.style.display = 'flex'; // 開啟 Modal
+                });
+            }
+        });
+    };
+    interceptDrawerModalLinks();
 
 
     // ==============================================
@@ -342,19 +349,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==============================================
-    // 12. Back to Top Button Logic
+    // 12. Back to Top Button Logic (FIXED)
     // ==============================================
     const backToTopBtn = document.getElementById('backToTopBtn');
 
     if (backToTopBtn) {
+        // 修正邏輯：計算 Header + Nav 的高度，設定閾值為 0.5 倍
+        const calculateThreshold = () => {
+            const header = document.getElementById('header');
+            const nav = document.querySelector('.desktop-nav');
+            
+            let totalHeight = 0;
+            if (header) totalHeight += header.offsetHeight;
+            if (nav) totalHeight += nav.offsetHeight;
+
+            // 如果無法取得高度，給一個保守預設值 (150px 的一半)
+            return totalHeight > 0 ? (totalHeight * 0.5) : 75;
+        };
+
+        let threshold = calculateThreshold();
+
         window.addEventListener('scroll', () => {
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPosition = window.scrollY;
-            if (scrollPosition > totalHeight / 2) {
+            if (window.scrollY > threshold) {
                 backToTopBtn.classList.add('show');
             } else {
                 backToTopBtn.classList.remove('show');
             }
+        });
+
+        window.addEventListener('resize', () => {
+            threshold = calculateThreshold();
         });
 
         backToTopBtn.addEventListener('click', (e) => {

@@ -6,10 +6,13 @@
     <title>Culture & Daily Life | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     
     <style>
+        /* =========================================
+           頁面專屬樣式 (Page Specific Styles)
+           ========================================= */
+
         /* --- Banner 設定 --- */
         .culture-banner {
             width: 100%;
@@ -40,7 +43,7 @@
         }
 
         .banner-text h1 {
-            font-family: 'Lato', sans-serif; 
+            font-family: var(--font-main);
             font-size: 3rem; margin: 0; 
             text-transform: uppercase; 
             letter-spacing: 2px; font-weight: 900;
@@ -64,17 +67,18 @@
         .culture-text { flex: 1; }
 
         .culture-text h2 {
-            font-family: 'Noto Serif TC', serif;
+            font-family: var(--font-main);
             font-size: 2rem;
             color: #333;
             margin-bottom: 25px;
             border-bottom: 3px solid var(--accent-color);
             display: inline-block;
             padding-bottom: 10px;
+            font-weight: 700;
         }
 
         .culture-text h3 {
-            font-family: 'Lato', sans-serif;
+            font-family: var(--font-main);
             font-size: 1.4rem;
             color: var(--accent-color);
             margin-bottom: 15px;
@@ -83,7 +87,7 @@
         }
 
         .culture-text h4 {
-            font-family: 'Lato', sans-serif;
+            font-family: var(--font-main);
             font-size: 1.1rem;
             color: #333;
             margin-top: 20px;
@@ -92,7 +96,8 @@
         }
 
         .culture-text p, .culture-text li {
-            font-family: 'Noto Sans TC', sans-serif;
+            font-family: var(--font-main);
+            font-weight: 400;
             font-size: 1.05rem;
             color: #555;
             line-height: 1.8;
@@ -105,10 +110,12 @@
             margin-bottom: 20px;
         }
 
-        /* --- 圖片與影片樣式 --- */
+        /* --- 圖片與影片區塊 --- */
         .culture-image {
             flex: 1;
             position: relative;
+            /* 確保內容不會溢出 */
+            min-width: 0; 
         }
 
         .culture-image figure {
@@ -139,6 +146,7 @@
             border-radius: 8px;
             box-shadow: 10px 10px 0px rgba(232, 162, 162, 0.3);
             background: #000;
+            width: 100%;
         }
 
         .video-container iframe {
@@ -153,7 +161,7 @@
         /* 圖片/影片下方說明文字 */
         .culture-image figcaption {
             margin-top: 15px;
-            font-family: 'Noto Sans TC', sans-serif;
+            font-family: var(--font-main);
             font-size: 0.8rem;
             color: #666;
             text-align: center;
@@ -194,6 +202,7 @@
             font-size: 0.95rem;
             background: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-family: var(--font-main);
         }
         .language-table th, .language-table td {
             border: 1px solid #eee;
@@ -212,7 +221,7 @@
         /* 按鈕容器 */
         .read-more-wrapper {
             text-align: center;
-            margin: -40px 0 80px; /* 調整位置 */
+            margin: -40px 0 80px;
             position: relative;
             z-index: 10;
         }
@@ -225,7 +234,7 @@
             font-size: 1.1rem;
             border-radius: 30px;
             cursor: pointer;
-            font-family: 'Lato', sans-serif;
+            font-family: var(--font-main);
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -248,18 +257,35 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 手機版響應式 */
+        /* =========================================
+           手機版響應式設定 (Mobile Responsive)
+           ========================================= */
         @media (max-width: 768px) {
             .culture-banner { height: 250px; }
             .banner-text h1 { font-size: 2rem; }
+            
             .culture-row {
                 flex-direction: column !important; /* 強制垂直排列 */
                 gap: 30px;
                 margin-bottom: 60px;
+                width: 100%; /* 確保容器滿版 */
             }
+            
+            /* [關鍵修正] 強制圖文區塊在手機版佔滿寬度 */
+            .culture-text, .culture-image {
+                width: 100%;
+                flex: none; /* 解除 flex: 1 限制，避免被壓縮 */
+            }
+
             .culture-text h2 { font-size: 1.6rem; }
-            .culture-image img, .video-container { 
+            
+            .video-container { 
                 box-shadow: 5px 5px 0px rgba(232, 162, 162, 0.3); 
+                /* 高度由 padding-bottom 自動計算，無需設定 height */
+            }
+            
+            .culture-image img {
+                box-shadow: 5px 5px 0px rgba(232, 162, 162, 0.3);
                 max-height: 300px;
             }
         }
@@ -442,7 +468,7 @@
                 <div class="culture-image">
                     <figure>
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/PvIfBkD6njg" title="Taiwanese Hokkien Accent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/PvIfBkD6njg" title="Taiwanese Hokkien Accent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="100%"></iframe>
                         </div>
                         <figcaption>One of the many accents.</figcaption>
                     </figure>
@@ -458,7 +484,7 @@
                 <div class="culture-image">
                     <figure>
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/Rw9We9UqI2Q" title="Taiwanese Hakka Accent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/Rw9We9UqI2Q" title="Taiwanese Hakka Accent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="100%"></iframe>
                         </div>
                         <figcaption>One of the many accents.</figcaption>
                     </figure>
@@ -474,7 +500,7 @@
                 <div class="culture-image">
                     <figure>
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/X_dH8TChy3c" title="Amis Language" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/X_dH8TChy3c" title="Amis Language" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="100%"></iframe>
                         </div>
                         <figcaption>Amis language, one of the 16 officially recognized tribes.</figcaption>
                     </figure>

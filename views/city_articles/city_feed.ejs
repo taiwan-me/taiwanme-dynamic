@@ -6,7 +6,6 @@
     <title><%= cityName %> Guide | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 
     <style>
@@ -61,9 +60,11 @@
                 url('/image/search_by_city/kinmen_banner.png');
             <% } else if (citySlug === 'matsu') { %>
                 url('/image/search_by_city/matsu_banner.png');
+            <% } else if (citySlug === 'offshore_islands') { %>
+                url('/image/search_by_city/liuqiu_banner.png'); /* 預設離島 Banner */
             <% } else { %>
-                /* 預設 Fallback：如果沒有特定 Banner，嘗試讀取該城市資料夾下的預設圖 */
-                url('/image/search_by_city/<%= citySlug %>/banner_city.jpg');
+                /* Fallback */
+                url('/image/search_by_city/taipei_banner.png');
             <% } %>;
         }
     </style>
@@ -75,7 +76,7 @@
     <div class="city-hero-banner">
         <div class="city-hero-overlay">
             <h1 class="city-name-title"><%= cityName %></h1>
-            <p style="margin: 10px 0 0; font-family: 'Lato'; letter-spacing: 2px; font-weight: 700; color: #555;">
+            <p style="margin: 10px 0 0; font-family: var(--font-eng); letter-spacing: 2px; font-weight: 700; color: #555;">
                 THE HIDDEN GEMS
             </p>
         </div>
@@ -84,7 +85,21 @@
     <div class="feed-grid">
         <% if (typeof cityData !== 'undefined' && cityData.length > 0) { %>
             <% cityData.forEach(function(article) { %>
-                <a href="/search_by_city/<%= citySlug %>/<%= article.id %>" class="feed-card">
+                
+                <% 
+                    // --- [關鍵保留] 離島連結導向邏輯 ---
+                    let targetCitySlug = citySlug;
+
+                    // 如果當前是在 "Offshore Islands" 頁面，則根據 ID 前綴判斷所屬縣市
+                    if (citySlug === 'offshore_islands') {
+                        if (article.id.startsWith('pt')) targetCitySlug = 'pingtung';
+                        else if (article.id.startsWith('tt')) targetCitySlug = 'taitung';
+                        else if (article.id.startsWith('yl')) targetCitySlug = 'yilan';
+                        else if (article.id.startsWith('kl')) targetCitySlug = 'keelung';
+                    }
+                %>
+
+                <a href="/search_by_city/<%= targetCitySlug %>/<%= article.id %>" class="feed-card">
                     
                     <div class="feed-img-box">
                         <img src="<%= article.heroImage %>" class="feed-img" alt="<%= article.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=TaiwanMe'">
@@ -92,11 +107,13 @@
                     
                     <div class="feed-content">
                         <div class="feed-tags">
-                            <% article.tags.slice(0, 2).forEach(function(tag){ %> 
-                                <span style="background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; text-transform: uppercase;">
-                                    #<%= tag %>
-                                </span> 
-                            <% }); %>
+                            <% if (article.tags && article.tags.length > 0) { %>
+                                <% article.tags.slice(0, 2).forEach(function(tag){ %> 
+                                    <span style="background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; text-transform: uppercase;">
+                                        <%= tag.startsWith('#') ? tag : '#' + tag %>
+                                    </span> 
+                                <% }); %>
+                            <% } %>
                         </div>
                         
                         <h2 class="feed-title">[<%= article.type %>] <%= article.title %></h2>
@@ -108,7 +125,7 @@
             <% }); %>
         <% } else { %>
             <div style="text-align: center; grid-column: 1 / -1; padding: 100px 20px;">
-                <h3 style="color: #999; font-family: 'Lato'; font-size: 2rem;">Coming Soon...</h3>
+                <h3 style="color: #999; font-family: var(--font-eng); font-size: 2rem;">Coming Soon...</h3>
                 <p style="color: #bbb;">We are currently exploring <%= cityName %> to bring you the best guides.</p>
             </div>
         <% } %>

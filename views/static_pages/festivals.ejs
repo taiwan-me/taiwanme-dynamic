@@ -6,11 +6,12 @@
     <title>Festivals | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     
     <style>
-        /* --- Festivals 頁面專屬樣式 --- */
+        /* =========================================
+           頁面專屬樣式 (Page Specific Styles)
+           ========================================= */
         
         /* 1. Banner 設定 */
         .festivals-banner {
@@ -39,7 +40,7 @@
         }
 
         .banner-text h1 {
-            font-family: 'Lato', sans-serif; 
+            font-family: var(--font-eng); 
             font-size: 3.5rem; 
             margin: 0; 
             text-transform: uppercase; 
@@ -63,7 +64,7 @@
         }
 
         .season-title {
-            font-family: 'Lato', sans-serif;
+            font-family: var(--font-eng);
             font-size: 2rem;
             color: #333;
             border-left: 5px solid var(--accent-color);
@@ -79,6 +80,7 @@
             color: #777;
             margin-left: 10px;
             text-transform: none;
+            font-family: var(--font-main);
         }
 
         .table-responsive { width: 100%; overflow-x: auto; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
@@ -86,7 +88,7 @@
         .festival-table {
             width: 100%;
             border-collapse: collapse;
-            font-family: 'Noto Sans TC', sans-serif;
+            font-family: var(--font-main);
             background: #fff;
             min-width: 600px; /* 防止手機版表格過度擠壓 */
         }
@@ -106,28 +108,94 @@
         }
 
         .festival-table tr:hover { background-color: #fcfcfc; }
+        
+        /* 假日標籤樣式 */
+        .holiday-tag {
+            display: inline-block;
+            background-color: #ff6b6b; /* 顯眼的紅色 */
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 8px;
+            font-weight: normal;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        /* 圖片區塊樣式 (Figure & Figcaption) */
+        .season-figure {
+            margin: 30px 0 0 0;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
 
         .season-summary-img {
             width: 100%;
             height: 300px;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .season-summary-img img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            display: block;
         }
         
-        .season-summary-img:hover img { transform: scale(1.05); }
+        .season-figure:hover .season-summary-img { transform: scale(1.05); }
+
+        .season-caption {
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+            font-style: italic;
+            font-family: var(--font-main);
+        }
+
+        /* =========================================
+           跨季活動區域樣式 (Cross-Season Styles)
+           ========================================= */
+        .cross-season-box {
+            background-color: #f8f9fa; /* 淺灰底色 */
+            border: 2px dashed #d1d5db; /* 虛線邊框 */
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cross-season-title {
+            font-family: var(--font-eng);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #555;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        .cross-season-title::before {
+            content: "⇄"; /* 交換符號 */
+            margin-right: 10px;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        .cross-season-box .festival-table {
+            box-shadow: none;
+            background-color: transparent;
+        }
+        .cross-season-box .festival-table th {
+            background-color: #6c757d; /* 標頭改為灰色系以示區別 */
+        }
 
         @media (max-width: 768px) {
             .festivals-banner { height: 250px; }
             .banner-text h1 { font-size: 2.2rem; }
             .festival-table th, .festival-table td { padding: 12px 15px; font-size: 0.9rem; }
+            .cross-season-title { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -145,7 +213,7 @@
         <div class="disclaimer-box">
             <span class="disclaimer-icon">⚠️</span>
             <div class="disclaimer-text">
-                <strong>Note on Dates:</strong> Many traditional festivals follow the Lunar Calendar, so Gregorian dates vary each year. Please confirm exact dates with official event websites before booking your trip.
+                <strong>Note on Dates:</strong> Dates are estimated based on the 2026 calendar. Traditional festivals (Lunar New Year, Dragon Boat, Mid-Autumn, Indigenous Rituals) follow the Lunar or Tribal Calendar, so exact Gregorian dates vary. Please confirm with official sources.
             </div>
         </div>
     </div>
@@ -157,34 +225,417 @@
             <table class="festival-table">
                 <thead>
                     <tr>
-                        <th width="20%">日期 (Date)</th>
-                        <th width="50%">活動名稱 (Event Name)</th>
-                        <th width="30%">地點 (Location)</th>
+                        <th width="20%">Date</th>
+                        <th width="50%">Event Name</th>
+                        <th width="30%">Location</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>3月 - 4月</td>
-                        <td>阿里山櫻花季 (Alishan Cherry Blossom)</td>
+                        <td>March 1</td>
+                        <td>後龍慈雲宮攻炮城 (Houlong Bombing Castle Ritual)</td>
+                        <td>苗栗後龍 (Miaoli)</td>
+                    </tr>
+                    <tr>
+                        <td>March 2 - 3</td>
+                        <td>鹽水蜂炮 (Yanshui Beehive Fireworks Festival)</td>
+                        <td>台南鹽水 (Tainan)</td>
+                    </tr>
+                    <tr>
+                        <td>March 3</td>
+                        <td>屏東加匏朗夜祭 (Pingtung Jiapaolang Night Ceremony)</td>
+                        <td>屏東萬巒 (Pingtung)</td>
+                    </tr>
+                    <tr>
+                        <td>March 3 - 4</td>
+                        <td>台東炮炸寒單爺 (Taitung Bombing Master Handan)</td>
+                        <td>台東市 (Taitung)</td>
+                    </tr>
+                    <tr>
+                        <td>3/3 - 3/15</td>
+                        <td>2026 台灣燈會 (Taiwan Lantern Festival)</td>
+                        <td>嘉義縣 (Chiayi County)</td>
+                    </tr>
+                    <tr>
+                        <td>March - April</td>
+                        <td>阿里山櫻花季 (Alishan Cherry Blossom Festival)</td>
                         <td>嘉義 (Chiayi)</td>
                     </tr>
                     <tr>
-                        <td>4月 - 5月</td>
-                        <td>客家桐花祭 (Tung Blossom Festival)</td>
+                        <td>Early April</td>
+                        <td>高雄內門宋江陣 (Neimen Song Jiang Battle Array) - Finals on 4/4</td>
+                        <td>高雄內門 (Kaohsiung)</td>
+                    </tr>
+                    <tr>
+                        <td>4/4 - 4/5</td>
+                        <td>兒童節 & 清明節 (Children's & Tomb Sweeping Day) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>4/4 - 4/13</td>
+                        <td>大甲媽祖遶境進香 (Dajia Mazu Pilgrimage)</td>
+                        <td>台中及中南部 (Taichung & Central)</td>
+                    </tr>
+                    <tr>
+                        <td>April - May</td>
+                        <td>客家桐花祭 (Hakka Tung Blossom Festival)</td>
                         <td>全台 (Taiwan-wide)</td>
                     </tr>
                     <tr>
-                        <td>4月 - 6月</td>
-                        <td>澎湖國際海上花火節 (Penghu Fireworks)</td>
-                        <td>澎湖 (Penghu)</td>
+                        <td>May 1</td>
+                        <td>勞動節 (Labor Day) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>May 28</td>
+                        <td>金門迎城隍 (Kinmen City God Pilgrimage)</td>
+                        <td>金門 (Kinmen)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="season-summary-img">
-            <img src="/image/festivals/spring.jpg" alt="Spring Festivals in Taiwan" onerror="this.src='https://placehold.co/1200x400/eee/999?text=Spring+Festivals+Highlight'">
+        <div class="cross-season-box">
+            <div class="cross-season-title">Cross-Season Highlights (Spring ⇄ Summer)</div>
+            <div class="table-responsive" style="margin-bottom: 0;">
+                <table class="festival-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">Date</th>
+                            <th width="50%">Event Name</th>
+                            <th width="30%">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>March - July</td>
+                            <td>蘭嶼飛魚祭 (Lanyu Flying Fish Festival)</td>
+                            <td>台東蘭嶼 (Lanyu, Taitung)</td>
+                        </tr>
+                        <tr>
+                            <td>March - June</td>
+                            <td>竹子湖海芋及繡球花季 (Calla Lily & Hydrangea Festival)</td>
+                            <td>台北陽明山 (Taipei)</td>
+                        </tr>
+                        <tr>
+                            <td>March - Sept</td>
+                            <td>馬祖藍眼淚季 (Matsu Blue Tears Season)</td>
+                            <td>馬祖 (Matsu)</td>
+                        </tr>
+                        <tr>
+                            <td>5/4 - 8/25</td>
+                            <td>澎湖國際海上花火節 (Penghu Fireworks Festival)</td>
+                            <td>澎湖 (Penghu)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <figure class="season-figure">
+            <img src="/image/festivals/spring.png" alt="Alishan Forest Railway passing through Cherry Blossom Forest" class="season-summary-img" onerror="this.src='https://placehold.co/1200x300/eee/999?text=Image+Not+Found'">
+            <figcaption class="season-caption">阿里山小火車穿過櫻花林 (Alishan Forest Railway passing through Cherry Blossom Forest)</figcaption>
+        </figure>
+    </section>
+
+    <section class="season-section">
+        <h2 class="season-title">SUMMER <span>(Jun. - Aug.)</span></h2>
+        
+        <div class="table-responsive">
+            <table class="festival-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Date</th>
+                        <th width="50%">Event Name</th>
+                        <th width="30%">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mid-June (Lunar 5/5)</td>
+                        <td>端午節 (Dragon Boat Festival) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>台北霞海城隍文化節 (Xiahai City God Cultural Festival)</td>
+                        <td>台北大稻埕 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>7/4 - 8/20</td>
+                        <td>台灣國際熱氣球嘉年華 (Taiwan International Balloon Festival)</td>
+                        <td>台東鹿野高台 (Taitung)</td>
+                    </tr>
+                    <tr>
+                        <td>July - August</td>
+                        <td>宜蘭國際童玩藝術節 (Yilan Int'l Children's Folklore Festival)</td>
+                        <td>宜蘭冬山河 (Yilan)</td>
+                    </tr>
+                    <tr>
+                        <td>July - August</td>
+                        <td>大稻埕夏日節 (Dadaocheng Summer Festival)</td>
+                        <td>台北大稻埕 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>August 27</td>
+                        <td>恆春搶孤 (Hengchun Qianggu Pole Climbing)</td>
+                        <td>屏東恆春 (Pingtung)</td>
+                    </tr>
+                    <tr>
+                        <td>Late August</td>
+                        <td>鷄籠中元祭 (Keelung Mid-Summer Ghost Festival)</td>
+                        <td>基隆 (Keelung)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cross-season-box">
+            <div class="cross-season-title">Cross-Season Highlights (Summer ⇄ Autumn)</div>
+            <div class="table-responsive" style="margin-bottom: 0;">
+                <table class="festival-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">Date</th>
+                            <th width="50%">Event Name</th>
+                            <th width="30%">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>July - Sept</td>
+                            <td>阿美族豐年祭 (Amis Harvest Festival - Ilisin)</td>
+                            <td>花蓮/台東 (Hualien/Taitung)</td>
+                        </tr>
+                        <tr>
+                            <td>June - Sept</td>
+                            <td>臺北親水節 (Taipei Water Festival)</td>
+                            <td>台北自來水園區 (Taipei)</td>
+                        </tr>
+                        <tr>
+                            <td>Aug - Sept</td>
+                            <td>潮臺北 TRENDY TAIPEI</td>
+                            <td>台北流行音樂中心 (Taipei)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <figure class="season-figure">
+            <img src="/image/festivals/summer.png" alt="Taitung Luye Highlands Hot Air Balloon" class="season-summary-img" onerror="this.src='https://placehold.co/1200x300/eee/999?text=Image+Not+Found'">
+            <figcaption class="season-caption">台東鹿野高台熱氣球 (Taitung Luye Highlands Hot Air Balloon)</figcaption>
+        </figure>
+    </section>
+
+    <section class="season-section">
+        <h2 class="season-title">AUTUMN <span>(Sep. - Nov.)</span></h2>
+        
+        <div class="table-responsive">
+            <table class="festival-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Date</th>
+                        <th width="50%">Event Name</th>
+                        <th width="30%">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Late Sept (Lunar 8/15)</td>
+                        <td>中秋節 (Mid-Autumn Festival) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>Sept - Oct</td>
+                        <td>臺北爵士音樂節 (Taipei Jazz Festival)</td>
+                        <td>台北大安森林公園 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 10</td>
+                        <td>國慶日 (National Day) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 25</td>
+                        <td>台灣光復節 (Taiwan Retrocession Day) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>Oct - Nov</td>
+                        <td>西拉雅族夜祭 (Siraya Night Ceremony)</td>
+                        <td>台東山/大內 (Tainan)</td>
+                    </tr>
+                    <tr>
+                        <td>Nov - Dec</td>
+                        <td>賽夏族矮靈祭 (Saisiyat Pasta'ay Festival)</td>
+                        <td>苗栗/新竹 (Miaoli/Hsinchu)</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>臺中爵士音樂節 (Taichung Jazz Festival)</td>
+                        <td>台中市民廣場 (Taichung)</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>臺北時裝週 (Taipei Fashion Week)</td>
+                        <td>台北松山文創園區 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>臺北國際牛肉麵節 (Taipei Int'l Beef Noodle Festival)</td>
+                        <td>台北 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>10/11</td>
+                        <td>徐行縱谷-八通關古道自行車挑戰 (Cycling Challenge)</td>
+                        <td>花蓮/南投 (Hualien/Nantou)</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>臺北白晝之夜 (Nuit Blanche Taipei)</td>
+                        <td>台北 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>11/15</td>
+                        <td>花蓮太平洋縱谷馬拉松 (Hualien Pacific Marathon)</td>
+                        <td>花蓮 (Hualien)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cross-season-box" style="display:none;"> 
+            <div class="cross-season-title">Cross-Season Highlights (Autumn ⇄ Winter)</div>
+            <div class="table-responsive" style="margin-bottom: 0;">
+                <table class="festival-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">Date</th>
+                            <th width="50%">Event Name</th>
+                            <th width="30%">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <figure class="season-figure">
+            <img src="/image/festivals/autumn.png" alt="Saisiyat Pasta'ay Festival" class="season-summary-img" onerror="this.src='https://placehold.co/1200x300/eee/999?text=Image+Not+Found'">
+            <figcaption class="season-caption">賽夏族矮靈祭 (Saisiyat Pasta'ay Festival)</figcaption>
+        </figure>
+    </section>
+
+    <section class="season-section">
+        <h2 class="season-title">WINTER <span>(Dec. - Feb.)</span></h2>
+        
+        <div class="table-responsive">
+            <table class="festival-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Date</th>
+                        <th width="50%">Event Name</th>
+                        <th width="30%">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>December</td>
+                        <td>公館聖誕季 (Gongguan Christmas Season)</td>
+                        <td>台北 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>Dec 25</td>
+                        <td>行憲紀念日 (Constitution Day / Christmas) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>Dec 20</td>
+                        <td>臺北馬拉松 (Taipei Marathon)</td>
+                        <td>台北市區 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>Dec 31</td>
+                        <td>臺北最High新年城 (Taipei New Year's Eve Party)</td>
+                        <td>台北市政府前 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>Dec 31</td>
+                        <td>高雄跨年晚會 (Kaohsiung New Year's Eve)</td>
+                        <td>高雄夢時代 (Kaohsiung)</td>
+                    </tr>
+                    <tr>
+                        <td>Late Jan - Mid Feb</td>
+                        <td>農曆新年 (Lunar New Year / Spring Festival) <span class="holiday-tag">Holiday</span></td>
+                        <td>全台 (Nationwide)</td>
+                    </tr>
+                    <tr>
+                        <td>Jan - Feb</td>
+                        <td>2026 臺灣年味在臺北 (Lunar New Year Market)</td>
+                        <td>台北迪化街 (Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>1/24 - 1/25</td>
+                        <td>2026 金門馬拉松 (Kinmen Marathon)</td>
+                        <td>金門 (Kinmen)</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>平溪天燈節 (Pingxi Sky Lantern Festival)</td>
+                        <td>新北平溪 (New Taipei)</td>
+                    </tr>
+                    <tr>
+                        <td>Feb 26</td>
+                        <td>鄒族戰祭 (Tsou Mayasvi Festival)</td>
+                        <td>嘉義阿里山 (Ali Mountain, Chiayi)</td>
+                    </tr>
+                    <tr>
+                        <td>2/2 - 2/8</td>
+                        <td>2026 台北國際書展 (Taipei Int'l Book Exhibition)</td>
+                        <td>台北世貿 (Taipei)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cross-season-box">
+            <div class="cross-season-title">Cross-Season Highlights (Winter ⇄ Spring)</div>
+            <div class="table-responsive" style="margin-bottom: 0;">
+                <table class="festival-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">Date</th>
+                            <th width="50%">Event Name</th>
+                            <th width="30%">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Feb 25 - Mar 5</td>
+                            <td>苗栗火旁龍 (Miaoli Bombing Dragon Festival)</td>
+                            <td>苗栗市 (Miaoli)</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 7 - Mar 8</td>
+                            <td>月津港燈節 (Yuejin Lantern Festival)</td>
+                            <td>台南鹽水 (Tainan)</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 13 - Mar 1</td>
+                            <td>武陵農場櫻花季 (Wuling Farm Cherry Blossom Festival)</td>
+                            <td>台中和平 (Taichung)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <figure class="season-figure">
+            <img src="/image/festivals/winter.png" alt="Pingxi Sky Lanterns Rising Together" class="season-summary-img" onerror="this.src='https://placehold.co/1200x300/eee/999?text=Image+Not+Found'">
+            <figcaption class="season-caption">平溪天燈齊飛 (Pingxi Sky Lanterns Rising Together)</figcaption>
+        </figure>
     </section>
 
     <%- include('../partials/footer') %>

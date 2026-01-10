@@ -15,17 +15,10 @@
 
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     
     <style>
-        :root {
-            --accent-color: #e53935;
-            --font-eng: 'Lato', sans-serif;
-            --font-tc: 'Noto Sans TC', sans-serif;
-        }
-
-        body { background-color: #f9f9f9; font-family: var(--font-tc); scroll-behavior: smooth; }
+        body { background-color: #f9f9f9; scroll-behavior: smooth; }
 
         /* Hero Banner */
         .guide-hero {
@@ -42,9 +35,13 @@
         .guide-tag {
             background-color: var(--accent-color); color: white; padding: 5px 12px; border-radius: 4px;
             font-size: 0.9rem; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; display: inline-block;
+            font-family: var(--font-eng);
         }
-        .guide-title { font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; font-family: var(--font-eng); text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .guide-meta { font-size: 0.95rem; opacity: 0.9; }
+        .guide-title { 
+            font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; 
+            font-family: var(--font-eng); text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+        }
+        .guide-meta { font-size: 0.95rem; opacity: 0.9; font-family: var(--font-main); }
 
         /* Banner Credit */
         .banner-credit {
@@ -66,12 +63,12 @@
             border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee;
             max-height: 80vh; overflow-y: auto;
         }
-        .toc-title { font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; color: #333; }
+        .toc-title { font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; color: #333; font-family: var(--font-eng); }
         .toc-list { list-style: none; padding: 0; margin: 0; }
         .toc-list li { margin-bottom: 10px; }
         .toc-list a {
             text-decoration: none; color: #666; font-size: 0.95rem; transition: 0.3s; display: block;
-            border-left: 3px solid transparent; padding-left: 10px;
+            border-left: 3px solid transparent; padding-left: 10px; font-family: var(--font-main);
         }
         .toc-list a:hover { color: var(--accent-color); border-left-color: var(--accent-color); }
         
@@ -89,7 +86,7 @@
             font-size: 1.8rem; color: #333; margin-bottom: 20px; padding-bottom: 10px;
             border-bottom: 2px solid #eee; font-family: var(--font-eng); font-weight: 700;
         }
-        .guide-text { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 20px; text-align: justify; }
+        .guide-text { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 20px; text-align: justify; font-family: var(--font-main); }
         
         /* Image & Caption */
         .guide-img {
@@ -102,7 +99,7 @@
         .img-caption {
             font-size: 0.85rem; color: #777; text-align: center; margin-bottom: 30px;
             background-color: #f8f9fa; padding: 10px; border-radius: 0 0 8px 8px;
-            border: 1px solid #eee; border-top: none;
+            border: 1px solid #eee; border-top: none; font-family: var(--font-main);
         }
         .img-caption a { color: #555; text-decoration: underline; margin: 0 5px; font-weight: bold; }
         .img-caption a:hover { color: var(--accent-color); }
@@ -120,11 +117,12 @@
         /* Tips & Tables */
         .tip-box {
             background-color: #fff8e1; border-left: 5px solid #ffc107; padding: 20px; margin: 25px 0; border-radius: 4px; color: #555;
+            font-family: var(--font-main);
         }
         .tip-title { font-weight: bold; color: #d39e00; margin-bottom: 5px; display: block; }
         
         .table-responsive { overflow-x: auto; margin: 25px 0; border-radius: 8px; border: 1px solid #eee; }
-        .guide-table { width: 100%; border-collapse: collapse; min-width: 500px; font-family: 'Noto Sans TC', sans-serif; }
+        .guide-table { width: 100%; border-collapse: collapse; min-width: 500px; font-family: var(--font-main); }
         .guide-table th { background: #333; color: white; padding: 12px; text-align: left; white-space: nowrap; }
         .guide-table td { padding: 12px; border-bottom: 1px solid #ddd; color: #555; }
         .guide-table tr:hover { background-color: #f5f5f5; }
@@ -167,7 +165,7 @@
                     <% } %>
                 </ul>
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-                    <a href="/transport" style="text-decoration: none; font-weight: bold; color: #333; font-size: 0.9rem;">← Back to All Guides</a>
+                    <a href="/transport" style="text-decoration: none; font-weight: bold; color: #333; font-size: 0.9rem; font-family: var(--font-eng);">← Back to All Guides</a>
                 </div>
             </div>
         </aside>
@@ -216,7 +214,7 @@
                                  class="guide-img <%= section.enableZoom ? 'zoomable' : '' %>"
                                  data-src="<%= section.image %>"
                                  loading="lazy"> 
-                                 
+                             
                             <% if (section.links && section.links.length > 0) { %>
                                 <div class="img-caption">
                                     Source / Official Info:
@@ -269,6 +267,7 @@
     </div>
 
     <%- include('../partials/footer') %>
+    
     <script src="/script.js"></script>
 
     <script>

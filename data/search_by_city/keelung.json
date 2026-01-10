@@ -4,7 +4,11 @@
     "type": "1-Day Tour",
     "title": "Maritime Romance & Night Market",
     "subTitle": "海派浪漫經典線：色彩、奇岩與夜市巡禮",
-    "tags": ["#Photography", "#Geology", "#NightMarket"],
+    "tags": [
+      "#Photography",
+      "#Geology",
+      "#NightMarket"
+    ],
     "heroImage": "/image/search_by_city/keelung/colorful_houses.jpg",
     "intro": "A classic route connecting the most colorful spots in Keelung. Visit the 'Taiwanese Venice', the strange rocks of Heping Island, and the famous Miaokou Night Market.",
     "transportation": "**Taiwan Tourist Shuttle T99 (Coastal Keelung Shuttle Bus)**.",
@@ -37,7 +41,11 @@
     "type": "1-Day Tour",
     "title": "West Coast Cave Adventure",
     "subTitle": "西岸秘境探險線：洞穴、砲台與大船入港",
-    "tags": ["#Adventure", "#History", "#Cave"],
+    "tags": [
+      "#Adventure",
+      "#History",
+      "#Cave"
+    ],
     "heroImage": "/image/search_by_city/keelung/fairy_cave.jpg",
     "intro": "Avoid the crowds and explore the historic west bank. Crawl through natural sea caves and visit ancient forts overlooking the harbor.",
     "transportation": "**Bus 301/302** from Keelung Station.",
@@ -70,7 +78,11 @@
     "type": "2-Day Tour",
     "title": "Mountain, Sea & Railway",
     "subTitle": "山海深度與鐵道慢旅：八斗子與市區",
-    "tags": ["#RailBike", "#Ecology", "#Museum"],
+    "tags": [
+      "#RailBike",
+      "#Ecology",
+      "#Museum"
+    ],
     "heroImage": "/image/search_by_city/keelung/chaojing.jpg",
     "intro": "Combine the ecology of Badouzi with the bustle of the city. Ride the rail bike and visit the National Museum of Marine Science and Technology.",
     "transportation": "**Bus 1579** + **Rail Bike**.",
@@ -103,7 +115,11 @@
     "type": "2-Day Tour",
     "title": "Rainy City Vibe & History",
     "subTitle": "雨都情調與文史散策：巷弄與咖啡",
-    "tags": ["#Coffee", "#History", "#WalkingTour"],
+    "tags": [
+      "#Coffee",
+      "#History",
+      "#WalkingTour"
+    ],
     "heroImage": "/image/search_by_city/keelung/coffee_shop.jpg",
     "intro": "Discover the charm of the 'Rainy City'. Wander through old commission stores, visit hidden forts, and enjoy Keelung's strong coffee culture.",
     "transportation": "**Walking** + **Bus**.",
@@ -136,8 +152,12 @@
     "type": "Half-Day Tour",
     "title": "Offshore Island: Keelung Islet",
     "subTitle": "全境制霸：島嶼、燈塔與美食",
-    "tags": ["#Island", "#Lighthouse", "#Hiking"],
-    "heroImage": "/image/search_by_city/keelung/keelung_islet.jpg",
+    "tags": [
+      "#Island",
+      "#Lighthouse",
+      "#Hiking"
+    ],
+    "heroImage": "/image/search_by_city/keelung_islet_banner.png",
     "intro": "Known as the 'Dragon Pearl of Taiwan'. A volcanic island offering a challenging hike to the lighthouse and 360-degree ocean views.",
     "transportation": "**Ferry** from Bisha Harbor (Bus 1579 from Taipei).",
     "spots": [
@@ -162,7 +182,11 @@
     "type": "3-Day Tour",
     "title": "Slow Living in Rainy City",
     "subTitle": "慢活雨都：在地生活與感官體驗",
-    "tags": ["#LocalLife", "#Bookstore", "#HiddenGems"],
+    "tags": [
+      "#LocalLife",
+      "#Bookstore",
+      "#HiddenGems"
+    ],
     "heroImage": "/image/search_by_city/keelung/bookstore.jpg",
     "intro": "Live like a local. Visit traditional markets, the most beautiful sea-view bookstore, and historical battlefields.",
     "transportation": "**Walking** + **Bus**.",

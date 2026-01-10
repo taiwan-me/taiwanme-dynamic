@@ -6,7 +6,6 @@
     <title>Hidden Gems | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -28,10 +27,20 @@
             background-color: var(--lace-bg); border: 1px solid var(--lace-border);
             padding: 40px 20px; margin-bottom: 30px; border-radius: 4px; display: inline-block; width: 100%;
         }
-        .hg-main-title { font-family: 'Lato', sans-serif; font-size: 2.5rem; font-weight: 900; color: #333; text-transform: uppercase; letter-spacing: 3px; margin: 0; line-height: 1.2; }
-        .hg-slogan { font-family: 'Noto Serif TC', serif; color: #555; font-size: 1.2rem; font-style: italic; margin-top: 15px; line-height: 1.6; }
+        .hg-main-title { 
+            font-family: var(--font-eng);
+            font-size: 2.5rem; font-weight: 900; color: #333; 
+            text-transform: uppercase; letter-spacing: 3px; margin: 0; line-height: 1.2; 
+        }
+        .hg-slogan { 
+            font-family: var(--font-serif); 
+            color: #555; font-size: 1.2rem; font-style: italic; margin-top: 15px; line-height: 1.6; 
+        }
         .hg-slogan span { display: block; font-size: 1rem; color: #777; margin-top: 5px; font-style: normal; }
-        .hg-intro-text { max-width: 800px; margin: 40px auto 0; line-height: 2; color: #555; font-size: 1.05rem; text-align: justify; }
+        .hg-intro-text { 
+            max-width: 800px; margin: 40px auto 0; line-height: 2; 
+            color: #555; font-size: 1.05rem; text-align: justify; font-family: var(--font-main);
+        }
 
         /* [關鍵修正] 設定捲動邊距，避免標題被 Header 遮住 */
         .hg-region-section { 
@@ -41,11 +50,19 @@
 
         .hg-region-header { text-align: center; margin-bottom: 50px; }
         .hg-region-title-box { background-color: var(--lace-bg); padding: 15px 40px; display: inline-block; border-radius: 30px; margin-bottom: 20px; }
-        .hg-region-title { font-family: 'Lato', sans-serif; font-size: 1.8rem; font-weight: 700; color: #333; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        .hg-region-desc { max-width: 600px; margin: 0 auto; color: #666; font-size: 1rem; line-height: 1.8; }
+        .hg-region-title { 
+            font-family: var(--font-eng);
+            font-size: 1.8rem; font-weight: 700; color: #333; margin: 0; 
+            text-transform: uppercase; letter-spacing: 2px; 
+        }
+        .hg-region-desc { max-width: 600px; margin: 0 auto; color: #666; font-size: 1rem; line-height: 1.8; font-family: var(--font-main); }
 
         .swiper { width: 100%; padding-bottom: 50px; }
-        .hg-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; height: 100%; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+        .hg-card { 
+            background: #fff; border-radius: 8px; overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; 
+            height: 100%; display: flex; flex-direction: column; text-decoration: none; color: inherit; 
+        }
         .hg-card:hover { transform: translateY(-5px); }
         .hg-img-box { width: 100%; height: 250px; overflow: hidden; position: relative; }
         .hg-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
@@ -57,10 +74,14 @@
         .tag.city { background-color: #f0f0f0; color: #555; border: 1px solid #ddd; }
         .tag.gem { background-color: var(--accent-color); color: #fff; }
         
-        .hg-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 10px; color: #333; line-height: 1.4; }
+        .hg-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 10px; color: #333; line-height: 1.4; font-family: var(--font-main); }
         
         .view-all-container { text-align: center; margin-top: 30px; }
-        .btn-view-all { display: inline-block; border: 1px solid #333; color: #333; padding: 10px 30px; text-decoration: none; font-family: 'Lato', sans-serif; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .btn-view-all { 
+            display: inline-block; border: 1px solid #333; color: #333; padding: 10px 30px; 
+            text-decoration: none; font-family: var(--font-eng); text-transform: uppercase; 
+            font-weight: bold; transition: 0.3s; 
+        }
         .btn-view-all:hover { background-color: #333; color: #fff; }
 
         @media (max-width: 768px) {
