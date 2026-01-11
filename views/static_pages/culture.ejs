@@ -109,12 +109,28 @@
             padding-left: 20px;
             margin-bottom: 20px;
         }
+        
+        .culture-text strong {
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* 引用句樣式 */
+        .culture-quote {
+            background-color: #f0f0f0;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #444;
+            font-weight: 600;
+            line-height: 1.6;
+        }
 
         /* --- 圖片與影片區塊 --- */
         .culture-image {
             flex: 1;
             position: relative;
-            /* 確保內容不會溢出 */
             min-width: 0; 
         }
 
@@ -126,7 +142,7 @@
         .culture-image img {
             width: 100%;
             height: auto;
-            max-height: 400px; 
+            max-height: 450px; 
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 10px 10px 0px rgba(232, 162, 162, 0.3);
@@ -162,7 +178,7 @@
         .culture-image figcaption {
             margin-top: 15px;
             font-family: var(--font-main);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #666;
             text-align: center;
             line-height: 1.4;
@@ -171,7 +187,7 @@
         .culture-image figcaption small {
             display: block;
             margin-top: 5px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: #999;
         }
 
@@ -246,8 +262,33 @@
             transform: translateY(-2px);
         }
 
+        /* 虛線分隔線 */
+        .dashed-divider {
+            border: 0;
+            border-top: 3px dashed #ccc;
+            margin: 100px 0;
+            position: relative;
+            height: 0;
+        }
+        
+        .dashed-divider::after {
+            content: '☁'; /* 裝飾符號 */
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 0 15px;
+            color: #ccc;
+            font-size: 1.5rem;
+        }
+
         /* 隱藏區塊 */
-        #full-history-content, #full-language-content {
+        #full-history-content, 
+        #full-language-content, 
+        #full-geography-content, 
+        #full-dailylife-content,
+        #full-nuances-content {
             display: none;
             animation: fadeIn 0.8s ease;
         }
@@ -268,26 +309,26 @@
                 flex-direction: column !important; /* 強制垂直排列 */
                 gap: 30px;
                 margin-bottom: 60px;
-                width: 100%; /* 確保容器滿版 */
+                width: 100%;
             }
             
-            /* [關鍵修正] 強制圖文區塊在手機版佔滿寬度 */
             .culture-text, .culture-image {
                 width: 100%;
-                flex: none; /* 解除 flex: 1 限制，避免被壓縮 */
+                flex: none;
             }
 
             .culture-text h2 { font-size: 1.6rem; }
             
             .video-container { 
                 box-shadow: 5px 5px 0px rgba(232, 162, 162, 0.3); 
-                /* 高度由 padding-bottom 自動計算，無需設定 height */
             }
             
             .culture-image img {
                 box-shadow: 5px 5px 0px rgba(232, 162, 162, 0.3);
                 max-height: 300px;
             }
+            
+            .dashed-divider { margin: 60px 0; }
         }
     </style>
 </head>
@@ -313,19 +354,19 @@
             <div class="culture-image">
                 <figure itemscope itemtype="http://schema.org/ImageObject">
                     <img src="/image/culture/amis.jpg" 
-                         alt="Indigenous group dancers at Amis Music Festival 2016" 
+                         alt="Indigenous group dancers at Amis Music Festival" 
                          title="Amis Dancers representing Taiwan's Austronesian Roots"
                          itemprop="contentUrl">
                     <figcaption itemprop="caption">
                         Amis dancers celebrating at the Music Festival.<br>
-                        <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Indigenous_group_dancers_at_Amis_Music_Festival_2016_IMF0936.jpg" target="_blank" rel="nofollow">HaeB</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small>
+                        <small>Photo by HaeB / CC BY-SA 4.0</small>
                     </figcaption>
                 </figure>
             </div>
         </div>
 
         <div class="read-more-wrapper">
-            <button id="history-btn" class="read-more-btn" onclick="toggleHistory()">Read More History</button>
+            <button id="history-btn" class="read-more-btn" onclick="toggleSection('full-history-content', 'history-btn', 'Read More History', 'Show Less History')">Read More History</button>
         </div>
 
         <div id="full-history-content">
@@ -336,12 +377,10 @@
                     <p>They belong to the vast "Austronesian language family." Starting from Taiwan, they spread across the Pacific in dugout canoes, extending as far as New Zealand and Hawaii. At that time, Taiwan was the ancestral homeland of the Austronesian world.</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch1.jpg" alt="Paiwan females doing traditional needlework" title="Traditional Craftsmanship of Paiwan People" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Traditional needlework by Paiwan women.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Paiwan_females_doing_needlework.jpg" target="_blank" rel="nofollow">Torii Ryūzō (鳥居龍藏)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch1.jpg" alt="Paiwan traditional craftsmanship">
                 </div>
             </div>
+            
             <div class="culture-row">
                 <div class="culture-text">
                     <h3>Chapter 2: Awe and the Legend of the Red Hairs</h3>
@@ -349,12 +388,10 @@
                     <p>This is why legends of the "Red Hairs" still circulate today. When the Dutch asked the Siraya people "Where is this place?", the answer "Tayouan" eventually evolved into the name of this island—"Taiwan."</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch2.jpg" alt="Fort San Domingo in Tamsui" title="Historical Fort San Domingo (Red Hair Castle)" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Fort San Domingo in Tamsui.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E6%B7%A1%E6%B0%B4%E7%B4%85%E6%AF%9B%E5%9F%8E20170809.jpg" target="_blank" rel="nofollow">Tuhsun</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch2.jpg" alt="Fort San Domingo">
                 </div>
             </div>
+
             <div class="culture-row" style="flex-direction: row-reverse;">
                 <div class="culture-text">
                     <h3>Chapter 3: Taking Root—The Localization of "Old Taiwanese"</h3>
@@ -362,12 +399,10 @@
                     <p>Due to the ban on bringing families, they intermarried with Plains Indigenous women. Over centuries, they evolved from sojourners into "Old Taiwanese," with Taiwan becoming their true home rather than just a temporary settlement.</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch3.jpg" alt="Remains of Fort Zeelandia (Anping Old Fort)" title="Anping Old Fort Walls" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Remains of the historic Fort Zeelandia.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:%E5%8F%B0%E7%81%A3%E5%9F%8E%E6%AE%98%E8%B9%9F%EF%BC%88%E5%AE%89%E5%B9%B3%E5%8F%A4%E5%A0%A1%E6%AE%98%E8%B9%9F%EF%BC%89-1.jpg" target="_blank" rel="nofollow">WEI, WAN-CHEN（魏琬臻）</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch3.jpg" alt="Anping Old Fort">
                 </div>
             </div>
+
             <div class="culture-row">
                 <div class="culture-text">
                     <h3>Chapter 4: Rupture Under the Rising Sun Flag</h3>
@@ -375,12 +410,10 @@
                     <p>This was a critical turning point. Taiwanese people retained Han culture but absorbed Japanese modern civilization, creating a unique hybrid identity distinct from China.</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch4.jpg" alt="Taipei Three-Lane Road during Japanese Era" title="Historical Taipei under Japanese Rule" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Taipei's cityscape during the Japanese colonial era.<br><small>Photo by Unknown Author / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch4.jpg" alt="Japanese era architecture">
                 </div>
             </div>
+
             <div class="culture-row" style="flex-direction: row-reverse;">
                 <div class="culture-text">
                     <h3>Chapter 5: Quasi-Colonial Re-migration (1949)</h3>
@@ -388,12 +421,10 @@
                     <p>For locals, this felt like "re-colonization." Martial law and the White Terror suppressed local culture to enforce a Chinese identity. This top-down imposition sowed the seeds of future conflict and the scars of the February 28 Incident.</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch5.jpg" alt="Artwork depicting the 228 Incident by Li Jun" title="Historical Reflection on 228 Incident" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Artistic depiction reflecting the tragedy of the 228 Incident.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:228_by_Li_Jun_(cropped).jpg" target="_blank" rel="nofollow">Li Jun (李雋)</a> / <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="nofollow">Public Domain</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch5.jpg" alt="228 Incident Memorial">
                 </div>
             </div>
+
             <div class="culture-row">
                 <div class="culture-text">
                     <h3>Chapter 6: Generational Confusion & Youthful Clarity</h3>
@@ -401,12 +432,10 @@
                     <p>However, for today's youth born in a democratic Taiwan, this confusion is non-existent. They do not need a distant ancestral origin to define themselves; the land beneath their feet is their only home.</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch6.jpg" alt="Huan Min Military Dependents Village" title="Huan Min Village Community" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Huan Min Village: A symbol of the military dependents' history.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Huan_Min_Village,_The_Toad_Hill_community_2023.jpg" target="_blank" rel="nofollow">Taipei City Government</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">Attribution</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch6.jpg" alt="Military Dependents Village">
                 </div>
             </div>
+
             <div class="culture-row" style="flex-direction: row-reverse;">
                 <div class="culture-text">
                     <h3>Chapter 7: Conclusion—The Definition of Freedom</h3>
@@ -414,12 +443,10 @@
                     <p>Today's Taiwan is no longer just adapting for survival, but is a free nation capable of embracing different memories, where a new generation can confidently say, "I am Taiwanese."</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch7.jpg" alt="Liberty Square Main Gate" title="Liberty Square Symbolizing Democracy" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Liberty Square: The icon of Taiwan's democracy.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/User:Supanut_Arunoprayote" target="_blank" rel="nofollow">Supanut Arunoprayote</a> / <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="nofollow">CC0 1.0</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch7.jpg" alt="Liberty Square">
                 </div>
             </div>
+
             <div class="culture-row">
                 <div class="culture-text special-supplement">
                     <h3>[Special Supplement: The Soul of the Land]</h3>
@@ -428,10 +455,7 @@
                     <p>Whether shining on the international sports stage or serving on the front lines to defend our home, our Indigenous friends have made indelible contributions to the peace and glory of this island.</p>
                 </div>
                 <div class="culture-image">
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <img src="/image/culture/history_ch8.jpg" alt="Vice President at 2025 Taiwan Women's Baseball League Closing Ceremony" title="Modern Indigenous Glory in Sports" itemprop="contentUrl">
-                        <figcaption itemprop="caption">Indigenous athletes shining in Taiwan's women's baseball league.<br><small>Photo by <a href="https://commons.wikimedia.org/wiki/File:11.30_%E5%89%AF%E7%B8%BD%E7%B5%B1%E5%87%BA%E5%B8%AD%E3%80%8C2025%E5%8F%B0%E7%81%A3%E5%A5%B3%E5%AD%90%E6%A3%92%E7%90%83%E8%81%AF%E8%B3%BD%E9%96%89%E5%B9%95%E6%9A%A8%E9%A0%92%E7%8D%8E%E5%85%B8%E7%A6%AE%E3%80%8D_-_54953847137.jpg" target="_blank" rel="nofollow">Taiwan Presidential Office</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow">CC BY 4.0</a></small></figcaption>
-                    </figure>
+                    <img src="/image/culture/history_ch8.jpg" alt="Indigenous Baseball Players">
                 </div>
             </div>
         </div>
@@ -459,11 +483,10 @@
         </div>
 
         <div class="read-more-wrapper">
-            <button id="language-btn" class="read-more-btn" onclick="toggleLanguage()">Read More Languages</button>
+            <button id="language-btn" class="read-more-btn" onclick="toggleSection('full-language-content', 'language-btn', 'Read More Languages', 'Show Less Languages')">Read More Languages</button>
         </div>
 
         <div id="full-language-content">
-            
             <div class="culture-row">
                 <div class="culture-image">
                     <figure>
@@ -558,7 +581,233 @@
                 </div>
                 <div class="culture-image" style="display:none;"></div> 
             </div>
+        </div>
 
+        <div class="culture-row" style="margin-top: 100px;">
+            <div class="culture-text">
+                <h2>The Shape of the Island: The Guardian Mountains, Monsoons, and Survival</h2>
+                <h3>1. The Scale of the Land</h3>
+                <p>Taiwan is an exquisite and diverse island. North to South is approximately 394 km, and East to West at its widest is about 144 km, with a total area of about 36,193 square kilometers. </p>
+                <p>Despite its compact size, the vertical variation is astounding. Mountains and hills cover <strong>70%</strong> of the total area, meaning our daily lives are concentrated in the remaining 30% of flat land.</p>
+            </div>
+            <div class="culture-image">
+                <figure itemscope itemtype="http://schema.org/ImageObject">
+                    <img src="/image/culture/taiwan_central_Mt._range.jpg" alt="Taiwan Central Mountain Range" itemprop="contentUrl">
+                    <figcaption itemprop="caption">
+                        The range of the Central Mountain Range.<br>
+                        <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Taiwan-Central_Mountain_Range.jpg" target="_blank" rel="nofollow">Peellden</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="nofollow">CC BY-SA 3.0</a>, via Wikimedia Commons</small>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="read-more-wrapper">
+            <button id="geo-btn" class="read-more-btn" onclick="toggleSection('full-geography-content', 'geo-btn', 'Read More Geography', 'Show Less Geography')">Read More Geography</button>
+        </div>
+
+        <div id="full-geography-content">
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>2. The Two "Guardian Mountains"</h3>
+                    <p>In Taiwan's news, you will often hear the term <strong>"The Guardian Mountain of the Nation" (護國神山)</strong>. It refers to two different things:</p>
+                    <ul>
+                        <li><strong>Economic Guardian:</strong> Usually refers to <strong>TSMC</strong> (Taiwan Semiconductor Manufacturing Company). It constructs Taiwan's "Silicon Shield" and plays an indispensable role in the global tech supply chain.</li>
+                        <li><strong>Geographic Guardian:</strong> Refers to the <strong>Central Mountain Range</strong> running through the island.</li>
+                    </ul>
+                    <p>Due to Taiwan's location, we frequently face <strong>Typhoons</strong> from the Pacific Ocean (East). This mountain range, with an average height of over 3,000 meters, acts as a critical "wall." When a solid typhoon hits the Central Mountain Range, its structure is often weakened or destroyed. This "Typhoon Cutter" protects the majority of the population living on the western plains (including Taipei, Taichung, and Kaohsiung).</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/typhoon.jpg" alt="Typhoon approaching Taiwan" itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Typhoons approaching from the East.<br>
+                            <small>MODIS image captured by NASA’s Terra satellite, <a href="https://commons.wikimedia.org/wiki/File:Typhoon_Soudelor_2015-08-07_0450Z.jpg" target="_blank" rel="nofollow">Public domain</a>, via Wikimedia Commons</small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text">
+                    <h3>3. City to Wilderness: Rapid Landscape Switching</h3>
+                    <p>Because of the numerous mountains, Taiwan offers a "rapid landscape switch" rarely seen elsewhere. You can shop in modern Taipei and, within 3 to 4 hours, drive up to a high-altitude area of 3,000 meters.</p>
+                    <p><strong>Popular Choices:</strong> Apart from the symbolic <strong>Jade Mountain (Yushan)</strong>, <strong>Hehuanshan</strong> is the most accessible high mountain. <strong>Xueshan (Snow Mountain)</strong> offers a chance to see rare subtropical snow scenes during January to March.</p>
+                </div>
+                <div class="culture-image">
+                    <figure itemscope itemtype="http://schema.org/ImageObject">
+                        <img src="/image/culture/Xue_Mt._hiking.jpg" alt="Xue Mt. hiking group" itemprop="contentUrl">
+                        <figcaption itemprop="caption">
+                            Snow scenery of Xueshan.<br>
+                            <small>Photo by <a href="https://commons.wikimedia.org/wiki/File:Xue_Mt._hiking_group.jpg" target="_blank" rel="nofollow">Rachelyjt2873</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">CC BY-SA 4.0</a>, via Wikimedia Commons</small>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>4. The Monsoons Define the Seasons</h3>
+                    <p>In Taiwan, what determines your outfit is the "wind direction."</p>
+                    <ul>
+                        <li><strong>North (Winter):</strong> Influenced by the <strong>Northeast Monsoon</strong>, Taipei's winter is often rainy. The high humidity creates a "bone-chilling" cold, so carrying rain gear is essential.</li>
+                        <li><strong>South (Summer):</strong> Influenced by the <strong>Southwest Monsoon</strong>, the south often has afternoon thunderstorms in summer. While hot and humid, it brings abundant water resources.</li>
+                    </ul>
+                </div>
+                <div class="culture-image">
+                    <figure>
+                        <img src="/image/culture/taiwan_monsoon.png" alt="Rainy day in Taipei">
+                        <figcaption>Northeast Monsoon and Southwest Monsoon.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text">
+                    <h3>5. Living with Nature: Earthquake Philosophy</h3>
+                    <p>Located on a tectonic boundary, Taiwan experiences frequent earthquakes. Locals have developed a darkly humorous survival philosophy:</p>
+                    <div class="culture-quote">
+                        "Small quakes, no need to run; big quakes, cannot run."<br>
+                        (小震不用跑，大震跑不掉。)
+                    </div>
+                    <p>So, if an earthquake strikes and you see Taiwanese people calmly drinking their Bubble Tea, feel free to stay calm too.</p>
+                    <p><strong>Humidity:</strong> Taiwan is humid all year round. While summer can feel sticky, the upside is that you never have to worry about your nose bleeding from dryness in winter.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashed-divider"></div>
+
+        <div class="culture-row">
+            <div class="culture-text">
+                <h2>A Gentle Balance: Observations on Daily Life in Taiwan</h2>
+                <h3>1. The "Reserving Seats" Culture</h3>
+                <p>In Taiwan's coffee shops or food courts, you often see a strange sight: a phone, an umbrella, or even an expensive bag left on a table with no one sitting there. This is not lost property; it is Taiwan's unique <strong>"occupying seats" culture</strong>.</p>
+                <p>This reflects an extremely high level of <strong>Social Trust</strong>. Many foreigners living in Taiwan often develop a habit of "negligence," thinking that even if they lose their wallet, a kind person will take it to the police station.</p>
+                <p><strong>A Gentle Warning:</strong> While Taiwan is indeed safe, crime is not non-existent. Please enjoy this sense of security but do not lose your basic alertness. Looking after valuables is still a traveler's responsibility.</p>
+            </div>
+            <div class="culture-image">
+                <figure>
+                    <img src="/image/culture/reserving_seat.png" alt="Reserving seats with phone">
+                    <figcaption>Common way to reserve a seat using a phone.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="read-more-wrapper">
+            <button id="life-btn" class="read-more-btn" onclick="toggleSection('full-dailylife-content', 'life-btn', 'Read More Daily Life', 'Show Less Daily Life')">Read More Daily Life</button>
+        </div>
+
+        <div id="full-dailylife-content">
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>2. Beethoven in the Streets (Garbage Trucks)</h3>
+                    <p>Unlike Japan or Australia with fixed garbage collection points, Taiwan uses a unique <strong>"street collection"</strong> model.</p>
+                    <p>When Beethoven's <em>Für Elise</em> plays in the alleys, it's not an ice cream truck—it's the signal. Residents must carry their garbage bags out and wait for the yellow truck to stop. This design of "people chasing trucks" unexpectedly creates a rare social moment in modern cities, where neighbors are forced to meet for five minutes every evening to exchange life updates.</p>
+                </div>
+                <div class="culture-image">
+                    <figure>
+                        <img src="/image/culture/yellow_garbage_truck.png" alt="Yellow Garbage Truck in Taiwan">
+                        <figcaption>Illustration of a Taiwan garbage truck.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text">
+                    <h3>3. The 24/7 Pulse: Mixed Living and Commerce</h3>
+                    <p>Unlike the strict zoning of residential and commercial areas in the US, Taiwan resembles Japan in its habit of <strong>"Mixed-use Housing"</strong>—homes upstairs, shops downstairs.</p>
+                    <p>The peak of this convenience is the high density of <strong>Convenience Stores</strong>. Even in a rural place like Wandan, Pingtung, you will find the glow of a 7-Eleven or FamilyMart around the corner. The rural-urban gap isn't about whether you can buy coffee, but whether the view outside is a skyscraper or a rice paddy.</p>
+                </div>
+                <div class="culture-image">
+                    <img src="/image/culture/familymart.png" alt="FamilyMart in Taiwan">
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>4. The Definition of Freedom: Inclusivity</h3>
+                    <p>Walking on the streets of Taiwan, you will find that "freedom" here is embodied in the inclusivity of diverse values. You might see a rainbow flag flying at a coffee shop right next to a traditional, incense-filled Mazu temple; or see fashionable youth squatting by a roadside stall eating a 30 NTD bowl of Braised Pork Rice.</p>
+                    <p>This mix extends to our democracy. Taiwan is the first country in Asia to legalize same-sex marriage and the first in East Asia to elect a female president. Perhaps because of our complex history of being colonized, we know the pain of being defined by others, making us more willing to embrace diverse identities.</p>
+                </div>
+                <div class="culture-image">
+                    <figure>
+                        <img src="/image/culture/usualscenaryintaiwan.png" alt="Common street scenery">
+                        <figcaption>Common street scenery.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashed-divider"></div>
+
+        <div class="culture-row">
+            <div class="culture-text">
+                <h2>The Sounds of Taiwan: Particles, Politeness, and Puns</h2>
+                <h3>1. The Magic Particles (Sentence-final particles)</h3>
+                <p>If you know a little Mandarin, you will find that Taiwanese speech sounds particularly "soft." We rely heavily on <strong>Sentence-final particles</strong> to modify our tone. Without them, we feel we sound too fierce or serious.</p>
+                <ul>
+                    <li><strong>La (啦):</strong> Emphasizing or pleading, sometimes with a bit of whining or helplessness. <br><em>Example: "Hao-la" (Okay, fine / Come on).</em></li>
+                    <li><strong>Ne (捏 / Neh):</strong> Surprise, seeking agreement, or strengthening tone. <br><em>Example: "Zhen-de-neh" (It really is true!).</em></li>
+                    <li><strong>O (喔 / Oh):</strong> Reminder, warning, or friendly suggestion. <br><em>Example: "Xiao-xin-oh" (Be careful~).</em></li>
+                    <li><strong>Ye (耶 / Yay):</strong> Uncertainty or finding something interesting. <br><em>Example: "Hao-xiang-shi-ye" (I think that might be right).</em></li>
+                </ul>
+            </div>
+            <div class="culture-image">
+                <figure>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/jOx_NG5hnDo" title="Taiwanese Particles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="100%"></iframe>
+                    </div>
+                    <figcaption>The charm lies in the way we speak.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="read-more-wrapper">
+            <button id="nuance-btn" class="read-more-btn" onclick="toggleSection('full-nuances-content', 'nuance-btn', 'Read More Nuances', 'Show Less Nuances')">Read More Nuances</button>
+        </div>
+
+        <div id="full-nuances-content">
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>2. The National Mantra: "Bu Haoyisi" (不好意思)</h3>
+                    <p>In Taiwan, you will definitely hear this phrase 100 times a day: <strong>"Bu-hao-yisi"</strong>. Literally, it means "Embarrassed," but in life, it equals "Excuse me," "Sorry," "May I," and even "Thank you."</p>
+                    <p>Interestingly, while many Taiwanese think they are more direct than the Japanese, our communication is far less direct than in China. Our speech is full of <strong>buffering</strong>. We rarely say a hard "No," preferring to wrap a rejection in a string of "Bu-hao-yisi" to avoid making the other person feel awkward.</p>
+                </div>
+                <div class="culture-image">
+                    <figure>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Ef249jZuibs" title="Polite gesture in Taiwan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="100%"></iframe>
+                        </div>
+                        <figcaption>Polite gesture in Taiwan.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row">
+                <div class="culture-text">
+                    <h3>3. The Obsession with Puns (Harmonic Humor)</h3>
+                    <p>If you understand Mandarin and Taiwanese (Hokkien), the streets of Taiwan are a comedy show. Shops love using <strong>Homophones</strong> for naming. Some jokes only make sense when read in Taiwanese.</p>
+                    <p><strong>Classic Case:</strong> A shop named <strong>"I'm So Gay"</strong>. Foreign tourists might be shocked, but it's actually a stall selling <strong>Salted Crispy Chicken</strong>. In Taiwanese Hokkien, "Salted Crispy Chicken" (<em>Kiâm-so-ke</em>) sounds exactly like the English "I'm so gay." This is our unique, cross-lingual sense of humor.</p>
+                </div>
+                <div class="culture-image">
+                    <figure>
+                        <img src="/image/culture/iamsogay.png" alt="I'm So Gay Salted Chicken Sign">
+                        <figcaption>📍 No. 91, Liemei St., Xitun Dist., Taichung City<br>(台中市西屯區烈美街91號)</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="culture-row" style="flex-direction: row-reverse;">
+                <div class="culture-text">
+                    <h3>4. Shop Talk Survival Guide</h3>
+                    <p>Walk into a 7-Eleven or a Bubble Tea shop, and the staff might fire a machine-gun string of questions at you. Don't panic, they are usually asking these three things:</p>
+                    <ul>
+                        <li><strong>"Tong-bian Zai-ju?" (統編載具?)</strong> <br><em>Meaning:</em> Do you need a Tax ID or a Cloud Receipt? <br><em>Answer:</em> As a tourist, just shake your head and say "Bu-yong" (No need).</li>
+                        <li><strong>"Tian-du Bing-kuai?" (甜度冰塊?)</strong> <br><em>Meaning:</em> Sugar and Ice level? <br><em>Answer:</em> "Ban-tang Shao-bing" (Half sugar, less ice) is the golden standard for locals.</li>
+                        <li><strong>"Xu-yao dai-zi ma?" (需要袋子嗎?)</strong> <br><em>Meaning:</em> Do you need a plastic bag? <br><em>Answer:</em> They cost 1-2 NTD.</li>
+                    </ul>
+                </div>
+                </div>
         </div>
 
     </div>
@@ -566,31 +815,18 @@
     <%- include('../partials/footer') %>
 
     <script>
-        function toggleHistory() {
-            var content = document.getElementById("full-history-content");
-            var btn = document.getElementById("history-btn");
+        // 通用切換函式 (Unified Toggle Function)
+        function toggleSection(contentId, btnId, showText, hideText) {
+            var content = document.getElementById(contentId);
+            var btn = document.getElementById(btnId);
 
             if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
-                btn.innerHTML = "Show Less History";
+                btn.innerHTML = hideText;
             } else {
                 content.style.display = "none";
-                btn.innerHTML = "Read More History";
-                document.querySelector('.culture-row h2').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function toggleLanguage() {
-            var content = document.getElementById("full-language-content");
-            var btn = document.getElementById("language-btn");
-
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                btn.innerHTML = "Show Less Languages";
-            } else {
-                content.style.display = "none";
-                btn.innerHTML = "Read More Languages";
-                // 捲動回語言標題
+                btn.innerHTML = showText;
+                // 捲動回該區塊的標題位置
                 btn.parentElement.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
             }
         }
