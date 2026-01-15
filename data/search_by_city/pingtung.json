@@ -2,7 +2,7 @@
   {
     "id": "pt-01",
     "type": "1-Day Tour",
-    "theme": "Theme A",
+    "theme": "Urban Aesthetics",
     "title": "Urban Aesthetics & Creative Rebirth",
     "subTitle": "城市美學與文創再生：屏東市一日遊",
     "tags": ["#PingtungCity", "#Culture", "#Arts"],
@@ -13,30 +13,42 @@
       {
         "time": "Morning",
         "name": "Pingtung Public Library (屏東縣立圖書館總館)",
-        "address": "No. 69, Dalian Rd., Pingtung City, Pingtung County",
+        "address": "No. 69, Dalian Rd., Pingtung City",
         "mapLink": "https://goo.gl/maps/exampleLibrary",
-        "description": "Known as the 'Library in the Forest', this 30-year-old cultural center was transformed into a glass-walled marvel surrounded by a 5-hectare camphor tree forest. It perfectly blends reading with nature."
+        "coords": [22.686, 120.493],
+        "image": "/image/search_by_city/pingtung/library.jpg",
+        "tags": ["Photography", "Nature", "Indoor"],
+        "description": "Known as the 'Library in the Forest', this 30-year-old cultural center was transformed into a glass-walled marvel surrounded by a 5-hectare camphor tree forest. It perfectly blends reading with nature.",
+        "tips": "The best photo spot is the glass corridor on the 1st floor. Closed on Mondays."
       },
       {
         "time": "Lunch",
         "name": "Victory Star Village (勝利星村創意生活園區)",
-        "address": "No. 106, Qingdao St., Pingtung City, Pingtung County",
+        "address": "No. 106, Qingdao St., Pingtung City",
         "mapLink": "https://goo.gl/maps/exampleVictory",
-        "description": "Historically known as the 'General's Village', this is the largest preserved cluster of Japanese-style military dormitories in Taiwan. It ranked No. 1 in 2025 for its vibrant mix of independent bookstores, cafes, and artisan shops."
+        "coords": [22.678, 120.485],
+        "image": "/image/search_by_city/pingtung/victory_village.jpg",
+        "tags": ["Food", "History", "Shopping"],
+        "description": "Historically known as the 'General's Village', this is the largest preserved cluster of Japanese-style military dormitories in Taiwan. It ranked No. 1 in 2025 for its vibrant mix of independent bookstores, cafes, and artisan shops.",
+        "tips": "Restaurants here are very popular on weekends, reservation is highly recommended."
       },
       {
         "time": "Afternoon",
         "name": "Heito 1909 (屏東縣民公園)",
-        "address": "Fuxing Rd., Pingtung City, Pingtung County",
+        "address": "Fuxing Rd., Pingtung City",
         "mapLink": "https://goo.gl/maps/exampleHeito",
-        "description": "'Heito' is the old Japanese name for Pingtung. This site was once a restricted paper pulp factory hidden underground for decades. Now, it's a cyberpunk-style park featuring rusty steel structures and industrial ruins."
+        "coords": [22.662, 120.488],
+        "image": "/image/search_by_city/pingtung/heito_park.jpg",
+        "tags": ["Industrial", "Walking", "Sunset"],
+        "description": "'Heito' is the old Japanese name for Pingtung. This site was once a restricted paper pulp factory hidden underground for decades. Now, it's a cyberpunk-style park featuring rusty steel structures and industrial ruins.",
+        "tips": "Visit around 4:30 PM to catch the sunset light on the rusty structures."
       }
     ]
   },
   {
     "id": "pt-02",
     "type": "1-Day Tour",
-    "theme": "Theme B",
+    "theme": "Indigenous Culture",
     "title": "Tribes Above the Clouds: Shenshan Line",
     "subTitle": "雲端上的部落：神山線深度一日遊",
     "tags": ["#WutaiTownship", "#Indigenous", "#Nature"],
@@ -49,28 +61,40 @@
         "name": "Guchuan Bridge (谷川大橋)",
         "address": "Wutai Township, Pingtung County",
         "mapLink": "https://goo.gl/maps/exampleBridge",
-        "description": "Standing 99 meters tall (about 33 stories), this is the highest bridge in Taiwan. The pillars are decorated with the 'Hundred-Pacer Snake' pattern, a sacred guardian spirit in Rukai mythology."
+        "coords": [22.738, 120.695],
+        "image": "/image/search_by_city/pingtung/guchuan_bridge.jpg",
+        "tags": ["Architecture", "Viewpoint"],
+        "description": "Standing 99 meters tall (about 33 stories), this is the highest bridge in Taiwan. The pillars are decorated with the 'Hundred-Pacer Snake' pattern, a sacred guardian spirit in Rukai mythology.",
+        "tips": "The bus will slow down here, get your camera ready!"
       },
       {
         "time": "Lunch",
         "name": "Wutai Tribe (霧台部落)",
-        "address": "Yanban Ln., Wutai Township, Pingtung County",
+        "address": "Yanban Ln., Wutai Township",
         "mapLink": "https://goo.gl/maps/exampleWutai",
-        "description": "A Rukai settlement famous for its 'breathing' slate houses built from local black shale. Don't miss the 'Shenshan Aiyu Jelly', a dessert made from wild figs native to Taiwan's high mountains."
+        "coords": [22.748, 120.728],
+        "image": "/image/search_by_city/pingtung/wutai_church.jpg",
+        "tags": ["Food", "Culture", "Church"],
+        "description": "A Rukai settlement famous for its 'breathing' slate houses built from local black shale. Don't miss the 'Shenshan Aiyu Jelly', a dessert made from wild figs native to Taiwan's high mountains.",
+        "tips": "Try the 'Millet Donuts' (小米甜甜圈) near the church."
       },
       {
         "time": "Afternoon",
         "name": "Rinari Tribe (禮納里部落)",
         "address": "Majia Township, Pingtung County",
         "mapLink": "https://goo.gl/maps/exampleRinari",
-        "description": "Known as the 'Provence of Taiwan', this village features European-style wooden cottages built for the indigenous people after Typhoon Morakot. It offers a unique visual contrast with traditional totem decorations."
+        "coords": [22.698, 120.648],
+        "image": "/image/search_by_city/pingtung/rinari.jpg",
+        "tags": ["Walking", "Views"],
+        "description": "Known as the 'Provence of Taiwan', this village features European-style wooden cottages built for the indigenous people after Typhoon Morakot. It offers a unique visual contrast with traditional totem decorations.",
+        "tips": "Please respect residents' privacy when taking photos of houses."
       }
     ]
   },
   {
     "id": "pt-03",
     "type": "1-Day Tour",
-    "theme": "Theme C",
+    "theme": "Seafood & Faith",
     "title": "Faith & Flavors: Peninsula Gateway",
     "subTitle": "信仰與海味：半島入口美食巡禮",
     "tags": ["#DonggangTownship", "#ChechengTownship", "#Food"],
@@ -81,30 +105,42 @@
       {
         "time": "Morning",
         "name": "Dapeng Bay (大鵬灣遊憩區)",
-        "address": "No. 631, Dapeng Bay Ring Rd., Donggang Township, Pingtung County",
+        "address": "No. 631, Dapeng Bay Ring Rd., Donggang",
         "mapLink": "https://goo.gl/maps/exampleDapeng",
-        "description": "Once a Japanese seaplane base during WWII, it is now Taiwan's largest lagoon. The cross-sea bridge puts on a spectacular 'opening show' to let boats pass."
+        "coords": [22.451, 120.473],
+        "image": "/image/search_by_city/pingtung/dapeng_bay.jpg",
+        "tags": ["Cycling", "Lagoon"],
+        "description": "Once a Japanese seaplane base during WWII, it is now Taiwan's largest lagoon. The cross-sea bridge puts on a spectacular 'opening show' to let boats pass.",
+        "tips": "Rent a bike to cycle around the lagoon path."
       },
       {
         "time": "Lunch",
-        "name": "Donggang Seafood Market (東港)",
+        "name": "Donggang Seafood Market (華僑市場)",
         "address": "Donggang Township, Pingtung County",
         "mapLink": "https://goo.gl/maps/exampleDonggang",
-        "description": "Famous for Bluefin Tuna (May-July), known as the 'Porsche of the Sea'. Also try 'Rou-Guo' (肉粿), a savory rice cake soup unique to this town."
+        "coords": [22.466, 120.444],
+        "image": "/image/search_by_city/pingtung/donggang_market.jpg",
+        "tags": ["Seafood", "Local Market"],
+        "description": "Famous for Bluefin Tuna (May-July), known as the 'Porsche of the Sea'. Also try 'Rou-Guo' (肉粿), a savory rice cake soup unique to this town.",
+        "tips": "Buy fresh sashimi here for the best price in Taiwan."
       },
       {
         "time": "Afternoon",
         "name": "Checheng Fu'an Temple (車城福安宮)",
-        "address": "No. 51, Fu'an Rd., Checheng Township, Pingtung County",
+        "address": "No. 51, Fu'an Rd., Checheng Township",
         "mapLink": "https://goo.gl/maps/exampleFuan",
-        "description": "The largest Land God temple in Southeast Asia. It features a unique 'money-counting' furnace that uses aerodynamics to suck joss paper in automatically."
+        "coords": [22.071, 120.713],
+        "image": "/image/search_by_city/pingtung/fuan_temple.jpg",
+        "tags": ["Temple", "Culture"],
+        "description": "The largest Land God temple in Southeast Asia. It features a unique 'money-counting' furnace that uses aerodynamics to suck joss paper in automatically.",
+        "tips": "Buy the famous 'Salted Duck Eggs' and 'Preserved Onions' sold nearby."
       }
     ]
   },
   {
     "id": "pt-04",
     "type": "2-Day Tour",
-    "theme": "Nature",
+    "theme": "Ecological Serenity",
     "title": "Ecological Serenity: Escaping Crowds",
     "subTitle": "國境之南的生態與靜謐",
     "tags": ["#HengchunTownship", "#Nature", "#Ocean"],
@@ -115,30 +151,42 @@
       {
         "time": "Day 1 Afternoon",
         "name": "Wanlitong (萬里桐)",
-        "address": "Wanlitong, Hengchun Township, Pingtung County",
+        "address": "Wanlitong, Hengchun Township",
         "mapLink": "https://goo.gl/maps/exampleWanlitong",
-        "description": "A quiet fishing village and a top snorkeling spot with rich coral reefs. Unlike crowded beaches, it offers peace and was a filming location for 'Cape No. 7'."
+        "coords": [21.996, 120.706],
+        "image": "/image/search_by_city/pingtung/wanlitong.jpg",
+        "tags": ["Snorkeling", "Sunset"],
+        "description": "A quiet fishing village and a top snorkeling spot with rich coral reefs. Unlike crowded beaches, it offers peace and was a filming location for 'Cape No. 7'.",
+        "tips": "Best place for snorkeling beginners due to calm waters."
       },
       {
         "time": "Day 2 Morning",
         "name": "Longpan Park (龍磐公園)",
-        "address": "Provincial Hwy 26, Hengchun Township, Pingtung County",
+        "address": "Provincial Hwy 26, Hengchun Township",
         "mapLink": "https://goo.gl/maps/exampleLongpan",
-        "description": "A vast limestone tableland with no trees or buildings, offering unobstructed views of the Pacific Ocean. It is a world-class spot for sunrise and stargazing."
+        "coords": [21.930, 120.843],
+        "image": "/image/search_by_city/pingtung/longpan.jpg",
+        "tags": ["Views", "Nature"],
+        "description": "A vast limestone tableland with no trees or buildings, offering unobstructed views of the Pacific Ocean. It is a world-class spot for sunrise and stargazing.",
+        "tips": "Extremely windy! Hold onto your hats and sunglasses."
       },
       {
         "time": "Day 2 Afternoon",
         "name": "Eluanbi Lighthouse (鵝鑾鼻燈塔)",
-        "address": "No. 90, Dengta Rd., Hengchun Township, Pingtung County",
+        "address": "No. 90, Dengta Rd., Hengchun Township",
         "mapLink": "https://goo.gl/maps/exampleLighthouse",
-        "description": "Known as the 'Light of East Asia'. Built in 1881 (Qing Dynasty) as a fortress to protect against indigenous raids, making it the only armed lighthouse in the world."
+        "coords": [21.902, 120.852],
+        "image": "/image/search_by_city/pingtung/kenting_lighthouse.jpg",
+        "tags": ["History", "Landmark"],
+        "description": "Known as the 'Light of East Asia'. Built in 1881 (Qing Dynasty) as a fortress to protect against indigenous raids, making it the only armed lighthouse in the world.",
+        "tips": "Great for a relaxing walk on the large grassy area."
       }
     ]
   },
   {
     "id": "pt-05",
     "type": "3-Day Tour (Part 1)",
-    "theme": "Full Perspective",
+    "theme": "Historical Journey",
     "title": "Time Tunnel: From Military Villages to Hakka Culture",
     "subTitle": "從眷村到客家文化：屏東全域透視 (Day 1)",
     "tags": ["#PingtungCity", "#NeipuTownship", "#History"],
@@ -149,23 +197,31 @@
       {
         "time": "Morning",
         "name": "Heito 1909 (屏東縣民公園)",
-        "address": "Fuxing Rd., Pingtung City, Pingtung County",
+        "address": "Fuxing Rd., Pingtung City",
         "mapLink": "https://goo.gl/maps/exampleHeito",
-        "description": "Witness the transformation of a sugar factory ruin into a modern design masterpiece. The rusty structures tell the story of Pingtung's industrial past."
+        "coords": [22.662, 120.488],
+        "image": "/image/search_by_city/pingtung/heito_park.jpg",
+        "tags": ["Industrial", "Design"],
+        "description": "Witness the transformation of a sugar factory ruin into a modern design masterpiece. The rusty structures tell the story of Pingtung's industrial past.",
+        "tips": "There is a shallow water area where children can play."
       },
       {
         "time": "Afternoon",
         "name": "Liudui Hakka Cultural Park (六堆客家文化園區)",
-        "address": "No. 588, Xinyi Rd., Neipu Township, Pingtung County",
+        "address": "No. 588, Xinyi Rd., Neipu Township",
         "mapLink": "https://goo.gl/maps/exampleLiudui",
-        "description": "'Liudui' refers to the six militia units formed by Hakka people to defend their homes. The park showcases umbrella-shaped solar structures and traditional paper umbrella crafts."
+        "coords": [22.658, 120.558],
+        "image": "/image/search_by_city/pingtung/liudui_hakka.jpg",
+        "tags": ["Hakka", "Culture"],
+        "description": "'Liudui' refers to the six militia units formed by Hakka people to defend their homes. The park showcases umbrella-shaped solar structures and traditional paper umbrella crafts.",
+        "tips": "Try the Hakka Lei-Cha (Pounded Tea) DIY activity."
       }
     ]
   },
   {
     "id": "pt-06",
     "type": "3-Day Tour (Part 2&3)",
-    "theme": "Full Perspective",
+    "theme": "Adventure & Nature",
     "title": "Railways, Ocean & Secret Sands",
     "subTitle": "鐵道、海洋與秘境沙灘 (Day 2 & 3)",
     "tags": ["#ChaozhouTownship", "#HengchunTownship", "#Adventure"],
@@ -176,23 +232,35 @@
       {
         "time": "Day 2 Morning",
         "name": "Chaozhou Railway Park (潮州鐵道園區)",
-        "address": "Guangfu Rd., Chaozhou Township, Pingtung County",
+        "address": "Guangfu Rd., Chaozhou Township",
         "mapLink": "https://goo.gl/maps/exampleRail",
-        "description": "The only railway maintenance depot in Taiwan open to tourists. It features 'Giant' train models and offers a peek into the history of Taiwan's railways."
+        "coords": [22.535, 120.535],
+        "image": "/image/search_by_city/pingtung/railway_park.jpg",
+        "tags": ["Railway", "History"],
+        "description": "The only railway maintenance depot in Taiwan open to tourists. It features 'Giant' train models and offers a peek into the history of Taiwan's railways.",
+        "tips": "Good for train enthusiasts."
       },
       {
         "time": "Day 2 Night",
         "name": "Overnight at NMMBA (夜宿海生館)",
         "address": "Checheng Township, Pingtung County",
         "mapLink": "https://goo.gl/maps/exampleNMMBA",
-        "description": "A bucket-list experience where you sleep in the underwater tunnel, waking up to sharks and rays swimming above you."
+        "coords": [22.046, 120.697],
+        "image": "/image/search_by_city/pingtung/aquarium.jpg",
+        "tags": ["Aquarium", "Sleepover"],
+        "description": "A bucket-list experience where you sleep in the underwater tunnel, waking up to sharks and rays swimming above you.",
+        "tips": "Must book months in advance!"
       },
       {
         "time": "Day 3 Afternoon",
         "name": "Fengchuisha (風吹砂)",
-        "address": "Provincial Hwy 26, Hengchun Township, Pingtung County",
+        "address": "Provincial Hwy 26, Hengchun Township",
         "mapLink": "https://goo.gl/maps/exampleFeng",
-        "description": "Meaning 'Wind Blowing Sand'. In winter, strong winds blow sand from the riverbed up the cliffs, creating unique sand dunes on top of the coastal tableland."
+        "coords": [21.933, 120.839],
+        "image": "/image/search_by_city/pingtung/fengchuisha.jpg",
+        "tags": ["Nature", "Geology"],
+        "description": "Meaning 'Wind Blowing Sand'. In winter, strong winds blow sand from the riverbed up the cliffs, creating unique sand dunes on top of the coastal tableland.",
+        "tips": "Best viewed in winter to see the sandstorm effect."
       }
     ]
   },
@@ -212,21 +280,33 @@
         "name": "Vase Rock (花瓶岩)",
         "address": "Liuqiu Township, Pingtung County",
         "mapLink": "https://goo.gl/maps/exampleVaseRock",
-        "description": "The landmark of Xiao Liuqiu. A perfect spot for snorkeling to see green sea turtles up close in shallow waters."
+        "coords": [22.353, 120.380],
+        "image": "/image/search_by_city/pingtung/vase_rock.jpg",
+        "tags": ["Snorkeling", "Turtles"],
+        "description": "The landmark of Xiao Liuqiu. A perfect spot for snorkeling to see green sea turtles up close in shallow waters.",
+        "tips": "Do not touch the sea turtles; heavy fines apply!"
       },
       {
         "time": "Day 2 AM",
         "name": "Black Dwarf Cave (烏鬼洞)",
         "address": "Liuqiu Township, Pingtung County",
         "mapLink": "https://goo.gl/maps/exampleBlackDwarf",
-        "description": "A limestone cave maze formed by coral reefs. The surrounding coastal boardwalk offers stunning ocean views and sounds of waves."
+        "coords": [22.333, 120.353],
+        "image": "/image/search_by_city/pingtung/black_dwarf.jpg",
+        "tags": ["Cave", "Walking"],
+        "description": "A limestone cave maze formed by coral reefs. The surrounding coastal boardwalk offers stunning ocean views and sounds of waves.",
+        "tips": "Bring a flashlight if you want to explore deeper caves."
       },
       {
         "time": "Day 2 PM",
         "name": "Intertidal Zone (潮間帶生態導覽)",
-        "address": "Dafuping/Shanfu/Yuchengwei, Liuqiu Township",
+        "address": "Dafuping/Shanfu/Yuchengwei",
         "mapLink": "https://goo.gl/maps/exampleIntertidal",
-        "description": "Join a guided tour during low tide to see sea urchins, sea cucumbers, and starfish. A strict 'Look but Don't Touch' policy applies to protect the ecosystem."
+        "coords": [22.338, 120.365],
+        "image": "/image/search_by_city/pingtung/intertidal.jpg",
+        "tags": ["EcoTour", "Nature"],
+        "description": "Join a guided tour during low tide to see sea urchins, sea cucumbers, and starfish. A strict 'Look but Don't Touch' policy applies to protect the ecosystem.",
+        "tips": "Must wear provided water shoes to protect the coral."
       }
     ]
   }

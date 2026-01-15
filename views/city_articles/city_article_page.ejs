@@ -7,247 +7,255 @@
     <link rel="icon" href="/image/logo.png" type="image/png">
     
     <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="/libs/leaflet/leaflet.css" />
+    <script src="/libs/leaflet/leaflet.js"></script>
 
     <style>
         /* =========================================
-           文章內頁專屬樣式 (繼承自 style.css)
+           文章內頁專屬佈局 (Grid Layout)
            ========================================= */
+        .page-wrapper {
+            max-width: 1300px;
+            margin: 40px auto 100px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 250px 1fr; /* 左側導覽固定寬度，右側自適應 */
+            gap: 50px;
+            align-items: start;
+        }
 
-        /* 1. 沉浸式 Hero Header */
-        .article-hero {
-            width: 100%;
-            height: 60vh;
-            min-height: 400px;
-            /* 動態讀取文章封面圖 */
+        /* --- 1. 左側懸浮導覽 (Sticky Sidebar) --- */
+        .article-sidebar {
+            position: sticky;
+            top: 100px; /* 距離頂部 Header 的距離 */
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .toc-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 12px;
+        }
+
+        .toc-list a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.95rem;
+            display: block;
+            transition: 0.2s;
+            border-left: 3px solid transparent;
+            padding-left: 10px;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-color);
+            border-left-color: var(--accent-color);
+        }
+
+        .back-link-sidebar {
+            display: block;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+            font-size: 0.85rem;
+            color: #999;
+            text-decoration: none;
+        }
+        .back-link-sidebar:hover { color: #333; }
+
+        /* --- 2. 右側主要內容區 --- */
+        .article-main {
+            min-width: 0; /* 防止 Grid 破版 */
+        }
+
+        /* Hero 區域 (縮小版，讓重心在內容) */
+        .mini-hero {
+            position: relative;
+            height: 300px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
             background-image: url('<%= article.heroImage %>');
             background-size: cover;
             background-position: center;
-            position: relative;
         }
-
-        .article-hero::after {
-            content: '';
+        .mini-hero-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3); /* 增加一層暗色濾鏡讓文字更清楚 */
-        }
-
-        .hero-content {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 900px;
-            text-align: center;
+            bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 40px 30px 20px;
             color: #fff;
-            z-index: 2;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
+        .mini-hero h1 { font-size: 2.2rem; margin: 0; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .mini-hero p { font-size: 1.1rem; opacity: 0.9; margin: 5px 0 0; font-family: var(--font-serif); }
 
-        .hero-tags {
-            margin-bottom: 15px;
-        }
-        .hero-tag {
-            background: var(--accent-color);
-            color: #fff;
-            padding: 5px 12px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border-radius: 4px;
-            margin: 0 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: var(--font-eng);
-        }
-
-        .hero-title {
-            font-family: var(--font-eng);
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1.2;
-            margin: 0 0 10px;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            font-weight: normal;
-            opacity: 0.9;
-            font-family: var(--font-serif);
-        }
-
-        /* 2. 文章內容容器 */
-        .content-container {
-            max-width: 800px;
-            margin: 60px auto 100px;
-            padding: 0 20px;
-        }
-
-        /* 簡介文字 */
-        .intro-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #444;
-            text-align: justify;
+        /* --- A. 快讀資訊欄 (Flowchart Section) --- */
+        .quick-fact-box {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
             margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
-            font-family: var(--font-main);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
-        /* 交通資訊卡 */
-        .transport-card {
-            background-color: #f8f9fa;
-            border-left: 5px solid var(--accent-color);
-            padding: 25px;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 50px;
+        .fact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
         }
-        .transport-title {
-            font-family: var(--font-eng);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
+        .fact-badge {
+            background: #333; color: #fff; padding: 5px 12px;
+            border-radius: 20px; font-size: 0.8rem; font-weight: bold;
+        }
+
+        /* 流程圖樣式 */
+        .flow-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            flex-wrap: wrap; /* 手機版自動換行 */
         }
-        .transport-info {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.6;
-            font-family: var(--font-main);
-        }
-
-        /* 3. 景點時間軸樣式 */
-        .itinerary-section-title {
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            font-family: var(--font-eng);
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .timeline {
             position: relative;
-            padding-left: 30px;
         }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            bottom: 0;
-            width: 2px;
-            background: #e0e0e0;
-        }
-
-        .spot-card {
-            position: relative;
-            margin-bottom: 50px;
-        }
-        
-        /* 時間點圓圈 */
-        .spot-dot {
-            position: absolute;
-            left: -36px;
-            top: 5px;
-            width: 14px;
-            height: 14px;
+        .flow-circle {
+            width: 40px; height: 40px;
             background: var(--accent-color);
+            color: #fff;
             border-radius: 50%;
-            border: 3px solid #fff;
-            box-shadow: 0 0 0 2px var(--accent-color);
+            display: flex; justify-content: center; align-items: center;
+            font-weight: bold; margin-bottom: 8px;
+            box-shadow: 0 3px 8px rgba(232, 162, 162, 0.4);
         }
+        .flow-text { font-size: 0.9rem; font-weight: 700; color: #333; }
+        .flow-arrow { color: #ccc; font-size: 1.2rem; }
 
-        .spot-time {
-            font-family: var(--font-eng);
-            font-weight: bold;
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        .spot-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 0 5px;
-            color: #222;
-            font-family: var(--font-main);
-        }
-
-        .spot-address {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-family: var(--font-main);
-        }
-
-        .spot-desc {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.7;
-            background: #fff;
-            font-family: var(--font-main);
-        }
-
-        /* Google Map 按鈕 */
-        .btn-map-link {
-            display: inline-block;
-            background: #fff;
+        /* --- B. Leaflet 地圖區 --- */
+        #map-section { margin-bottom: 60px; }
+        .map-wrapper {
+            height: 400px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 1px solid #ddd;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: #555;
-            text-decoration: none;
-            transition: 0.3s;
-            margin-left: 10px;
-            vertical-align: middle;
-            font-family: var(--font-eng);
-        }
-        .btn-map-link:hover {
-            background: #4285F4;
-            color: #fff;
-            border-color: #4285F4;
+            z-index: 1; /* 避免遮擋 Sidebar */
         }
 
-        /* 返回按鈕 */
-        .back-nav {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid #eee;
-        }
-        .btn-back {
-            display: inline-block;
-            text-decoration: none;
-            color: #333;
-            border: 1px solid #333;
-            padding: 12px 35px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-family: var(--font-eng);
-            transition: 0.3s;
-            /* 讓文字首字母大寫，看起來更專業 */
-            text-transform: capitalize; 
-        }
-        .btn-back:hover {
-            background: #333;
-            color: #fff;
+        /* --- C. 模組化景點卡 (Card Style) --- */
+        .spot-module {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            transition: transform 0.3s ease;
+            scroll-margin-top: 120px; /* 錨點定位修正 */
         }
         
-        /* 手機版調整 */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2rem; }
-            .content-container { padding: 0 20px; }
+        .spot-module:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .spot-header {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fcfcfc;
+            border-bottom: 1px solid #eee;
+        }
+        .spot-title-group h3 { margin: 0; font-size: 1.4rem; color: #333; }
+        .spot-title-group .time-badge { 
+            font-size: 0.8rem; color: var(--accent-color); font-weight: bold; text-transform: uppercase;
+        }
+        
+        .spot-tags span {
+            background: #eee; color: #666;
+            padding: 4px 10px; border-radius: 4px;
+            font-size: 0.75rem; margin-left: 5px;
+        }
+
+        .spot-body {
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* 左圖右文 */
+            gap: 25px;
+        }
+
+        .spot-img-box img {
+            width: 100%; height: 250px; 
+            object-fit: cover; border-radius: 8px;
+        }
+
+        .spot-info-col h4 {
+            font-size: 1rem; color: var(--accent-color); 
+            margin: 0 0 10px; text-transform: uppercase;
+        }
+        .spot-desc { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 20px; }
+        
+        /* 避坑指南 Pro-Tips */
+        .pro-tips {
+            background: #fff8f8;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .pro-tips strong { color: #d9534f; }
+
+        .spot-meta {
+            padding: 15px 25px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: #777;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-map-nav {
+            color: #4285F4; text-decoration: none; font-weight: bold;
+            border: 1px solid #4285F4; padding: 4px 12px; border-radius: 20px;
+            transition: 0.2s;
+        }
+        .btn-map-nav:hover { background: #4285F4; color: #fff; }
+
+        /* RWD 手機版 */
+        @media (max-width: 900px) {
+            .page-wrapper { grid-template-columns: 1fr; }
+            .article-sidebar { display: none; /* 手機版暫時隱藏側邊欄，或改到底部 */ }
+            .spot-body { grid-template-columns: 1fr; }
+            .spot-img-box img { height: 200px; }
         }
     </style>
 </head>
@@ -255,68 +263,178 @@
 
     <%- include('../partials/header') %>
 
-    <header class="article-hero">
-        <div class="hero-content">
-            <div class="hero-tags">
-                <% article.tags.forEach(function(tag){ %>
-                    <span class="hero-tag"><%= tag %></span>
-                <% }); %>
-            </div>
-            
-            <h1 class="hero-title">
-                [<%= article.type %>] <%= article.title %>
-            </h1>
-            
-            <h2 class="hero-subtitle"><%= article.subTitle %></h2>
-        </div>
-    </header>
-
-    <main class="content-container">
+    <div class="page-wrapper">
         
-        <div class="intro-text">
-            <p><%= article.intro %></p>
-        </div>
-
-        <div class="transport-card">
-            <div class="transport-title">🚆 Transportation Guide</div>
-            <div class="transport-info">
-                <%- article.transportation %> 
-            </div>
-        </div>
-
-        <h3 class="itinerary-section-title">Itinerary Highlights</h3>
-        
-        <div class="timeline">
-            <% article.spots.forEach(function(spot) { %>
-                <div class="spot-card">
-                    <div class="spot-dot"></div> <div class="spot-time"><%= spot.time %></div>
-                    
-                    <h4 class="spot-name">
-                        <%= spot.name %>
-                    </h4>
-                    
-                    <div class="spot-address">
-                        📍 <%= spot.address %>
-                        <a href="<%= spot.mapLink %>" target="_blank" class="btn-map-link">View on Google Map ↗</a>
-                    </div>
-                    
-                    <div class="spot-desc">
-                        <%= spot.description %>
-                    </div>
-                </div>
-            <% }); %>
-        </div>
-
-        <div class="back-nav">
-            <a href="/search_by_city/<%= citySlug %>" class="btn-back">
-                ← Back to <%= citySlug.replace('_', ' ') %> Guide
+        <aside class="article-sidebar">
+            <div class="toc-title">Quick Navigate</div>
+            <ul class="toc-list">
+                <li><a href="#quick-facts">📊 Itinerary Flow</a></li>
+                <li><a href="#map-section">🗺️ Interactive Map</a></li>
+                
+                <% if (article.spots && article.spots.length > 0) { %>
+                    <% article.spots.forEach(function(spot, index) { %>
+                        <li>
+                            <a href="#spot-<%= index %>">
+                                <span style="color:var(--accent-color); margin-right:5px;"><%= index + 1 %>.</span> 
+                                <%= spot.name %>
+                            </a>
+                        </li>
+                    <% }); %>
+                <% } %>
+            </ul>
+            
+            <a href="/search_by_city/<%= citySlug %>" class="back-link-sidebar">
+                ← Back to <%= citySlug.replace('_', ' ') %>
             </a>
-        </div>
+        </aside>
 
-    </main>
+        <main class="article-main">
+            
+            <div class="mini-hero">
+                <div class="mini-hero-overlay">
+                    <h1><%= article.title %></h1>
+                    <p><%= article.subTitle %></p>
+                </div>
+            </div>
+
+            <section id="quick-facts" class="quick-fact-box">
+                <div class="fact-header">
+                    <div>
+                        <h3 style="margin:0;">Trip Overview</h3>
+                        <span style="color:#888; font-size:0.9rem;">Perfect for: <%= article.theme %></span>
+                    </div>
+                    <span class="fact-badge"><%= article.type %></span>
+                </div>
+
+                <div class="flow-container">
+                    <% if (article.spots && article.spots.length > 0) { %>
+                        <% article.spots.forEach(function(spot, index) { %>
+                            <div class="flow-step">
+                                <div class="flow-circle"><%= index + 1 %></div>
+                                <div class="flow-text"><%= spot.name %></div>
+                            </div>
+                            
+                            <% if (index < article.spots.length - 1) { %>
+                                <div class="flow-arrow">➜</div>
+                            <% } %>
+                        <% }); %>
+                    <% } %>
+                </div>
+                
+                <p style="margin-top:20px; color:#555; line-height:1.6; font-size:0.95rem;">
+                    <%- article.intro %>
+                </p>
+
+                <% 
+                   // 定義哪些城市或文章ID屬於離島，需要顯示交通指引
+                   const isIsland = ['penghu', 'kinmen', 'matsu', 'offshore_islands'].includes(citySlug) || 
+                                    article.id === 'pt-07' || // 小琉球
+                                    article.id === 'tt-07' || // 綠島
+                                    article.id === 'tt-08' || // 蘭嶼
+                                    article.id === 'yl-07' || // 龜山島
+                                    article.id === 'kl-05';   // 基隆嶼
+                %>
+                
+                <% if (isIsland) { %>
+                    <div style="margin-top: 15px; padding: 12px; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; font-size: 0.9rem; color: #856404;">
+                        👉 <strong>Need help getting here?</strong> Check our 
+                        <a href="/transport/offshore-islands" style="color: #533f03; font-weight: bold; text-decoration: underline;">
+                            Offshore Islands Transport Guide
+                        </a>.
+                    </div>
+                <% } %>
+                
+                <div style="margin-top:15px; background:#f9f9f9; padding:10px; font-size:0.85rem; border-radius:4px; color:#666;">
+                    🚆 <strong>Access:</strong> <%- article.transportation %>
+                </div>
+            </section>
+
+            <section id="map-section">
+                <h3 style="margin-bottom:15px; font-family:var(--font-eng);">Explore the Route</h3>
+                <div id="cityMap" class="map-wrapper"></div>
+            </section>
+
+            <section id="spots-list">
+                <% article.spots.forEach(function(spot, index) { %>
+                    <div id="spot-<%= index %>" class="spot-module">
+                        <div class="spot-header">
+                            <div class="spot-title-group">
+                                <div class="time-badge"><%= spot.time %></div>
+                                <h3><%= spot.name %></h3>
+                            </div>
+                            <div class="spot-tags">
+                                <% if (spot.tags) { %>
+                                    <% spot.tags.forEach(function(tag){ %>
+                                        <span>#<%= tag %></span>
+                                    <% }) %>
+                                <% } else { %>
+                                    <span>#MustVisit</span>
+                                <% } %>
+                            </div>
+                        </div>
+
+                        <div class="spot-body">
+                            <div class="spot-img-box">
+                                <img src="<%= spot.image || article.heroImage %>" alt="<%= spot.name %>">
+                            </div>
+                            <div class="spot-info-col">
+                                <h4>Why Go?</h4>
+                                <p class="spot-desc"><%= spot.description %></p>
+                                
+                                <div class="pro-tips">
+                                    <strong>💡 Pro-Tip:</strong> 
+                                    <%= spot.tips || "Arrive early to avoid crowds." %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spot-meta">
+                            <span>📍 <%= spot.address %></span>
+                            <a href="<%= spot.mapLink %>" target="_blank" class="btn-map-nav">Google Map ↗</a>
+                        </div>
+                    </div>
+                <% }); %>
+            </section>
+
+        </main>
+    </div>
 
     <%- include('../partials/footer') %>
-    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. 準備地圖容器
+            // 預設中心點 (如果 JSON 沒給座標，就預設台灣中心)
+            var defaultCenter = [23.6, 120.9];
+            var zoomLevel = 7;
+
+            // 嘗試從第一個景點抓座標作為中心
+            <% if (article.spots && article.spots.length > 0 && article.spots[0].coords) { %>
+                defaultCenter = [<%= article.spots[0].coords[0] %>, <%= article.spots[0].coords[1] %>];
+                zoomLevel = 13;
+            <% } %>
+
+            var map = L.map('cityMap').setView(defaultCenter, zoomLevel);
+
+            // 2. 載入圖資 (⚠️ 已修正為 Esri World Street Map - 英文版)
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri'
+            }).addTo(map);
+
+            // 3. 迴圈加入圖釘
+            <% article.spots.forEach(function(spot, index) { %>
+                <% if (spot.coords) { %>
+                    L.marker([<%= spot.coords[0] %>, <%= spot.coords[1] %>])
+                     .addTo(map)
+                     .bindPopup(`
+                        <b><%= spot.name %></b><br>
+                        <a href="#spot-<%= index %>" style="color:#E8A2A2;">Read More</a>
+                     `);
+                <% } %>
+            <% }); %>
+        });
+    </script>
+
     <script src="/script.js"></script>
 
 </body>
