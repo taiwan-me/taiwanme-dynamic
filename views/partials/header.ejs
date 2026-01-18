@@ -5,59 +5,74 @@ const getActiveStyle = (targetPage) => {
         ? 'color: var(--accent-color); font-weight: bold;' 
         : '';
 }
-// 判斷是否在首頁，決定地圖連結是錨點(#)還是路徑(/#)
 const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';
 %>
 
 <style>
+    /* ========================================= */
+    /* 1. 回到頂部按鈕樣式 (保留原樣) */
+    /* ========================================= */
     #backToTopBtn {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 9999; /* 層級最高 */
-        width: 50px;
-        height: 50px;
-        border: none;
-        border-radius: 50%;
-        background-color: var(--accent-color, #e63946); /* 使用全域變數或紅色 */
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
+        position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+        width: 50px; height: 50px; border: none; border-radius: 50%;
+        background-color: var(--accent-color, #e63946); color: white;
+        font-size: 1.5rem; cursor: pointer;
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        
-        /* 隱藏狀態 */
-        opacity: 0; 
-        visibility: hidden;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        opacity: 0; visibility: hidden; transform: translateY(20px);
+        transition: all 0.4s ease; display: flex; align-items: center; justify-content: center;
     }
-
-    /* 顯示狀態 (由 JS 添加) */
-    #backToTopBtn.show {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    #backToTopBtn:hover {
-        background-color: #333;
-        transform: translateY(-5px);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-    }
-
+    #backToTopBtn.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    #backToTopBtn:hover { background-color: #333; transform: translateY(-5px); }
     @media (max-width: 768px) {
-        #backToTopBtn {
-            bottom: 20px;
-            right: 20px;
-            width: 45px;
-            height: 45px;
-            font-size: 1.2rem;
-        }
+        #backToTopBtn { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 1.2rem; }
     }
+
+    /* ========================================= */
+    /* 2. Search 按鈕樣式 (排在 Header 連結列) */
+    /* ========================================= */
+    .search-pill-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 8px 20px; margin-left: 20px; /* 與 Business Inquiry 拉開距離 */
+        border: 1px solid #333; border-radius: 50px; background: transparent;
+        color: #333; font-weight: bold; font-family: inherit; font-size: 0.85rem;
+        cursor: pointer; transition: all 0.3s ease;
+        text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .search-pill-btn:hover { background: #333; color: #fff; }
+    /* 手機版隱藏這顆大按鈕 */
+    @media (max-width: 900px) { .search-pill-btn { display: none; } }
+
+    /* ========================================= */
+    /* 3. 全螢幕搜尋視窗樣式 */
+    /* ========================================= */
+    .search-modal {
+        display: none; position: fixed; top: 0; left: 0;
+        width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.98);
+        z-index: 10000; justify-content: center; align-items: center; flex-direction: column;
+        animation: fadeIn 0.3s ease;
+    }
+    .search-content { text-align: center; width: 100%; max-width: 700px; position: relative; padding: 20px; }
+    .search-content h2 { font-size: 2.5rem; color: #333; margin-bottom: 40px; font-family: serif; }
+    
+    .input-wrapper {
+        position: relative; display: flex; align-items: center;
+        border-bottom: 2px solid #333; padding-bottom: 10px;
+    }
+    #modal-search-input { width: 100%; border: none; background: transparent; font-size: 1.5rem; outline: none; color: #333; }
+    .submit-search-btn { background: #333; color: white; border: none; padding: 10px 25px; font-size: 1rem; cursor: pointer; text-transform: uppercase; }
+    
+    .close-search { position: absolute; top: 30px; right: 40px; font-size: 3rem; cursor: pointer; color: #999; }
+    .close-search:hover { color: #333; }
+
+    /* 搜尋結果列表 */
+    .search-results-list { margin-top: 20px; text-align: left; max-height: 50vh; overflow-y: auto; }
+    .result-item { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; text-decoration: none; color: #333; transition: background 0.2s; }
+    .result-item:hover { background-color: #f9f9f9; }
+    .result-img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; margin-right: 15px; }
+    .result-type { font-size: 0.75rem; color: #E8A2A2; font-weight: bold; text-transform: uppercase; }
+    .result-title { font-size: 1.1rem; font-weight: bold; }
+    
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
 
 <header id="header" class="main-header">
@@ -72,41 +87,45 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
             </a>
         </div>
 
-        <div class="header-links desktop-only">
+        <div class="header-links desktop-only" style="display: flex; align-items: center;">
             <a href="#" class="h-link" id="tippingBtn">BUY US<br>A BOBA</a>
             <a href="#" class="h-link" id="philosophyBtn">TAIWANME'S<br>PHILOSOPHY</a>
             <a href="#" class="h-link" id="bizInquiryBtn">BUSINESS<br>INQUIRY</a>
+            
+            <button id="desktop-search-trigger" class="search-pill-btn">
+                <span>🔍</span> Search
+            </button>
         </div>
 
         <div class="nav-icons">
-            <button id="searchBtn" class="search-trigger">🔍 <span class="desktop-only">Search</span></button>
-            
+            <button id="mobile-search-trigger" class="search-trigger desktop-hidden" style="background:none; border:none; font-size:1.2rem; cursor:pointer; display:none;">
+                🔍
+            </button>
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </div>
 </header>
 
 <div id="searchModal" class="search-modal">
-    <div class="close-search">&times;</div>
+    <div class="close-search" id="closeSearchBtn">&times;</div>
     <div class="search-content">
         <h2>Where to explore?</h2>
-        <input type="text" placeholder="Enter keywords (e.g. Taipei, Food)...">
-        <button class="submit-search">Search</button>
+        <div class="input-wrapper">
+            <input type="text" id="modal-search-input" placeholder="Enter keywords (e.g. Taipei, Food)..." autocomplete="off">
+            <button class="submit-search-btn">SEARCH</button>
+        </div>
+        <div id="modal-results-container" class="search-results-list"></div>
     </div>
 </div>
 
 <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
 <div class="mobile-drawer" id="mobileDrawer">
-    
     <div class="drawer-header">
         <span class="drawer-title">MENU</span>
         <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
     </div>
-
     <div class="drawer-content">
         <div class="drawer-section">
             <h3 class="drawer-cat-title">EXPLORE</h3>
@@ -121,7 +140,6 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
                 <li><a href="/entertainment" class="drawer-link" style="<%= getActiveStyle('entertainment') %>">Entertainment <span class="arrow">›</span></a></li>
             </ul>
         </div>
-
         <div class="drawer-section">
             <h3 class="drawer-cat-title">ABOUT TAIWANME</h3>
             <ul class="drawer-list">
@@ -142,7 +160,6 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         <li><a href="/culture" style="<%= getActiveStyle('culture') %>">CULTURE & DAILY LIFE</a></li>
         <li><a href="/dining" style="<%= getActiveStyle('dining') %>">INCLUSIVE DINING</a></li>
         <li><a href="/entertainment" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a></li>
-        
         <li class="dropdown-item">
             <a href="#" class="dropbtn">MORE ▾</a>
             <div class="dropdown-content">
@@ -155,50 +172,84 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 <button id="backToTopBtn" aria-label="Back to Top">↑</button>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        const header = document.getElementById('header'); // 上方 Logo 區塊
-        const nav = document.querySelector('.desktop-nav'); // 下方灰色導航列
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Back To Top 邏輯
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    const header = document.getElementById('header');
+    const nav = document.querySelector('.desktop-nav');
+    function calculateThreshold() {
+        const h = header ? header.offsetHeight : 0;
+        const n = nav ? nav.offsetHeight : 0;
+        return (h + n > 0 ? h + n : 150) * 0.5;
+    }
+    let scrollThreshold = calculateThreshold();
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > scrollThreshold) backToTopBtn.classList.add('show');
+        else backToTopBtn.classList.remove('show');
+    });
+    window.addEventListener('resize', () => scrollThreshold = calculateThreshold());
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // 計算觸發距離
-        function calculateThreshold() {
-            // 取得 Logo 區塊高度
-            const headerHeight = header ? header.offsetHeight : 0;
-            // 取得 Nav 區塊高度 (若手機版隱藏則為 0)
-            const navHeight = nav ? nav.offsetHeight : 0;
-            
-            // 總導覽列高度
-            const totalNavHeight = headerHeight + navHeight;
+    // 2. 搜尋視窗邏輯
+    const searchModal = document.getElementById('searchModal');
+    const openBtns = [document.getElementById('desktop-search-trigger'), document.getElementById('mobile-search-trigger')];
+    const closeBtn = document.getElementById('closeSearchBtn');
+    const input = document.getElementById('modal-search-input');
+    const resultsDiv = document.getElementById('modal-results-container');
 
-            // 如果總高度為 0 (極端情況)，給預設值 150px
-            const baseHeight = totalNavHeight > 0 ? totalNavHeight : 150;
-
-            // 設定觸發點為：導覽列總高度的 0.5 倍 (1/2)
-            return baseHeight * 0.5;
-        }
-
-        let scrollThreshold = calculateThreshold();
-
-        // 監聽滾動事件
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > scrollThreshold) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        // 視窗大小改變時重新計算 (適應 RWD)
-        window.addEventListener('resize', () => {
-            scrollThreshold = calculateThreshold();
-        });
-
-        // 點擊回到頂部
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    openBtns.forEach(btn => {
+        if(btn) btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchModal.style.display = 'flex';
+            input.value = ''; resultsDiv.innerHTML = '';
+            setTimeout(() => input.focus(), 100);
+            document.body.style.overflow = 'hidden';
         });
     });
+
+    function closeModal() { searchModal.style.display = 'none'; document.body.style.overflow = ''; }
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => { if(e.target === searchModal) closeModal(); });
+
+    // 3. 搜尋 API 串接
+    let timeout = null;
+    input.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        clearTimeout(timeout);
+        if (query.length < 1) { resultsDiv.innerHTML = ''; return; }
+        timeout = setTimeout(async () => {
+            try {
+                const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+                const data = await res.json();
+                renderResults(data);
+            } catch (err) { console.error(err); }
+        }, 300);
+    });
+
+    function renderResults(data) {
+        if (data.length === 0) { resultsDiv.innerHTML = '<div style="padding:20px; color:#999;">No results found.</div>'; return; }
+        const html = data.map(item => {
+            let link = `/search_by_city/${item.citySlug}/${item.id}`;
+            if (item.id.startsWith('hg-') || item.folder === 'hiddengems') link = `/hidden_gems/${item.id}`;
+            const imgUrl = item.heroImage || '/image/default_thumb.jpg';
+            return `
+                <a href="${link}" class="result-item" onclick="document.body.style.overflow=''">
+                    <img src="${imgUrl}" class="result-img" alt="${item.title}">
+                    <div>
+                        <div class="result-type">${item.type || 'Article'}</div>
+                        <div class="result-title">${item.title}</div>
+                    </div>
+                </a>`;
+        }).join('');
+        resultsDiv.innerHTML = html;
+    }
+
+    // 手機版搜尋按鈕顯示控制
+    const mobileSearchBtn = document.getElementById('mobile-search-trigger');
+    function checkMobile() {
+        if(mobileSearchBtn) mobileSearchBtn.style.display = (window.innerWidth <= 900) ? 'block' : 'none';
+    }
+    window.addEventListener('resize', checkMobile);
+    checkMobile();
+});
 </script>

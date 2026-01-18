@@ -4,21 +4,43 @@ const fs = require('fs');
 const app = express();
 
 // ==========================================
-// 1. 設定 View Engine
+// 1. 整合 Search API (解決本地端 404 問題)
+// ==========================================
+// 嘗試引入同目錄下的 search.js
+// 這樣做可以讓您在本地端執行 'node api/server.js' 時也能使用搜尋功能
+try {
+    const searchHandler = require('./search');
+    
+    app.get('/api/search', async (req, res) => {
+        // 處理 Vercel (export default) 與一般 Node.js (module.exports) 的相容性
+        const handler = searchHandler.default || searchHandler;
+        if (typeof handler === 'function') {
+            await handler(req, res);
+        } else {
+            res.status(500).json({ error: "Search handler is not a function" });
+        }
+    });
+    console.log('✅ Search API route initialized successfully.');
+} catch (err) {
+    console.warn('⚠️ Warning: Could not load search.js locally. Search might 404.', err.message);
+}
+
+// ==========================================
+// 2. 設定 View Engine
 // ==========================================
 app.set('view engine', 'ejs');
 
-// ⚠️ 重要修改：因為 server.js 在 api/ 裡，必須用 '../views' 回到上一層找資料夾
+// ⚠️ 回到上一層找 views 資料夾
 app.set('views', path.join(__dirname, '../views'));
 
 // ==========================================
-// 2. 設定靜態檔案 (CSS, JS, Images)
+// 3. 設定靜態檔案 (CSS, JS, Images)
 // ==========================================
-// ⚠️ 重要修改：回到上一層找 public
+// ⚠️ 回到上一層找 public 資料夾
 app.use(express.static(path.join(__dirname, '../public')));
 
 // ==========================================
-// 3. 靜態頁面路由 (Static Pages)
+// 4. 靜態頁面路由 (Static Pages)
 // ==========================================
 
 // 首頁
@@ -42,13 +64,12 @@ app.get('/search_by_city', (req, res) => {
 });
 
 // ==========================================
-// 4. City Guide (縣市旅遊)
+// 5. City Guide (縣市旅遊)
 // ==========================================
 
 // 縣市列表頁 (Feed)
 app.get('/search_by_city/:city', (req, res) => {
     const city = req.params.city.toLowerCase();
-    // ⚠️ 重要修改：回到上一層找 data
     const jsonPath = path.join(__dirname, '../data', 'search_by_city', `${city}.json`);
 
     if (fs.existsSync(jsonPath)) {
@@ -78,7 +99,6 @@ app.get('/search_by_city/:city', (req, res) => {
 app.get('/search_by_city/:city/:id', (req, res) => {
     const city = req.params.city.toLowerCase();
     const articleId = req.params.id;
-    // ⚠️ 重要修改：回到上一層找 data
     const jsonPath = path.join(__dirname, '../data', 'search_by_city', `${city}.json`);
 
     if (fs.existsSync(jsonPath)) {
@@ -105,7 +125,7 @@ app.get('/search_by_city/:city/:id', (req, res) => {
 });
 
 // ==========================================
-// 5. Transport Guide (交通攻略)
+// 6. Transport Guide (交通攻略)
 // ==========================================
 
 app.get('/transport', (req, res) => {
@@ -114,7 +134,6 @@ app.get('/transport', (req, res) => {
 
 app.get('/transport/:topic', (req, res) => {
     const topic = req.params.topic;
-    // ⚠️ 重要修改：回到上一層找 data
     const jsonPath = path.join(__dirname, '../data', 'transport', `${topic}.json`);
 
     if (fs.existsSync(jsonPath)) {
@@ -140,7 +159,7 @@ app.get('/transport/:topic', (req, res) => {
 });
 
 // ==========================================
-// 6. Hidden Gems (隱藏景點)
+// 7. Hidden Gems (隱藏景點)
 // ==========================================
 
 app.get('/hidden_gems', (req, res) => {
@@ -149,7 +168,6 @@ app.get('/hidden_gems', (req, res) => {
 
 app.get('/hidden_gems/:id', (req, res) => {
     const gemId = req.params.id;
-    // ⚠️ 重要修改：回到上一層找 data
     const jsonPath = path.join(__dirname, '../data', 'hiddengems', `${gemId}.json`);
 
     if (fs.existsSync(jsonPath)) {
@@ -169,18 +187,18 @@ app.get('/hidden_gems/:id', (req, res) => {
 });
 
 // ==========================================
-// 7. Dining & Entertainment
+// 8. Dining & Entertainment
 // ==========================================
 
 // Dining
 app.get('/dining', (req, res) => {
-    // ⚠️ 重要修改：回到上一層找 data
     const diningPath = path.join(__dirname, '../data', 'dining.json');
     let diningData = [];
     if (fs.existsSync(diningPath)) {
-        diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8'));
+        try {
+            diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8'));
+        } catch (e) { console.error(e); }
     }
-    // 建議：為了效能，這裡其實可以傳空陣列 []，讓前端 JS 去處理，但為了相容你的程式碼我保留了讀取邏輯
     res.render('dining_lists/dining_feed', { 
         pageName: 'dining',
         items: diningData 
@@ -189,11 +207,12 @@ app.get('/dining', (req, res) => {
 
 // Entertainment
 app.get('/entertainment', (req, res) => {
-    // ⚠️ 重要修改：回到上一層找 data
     const entPath = path.join(__dirname, '../data', 'entertainment.json');
     let entData = [];
     if (fs.existsSync(entPath)) {
-        entData = JSON.parse(fs.readFileSync(entPath, 'utf8'));
+        try {
+            entData = JSON.parse(fs.readFileSync(entPath, 'utf8'));
+        } catch (e) { console.error(e); }
     }
     res.render('entertainment_lists/entertainment_feed', { 
         pageName: 'entertainment',
@@ -202,7 +221,7 @@ app.get('/entertainment', (req, res) => {
 });
 
 // ==========================================
-// 8. 404 & Server Start
+// 9. 404 & Server Start
 // ==========================================
 app.use((req, res) => {
     res.status(404).send(`
@@ -215,15 +234,15 @@ app.use((req, res) => {
     `);
 });
 
-// ⚠️ 重要修改：Vercel 不需要我們自己 listen port，它會自己接手
-// 我們加上判斷，只有在本機開發時才執行 listen
+// 啟動伺服器 (僅在本地端或非 Vercel 環境執行)
 if (process.env.NODE_ENV !== 'production') {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`✅ TaiwanMe Server Running in: ${path.join(__dirname)}`);
-        console.log(`🌍 URL: http://localhost:${PORT}`);
+        console.log(`🔍 Search API loaded at: http://localhost:${PORT}/api/search`);
+        console.log(`🌍 Main URL: http://localhost:${PORT}`);
     });
 }
 
-// ⚠️ 非常重要：必須匯出 app 讓 Vercel 的 api 資料夾機制抓取
+// 匯出 App 給 Vercel
 module.exports = app;
