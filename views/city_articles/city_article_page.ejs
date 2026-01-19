@@ -217,6 +217,24 @@
             object-fit: cover; border-radius: 8px;
         }
 
+        /* ✅ 新增：版權標註樣式 */
+        .img-copyright {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+            font-style: italic;
+        }
+        .img-copyright a {
+            color: #777;
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+        }
+        .img-copyright a:hover {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
         .spot-info-col h4 {
             font-size: 1rem; color: var(--accent-color); 
             margin: 0 0 10px; text-transform: uppercase;
@@ -376,6 +394,16 @@
                         <div class="spot-body">
                             <div class="spot-img-box">
                                 <img src="<%= spot.image || article.heroImage %>" alt="<%= spot.name %>">
+                                <% if (spot.copyright) { %>
+                                    <div class="img-copyright">
+                                        Image by 
+                                        <% if (spot.copyrightLink) { %>
+                                            <a href="<%= spot.copyrightLink %>" target="_blank" rel="noopener noreferrer"><%= spot.copyright %></a>
+                                        <% } else { %>
+                                            <%= spot.copyright %>
+                                        <% } %>
+                                    </div>
+                                <% } %>
                             </div>
                             <div class="spot-info-col">
                                 <h4>Why Go?</h4>
@@ -416,7 +444,7 @@
 
             var map = L.map('cityMap').setView(defaultCenter, zoomLevel);
 
-            // 2. 載入圖資 (⚠️ 已修正為 Esri World Street Map - 英文版)
+            // 2. 載入圖資 (Esri World Street Map)
             L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
                 attribution: 'Tiles &copy; Esri'
             }).addTo(map);
@@ -425,11 +453,11 @@
             <% article.spots.forEach(function(spot, index) { %>
                 <% if (spot.coords) { %>
                     L.marker([<%= spot.coords[0] %>, <%= spot.coords[1] %>])
-                     .addTo(map)
-                     .bindPopup(`
+                      .addTo(map)
+                      .bindPopup(`
                         <b><%= spot.name %></b><br>
                         <a href="#spot-<%= index %>" style="color:#E8A2A2;">Read More</a>
-                     `);
+                      `);
                 <% } %>
             <% }); %>
         });
