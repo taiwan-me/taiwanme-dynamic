@@ -11,9 +11,29 @@
     <link rel="stylesheet" href="/libs/leaflet/leaflet.css" />
     <script src="/libs/leaflet/leaflet.js"></script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "<%= article.title %>",
+      "description": "<%= article.intro %>",
+      "image": "https://taiwanme-dynamic.vercel.app<%= article.heroImage %>",
+      "author": { "@type": "Organization", "name": "TaiwanMe" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TaiwanMe",
+        "logo": { "@type": "ImageObject", "url": "https://taiwanme-dynamic.vercel.app/image/logo.png" }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://taiwanme-dynamic.vercel.app/search_by_city/<%= citySlug %>/<%= article.id %>"
+      }
+    }
+    </script>
+
     <style>
         /* =========================================
-           文章內頁專屬佈局 (Grid Layout)
+           文章內頁專屬佈局 (Grid Layout) - 完全保留您的樣式
            ========================================= */
         .page-wrapper {
             max-width: 1300px;
@@ -217,7 +237,7 @@
             object-fit: cover; border-radius: 8px;
         }
 
-        /* ✅ 新增：版權標註樣式 */
+        /* 版權標註樣式 */
         .img-copyright {
             font-size: 0.75rem;
             color: #999;
@@ -312,6 +332,17 @@
                 <div class="mini-hero-overlay">
                     <h1><%= article.title %></h1>
                     <p><%= article.subTitle %></p>
+
+                    <div style="margin-top: 15px;">
+                        <% if (article.tags && article.tags.length > 0) { %>
+                            <% article.tags.forEach(function(tag){ %>
+                                <span style="display:inline-block; background:rgba(255,255,255,0.2); backdrop-filter:blur(4px); padding:4px 12px; border-radius:20px; font-size:0.85rem; color:#fff; border:1px solid rgba(255,255,255,0.4); margin-right:5px;">
+                                    <%= tag %>
+                                </span>
+                            <% }); %>
+                        <% } %>
+                    </div>
+
                 </div>
             </div>
 

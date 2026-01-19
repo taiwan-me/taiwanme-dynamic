@@ -254,7 +254,7 @@ blockquote, .intro-text, .quote-style {
     justify-content: center;
     align-items: center;
 }
-.search-content { text-align: center; width: 80%; }
+.search-content { text-align: center; width: 80%; position: relative; } /* 加入 relative 以便定位下拉選單 */
 .search-content input {
     width: 70%;
     padding: 15px;
@@ -1161,4 +1161,98 @@ h2.section-title {
     font-family: var(--font-main);
     font-weight: 300;   /* Noto Sans Light */
     font-style: italic; /* Lora Italic */
+}
+
+/* =========================================
+   11. [NEW] 搜尋結果選單樣式 (Search Dropdown)
+   ========================================= */
+#search-results {
+    position: absolute;
+    top: 100%; /* 在搜尋框正下方 */
+    left: 10%; /* 為了置中，與 input 寬度對齊 */
+    width: 80%; /* 與 input 寬度大概一致 */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* 預設隱藏 */
+    text-align: left;
+}
+
+/* 單個搜尋結果項目 */
+.search-item {
+    display: flex; /* 讓圖片跟文字並排 */
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.search-item:hover {
+    background-color: #f9f9f9;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+/* 結果圖片樣式 */
+.result-img {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0; /* 防止圖片被擠壓 */
+    margin-right: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.result-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 文字內容區域 */
+.result-content {
+    flex-grow: 1;
+    min-width: 0; /* 防止文字溢出 */
+}
+
+.result-title {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #222;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.result-desc {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.tag-cat {
+    display: inline-block;
+    background: #e0f7fa;
+    color: #006064;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.no-result {
+    padding: 15px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
 }

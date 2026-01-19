@@ -100,11 +100,17 @@
                     
                     <div class="feed-content">
                         <div class="feed-tags">
+                            <span style="background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; text-transform: uppercase;">
+                                #<%= cityName %>
+                            </span>
+
                             <% if (article.tags && article.tags.length > 0) { %>
                                 <% article.tags.slice(0, 2).forEach(function(tag){ %> 
-                                    <span style="background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; text-transform: uppercase;">
-                                        <%= tag.startsWith('#') ? tag : '#' + tag %>
-                                    </span> 
+                                    <% if (tag.toLowerCase().replace('#','') !== cityName.toLowerCase()) { %>
+                                        <span style="background-color: #f0f0f0; color: #777; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; text-transform: uppercase;">
+                                            <%= tag.startsWith('#') ? tag : '#' + tag %>
+                                        </span> 
+                                    <% } %>
                                 <% }); %>
                             <% } %>
                         </div>

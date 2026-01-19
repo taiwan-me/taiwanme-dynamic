@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // ==============================================
-    // 1. 搜尋 Modal 功能 (Search Modal)
+    // 1. 搜尋 Modal 開關 (Search Modal UI)
     // ==============================================
     const searchBtn = document.getElementById('searchBtn');
     const searchModal = document.getElementById('searchModal');
@@ -29,10 +29,98 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchBtn && searchModal) {
         searchBtn.addEventListener('click', () => {
             searchModal.style.display = 'flex';
+            // 開啟時自動聚焦搜尋框
+            setTimeout(() => {
+                const input = document.getElementById('search-input');
+                if (input) input.focus();
+            }, 100);
         });
         if (closeSearch) {
             closeSearch.addEventListener('click', () => searchModal.style.display = 'none');
         }
+    }
+
+    // ==============================================
+    // 1.5 [NEW] 全域搜尋邏輯 (Global Search Logic)
+    // ==============================================
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    let debounceTimer;
+
+    if (searchInput && searchResults) {
+        // 監聽輸入事件
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+
+            // 清除舊的計時器 (防抖動 Debounce)
+            clearTimeout(debounceTimer);
+
+            if (query.length === 0) {
+                searchResults.style.display = 'none';
+                searchResults.innerHTML = '';
+                return;
+            }
+
+            // 設定 300ms 後才發送請求，減少伺服器負擔
+            debounceTimer = setTimeout(async () => {
+                try {
+                    // ✅ 修正：加上時間戳記 &t=... 強制清除快取，確保拿到最新圖片資料
+                    const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&t=${Date.now()}`);
+                    const data = await res.json();
+
+                    renderSearchResults(data);
+                } catch (error) {
+                    console.error('Search error:', error);
+                }
+            }, 300);
+        });
+
+        // 點擊外部時關閉搜尋結果
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+    }
+
+    // ✅ 渲染搜尋結果函式 (強制顯示圖片 & 除錯版)
+    function renderSearchResults(results) {
+        if (results.length === 0) {
+            searchResults.innerHTML = '<div class="no-result">No results found</div>';
+            searchResults.style.display = 'block';
+            return;
+        }
+
+        const html = results.map(item => {
+            // 偵錯用：在 Console 印出圖片路徑，確認資料是否正確
+            // console.log(`[Search Debug] Title: ${item.title}, Image: ${item.image}`);
+
+            // 1. 確保圖片網址有效，否則使用預設圖 (Placeholder)
+            // 如果 item.image 有值，就用它；否則顯示預設的灰底圖
+            const imageUrl = (item.image && item.image.trim() !== "") 
+                ? item.image 
+                : 'https://placehold.co/100x100/eee/999?text=TaiwanMe'; 
+
+            return `
+                <a href="${item.url}" class="search-item">
+                    <div class="result-img">
+                        <img src="${imageUrl}" 
+                             alt="${item.title}" 
+                             onerror="console.log('Image Load Error:', '${imageUrl}'); this.src='https://placehold.co/100x100/eee/999?text=Error'">
+                    </div>
+                    <div class="result-content">
+                        <div class="result-title">${item.title}</div>
+                        <div class="result-desc">${item.desc ? item.desc.substring(0, 60) + '...' : ''}</div>
+                        <div class="result-tags">
+                            ${item.category ? `<span class="tag-cat">${item.category}</span>` : ''}
+                        </div>
+                    </div>
+                </a>
+            `;
+        }).join('');
+
+        searchResults.innerHTML = html;
+        searchResults.style.display = 'block';
     }
 
     // ==============================================
@@ -155,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================================
-    // 6. [Updated] 手機版側邊抽屜 (Mobile Drawer) 邏輯
+    // 6. 手機版側邊抽屜 (Mobile Drawer) 邏輯
     // ==============================================
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const drawer = document.getElementById('mobileDrawer');
@@ -349,12 +437,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==============================================
-    // 12. Back to Top Button Logic (FIXED)
+    // 12. Back to Top Button Logic
     // ==============================================
     const backToTopBtn = document.getElementById('backToTopBtn');
 
     if (backToTopBtn) {
-        // 修正邏輯：計算 Header + Nav 的高度，設定閾值為 0.5 倍
         const calculateThreshold = () => {
             const header = document.getElementById('header');
             const nav = document.querySelector('.desktop-nav');
@@ -363,7 +450,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (header) totalHeight += header.offsetHeight;
             if (nav) totalHeight += nav.offsetHeight;
 
-            // 如果無法取得高度，給一個保守預設值 (150px 的一半)
             return totalHeight > 0 ? (totalHeight * 0.5) : 75;
         };
 
