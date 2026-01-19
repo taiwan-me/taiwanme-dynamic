@@ -6,8 +6,6 @@ const app = express();
 // ==========================================
 // 1. 整合 Search API (解決本地端 404 問題)
 // ==========================================
-// 嘗試引入同目錄下的 search.js
-// 這樣做可以讓您在本地端執行 'node api/server.js' 時也能使用搜尋功能
 try {
     const searchHandler = require('./search');
     
@@ -22,25 +20,42 @@ try {
     });
     console.log('✅ Search API route initialized successfully.');
 } catch (err) {
-    console.warn('⚠️ Warning: Could not load search.js locally. Search might 404.', err.message);
+    console.warn('⚠️ Warning: Could not load search.js locally.', err.message);
 }
 
 // ==========================================
-// 2. 設定 View Engine
+// 2. 整合 Sitemap (新增部分)
+// ==========================================
+// 讓本地端與 Vercel 都能透過 /sitemap.xml 存取動態生成的網站地圖
+try {
+    const sitemapHandler = require('./sitemap');
+
+    app.get('/sitemap.xml', async (req, res) => {
+        const handler = sitemapHandler.default || sitemapHandler;
+        if (typeof handler === 'function') {
+            await handler(req, res);
+        } else {
+            res.status(500).send("Sitemap handler is not a function");
+        }
+    });
+    console.log('✅ Sitemap route initialized successfully.');
+} catch (err) {
+    console.warn('⚠️ Warning: Could not load sitemap.js locally.', err.message);
+}
+
+// ==========================================
+// 3. 設定 View Engine
 // ==========================================
 app.set('view engine', 'ejs');
-
-// ⚠️ 回到上一層找 views 資料夾
 app.set('views', path.join(__dirname, '../views'));
 
 // ==========================================
-// 3. 設定靜態檔案 (CSS, JS, Images)
+// 4. 設定靜態檔案 (CSS, JS, Images)
 // ==========================================
-// ⚠️ 回到上一層找 public 資料夾
 app.use(express.static(path.join(__dirname, '../public')));
 
 // ==========================================
-// 4. 靜態頁面路由 (Static Pages)
+// 5. 靜態頁面路由 (Static Pages)
 // ==========================================
 
 // 首頁
@@ -64,7 +79,7 @@ app.get('/search_by_city', (req, res) => {
 });
 
 // ==========================================
-// 5. City Guide (縣市旅遊)
+// 6. City Guide (縣市旅遊)
 // ==========================================
 
 // 縣市列表頁 (Feed)
@@ -125,7 +140,7 @@ app.get('/search_by_city/:city/:id', (req, res) => {
 });
 
 // ==========================================
-// 6. Transport Guide (交通攻略)
+// 7. Transport Guide (交通攻略)
 // ==========================================
 
 app.get('/transport', (req, res) => {
@@ -159,7 +174,7 @@ app.get('/transport/:topic', (req, res) => {
 });
 
 // ==========================================
-// 7. Hidden Gems (隱藏景點)
+// 8. Hidden Gems (隱藏景點)
 // ==========================================
 
 app.get('/hidden_gems', (req, res) => {
@@ -187,7 +202,7 @@ app.get('/hidden_gems/:id', (req, res) => {
 });
 
 // ==========================================
-// 8. Dining & Entertainment
+// 9. Dining & Entertainment
 // ==========================================
 
 // Dining
@@ -221,7 +236,7 @@ app.get('/entertainment', (req, res) => {
 });
 
 // ==========================================
-// 9. 404 & Server Start
+// 10. 404 & Server Start
 // ==========================================
 app.use((req, res) => {
     res.status(404).send(`
@@ -240,6 +255,7 @@ if (process.env.NODE_ENV !== 'production') {
     app.listen(PORT, () => {
         console.log(`✅ TaiwanMe Server Running in: ${path.join(__dirname)}`);
         console.log(`🔍 Search API loaded at: http://localhost:${PORT}/api/search`);
+        console.log(`🗺️ Sitemap loaded at:    http://localhost:${PORT}/sitemap.xml`);
         console.log(`🌍 Main URL: http://localhost:${PORT}`);
     });
 }
