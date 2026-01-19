@@ -33,7 +33,7 @@
 
     <style>
         /* =========================================
-           文章內頁專屬佈局 (Grid Layout) - 完全保留您的樣式
+           文章內頁專屬佈局 (Grid Layout)
            ========================================= */
         .page-wrapper {
             max-width: 1300px;
@@ -237,7 +237,7 @@
             object-fit: cover; border-radius: 8px;
         }
 
-        /* 版權標註樣式 */
+        /* ✅ 版權標註樣式 (更新版) */
         .img-copyright {
             font-size: 0.75rem;
             color: #999;
@@ -291,7 +291,7 @@
         /* RWD 手機版 */
         @media (max-width: 900px) {
             .page-wrapper { grid-template-columns: 1fr; }
-            .article-sidebar { display: none; /* 手機版暫時隱藏側邊欄，或改到底部 */ }
+            .article-sidebar { display: none; /* 手機版暫時隱藏側邊欄 */ }
             .spot-body { grid-template-columns: 1fr; }
             .spot-img-box img { height: 200px; }
         }
@@ -425,17 +425,34 @@
                         <div class="spot-body">
                             <div class="spot-img-box">
                                 <img src="<%= spot.image || article.heroImage %>" alt="<%= spot.name %>">
-                                <% if (spot.copyright) { %>
-                                    <div class="img-copyright">
-                                        Image by 
+                                
+                                <div class="img-copyright">
+                                    <% if (spot.author) { %>
+                                        <a href="<%= spot.authorLink %>" target="_blank" rel="noopener noreferrer">
+                                            <%= spot.author %>
+                                        </a>, 
+                                    <% } %>
+
+                                    <% if (spot.license) { %>
+                                        <a href="<%= spot.licenseLink %>" target="_blank" rel="noopener noreferrer">
+                                            <%= spot.license %>
+                                        </a>, 
+                                    <% } %>
+
+                                    <% if (spot.via) { %>
+                                        <span><%= spot.via %></span>
+                                    <% } %>
+                                    
+                                    <% if (spot.copyright && !spot.author) { %>
                                         <% if (spot.copyrightLink) { %>
                                             <a href="<%= spot.copyrightLink %>" target="_blank" rel="noopener noreferrer"><%= spot.copyright %></a>
                                         <% } else { %>
                                             <%= spot.copyright %>
                                         <% } %>
-                                    </div>
-                                <% } %>
+                                    <% } %>
+                                </div>
                             </div>
+                            
                             <div class="spot-info-col">
                                 <h4>Why Go?</h4>
                                 <p class="spot-desc"><%= spot.description %></p>

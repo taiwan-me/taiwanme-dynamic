@@ -5,7 +5,11 @@
     "theme": "Geology & History",
     "title": "North Ring Geology & History",
     "subTitle": "北環地質與古蹟巡禮：經典203縣道",
-    "tags": ["#Geology", "#History", "#Classic"],
+    "tags": [
+      "#Geology",
+      "#History",
+      "#Classic"
+    ],
     "heroImage": "/image/search_by_city/penghu1-2.jpg",
     "intro": "The most classic land route. Drive north along County Road 203 to see the world-class columnar basalt and the Great Bridge.",
     "transportation": "**Scooter/Car Rental** or **Taiwan Tourist Shuttle (North Ring Line)**.",
@@ -14,36 +18,60 @@
         "time": "10:30",
         "name": "Tongliang Ancient Banyan (通梁古榕)",
         "address": "Baisha Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/PZRZcs37KQ5whqq38",
-        "coords": [23.655, 119.566],
+        "mapLink": "https://maps.app.goo.gl/PZRZcs37KQ5whqq38。Penghu",
+        "coords": [
+          23.655,
+          119.566
+        ],
         "image": "/image/search_by_city/penghu1-1.jpg",
-        "copyright": "Venation, CC BY-SA 3.0",
-        "copyrightLink": "https://commons.wikimedia.org/wiki/File:%E4%BF%9D%E5%AE%89%E5%AE%AE400%E5%A4%9A%E5%B9%B4_%E6%BE%8E%E6%B9%96%E7%B8%A3_Venation_4.JPG",
-        "tags": ["Nature", "Legend"],
+        "tags": [
+          "Nature",
+          "Legend"
+        ],
         "description": "A 300-year-old banyan tree that forms a massive green canopy. Legend says it grew from a bonsai tree survived from a shipwreck.",
-        "tips": "Try the Cactus Ice Cream sold by vendors under the tree."
+        "tips": "Try the Cactus Ice Cream sold by vendors under the tree.",
+        "author": "Venation",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E4%BF%9D%E5%AE%89%E5%AE%AE400%E5%A4%9A%E5%B9%B4_%E6%BE%8E%E6%B9%96%E7%B8%A3_Venation_4.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0",
+        "via": "via Wikimedia Commons"
       },
       {
         "time": "11:30",
         "name": "Penghu Great Bridge (澎湖跨海大橋)",
         "address": "Baisha Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/M5owRfZdgteUWP2X6",
-        "coords": [23.652, 119.549],
+        "mapLink": "https://maps.app.goo.gl/M5owRfZdgteUWP2X6。Erkan",
+        "coords": [
+          23.652,
+          119.549
+        ],
         "image": "/image/search_by_city/penghu1-2.jpg",
-        "copyright": "翁維德 (Wei-Te Wong), CC BY-SA 2.0",
-        "copyrightLink": "https://commons.wikimedia.org/wiki/File:Penghu_Great_Bridge_20150619.jpg",
-        "tags": ["Landmark", "Architecture"],
+        "tags": [
+          "Landmark",
+          "Architecture"
+        ],
         "description": "The landmark connecting Baisha and Xiyu islands. A must-take photo spot.",
-        "tips": "Be careful of traffic when taking photos in the middle of the road."
+        "tips": "Be careful of traffic when taking photos in the middle of the road.",
+        "author": "翁維德 (Wei-Te Wong)",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Penghu_Great_Bridge_20150619.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+        "via": "via Wikimedia Commons"
       },
       {
         "time": "14:30",
         "name": "Erkan Historic Village (二崁聚落保存區)",
         "address": "Xiyu Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/nJGizdokMycCUvGu5",
-        "coords": [23.606, 119.518],
+        "mapLink": "https://maps.app.goo.gl/nJGizdokMycCUvGu5。Daguoye",
+        "coords": [
+          23.606,
+          119.518
+        ],
         "image": "/image/search_by_city/penghu1-3.png",
-        "tags": ["Culture", "History"],
+        "tags": [
+          "Culture",
+          "History"
+        ],
         "description": "The first traditional settlement preservation area in Taiwan. Houses are built with coral stone and basalt to resist strong winds. (Note: The diagram below highlights the unique features of this area.)",
         "tips": "Try the almond tea and dried squid sold in the village."
       },
@@ -51,13 +79,22 @@
         "time": "16:00",
         "name": "Daguoye Columnar Basalt (大菓葉柱狀玄武岩)",
         "address": "Xiyu Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/oudBgN38YyaqMGeE8",
-        "coords": [23.593, 119.516],
+        "mapLink": "https://maps.app.goo.gl/oudBgN38YyaqMGeE8。接著換下一篇Penghu",
+        "coords": [
+          23.593,
+          119.516
+        ],
         "image": "/image/search_by_city/penghu1-4.jpg",
-        "copyright": "Mark Kao, CC0, via Wikimedia Commons",
-        "tags": ["Geology", "Photo Spot"],
+        "tags": [
+          "Geology",
+          "Photo Spot"
+        ],
         "description": "A world-class geological wonder formed by volcanic lava cooling in the sea. The reflection after rain is stunning.",
-        "tips": "The best lighting is in the morning or after rain."
+        "tips": "The best lighting is in the morning or after rain.",
+        "author": "Mark Kao",
+        "license": "CC0",
+        "licenseLink": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "via": "via Wikimedia Commons"
       }
     ]
   },
@@ -67,7 +104,11 @@
     "theme": "City & Beach",
     "title": "Magong Old City & South Ring",
     "subTitle": "馬公舊城與南環海岸：人文漫步",
-    "tags": ["#History", "#Beach", "#Relax"],
+    "tags": [
+      "#History",
+      "#Beach",
+      "#Relax"
+    ],
     "heroImage": "/image/search_by_city/penghu2-3.jpg",
     "intro": "Explore the history of Magong City and enjoy the beaches of the South Ring. Perfect for a relaxed day.",
     "transportation": "**Scooter** or **Bus**.",
@@ -76,40 +117,67 @@
         "time": "09:30",
         "name": "Penghu Tianhou Temple (澎湖天后宮)",
         "address": "Magong City, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/R7mUEL5StUjDdRXa8",
-        "coords": [23.564, 119.564],
+        "mapLink": "https://maps.app.goo.gl/R7mUEL5StUjDdRXa8。Duxing",
+        "coords": [
+          23.564,
+          119.564
+        ],
         "image": "/image/search_by_city/penghu2-1.jpg",
-        "copyright": "TroyJiang, CC BY-SA 4.0",
-        "copyrightLink": "https://commons.wikimedia.org/wiki/File:%E6%BE%8E%E6%B9%96%E5%A4%A9%E5%90%8E%E5%AE%AE_%E5%A4%96%E8%A7%80.jpg",
-        "tags": ["Temple", "History"],
+        "tags": [
+          "Temple",
+          "History"
+        ],
         "description": "The oldest Mazu temple in Taiwan. It houses the earliest stone stele in Taiwan, recording the retreat of the Dutch.",
-        "tips": "Look for the intricate wood carvings on the ceiling."
+        "tips": "Look for the intricate wood carvings on the ceiling.",
+        "author": "TroyJiang",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E6%BE%8E%E6%B9%96%E5%A4%A9%E5%90%8E%E5%AE%AE_%E5%A4%96%E8%A7%80.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons"
       },
       {
         "time": "11:00",
         "name": "Duxing 10th Village (篤行十村)",
         "address": "Magong City, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/ZSufLAf184TFwgyR8",
-        "coords": [23.561, 119.560],
+        "mapLink": "https://maps.app.goo.gl/ZSufLAf184TFwgyR8。Shanshui",
+        "coords": [
+          23.561,
+          119.560
+        ],
         "image": "/image/search_by_city/penghu2-2.jpg",
-        "copyright": "Wei-Te Wong, CC BY-SA 2.0",
-        "copyrightLink": "https://commons.wikimedia.org/wiki/File:An-Bang_Pan_Museum_20150618.jpg",
-        "tags": ["Culture", "Music"],
+        "tags": [
+          "Culture",
+          "Music"
+        ],
         "description": "The oldest military dependents' village in Taiwan. The birthplace of the famous song 'Grandma's Penghu Bay'.",
-        "tips": "Visit the Chang Yu-sheng Memorial Museum inside."
+        "tips": "Visit the Chang Yu-sheng Memorial Museum inside.",
+        "author": "Wei-Te Wong",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:An-Bang_Pan_Museum_20150618.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+        "via": "via Wikimedia Commons"
       },
       {
         "time": "15:00",
         "name": "Shanshui Beach (山水沙灘)",
         "address": "Magong City, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/ho2VKUStsfcbJRbD7",
-        "coords": [23.513, 119.593],
+        "mapLink": "https://maps.app.goo.gl/ho2VKUStsfcbJRbD7且本篇banner用此。接著換一篇Twin-Heart",
+        "coords": [
+          23.513,
+          119.593
+        ],
         "image": "/image/search_by_city/penghu2-3.jpg",
-        "copyright": "舟集 Toadboat, CC BY-SA 4.0",
-        "copyrightLink": "https://commons.wikimedia.org/wiki/File:Shanshui_Beach_%E5%B1%B1%E6%B0%B4%E6%B2%99%E7%81%98.jpg",
-        "tags": ["Beach", "Surfing"],
+        "tags": [
+          "Beach",
+          "Surfing"
+        ],
         "description": "A beautiful golden sand beach popular for surfing. Nearby Fenggui Cave offers the sound of waves rushing into sea caves.",
-        "tips": "Great place for sunset watching."
+        "tips": "Great place for sunset watching.",
+        "author": "舟集 Toadboat",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Shanshui_Beach_%E5%B1%B1%E6%B0%B4%E6%B2%99%E7%81%98.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons"
       }
     ]
   },
@@ -119,7 +187,11 @@
     "theme": "Island Hopping",
     "title": "South Sea Island Hopping",
     "subTitle": "南海雙島與市區巡禮：經典跳島",
-    "tags": ["#IslandHopping", "#StoneWeir", "#Nature"],
+    "tags": [
+      "#IslandHopping",
+      "#StoneWeir",
+      "#Nature"
+    ],
     "heroImage": "/image/search_by_city/penghu3-1.jpg",
     "intro": "Visit the iconic Twin-Heart Stone Weir in Qimei and the historic houses in Wang'an. Return to Magong for city vibes.",
     "transportation": "**Ferry** from South Sea Visitor Center.",
@@ -128,35 +200,59 @@
         "time": "Day 1 AM",
         "name": "Twin-Heart Stone Weir (七美雙心石滬)",
         "address": "Qimei Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/JjsZVo8PmxWB2Uni7",
-        "coords": [23.218, 119.443],
+        "mapLink": "https://maps.app.goo.gl/JjsZVo8PmxWB2Uni7且本篇banner用此。Huazhai",
+        "coords": [
+          23.218,
+          119.443
+        ],
         "image": "/image/search_by_city/penghu3-1.jpg",
-        "copyright": "Tourism Administration, MOTC, Attribution, via Wikimedia Commons",
-        "tags": ["Iconic", "Romantic"],
+        "tags": [
+          "Iconic",
+          "Romantic"
+        ],
         "description": "Originally a fish trap built from basalt and coral stone. Now a romantic symbol of Penghu.",
-        "tips": "Check the tide schedule; it looks best at low tide."
+        "tips": "Check the tide schedule; it looks best at low tide.",
+        "author": "Tourism Administration, MOTC",
+        "license": "Attribution",
+        "licenseLink": "",
+        "via": "via Wikimedia Commons"
       },
       {
         "time": "Day 1 PM",
         "name": "Huazhai Village (望安花宅聚落)",
         "address": "Wang'an Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/twTKdPGgVSMEpw1b9",
-        "coords": [23.370, 119.501],
+        "mapLink": "https://maps.app.goo.gl/twTKdPGgVSMEpw1b9。 ",
+        "coords": [
+          23.37,
+          119.501
+        ],
         "image": "/image/search_by_city/penghu3-2.jpg",
-        "copyright": "Venation, CC BY-SA 3.0",
-        "copyrightLink": "https://commons.wikimedia.org/wiki/File:%E6%9C%9B%E5%AE%89%E8%8A%B1%E5%AE%85%E8%81%9A%E8%90%BD300%E5%A4%9A%E5%B9%B4_%E6%BE%8E%E6%B9%96%E7%B8%A3_%E9%87%8D%E8%A6%81%E8%81%9A%E8%90%BD_Venation_3.JPG",
-        "tags": ["Architecture", "History"],
+        "tags": [
+          "Architecture",
+          "History"
+        ],
         "description": "A 300-year-old Han settlement recognized by UNESCO. A rare glimpse into early Penghu architecture.",
-        "tips": "Look for the 'Double Xi' (Joy) window designs."
+        "tips": "Look for the 'Double Xi' (Joy) window designs.",
+        "author": "Venation",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E6%9C%9B%E5%AE%89%E8%8A%B1%E5%AE%85%E8%81%9A%E8%90%BD300%E5%A4%9A%E5%B9%B4_%E6%BE%8E%E6%B9%96%E7%B8%A3_%E9%87%8D%E8%A6%81%E8%81%9A%E8%90%BD_Venation_3.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0",
+        "via": "via Wikimedia Commons"
       },
       {
         "time": "Day 2 PM",
         "name": "Pier3 Duty Free (三號港)",
         "address": "Magong City, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/LQkwKJ3i1Peihztd9",
-        "coords": [23.567, 119.573],
+        "mapLink": "https://maps.app.goo.gl/LQkwKJ3i1Peihztd9換一篇Jibei",
+        "coords": [
+          23.567,
+          119.573
+        ],
         "image": "/image/search_by_city/penghu3-3.png",
-        "tags": ["Shopping", "Indoor"],
+        "tags": [
+          "Shopping",
+          "Indoor"
+        ],
         "description": "Enjoy tax-free shopping and visit the Whiskey Museum. The Go Star extreme sports ground is great for kids.",
         "tips": "Bring your flight ticket/ID for tax-free purchases."
       }
@@ -168,7 +264,11 @@
     "theme": "Water Sports",
     "title": "Jibei Water Sports & North Ring",
     "subTitle": "北海吉貝水上樂園：動感海島線",
-    "tags": ["#WaterSports", "#Beach", "#Fun"],
+    "tags": [
+      "#WaterSports",
+      "#Beach",
+      "#Fun"
+    ],
     "heroImage": "/image/search_by_city/penghu4-1.png",
     "intro": "For water lovers. Jibei Island offers a long golden sand spit and exciting water activities.",
     "transportation": "**Ferry** from North Sea Visitor Center (Chikan).",
@@ -177,10 +277,16 @@
         "time": "Day 1 Full Day",
         "name": "Jibei Sand Tail (吉貝沙尾)",
         "address": "Baisha Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/RkUcq9tZw5SkHwsn9",
-        "coords": [23.738, 119.613],
+        "mapLink": "https://maps.app.goo.gl/RkUcq9tZw5SkHwsn9且本篇banner用此。Dream",
+        "coords": [
+          23.738,
+          119.613
+        ],
         "image": "/image/search_by_city/penghu4-1.png",
-        "tags": ["Beach", "Activity"],
+        "tags": [
+          "Beach",
+          "Activity"
+        ],
         "description": "A stunning sand spit stretching into the sea. The center for water sports like banana boats and jet skis.",
         "tips": "Bring lots of sunscreen; there is no shade."
       },
@@ -188,10 +294,16 @@
         "time": "Day 2 PM",
         "name": "Dream Beach (夢幻沙灘)",
         "address": "Xiyu Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/KftkZcmxjYVxjXkM6",
-        "coords": [23.612, 119.516],
+        "mapLink": "https://maps.app.goo.gl/KftkZcmxjYVxjXkM6換一篇Guanyinting",
+        "coords": [
+          23.612,
+          119.516
+        ],
         "image": "/image/search_by_city/penghu4-2.png",
-        "tags": ["Hidden Gem", "Sunset"],
+        "tags": [
+          "Hidden Gem",
+          "Sunset"
+        ],
         "description": "A hidden beach that only appears at low tide. Located near the Daguoye Basalt.",
         "tips": "Must visit at low tide, or the beach disappears!"
       }
@@ -203,7 +315,11 @@
     "theme": "Festival",
     "title": "Fireworks Festival Special",
     "subTitle": "花火節限定與經典全覽：年度盛事",
-    "tags": ["#Fireworks", "#Festival", "#GrandTour"],
+    "tags": [
+      "#Fireworks",
+      "#Festival",
+      "#GrandTour"
+    ],
     "heroImage": "/image/search_by_city/penghu5-2.png",
     "intro": "Designed for the 2025/2026 Fireworks Festival. Covers the North Ring, South Sea islands, and the spectacular drone firework show.",
     "transportation": "**Scooter/Car Rental** is essential.",
@@ -212,10 +328,16 @@
         "time": "Day 1 Night",
         "name": "Guanyinting Recreation Area (觀音亭園區)",
         "address": "Magong City, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/aMCpkZziQ9JkR49UA",
-        "coords": [23.568, 119.563],
+        "mapLink": "https://maps.app.goo.gl/aMCpkZziQ9JkR49UA。Moses",
+        "coords": [
+          23.568,
+          119.563
+        ],
         "image": "/image/search_by_city/penghu5-1.png",
-        "tags": ["Fireworks", "NightView"],
+        "tags": [
+          "Fireworks",
+          "NightView"
+        ],
         "description": "The main venue for the Penghu International Fireworks Festival. Enjoy the drone show and fireworks over the rainbow bridge.",
         "tips": "Arrive by 7 PM to get a good spot. Show starts at 9 PM."
       },
@@ -223,10 +345,16 @@
         "time": "Day 3 AM",
         "name": "Moses Parting the Sea (奎壁山摩西分海)",
         "address": "Huxi Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/DY75LRVkb64xPe8k7",
-        "coords": [23.593, 119.674],
+        "mapLink": "https://maps.app.goo.gl/DY75LRVkb64xPe8k7且本篇banner用此圖。Breakfast",
+        "coords": [
+          23.593,
+          119.674
+        ],
         "image": "/image/search_by_city/penghu5-2.png",
-        "tags": ["Nature", "Tide"],
+        "tags": [
+          "Nature",
+          "Tide"
+        ],
         "description": "At low tide, a pebble path emerges from the sea, connecting the main island to Chiyu Islet. Check the tide schedule!",
         "tips": "Flags indicate when it's safe to cross."
       },
@@ -234,10 +362,16 @@
         "time": "Day 3 Noon",
         "name": "Breakfast Street (文康早餐街)",
         "address": "Magong City, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/BGTHK1EGjvx61Nhq9",
-        "coords": [23.569, 119.566],
+        "mapLink": "https://maps.app.goo.gl/BGTHK1EGjvx61Nhq9換一篇East",
+        "coords": [
+          23.569,
+          119.566
+        ],
         "image": "/image/search_by_city/penghu5-3.png",
-        "tags": ["Food", "Local"],
+        "tags": [
+          "Food",
+          "Local"
+        ],
         "description": "Try the famous beef offal soup at Beixinqiao or the clay oven rolls at Zhongji.",
         "tips": "Go early! Popular items sell out by 9 AM."
       }
@@ -249,7 +383,11 @@
     "theme": "Ecology & Military",
     "title": "Slow Living & Military Sites",
     "subTitle": "慢活生態與軍事地景：深度玩家",
-    "tags": ["#Ecology", "#Military", "#HiddenGems"],
+    "tags": [
+      "#Ecology",
+      "#Military",
+      "#HiddenGems"
+    ],
     "heroImage": "/image/search_by_city/penghu6-3.png",
     "intro": "Avoid the crowds. Experience traditional fishing methods in the intertidal zone and explore historical military forts.",
     "transportation": "**Car Rental** + **Tour Package**.",
@@ -258,10 +396,16 @@
         "time": "Day 1 Full Day",
         "name": "East Sea Eco Tour (東海生態一日遊)",
         "address": "Qitou Visitor Center, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/b97LU8STEDbzfrtLA",
-        "coords": [23.639, 119.623],
+        "mapLink": "https://maps.app.goo.gl/b97LU8STEDbzfrtLA ",
+        "coords": [
+          23.639,
+          119.623
+        ],
         "image": "/image/search_by_city/penghu6-1.png",
-        "tags": ["EcoTour", "Fishing"],
+        "tags": [
+          "EcoTour",
+          "Fishing"
+        ],
         "description": "Participate in 'Bao Dun' (traditional fishing), feed seagulls, and kayak in transparent canoes near Pengpeng Beach.",
         "tips": "Book through local travel agencies in advance."
       },
@@ -269,10 +413,16 @@
         "time": "Day 2 AM",
         "name": "Shetou Mountain (蛇頭山)",
         "address": "Magong City, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/YuvRWWHCGrtwFvXr5",
-        "coords": [23.548, 119.552],
+        "mapLink": "https://maps.app.goo.gl/YuvRWWHCGrtwFvXr5。Nanliao",
+        "coords": [
+          23.548,
+          119.552
+        ],
         "image": "/image/search_by_city/penghu6-2.png",
-        "tags": ["History", "Viewpoint"],
+        "tags": [
+          "History",
+          "Viewpoint"
+        ],
         "description": "A site with Dutch castle ruins and monuments from the French army. A place rich in international war history.",
         "tips": "Offers a great view of Magong City across the bay."
       },
@@ -280,10 +430,16 @@
         "time": "Day 3 AM",
         "name": "Nanliao Ancient Houses (南寮古厝)",
         "address": "Huxi Township, Penghu County",
-        "mapLink": "https://maps.app.goo.gl/bNhCSTVz6Doi41ncA",
-        "coords": [23.593, 119.664],
+        "mapLink": "https://maps.app.goo.gl/bNhCSTVz6Doi41ncA本篇banner用此圖 重這裡面找到正確的作者連結與版權聲明連結並且不要更動其他所有內容",
+        "coords": [
+          23.593,
+          119.664
+        ],
         "image": "/image/search_by_city/penghu6-3.png",
-        "tags": ["Culture", "Art"],
+        "tags": [
+          "Culture",
+          "Art"
+        ],
         "description": "Listed as one of the world's top 100 green destinations. Famous for its colorful floating ball art installations.",
         "tips": "Look for the traditional 'cow dung cakes' drying on walls."
       }
