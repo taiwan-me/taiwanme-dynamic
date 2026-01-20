@@ -10,10 +10,10 @@ const rootDir = process.cwd();
 // 優先嘗試根目錄，失敗則嘗試 api/ 目錄
 let generateSitemap;
 try {
-    generateSitemap = require('./generate-sitemap');
+    generateSitemap = require('../generate-sitemap'); // 假設在 api 資料夾內，往上一層找
 } catch (e) {
     try {
-        generateSitemap = require('./api/generate-sitemap');
+        generateSitemap = require('./generate-sitemap'); // 同層找
     } catch (err) {
         console.warn('⚠️ Warning: generate-sitemap.js not found.');
     }
@@ -58,7 +58,13 @@ if (generateSitemap) {
 // 1. 整合 Search API
 // ==========================================
 try {
-    const searchHandler = require('./search'); // 或是 './api/search'
+    // 嘗試載入 search.js，路徑可能在根目錄或 api/ 下
+    let searchHandler;
+    try {
+        searchHandler = require('../search');
+    } catch (e) {
+        searchHandler = require('./search');
+    }
     
     app.get('/api/search', async (req, res) => {
         const handler = searchHandler.default || searchHandler;
@@ -293,7 +299,7 @@ if (process.env.NODE_ENV !== 'production') {
         console.log(`✅ TaiwanMe Server Running in: ${rootDir}`);
         console.log(`🔍 Search API loaded at: http://localhost:${PORT}/api/search`);
         console.log(`🌍 Main URL: http://localhost:${PORT}`);
-        console.log(`🗺️  Sitemap URL: http://localhost:${PORT}/sitemap.xml`);
+        console.log(`🗺️  Sitemap URL: http://localhost:${PORT}/sitemap.xml`);
     });
 }
 
