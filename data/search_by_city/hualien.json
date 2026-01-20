@@ -4,8 +4,12 @@
     "type": "1-Day Tour",
     "title": "Gorge's Edge & Tears of Taroko",
     "subTitle": "峽谷邊緣與月牙之淚：震後地質見證",
-    "tags": ["#Geology", "#Taroko", "#Photography"],
-    "heroImage": "/image/search_by_city/hualien/taroko_geo.jpg",
+    "tags": [
+      "#Geology",
+      "#Taroko",
+      "#Photography"
+    ],
+    "heroImage": "/image/search_by_city/hualien1-2.jpg",
     "intro": "Witness the scars and resilience of nature post-earthquake. Visit the safest high-ground viewpoint at Buluowan and listen to the singing stones of Qixingtan.",
     "transportation": "Take **Taiwan Tourist Shuttle 310** from Hualien Station + Local Taxi.",
     "spots": [
@@ -13,29 +17,69 @@
         "time": "09:00",
         "name": "Taroko Visitor Center & Shakadang (太魯閣遊客中心)",
         "address": "Xiulin Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleTaroko",
-        "description": "Although deep canyon access is limited, the center offers the best geological education. Check if the Shakadang Trail's first section is open for a safe walk."
+        "mapLink": "https://maps.app.goo.gl/3PyGyHErPxRGsj1n6",
+        "description": "Although deep canyon access is limited, the center offers the best geological education. Check if the Shakadang Trail's first section is open for a safe walk.",
+        "image": "/image/search_by_city/hualien1-1.jpg",
+        "author": "lienyuan lee",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%A4%AA%E9%AD%AF%E9%96%A3%E9%81%8A%E5%AE%A2%E4%B8%AD%E5%BF%83_Taroko_Visitor_Center_-_panoramio_(2).jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.157,
+          121.622
+        ]
       },
       {
         "time": "11:30",
         "name": "Buluowan Suspension Bridge (布洛灣山月吊橋)",
         "address": "Xiulin Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleBuluowan",
-        "description": "The safest high-angle viewpoint post-quake. Overlook the majestic Liwu River valley from this high-tech, quake-resistant bridge."
+        "mapLink": "https://maps.app.goo.gl/szjiB3Z4mMvRmdbR7",
+        "description": "The safest high-angle viewpoint post-quake. Overlook the majestic Liwu River valley from this high-tech, quake-resistant bridge.",
+        "image": "/image/search_by_city/hualien1-2.jpg",
+        "author": "Taroko National Park",
+        "license": "Attribution",
+        "licenseLink": "",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%B1%B1%E6%9C%88%E5%90%8A%E6%A9%8B20200721.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.171,
+          121.594
+        ]
       },
       {
         "time": "14:00",
         "name": "Qixingtan & 48 Highlands (七星潭 & 四八高地)",
         "address": "Xincheng Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleQixingtan",
-        "description": "Listen to the 'singing' of rolling pebbles (swimming is prohibited). Walk up to the 48 Highlands for a panoramic view of the crescent bay."
+        "mapLink": "https://maps.app.goo.gl/34w1ezBqZ1KG7B4S6",
+        "description": "Listen to the 'singing' of rolling pebbles (swimming is prohibited). Walk up to the 48 Highlands for a panoramic view of the crescent bay.",
+        "image": "/image/search_by_city/hualien1-3.jpg",
+        "author": "lienyuan lee",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Qixingtan_Beach_%E4%B8%83%E6%98%9F%E6%BD%AD%E6%B5%B7%E5%B2%B8_-_panoramio.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.026,
+          121.635
+        ]
       },
       {
         "time": "17:30",
         "name": "Dongdamen Night Market (東大門夜市)",
         "address": "Hualien City",
-        "mapLink": "https://goo.gl/maps/exampleDongdamen",
-        "description": "A carnival of flavors. Must-try: 'Lin's Grilled Corn' and indigenous spice-infused 'Maqaw Pork Buns'."
+        "mapLink": "https://maps.app.goo.gl/Pt39g2xhQkRswx5M8",
+        "description": "A carnival of flavors. Must-try: 'Lin's Grilled Corn' and indigenous spice-infused 'Maqaw Pork Buns'.",
+        "image": "/image/search_by_city/hualien1-4.jpg",
+        "author": "Peter in s",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Hualien_City11.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.972,
+          121.611
+        ]
       }
     ]
   },
@@ -44,8 +88,12 @@
     "type": "1-Day Tour",
     "title": "Emerald Lake & Forest Bath",
     "subTitle": "縱谷綠寶石：鯉魚潭舒活",
-    "tags": ["#Lake", "#Forest", "#Family"],
-    "heroImage": "/image/search_by_city/hualien/liyu_lake.jpg",
+    "tags": [
+      "#Lake",
+      "#Forest",
+      "#Family"
+    ],
+    "heroImage": "/image/search_by_city/hualien2-2.png",
     "intro": "The most stable inland attraction post-quake. Enjoy SUP on the barrier lake and explore the history of the forestry industry.",
     "transportation": "Take **Taiwan Tourist Shuttle 303** (Rift Valley Line).",
     "spots": [
@@ -53,22 +101,47 @@
         "time": "09:30",
         "name": "Liyu Lake (鯉魚潭)",
         "address": "Shoufeng Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleLiyu",
-        "description": "Hualien's largest inland lake. Perfect for SUP or pedal boats. The circular trail is flat and family-friendly."
+        "mapLink": "https://maps.app.goo.gl/7zW1f8sdvmtC5Dct5",
+        "description": "Hualien's largest inland lake. Perfect for SUP or pedal boats. The circular trail is flat and family-friendly.",
+        "image": "/image/search_by_city/hualien2-1.jpg",
+        "author": "lienyuan lee",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E9%AF%89%E9%AD%9A%E6%BD%AD_Liyutan_Lake_-_panoramio.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.926,
+          121.509
+        ]
       },
       {
         "time": "14:30",
         "name": "Chinan National Forest Recreation Area (池南國家森林遊樂區)",
         "address": "Shoufeng Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleChinan",
-        "description": "A former forestry transit station displaying old steam locomotives and logging machinery from the Halun Mountain Railway era."
+        "mapLink": "https://maps.app.goo.gl/NzpxWb5yRZY9Cx156",
+        "description": "A former forestry transit station displaying old steam locomotives and logging machinery from the Halun Mountain Railway era.",
+        "image": "/image/search_by_city/hualien2-2.png",
+        "coords": [
+          23.926,
+          121.503
+        ]
       },
       {
         "time": "16:30",
         "name": "Hualien Cultural & Creative Industries Park (花蓮文創園區)",
         "address": "Hualien City",
-        "mapLink": "https://goo.gl/maps/exampleCreativePark",
-        "description": "A renovated old winery in the city center. A quiet space featuring Japanese-style wooden architecture."
+        "mapLink": "https://maps.app.goo.gl/kdcRAuZVW5qiEoCKA",
+        "description": "A renovated old winery in the city center. A quiet space featuring Japanese-style wooden architecture.",
+        "image": "/image/search_by_city/hualien2-3.jpg",
+        "author": "lienyuan lee",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E8%8A%B1%E8%93%AE%E6%96%87%E5%89%B5%E5%9C%92%E5%8D%80_Hualian_Cultural_and_Creative_Park_-_panoramio.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.975,
+          121.608
+        ]
       }
     ]
   },
@@ -77,8 +150,12 @@
     "type": "2-Day Tour",
     "title": "Pacific Geological Poetry",
     "subTitle": "太平洋的地質詩篇：台11線海岸冒險",
-    "tags": ["#Coastline", "#Geology", "#Photography"],
-    "heroImage": "/image/search_by_city/hualien/coast_geo.jpg",
+    "tags": [
+      "#Coastline",
+      "#Geology",
+      "#Photography"
+    ],
+    "heroImage": "/image/search_by_city/hualien3-1.png",
     "intro": "Explore the front line of tectonic plate collision. From glass swings to sea caves, witness the dramatic sculptures of the Pacific Ocean.",
     "transportation": "**Car Rental** is highly recommended.",
     "spots": [
@@ -86,22 +163,47 @@
         "time": "Day 1 PM",
         "name": "Qinbuzhizi Skywalk (親不知子天空步道)",
         "address": "Fengbin Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleSkywalk",
-        "description": "Walk on a glass path built into the vertical cliff face, suspended above the crashing waves of the Pacific."
+        "mapLink": "https://maps.app.goo.gl/tf19f4rVqE8fNGiW8",
+        "description": "Walk on a glass path built into the vertical cliff face, suspended above the crashing waves of the Pacific.",
+        "image": "/image/search_by_city/hualien3-1.png",
+        "coords": [
+          23.633,
+          121.559
+        ]
       },
       {
         "time": "Day 2 AM",
         "name": "Shimen March Cave (石門麻糬洞)",
         "address": "Fengbin Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleMarchCave",
-        "description": "A sea erosion cave shaped like a 'March' car. Also a filming location for Martin Scorsese's movie 'Silence'."
+        "mapLink": "https://maps.app.goo.gl/8aCBbbBvPMhf98Ba8",
+        "description": "A sea erosion cave shaped like a 'March' car. Also a filming location for Martin Scorsese's movie 'Silence'.",
+        "image": "/image/search_by_city/hualien3-2.jpg",
+        "author": "lienyuan lee",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E9%96%80%E6%B4%9E_Shimen_Arch_-_panoramio.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.539,
+          121.505
+        ]
       },
       {
         "time": "Day 2 PM",
         "name": "Shitiping (石梯坪)",
         "address": "Fengbin Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleShitiping",
-        "description": "A world-class geological classroom featuring white volcanic tuff and unique 'cuesta' (single-slope hill) landforms."
+        "mapLink": "https://maps.app.goo.gl/USGH9koJHjQtdtkk9",
+        "description": "A world-class geological classroom featuring white volcanic tuff and unique 'cuesta' (single-slope hill) landforms.",
+        "image": "/image/search_by_city/hualien3-3.jpg",
+        "author": "東部海岸國家風景區管理處",
+        "license": "CC BY 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E8%8A%B1%E8%93%AE%E8%B1%90%E6%BF%B1%E9%84%89_%E7%9F%B3%E6%A2%AF%E5%9D%AA%E8%A7%80%E6%B5%B7%E5%B9%B3%E5%8F%B0.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.488,
+          121.508
+        ]
       }
     ]
   },
@@ -110,8 +212,12 @@
     "type": "2-Day Tour",
     "title": "Wood Aroma & Sugar Sweetness",
     "subTitle": "木香與糖味：縱谷人文歷史慢旅",
-    "tags": ["#History", "#Train", "#HotSpring"],
-    "heroImage": "/image/search_by_city/hualien/sugar_wood.jpg",
+    "tags": [
+      "#History",
+      "#Train",
+      "#HotSpring"
+    ],
+    "heroImage": "/image/search_by_city/hualien4-1.jpg",
     "intro": "Travel back to the era of 'Little Shanghai' logging towns and sugar empires. End the trip with a unique golden hot spring experience.",
     "transportation": "**Train** to Guangfu/Fenglin + **Local Bike/Scooter Rental**.",
     "spots": [
@@ -119,22 +225,52 @@
         "time": "Day 1 PM",
         "name": "Lintianshan Forestry Culture Park (林田山林業文化園區)",
         "address": "Fenglin Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleLintian",
-        "description": "Once the fourth largest logging farm in Taiwan, known as 'Little Shanghai'. The preserved cypress buildings and Zhongshan Hall are stunning."
+        "mapLink": "https://maps.app.goo.gl/peUFaBoB9hjJvLCTA",
+        "description": "Once the fourth largest logging farm in Taiwan, known as 'Little Shanghai'. The preserved cypress buildings and Zhongshan Hall are stunning.",
+        "image": "/image/search_by_city/hualien4-1.jpg",
+        "author": "Rasputinemark",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E6%9E%97%E7%94%B0%E5%B1%B1%EF%BC%88MORISAKA%EF%BC%89%E6%9E%97%E6%A5%AD%E8%81%9A%E8%90%BD4.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.712,
+          121.431
+        ]
       },
       {
         "time": "Day 1 Night",
         "name": "Hualien Sugar Factory (花蓮觀光糖廠)",
         "address": "Guangfu Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleSugarFactory",
-        "description": "Stay overnight in a Japanese-style wooden cabin. Don't miss the ice cream and feeding fish in the morning."
+        "mapLink": "https://maps.app.goo.gl/bDVCah1eSBqerASd6",
+        "description": "Stay overnight in a Japanese-style wooden cabin. Don't miss the ice cream and feeding fish in the morning.",
+        "image": "/image/search_by_city/hualien4-2.jpg",
+        "author": "lienyuan lee",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E8%8A%B1%E8%93%AE%E8%A7%80%E5%85%89%E7%B3%96%E5%BB%A0_Hualian_Sugar_Refinery_-_panoramio_(1).jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.661,
+          121.42
+        ]
       },
       {
         "time": "Day 2 PM",
         "name": "Ruisui Hot Spring (瑞穗溫泉)",
         "address": "Ruisui Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleRuisui",
-        "description": "Experience the 'Golden Soup', Taiwan's only carbonate hot spring rich in iron, which turns yellow upon oxidation."
+        "mapLink": "https://maps.app.goo.gl/XT1nD24bez454kxQA",
+        "description": "Experience the 'Golden Soup', Taiwan's only carbonate hot spring rich in iron, which turns yellow upon oxidation.",
+        "image": "/image/search_by_city/hualien4-3.jpg",
+        "author": "Kamakura",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Ruisui_wenquan02.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.497,
+          121.353
+        ]
       }
     ]
   },
@@ -143,8 +279,12 @@
     "type": "3-Day Tour",
     "title": "Hunters & Extreme Streams",
     "subTitle": "山海獵人與極限溪流：深度冒險",
-    "tags": ["#Adventure", "#Indigenous", "#RiverTracing"],
-    "heroImage": "/image/search_by_city/hualien/river_tracing.jpg",
+    "tags": [
+      "#Adventure",
+      "#Indigenous",
+      "#RiverTracing"
+    ],
+    "heroImage": "/image/search_by_city/hualien5-3.png",
     "intro": "Move from gazing to participating. Learn Indigenous survival skills, trace the emerald streams, and kayak at sunrise under the cliffs.",
     "transportation": "**Private Charter** or **Guided Tour** (with pickup).",
     "spots": [
@@ -152,22 +292,37 @@
         "time": "Day 1 AM",
         "name": "Malasang Hunter School (馬拉桑獵人學校)",
         "address": "Ji'an Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleHunter",
-        "description": "Wear traditional attire, learn archery, set traps, and make bamboo rice. Understand the Amis wisdom of ecological balance."
+        "mapLink": "https://maps.app.goo.gl/THCKzXwHqmXqiquf8",
+        "description": "Wear traditional attire, learn archery, set traps, and make bamboo rice. Understand the Amis wisdom of ecological balance.",
+        "image": "/image/search_by_city/hualien5-1.jpg",
+        "coords": [
+          23.957,
+          121.555
+        ]
       },
       {
         "time": "Day 2 Full Day",
         "name": "River Tracing (溯溪體驗)",
         "address": "Sanzhan or Shapodang River",
-        "mapLink": "https://goo.gl/maps/exampleRiver",
-        "description": "Hualien's ace activity. Jump into emerald pools and climb waterfalls under professional guidance."
+        "mapLink": "https://maps.app.goo.gl/SF1jHzoA6E6msEBD6",
+        "description": "Hualien's ace activity. Jump into emerald pools and climb waterfalls under professional guidance.",
+        "image": "/image/search_by_city/hualien5-2.png",
+        "coords": [
+          24.093,
+          121.603
+        ]
       },
       {
         "time": "Day 3 Dawn",
         "name": "Qingshui Cliff Kayaking/SUP (清水斷崖獨木舟)",
         "address": "Xiulin Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleCliff",
-        "description": "Paddle out at sunrise to look back at the majestic cliffs dropping vertically into the Pacific. The safest way to view the cliffs post-quake."
+        "mapLink": "https://maps.app.goo.gl/casvGbx8EB1ujjYC7",
+        "description": "Paddle out at sunrise to look back at the majestic cliffs dropping vertically into the Pacific. The safest way to view the cliffs post-quake.",
+        "image": "/image/search_by_city/hualien5-3.png",
+        "coords": [
+          24.204,
+          121.674
+        ]
       }
     ]
   },
@@ -176,8 +331,12 @@
     "type": "3-Day Tour",
     "title": "Call of the Deep Valley",
     "subTitle": "縱谷深處的呼喚：瓦拉米與稻浪",
-    "tags": ["#Hiking", "#RiceField", "#RoadTrip"],
-    "heroImage": "/image/search_by_city/hualien/walami_trail.jpg",
+    "tags": [
+      "#Hiking",
+      "#RiceField",
+      "#RoadTrip"
+    ],
+    "heroImage": "/image/search_by_city/hualien6-1.jpg",
     "intro": "A journey to the southernmost part of Hualien. Walk the historic Walami Trail and drive along the scenic County Road 193.",
     "transportation": "**Car Rental** is the best option.",
     "spots": [
@@ -185,22 +344,42 @@
         "time": "Day 2 AM",
         "name": "Walami Trail (瓦拉米步道)",
         "address": "Zhuoxi Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleWalami",
-        "description": "Part of the historic Batongguan Traversing Trail. A 5-star ecological trail with suspension bridges and waterfalls, home to the Formosan Black Bear."
+        "mapLink": "https://maps.app.goo.gl/PHT5zTUruMR9o2yFA",
+        "description": "Part of the historic Batongguan Traversing Trail. A 5-star ecological trail with suspension bridges and waterfalls, home to the Formosan Black Bear.",
+        "image": "/image/search_by_city/hualien6-1.jpg",
+        "author": "chienhaw",
+        "license": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%B9%BD%E9%9D%9C%E7%9A%84%E7%93%A6%E6%8B%89%E7%B1%B3%E6%AD%A5%E9%81%93_-_panoramio.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.327,
+          121.252
+        ]
       },
       {
         "time": "Day 2 PM",
         "name": "Yuli Township (玉里鎮)",
         "address": "Yuli Township, Hualien County",
-        "mapLink": "https://goo.gl/maps/exampleYuli",
-        "description": "Visit the junction of the Eurasian and Philippine Sea Plates. Must eat: Yuli Noodles and Yuli Stinky Tofu."
+        "mapLink": "https://maps.app.goo.gl/tU4tew7qcw6ntmALA",
+        "description": "Visit the junction of the Eurasian and Philippine Sea Plates. Must eat: Yuli Noodles and Yuli Stinky Tofu.",
+        "image": "/image/search_by_city/hualien6-2.jpg",
+        "coords": [
+          23.336,
+          121.312
+        ]
       },
       {
         "time": "Day 3 PM",
         "name": "County Road 193 (193縣道)",
         "address": "Yuli to Hualien",
-        "mapLink": "https://goo.gl/maps/example193",
-        "description": "The most beautiful country road in Taiwan, running parallel to Hwy 9 but offering quieter, stunning views of paddy fields and tribal villages."
+        "mapLink": "https://maps.app.goo.gl/zqYHpStV3SXbeVTBA",
+        "description": "The most beautiful country road in Taiwan, running parallel to Hwy 9 but offering quieter, stunning views of paddy fields and tribal villages.",
+        "image": "/image/search_by_city/hualien6-3.jpg",
+        "coords": [
+          23.6,
+          121.45
+        ]
       }
     ]
   }
