@@ -8,8 +8,10 @@ const getActiveStyle = (targetPage) => {
 const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';
 %>
 
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<link rel="icon" href="/image/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/image/logo.png">
 
 <script type="application/ld+json">
 {
@@ -20,6 +22,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
   "url": "https://taiwanme-dynamic.vercel.app/"
 }
 </script>
+
 <style>
     /* ========================================= */
     /* 1. 回到頂部按鈕樣式 (保留原樣) */
@@ -40,18 +43,17 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     }
 
     /* ========================================= */
-    /* 2. Search 按鈕樣式 (排在 Header 連結列) */
+    /* 2. Search 按鈕樣式 */
     /* ========================================= */
     .search-pill-btn {
         display: inline-flex; align-items: center; gap: 8px;
-        padding: 8px 20px; margin-left: 20px; /* 與 Business Inquiry 拉開距離 */
+        padding: 8px 20px; margin-left: 20px;
         border: 1px solid #333; border-radius: 50px; background: transparent;
         color: #333; font-weight: bold; font-family: inherit; font-size: 0.85rem;
         cursor: pointer; transition: all 0.3s ease;
         text-transform: uppercase; letter-spacing: 0.05em;
     }
     .search-pill-btn:hover { background: #333; color: #fff; }
-    /* 手機版隱藏這顆大按鈕 */
     @media (max-width: 900px) { .search-pill-btn { display: none; } }
 
     /* ========================================= */
@@ -83,6 +85,61 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     .result-img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; margin-right: 15px; }
     .result-type { font-size: 0.75rem; color: #E8A2A2; font-weight: bold; text-transform: uppercase; }
     .result-title { font-size: 1.1rem; font-weight: bold; }
+
+    /* ========================================= */
+    /* 4. Philosophy Modal (品牌理念視窗) */
+    /* ========================================= */
+    .philosophy-modal {
+        display: none; position: fixed; top: 0; left: 0;
+        width: 100%; height: 100%; background-color: rgba(20, 20, 20, 0.9);
+        z-index: 10001; justify-content: center; align-items: center;
+        animation: fadeIn 0.4s ease; backdrop-filter: blur(5px);
+    }
+    .philosophy-card {
+        background: #fff; width: 90%; max-width: 650px; max-height: 85vh;
+        overflow-y: auto; padding: 50px; position: relative;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3); border-radius: 4px;
+        text-align: left;
+    }
+    .philosophy-close {
+        position: absolute; top: 20px; right: 25px; font-size: 2rem; 
+        cursor: pointer; color: #888; transition: color 0.3s;
+        line-height: 1;
+    }
+    .philosophy-close:hover { color: #000; }
+    
+    .philo-header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+    .philo-title { font-family: serif; font-size: 2.2rem; color: #333; margin-bottom: 10px; line-height: 1.2; }
+    .philo-subtitle { font-family: sans-serif; font-size: 0.9rem; color: #E8A2A2; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
+    
+    .philo-body p { 
+        font-family: sans-serif; font-size: 1.05rem; line-height: 1.8; color: #555; margin-bottom: 20px; 
+    }
+    .philo-body strong { color: #000; font-weight: 600; }
+    .philo-highlight {
+        font-family: serif; font-style: italic; font-size: 1.3rem; color: #333;
+        margin: 30px 0; padding-left: 20px; border-left: 4px solid #E8A2A2;
+    }
+
+    /* ========================================= */
+    /* 5. LOGO 區域微調 (支援中文) */
+    /* ========================================= */
+    .brand-title-row { display: flex; align-items: baseline; }
+    .brand-zh { 
+        font-size: 1.1rem; 
+        font-weight: 500; 
+        margin-left: 8px; 
+        color: #333; /* 與英文標題一致 */
+        letter-spacing: 0.05em;
+    }
+    @media (max-width: 480px) {
+        .brand-zh { font-size: 1rem; margin-left: 5px; }
+    }
+
+    @media (max-width: 600px) {
+        .philosophy-card { padding: 30px 20px; }
+        .philo-title { font-size: 1.8rem; }
+    }
     
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
@@ -93,7 +150,10 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
             <a href="/" class="logo-link">
                 <img src="/image/logo.png" alt="TaiwanMe Logo" class="logo-img">
                 <div class="logo-text-group">
-                    <span class="brand-name">TaiwanMe</span>
+                    <div class="brand-title-row">
+                        <span class="brand-name">TaiwanMe</span>
+                        <span class="brand-zh">台灣味</span>
+                    </div>
                     <span class="brand-slogan">THE REAL TASTE OF TAIWAN</span>
                 </div>
             </a>
@@ -101,7 +161,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 
         <div class="header-links desktop-only" style="display: flex; align-items: center;">
             <a href="#" class="h-link" id="tippingBtn">BUY US<br>A BOBA</a>
-            <a href="#" class="h-link" id="philosophyBtn">TAIWANME'S<br>PHILOSOPHY</a>
+            <a href="#" class="h-link philosophy-trigger" id="philosophyBtn">TAIWANME'S<br>PHILOSOPHY</a>
             <a href="#" class="h-link" id="bizInquiryBtn">BUSINESS<br>INQUIRY</a>
             
             <button id="desktop-search-trigger" class="search-pill-btn">
@@ -119,6 +179,25 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         </div>
     </div>
 </header>
+
+<div id="philosophyModal" class="philosophy-modal">
+    <div class="philosophy-card">
+        <div class="philosophy-close">&times;</div>
+        <div class="philo-header">
+            <div class="philo-subtitle">About Us</div>
+            <h2 class="philo-title">Rediscovering the Lost<br>"Tâi-uân Bī"</h2>
+        </div>
+        <div class="philo-body">
+            <p>It started with a moment of realization. While hosting international students, I watched them queue endlessly for commercialized "hotspots" and trendy shops. As a local, I found myself unable to share the deeper, authentic stories of my own land.</p>
+            <p>It wasn't until a general education class, where a classmate vividly described the very alleys I cycled through every day—my rental place, the campus corners—that it hit me: <strong>Taiwan isn't mundane; we've simply lost the energy to explore it amidst our busy lives.</strong></p>
+            <div class="philo-highlight">
+                "We named this platform TaiwanMe, a play on the pronunciation of 台灣味 (Tâi-uân Bī)—the true flavor of Taiwan."
+            </div>
+            <p>Our mission is simple: <strong>The Real Taste of Taiwan.</strong></p>
+            <p>You won't find cliché tourist traps here. Instead, we guide you to the authentic scenery hidden in ordinary alleys—stories worth telling. Whether you are a first-time traveler or a long-time resident, we hope to accompany you in finding that unique, irreplaceable Taiwanese sentiment.</p>
+        </div>
+    </div>
+</div>
 
 <div id="searchModal" class="search-modal">
     <div class="close-search" id="closeSearchBtn">&times;</div>
@@ -155,7 +234,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         <div class="drawer-section">
             <h3 class="drawer-cat-title">ABOUT TAIWANME</h3>
             <ul class="drawer-list">
-                <li><a href="/philosophy" class="drawer-link">TaiwanMe's Philosophy <span class="arrow">›</span></a></li>
+                <li><a href="#" class="drawer-link philosophy-trigger">TaiwanMe's Philosophy <span class="arrow">›</span></a></li>
                 <li><a href="/support" class="drawer-link">Buy Us a Boba <span class="arrow">›</span></a></li>
                 <li><a href="/contact" class="drawer-link">Business Inquiry <span class="arrow">›</span></a></li>
             </ul>
@@ -222,6 +301,37 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal() { searchModal.style.display = 'none'; document.body.style.overflow = ''; }
     if(closeBtn) closeBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (e) => { if(e.target === searchModal) closeModal(); });
+
+    // 2.5 Philosophy Modal Logic
+    const philoModal = document.getElementById('philosophyModal');
+    const philoTriggers = document.querySelectorAll('.philosophy-trigger');
+    const philoClose = document.querySelector('.philosophy-close');
+
+    philoTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            philoModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // 關閉手機選單
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const drawerOverlay = document.getElementById('mobileDrawerOverlay');
+            if (mobileDrawer.classList.contains('open')) {
+                mobileDrawer.classList.remove('open');
+                drawerOverlay.classList.remove('show');
+            }
+        });
+    });
+
+    function closePhiloModal() {
+        philoModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    if (philoClose) philoClose.addEventListener('click', closePhiloModal);
+    window.addEventListener('click', (e) => {
+        if (e.target === philoModal) closePhiloModal();
+    });
 
     // 3. 搜尋 API 串接
     let timeout = null;
