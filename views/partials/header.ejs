@@ -8,6 +8,18 @@ const getActiveStyle = (targetPage) => {
 const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#mapSection' : '/#mapSection';
 %>
 
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TaiwanMe",
+  "alternateName": ["Taiwan Me", "TaiwanMe Travel"],
+  "url": "https://taiwanme-dynamic.vercel.app/"
+}
+</script>
 <style>
     /* ========================================= */
     /* 1. 回到頂部按鈕樣式 (保留原樣) */
