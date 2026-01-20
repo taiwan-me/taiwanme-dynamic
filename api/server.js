@@ -1,228 +1,193 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const compression = require('compression'); // ✅ 效能優化
+const { SitemapStream, streamToPromise } = require('sitemap'); // ✅ 動態 Sitemap
 const app = express();
 
 // 取得專案根目錄
 const rootDir = process.cwd();
+const BASE_URL = 'https://taiwanme-dynamic.vercel.app'; // ⚠️ 請確認這是您的正式網址
 
 // ==========================================
-// 1. 整合 Search API
+// 1. 啟用 Gzip 壓縮 (提升 SEO 效能分數)
+// ==========================================
+app.use(compression());
+
+// ==========================================
+// 2. 整合 Search API
 // ==========================================
 try {
-    // 嘗試載入 search.js，路徑可能在根目錄或 api/ 下
     let searchHandler;
-    try {
-        searchHandler = require('../search');
-    } catch (e) {
-        try {
-            searchHandler = require('./search');
-        } catch (e2) {
-            console.warn('⚠️ Warning: search.js not found.');
-        }
-    }
+    try { searchHandler = require('../search'); } 
+    catch (e) { try { searchHandler = require('./search'); } catch (e2) {} }
     
     if (searchHandler) {
         app.get('/api/search', async (req, res) => {
             const handler = searchHandler.default || searchHandler;
-            if (typeof handler === 'function') {
-                await handler(req, res);
-            } else {
-                res.status(500).json({ error: "Search handler is not a function" });
-            }
+            if (typeof handler === 'function') await handler(req, res);
+            else res.status(500).json({ error: "Search handler is not a function" });
         });
         console.log('✅ Search API route initialized.');
     }
-} catch (err) {
-    console.warn('⚠️ Warning: Could not load search.js locally.', err.message);
-}
+} catch (err) { console.warn('⚠️ Warning: search.js not found.'); }
 
 // ==========================================
-// 2. 整合 Sitemap 路由 (純讀取模式 - 解決轉圈圈問題)
+// 3. 動態 Sitemap 路由 (✅ 使用 sitemap 套件)
 // ==========================================
-app.get('/sitemap.xml', (req, res) => {
-    // Vercel 部署後，靜態檔案通常會在這裡
-    const sitemapPath = path.join(rootDir, 'public', 'sitemap.xml');
-    
-    // 🔍 檢查檔案是否存在
-    if (fs.existsSync(sitemapPath)) {
-        res.setHeader('Content-Type', 'application/xml');
-        // 設定快取，讓 Google 下次讀取更快 (1小時)
-        res.setHeader('Cache-Control', 'public, max-age=3600'); 
-        res.sendFile(sitemapPath);
-        console.log('✅ Sitemap served successfully.');
-    } else {
-        // ❌ 檔案不存在，直接回傳 404，不要嘗試生成 (避免卡死)
-        console.error('❌ Sitemap file missing in Vercel environment! Check Build Logs.');
-        res.status(404).send('Sitemap not found');
+// 這個路由必須在 express.static 之前，確保優先處理
+app.get('/sitemap.xml', async (req, res) => {
+    try {
+        const smStream = new SitemapStream({ hostname: BASE_URL });
+        
+        // --- A. 加入靜態頁面 ---
+        const staticPages = [
+            '', '/culture', '/festivals', '/search_by_city', 
+            '/transport', '/dining', '/entertainment', 
+            '/souvenirs', '/philosophy'
+        ];
+        
+        staticPages.forEach(page => {
+            smStream.write({ url: page, changefreq: 'weekly', priority: 0.8 });
+        });
+
+        // --- B. 讀取 City Guide 資料 ---
+        const cityDir = path.join(rootDir, 'data', 'search_by_city');
+        if (fs.existsSync(cityDir)) {
+            const files = fs.readdirSync(cityDir);
+            files.forEach(file => {
+                if (file.endsWith('.json')) {
+                    const citySlug = file.replace('.json', '');
+                    // 加入城市主頁
+                    smStream.write({ url: `/search_by_city/${citySlug}`, changefreq: 'weekly', priority: 0.8 });
+
+                    // 讀取文章
+                    try {
+                        const filePath = path.join(cityDir, file);
+                        const articles = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                        if (Array.isArray(articles)) {
+                            articles.forEach(article => {
+                                smStream.write({ 
+                                    url: `/search_by_city/${citySlug}/${article.id}`, 
+                                    changefreq: 'monthly', 
+                                    priority: 0.6 
+                                });
+                            });
+                        }
+                    } catch (e) { console.error(`Error parsing ${file}:`, e); }
+                }
+            });
+        }
+
+        // --- C. 讀取 Hidden Gems 資料 ---
+        const gemsDir = path.join(rootDir, 'data', 'hiddengems');
+        if (fs.existsSync(gemsDir)) {
+            const files = fs.readdirSync(gemsDir);
+            files.forEach(file => {
+                if (file.endsWith('.json')) {
+                    const gemId = file.replace('.json', '');
+                    smStream.write({ url: `/hidden_gems/${gemId}`, changefreq: 'monthly', priority: 0.7 });
+                }
+            });
+        }
+
+        // --- D. 結束串流並回傳 ---
+        smStream.end();
+        const sitemapXml = await streamToPromise(smStream);
+
+        res.header('Content-Type', 'application/xml');
+        res.send(sitemapXml);
+        console.log('✅ Dynamic Sitemap generated successfully via sitemap package.');
+
+    } catch (error) {
+        console.error('❌ Sitemap generation failed:', error);
+        res.status(500).end();
     }
 });
 
 // ==========================================
-// 3. 設定 View Engine
+// 4. 設定 View Engine & Static Files
 // ==========================================
 app.set('view engine', 'ejs');
 app.set('views', path.join(rootDir, 'views'));
-
-// ==========================================
-// 4. 設定靜態檔案
-// ==========================================
 app.use(express.static(path.join(rootDir, 'public')));
 
 // ==========================================
-// 5. 靜態頁面路由
+// 5. 頁面路由
 // ==========================================
 app.get('/', (req, res) => res.render('static_pages/index', { pageName: 'index' }));
 app.get('/culture', (req, res) => res.render('static_pages/culture', { pageName: 'culture' }));
 app.get('/festivals', (req, res) => res.render('static_pages/festivals', { pageName: 'festivals' }));
 app.get('/search_by_city', (req, res) => res.render('static_pages/search_by_city', { pageName: 'search_by_city' }));
 
-// ==========================================
-// 6. City Guide (縣市旅遊)
-// ==========================================
+// City Guide
 app.get('/search_by_city/:city', (req, res) => {
     const citySlug = req.params.city.toLowerCase();
     const jsonPath = path.join(rootDir, 'data', 'search_by_city', `${citySlug}.json`);
-
     if (fs.existsSync(jsonPath)) {
         try {
             const cityData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-            const displayCityName = citySlug.split('_')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' ');
-
-            res.render('city_articles/city_feed', { 
-                pageName: 'search_by_city',
-                cityName: displayCityName,
-                cityData: cityData,
-                citySlug: citySlug
-            });
-        } catch (err) {
-            console.error('JSON Error:', err);
-            res.status(500).send('Error parsing data');
-        }
-    } else {
-        res.status(404).send('City Not Found');
-    }
+            const displayCityName = citySlug.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            res.render('city_articles/city_feed', { pageName: 'search_by_city', cityName: displayCityName, cityData, citySlug });
+        } catch (err) { res.status(500).send('Error parsing data'); }
+    } else { res.status(404).send('City Not Found'); }
 });
 
 app.get('/search_by_city/:city/:id', (req, res) => {
     const citySlug = req.params.city.toLowerCase();
     const articleId = req.params.id;
     const jsonPath = path.join(rootDir, 'data', 'search_by_city', `${citySlug}.json`);
-
     if (fs.existsSync(jsonPath)) {
         try {
             const cityData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
             const foundArticle = cityData.find(item => item.id === articleId);
-
             if (foundArticle) {
-                const displayCityName = citySlug.split('_')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ');
-
-                res.render('city_articles/city_article_page', { 
-                    pageName: 'search_by_city',
-                    article: foundArticle,
-                    citySlug: citySlug,
-                    cityName: displayCityName
-                });
-            } else {
-                res.status(404).send('Article not found');
-            }
-        } catch (err) {
-            res.status(500).send('Error loading article');
-        }
-    } else {
-        res.status(404).send(`City data not found`);
-    }
+                const displayCityName = citySlug.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                res.render('city_articles/city_article_page', { pageName: 'search_by_city', article: foundArticle, citySlug, cityName: displayCityName });
+            } else { res.status(404).send('Article not found'); }
+        } catch (err) { res.status(500).send('Error loading article'); }
+    } else { res.status(404).send(`City data not found`); }
 });
 
-// ==========================================
-// 7. Transport Guide
-// ==========================================
-app.get('/transport', (req, res) => {
-    res.render('transport_articles/transport_feed', { pageName: 'transport' });
-});
-
+// Transport & Hidden Gems & Dining
+app.get('/transport', (req, res) => res.render('transport_articles/transport_feed', { pageName: 'transport' }));
 app.get('/transport/:topic', (req, res) => {
     const topic = req.params.topic;
     const jsonPath = path.join(rootDir, 'data', 'transport', `${topic}.json`);
-
     if (fs.existsSync(jsonPath)) {
         try {
             const topicData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-            res.render('transport_articles/transport_article_page', { 
-                pageName: 'transport',
-                data: topicData,
-                article: topicData, 
-                citySlug: 'transport',
-                cityName: 'Transport Guide'
-            });
-        } catch (err) {
-            res.status(500).send('Error parsing transport data');
-        }
-    } else {
-        res.status(404).send(`Topic "${topic}" not found`);
-    }
+            res.render('transport_articles/transport_article_page', { pageName: 'transport', data: topicData, article: topicData, citySlug: 'transport', cityName: 'Transport Guide' });
+        } catch (err) { res.status(500).send('Error'); }
+    } else { res.status(404).send('Topic not found'); }
 });
 
-// ==========================================
-// 8. Hidden Gems
-// ==========================================
-app.get('/hidden_gems', (req, res) => {
-    res.render('hiddengems_articles/hiddengems_feed', { pageName: 'hidden_gems' });
-});
-
+app.get('/hidden_gems', (req, res) => res.render('hiddengems_articles/hiddengems_feed', { pageName: 'hidden_gems' }));
 app.get('/hidden_gems/:id', (req, res) => {
     const gemId = req.params.id;
     const jsonPath = path.join(rootDir, 'data', 'hiddengems', `${gemId}.json`);
-
     if (fs.existsSync(jsonPath)) {
         try {
             const gemData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-            res.render('hiddengems_articles/hiddengems_article_page', { 
-                pageName: 'hidden_gems',
-                article: gemData,
-                citySlug: 'hidden_gems',
-                cityName: 'Hidden Gems'
-            });
-        } catch (err) {
-            res.status(500).send('Error parsing gem data');
-        }
-    } else {
-        res.status(404).send('Gem Not Found');
-    }
+            res.render('hiddengems_articles/hiddengems_article_page', { pageName: 'hidden_gems', article: gemData, citySlug: 'hidden_gems', cityName: 'Hidden Gems' });
+        } catch (err) { res.status(500).send('Error'); }
+    } else { res.status(404).send('Gem Not Found'); }
 });
 
-// ==========================================
-// 9. Dining & Entertainment
-// ==========================================
 app.get('/dining', (req, res) => {
     const diningPath = path.join(rootDir, 'data', 'dining.json');
     let diningData = [];
-    if (fs.existsSync(diningPath)) {
-        try {
-            diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8'));
-        } catch (e) { console.error(e); }
-    }
+    if (fs.existsSync(diningPath)) { try { diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8')); } catch (e) {} }
     res.render('dining_lists/dining_feed', { pageName: 'dining', items: diningData });
 });
-
 app.get('/entertainment', (req, res) => {
     const entPath = path.join(rootDir, 'data', 'entertainment.json');
     let entData = [];
-    if (fs.existsSync(entPath)) {
-        try {
-            entData = JSON.parse(fs.readFileSync(entPath, 'utf8'));
-        } catch (e) { console.error(e); }
-    }
+    if (fs.existsSync(entPath)) { try { entData = JSON.parse(fs.readFileSync(entPath, 'utf8')); } catch (e) {} }
     res.render('entertainment_lists/entertainment_feed', { pageName: 'entertainment', items: entData });
 });
 
-// ==========================================
-// 10. 404 & Server Start
-// ==========================================
+// 404
 app.use((req, res) => {
     res.status(404).send(`
         <div style="text-align:center; padding:50px; font-family: sans-serif;">
@@ -234,42 +199,12 @@ app.use((req, res) => {
     `);
 });
 
-// ==========================================
-// 11. 本地開發環境 (Dev Only) - 自動生成 Sitemap
-// ==========================================
-// 這段邏輯只會在您的電腦上執行，不會在 Vercel 執行
-if (process.env.NODE_ENV !== 'production') {
-    try {
-        let generateSitemap;
-        try { generateSitemap = require('../generate-sitemap'); } 
-        catch (e) { generateSitemap = require('./generate-sitemap'); }
-
-        if (generateSitemap) {
-            console.log('🔧 Dev Mode: Monitoring data changes for Sitemap...');
-            const dataDir = path.join(rootDir, 'data');
-            if (fs.existsSync(dataDir)) {
-                let sitemapTimeout;
-                fs.watch(dataDir, { recursive: true }, (eventType, filename) => {
-                    if (filename && filename.endsWith('.json') && !filename.includes('sitemap.xml')) {
-                        if (sitemapTimeout) clearTimeout(sitemapTimeout);
-                        sitemapTimeout = setTimeout(() => {
-                            console.log(`📝 資料變更 (${filename}) -> 本地自動更新 sitemap.xml...`);
-                            generateSitemap(); 
-                        }, 500);
-                    }
-                });
-            }
-        }
-    } catch(e) {
-        console.warn('⚠️ Dev mode sitemap watcher failed to initialize.');
-    }
-}
-
 if (process.env.NODE_ENV !== 'production') {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`✅ TaiwanMe Server Running in: ${rootDir}`);
         console.log(`🌍 Main URL: http://localhost:${PORT}`);
+        console.log(`🗺️  Sitemap: http://localhost:${PORT}/sitemap.xml`);
     });
 }
 

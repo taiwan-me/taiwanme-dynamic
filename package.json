@@ -5,7 +5,7 @@
   "main": "api/server.js",
   "scripts": {
     "start": "node api/server.js",
-    "build": "node generate-sitemap.js",
+    "build": "echo 'No build step'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -16,8 +16,10 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "compression": "^1.8.1",
     "ejs": "^3.1.10",
     "express": "^5.2.1",
-    "flexsearch": "^0.8.212"
+    "flexsearch": "^0.8.212",
+    "sitemap": "^9.0.0"
   }
 }
