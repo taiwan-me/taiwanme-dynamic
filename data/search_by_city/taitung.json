@@ -4,8 +4,12 @@
     "type": "1-Day Tour",
     "title": "Pacific Drifters & Myth Road",
     "subTitle": "太平洋漂鳥與神話之旅：台11線海線",
-    "tags": ["#Coastline", "#Art", "#Indigenous"],
-    "heroImage": "/image/search_by_city/taitung/coast_art.jpg",
+    "tags": [
+      "#Coastline",
+      "#Art",
+      "#Indigenous"
+    ],
+    "heroImage": "/image/search_by_city/taitung1-3.jpg",
     "intro": "Focusing on marine landscapes and the free-spirited atmosphere loved by international travelers. Experience the 'Drifters' art culture in Dulan and the geological wonders of the coast.",
     "transportation": "Car rental or **Taiwan Tourist Shuttle (East Coast Line)** is recommended.",
     "spots": [
@@ -13,29 +17,64 @@
         "time": "09:00",
         "name": "Jialulan & Fushan (加路蘭遊憩區 & 富山護魚區)",
         "address": "Taitung City / Beinan Township",
-        "mapLink": "https://goo.gl/maps/exampleJialulan",
-        "description": "Admire driftwood art installations at Jialulan, then walk on the sea path at Fushan to observe wild fish up close."
+        "mapLink": "https://maps.app.goo.gl/VGyZzzNYEME9A6hZ7",
+        "description": "Admire driftwood art installations at Jialulan, then walk on the sea path at Fushan to observe wild fish up close.",
+        "image": "/image/search_by_city/taitung1-1.jpg",
+        "author": "Nicole1301",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%8A%A0%E8%B7%AF%E8%98%AD%E9%81%8A%E6%86%A9%E5%8D%801.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.805,
+          121.196
+        ]
       },
       {
         "time": "11:00",
         "name": "Dulan Sugar Factory (新東糖廠文化園區)",
         "address": "Donghe Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleDulan",
-        "description": "The center of the 'Drifters' culture. This indigenous sacred ground turned art hub features the 'Sintung Sugar Factory' and the famous 'Dulan Small House' for burgers."
+        "mapLink": "https://maps.app.goo.gl/4WJJ3ZdzQdJkht7DA",
+        "description": "The center of the 'Drifters' culture. This indigenous sacred ground turned art hub features the 'Sintung Sugar Factory' and the famous 'Dulan Small House' for burgers.",
+        "image": "/image/search_by_city/taitung1-2.jpg",
+        "author": "Eric Deng",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Xing-Tung_Sugar_Factory03.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.875,
+          121.223
+        ]
       },
       {
         "time": "14:30",
         "name": "Sanxiantai (三仙台)",
         "address": "Chenggong Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleSanxiantai",
-        "description": "Originally a cape, now an offshore island due to erosion. Walking across the eight-arch bridge offers a lesson in plate tectonics."
+        "mapLink": "https://maps.app.goo.gl/8pMSXzJdQmEdhE3M7",
+        "description": "Originally a cape, now an offshore island due to erosion. Walking across the eight-arch bridge offers a lesson in plate tectonics.",
+        "image": "/image/search_by_city/taitung1-3.jpg",
+        "author": "東部海岸國家風景區管理處",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E9%A9%9A%E8%89%B7%E4%B8%89%E4%BB%99%E5%8F%B0.jpg",
+        "license": "CC BY 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.123,
+          121.411
+        ]
       },
       {
         "time": "17:00",
         "name": "Donghe Old Street (東河舊街)",
         "address": "Donghe Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleDonghe",
-        "description": "Grab a famous 'Donghe Bun' (steamed bun) and admire the entrance to the Taiyuan Valley."
+        "mapLink": "https://maps.app.goo.gl/D1HNAggfLqQUPKFeA",
+        "description": "Grab a famous 'Donghe Bun' (steamed bun) and admire the entrance to the Taiyuan Valley.",
+        "image": "/image/search_by_city/taitung1-4.png",
+        "coords": [
+          22.973,
+          121.303
+        ]
       }
     ]
   },
@@ -44,8 +83,12 @@
     "type": "1-Day Tour",
     "title": "Valley Rice Waves & Tea Aroma",
     "subTitle": "縱谷稻浪與茶鄉漫遊：台9線山線",
-    "tags": ["#RiftValley", "#Cycling", "#SlowLiving"],
-    "heroImage": "/image/search_by_city/taitung/valley_rice.jpg",
+    "tags": [
+      "#RiftValley",
+      "#Cycling",
+      "#SlowLiving"
+    ],
+    "heroImage": "/image/search_by_city/taitung2-1.jpg",
     "intro": "Enter the rift valley between the Central Mountain Range and the Coastal Mountain Range to experience extreme agricultural aesthetics and tranquility.",
     "transportation": "Rent a car or take a train to **Chishang** and rent an E-bike.",
     "spots": [
@@ -53,22 +96,52 @@
         "time": "09:30",
         "name": "Brown Boulevard & Paradise Road (池上伯朗大道)",
         "address": "Chishang Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleBrown",
-        "description": "Famous for the 'Takeshi Kaneshiro Tree' and the community's consensus to have zero utility poles, creating an uninterrupted view of rice paddies."
+        "mapLink": "https://maps.app.goo.gl/CDe1VrymSftnmjya9",
+        "description": "Famous for the 'Takeshi Kaneshiro Tree' and the community's consensus to have zero utility poles, creating an uninterrupted view of rice paddies. You can rent a bicycle and ride in the breeze.",
+        "image": "/image/search_by_city/taitung2-1.jpg",
+        "author": "觀光局資訊室",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E9%98%A1%E9%99%8C%E9%A8%8E%E8%B7%A1%E2%80%A7%E8%8A%B1%E6%9D%B1%E5%B1%B1%E6%B5%B7%E8%A1%8C%E4%BC%AF%E6%9C%97%E5%A4%A7%E9%81%9301.jpg",
+        "license": "CC BY 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.104,
+          121.218
+        ]
       },
       {
         "time": "13:00",
         "name": "Chishang Rice Box Museum (池上飯包文化故事館)",
         "address": "Chishang Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleRiceBox",
-        "description": "Taste the authentic Chishang rice box and learn about the history of rice farming in this region."
+        "mapLink": "https://maps.app.goo.gl/Vhdhcvm5QgzKvY6f9",
+        "description": "Taste the authentic Chishang rice box and learn about the history of rice farming in this region. Visitors come here to eat the famous bento.",
+        "image": "/image/search_by_city/taitung2-2.jpg",
+        "author": "Lord Koxinga",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:2010_07_17760_6207_Chihshang_Township,_Taiwan,_Rail_transport,_Highway_9.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.122,
+          121.216
+        ]
       },
       {
         "time": "15:30",
         "name": "Luye Highland (鹿野高台)",
         "address": "Luye Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleLuye",
-        "description": "An alluvial fan uplifted by tectonic plates. Perfect for grass sliding or paragliding, offering a panoramic view of the Beinan River valley."
+        "mapLink": "https://maps.app.goo.gl/C8bffThC5r68w71w7",
+        "description": "An alluvial fan uplifted by tectonic plates. Perfect for grass sliding or paragliding, offering a panoramic view of the Beinan River valley.",
+        "image": "/image/search_by_city/taitung2-3.jpg",
+        "author": "Shang Ming Wang",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Festival_of_hot_air_balloons_at_Luye,_Taitung_20130813.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.912,
+          121.118
+        ]
       }
     ]
   },
@@ -77,8 +150,12 @@
     "type": "2-Day Tour",
     "title": "Urban History & Indigenous Flavors",
     "subTitle": "都會文史與部落美食：市區深度行",
-    "tags": ["#Architecture", "#History", "#Foodie"],
-    "heroImage": "/image/search_by_city/taitung/city_art.jpg",
+    "tags": [
+      "#Architecture",
+      "#History",
+      "#Foodie"
+    ],
+    "heroImage": "/image/search_by_city/taitung3-2.png",
     "intro": "Solves transportation pain points by focusing on the city center. Combines historical architecture with top-tier indigenous fine dining.",
     "transportation": "**Scooter** or **Taxi/Uber** within Taitung City.",
     "spots": [
@@ -86,29 +163,59 @@
         "time": "Day 1 Afternoon",
         "name": "Taitung White House (台東小白屋)",
         "address": "Taitung City",
-        "mapLink": "https://goo.gl/maps/exampleWhiteHouse",
-        "description": "A miracle of architecture built by a veteran over 40 years using scavenged materials without steel bars. Resembles 'Howl's Moving Castle'."
+        "mapLink": "https://maps.app.goo.gl/zhwUbv5VGNUNQepWA",
+        "description": "A miracle of architecture built by a veteran over 40 years using scavenged materials without steel bars. Resembles 'Howl's Moving Castle'.",
+        "image": "/image/search_by_city/taitung3-1.png",
+        "coords": [
+          22.753,
+          121.157
+        ]
       },
       {
         "time": "Day 1 Night",
         "name": "Tiehua Music Village (鐵花新聚落)",
         "address": "Taitung City",
-        "mapLink": "https://goo.gl/maps/exampleTiehua",
-        "description": "The core of Taitung's slow nightlife. Visit the 'Wave Building' which symbolizes the Pacific waves."
+        "mapLink": "https://maps.app.goo.gl/NUTwRLnKjkc7McSc9",
+        "description": "The core of Taitung's slow nightlife. Visit the 'Wave Building' which symbolizes the Pacific waves.",
+        "image": "/image/search_by_city/taitung3-2.png",
+        "coords": [
+          22.751,
+          121.146
+        ]
       },
       {
         "time": "Day 2 Morning",
         "name": "Museum of Prehistory (國立臺灣史前文化博物館)",
         "address": "Taitung City",
-        "mapLink": "https://goo.gl/maps/examplePrehistory",
-        "description": "One of the best museums in Taiwan, showcasing the rich prehistoric culture of the island."
+        "mapLink": "https://maps.app.goo.gl/1HZHGL9W7Kt4DHF59",
+        "description": "One of the best museums in Taiwan, showcasing the rich prehistoric culture of the island.",
+        "image": "/image/search_by_city/taitung3-3.jpg",
+        "author": "AnthroCC",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:The_building_exterior_of_National_Museum_of_Prehistory,_Taiwan_(2023).jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.766,
+          121.096
+        ]
       },
       {
         "time": "Day 2 Afternoon",
         "name": "South-Link Blue Train (南迴藍皮解憂號)",
         "address": "Taitung Station to Taimali",
-        "mapLink": "https://goo.gl/maps/exampleBlueTrain",
-        "description": "Take a vintage train ride to Taimali to see the 'Slam Dunk' railway crossing and the azure coast."
+        "mapLink": "https://maps.app.goo.gl/Ddqd79WyNnm2bBKm8",
+        "description": "Take a vintage train ride to Taimali to see the 'Slam Dunk' railway crossing and the azure coast.",
+        "image": "/image/search_by_city/taitung3-4.jpg",
+        "author": "jason199567",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:TRA_R101_leading_a_Breezy_Blue_Train_at_Taitung_Station.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.793,
+          121.121
+        ]
       }
     ]
   },
@@ -117,8 +224,12 @@
     "type": "2-Day Tour",
     "title": "Mountains, Sea & Hot Springs",
     "subTitle": "山海雙享與溫泉療癒：知本+縱谷",
-    "tags": ["#HotSpring", "#Nature", "#Relax"],
-    "heroImage": "/image/search_by_city/taitung/hotspring.jpg",
+    "tags": [
+      "#HotSpring",
+      "#Nature",
+      "#Relax"
+    ],
+    "heroImage": "/image/search_by_city/taitung4-2.png",
     "intro": "Combines the magnificence of the Rift Valley with the relaxation of Zhiben Hot Springs.",
     "transportation": "**Car Rental** is recommended.",
     "spots": [
@@ -126,22 +237,47 @@
         "time": "Day 1",
         "name": "Guanshan Bike Trail (關山環鎮自行車道)",
         "address": "Guanshan Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleGuanshan",
-        "description": "Taiwan's first town-encircling bike path. Explore the Japanese-grid style town layout and the old train station."
+        "mapLink": "https://maps.app.goo.gl/zYZ9wkcB3tTp3bkR7",
+        "description": "Taiwan's first town-encircling bike path. Explore the Japanese-grid style town layout and the old train station.",
+        "image": "/image/search_by_city/taitung4-1.jpg",
+        "author": "lienyuan lee",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Guanshan_Bicycle_Path_%E9%97%9C%E5%B1%B1%E8%87%AA%E8%A1%8C%E8%BB%8A%E9%81%93_-_panoramio.jpg",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.048,
+          121.164
+        ]
       },
       {
         "time": "Day 1 Night",
         "name": "Zhiben Hot Spring (知本溫泉)",
         "address": "Beinan Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleZhiben",
-        "description": "Enjoy the sodium bicarbonate springs, known as 'Beauty Soup', to relax your muscles."
+        "mapLink": "https://maps.app.goo.gl/HAgjbeywzejtme817",
+        "description": "Enjoy the sodium bicarbonate springs, known as 'Beauty Soup', to relax your muscles.",
+        "image": "/image/search_by_city/taitung4-2.png",
+        "coords": [
+          22.693,
+          121.026
+        ]
       },
       {
         "time": "Day 2 Morning",
         "name": "Zhiben National Forest Recreation Area (知本國家森林遊樂區)",
         "address": "Beinan Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleForest",
-        "description": "Take a forest bath among giant White Banyan trees, observing the tropical monsoon rainforest vegetation."
+        "mapLink": "https://maps.app.goo.gl/Muc2ozkB6wndsXT4A",
+        "description": "Take a forest bath among giant White Banyan trees, observing the tropical monsoon rainforest vegetation.",
+        "image": "/image/search_by_city/taitung4-3.jpg",
+        "author": "Lord Koxinga",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:2010_07_16920_5769_Beinan_Township,_Taiwan,_Jhihben_National_Forest_Recreation_Area,_Walking_paths.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.686,
+          120.999
+        ]
       }
     ]
   },
@@ -150,8 +286,12 @@
     "type": "3-Day Tour",
     "title": "The Great Yuchang Loop",
     "subTitle": "玉長公路大環線：山海全覽",
-    "tags": ["#RoadTrip", "#GrandTour", "#Landscape"],
-    "heroImage": "/image/search_by_city/taitung/grand_loop.jpg",
+    "tags": [
+      "#RoadTrip",
+      "#GrandTour",
+      "#Landscape"
+    ],
+    "heroImage": "/image/search_by_city/taitung5-3.png",
     "intro": "Use the Yuchang Highway (Hwy 30) to connect the mountain and sea lines, seeing two distinct landscapes in one trip without backtracking.",
     "transportation": "**Car Rental** is essential for this route.",
     "spots": [
@@ -159,22 +299,47 @@
         "time": "Day 1",
         "name": "Dulan & Donghe (都蘭 & 東河)",
         "address": "East Coast (Hwy 11)",
-        "mapLink": "https://goo.gl/maps/exampleCoast",
-        "description": "Wander north along the Pacific. Stop at Dulan for its exotic vibe and Donghe to watch surfers."
+        "mapLink": "https://maps.app.goo.gl/Xe5TicdRejD4ruT76",
+        "description": "Wander north along the Pacific. Stop at Dulan for its exotic vibe and Donghe to watch surfers.",
+        "image": "/image/search_by_city/taitung5-1.jpg",
+        "author": "Aa7778273",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E8%87%AA%E5%8F%B011%E7%B7%9A%E9%83%BD%E8%98%AD%E6%AE%B5%E7%9C%BA%E6%9C%9B%E7%BE%8E%E9%BA%97%E7%81%A3.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.872,
+          121.224
+        ]
       },
       {
         "time": "Day 2",
         "name": "Yuchang Highway (玉長公路)",
         "address": "Changbin to Yuli",
-        "mapLink": "https://goo.gl/maps/exampleYuchang",
-        "description": "A strategic road cutting through the Coastal Mountain Range. Experience the dramatic change in climate and vegetation as you exit the tunnel."
+        "mapLink": "https://maps.app.goo.gl/saE9QQNF6W23GTxJ8",
+        "description": "A strategic road cutting through the Coastal Mountain Range. Experience the dramatic change in climate and vegetation as you exit the tunnel.",
+        "image": "/image/search_by_city/taitung5-2.jpg",
+        "author": "billy1125",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:T-Junction_on_Provincial_Highway_30.jpg",
+        "license": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.279,
+          121.401
+        ]
       },
       {
         "time": "Day 3",
         "name": "Luanshan Tribe (鸞山部落)",
         "address": "Yanping Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleLuanshan",
-        "description": "Reservation required. Visit the 'Walking Trees' (White Banyan) and learn the wisdom of the Bunun tribe's coexistence with the forest."
+        "mapLink": "https://maps.app.goo.gl/zs9ykjEiUp91Hhag9",
+        "description": "Reservation required. Visit the 'Walking Trees' (White Banyan) and learn the wisdom of the Bunun tribe's coexistence with the forest.",
+        "image": "/image/search_by_city/taitung5-3.png",
+        "coords": [
+          22.906,
+          121.125
+        ]
       }
     ]
   },
@@ -183,8 +348,12 @@
     "type": "3-Day Tour",
     "title": "Surfing, Art & Tribal Secrets",
     "subTitle": "極限探索與藝術文化：數位遊牧行",
-    "tags": ["#Surfing", "#Art", "#DigitalNomad"],
-    "heroImage": "/image/search_by_city/taitung/surfing_art.jpg",
+    "tags": [
+      "#Surfing",
+      "#Art",
+      "#DigitalNomad"
+    ],
+    "heroImage": "/image/search_by_city/taitung6-2.jpg",
     "intro": "Designed for young travelers and digital nomads. Focuses on surfing, paleolithic history, and the vibrant local art scene.",
     "transportation": "**Car** or **Scooter** recommended.",
     "spots": [
@@ -192,22 +361,47 @@
         "time": "Day 1",
         "name": "Jinzun Recreation Area (金樽遊憩區)",
         "address": "Donghe Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleJinzun",
-        "description": "A world-class surfing venue. Watch the waves or grab a coffee at 'Moonlight Inn' nearby for a stunning sea view."
+        "mapLink": "https://maps.app.goo.gl/iFXQTiVSXwG3S2hP7",
+        "description": "A world-class surfing venue. Watch the waves or grab a coffee at 'Moonlight Inn' nearby for a stunning sea view.",
+        "image": "/image/search_by_city/taitung6-1.png",
+        "coords": [
+          22.955,
+          121.291
+        ]
       },
       {
         "time": "Day 2",
         "name": "Baxian Cave (八仙洞)",
         "address": "Changbin Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleBaxian",
-        "description": "Explore sea caves that house the 'Changbin Culture', the oldest known Paleolithic site in Taiwan."
+        "mapLink": "https://maps.app.goo.gl/U8ytRAr7xZpcyv7NA",
+        "description": "Explore sea caves that house the 'Changbin Culture', the oldest known Paleolithic site in Taiwan.",
+        "image": "/image/search_by_city/taitung6-2.jpg",
+        "author": "Bernard Gagnon",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Bashian_Caves_02.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          23.398,
+          121.482
+        ]
       },
       {
         "time": "Day 3",
         "name": "Taitung Art Museum (台東美術館)",
         "address": "Taitung City",
-        "mapLink": "https://goo.gl/maps/exampleArtMuseum",
-        "description": "Wind down with an art walk in the city and hunt for treasures at the Tiehua Music Village before heading home."
+        "mapLink": "https://maps.app.goo.gl/FJFLkkAMwcSj8QUPA",
+        "description": "Wind down with an art walk in the city and hunt for treasures at the Tiehua Music Village before heading home.",
+        "image": "/image/search_by_city/taitung6-3.jpg",
+        "author": "Eric850130",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Taitung_Art_Museum03.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.76,
+          121.144
+        ]
       }
     ]
   },
@@ -216,7 +410,11 @@
     "type": "2-Day Tour",
     "title": "Offshore Island: Green Island (Ludao)",
     "subTitle": "綠島：火燒島的歷史與海底溫泉",
-    "tags": ["#GreenIsland", "#HotSpring", "#Diving"],
+    "tags": [
+      "#GreenIsland",
+      "#HotSpring",
+      "#Diving"
+    ],
     "heroImage": "/image/search_by_city/green_island_banner.png",
     "intro": "A volcanic island famous for its world-class saltwater hot springs and coral reefs. Explore the history of the White Terror era and dive into the crystal-clear Pacific Ocean.",
     "transportation": "**Ferry** from Fugang Harbor (50 mins) or **Plane** (15 mins). Renting a **Scooter** or **E-bike** is essential on the island.",
@@ -225,22 +423,52 @@
         "time": "Day 1 Afternoon",
         "name": "National Human Rights Museum (國家人權博物館)",
         "address": "Green Island, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleHumanRights",
-        "description": "Visit the former Oasis Villa and New Life Correction Center. A solemn place to learn about Taiwan's martial law history and the fight for human rights."
+        "mapLink": "https://maps.app.goo.gl/6ya2y9uhwyApVBjg6",
+        "description": "Visit the former Oasis Villa and New Life Correction Center. A solemn place to learn about Taiwan's martial law history and the fight for human rights.",
+        "image": "/image/search_by_city/taitung7-1.jpg",
+        "author": "Irvin Chen",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:R0011986_%E5%9C%8B%E5%AE%B6%E4%BA%BA%E6%AC%8A%E5%8D%9A%E7%89%A9%E9%A4%A8.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.673,
+          121.492
+        ]
       },
       {
         "time": "Day 1 Night",
         "name": "Zhaori Hot Spring (朝日溫泉)",
         "address": "Green Island, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleZhaori",
-        "description": "One of only three saltwater hot springs in the world. Soaking in the warm pools right next to the ocean while watching the sunrise or stargazing is a must-do."
+        "mapLink": "https://maps.app.goo.gl/drpUHvLFNe8qnzzv9",
+        "description": "One of only three saltwater hot springs in the world. Soaking in the warm pools right next to the ocean while watching the sunrise or stargazing is a must-do.",
+        "image": "/image/search_by_city/taitung7-2.jpg",
+        "author": "Soica2001",
+        "authorLink": "",
+        "license": "Public domain",
+        "licenseLink": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.636,
+          121.503
+        ]
       },
       {
         "time": "Day 2 Morning",
         "name": "Chaikou Snorkeling Area (柴口浮潛區)",
         "address": "Green Island, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleChaikou",
-        "description": "Walking on the stone walkway extending into the sea feels like walking on water. The underwater world here is rich with coral reefs and friendly sea turtles."
+        "mapLink": "https://maps.app.goo.gl/xsTpu7gv3RBS8W2t5",
+        "description": "Walking on the stone walkway extending into the sea feels like walking on water. The underwater world here is rich with coral reefs and friendly sea turtles.",
+        "image": "/image/search_by_city/taitung7-3.jpg",
+        "author": "大鵬灣國家風景區管理處",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%B0%8F%E7%90%89%E7%90%83%E8%88%87%E7%B6%A0%E8%A0%B5%E9%BE%9C%E6%B5%AE%E6%BD%9B%E5%85%B1%E6%B8%B8.jpg",
+        "license": "CC BY 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.675,
+          121.481
+        ]
       }
     ]
   },
@@ -249,7 +477,11 @@
     "type": "3-Day Tour",
     "title": "Offshore Island: Orchid Island (Lanyu)",
     "subTitle": "蘭嶼：達悟族飛魚文化與地下屋",
-    "tags": ["#OrchidIsland", "#Indigenous", "#Nature"],
+    "tags": [
+      "#OrchidIsland",
+      "#Indigenous",
+      "#Nature"
+    ],
     "heroImage": "/image/search_by_city/orchid_island_banner.png",
     "intro": "Home to the Tao (Yami) people, the only oceanic indigenous tribe in Taiwan. Experience the unique semi-underground houses, flying fish culture, and the pure 'Lanyu Blue' ocean.",
     "transportation": "**Ferry** from Fugang Harbor/Houbihu or **Plane** from Taitung. **Scooter rental** is highly recommended.",
@@ -258,22 +490,52 @@
         "time": "Day 1 Afternoon",
         "name": "Dongqing Bay (東清灣)",
         "address": "Lanyu Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleDongqing",
-        "description": "The best spot for sunrise in Taiwan. Admire the beautifully carved traditional Tatala boats (canoes) resting on the beach. (Please do not touch the boats without permission). "
+        "mapLink": "https://maps.app.goo.gl/fSRNBhqWWGXVHdWb9",
+        "description": "The best spot for sunrise in Taiwan. Admire the beautifully carved traditional Tatala boats (canoes) resting on the beach. (Please do not touch the boats without permission). ",
+        "image": "/image/search_by_city/taitung8-1.jpg",
+        "author": "尚青",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B8%85%E7%81%A3%E6%97%A5%E5%87%BA.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.046,
+          121.572
+        ]
       },
       {
         "time": "Day 2 Morning",
         "name": "Ivalino Tribe Underground Houses (野銀地下屋)",
         "address": "Lanyu Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleIvalino",
-        "description": "The best-preserved traditional settlement. Join a guided tour to enter a semi-underground house and learn how the Tao people adapted to typhoons."
+        "mapLink": "https://maps.app.goo.gl/986NwT8zTy299jH87",
+        "description": "The best-preserved traditional settlement. Join a guided tour to enter a semi-underground house and learn how the Tao people adapted to typhoons.",
+        "image": "/image/search_by_city/taitung8-2.jpg",
+        "author": "總統府",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:06.21_%E5%89%AF%E7%B8%BD%E7%B5%B1%E5%8F%83%E8%A8%AA%E3%80%8C%E9%87%8E%E9%8A%80%E9%83%A8%E8%90%BD%E5%9C%B0%E4%B8%8B%E5%B1%8B%E3%80%8D_(50028970236).jpg",
+        "license": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.039,
+          121.564
+        ]
       },
       {
         "time": "Day 3 Morning",
         "name": "Lanyu Weather Station (蘭嶼氣象站)",
         "address": "Lanyu Township, Taitung County",
-        "mapLink": "https://goo.gl/maps/exampleWeatherStation",
-        "description": "Located at a high altitude, it offers a breathtaking 360-degree view of the island's coastline and the surrounding Pacific Ocean. The white ruins add a nostalgic touch."
+        "mapLink": "https://maps.app.goo.gl/tomHWhh5491N2z9UA",
+        "description": "Located at a high altitude, it offers a breathtaking 360-degree view of the island's coastline and the surrounding Pacific Ocean. The white ruins add a nostalgic touch.",
+        "image": "/image/search_by_city/taitung8-3.jpg",
+        "author": "David Hsu",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Lanyu_Weather_Station.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          22.037,
+          121.558
+        ]
       }
     ]
   }
