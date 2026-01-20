@@ -6,54 +6,6 @@ const app = express();
 // 取得專案根目錄
 const rootDir = process.cwd();
 
-// 引入 Sitemap 生成器
-// 優先嘗試根目錄，失敗則嘗試 api/ 目錄
-let generateSitemap;
-try {
-    generateSitemap = require('../generate-sitemap'); // 假設在 api 資料夾內，往上一層找
-} catch (e) {
-    try {
-        generateSitemap = require('./generate-sitemap'); // 同層找
-    } catch (err) {
-        console.warn('⚠️ Warning: generate-sitemap.js not found.');
-    }
-}
-
-// ==========================================
-// 0. 自動更新 Sitemap 邏輯 (含防抖動優化)
-// ==========================================
-if (generateSitemap) {
-    // 1. 伺服器啟動時先跑一次，確保檔案存在且最新
-    console.log('🔄 Server Start: Generating sitemap...');
-    generateSitemap();
-
-    // 2. 偵測資料夾更動 (僅在本地開發環境執行)
-    if (process.env.NODE_ENV !== 'production') {
-        const dataDir = path.join(rootDir, 'data');
-        if (fs.existsSync(dataDir)) {
-            
-            // 💡 定義計時器變數 (用於防抖動)
-            let sitemapTimeout;
-
-            // 監控 data 資料夾及其子資料夾
-            fs.watch(dataDir, { recursive: true }, (eventType, filename) => {
-                // 確保是 JSON 檔案變動，且排除 sitemap.xml 避免無限迴圈
-                if (filename && filename.endsWith('.json') && !filename.includes('sitemap.xml')) {
-                    
-                    // 💡 如果有正在倒數的計時器，先清除它
-                    if (sitemapTimeout) clearTimeout(sitemapTimeout);
-
-                    // 💡 設定新的計時器，延遲 500ms 後才執行
-                    sitemapTimeout = setTimeout(() => {
-                        console.log(`📝 偵測到資料變更 (${filename}) -> 自動更新 sitemap.xml...`);
-                        generateSitemap(); 
-                    }, 500);
-                }
-            });
-        }
-    }
-}
-
 // ==========================================
 // 1. 整合 Search API
 // ==========================================
@@ -63,41 +15,45 @@ try {
     try {
         searchHandler = require('../search');
     } catch (e) {
-        searchHandler = require('./search');
+        try {
+            searchHandler = require('./search');
+        } catch (e2) {
+            console.warn('⚠️ Warning: search.js not found.');
+        }
     }
     
-    app.get('/api/search', async (req, res) => {
-        const handler = searchHandler.default || searchHandler;
-        if (typeof handler === 'function') {
-            await handler(req, res);
-        } else {
-            res.status(500).json({ error: "Search handler is not a function" });
-        }
-    });
-    console.log('✅ Search API route initialized.');
+    if (searchHandler) {
+        app.get('/api/search', async (req, res) => {
+            const handler = searchHandler.default || searchHandler;
+            if (typeof handler === 'function') {
+                await handler(req, res);
+            } else {
+                res.status(500).json({ error: "Search handler is not a function" });
+            }
+        });
+        console.log('✅ Search API route initialized.');
+    }
 } catch (err) {
     console.warn('⚠️ Warning: Could not load search.js locally.', err.message);
 }
 
 // ==========================================
-// 2. 整合 Sitemap 路由 (優先讀取實體檔案)
+// 2. 整合 Sitemap 路由 (純讀取模式 - 解決轉圈圈問題)
 // ==========================================
 app.get('/sitemap.xml', (req, res) => {
+    // Vercel 部署後，靜態檔案通常會在這裡
     const sitemapPath = path.join(rootDir, 'public', 'sitemap.xml');
     
+    // 🔍 檢查檔案是否存在
     if (fs.existsSync(sitemapPath)) {
         res.setHeader('Content-Type', 'application/xml');
+        // 設定快取，讓 Google 下次讀取更快 (1小時)
+        res.setHeader('Cache-Control', 'public, max-age=3600'); 
         res.sendFile(sitemapPath);
+        console.log('✅ Sitemap served successfully.');
     } else {
-        // 備案：如果實體檔案意外消失，嘗試現場生成
-        if (generateSitemap) {
-            generateSitemap();
-            if (fs.existsSync(sitemapPath)) {
-                res.setHeader('Content-Type', 'application/xml');
-                res.sendFile(sitemapPath);
-                return;
-            }
-        }
+        // ❌ 檔案不存在，直接回傳 404，不要嘗試生成 (避免卡死)
+        console.error('❌ Sitemap file missing in Vercel environment! Check Build Logs.');
         res.status(404).send('Sitemap not found');
     }
 });
@@ -124,8 +80,6 @@ app.get('/search_by_city', (req, res) => res.render('static_pages/search_by_city
 // ==========================================
 // 6. City Guide (縣市旅遊)
 // ==========================================
-
-// 縣市列表頁 (Feed)
 app.get('/search_by_city/:city', (req, res) => {
     const citySlug = req.params.city.toLowerCase();
     const jsonPath = path.join(rootDir, 'data', 'search_by_city', `${citySlug}.json`);
@@ -133,7 +87,6 @@ app.get('/search_by_city/:city', (req, res) => {
     if (fs.existsSync(jsonPath)) {
         try {
             const cityData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-            
             const displayCityName = citySlug.split('_')
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(' ');
@@ -149,12 +102,10 @@ app.get('/search_by_city/:city', (req, res) => {
             res.status(500).send('Error parsing data');
         }
     } else {
-        console.error(`❌ Feed Not Found: ${jsonPath}`);
         res.status(404).send('City Not Found');
     }
 });
 
-// 縣市文章內頁 (Article)
 app.get('/search_by_city/:city/:id', (req, res) => {
     const citySlug = req.params.city.toLowerCase();
     const articleId = req.params.id;
@@ -177,23 +128,19 @@ app.get('/search_by_city/:city/:id', (req, res) => {
                     cityName: displayCityName
                 });
             } else {
-                console.error(`❌ Article ID ${articleId} not found in ${citySlug}.json`);
                 res.status(404).send('Article not found');
             }
         } catch (err) {
-            console.error('❌ Article Loading Error:', err);
             res.status(500).send('Error loading article');
         }
     } else {
-        console.error(`❌ File Not Found: ${jsonPath}`);
-        res.status(404).send(`City data not found for "${citySlug}"`);
+        res.status(404).send(`City data not found`);
     }
 });
 
 // ==========================================
-// 7. Transport Guide (交通攻略)
+// 7. Transport Guide
 // ==========================================
-
 app.get('/transport', (req, res) => {
     res.render('transport_articles/transport_feed', { pageName: 'transport' });
 });
@@ -213,19 +160,16 @@ app.get('/transport/:topic', (req, res) => {
                 cityName: 'Transport Guide'
             });
         } catch (err) {
-            console.error(err);
             res.status(500).send('Error parsing transport data');
         }
     } else {
-        console.error(`❌ Transport Topic Not Found: ${jsonPath}`);
         res.status(404).send(`Topic "${topic}" not found`);
     }
 });
 
 // ==========================================
-// 8. Hidden Gems (隱藏景點)
+// 8. Hidden Gems
 // ==========================================
-
 app.get('/hidden_gems', (req, res) => {
     res.render('hiddengems_articles/hiddengems_feed', { pageName: 'hidden_gems' });
 });
@@ -244,11 +188,9 @@ app.get('/hidden_gems/:id', (req, res) => {
                 cityName: 'Hidden Gems'
             });
         } catch (err) {
-            console.error(err);
             res.status(500).send('Error parsing gem data');
         }
     } else {
-        console.error(`❌ Gem Not Found: ${jsonPath}`);
         res.status(404).send('Gem Not Found');
     }
 });
@@ -256,7 +198,6 @@ app.get('/hidden_gems/:id', (req, res) => {
 // ==========================================
 // 9. Dining & Entertainment
 // ==========================================
-
 app.get('/dining', (req, res) => {
     const diningPath = path.join(rootDir, 'data', 'dining.json');
     let diningData = [];
@@ -293,13 +234,42 @@ app.use((req, res) => {
     `);
 });
 
+// ==========================================
+// 11. 本地開發環境 (Dev Only) - 自動生成 Sitemap
+// ==========================================
+// 這段邏輯只會在您的電腦上執行，不會在 Vercel 執行
+if (process.env.NODE_ENV !== 'production') {
+    try {
+        let generateSitemap;
+        try { generateSitemap = require('../generate-sitemap'); } 
+        catch (e) { generateSitemap = require('./generate-sitemap'); }
+
+        if (generateSitemap) {
+            console.log('🔧 Dev Mode: Monitoring data changes for Sitemap...');
+            const dataDir = path.join(rootDir, 'data');
+            if (fs.existsSync(dataDir)) {
+                let sitemapTimeout;
+                fs.watch(dataDir, { recursive: true }, (eventType, filename) => {
+                    if (filename && filename.endsWith('.json') && !filename.includes('sitemap.xml')) {
+                        if (sitemapTimeout) clearTimeout(sitemapTimeout);
+                        sitemapTimeout = setTimeout(() => {
+                            console.log(`📝 資料變更 (${filename}) -> 本地自動更新 sitemap.xml...`);
+                            generateSitemap(); 
+                        }, 500);
+                    }
+                });
+            }
+        }
+    } catch(e) {
+        console.warn('⚠️ Dev mode sitemap watcher failed to initialize.');
+    }
+}
+
 if (process.env.NODE_ENV !== 'production') {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`✅ TaiwanMe Server Running in: ${rootDir}`);
-        console.log(`🔍 Search API loaded at: http://localhost:${PORT}/api/search`);
         console.log(`🌍 Main URL: http://localhost:${PORT}`);
-        console.log(`🗺️  Sitemap URL: http://localhost:${PORT}/sitemap.xml`);
     });
 }
 
