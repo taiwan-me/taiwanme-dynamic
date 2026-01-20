@@ -5,6 +5,23 @@ const path = require('path');
 const BASE_URL = 'https://taiwanme-dynamic.vercel.app';
 
 /**
+ * 輔助函式：處理 XML 特殊字元轉義，避免 Google Search Console 報錯
+ * 例如：將 "&" 轉為 "&amp;"
+ */
+function escapeXml(unsafe) {
+    if (typeof unsafe !== 'string') return unsafe;
+    return unsafe.replace(/[<>&'"]/g, function (c) {
+        switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '\'': return '&apos;';
+            case '"': return '&quot;';
+        }
+    });
+}
+
+/**
  * 核心功能：掃描資料夾並生成實體 sitemap.xml 到 public 資料夾
  */
 function generateSitemap() {
@@ -33,8 +50,7 @@ function generateSitemap() {
         ];
 
         // 2. 初始化 XML 內容
-        let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+        let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
         // 3. 加入靜態頁面
         staticPages.forEach(page => {
@@ -55,10 +71,11 @@ function generateSitemap() {
                 if (file.endsWith('.json')) {
                     const citySlug = file.replace('.json', '');
                     
-                    // 加入城市列表頁
+                    // 加入城市列表頁 (使用 escapeXml 處理網址)
+                    const cityUrl = `${BASE_URL}/search_by_city/${citySlug}`;
                     xml += `
     <url>
-        <loc>${BASE_URL}/search_by_city/${citySlug}</loc>
+        <loc>${escapeXml(cityUrl)}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>`;
@@ -70,9 +87,10 @@ function generateSitemap() {
 
                         if (Array.isArray(articles)) {
                             articles.forEach(article => {
+                                const articleUrl = `${BASE_URL}/search_by_city/${citySlug}/${article.id}`;
                                 xml += `
     <url>
-        <loc>${BASE_URL}/search_by_city/${citySlug}/${article.id}</loc>
+        <loc>${escapeXml(articleUrl)}</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>`;
@@ -92,9 +110,10 @@ function generateSitemap() {
             files.forEach(file => {
                 if (file.endsWith('.json')) {
                     const gemId = file.replace('.json', '');
+                    const gemUrl = `${BASE_URL}/hidden_gems/${gemId}`;
                     xml += `
     <url>
-        <loc>${BASE_URL}/hidden_gems/${gemId}</loc>
+        <loc>${escapeXml(gemUrl)}</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>`;
@@ -102,8 +121,7 @@ function generateSitemap() {
             });
         }
 
-        xml += `
-</urlset>`;
+        xml += `\n</urlset>`;
 
         // 6. ✅ 寫入檔案：writeFileSync 會自動複寫原本的 sitemap.xml
         fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xml, 'utf8');
