@@ -4,8 +4,12 @@
     "type": "1-Day Tour",
     "title": "Battlefield & Ancient City",
     "subTitle": "戰地風雲與古城巡禮：經典歷史路線",
-    "tags": ["#History", "#Military", "#Classic"],
-    "heroImage": "/image/search_by_city/kinmen/zhaishan.jpg",
+    "tags": [
+      "#History",
+      "#Military",
+      "#Classic"
+    ],
+    "heroImage": "/image/search_by_city/kinmen1-2.jpg",
     "intro": "Focus on the western part of Kinmen. Explore the Guningtou Battle Museum and the awe-inspiring Zhaishan Tunnel.",
     "transportation": "**Scooter/Car Rental** is recommended.",
     "spots": [
@@ -13,22 +17,52 @@
         "time": "09:00",
         "name": "Guningtou Battle Museum (古寧頭戰史館)",
         "address": "Jinning Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleGuningtou",
-        "description": "Commemorates the decisive 1949 battle. See the anti-landing spikes on the beach and the nearby Beishan Broadcasting Wall."
+        "mapLink": "https://maps.app.goo.gl/izJorvuu894nsNi6A",
+        "description": "Commemorates the decisive 1949 battle. See the anti-landing spikes on the beach and the nearby Beishan Broadcasting Wall.",
+        "image": "/image/search_by_city/kinmen1-1.jpg",
+        "author": "Wei-Te Wong",
+        "license": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%8F%A4%E5%AF%A7%E9%A0%AD%E6%88%B0%E5%8F%B2%E9%A4%A8_(2).jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.475,
+          118.318
+        ]
       },
       {
         "time": "13:30",
         "name": "Zhaishan Tunnel (翟山坑道)",
         "address": "Jincheng Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleZhaishan",
-        "description": "An A-shaped granite tunnel built for supply boats during wartime. The reflection on the water is breathtaking."
+        "mapLink": "https://maps.app.goo.gl/tFKonpdY5Q8McfaV7",
+        "description": "An A-shaped granite tunnel built for supply boats during wartime. The reflection on the water is breathtaking.",
+        "image": "/image/search_by_city/kinmen1-2.jpg",
+        "author": "P95521708",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:Zhaishan_Tunnel_DSC_3378.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.407,
+          118.317
+        ]
       },
       {
         "time": "18:00",
         "name": "Qing Kinmen Military Headquarters (清金門鎮總兵署)",
         "address": "Jincheng Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleHeadquarters",
-        "description": "The only remaining Qing Dynasty military headquarters in Taiwan-Fujian area. Visit the dungeon wax museum in the basement."
+        "mapLink": "https://maps.app.goo.gl/UNk2G51HiFbEgUBHA",
+        "description": "The only remaining Qing Dynasty military headquarters in Taiwan-Fujian area. Visit the dungeon wax museum in the basement.",
+        "image": "/image/search_by_city/kinmen1-3.jpg",
+        "author": "tomscoffin",
+        "license": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:2012-06-05_Kinmen_Military_Headquarters_of_Qing_Dynasty.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.432,
+          118.317
+        ]
       }
     ]
   },
@@ -37,8 +71,12 @@
     "type": "1-Day Tour",
     "title": "Exotic Vibes & Sunset",
     "subTitle": "異國風情與夕陽大片：網美打卡路線",
-    "tags": ["#Photography", "#Sunset", "#Architecture"],
-    "heroImage": "/image/search_by_city/kinmen/shamei_morocco.jpg",
+    "tags": [
+      "#Photography",
+      "#Sunset",
+      "#Architecture"
+    ],
+    "heroImage": "/image/search_by_city/kinmen2-3.jpg",
     "intro": "Skip the heavy history and focus on visual impact. Visit 'Shamei Morocco' and the European-style Chen Jing-lan Western House.",
     "transportation": "**Scooter/Car Rental**.",
     "spots": [
@@ -46,22 +84,47 @@
         "time": "09:30",
         "name": "Shamei Morocco (沙美摩洛哥)",
         "address": "Jinsha Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleShamei",
-        "description": "Ruins reinforced with earth-colored cement, creating a North African desert vibe. A top IG spot."
+        "mapLink": "https://maps.app.goo.gl/V9ADPrZfP66Y2LiQA",
+        "description": "Ruins reinforced with earth-colored cement, creating a North African desert vibe. A top IG spot.",
+        "image": "/image/search_by_city/kinmen2-1.png",
+        "coords": [
+          24.485,
+          118.406
+        ]
       },
       {
         "time": "14:00",
         "name": "Chen Jing-lan Western House (陳景蘭洋樓)",
         "address": "Jinhu Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleChen",
-        "description": "The largest western-style house in Kinmen, built by a Singaporean merchant. Facing the sea with beautiful white arches."
+        "mapLink": "https://maps.app.goo.gl/nJWBVNkYzBfKVuY9A",
+        "description": "The largest western-style house in Kinmen, built by a Singaporean merchant. Facing the sea with beautiful white arches.",
+        "image": "/image/search_by_city/kinmen2-2.jpg",
+        "author": "MonicaYaya",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E9%99%B3%E6%99%AF%E8%98%AD%E9%99%BD%E6%A8%93%E5%89%8D%E6%96%B9%E5%BA%AD%E9%99%A2.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.435,
+          118.397
+        ]
       },
       {
         "time": "16:30",
         "name": "Jiangong Islet (建功嶼)",
         "address": "Jincheng Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleJiangong",
-        "description": "Accessible only at low tide via a stone path. Famous for the 'Oystermen' art installation and sunset views."
+        "mapLink": "https://maps.app.goo.gl/LzVtTpD9WgeFgEEQA",
+        "description": "Accessible only at low tide via a stone path. Famous for the 'Oystermen' art installation and sunset views.",
+        "image": "/image/search_by_city/kinmen2-3.jpg",
+        "author": "StormyNeuron",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:KINMEN%2BEMILYLIU%2B6.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.425,
+          118.309
+        ]
       }
     ]
   },
@@ -70,8 +133,12 @@
     "type": "2-Day Tour",
     "title": "War & Diaspora Culture",
     "subTitle": "穿越古今：戰地與僑鄉文化之旅",
-    "tags": ["#Culture", "#Architecture", "#History"],
-    "heroImage": "/image/search_by_city/kinmen/shanhou.jpg",
+    "tags": [
+      "#Culture",
+      "#Architecture",
+      "#History"
+    ],
+    "heroImage": "/image/search_by_city/kinmen3-1.jpg",
     "intro": "Day 1 focuses on western battlefields; Day 2 explores eastern Minnan settlements and Wind Lion Gods.",
     "transportation": "**Car Rental**.",
     "spots": [
@@ -79,22 +146,52 @@
         "time": "Day 1 PM",
         "name": "Beishan Ancient Western House (北山古洋樓)",
         "address": "Jinning Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleBeishan",
-        "description": "A western-style house riddled with bullet holes from the Guningtou Battle. A stark reminder of war."
+        "mapLink": "https://maps.app.goo.gl/FatJu59FLheiyumx9",
+        "description": "A western-style house riddled with bullet holes from the Guningtou Battle. A stark reminder of war.",
+        "image": "/image/search_by_city/kinmen3-1.jpg",
+        "author": "張雅倫",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%8F%A4%E5%AF%A7%E9%A0%AD%E5%8C%97%E5%B1%B1%E5%8F%A4%E6%B4%8B%E6%A8%93.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.473,
+          118.315
+        ]
       },
       {
         "time": "Day 2 AM",
         "name": "Shanhou Folk Culture Village (山后民俗文化村)",
         "address": "Jinsha Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleShanhou",
-        "description": "The most complete Minnan settlement in Kinmen, featuring 18 orderly traditional houses. Try the oyster omelet here."
+        "mapLink": "https://maps.app.goo.gl/gXK15e5VU6dWcmCd6",
+        "description": "The most complete Minnan settlement in Kinmen, featuring 18 orderly traditional houses. Try the oyster omelet here.",
+        "image": "/image/search_by_city/kinmen3-2.jpg",
+        "author": "User: (WT-shared) Shoestring at wts wikivoyage",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:The_Kinmen_cultural_village,_Kinmen,_Taiwan.JPG",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.502,
+          118.435
+        ]
       },
       {
         "time": "Day 2 PM",
         "name": "Mashan Observation Post (馬山觀測所)",
         "address": "Jinsha Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleMashan",
-        "description": "The closest point to mainland China. You can see fishing boats on the other side through telescopes."
+        "mapLink": "https://maps.app.goo.gl/seyD7kpRnboX2Nb96",
+        "description": "The closest point to mainland China. You can see fishing boats on the other side through telescopes.",
+        "image": "/image/search_by_city/kinmen3-3.jpg",
+        "author": "人人生來平等",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:2022.06.20_Mashan_Broadcasting_and_Observation_Station_entrance.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.529,
+          118.411
+        ]
       }
     ]
   },
@@ -103,8 +200,12 @@
     "type": "2-Day Tour",
     "title": "Bridge & Lieyu Hopping",
     "subTitle": "大橋通車限定：大小金門跳島遊",
-    "tags": ["#IslandHopping", "#Bridge", "#Taro"],
-    "heroImage": "/image/search_by_city/kinmen/kinmen_bridge.jpg",
+    "tags": [
+      "#IslandHopping",
+      "#Bridge",
+      "#Taro"
+    ],
+    "heroImage": "/image/search_by_city/kinmen4-3.png",
     "intro": "Utilize the new Kinmen Bridge to explore Lieyu (Little Kinmen). Visit landmine museums and enjoy taro ice.",
     "transportation": "**Scooter** (Watch out for strong winds on the bridge).",
     "spots": [
@@ -112,22 +213,47 @@
         "time": "Day 1 AM",
         "name": "Shuitou Settlement (水頭聚落)",
         "address": "Jincheng Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleShuitou",
-        "description": "Famous for the Deyue Gun Tower and western-style mansions built by wealthy overseas Chinese."
+        "mapLink": "https://maps.app.goo.gl/qc5hcoKxD5WBpPBj7",
+        "description": "Famous for the Deyue Gun Tower and western-style mansions built by wealthy overseas Chinese.",
+        "image": "/image/search_by_city/kinmen4-1.jpg",
+        "author": "張雅倫",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E5%89%8D%E6%B0%B4%E9%A0%AD%E9%BB%83%E8%BC%9D%E7%85%8C%E6%B4%8B%E6%A8%93%E5%8F%8A%E5%BE%97%E6%9C%88%E6%A8%93.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.417,
+          118.303
+        ]
       },
       {
         "time": "Day 2 AM",
         "name": "Landmine Exhibition Center (地雷主題館)",
         "address": "Lieyu Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleLandmine",
-        "description": "Located in Lieyu. Walk through tunnels connecting two forts and learn about the history of demining."
+        "mapLink": "https://maps.app.goo.gl/An7xbmGoneixbmgo8",
+        "description": "Located in Lieyu. Walk through tunnels connecting two forts and learn about the history of demining.",
+        "image": "/image/search_by_city/kinmen4-2.jpg",
+        "author": "Ping an Chang",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E9%96%80%E7%83%88%E5%B6%BC%E5%9C%B0%E9%9B%B7%E4%B8%BB%E9%A1%8C%E9%A4%A8_20200807171157.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.431,
+          118.256
+        ]
       },
       {
         "time": "Day 2 PM",
         "name": "Shaxi Fort (沙溪堡)",
         "address": "Lieyu Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleShaxi",
-        "description": "The westernmost point of Little Kinmen. The wooden boardwalk offers a stunning view of Xiamen's skyline."
+        "mapLink": "https://maps.app.goo.gl/t4gD64B5LrZWbYMQ8",
+        "description": "The westernmost point of Little Kinmen. The wooden boardwalk offers a stunning view of Xiamen's skyline.",
+        "image": "/image/search_by_city/kinmen4-3.png",
+        "coords": [
+          24.416,
+          118.225
+        ]
       }
     ]
   },
@@ -136,8 +262,12 @@
     "type": "3-Day Tour",
     "title": "Grand Tour: Land, Sea & Air",
     "subTitle": "全島制霸：海陸空全體驗",
-    "tags": ["#GrandTour", "#AllInOne", "#Adventure"],
-    "heroImage": "/image/search_by_city/kinmen/taiwu_mountain.jpg",
+    "tags": [
+      "#GrandTour",
+      "#AllInOne",
+      "#Adventure"
+    ],
+    "heroImage": "/image/search_by_city/kinmen5-1.jpg",
     "intro": "Cover all 5 townships. Hike Mt. Taiwu, see the abandoned tank on the beach, and cross the bridge to Lieyu.",
     "transportation": "**Car Rental**.",
     "spots": [
@@ -145,22 +275,52 @@
         "time": "Day 1 PM",
         "name": "Oucuo Beach Tank (歐厝戰車)",
         "address": "Jincheng Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleTank",
-        "description": "An abandoned M18 Hellcat tank half-buried in the sand. Only visible at low tide. A cinematic photo spot."
+        "mapLink": "https://maps.app.goo.gl/FnwCrNNVeEX33TK17",
+        "description": "An abandoned M18 Hellcat tank half-buried in the sand. Only visible at low tide. A cinematic photo spot.",
+        "image": "/image/search_by_city/kinmen5-1.jpg",
+        "author": "Alan850507",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E6%AD%90%E5%8E%9D%E6%88%B0%E8%BB%8A.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.407,
+          118.337
+        ]
       },
       {
         "time": "Day 3 AM",
         "name": "Mt. Taiwu (太武山)",
         "address": "Jinhu Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleTaiwu",
-        "description": "Hike to the highest peak. See the famous 'Wu Wang Zai Ju' inscription and the ancient Haiyin Temple."
+        "mapLink": "https://maps.app.goo.gl/g5CmCVMuj91fwysg7",
+        "description": "Hike to the highest peak. See the famous 'Wu Wang Zai Ju' inscription and the ancient Haiyin Temple.",
+        "image": "/image/search_by_city/kinmen5-2.jpg",
+        "author": "pedist",
+        "license": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:2011.08.24_%E5%A4%AA%E6%AD%A6%E5%B1%B1%E5%85%AC%E5%A2%93%E5%9C%8B%E6%B0%91%E9%9D%A9%E5%91%BD%E8%BB%8D%E9%99%A3%E4%BA%A1%E5%B0%87%E5%A3%AB%E7%B4%80%E5%BF%B5%E7%A2%91%E5%8F%8A%E5%A4%AA%E6%AD%A6%E5%BF%A0%E7%83%88%E7%A5%A0.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.461,
+          118.415
+        ]
       },
       {
         "time": "Day 3 PM",
         "name": "Maestro Wu Knife Factory (金合利鋼刀)",
         "address": "Jinning Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleKnife",
-        "description": "Witness how artillery shells fired during the war are turned into high-quality kitchen knives."
+        "mapLink": "https://maps.app.goo.gl/wXLMTTeVdfwQY9d69",
+        "description": "Witness how artillery shells fired during the war are turned into high-quality kitchen knives.",
+        "image": "/image/search_by_city/kinmen5-3.jpg",
+        "author": "lienyuan lee",
+        "license": "CC BY 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/3.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E5%90%88%E5%88%A9%E9%8B%BC%E5%88%80_Maestro_Wu_-_panoramio_(1).jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.442,
+          118.331
+        ]
       }
     ]
   },
@@ -169,8 +329,12 @@
     "type": "3-Day Tour",
     "title": "Slow Living: Old House & Eco",
     "subTitle": "慢活金門：生態、古厝與咖啡",
-    "tags": ["#OldHouse", "#Ecology", "#Relax"],
-    "heroImage": "/image/search_by_city/kinmen/cormorant.jpg",
+    "tags": [
+      "#OldHouse",
+      "#Ecology",
+      "#Relax"
+    ],
+    "heroImage": "/image/search_by_city/kinmen6-3.jpg",
     "intro": "Stay in a traditional Minnan house B&B. Watch cormorants return to their nests at dusk (winter) and enjoy local coffee.",
     "transportation": "**Car Rental**.",
     "spots": [
@@ -178,22 +342,52 @@
         "time": "Day 1 Night",
         "name": "Zhushan Settlement (珠山聚落)",
         "address": "Jincheng Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleZhushan",
-        "description": "Stay in a restored old house. Experience the tranquility of the village and traditional architecture."
+        "mapLink": "https://maps.app.goo.gl/SQdryygGfz8n8u7u6",
+        "description": "Stay in a restored old house. Experience the tranquility of the village and traditional architecture.",
+        "image": "/image/search_by_city/kinmen6-1.jpg",
+        "author": "潘同正",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E9%96%80%E5%8F%A4%E5%8E%9D%E8%81%9A%E8%90%BD.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.405,
+          118.318
+        ]
       },
       {
         "time": "Day 2 PM",
         "name": "Special Tea House Museum (特約茶室展示館)",
         "address": "Jinhu Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleTeaHouse",
-        "description": "Formerly a military brothel (Unit 831), now a museum and cafe with a unique atmosphere."
+        "mapLink": "https://maps.app.goo.gl/pbn6BtoM6SR6GP7a9",
+        "description": "Formerly a military brothel (Unit 831), now a museum and cafe with a unique atmosphere.",
+        "image": "/image/search_by_city/kinmen6-2.jpg",
+        "author": "Wei-Te Wong",
+        "license": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E7%89%B9%E7%B4%84%E8%8C%B6%E5%AE%A4%E5%B1%95%E7%A4%BA%E9%A4%A8.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.447,
+          118.375
+        ]
       },
       {
         "time": "Day 2 Evening",
         "name": "Cihu Lake (慈湖)",
         "address": "Jinning Township, Kinmen County",
-        "mapLink": "https://goo.gl/maps/exampleCihu",
-        "description": "In winter, thousands of cormorants return here at sunset. A spectacular ecological sight."
+        "mapLink": "https://maps.app.goo.gl/QVFmMDRC1BroPhqe8",
+        "description": "In winter, thousands of cormorants return here at sunset. A spectacular ecological sight.",
+        "image": "/image/search_by_city/kinmen6-3.jpg",
+        "author": "Fanjiang Jerry",
+        "license": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0",
+        "authorLink": "https://commons.wikimedia.org/wiki/File:%E6%85%88%E6%B9%96.jpg",
+        "via": "via Wikimedia Commons",
+        "coords": [
+          24.457,
+          118.303
+        ]
       }
     ]
   }

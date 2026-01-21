@@ -7,7 +7,186 @@
     <link rel="icon" href="/image/logo.png" type="image/png">
     
     <link rel="stylesheet" href="/style.css">
-    
+
+    <style>
+        /* ========================================= */
+        /* ✅ 新增：金馬冷知識互動樣式 (Fun Fact) */
+        /* ========================================= */
+        
+        /* 1. 金馬按鈕的包裹容器 (用來定位圓框) */
+        .kinmen-matsu-wrapper {
+            position: relative;
+            display: inline-flex; /* 讓按鈕保持並排 */
+            gap: 15px; /* 按鈕之間的間距 */
+            margin: 0 10px; /* 與旁邊澎湖按鈕的距離 */
+            vertical-align: middle;
+        }
+
+        /* 2. 紅色圓角框框 (圈住金門與馬祖) */
+        .highlight-box {
+            position: absolute;
+            top: -12px; bottom: -12px;
+            left: -15px; right: -15px;
+            border: 2px solid #E8A2A2; /* 品牌粉色 */
+            border-radius: 50px; /* 圓角矩形 */
+            pointer-events: none; /* 讓點擊可以穿透到裡面的按鈕 */
+            animation: pulse-border 2s infinite;
+        }
+
+        /* 3. 向右延伸的虛線 */
+        .dashed-pointer {
+            position: absolute;
+            top: 50%;
+            right: -70px; /* 伸出框框右邊 */
+            width: 70px;
+            height: 2px;
+            background-image: linear-gradient(to right, #E8A2A2 50%, transparent 50%);
+            background-size: 10px 100%;
+            transform: translateY(-50%);
+        }
+
+        /* 4. Fun Fact 觸發按鈕 */
+        .fun-fact-trigger {
+            position: absolute;
+            top: 50%;
+            right: -170px; /* 定位在虛線末端 */
+            transform: translateY(-50%);
+            background-color: #E8A2A2;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            font-family: serif;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(232, 162, 162, 0.3);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .fun-fact-trigger:hover {
+            background-color: #d68b8b;
+            transform: translateY(-53%) scale(1.05); /* 微幅上浮 */
+        }
+
+        /* 手機版調整：為了避免版面擠壓，手機版將 Fun Fact 移到下方 */
+        @media (max-width: 768px) {
+            .kinmen-matsu-wrapper {
+                display: inline-flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 45px; /* 留空間給下方的 Fun Fact */
+            }
+            .dashed-pointer {
+                display: none; /* 手機版隱藏虛線 */
+            }
+            .fun-fact-trigger {
+                top: auto; 
+                bottom: -40px; /* 移到按鈕正下方 */
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .fun-fact-trigger:hover {
+                transform: translateX(-50%) scale(1.05);
+            }
+        }
+
+        /* 動畫效果 */
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(232, 162, 162, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(232, 162, 162, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(232, 162, 162, 0); }
+        }
+
+        /* ========================================= */
+        /* ✅ Modal 彈出視窗樣式 */
+        /* ========================================= */
+        .fact-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10002;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .fact-modal.show { opacity: 1; }
+
+        .fact-card {
+            background: #fff;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            border-radius: 4px;
+            padding: 50px;
+            position: relative;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .fact-modal.show .fact-card { transform: translateY(0); }
+
+        .fact-close {
+            position: absolute; top: 20px; right: 25px;
+            font-size: 2.5rem; color: #ccc; cursor: pointer;
+            line-height: 1; transition: color 0.2s;
+        }
+        .fact-close:hover { color: #333; }
+
+        .fact-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .fact-tag {
+            color: #E8A2A2;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .fact-title {
+            font-family: serif;
+            font-size: 2rem; 
+            color: #333;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .fact-body h3 {
+            font-size: 1.3rem; margin-top: 40px; margin-bottom: 15px;
+            color: #333; font-weight: bold; font-family: serif;
+        }
+        .fact-body p {
+            font-size: 1.05rem; line-height: 1.8; color: #555;
+            margin-bottom: 20px; text-align: justify;
+        }
+        .fact-highlight {
+            border-left: 4px solid #E8A2A2;
+            padding-left: 20px;
+            margin: 30px 0;
+            font-family: serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.6;
+        }
+        @media (max-width: 600px) {
+            .fact-card { padding: 30px 20px; }
+            .fact-title { font-size: 1.6rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -65,10 +244,13 @@
             
             <div class="island-section-wrapper">
                 
-                <div class="city-tags">
+                <div class="city-tags" style="align-items: center;">
                     <a href="/search_by_city/penghu" class="city-btn">Penghu (澎湖)</a>
-                    <a href="/search_by_city/kinmen" class="city-btn">Kinmen (金門)</a>
-                    <a href="/search_by_city/matsu" class="city-btn">Matsu (馬祖)</a>
+                    
+                    <div class="kinmen-matsu-wrapper">
+                        <div class="highlight-box"></div> <div class="dashed-pointer"></div> <div class="fun-fact-trigger" id="openFactBtn">💡 Fun Fact</div> <a href="/search_by_city/kinmen" class="city-btn">Kinmen (金門)</a>
+                        <a href="/search_by_city/matsu" class="city-btn">Matsu (馬祖)</a>
+                    </div>
                 </div>
 
                 <div class="island-separator">
@@ -77,13 +259,9 @@
 
                 <div class="city-tags">
                     <a href="/search_by_city/pingtung/pt-07" class="city-btn">Xiao Liuqiu (小琉球)</a> 
-                    
                     <a href="/search_by_city/taitung/tt-07" class="city-btn">Green Island (綠島)</a>   
-                    
                     <a href="/search_by_city/taitung/tt-08" class="city-btn">Orchid Island (蘭嶼)</a>  
-                    
                     <a href="/search_by_city/yilan/yl-07" class="city-btn">Guishan Island (龜山島)</a> 
-                    
                     <a href="/search_by_city/keelung/kl-05" class="city-btn">Keelung Islet (基隆嶼)</a>
                 </div>
 
@@ -94,7 +272,64 @@
 
     <%- include('../partials/footer') %>
 
+    <div id="factModal" class="fact-modal">
+        <div class="fact-card">
+            <div class="fact-close" id="closeFactBtn">&times;</div>
+            
+            <div class="fact-header">
+                <span class="fact-tag">Historical Paradox</span>
+                <h2 class="fact-title">Wait, my ID card says "Fujian Province, Republic of China"?</h2>
+            </div>
+
+            <div class="fact-body">
+                <p>If you check the ID card of a resident from Kinmen or Matsu, you’ll notice a startling detail: the place of issuance isn't "Taiwan ," but rather <strong>"Fujian Province, Republic of China."</strong></p>
+                
+                <p>This detail hides a heavy history. When the R.O.C. government retreated to Taiwan in 1949, it maintained the administrative structure of "Fujian Province" (covering Kinmen and Matsu) to assert its legitimacy over the mainland. Despite the rise of Taiwanese self-determination movements and calls to amend the constitution to reflect reality, this title remains—a frozen relic of a political stalemate.</p>
+
+                <h3>The Exclusive "Kinmen-Matsu Permit"</h3>
+                <p>Beyond the ID card, residents hold a unique travel visa to China. Those registered in Kinmen or Matsu for over six months can apply for a special <strong>"Kinmen-Matsu Permit."</strong></p>
+                <p>Due to the "Mini-Three Links" agreement, this permit allows residents to take a 30-minute ferry ride directly to China. For locals, popping over to China for dinner or shopping is often faster than traveling to Taipei!</p>
+
+                <h3>The Conflict of Identity</h3>
+                <div class="fact-highlight">
+                    "On the map, they are miles apart; in the heart, the distance is even more intriguing."
+                </div>
+                <p>This creates a fascinating phenomenon among the younger generation. When traveling abroad, they unhesitatingly identify as <strong>"Taiwanese."</strong> Yet, back home, holding an ID card printed with "Fujian Province" serves as a constant reminder of a historical destiny distinct from the main island of Taiwan.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="/script.js"></script>
+    <script>
+        // ✅ Fun Fact Modal 互動邏輯
+        const openFactBtn = document.getElementById('openFactBtn');
+        const closeFactBtn = document.getElementById('closeFactBtn');
+        const factModal = document.getElementById('factModal');
+
+        if(openFactBtn && factModal) {
+            openFactBtn.addEventListener('click', () => {
+                factModal.style.display = 'flex';
+                // 強制重繪以觸發 transition
+                setTimeout(() => factModal.classList.add('show'), 10);
+                document.body.style.overflow = 'hidden'; // 防止背景捲動
+            });
+
+            function closeFact() {
+                factModal.classList.remove('show');
+                setTimeout(() => {
+                    factModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }, 300); // 等待動畫結束
+            }
+
+            closeFactBtn.addEventListener('click', closeFact);
+            
+            // 點擊背景關閉
+            factModal.addEventListener('click', (e) => {
+                if (e.target === factModal) closeFact();
+            });
+        }
+    </script>
 
 </body>
 </html>
