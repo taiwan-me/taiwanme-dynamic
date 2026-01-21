@@ -74,6 +74,9 @@ body {
     margin: 0;
     padding: 0;
     
+    /* ✅ [重要修正] 給內容預留空間，避免被 Fixed Header 擋住 */
+    padding-top: 140px; 
+
     /* [文章內文預設] Regular (400) */
     font-family: var(--font-main);
     font-weight: 400; 
@@ -137,10 +140,16 @@ blockquote, .intro-text, .quote-style {
 #header {
     background: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
+    
+    /* ✅ [重要修正] 強制固定在最上方 */
+    position: fixed; 
     top: 0;
-    z-index: 1000;
-    padding: 0; /* padding 改由 inner container 控制 */
+    left: 0;
+    width: 100%;
+    
+    z-index: 1002; /* ✅ 確保層級最高，蓋住導覽列 */
+    padding: 0; 
+    border-bottom: 1px solid #eee;
 }
 
 .header-container {
@@ -254,7 +263,7 @@ blockquote, .intro-text, .quote-style {
     justify-content: center;
     align-items: center;
 }
-.search-content { text-align: center; width: 80%; position: relative; } /* 加入 relative 以便定位下拉選單 */
+.search-content { text-align: center; width: 80%; position: relative; } 
 .search-content input {
     width: 70%;
     padding: 15px;
@@ -355,7 +364,26 @@ blockquote, .intro-text, .quote-style {
     border-bottom: 2px solid var(--lace-border);
     padding: 5px 0;
     margin-top: 0; 
+
+    /* ✅ [重要修正] 設定 Smart Sticky 相關定位 */
+    position: fixed; 
+    top: 80px; /* 預設位置，JS 會微調 */
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* 確保比 Logo 列低，這樣往上縮時會躲在 Logo 後面 */
+    transition: transform 0.3s ease-in-out;
 }
+
+/* ✅ 當往下捲動時：導覽列往上縮 (藏到 Logo 區後面) */
+.desktop-nav.nav-hidden {
+    transform: translateY(-100%);
+}
+
+/* ✅ 當往上捲動時：導覽列復原 */
+.desktop-nav.nav-visible {
+    transform: translateY(0);
+}
+
 .desktop-nav ul {
     display: flex;
     justify-content: center;

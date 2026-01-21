@@ -9,7 +9,6 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 %>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
-
 <link rel="icon" href="/image/logo.png" type="image/png">
 <link rel="apple-touch-icon" href="/image/logo.png">
 
@@ -87,7 +86,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     .result-title { font-size: 1.1rem; font-weight: bold; }
 
     /* ========================================= */
-    /* 4. Philosophy Modal (品牌理念視窗) */
+    /* 4. Philosophy Modal */
     /* ========================================= */
     .philosophy-modal {
         display: none; position: fixed; top: 0; left: 0;
@@ -122,14 +121,14 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     }
 
     /* ========================================= */
-    /* 5. LOGO 區域微調 (支援中文) */
+    /* 5. LOGO 區域微調 */
     /* ========================================= */
     .brand-title-row { display: flex; align-items: baseline; }
     .brand-zh { 
         font-size: 1.1rem; 
         font-weight: 500; 
         margin-left: 8px; 
-        color: #333; /* 與英文標題一致 */
+        color: #333; 
         letter-spacing: 0.05em;
     }
     @media (max-width: 480px) {
@@ -142,6 +141,64 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     }
     
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ========================================= */
+    /* ✅ 修正重點 1: Header (Logo 列) */
+    /* ========================================= */
+    /* 必須是 fixed 才能永遠停在視窗最上方 */
+    #header.main-header {
+        position: fixed !important; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        z-index: 1002; /* 最高層級，蓋住導覽列 */
+        padding: 0; /* padding 由 inner container 控制 */
+        border-bottom: 1px solid #eee; /* 保留原本的底線 */
+    }
+
+    /* ========================================= */
+    /* ✅ 修正重點 2: Desktop Nav (導覽列) */
+    /* ========================================= */
+    .desktop-nav {
+        /* 使用原本的顏色變數 */
+        background-color: var(--lace-bg, #F5F3F0); 
+        border-top: 2px solid var(--lace-border, #AC9F95);
+        border-bottom: 2px solid var(--lace-border, #AC9F95);
+        padding: 5px 0;
+        margin-top: 0; 
+
+        /* 定位設定 */
+        position: fixed; /* 固定定位 */
+        width: 100%;
+        left: 0;
+        z-index: 1001; /* 比 Logo 列低一層 (1001 < 1002) */
+        transition: transform 0.3s ease-in-out; /* 滑動動畫 */
+        
+        /* 預設位置 (JS 會精確計算覆蓋此值) */
+        top: 80px; 
+    }
+
+    /* 隱藏狀態：往上縮進去 (transform Y -100%) */
+    /* 因為層級比 Header 低，所以會看起來像是躲到 Header 後面 */
+    .desktop-nav.nav-hidden {
+        transform: translateY(-100%);
+    }
+
+    /* 顯示狀態：回到原位 */
+    .desktop-nav.nav-visible {
+        transform: translateY(0);
+    }
+
+    /* ========================================= */
+    /* ✅ 修正重點 3: Body Padding */
+    /* ========================================= */
+    /* 預留空間給兩個固定的 Header，避免內容被遮擋 */
+    body {
+        padding-top: 140px; /* JS 會自動計算實際高度 */
+    }
+
 </style>
 
 <header id="header" class="main-header">
@@ -264,24 +321,77 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Back To Top 邏輯
+    // =========================================
+    // ✅ 邏輯修正區：Header 固定 + Nav 自動隱藏
+    // =========================================
+    const header = document.getElementById('header'); // 第一列 (Logo)
+    const nav = document.querySelector('.desktop-nav'); // 第二列 (導覽列)
+    let lastScrollY = window.scrollY;
+
+    // 1. 初始化定位
+    function initNavPosition() {
+        if(header && nav) {
+            const headerHeight = header.offsetHeight;
+            const navHeight = nav.offsetHeight;
+            
+            // 強制設定 Nav 的 top 為 Header 的高度 (確保接在正下方)
+            nav.style.top = headerHeight + 'px';
+            
+            // 設定 Body 的 padding-top，防止內容被遮擋
+            document.body.style.paddingTop = (headerHeight + navHeight) + 'px';
+        }
+    }
+    
+    // 視窗改變時重新計算
+    window.addEventListener('resize', initNavPosition);
+    // 延遲一下確保樣式載入完畢
+    setTimeout(initNavPosition, 50);
+    initNavPosition();
+
+    // 2. 捲動監聽
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        
+        // 手機版選單開啟時，不執行隱藏邏輯
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        if (mobileDrawer && mobileDrawer.classList.contains('open')) return;
+
+        // 判斷捲動方向
+        if (currentScrollY > lastScrollY && currentScrollY > 20) {
+            // 往下捲動 -> 導覽列往上收 (transform: translateY(-100%))
+            // 因為 Nav 的 top 已經設為 Header 高度，且 z-index 比 Header 低
+            // 所以它會「滑進」Header 的背面消失
+            nav.classList.add('nav-hidden');
+            nav.classList.remove('nav-visible');
+        } else {
+            // 往上捲動 -> 導覽列滑出 (回到原位)
+            nav.classList.remove('nav-hidden');
+            nav.classList.add('nav-visible');
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
+    // =========================================
+    // 其他功能保持不變
+    // =========================================
+    
+    // Back To Top
     const backToTopBtn = document.getElementById('backToTopBtn');
-    const header = document.getElementById('header');
-    const nav = document.querySelector('.desktop-nav');
     function calculateThreshold() {
         const h = header ? header.offsetHeight : 0;
         const n = nav ? nav.offsetHeight : 0;
         return (h + n > 0 ? h + n : 150) * 0.5;
     }
-    let scrollThreshold = calculateThreshold();
+    let btnThreshold = calculateThreshold();
     window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollThreshold) backToTopBtn.classList.add('show');
+        if (window.scrollY > btnThreshold) backToTopBtn.classList.add('show');
         else backToTopBtn.classList.remove('show');
     });
-    window.addEventListener('resize', () => scrollThreshold = calculateThreshold());
+    window.addEventListener('resize', () => btnThreshold = calculateThreshold());
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // 2. 搜尋視窗邏輯
+    // Search Modal
     const searchModal = document.getElementById('searchModal');
     const openBtns = [document.getElementById('desktop-search-trigger'), document.getElementById('mobile-search-trigger')];
     const closeBtn = document.getElementById('closeSearchBtn');
@@ -302,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(closeBtn) closeBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (e) => { if(e.target === searchModal) closeModal(); });
 
-    // 2.5 Philosophy Modal Logic
+    // Philosophy Modal
     const philoModal = document.getElementById('philosophyModal');
     const philoTriggers = document.querySelectorAll('.philosophy-trigger');
     const philoClose = document.querySelector('.philosophy-close');
@@ -313,12 +423,9 @@ document.addEventListener('DOMContentLoaded', () => {
             philoModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
             
-            // 關閉手機選單
-            const mobileDrawer = document.getElementById('mobileDrawer');
-            const drawerOverlay = document.getElementById('mobileDrawerOverlay');
             if (mobileDrawer.classList.contains('open')) {
-                mobileDrawer.classList.remove('open');
-                drawerOverlay.classList.remove('show');
+                const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+                if(drawerCloseBtn) drawerCloseBtn.click();
             }
         });
     });
@@ -333,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === philoModal) closePhiloModal();
     });
 
-    // 3. 搜尋 API 串接
+    // Search API
     let timeout = null;
     input.addEventListener('input', (e) => {
         const query = e.target.value.trim();
@@ -366,7 +473,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsDiv.innerHTML = html;
     }
 
-    // 手機版搜尋按鈕顯示控制
     const mobileSearchBtn = document.getElementById('mobile-search-trigger');
     function checkMobile() {
         if(mobileSearchBtn) mobileSearchBtn.style.display = (window.innerWidth <= 900) ? 'block' : 'none';
