@@ -28,38 +28,39 @@
         }
 
         /* ========================================= */
-        /* ✅ 2. 頂部區域 (透明背景 + 分隔線) */
+        /* ✅ 2. 頂部區域 (深色背景 + 分隔線) */
         /* ========================================= */
         .top-section-wrapper {
-            background-color: transparent; /* ✅ 讓格子背景透出來，與下方一致 */
+            background-color: #2c3e50; /* ✅ 改為深藍色背景 */
             width: 100%;
             text-align: center;
-            border-bottom: 3px solid #333; /* ✅ 標題下方的橫線 */
-            padding-bottom: 50px; /* 標題與橫線的距離 */
-            margin-bottom: 70px; /* 橫線與下方內容的距離 */
+            border-bottom: 3px solid #333; /* 下方橫線保留 */
+            
+            /* 調整內距讓標題垂直置中且有呼吸感 */
+            padding-top: 40px; 
+            padding-bottom: 50px; 
+            margin-bottom: 70px; 
+            
             position: relative;
             z-index: 10;
         }
 
-        /* ✅ 主標題樣式 (恢復黑色框框貼紙風格) */
+        /* ✅ 主標題樣式 (改為純文字，移除貼紙框) */
         .page-main-title {
             display: inline-block;
-            background-color: #2c3e50; /* 深色底 */
-            color: #fff; /* 白色字 */
-            padding: 15px 50px; /* 加寬內距 */
-            font-size: 2.5rem; /* 字體放大 */
+            color: #fff; /* 白色文字 */
+            font-size: 3rem; /* 字體放大，接近您提供的圖片 */
             font-family: serif;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             font-weight: 800;
-            margin-top: 40px; 
-            margin-bottom: 0;
+            margin: 0;
             text-transform: uppercase;
             
-            /* 貼紙效果 */
-            transform: rotate(-1deg);
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
-            border-radius: 4px;
-            border: 2px solid #333;
+            /* 移除原本的貼紙效果 (邊框、旋轉、陰影) */
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            transform: none;
         }
 
         /* ========================================= */
