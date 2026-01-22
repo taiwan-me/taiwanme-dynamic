@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Guide | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* ========================================= */
+        /* 1. Hero Banner (完全比照 Culture 設定) */
+        /* ========================================= */
+        .ent-hero-banner {
+            width: 100%;
+            height: 40vh; 
+            min-height: 300px;
+            background-image: url('/image/entertainment/banner.png'); /* 請確認圖片路徑 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        /* 全版暗色遮罩 */
+        .ent-hero-banner::after {
+            content: ''; 
+            position: absolute; top: 0; left: 0; 
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        /* 文字容器 */
+        .ent-hero-content {
+            position: relative; 
+            z-index: 2; 
+            text-align: center; 
+            padding: 0 20px;
+        }
+
+        /* 標題樣式 (Culture 規格) */
+        .ent-title {
+            font-family: var(--font-main);
+            font-size: 3rem; 
+            margin: 0; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; /* 字距 */
+            font-weight: 900;    /* 字重 */
+            color: #fff;         /* ✅ 顏色：純白 */
+        }
+        
+        /* ========================================= */
+        /* 2. Article Grid (文章列表) */
+        /* ========================================= */
+        .ent-grid {
+            max-width: 1200px; margin: 0 auto 100px; padding: 0 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px;
+        }
+        
+        .ent-card {
+            background: #fff; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none; color: inherit; display: flex; flex-direction: column;
+            height: 100%;
+        }
+        .ent-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+        }
+        
+        .ent-img-box { width: 100%; height: 260px; overflow: hidden; position: relative; }
+        .ent-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .ent-card:hover .ent-img { transform: scale(1.08); }
+        
+        .ent-content { padding: 30px; flex: 1; display: flex; flex-direction: column; }
+        
+        .ent-tags { margin-bottom: 15px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .ent-tag { 
+            background: var(--lace-bg); color: #555; padding: 5px 12px; border-radius: 20px; 
+            font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;
+            border: 1px solid #ddd;
+        }
+
+        .ent-card-title { 
+            font-size: 1.6rem; font-weight: 800; color: #222; margin: 0 0 12px; 
+            line-height: 1.3; font-family: serif;
+        }
+        
+        .ent-card-desc { 
+            font-size: 1rem; color: #666; line-height: 1.7; margin-bottom: 25px; 
+            flex-grow: 1; /* 讓按鈕自動對齊底部 */
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; /* 限制行數 */
+        }
+        
+        .ent-btn { 
+            align-self: flex-start; 
+            background: #333; color: #fff; padding: 10px 25px; border-radius: 30px; 
+            font-size: 0.9rem; font-weight: bold; transition: all 0.3s ease; 
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .ent-card:hover .ent-btn { background: var(--accent-color); transform: translateX(5px); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .ent-hero-banner { height: 250px; }
+            .ent-title { font-size: 2rem; }
+            .ent-grid { grid-template-columns: 1fr; gap: 40px; }
+            .ent-img-box { height: 220px; }
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="ent-hero-banner">
+        <div class="ent-hero-content">
+            <h1 class="ent-title">ENTERTAINMENT</h1>
+        </div>
+    </div>
+
+    <div class="ent-grid">
+        <% if (items && items.length > 0) { %>
+            <% items.forEach(item => { %>
+                <a href="/entertainment/<%= item.id %>" class="ent-card">
+                    <div class="ent-img-box">
+                        <img src="<%= item.heroImage %>" class="ent-img" alt="<%= item.title %>" onerror="this.src='https://placehold.co/600x400/eee/333?text=TaiwanMe'">
+                    </div>
+                    <div class="ent-content">
+                        <div class="ent-tags">
+                            <% if (item.tags) { %>
+                                <% item.tags.slice(0, 3).forEach(tag => { %> 
+                                    <span class="ent-tag"><%= tag %></span>
+                                <% }) %>
+                            <% } %>
+                        </div>
+                        <h2 class="ent-card-title"><%= item.title %></h2>
+                        <p class="ent-card-desc"><%= item.intro %></p>
+                        <span class="ent-btn">View Guide ➝</span>
+                    </div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <div style="grid-column: 1/-1; text-align: center; padding: 80px 20px;">
+                <h3 style="color: #999; font-size: 1.5rem; margin-bottom: 10px;">Coming Soon...</h3>
+                <p style="color: #bbb;">We are curating the best entertainment spots for you.</p>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/script.js"></script>
+</body>
+</html>

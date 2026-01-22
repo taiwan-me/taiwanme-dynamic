@@ -35,7 +35,6 @@ try {
 // ==========================================
 // 3. 動態 Sitemap 路由 (✅ 使用 sitemap 套件)
 // ==========================================
-// 這個路由必須在 express.static 之前，確保優先處理
 app.get('/sitemap.xml', async (req, res) => {
     try {
         const smStream = new SitemapStream({ hostname: BASE_URL });
@@ -58,10 +57,8 @@ app.get('/sitemap.xml', async (req, res) => {
             files.forEach(file => {
                 if (file.endsWith('.json')) {
                     const citySlug = file.replace('.json', '');
-                    // 加入城市主頁
                     smStream.write({ url: `/search_by_city/${citySlug}`, changefreq: 'weekly', priority: 0.8 });
 
-                    // 讀取文章
                     try {
                         const filePath = path.join(cityDir, file);
                         const articles = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -91,7 +88,18 @@ app.get('/sitemap.xml', async (req, res) => {
             });
         }
 
-        // --- D. 結束串流並回傳 ---
+        // --- D. 讀取 Entertainment Articles 資料 (✅ 新增) ---
+        const entDir = path.join(rootDir, 'data', 'entertainment');
+        if (fs.existsSync(entDir)) {
+            const files = fs.readdirSync(entDir);
+            files.forEach(file => {
+                if (file.endsWith('.json')) {
+                    const entId = file.replace('.json', '');
+                    smStream.write({ url: `/entertainment/${entId}`, changefreq: 'monthly', priority: 0.7 });
+                }
+            });
+        }
+
         smStream.end();
         const sitemapXml = await streamToPromise(smStream);
 
@@ -119,6 +127,7 @@ app.get('/', (req, res) => res.render('static_pages/index', { pageName: 'index' 
 app.get('/culture', (req, res) => res.render('static_pages/culture', { pageName: 'culture' }));
 app.get('/festivals', (req, res) => res.render('static_pages/festivals', { pageName: 'festivals' }));
 app.get('/search_by_city', (req, res) => res.render('static_pages/search_by_city', { pageName: 'search_by_city' }));
+app.get('/souvenirs', (req, res) => res.render('static_pages/souvenirs', { pageName: 'souvenirs' }));
 
 // City Guide
 app.get('/search_by_city/:city', (req, res) => {
@@ -149,7 +158,7 @@ app.get('/search_by_city/:city/:id', (req, res) => {
     } else { res.status(404).send(`City data not found`); }
 });
 
-// Transport & Hidden Gems & Dining
+// Transport Routes
 app.get('/transport', (req, res) => res.render('transport_articles/transport_feed', { pageName: 'transport' }));
 app.get('/transport/:topic', (req, res) => {
     const topic = req.params.topic;
@@ -162,6 +171,7 @@ app.get('/transport/:topic', (req, res) => {
     } else { res.status(404).send('Topic not found'); }
 });
 
+// Hidden Gems Routes
 app.get('/hidden_gems', (req, res) => res.render('hiddengems_articles/hiddengems_feed', { pageName: 'hidden_gems' }));
 app.get('/hidden_gems/:id', (req, res) => {
     const gemId = req.params.id;
@@ -174,17 +184,57 @@ app.get('/hidden_gems/:id', (req, res) => {
     } else { res.status(404).send('Gem Not Found'); }
 });
 
+// ✅ [Updated] Inclusive Dining (改為靜態頁面)
+// 修正重點：路徑改為 static_pages/dining
 app.get('/dining', (req, res) => {
-    const diningPath = path.join(rootDir, 'data', 'dining.json');
-    let diningData = [];
-    if (fs.existsSync(diningPath)) { try { diningData = JSON.parse(fs.readFileSync(diningPath, 'utf8')); } catch (e) {} }
-    res.render('dining_lists/dining_feed', { pageName: 'dining', items: diningData });
+    res.render('static_pages/dining', { pageName: 'dining' });
 });
+
+// ✅ [Updated] Entertainment Feed (文章列表模式)
+// 修正重點：路徑改為 entertainment_articles/entertainment_feed
 app.get('/entertainment', (req, res) => {
-    const entPath = path.join(rootDir, 'data', 'entertainment.json');
+    const entDir = path.join(rootDir, 'data', 'entertainment');
     let entData = [];
-    if (fs.existsSync(entPath)) { try { entData = JSON.parse(fs.readFileSync(entPath, 'utf8')); } catch (e) {} }
-    res.render('entertainment_lists/entertainment_feed', { pageName: 'entertainment', items: entData });
+    
+    // 讀取 data/entertainment/ 資料夾下的所有 JSON 檔案作為列表
+    if (fs.existsSync(entDir)) {
+        const files = fs.readdirSync(entDir);
+        files.forEach(file => {
+            if (file.endsWith('.json')) {
+                try {
+                    const article = JSON.parse(fs.readFileSync(path.join(entDir, file), 'utf8'));
+                    entData.push({
+                        id: file.replace('.json', ''),
+                        title: article.title,
+                        subTitle: article.subTitle || '',
+                        intro: article.intro,
+                        heroImage: article.heroImage,
+                        tags: article.tags || []
+                    });
+                } catch (e) { console.error('Error parsing entertainment json:', file); }
+            }
+        });
+    }
+    res.render('entertainment_articles/entertainment_feed', { pageName: 'entertainment', items: entData });
+});
+
+// ✅ [New] Entertainment Article Page (單篇文章)
+// 修正重點：新增此路由以支援點擊進入內文
+app.get('/entertainment/:id', (req, res) => {
+    const entId = req.params.id;
+    const jsonPath = path.join(rootDir, 'data', 'entertainment', `${entId}.json`);
+    
+    if (fs.existsSync(jsonPath)) {
+        try {
+            const articleData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+            res.render('entertainment_articles/entertainment_article_page', { 
+                pageName: 'entertainment', 
+                article: articleData,
+                citySlug: 'entertainment', // 用於 banner 樣式判斷
+                cityName: 'Entertainment' 
+            });
+        } catch (err) { res.status(500).send('Error parsing entertainment data'); }
+    } else { res.status(404).send('Entertainment Article Not Found'); }
 });
 
 // 404
