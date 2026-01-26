@@ -43,7 +43,7 @@ app.get('/sitemap.xml', async (req, res) => {
         const staticPages = [
             '', '/culture', '/festivals', '/search_by_city', 
             '/transport', '/dining', '/entertainment', 
-            '/souvenirs', '/philosophy'
+            '/souvenirs', '/philosophy', '/blog'
         ];
         
         staticPages.forEach(page => {
@@ -88,7 +88,7 @@ app.get('/sitemap.xml', async (req, res) => {
             });
         }
 
-        // --- D. 讀取 Entertainment Articles 資料 (✅ 新增) ---
+        // --- D. 讀取 Entertainment Articles 資料 ---
         const entDir = path.join(rootDir, 'data', 'entertainment');
         if (fs.existsSync(entDir)) {
             const files = fs.readdirSync(entDir);
@@ -96,6 +96,19 @@ app.get('/sitemap.xml', async (req, res) => {
                 if (file.endsWith('.json')) {
                     const entId = file.replace('.json', '');
                     smStream.write({ url: `/entertainment/${entId}`, changefreq: 'monthly', priority: 0.7 });
+                }
+            });
+        }
+
+        // --- E. 讀取 Blog Articles 資料 (✅ 支援 penghu_jan23.json) ---
+        const blogDir = path.join(rootDir, 'data', 'blog');
+        if (fs.existsSync(blogDir)) {
+            const files = fs.readdirSync(blogDir);
+            files.forEach(file => {
+                if (file.endsWith('.json')) {
+                    // 這裡會自動抓取檔名 (例如 penghu_jan23) 作為網址 ID
+                    const blogId = file.replace('.json', '');
+                    smStream.write({ url: `/blog/${blogId}`, changefreq: 'monthly', priority: 0.7 });
                 }
             });
         }
@@ -184,19 +197,15 @@ app.get('/hidden_gems/:id', (req, res) => {
     } else { res.status(404).send('Gem Not Found'); }
 });
 
-// ✅ [Updated] Inclusive Dining (改為靜態頁面)
-// 修正重點：路徑改為 static_pages/dining
+// Inclusive Dining
 app.get('/dining', (req, res) => {
     res.render('static_pages/dining', { pageName: 'dining' });
 });
 
-// ✅ [Updated] Entertainment Feed (文章列表模式)
-// 修正重點：路徑改為 entertainment_articles/entertainment_feed
+// Entertainment Feed
 app.get('/entertainment', (req, res) => {
     const entDir = path.join(rootDir, 'data', 'entertainment');
     let entData = [];
-    
-    // 讀取 data/entertainment/ 資料夾下的所有 JSON 檔案作為列表
     if (fs.existsSync(entDir)) {
         const files = fs.readdirSync(entDir);
         files.forEach(file => {
@@ -218,23 +227,67 @@ app.get('/entertainment', (req, res) => {
     res.render('entertainment_articles/entertainment_feed', { pageName: 'entertainment', items: entData });
 });
 
-// ✅ [New] Entertainment Article Page (單篇文章)
-// 修正重點：新增此路由以支援點擊進入內文
+// Entertainment Article
 app.get('/entertainment/:id', (req, res) => {
     const entId = req.params.id;
     const jsonPath = path.join(rootDir, 'data', 'entertainment', `${entId}.json`);
-    
     if (fs.existsSync(jsonPath)) {
         try {
             const articleData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
             res.render('entertainment_articles/entertainment_article_page', { 
                 pageName: 'entertainment', 
                 article: articleData,
-                citySlug: 'entertainment', // 用於 banner 樣式判斷
+                citySlug: 'entertainment', 
                 cityName: 'Entertainment' 
             });
         } catch (err) { res.status(500).send('Error parsing entertainment data'); }
     } else { res.status(404).send('Entertainment Article Not Found'); }
+});
+
+// ✅ [Updated] Blog Feed (Uly's Blog)
+app.get('/blog', (req, res) => {
+    const blogDir = path.join(rootDir, 'data', 'blog');
+    let blogData = [];
+    
+    if (fs.existsSync(blogDir)) {
+        const files = fs.readdirSync(blogDir);
+        files.forEach(file => {
+            if (file.endsWith('.json')) {
+                try {
+                    const article = JSON.parse(fs.readFileSync(path.join(blogDir, file), 'utf8'));
+                    // 列表頁資料
+                    blogData.push({
+                        id: file.replace('.json', ''), // 這裡會自動抓取檔名，所以 penghu_jan23.json -> id: penghu_jan23
+                        title: article.title,
+                        intro: article.intro,
+                        heroImage: article.heroImage,
+                        tags: article.tags || [],
+                        city: article.city || '',
+                        date: article.date || ''
+                    });
+                } catch (e) { console.error('Error parsing blog json:', file); }
+            }
+        });
+    }
+    res.render('blog_articles/blog_feed', { pageName: 'blog', items: blogData });
+});
+
+// ✅ [Updated] Blog Article Page
+app.get('/blog/:id', (req, res) => {
+    const blogId = req.params.id; // 網址上的 ID (例如 penghu_jan23)
+    const jsonPath = path.join(rootDir, 'data', 'blog', `${blogId}.json`); // 自動尋找 penghu_jan23.json
+    
+    if (fs.existsSync(jsonPath)) {
+        try {
+            const articleData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+            res.render('blog_articles/blog_article_page', { 
+                pageName: 'blog', 
+                article: articleData,
+                citySlug: 'blog',
+                cityName: 'Blog' 
+            });
+        } catch (err) { res.status(500).send('Error parsing blog data'); }
+    } else { res.status(404).send('Blog Article Not Found'); }
 });
 
 // 404

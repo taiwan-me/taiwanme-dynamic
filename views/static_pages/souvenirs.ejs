@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Must-Buy Souvenirs | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* ========================================= */
+        /* 1. Hero Banner (比照 Culture/Dining 規格) */
+        /* ========================================= */
+        .souvenir-hero {
+            width: 100%;
+            height: 40vh; 
+            min-height: 300px;
+            /* 請確認是否有這張圖，若無會顯示背景色 */
+            background-image: url('/image/souvenirs/banner.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            position: relative;
+            margin-bottom: 60px;
+            background-color: #333;
+        }
+
+        .souvenir-hero::after {
+            content: ''; 
+            position: absolute; top: 0; left: 0; 
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        .souvenir-hero-content {
+            position: relative; 
+            z-index: 2; 
+            text-align: center; 
+            color: #fff;
+        }
+
+        .souvenir-title {
+            font-family: var(--font-main);
+            font-size: 3rem; 
+            margin: 0; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            font-weight: 900;
+        }
+
+        /* ========================================= */
+        /* 2. Main Content Container */
+        /* ========================================= */
+        .content-container {
+            max-width: 1100px; margin: 0 auto 100px; padding: 0 20px;
+        }
+        
+        .intro-text-box {
+            text-align: center; margin-bottom: 70px;
+        }
+        .intro-p {
+            font-size: 1.15rem; line-height: 1.8; color: #555; max-width: 750px; margin: 0 auto;
+        }
+
+        /* ========================================= */
+        /* 3. Souvenir Grid & Cards */
+        /* ========================================= */
+        .souvenir-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .souvenir-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .souvenir-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .card-img-box {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .souvenir-card:hover .card-img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-cat {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-family: var(--font-main);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .souvenir-hero { height: 250px; }
+            .souvenir-title { font-size: 2rem; }
+            .souvenir-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="souvenir-hero">
+        <div class="souvenir-hero-content">
+            <h1 class="souvenir-title">SOUVENIRS</h1>
+        </div>
+    </div>
+
+    <div class="content-container">
+        
+        <div class="intro-text-box">
+            <p class="intro-p">
+                Bringing a piece of Taiwan home is the best way to share your journey. From world-famous pastries to premium high-mountain tea, here are the most iconic gifts ("Omiyage") that locals love and travelers cherish.
+            </p>
+        </div>
+
+        <div class="souvenir-grid">
+            
+            <div class="souvenir-card">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/pineapple_cake.jpg" alt="Pineapple Cake" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Pineapple+Cake'">
+                </div>
+                <div class="card-content">
+                    <span class="card-cat">Pastry</span>
+                    <h3 class="card-title">Pineapple Cake (鳳梨酥)</h3>
+                    <p class="card-desc">
+                        The undisputed king of Taiwanese souvenirs. Choose between the sweet traditional paste (winter melon mix) or the tart, fibrous native pineapple filling (Tuchong).
+                    </p>
+                </div>
+            </div>
+
+            <div class="souvenir-card">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/tea.jpg" alt="Taiwanese Tea" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Oolong+Tea'">
+                </div>
+                <div class="card-content">
+                    <span class="card-cat">Beverage</span>
+                    <h3 class="card-title">Alishan Oolong Tea (高山茶)</h3>
+                    <p class="card-desc">
+                        Grown in the misty mountains of Alishan, this hand-picked tea is world-renowned for its creamy texture and floral aroma. A perfect gift for tea connoisseurs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="souvenir-card">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/nougat.jpg" alt="Nougat" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Nougat'">
+                </div>
+                <div class="card-content">
+                    <span class="card-cat">Snack</span>
+                    <h3 class="card-title">French Nougat (牛軋糖)</h3>
+                    <p class="card-desc">
+                        A chewy, milky treat packed with crunchy almonds or peanuts. "Sugar & Spice" (糖村) is the most famous brand, known for using premium French butter.
+                    </p>
+                </div>
+            </div>
+
+            <div class="souvenir-card">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/suncake.jpg" alt="Sun Cake" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Sun+Cake'">
+                </div>
+                <div class="card-content">
+                    <span class="card-cat">Pastry</span>
+                    <h3 class="card-title">Taichung Sun Cake (太陽餅)</h3>
+                    <p class="card-desc">
+                        A round, flaky pastry with a sweet maltose filling. Originating from Taichung, it's best enjoyed with hot tea.
+                    </p>
+                </div>
+            </div>
+
+            <div class="souvenir-card">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/dried_fruit.jpg" alt="Dried Fruit" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Dried+Mango'">
+                </div>
+                <div class="card-content">
+                    <span class="card-cat">Snack</span>
+                    <h3 class="card-title">Dried Mango (愛文芒果乾)</h3>
+                    <p class="card-desc">
+                        Made from the famous Irwin (Aiwen) mangoes grown in Tainan. Chewy, fragrant, and purely natural without artificial sweeteners.
+                    </p>
+                </div>
+            </div>
+
+            <div class="souvenir-card">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/whisky.jpg" alt="Kavalan Whisky" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Kavalan+Whisky'">
+                </div>
+                <div class="card-content">
+                    <span class="card-cat">Alcohol</span>
+                    <h3 class="card-title">Kavalan Whisky (葛瑪蘭威士忌)</h3>
+                    <p class="card-desc">
+                        Taiwan's pride. This award-winning single malt whisky from Yilan has beaten Scottish brands in blind taste tests. A premium gift choice.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/script.js"></script>
+</body>
+</html>

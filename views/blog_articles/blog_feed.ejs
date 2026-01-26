@@ -1,0 +1,304 @@
+<%
+    // --- 1. 後端邏輯：自動計算季節 ---
+    function getSeason(dateStr) {
+        if (!dateStr) return '';
+        const monthPart = dateStr.split(/[./-]/)[1]; 
+        if (!monthPart) return '';
+        
+        const month = parseInt(monthPart, 10);
+        if (month >= 3 && month <= 5) return 'Spring';
+        if (month >= 6 && month <= 8) return 'Summer';
+        if (month >= 9 && month <= 11) return 'Autumn';
+        return 'Winter';
+    }
+%>
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uly's Blog | TaiwanMe</title>
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* ========================================= */
+        /* 1. Blog Hero Section (Banner + Search)    */
+        /* ========================================= */
+        .blog-hero-section {
+            position: relative;
+            width: 100%;
+            
+            /* ✅ 維持 1024:356 比例 */
+            aspect-ratio: 1024 / 356; 
+            min-height: 300px; 
+
+            background-image: url('/image/blog/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 80px;
+        }
+
+        /* ✅ 移除遮罩 (原本的 ::after 設定) */
+        
+        .hero-content-box {
+            position: relative;
+            z-index: 2;
+            
+            /* ✅ 修改底色：半透明淡藍灰色，搭配模糊效果，讓它與 Banner 融合 */
+            background: rgba(240, 245, 250, 0.85); 
+            backdrop-filter: blur(8px); /* 毛玻璃特效 */
+            
+            padding: 40px 50px;
+            width: 85%;
+            max-width: 700px;
+            text-align: center;
+            
+            /* 邊框與陰影調整，讓它看起來更輕盈 */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+        }
+
+        .blog-main-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: #333; /* 深灰字體，保持對比 */
+            margin: 0 0 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(255,255,255,0.5); /* 輕微白光暈，確保在深色背景也清楚 */
+        }
+        
+        .blog-subtitle {
+            font-size: 1rem; color: #555; margin-bottom: 25px; letter-spacing: 1px; font-weight: 600;
+        }
+
+        /* --- 搜尋框樣式 --- */
+        .blog-search-wrapper {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-search-input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            font-size: 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 50px;
+            background-color: #fff; /* 搜尋框內部維持白色，保持輸入清晰 */
+            color: #333;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: var(--font-main);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .blog-search-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(232, 162, 162, 0.3);
+        }
+
+        .search-btn-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-color);
+            color: #fff;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            border: none; cursor: pointer;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+        .search-btn-icon:hover { transform: translateY(-50%) scale(1.1); }
+
+        /* ========================================= */
+        /* 2. Blog List (圖文交錯 + 圓角鈍化)        */
+        /* ========================================= */
+        .blog-list-container {
+            max-width: 1100px;
+            margin: 0 auto 120px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 90px;
+        }
+
+        .blog-row {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s;
+        }
+        
+        .blog-row:hover .blog-image img { transform: scale(1.02); }
+        .blog-row.hidden { display: none !important; }
+
+        /* 交錯排列 */
+        .blog-row:nth-child(odd) { flex-direction: row-reverse; }
+        .blog-row:nth-child(odd) .blog-text { padding-left: 50px; }
+        .blog-row:nth-child(even) { flex-direction: row; }
+        .blog-row:nth-child(even) .blog-text { padding-right: 50px; }
+
+        /* 文字區塊 (佔比 1.5) */
+        .blog-text { flex: 1.5; min-width: 0; }
+
+        .blog-meta {
+            font-size: 0.85rem; color: #999; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: block;
+        }
+        
+        .meta-tag { color: var(--accent-color); margin-right: 5px; }
+
+        .blog-row-title {
+            font-family: var(--font-main);
+            font-size: 2.2rem; color: #333; margin: 0 0 20px; line-height: 1.3; font-weight: 700;
+            transition: color 0.3s;
+        }
+        .blog-row:hover .blog-row-title { color: var(--accent-color); }
+
+        .blog-row-intro {
+            font-family: var(--font-main); font-size: 1.05rem; color: #666; line-height: 1.8; margin-bottom: 25px;
+            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+        }
+
+        .read-more-btn {
+            display: inline-block; font-size: 0.95rem; font-weight: bold; color: #333;
+            border-bottom: 2px solid var(--accent-color); padding-bottom: 2px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* 圖片區塊 (佔比 1) */
+        .blog-image { flex: 1; position: relative; max-width: 480px; }
+
+        .blog-image img {
+            width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover;
+            border-radius: 16px; /* 圓角鈍化 */
+            transition: all 0.4s ease;
+        }
+
+        /* RWD */
+        @media (max-width: 900px) {
+            .blog-text { flex: 1.2; } .blog-image { flex: 1; }
+            .blog-row:nth-child(odd) .blog-text { padding-left: 30px; }
+            .blog-row:nth-child(even) .blog-text { padding-right: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero-section { height: auto; padding: 60px 0; aspect-ratio: auto; min-height: auto; }
+            .hero-content-box { width: 90%; padding: 30px 20px; }
+            .blog-main-title { font-size: 2rem; }
+            
+            .blog-list-container { gap: 60px; }
+            .blog-row, .blog-row:nth-child(odd), .blog-row:nth-child(even) {
+                flex-direction: column-reverse; gap: 20px;
+            }
+            .blog-text { flex: auto; padding: 0 !important; }
+            .blog-image { flex: auto; max-width: 100%; }
+            .blog-row-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="blog-hero-section">
+        <div class="hero-content-box">
+            <h1 class="blog-main-title">ULY'S BLOG</h1>
+            <p class="blog-subtitle">Discover stories by Season & City</p>
+            
+            <div class="blog-search-wrapper">
+                <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search Season (e.g. Winter) or City...">
+                <button class="search-btn-icon" onclick="document.getElementById('blogSearchInput').focus()">🔍</button>
+            </div>
+            
+            </div>
+    </div>
+
+    <div class="blog-list-container" id="blogList">
+        <% if (items && items.length > 0) { %>
+            <% items.forEach(item => { 
+                const season = getSeason(item.date); 
+            %>
+                <a href="/blog/<%= item.id %>" class="blog-row" 
+                   data-city="<%= (item.city || '').toLowerCase() %>"
+                   data-season="<%= season.toLowerCase() %>">
+                    
+                    <div class="blog-text">
+                        <span class="blog-meta">
+                            <%= item.date %> • 
+                            <span class="meta-tag"><%= season %></span> • 
+                            <span class="meta-tag"><%= item.city %></span>
+                        </span>
+                        
+                        <h2 class="blog-row-title"><%= item.title %></h2>
+                        <p class="blog-row-intro"><%= item.intro %></p>
+                        
+                        <span class="read-more-btn">Read Full Story ➝</span>
+                    </div>
+
+                    <div class="blog-image">
+                        <img src="<%= item.heroImage %>" alt="<%= item.title %>" onerror="this.src='https://placehold.co/800x600/eee/333?text=TaiwanMe'">
+                    </div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <div style="text-align: center; padding: 80px 20px;">
+                <h3 style="color: #999;">Writing new stories...</h3>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('blogSearchInput');
+            const rows = document.querySelectorAll('.blog-row');
+
+            // 輸入搜尋 (即時篩選)
+            searchInput.addEventListener('input', () => {
+                filterArticles();
+            });
+
+            // 核心篩選邏輯 (只檢查 City 與 Season)
+            function filterArticles() {
+                const searchValue = searchInput.value.toLowerCase().trim();
+
+                rows.forEach(row => {
+                    const city = row.getAttribute('data-city');
+                    const season = row.getAttribute('data-season');
+                    
+                    if (searchValue === '') {
+                        row.classList.remove('hidden');
+                        return;
+                    }
+
+                    // 檢查 地點 或 季節 是否包含關鍵字
+                    const matchCity = city.includes(searchValue);
+                    const matchSeason = season.includes(searchValue);
+
+                    if (matchCity || matchSeason) {
+                        row.classList.remove('hidden');
+                    } else {
+                        row.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

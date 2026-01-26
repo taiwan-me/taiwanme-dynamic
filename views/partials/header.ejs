@@ -31,57 +31,46 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     /* 1. 第一列：Logo 區 (永遠固定) */
     /* ========================================= */
     .main-header {
-        position: fixed; /* 永遠固定 */
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #fff; /* 確保不透明 */
-        z-index: 1002; /* 最高層級，蓋住導覽列 */
-        border-bottom: 1px solid #eee; /* 保留原本的底線 */
+        position: fixed; top: 0; left: 0; width: 100%;
+        background-color: #fff; z-index: 1002;
+        border-bottom: 1px solid #eee;
     }
 
     /* ========================================= */
-    /* 2. 第二列：智慧型導覽列 (顏色與樣式修正) */
+    /* 2. 第二列：智慧型導覽列 */
     /* ========================================= */
     .desktop-nav {
-        /* 定位設定 */
-        position: fixed; 
-        width: 100%;
-        left: 0;
-        z-index: 1001; /* 比 Logo 區低一層 (躲在後面) */
-        
-        /* 恢復原本的顏色與邊框設定 */
+        position: fixed; width: 100%; left: 0; z-index: 1001;
         background-color: var(--lace-bg, #F5F3F0); 
         border-top: 2px solid var(--lace-border, #AC9F95);
         border-bottom: 2px solid var(--lace-border, #AC9F95);
-        
-        transition: transform 0.3s ease-in-out; /* 滑動動畫 */
-        
-        /* Top 位置由 JS 動態計算，預設給 80px */
-        top: 80px; 
-        padding: 5px 0; /* 維持原本的 padding */
+        transition: transform 0.3s ease-in-out;
+        top: 80px; padding: 5px 0;
     }
+    .desktop-nav.nav-hidden { transform: translateY(-100%); }
+    .desktop-nav.nav-visible { transform: translateY(0); }
 
-    /* 隱藏狀態：往上收起 (transform Y -100%) */
-    .desktop-nav.nav-hidden {
-        transform: translateY(-100%);
+    /* 下拉選單樣式 (Dropdown) */
+    .dropdown-item { position: relative; cursor: pointer; }
+    .dropdown-content {
+        display: none; position: absolute; top: 100%; left: 0;
+        background-color: var(--lace-bg); min-width: 180px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 105;
+        border: 2px solid var(--lace-border); border-top: none;
     }
-
-    /* 顯示狀態：回到原位 */
-    .desktop-nav.nav-visible {
-        transform: translateY(0);
+    .dropdown-content a {
+        display: block; padding: 12px 16px; color: #333; text-decoration: none;
+        font-size: 0.85rem; font-weight: bold; text-align: left;
+        transition: background 0.3s;
     }
-
-    /* ========================================= */
-    /* 3. 預留空間 (JS 會自動更新) */
-    /* ========================================= */
-    body {
-        padding-top: 150px; 
-    }
+    .dropdown-content a:hover { background-color: rgba(255,255,255,0.6); color: var(--accent-color); }
+    .dropdown-item:hover .dropdown-content { display: block; }
 
     /* ========================================= */
-    /* 4. 其他原有樣式 (Back to Top, Search...) */
+    /* 3. 預留空間 & 通用樣式 */
     /* ========================================= */
+    body { padding-top: 150px; }
+
     #backToTopBtn {
         position: fixed; bottom: 30px; right: 30px; z-index: 9999;
         width: 50px; height: 50px; border: none; border-radius: 50%;
@@ -93,9 +82,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     }
     #backToTopBtn.show { opacity: 1; visibility: visible; transform: translateY(0); }
     #backToTopBtn:hover { background-color: #333; transform: translateY(-5px); }
-    @media (max-width: 768px) {
-        #backToTopBtn { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 1.2rem; }
-    }
+    @media (max-width: 768px) { #backToTopBtn { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 1.2rem; } }
 
     .search-pill-btn {
         display: inline-flex; align-items: center; gap: 8px;
@@ -116,17 +103,11 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     }
     .search-content { text-align: center; width: 100%; max-width: 700px; position: relative; padding: 20px; }
     .search-content h2 { font-size: 2.5rem; color: #333; margin-bottom: 40px; font-family: serif; }
-    
-    .input-wrapper {
-        position: relative; display: flex; align-items: center;
-        border-bottom: 2px solid #333; padding-bottom: 10px;
-    }
+    .input-wrapper { position: relative; display: flex; align-items: center; border-bottom: 2px solid #333; padding-bottom: 10px; }
     #modal-search-input { width: 100%; border: none; background: transparent; font-size: 1.5rem; outline: none; color: #333; }
     .submit-search-btn { background: #333; color: white; border: none; padding: 10px 25px; font-size: 1rem; cursor: pointer; text-transform: uppercase; }
-    
     .close-search { position: absolute; top: 30px; right: 40px; font-size: 3rem; cursor: pointer; color: #999; }
     .close-search:hover { color: #333; }
-
     .search-results-list { margin-top: 20px; text-align: left; max-height: 50vh; overflow-y: auto; }
     .result-item { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; text-decoration: none; color: #333; transition: background 0.2s; }
     .result-item:hover { background-color: #f9f9f9; }
@@ -148,51 +129,22 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
     }
     .philosophy-close {
         position: absolute; top: 20px; right: 25px; font-size: 2rem; 
-        cursor: pointer; color: #888; transition: color 0.3s;
-        line-height: 1;
+        cursor: pointer; color: #888; transition: color 0.3s; line-height: 1;
     }
     .philosophy-close:hover { color: #000; }
-    
     .philo-header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
     .philo-title { font-family: serif; font-size: 2.2rem; color: #333; margin-bottom: 10px; line-height: 1.2; }
     .philo-subtitle { font-family: sans-serif; font-size: 0.9rem; color: #E8A2A2; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
-    
-    .philo-body p { 
-        font-family: sans-serif; font-size: 1.05rem; line-height: 1.8; color: #555; margin-bottom: 20px; 
-    }
+    .philo-body p { font-family: sans-serif; font-size: 1.05rem; line-height: 1.8; color: #555; margin-bottom: 20px; }
     .philo-body strong { color: #000; font-weight: 600; }
-    .philo-highlight {
-        font-family: serif; font-style: italic; font-size: 1.3rem; color: #333;
-        margin: 30px 0; padding-left: 20px; border-left: 4px solid #E8A2A2;
-    }
+    .philo-highlight { font-family: serif; font-style: italic; font-size: 1.3rem; color: #333; margin: 30px 0; padding-left: 20px; border-left: 4px solid #E8A2A2; }
 
-    /* ========================================= */
-    /* 5. LOGO 區域樣式 (含中文特殊字體與手機版隱藏) */
-    /* ========================================= */
     .brand-title-row { display: flex; align-items: baseline; }
-    
-    /* ✅ 修正：中文品牌名稱樣式 */
     .brand-zh { 
-        font-family: 'Noto Serif TC', serif; /* 使用新引入的宋體 */
-        font-size: 1.15rem; 
-        font-weight: 700; /* 加粗更有質感 */
-        margin-left: 10px; 
-        color: #333; 
-        letter-spacing: 0.1em;
+        font-family: 'Noto Serif TC', serif; font-size: 1.15rem; font-weight: 700; margin-left: 10px; color: #333; letter-spacing: 0.1em;
     }
-
-    @media (max-width: 480px) {
-        .brand-zh { 
-            /* ✅ 修正：手機版隱藏中文，回復原版樣式 */
-            display: none; 
-        }
-    }
-
-    @media (max-width: 600px) {
-        .philosophy-card { padding: 30px 20px; }
-        .philo-title { font-size: 1.8rem; }
-    }
-    
+    @media (max-width: 480px) { .brand-zh { display: none; } }
+    @media (max-width: 600px) { .philosophy-card { padding: 30px 20px; } .philo-title { font-size: 1.8rem; } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
 
@@ -215,19 +167,12 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
             <a href="#" class="h-link" id="tippingBtn">BUY US<br>A BOBA</a>
             <a href="#" class="h-link philosophy-trigger" id="philosophyBtn">TAIWANME'S<br>PHILOSOPHY</a>
             <a href="#" class="h-link" id="bizInquiryBtn">BUSINESS<br>INQUIRY</a>
-            
-            <button id="desktop-search-trigger" class="search-pill-btn">
-                <span>🔍</span> Search
-            </button>
+            <button id="desktop-search-trigger" class="search-pill-btn"><span>🔍</span> Search</button>
         </div>
 
         <div class="nav-icons">
-            <button id="mobile-search-trigger" class="search-trigger desktop-hidden" style="background:none; border:none; font-size:1.2rem; cursor:pointer; display:none;">
-                🔍
-            </button>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+            <button id="mobile-search-trigger" class="search-trigger desktop-hidden" style="background:none; border:none; font-size:1.2rem; cursor:pointer; display:none;">🔍</button>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </div>
 </header>
@@ -242,9 +187,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         <div class="philo-body">
             <p>It started with a moment of realization. While hosting international students, I watched them queue endlessly for commercialized "hotspots" and trendy shops. As a local, I found myself unable to share the deeper, authentic stories of my own land.</p>
             <p>It wasn't until a general education class, where a classmate vividly described the very alleys I cycled through every day—my rental place, the campus corners—that it hit me: <strong>Taiwan isn't mundane; we've simply lost the energy to explore it amidst our busy lives.</strong></p>
-            <div class="philo-highlight">
-                "We named this platform TaiwanMe, a play on the pronunciation of 台灣味 (Tâi-uân Bī)—the true flavor of Taiwan."
-            </div>
+            <div class="philo-highlight">"We named this platform TaiwanMe, a play on the pronunciation of 台灣味 (Tâi-uân Bī)—the true flavor of Taiwan."</div>
             <p>Our mission is simple: <strong>The Real Taste of Taiwan.</strong></p>
             <p>You won't find cliché tourist traps here. Instead, we guide you to the authentic scenery hidden in ordinary alleys—stories worth telling. Whether you are a first-time traveler or a long-time resident, we hope to accompany you in finding that unique, irreplaceable Taiwanese sentiment.</p>
         </div>
@@ -273,24 +216,26 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         <div class="drawer-section">
             <h3 class="drawer-cat-title">EXPLORE</h3>
             <ul class="drawer-list">
-                <li><a href="/blog" class="drawer-link" style="<%= getActiveStyle('blog') %>">Uly's Blog <span class="arrow">›</span></a></li>
-                
-                <li><a href="/souvenirs" class="drawer-link" style="<%= getActiveStyle('souvenirs') %>">Souvenir Guide <span class="arrow">›</span></a></li>
-                <li><a href="/search_by_city" class="drawer-link" style="<%= getActiveStyle('search_by_city') %>">Search By City <span class="arrow">›</span></a></li>
-                <li><a href="<%= mapLink %>" class="drawer-link" style="<%= getActiveStyle('hidden_gems') %>">Hidden Gems <span class="arrow">›</span></a></li>
-                <li><a href="/transport" class="drawer-link" style="<%= getActiveStyle('transport') %>">Transport Guide <span class="arrow">›</span></a></li>
-                <li><a href="/festivals" class="drawer-link" style="<%= getActiveStyle('festivals') %>">Seasonal Festivals <span class="arrow">›</span></a></li>
-                <li><a href="/culture" class="drawer-link" style="<%= getActiveStyle('culture') %>">Culture & Daily Life <span class="arrow">›</span></a></li>
-                <li><a href="/dining" class="drawer-link" style="<%= getActiveStyle('dining') %>">Inclusive Dining <span class="arrow">›</span></a></li>
-                <li><a href="/entertainment" class="drawer-link" style="<%= getActiveStyle('entertainment') %>">Entertainment <span class="arrow">›</span></a></li>
+                <li><a href="/search_by_city" class="drawer-link">Search By City <span class="arrow">›</span></a></li>
+                <li><a href="<%= mapLink %>" class="drawer-link">Hidden Gems <span class="arrow">›</span></a></li>
+                <li><a href="/transport" class="drawer-link">Transport Guide <span class="arrow">›</span></a></li>
+                <li><a href="/festivals" class="drawer-link">Seasonal Festivals <span class="arrow">›</span></a></li>
             </ul>
         </div>
         <div class="drawer-section">
-            <h3 class="drawer-cat-title">ABOUT TAIWANME</h3>
+            <h3 class="drawer-cat-title">LIFESTYLE</h3>
             <ul class="drawer-list">
-                <li><a href="#" class="drawer-link philosophy-trigger">TaiwanMe's Philosophy <span class="arrow">›</span></a></li>
-                <li><a href="/support" class="drawer-link">Buy Us a Boba <span class="arrow">›</span></a></li>
-                <li><a href="/contact" class="drawer-link">Business Inquiry <span class="arrow">›</span></a></li>
+                <li><a href="/culture" class="drawer-link">Culture & Daily Life <span class="arrow">›</span></a></li>
+                <li><a href="/dining" class="drawer-link">Inclusive Dining <span class="arrow">›</span></a></li>
+                <li><a href="/entertainment" class="drawer-link">Entertainment <span class="arrow">›</span></a></li>
+            </ul>
+        </div>
+        <div class="drawer-section">
+            <h3 class="drawer-cat-title">STORIES</h3>
+            <ul class="drawer-list">
+                <li><a href="/blog" class="drawer-link">Uly's Blog <span class="arrow">›</span></a></li>
+                <li><a href="/souvenirs" class="drawer-link">Souvenir Guide <span class="arrow">›</span></a></li>
+                <li><a href="#" class="drawer-link philosophy-trigger">Our Philosophy <span class="arrow">›</span></a></li>
             </ul>
         </div>
     </div>
@@ -306,7 +251,7 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
         <li><a href="/dining" style="<%= getActiveStyle('dining') %>">INCLUSIVE DINING</a></li>
         <li><a href="/entertainment" style="<%= getActiveStyle('entertainment') %>">ENTERTAINMENT</a></li>
         <li class="dropdown-item">
-            <a href="#" class="dropbtn">MORE ▾</a>
+            <a href="javascript:void(0)" class="dropbtn">MORE ▾</a>
             <div class="dropdown-content">
                 <a href="/blog" style="<%= getActiveStyle('blog') %>">Uly's Blog</a>
                 <a href="/souvenirs" style="<%= getActiveStyle('souvenirs') %>">Souvenir Guide</a>
@@ -319,60 +264,35 @@ const mapLink = (typeof pageName !== 'undefined' && pageName === 'index') ? '#ma
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // =========================================
-    // ✅ 邏輯修正區：Header 固定 + Nav 自動隱藏 + 自動計算高度
-    // =========================================
-    const header = document.getElementById('header'); // 第一列 (Logo)
-    const nav = document.querySelector('.desktop-nav'); // 第二列 (Nav)
+    // Header Logic
+    const header = document.getElementById('header'); 
+    const nav = document.querySelector('.desktop-nav'); 
     let lastScrollY = window.scrollY;
 
-    // 1. 初始化定位
     function initNavPosition() {
         if(header && nav) {
             const headerHeight = header.offsetHeight;
             const navHeight = nav.offsetHeight;
-            
-            // 強制設定 Nav 的 top 為 Header 的高度 (確保接在正下方)
             nav.style.top = headerHeight + 'px';
-            
-            // 設定 Body 的 padding-top，防止內容被遮擋
             document.body.style.paddingTop = (headerHeight + navHeight) + 'px';
         }
     }
-    
-    // 視窗改變時重新計算
     window.addEventListener('resize', initNavPosition);
-    // 延遲一下確保樣式載入完畢
     setTimeout(initNavPosition, 50);
     initNavPosition();
 
-    // 2. 捲動監聽
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
         const mobileDrawer = document.getElementById('mobileDrawer');
-        
-        // 手機版選單開啟時，不執行隱藏邏輯
         if (mobileDrawer && mobileDrawer.classList.contains('open')) return;
-
-        // 判斷捲動方向
         if (currentScrollY > lastScrollY && currentScrollY > 20) {
-            // 往下捲動 -> 導覽列往上收 (transform: translateY(-100%))
-            // 由於 z-index: 1001 (Nav) < 1002 (Header)，它會縮到 Header 後面
-            nav.classList.add('nav-hidden');
-            nav.classList.remove('nav-visible');
+            nav.classList.add('nav-hidden'); nav.classList.remove('nav-visible');
         } else {
-            // 往上捲動 -> 導覽列滑出 (回到原位)
-            nav.classList.remove('nav-hidden');
-            nav.classList.add('nav-visible');
+            nav.classList.remove('nav-hidden'); nav.classList.add('nav-visible');
         }
-
         lastScrollY = currentScrollY;
     });
 
-    // =========================================
-    // 其他功能保持不變
-    // =========================================
-    
     // Back To Top
     const backToTopBtn = document.getElementById('backToTopBtn');
     function calculateThreshold() {
@@ -419,23 +339,16 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             philoModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
-            
-            if (mobileDrawer.classList.contains('open')) {
+            if (document.getElementById('mobileDrawer').classList.contains('open')) {
                 const drawerCloseBtn = document.getElementById('drawerCloseBtn');
                 if(drawerCloseBtn) drawerCloseBtn.click();
             }
         });
     });
 
-    function closePhiloModal() {
-        philoModal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
+    function closePhiloModal() { philoModal.style.display = 'none'; document.body.style.overflow = ''; }
     if (philoClose) philoClose.addEventListener('click', closePhiloModal);
-    window.addEventListener('click', (e) => {
-        if (e.target === philoModal) closePhiloModal();
-    });
+    window.addEventListener('click', (e) => { if (e.target === philoModal) closePhiloModal(); });
 
     // Search API
     let timeout = null;

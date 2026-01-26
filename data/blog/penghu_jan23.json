@@ -1,0 +1,224 @@
+{
+  "id": "penghu-jan23",
+  "title": "Kaohsiung & Penghu 3-Day Tour: The Unique Charm of Offshore Islands in the Off-Season",
+  "intro": "A spontaneous trip starting from a Maid Cafe in Kaohsiung to the windy, beautiful islands of Penghu. This 3-day diary documents our adventures with luxury ferries, empty beaches, a panic-inducing island stranding, and expensive lessons in car rental insurance.",
+  "heroImage": "/image/blog/grandma's_bay.jpg",
+  "date": "2025.01.23",
+  "city": "Penghu",
+  "tags": ["Kaohsiung", "Penghu", "Off-Season", "Ferry"],
+  "spots": [
+    {
+      "name": "Day 1: A Magical Start in Kaohsiung",
+      "image": "/image/blog/maid_cafe.jpg",
+      "description": "We arrived in Kaohsiung at 12:00 PM and started our journey at the **Tsukuyomi Maid Cafe** near the train station. We ordered a special set meal featuring a soda that changes flavor every time it's made and a chicken cutlet rice served with a 'love spell'. You can even take photos with the maids, though I'll keep those private!",
+      "city": "Kaohsiung",
+      "coords": [22.6395, 120.3025]
+    },
+    {
+      "name": "Killing Time in Style: Sanduo Shopping District",
+      "image": "/image/blog/kaohsiung_library.jpg",
+      "author": "挪威 企鵝",
+      "authorLink": "https://commons.wikimedia.org/wiki/File:Tuntex_Sky_Tower_and_Kaohsiung_Main_Library_20141222.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0",
+      "via": "via Wikimedia Commons",
+      "description": "In the afternoon, we visited the **FE21 Eslite Bookstore** and the magnificent **Kaohsiung Main Public Library**. Since our ferry to Penghu wasn't until 11:30 PM, we immersed ourselves in books and architecture until 10:00 PM before taking a 25-minute MRT ride to Hamasen to board the ship.",
+      "city": "Kaohsiung",
+      "coords": [22.6104, 120.3024]
+    },
+    {
+      "name": "The Penghu Ferry: Not a Small Boat!",
+      "image": "/image/blog/penghu_ferry.jpg",
+      "description": "Because we booked only a week in advance during the off-season, flights were expensive ($3000 TWD) and the Chiayi Budai route was closed until April. We booked the **Kaohsiung-Penghu Ferry** (1/23 - 1/25). I expected a small, rocky boat with straw mats like in ancient times...",
+      "city": "Kaohsiung Harbor",
+      "coords": [22.6150, 120.2700]
+    },
+    {
+      "name": "Surprise: It's a Cruise Ship",
+      "image": "/image/blog/car_on_ship.jpg",
+      "description": "To my surprise, it was a massive vessel! It felt like a luxury cruise liner. You can even drive your car directly onto the ship.",
+      "city": "On Board",
+      "coords": [22.8000, 120.1000]
+    },
+    {
+      "name": "Business Class Cabins",
+      "image": "/image/blog/seat_on_penghuship.jpg",
+      "description": "We bought the Business Class tickets (~1900 TWD round trip). The seating area was spacious and comfortable.",
+      "city": "On Board",
+      "coords": [23.0000, 120.0000]
+    },
+    {
+      "name": "The Sleeping Quarters",
+      "image": "/image/blog/bed_on_penghuship.jpg",
+      "description": "Exploring the ship, we realized the 'bunks' were actually designed like a modern youth hostel. Next time, I think I'd prefer booking this sleeper option. It looked very cozy.",
+      "city": "On Board",
+      "coords": [23.2000, 119.8000]
+    },
+    {
+      "name": "Midnight Amenities",
+      "image": "/image/blog/deck.jpg",
+      "description": "The ship facilities were impressive. There are viewing decks on every floor, clean showers, and a shop/restaurant that stays open from 11 PM to 1 AM.",
+      "city": "On Board",
+      "coords": [23.4000, 119.7000]
+    },
+    {
+      "name": "Day 2: Arrival in Magong",
+      "image": "/image/blog/chenghuang_temple.jpg",
+      "description": "After 6 hours of sleep, we disembarked at 6:00 AM in Magong, the bustling heart of Penghu. We visited the **Chenghuang Temple** first.",
+      "city": "Magong",
+      "coords": [23.5666, 119.5643]
+    },
+    {
+      "name": "Exotic Streets of Penghu",
+      "image": "/image/blog/exoticstreet.jpg",
+      "description": "Walking through the empty morning streets, the architecture and atmosphere felt distinctively exotic, almost like being in a different country.",
+      "city": "Magong",
+      "coords": [23.5650, 119.5650]
+    },
+    {
+      "name": "Grandmother's Penghu Bay",
+      "image": "/image/blog/grandma's_bay.jpg",
+      "description": "We visited the famous **Grandmother's Penghu Bay**, the setting of a very famous Taiwanese folk song.",
+      "city": "Magong",
+      "coords": [23.5620, 119.5600]
+    },
+    {
+      "name": "Guanyin Pavilion & Local Beliefs",
+      "image": "/image/blog/guanyin_pavilion.jpg",
+      "description": "We saw the famous **Guanyin Pavilion**. Fun Fact: In coastal areas, fishermen typically worship Mazu (Taoism) for safety at sea, while Buddhists worship Guanyin.",
+      "city": "Magong",
+      "coords": [23.5700, 119.5620]
+    },
+    {
+      "name": "Car Rental & Tips",
+      "description": "Car rentals open at 8 AM. **Important Tip:** International Driving Permits are accepted! Bring your passport and original license. Cost is ~1500 TWD/day. Ask for promos as they often partner with other businesses. **PLEASE GET INSURANCE** (you will see why later...). We rented a car and drove to our accommodation to rest.",
+      "city": "Penghu",
+      "coords": [23.5670, 119.5670]
+    },
+    {
+      "name": "Magong Old Street",
+      "image": "/image/blog/magong_old_street.jpg",
+      "description": "After resting until 11 AM, we started our city and North Ring tour. First stop: **Magong Old Street**.",
+      "city": "Magong",
+      "coords": [23.5640, 119.5640]
+    },
+    {
+      "name": "Tianhou Palace",
+      "image": "/image/blog/penghu_tianhou_palace.jpg",
+      "description": "We visited **Penghu Tianhou Palace**, the oldest Mazu temple in Taiwan and the spiritual center of the island.",
+      "city": "Magong",
+      "coords": [23.5645, 119.5642]
+    },
+    {
+      "name": "Rapunzel Lighthouse",
+      "image": "/image/blog/rapunzel_lighthouse.jpg",
+      "description": "At 12 PM, we visited the **Rapunzel Lighthouse**. While the lighthouse itself wasn't breathtakingly unique, it was a peaceful spot to gaze at the sea.",
+      "city": "Xiyu",
+      "coords": [23.5610, 119.4720]
+    },
+    {
+      "name": "Penghu Great Bridge",
+      "image": "/image/blog/penghu_great_bridge.jpg",
+      "description": "At 1 PM, we drove across the **Penghu Great Bridge**. This is a must-visit. Driving across the ocean with azure water on both sides is a visual treat.",
+      "city": "Baisha",
+      "coords": [23.6370, 119.5490]
+    },
+    {
+      "name": "Tongliang Great Banyan",
+      "image": "/image/blog/tongliang_great_banyan.jpg",
+      "description": "Before the bridge, we stopped at the **Tongliang Great Banyan**. The ancient banyan roots form a natural roof over the Baoan Temple. Watching cats groom themselves and roosters rest here felt like traveling back to my grandparents' era.",
+      "city": "Baisha",
+      "coords": [23.6390, 119.5530]
+    },
+    {
+      "name": "Penghu Aquarium: Feeding Show",
+      "image": "/image/blog/penghu_aquarium.jpg",
+      "description": "We crossed the bridge for the 3 PM feeding show at **Penghu Aquarium**. It was surprisingly fun! We collected stamps for prizes and the staff were great.",
+      "city": "Baisha",
+      "coords": [23.6540, 119.5780]
+    },
+    {
+      "name": "Aquarium Views",
+      "image": "/image/blog/aquarium_views.jpg",
+      "description": "The view from the aquarium's observation deck is also quite stunning.",
+      "city": "Baisha",
+      "coords": [23.6540, 119.5780]
+    },
+    {
+      "name": "Dream Beach",
+      "image": "/image/blog/dream_beach.jpg",
+      "description": "At 4:40 PM, we visited **Dream Beach**. Penghu has many unique beaches that serve as perfect pit-stops during a road trip.",
+      "city": "Xiyu",
+      "coords": [23.6120, 119.5130]
+    },
+    {
+      "name": "Baisha Swings (Sunset)",
+      "image": "/image/blog/baisha_swings.jpg",
+      "description": "We went to the **Baisha Swings** at sunset. In the off-season, this was paradise. No queues for photos, just the two of us owning the entire ocean view.",
+      "city": "Baisha",
+      "coords": [23.6660, 119.5730]
+    },
+    {
+      "name": "Evening Supplies",
+      "image": "/image/blog/penghu_PX_mart.jpg",
+      "description": "For dinner, we went to **Pier 3** and then stocked up on snacks at **PX Mart (Whole Lian)**. Penghu is very convenient with plenty of supermarkets. We skipped water activities and night fishing as it was too cold and we didn't have enough people.",
+      "city": "Magong",
+      "coords": [23.5700, 119.5650]
+    },
+    {
+      "name": "Day 3: Moses Parts the Sea",
+      "image": "/image/blog/penghu_moses_parts_the_sea.jpg",
+      "description": "Day 3 started at 9 AM with **Moses Parts the Sea**. The sea recedes to reveal a path to the small island. It's spectacular, though sunset views are also highly recommended.",
+      "city": "Kuibishan",
+      "coords": [23.5930, 119.6670]
+    },
+    {
+      "name": "Journey to Niao Yu (Bird Island)",
+      "image": "/image/blog/bird_island.jpg",
+      "description": "Since our return ferry to Taiwan was at 3 PM, we took a 20-minute boat to **Niao Yu**. I expected a deserted island, but it's a huge town! This is the unusually large **Fude (Land God) Temple**.",
+      "city": "Niao Yu",
+      "coords": [23.6600, 119.6570]
+    },
+    {
+      "name": "Coral Architecture",
+      "image": "/image/blog/coral_architecture.jpg",
+      "description": "The island is full of character, including traditional houses built with coral reefs.",
+      "city": "Niao Yu",
+      "coords": [23.6605, 119.6575]
+    },
+    {
+      "name": "Basalt Columns Trail",
+      "image": "/image/blog/basalt_columns_trail.jpg",
+      "description": "We hiked the trail to see the famous Basalt formations, a geological marvel of Penghu.",
+      "city": "Niao Yu",
+      "coords": [23.6630, 119.6600]
+    },
+    {
+      "name": "Dongkanto Lighthouse View",
+      "image": "/image/blog/dongkanto_lighthouse.jpg",
+      "description": "A scenic view of the Dongkanto Lighthouse from the island trail.",
+      "city": "Niao Yu",
+      "coords": [23.6620, 119.6580]
+    },
+    {
+      "name": "The Crisis: Stranded!",
+      "description": "<strong>Disaster struck.</strong> We returned to the pier at 1:20 PM for the 1:30 PM boat, but the captain refused us (saying it was full or for locals) and told us to wait for the 4:30 PM boat. We panicked—we would miss our 3:30 PM cruise back to Taiwan! We begged coast guards and police (who suggested we might have to sleep over!).",
+      "city": "Niao Yu Pier",
+      "coords": [23.6500, 119.6500]
+    },
+    {
+      "name": "The Rescue Boat",
+      "image": "/image/blog/birdisland_to_penghu.jpg",
+      "description": "We finally managed to find a boat to take us back to the main island, but time was ticking away mercilessly.",
+      "city": "Sea",
+      "coords": [23.6200, 119.6200]
+    },
+    {
+      "name": "The Expensive Lesson & Flight Home",
+      "image": "/image/blog/fly_backto_kaohsiung.jpg",
+      "description": "We missed the cruise (wasting ~1000 TWD) and had to buy a last-minute flight back for 9 PM. To make matters worse, we scratched the rental car and—having forgotten insurance—paid a **6500 TWD penalty**. We flew back to Kaohsiung in 40 minutes. Despite the chaos and money lost, the trip was unforgettable. Next time: Ship *to* Penghu (sleep on board), Plane *back* (fast).",
+      "city": "Kaohsiung Airport",
+      "coords": [22.5760, 120.3470]
+    }
+  ]
+}
