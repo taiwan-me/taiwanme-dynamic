@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="/style.css">
     <style>
         /* ========================================= */
-        /* 1. Page Hero Banner (完全比照 Culture 設定) */
+        /* 1. Page Hero Banner (高質感設定)          */
         /* ========================================= */
         .dining-hero {
             width: 100%;
-            height: 40vh; 
-            min-height: 300px;
+            height: 45vh; /* 稍微加高，展現大氣感 */
+            min-height: 350px;
             background-image: url('/image/dining/banner.png'); 
             background-size: cover;
             background-position: center;
@@ -22,14 +22,14 @@
             align-items: center; 
             justify-content: center;
             position: relative;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .dining-hero::after {
             content: ''; 
             position: absolute; top: 0; left: 0; 
             width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4); 
+            background: rgba(0, 0, 0, 0.35); /* 遮罩稍微調淡，讓圖片更通透 */
             z-index: 1;
         }
 
@@ -37,120 +37,203 @@
             position: relative; 
             z-index: 2; 
             text-align: center; 
-            color: #fff; /* ✅ 字體顏色：純白 */
+            color: #fff;
+            padding: 0 20px;
         }
 
         .dining-hero-title {
-            font-family: var(--font-main);
-            font-size: 3rem; 
+            font-family: var(--font-serif); /* 改用襯線體，更有質感 */
+            font-size: 3.5rem; 
             margin: 0; 
             text-transform: uppercase; 
-            letter-spacing: 2px; /* ✅ 字距比照 Culture */
-            font-weight: 900;    /* ✅ 字重比照 Culture */
+            letter-spacing: 3px;
+            font-weight: 800;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .dining-hero-subtitle {
+            font-family: var(--font-main);
+            font-size: 1.1rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            opacity: 0.9;
         }
         
         /* ========================================= */
-        /* 2. Main Content Container */
+        /* 2. Main Content Container                 */
         /* ========================================= */
         .resource-container {
-            max-width: 900px; margin: 0 auto 100px; padding: 0 20px;
+            max-width: 1000px; /* 加寬容器 */
+            margin: 0 auto 120px; 
+            padding: 0 20px;
         }
         
         .intro-text-box {
-            text-align: center; margin-bottom: 70px;
+            text-align: center; 
+            margin-bottom: 80px;
+            padding: 0 20px;
         }
         .intro-p {
-            font-size: 1.15rem; line-height: 1.8; color: #555; max-width: 750px; margin: 0 auto;
+            font-size: 1.2rem; 
+            line-height: 1.9; 
+            color: #555; 
+            max-width: 800px; 
+            margin: 0 auto;
+            font-family: var(--font-serif); /* 內文也使用襯線體增加優雅感 */
         }
 
         /* ========================================= */
-        /* 3. Resource Sections (✅ 點點背景)       */
+        /* 3. Resource Sections (點點背景 + 卡片化)  */
         /* ========================================= */
         .resource-section {
-            /* 基底顏色 */
             background-color: #fff;
-            
-            /* ✅ CSS 點點背景魔法 */
-            background-image: radial-gradient(#e0e0e0 1.5px, transparent 1.5px);
-            background-size: 24px 24px; /* 控制點點的間距 */
+            /* 點點背景 */
+            background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
 
-            border: 2px solid #eee;
-            border-radius: 16px;
-            padding: 50px;
-            margin-bottom: 60px;
+            border: 1px solid #eee;
+            border-radius: 24px; /* 更圓潤的邊角 */
+            padding: 60px 50px;
+            margin-bottom: 70px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            transition: transform 0.3s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04); /* 更柔和的陰影 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+        
+        /* 頂部裝飾線 */
+        .resource-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: var(--accent-color);
+            opacity: 0.8;
+        }
+
         .resource-section:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
         }
         
-        .res-icon { font-size: 3.5rem; margin-bottom: 20px; display: block; }
+        .res-icon { 
+            font-size: 4rem; 
+            margin-bottom: 25px; 
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
         
         .res-title { 
-            font-size: 2rem; font-weight: 700; color: #333; margin-bottom: 20px; 
-            text-transform: uppercase; letter-spacing: 1px; font-family: serif;
-            background-color: #fff; /* 標題背後加白底，確保文字清晰 */
+            font-size: 2.2rem; 
+            font-weight: 800; 
+            color: #333; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-family: var(--font-main);
+            background-color: #fff; 
             display: inline-block;
-            padding: 0 10px;
-        }
-        
-        .res-desc { 
-            color: #666; line-height: 1.8; margin-bottom: 40px; font-size: 1.05rem;
-            max-width: 700px; margin-left: auto; margin-right: auto;
-            background-color: rgba(255, 255, 255, 0.8); /* 微微半透明白底 */
-            padding: 10px;
+            padding: 5px 15px;
             border-radius: 8px;
         }
         
+        .res-desc { 
+            color: #666; 
+            line-height: 1.8; 
+            margin-bottom: 50px; 
+            font-size: 1.05rem;
+            max-width: 750px; 
+            margin-left: auto; 
+            margin-right: auto;
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        
         /* ========================================= */
-        /* 4. Link Grid & Buttons */
+        /* 4. Link Grid & Cards (精緻化)             */
         /* ========================================= */
         .link-grid {
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px;
+            gap: 20px;
         }
         
         .auth-link {
             display: flex;
             flex-direction: column;
+            align-items: flex-start; /* 左對齊內容 */
             justify-content: center;
             text-decoration: none;
-            background: #fff; /* 連結卡片保持純白背景 */
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
-        }
-        .auth-link:hover {
             background: #fff;
-            transform: translateY(-3px);
+            padding: 25px 30px;
+            border-radius: 12px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Hover 效果：邊框變色 + 輕微上浮 */
+        .auth-link:hover {
             border-color: var(--accent-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(232, 162, 162, 0.15); /* 使用強調色的淡陰影 */
+        }
+        
+        /* 裝飾性箭頭 */
+        .auth-link::after {
+            content: '➜';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #eee;
+            font-size: 1.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .auth-link:hover::after {
+            color: var(--accent-color);
+            transform: translateY(-50%) translateX(5px);
         }
         
         .link-name { 
-            display: block; font-weight: 800; color: #333; font-size: 1.1rem; 
-            margin-bottom: 8px; 
+            display: block; 
+            font-weight: 700; 
+            color: #222; 
+            font-size: 1.15rem; 
+            margin-bottom: 6px; 
+            padding-right: 20px; /* 避免蓋到箭頭 */
+            text-align: left;
         }
+        
         .link-url { 
-            display: block; color: var(--accent-color); font-size: 0.9rem; 
-            font-family: monospace; letter-spacing: 0.5px;
+            display: block; 
+            color: #888; 
+            font-size: 0.85rem; 
+            font-family: monospace; 
+            letter-spacing: 0.5px;
+            text-transform: lowercase;
+        }
+        .auth-link:hover .link-url {
+            color: var(--accent-color);
         }
 
         /* ========================================= */
         /* 5. Responsive Design */
         /* ========================================= */
         @media (max-width: 768px) {
-            .dining-hero { height: 250px; }
-            .dining-hero-title { font-size: 2rem; }
-            .resource-section { padding: 30px 20px; }
-            .res-title { font-size: 1.6rem; }
+            .dining-hero { height: 300px; }
+            .dining-hero-title { font-size: 2.2rem; }
+            .resource-section { padding: 40px 20px; }
+            .res-title { font-size: 1.8rem; }
             .link-grid { grid-template-columns: 1fr; }
+            .auth-link { align-items: center; text-align: center; }
+            .link-name { text-align: center; padding-right: 0; }
+            .auth-link::after { display: none; } /* 手機版隱藏箭頭 */
         }
     </style>
 </head>
@@ -160,6 +243,7 @@
     <div class="dining-hero">
         <div class="dining-hero-content">
             <h1 class="dining-hero-title">Inclusive Dining</h1>
+            <div class="dining-hero-subtitle">A Culinary Guide for Everyone</div>
         </div>
     </div>
 
@@ -167,7 +251,7 @@
         
         <div class="intro-text-box">
             <p class="intro-p">
-                Taiwan is widely recognized as one of the world's most inclusive culinary destinations. Whether you require strict <strong>Halal-certified</strong> meals or adhere to a <strong>Vegetarian/Vegan</strong> diet, you will find abundant choices here. We have curated the most authoritative and trusted resources to ensure you dine with peace of mind.
+                Taiwan is widely recognized as one of the world's most inclusive culinary destinations. Whether you require strict <strong>Halal-certified</strong> meals, adhere to a <strong>Vegetarian/Vegan</strong> diet, or seek the most authentic street food, you will find abundant choices here. We have curated the most authoritative resources to ensure you dine with peace of mind.
             </p>
         </div>
 
@@ -175,20 +259,20 @@
             <span class="res-icon">☪️</span>
             <h2 class="res-title">Muslim-Friendly Resources</h2>
             <p class="res-desc">
-                Ranked as one of the top non-OIC destinations for Muslim travelers, Taiwan offers a certified environment for dining and prayer. Use these official platforms to locate Halal-certified restaurants, prayer rooms, and mosques across the island.
+                Ranked as one of the top non-OIC destinations for Muslim travelers, Taiwan offers a certified environment for dining and prayer. Use these platforms to locate Halal-certified restaurants and souvenir shops.
             </p>
             <div class="link-grid">
-                <a href="https://eng.taiwan.net.tw/m1.aspx?sNo=0020323" target="_blank" class="auth-link">
-                    <span class="link-name">Taiwan Tourism Bureau (Halal)</span>
-                    <span class="link-url">eng.taiwan.net.tw</span>
+                <a href="https://www.islamtaiwan.com/restaurants" target="_blank" class="auth-link">
+                    <span class="link-name">Islam Taiwan (Restaurants)</span>
+                    <span class="link-url">islamtaiwan.com</span>
                 </a>
-                <a href="https://www.thcid.org.tw/" target="_blank" class="auth-link">
-                    <span class="link-name">Taiwan Halal Center</span>
-                    <span class="link-url">thcid.org.tw</span>
+                <a href="https://www.iat.org.tw/index_files/halalrestaurants.htm" target="_blank" class="auth-link">
+                    <span class="link-name">Islamic Association of Taiwan</span>
+                    <span class="link-url">iat.org.tw</span>
                 </a>
-                <a href="https://cma.org.tw/" target="_blank" class="auth-link">
-                    <span class="link-name">Chinese Muslim Association</span>
-                    <span class="link-url">cma.org.tw</span>
+                <a href="https://icarry.me/curation-product-list/239" target="_blank" class="auth-link">
+                    <span class="link-name">iCarry (Halal Souvenirs)</span>
+                    <span class="link-url">icarry.me</span>
                 </a>
             </div>
         </div>
@@ -197,20 +281,16 @@
             <span class="res-icon">🥗</span>
             <h2 class="res-title">Vegetarian & Vegan Guide</h2>
             <p class="res-desc">
-                With one of the highest rates of vegetarianism globally, Taiwan is a paradise for plant-based eaters. Look for the "卍" (Swastika) symbol or the character "素" (Su) for Buddhist vegetarian food (no garlic/onions/leeks).
+                With one of the highest rates of vegetarianism globally, Taiwan is a paradise for plant-based eaters. Look for the "素" (Su) character.
             </p>
             <div class="link-grid">
+                <a href="https://vegemap.merit-times.com/restaurant_list" target="_blank" class="auth-link">
+                    <span class="link-name">Merit Times Vegemap (蔬食地圖)</span>
+                    <span class="link-url">vegemap.merit-times.com</span>
+                </a>
                 <a href="https://www.happycow.net/asia/taiwan/" target="_blank" class="auth-link">
                     <span class="link-name">HappyCow Taiwan</span>
                     <span class="link-url">happycow.net</span>
-                </a>
-                <a href="https://food.suiis.com/" target="_blank" class="auth-link">
-                    <span class="link-name">Suiis (Taiwan's Largest Veg Site)</span>
-                    <span class="link-url">suiis.com</span>
-                </a>
-                <a href="https://guide.michelin.com/tw/en/restaurants/vegetarian" target="_blank" class="auth-link">
-                    <span class="link-name">Michelin Guide (Vegetarian)</span>
-                    <span class="link-url">guide.michelin.com</span>
                 </a>
             </div>
         </div>
@@ -219,20 +299,24 @@
             <span class="res-icon">🧋</span>
             <h2 class="res-title">Taiwan Night Markets</h2>
             <p class="res-desc">
-                The heart and soul of Taiwanese cuisine beats in its night markets. From the Michelin-recommended street stalls (Bib Gourmand) to local favorites, this is where you taste the real Taiwan. Don't miss the Bubble Tea and Stinky Tofu!
+                The heart and soul of Taiwanese cuisine beats in its night markets. From Michelin-recommended stalls to local favorites, explore the ultimate street food guide.
             </p>
             <div class="link-grid">
-                <a href="https://eng.taiwan.net.tw/m1.aspx?sNo=0002092" target="_blank" class="auth-link">
-                    <span class="link-name">Taiwan Tourism Bureau (Night Markets)</span>
-                    <span class="link-url">eng.taiwan.net.tw</span>
+                <a href="https://supertaste.tvbs.com.tw/pack/320927" target="_blank" class="auth-link">
+                    <span class="link-name">TVBS Super Taste (食尚玩家)</span>
+                    <span class="link-url">supertaste.tvbs.com.tw</span>
                 </a>
-                <a href="https://guide.michelin.com/tw/en/selection/taiwan/bib-gourmand" target="_blank" class="auth-link">
-                    <span class="link-name">Michelin Bib Gourmand (Street Food)</span>
-                    <span class="link-url">guide.michelin.com</span>
+                <a href="https://travelss.net/2024/12/08/%E5%8F%B0%E7%81%A3%E5%90%84%E5%9C%B0%E5%A4%9C%E5%B8%82%E5%88%97%E8%A1%A8%E8%88%87%E7%89%B9%E8%89%B2%E4%BB%8B%E7%B4%B9/" target="_blank" class="auth-link">
+                    <span class="link-name">Travelss Night Market Guide</span>
+                    <span class="link-url">travelss.net</span>
                 </a>
-                <a href="https://www.travelking.com.tw/eng/tourguide/nightmarket/" target="_blank" class="auth-link">
-                    <span class="link-name">Travel King Night Market Guide</span>
-                    <span class="link-url">travelking.com.tw</span>
+                <a href="https://restaurants.fandom.com/zh/wiki/%E8%87%BA%E7%81%A3%E5%A4%9C%E5%B8%82%E5%88%97%E8%A1%A8?variant=zh-tw" target="_blank" class="auth-link">
+                    <span class="link-name">Fandom Night Market List</span>
+                    <span class="link-url">restaurants.fandom.com</span>
+                </a>
+                <a href="https://zh.wikipedia.org/zh-tw/%E8%87%BA%E7%81%A3%E5%A4%9C%E5%B8%82%E5%88%97%E8%A1%A8" target="_blank" class="auth-link">
+                    <span class="link-name">Wikipedia List of Night Markets</span>
+                    <span class="link-url">wikipedia.org</span>
                 </a>
             </div>
         </div>

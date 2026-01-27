@@ -1,0 +1,41 @@
+{
+  "id": "bookstores",
+  "title": "Bookstores & Stationery",
+  "intro": "Discover independent bookstores and stationery havens.",
+  "heroImage": "/image/entertainment/bookstore_hero.jpg",
+  "tags": ["Books", "Stationery", "Culture"],
+  "spots": [
+    {
+      "name": "Eslite Spectrum Songyan",
+      "city": "Taipei",
+      "image": "/image/entertainment/eslite.jpg",
+      "description": "A cultural landmark combining books, design, and lifestyle.",
+      "link": "https://www.eslitecorp.com/",
+      "mapLink": "https://goo.gl/maps/book1"
+    },
+    {
+      "name": "Tsutaya Bookstore (Nangang)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tsutaya.jpg",
+      "description": "One of the most beautiful bookstores from Japan, offering a cozy reading environment.",
+      "link": "http://tsutaya.com.tw/",
+      "mapLink": "https://goo.gl/maps/book2"
+    },
+    {
+      "name": "Miyahara Ice Cream (Dawn Cake)",
+      "city": "Taichung",
+      "image": "/image/entertainment/miyahara.jpg",
+      "description": "Famous for its Harry Potter-like interior, originally an eye clinic.",
+      "link": "https://www.dawncake.com.tw/",
+      "mapLink": "https://goo.gl/maps/book3"
+    },
+    {
+      "name": "Ubuntu Bookstore",
+      "city": "Tainan",
+      "image": "/image/entertainment/ubuntu.jpg",
+      "description": "A beautiful independent bookstore by the canal.",
+      "link": "https://www.facebook.com/ubuntubook/",
+      "mapLink": "https://goo.gl/maps/book4"
+    }
+  ]
+}

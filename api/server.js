@@ -33,7 +33,7 @@ try {
 } catch (err) { console.warn('⚠️ Warning: search.js not found.'); }
 
 // ==========================================
-// 3. 動態 Sitemap 路由 (✅ 使用 sitemap 套件)
+// 3. 動態 Sitemap 路由
 // ==========================================
 app.get('/sitemap.xml', async (req, res) => {
     try {
@@ -100,13 +100,12 @@ app.get('/sitemap.xml', async (req, res) => {
             });
         }
 
-        // --- E. 讀取 Blog Articles 資料 (✅ 支援 penghu_jan23.json) ---
+        // --- E. 讀取 Blog Articles 資料 ---
         const blogDir = path.join(rootDir, 'data', 'blog');
         if (fs.existsSync(blogDir)) {
             const files = fs.readdirSync(blogDir);
             files.forEach(file => {
                 if (file.endsWith('.json')) {
-                    // 這裡會自動抓取檔名 (例如 penghu_jan23) 作為網址 ID
                     const blogId = file.replace('.json', '');
                     smStream.write({ url: `/blog/${blogId}`, changefreq: 'monthly', priority: 0.7 });
                 }
@@ -136,7 +135,88 @@ app.use(express.static(path.join(rootDir, 'public')));
 // ==========================================
 // 5. 頁面路由
 // ==========================================
-app.get('/', (req, res) => res.render('static_pages/index', { pageName: 'index' }));
+
+// ✅ [Updated] 首頁 (動態讀取精選文章資料)
+app.get('/', (req, res) => {
+    // 預設資料 (萬一讀取失敗時的備案)
+    let featured = {
+        tra: { 
+            title: 'The Ultimate Guide to Taiwan Railways (TRA)', 
+            intro: 'Perfect for round-island trips...', 
+            heroImage: '/image/transport/tra_banner.png', 
+            link: '/transport/tra-guide',
+            tag: 'Transport'
+        },
+        blog: { 
+            title: 'Kaohsiung & Penghu 3-Day Tour', 
+            intro: 'The unique charm of offshore islands...', 
+            heroImage: '/image/blog/penghu/hero.jpg', 
+            link: '/blog/penghu_jan23',
+            tag: 'Island Life'
+        },
+        pingtung: { 
+            title: 'Ecological Serenity', 
+            intro: 'Explore raw nature in Southern Taiwan.', 
+            heroImage: '/image/search_by_city/pingtung4-3.jpg', 
+            link: '/search_by_city/pingtung/pt-04',
+            tag: 'Nature'
+        },
+        amusement: { 
+            title: 'Amusement Parks in Taiwan', 
+            intro: 'Discover the most thrilling rides...', 
+            heroImage: '/image/entertainment/theme_park_banner.jpg', 
+            link: '/entertainment/amusement_parks',
+            tag: 'Family Fun'
+        }
+    };
+
+    try {
+        // 1. 讀取 TRA 資料
+        const traPath = path.join(rootDir, 'data', 'transport', 'tra-guide.json');
+        if (fs.existsSync(traPath)) {
+            const data = JSON.parse(fs.readFileSync(traPath, 'utf8'));
+            featured.tra.title = data.title;
+            featured.tra.intro = data.intro;
+            featured.tra.heroImage = data.heroImage;
+        }
+
+        // 2. 讀取 Blog (澎湖) 資料
+        const blogPath = path.join(rootDir, 'data', 'blog', 'penghu_jan23.json');
+        if (fs.existsSync(blogPath)) {
+            const data = JSON.parse(fs.readFileSync(blogPath, 'utf8'));
+            featured.blog.title = data.title;
+            featured.blog.intro = data.intro;
+            featured.blog.heroImage = data.heroImage; // ✅ 修正：抓取 JSON 內的正確圖片
+        }
+
+        // 3. 讀取 Pingtung (pt-04) 資料
+        const ptPath = path.join(rootDir, 'data', 'search_by_city', 'pingtung.json');
+        if (fs.existsSync(ptPath)) {
+            const data = JSON.parse(fs.readFileSync(ptPath, 'utf8'));
+            const article = data.find(item => item.id === 'pt-04');
+            if (article) {
+                featured.pingtung.title = article.title;
+                featured.pingtung.intro = article.intro;
+                featured.pingtung.heroImage = article.heroImage;
+            }
+        }
+
+        // 4. 讀取 Amusement Parks 資料
+        const entPath = path.join(rootDir, 'data', 'entertainment', 'amusement_parks.json');
+        if (fs.existsSync(entPath)) {
+            const data = JSON.parse(fs.readFileSync(entPath, 'utf8'));
+            featured.amusement.title = data.title;
+            featured.amusement.intro = data.intro;
+            featured.amusement.heroImage = data.heroImage;
+        }
+
+    } catch (e) {
+        console.error("⚠️ Error loading featured stories for homepage:", e.message);
+    }
+
+    res.render('static_pages/index', { pageName: 'index', featured });
+});
+
 app.get('/culture', (req, res) => res.render('static_pages/culture', { pageName: 'culture' }));
 app.get('/festivals', (req, res) => res.render('static_pages/festivals', { pageName: 'festivals' }));
 app.get('/search_by_city', (req, res) => res.render('static_pages/search_by_city', { pageName: 'search_by_city' }));
@@ -202,7 +282,7 @@ app.get('/dining', (req, res) => {
     res.render('static_pages/dining', { pageName: 'dining' });
 });
 
-// Entertainment Feed
+// Entertainment Feed (列表頁)
 app.get('/entertainment', (req, res) => {
     const entDir = path.join(rootDir, 'data', 'entertainment');
     let entData = [];
@@ -224,10 +304,13 @@ app.get('/entertainment', (req, res) => {
             }
         });
     }
+    // 加入排序，讓列表順序穩定 (依標題排序)
+    entData.sort((a, b) => a.title.localeCompare(b.title));
+    
     res.render('entertainment_articles/entertainment_feed', { pageName: 'entertainment', items: entData });
 });
 
-// Entertainment Article
+// Entertainment Article (內頁 - Grid View)
 app.get('/entertainment/:id', (req, res) => {
     const entId = req.params.id;
     const jsonPath = path.join(rootDir, 'data', 'entertainment', `${entId}.json`);
@@ -244,7 +327,7 @@ app.get('/entertainment/:id', (req, res) => {
     } else { res.status(404).send('Entertainment Article Not Found'); }
 });
 
-// ✅ [Updated] Blog Feed (Uly's Blog)
+// Blog Feed
 app.get('/blog', (req, res) => {
     const blogDir = path.join(rootDir, 'data', 'blog');
     let blogData = [];
@@ -255,9 +338,8 @@ app.get('/blog', (req, res) => {
             if (file.endsWith('.json')) {
                 try {
                     const article = JSON.parse(fs.readFileSync(path.join(blogDir, file), 'utf8'));
-                    // 列表頁資料
                     blogData.push({
-                        id: file.replace('.json', ''), // 這裡會自動抓取檔名，所以 penghu_jan23.json -> id: penghu_jan23
+                        id: file.replace('.json', ''),
                         title: article.title,
                         intro: article.intro,
                         heroImage: article.heroImage,
@@ -272,10 +354,10 @@ app.get('/blog', (req, res) => {
     res.render('blog_articles/blog_feed', { pageName: 'blog', items: blogData });
 });
 
-// ✅ [Updated] Blog Article Page
+// Blog Article Page
 app.get('/blog/:id', (req, res) => {
-    const blogId = req.params.id; // 網址上的 ID (例如 penghu_jan23)
-    const jsonPath = path.join(rootDir, 'data', 'blog', `${blogId}.json`); // 自動尋找 penghu_jan23.json
+    const blogId = req.params.id;
+    const jsonPath = path.join(rootDir, 'data', 'blog', `${blogId}.json`);
     
     if (fs.existsSync(jsonPath)) {
         try {

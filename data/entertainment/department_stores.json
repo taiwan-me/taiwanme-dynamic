@@ -1,0 +1,41 @@
+{
+  "id": "department_stores",
+  "title": "Department Stores & Malls",
+  "intro": "Shop till you drop at Taiwan's best malls.",
+  "heroImage": "/image/entertainment/mall_hero.jpg",
+  "tags": ["Shopping", "Food Court", "Luxury"],
+  "spots": [
+    {
+      "name": "Taipei 101 Mall",
+      "city": "Taipei",
+      "image": "/image/entertainment/101mall.jpg",
+      "description": "Luxury shopping at the base of the iconic Taipei 101 tower.",
+      "link": "https://www.taipei-101.com.tw/",
+      "mapLink": "https://goo.gl/maps/mall1"
+    },
+    {
+      "name": "Big City",
+      "city": "Hsinchu",
+      "image": "/image/entertainment/bigcity.jpg",
+      "description": "The largest shopping mall in Northern Taiwan.",
+      "link": "https://www.febigcity.com/",
+      "mapLink": "https://goo.gl/maps/mall2"
+    },
+    {
+      "name": "Top City",
+      "city": "Taichung",
+      "image": "/image/entertainment/topcity.jpg",
+      "description": "A major department store featuring international brands and great dining.",
+      "link": "https://www.feds.com.tw/",
+      "mapLink": "https://goo.gl/maps/mall3"
+    },
+    {
+      "name": "Dream Mall",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/dream_mall.jpg",
+      "description": "Features a rooftop Ferris wheel and massive retail space.",
+      "link": "https://www.dream-mall.com.tw/",
+      "mapLink": "https://goo.gl/maps/mall4"
+    }
+  ]
+}

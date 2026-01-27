@@ -1,0 +1,41 @@
+{
+  "id": "zoos_aquariums",
+  "title": "Zoos & Aquariums",
+  "intro": "Meet the amazing wildlife of Taiwan and beyond.",
+  "heroImage": "/image/entertainment/zoo_hero.jpg",
+  "tags": ["Animals", "Family", "Nature"],
+  "spots": [
+    {
+      "name": "Taipei Zoo",
+      "city": "Taipei",
+      "image": "/image/entertainment/taipei_zoo.jpg",
+      "description": "The largest zoo in Asia, famous for its pandas and pangolins.",
+      "link": "https://www.zoo.gov.taipei/",
+      "mapLink": "https://goo.gl/maps/zoo1"
+    },
+    {
+      "name": "Xpark Aquarium",
+      "city": "Taoyuan",
+      "image": "/image/entertainment/xpark.jpg",
+      "description": "A modern urban aquarium from Japan featuring stunning jellyfish displays.",
+      "link": "https://www.xpark.com.tw/",
+      "mapLink": "https://goo.gl/maps/zoo2"
+    },
+    {
+      "name": "Hsinchu Zoo",
+      "city": "Hsinchu",
+      "image": "/image/entertainment/hsinchu_zoo.jpg",
+      "description": "The oldest zoo in Taiwan, recently renovated with a cage-free concept.",
+      "link": "https://zoo-info.hccg.gov.tw/",
+      "mapLink": "https://goo.gl/maps/zoo3"
+    },
+    {
+      "name": "National Museum of Marine Biology & Aquarium",
+      "city": "Pingtung",
+      "image": "/image/entertainment/nmmba.jpg",
+      "description": "Offers overnight sleepover experiences in the underwater tunnels.",
+      "link": "https://www.nmmba.gov.tw/",
+      "mapLink": "https://goo.gl/maps/zoo4"
+    }
+  ]
+}

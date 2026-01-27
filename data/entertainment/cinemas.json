@@ -1,0 +1,41 @@
+{
+  "id": "cinemas",
+  "title": "Cinemas & Movie Theaters",
+  "intro": "Catch the latest blockbusters in the best theaters.",
+  "heroImage": "/image/entertainment/cinema_hero.jpg",
+  "tags": ["Movie", "IMAX", "4DX"],
+  "spots": [
+    {
+      "name": "Vieshow Cinemas Xinyi",
+      "city": "Taipei",
+      "image": "/image/entertainment/vieshow.jpg",
+      "description": "A premier spot for movies in the Xinyi shopping district.",
+      "link": "https://www.vscinemas.com.tw/",
+      "mapLink": "https://goo.gl/maps/movie1"
+    },
+    {
+      "name": "Miramar Cinemas (IMAX)",
+      "city": "Taipei",
+      "image": "/image/entertainment/miramar.jpg",
+      "description": "Features the largest IMAX screen in Taiwan.",
+      "link": "https://www.miramarcinemas.com.tw/",
+      "mapLink": "https://goo.gl/maps/movie2"
+    },
+    {
+      "name": "Shin Kong Cinemas",
+      "city": "Tainan",
+      "image": "/image/entertainment/shinkong.jpg",
+      "description": "Popular cinema chain with Dolby Atmos sound.",
+      "link": "https://www.skcinemas.com/",
+      "mapLink": "https://goo.gl/maps/movie3"
+    },
+    {
+      "name": "In89 Pier-2 Cinema",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/in89.jpg",
+      "description": "Located in the Pier-2 Art Center, offering a unique industrial vibe.",
+      "link": "https://www.in89cinemax.com/",
+      "mapLink": "https://goo.gl/maps/movie4"
+    }
+  ]
+}

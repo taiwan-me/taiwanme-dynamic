@@ -7,6 +7,120 @@
     <link rel="icon" href="/image/logo.png" type="image/png">
     
     <link rel="stylesheet" href="/style.css">
+    <style>
+        /* ========================================= */
+        /* Featured Grid Styles                      */
+        /* ========================================= */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 電腦版：4欄 */
+            gap: 20px;
+        }
+
+        .featured-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+            border: 1px solid #eee;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3/2; /* 圖片比例 3:2 */
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-card:hover .card-img {
+            transform: scale(1.08);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px; left: 10px;
+            background-color: rgba(38, 70, 83, 0.9);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 2;
+            text-transform: uppercase;
+        }
+
+        .card-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-family: var(--font-eng);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #222;
+            margin: 0 0 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-desc {
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-btn {
+            margin-top: auto;
+            font-weight: 700;
+            color: #e53935;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        /* RWD: 手機版強制兩欄 */
+        @media (max-width: 1024px) {
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .card-title { font-size: 1rem; }
+            .card-desc { font-size: 0.85rem; -webkit-line-clamp: 2; }
+        }
+    </style>
 </head>
 <body>
 
@@ -42,7 +156,7 @@
         </div>
     </section>
 
-    <section style="max-width: 1200px; margin: 60px auto; padding: 0 20px;">
+    <section style="max-width: 1200px; margin: 60px auto 100px; padding: 0 20px;">
         
         <div style="display: flex; align-items: center; margin-bottom: 30px;">
             <h2 style="font-family: var(--font-eng); font-size: 2.2rem; font-weight: 900; color: #333; margin: 0; letter-spacing: 1px;">
@@ -51,30 +165,64 @@
             <div style="flex-grow: 1; height: 2px; background: #eee; margin-left: 20px;"></div>
         </div>
 
-        <a href="/transport/tra-guide" style="display: block; text-decoration: none; color: inherit; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div class="featured-grid">
             
-            <div style="position: relative; width: 100%; height: 400px;">
-                <span style="position: absolute; top: 20px; left: 20px; background-color: #264653; color: white; padding: 6px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; z-index: 2;">
-                    ISLAND-WIDE
-                </span>
-                
-                <img src="/image/transport/tra_banner.png" alt="Taiwan Railways Guide" style="width: 100%; height: 100%; object-fit: cover;">
-                
-                <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
-            </div>
+            <% if (typeof featured !== 'undefined' && featured) { %>
+                <a href="<%= featured.tra.link %>" class="featured-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-tag"><%= featured.tra.tag %></span>
+                        <img src="<%= featured.tra.heroImage %>" alt="<%= featured.tra.title %>" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/333?text=TRA'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><%= featured.tra.title %></h3>
+                        <p class="card-desc"><%= featured.tra.intro %></p>
+                        <div class="card-btn">Read More ➝</div>
+                    </div>
+                </a>
 
-            <div style="padding: 35px; background: white;">
-                <h3 style="font-family: var(--font-eng); font-size: 1.8rem; font-weight: 700; margin: 0 0 15px 0; color: #222;">
-                    The Ultimate Guide to Taiwan Railways (TRA)
-                </h3>
-                <p style="font-family: var(--font-main); font-size: 1.1rem; color: #666; line-height: 1.6; margin-bottom: 20px;">
-                    Perfect for round-island trips and accessing the East Coast (Hualien, Taitung). Master the train types, booking tricks, and how to navigate the stations like a local.
-                </p>
-                <div style="font-weight: 700; color: #e53935; font-size: 1rem; display: flex; align-items: center;">
-                    READ FULL GUIDE <span style="margin-left: 8px; font-size: 1.2rem;">➝</span>
+                <a href="<%= featured.blog.link %>" class="featured-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-tag"><%= featured.blog.tag %></span>
+                        <img src="<%= featured.blog.heroImage %>" alt="<%= featured.blog.title %>" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/333?text=Penghu'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><%= featured.blog.title %></h3>
+                        <p class="card-desc"><%= featured.blog.intro %></p>
+                        <div class="card-btn">Read More ➝</div>
+                    </div>
+                </a>
+
+                <a href="<%= featured.pingtung.link %>" class="featured-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-tag"><%= featured.pingtung.tag %></span>
+                        <img src="<%= featured.pingtung.heroImage %>" alt="<%= featured.pingtung.title %>" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/333?text=Nature'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><%= featured.pingtung.title %></h3>
+                        <p class="card-desc"><%= featured.pingtung.intro %></p>
+                        <div class="card-btn">Read More ➝</div>
+                    </div>
+                </a>
+
+                <a href="<%= featured.amusement.link %>" class="featured-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-tag"><%= featured.amusement.tag %></span>
+                        <img src="<%= featured.amusement.heroImage %>" alt="<%= featured.amusement.title %>" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/333?text=Fun'">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><%= featured.amusement.title %></h3>
+                        <p class="card-desc"><%= featured.amusement.intro %></p>
+                        <div class="card-btn">Read More ➝</div>
+                    </div>
+                </a>
+            <% } else { %>
+                <div style="grid-column: 1/-1; text-align: center; color: red;">
+                    <h3>⚠️ Configuration Error</h3>
+                    <p>Featured stories could not be loaded. Please ensure server.js is updated.</p>
                 </div>
-            </div>
-        </a>
+            <% } %>
+
+        </div>
 
     </section>
 

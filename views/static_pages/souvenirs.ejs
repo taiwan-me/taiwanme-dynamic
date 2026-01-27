@@ -3,253 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Must-Buy Souvenirs | TaiwanMe</title>
+    <title>Taiwan Souvenirs | TaiwanMe</title>
     <link rel="icon" href="/image/logo.png" type="image/png">
     <link rel="stylesheet" href="/style.css">
     <style>
         /* ========================================= */
-        /* 1. Hero Banner (比照 Culture/Dining 規格) */
+        /* 1. Rotating Banner (1秒輪播)              */
         /* ========================================= */
-        .souvenir-hero {
+        .ad-banner-container {
             width: 100%;
-            height: 40vh; 
-            min-height: 300px;
-            /* 請確認是否有這張圖，若無會顯示背景色 */
-            background-image: url('/image/souvenirs/banner.png'); 
+            height: 400px; /* 電腦版高度 */
+            position: relative;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            margin-bottom: 40px;
+        }
+
+        .ad-slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* 淡入淡出效果 */
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            position: relative;
-            margin-bottom: 60px;
-            background-color: #333;
-        }
-
-        .souvenir-hero::after {
-            content: ''; 
-            position: absolute; top: 0; left: 0; 
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4); 
-            z-index: 1;
-        }
-
-        .souvenir-hero-content {
-            position: relative; 
-            z-index: 2; 
-            text-align: center; 
-            color: #fff;
-        }
-
-        .souvenir-title {
-            font-family: var(--font-main);
-            font-size: 3rem; 
-            margin: 0; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            font-weight: 900;
-        }
-
-        /* ========================================= */
-        /* 2. Main Content Container */
-        /* ========================================= */
-        .content-container {
-            max-width: 1100px; margin: 0 auto 100px; padding: 0 20px;
-        }
-        
-        .intro-text-box {
-            text-align: center; margin-bottom: 70px;
-        }
-        .intro-p {
-            font-size: 1.15rem; line-height: 1.8; color: #555; max-width: 750px; margin: 0 auto;
-        }
-
-        /* ========================================= */
-        /* 3. Souvenir Grid & Cards */
-        /* ========================================= */
-        .souvenir-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .souvenir-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .souvenir-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        .ad-slide.active { opacity: 1; }
+
+        /* 預設的廣告文字樣式 (若沒有圖片時顯示) */
+        .ad-text {
+            font-size: 2rem;
+            color: #fff;
+            background: rgba(0,0,0,0.4);
+            padding: 20px 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* ========================================= */
+        /* 2. Search & Filter Section                */
+        /* ========================================= */
+        .search-section {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .search-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: #333;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* 下拉選單樣式 */
+        .city-select {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #555;
+            min-width: 200px;
+            cursor: pointer;
+            border-radius: 0; /* 無圓角風格 */
+            outline: none;
+        }
+
+        .city-select:focus {
             border-color: var(--accent-color);
         }
 
+        /* ========================================= */
+        /* 3. Product Grid (4 Columns)               */
+        /* ========================================= */
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 電腦版 4 列 */
+            gap: 30px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        /* 隱藏狀態 (用於篩選) */
+        .product-card.hidden {
+            display: none;
+        }
+
+        /* 圖片區塊 - 無圓角 */
         .card-img-box {
             width: 100%;
-            height: 220px;
+            aspect-ratio: 1 / 1; /* 正方形圖片 */
             overflow: hidden;
-            position: relative;
             background-color: #f9f9f9;
+            position: relative;
         }
 
         .card-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
+            border-radius: 0; /* ✅ 重點：無鈍角 */
         }
 
-        .souvenir-card:hover .card-img {
-            transform: scale(1.08);
+        .product-card:hover .card-img {
+            transform: scale(1.05);
         }
 
-        .card-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+        .card-info {
+            padding: 20px;
+            text-align: left;
         }
 
-        .card-cat {
-            color: var(--accent-color);
+        .card-tag {
             font-size: 0.8rem;
-            font-weight: 800;
+            color: var(--accent-color);
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            display: block;
         }
 
         .card-title {
-            font-family: var(--font-main);
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: #333;
             margin: 0 0 10px;
+            line-height: 1.4;
         }
 
-        .card-desc {
+        .card-price {
             font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 0;
+            color: #888;
+            font-family: monospace;
         }
 
         /* RWD */
+        @media (max-width: 1024px) {
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+        }
         @media (max-width: 768px) {
-            .souvenir-hero { height: 250px; }
-            .souvenir-title { font-size: 2rem; }
-            .souvenir-grid { grid-template-columns: 1fr; gap: 30px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .search-section { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .ad-banner-container { height: 250px; }
+        }
+        @media (max-width: 480px) {
+            .product-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <%- include('../partials/header') %>
 
-    <div class="souvenir-hero">
-        <div class="souvenir-hero-content">
-            <h1 class="souvenir-title">SOUVENIRS</h1>
+    <div class="ad-banner-container" id="adBanner">
+        <div class="ad-slide active" style="background-image: url('/image/souvenirs/banner1.jpg'); background-color: #e0f7fa;">
+            <div class="ad-text">TAIWAN GIFT SELECTION</div>
+        </div>
+        <div class="ad-slide" style="background-image: url('/image/souvenirs/banner2.jpg'); background-color: #fff3e0;">
+            <div class="ad-text">BEST OMIYAGE</div>
+        </div>
+        <div class="ad-slide" style="background-image: url('/image/souvenirs/banner3.jpg'); background-color: #fce4ec;">
+            <div class="ad-text">LIMITED OFFERS</div>
         </div>
     </div>
 
-    <div class="content-container">
-        
-        <div class="intro-text-box">
-            <p class="intro-p">
-                Bringing a piece of Taiwan home is the best way to share your journey. From world-famous pastries to premium high-mountain tea, here are the most iconic gifts ("Omiyage") that locals love and travelers cherish.
-            </p>
+    <div class="search-section">
+        <h2 class="search-title">Search Products</h2>
+        <div class="filter-controls">
+            <select id="cityFilter" class="city-select">
+                <option value="all">All Cities / Counties</option>
+                <option value="Taipei">Taipei (台北)</option>
+                <option value="Taichung">Taichung (台中)</option>
+                <option value="Tainan">Tainan (台南)</option>
+                <option value="Kaohsiung">Kaohsiung (高雄)</option>
+                <option value="Yilan">Yilan (宜蘭)</option>
+                <option value="Hualien">Hualien (花蓮)</option>
+                <option value="Chiayi">Chiayi (嘉義)</option>
+                <option value="Nantou">Nantou (南投)</option>
+                <option value="Taitung">Taitung (台東)</option>
+                <option value="Pingtung">Pingtung (屏東)</option>
+                <option value="Penghu">Penghu (澎湖)</option>
+                <option value="Kinmen">Kinmen (金門)</option>
+            </select>
         </div>
+    </div>
 
-        <div class="souvenir-grid">
+    <div class="product-container">
+        <div class="product-grid" id="productGrid">
             
-            <div class="souvenir-card">
+            <a href="#" class="product-card" data-city="Taipei">
                 <div class="card-img-box">
-                    <img src="/image/souvenirs/pineapple_cake.jpg" alt="Pineapple Cake" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Pineapple+Cake'">
+                    <img src="/image/souvenirs/taipei_pineapple.jpg" class="card-img" alt="Pineapple Cake" onerror="this.src='https://placehold.co/400x400/eee/999?text=Pineapple+Cake'">
                 </div>
-                <div class="card-content">
-                    <span class="card-cat">Pastry</span>
-                    <h3 class="card-title">Pineapple Cake (鳳梨酥)</h3>
-                    <p class="card-desc">
-                        The undisputed king of Taiwanese souvenirs. Choose between the sweet traditional paste (winter melon mix) or the tart, fibrous native pineapple filling (Tuchong).
-                    </p>
+                <div class="card-info">
+                    <span class="card-tag">Taipei</span>
+                    <h3 class="card-title">Classic Pineapple Cake (鳳梨酥)</h3>
+                    <div class="card-price">Popular Choice</div>
                 </div>
-            </div>
+            </a>
 
-            <div class="souvenir-card">
+            <a href="#" class="product-card" data-city="Taichung">
                 <div class="card-img-box">
-                    <img src="/image/souvenirs/tea.jpg" alt="Taiwanese Tea" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Oolong+Tea'">
+                    <img src="/image/souvenirs/taichung_suncake.jpg" class="card-img" alt="Sun Cake" onerror="this.src='https://placehold.co/400x400/eee/999?text=Sun+Cake'">
                 </div>
-                <div class="card-content">
-                    <span class="card-cat">Beverage</span>
-                    <h3 class="card-title">Alishan Oolong Tea (高山茶)</h3>
-                    <p class="card-desc">
-                        Grown in the misty mountains of Alishan, this hand-picked tea is world-renowned for its creamy texture and floral aroma. A perfect gift for tea connoisseurs.
-                    </p>
+                <div class="card-info">
+                    <span class="card-tag">Taichung</span>
+                    <h3 class="card-title">Original Sun Cake (太陽餅)</h3>
+                    <div class="card-price">Traditional</div>
                 </div>
-            </div>
+            </a>
 
-            <div class="souvenir-card">
+            <a href="#" class="product-card" data-city="Chiayi">
                 <div class="card-img-box">
-                    <img src="/image/souvenirs/nougat.jpg" alt="Nougat" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Nougat'">
+                    <img src="/image/souvenirs/chiayi_cookie.jpg" class="card-img" alt="Square Cookie" onerror="this.src='https://placehold.co/400x400/eee/999?text=Square+Cookie'">
                 </div>
-                <div class="card-content">
-                    <span class="card-cat">Snack</span>
+                <div class="card-info">
+                    <span class="card-tag">Chiayi</span>
+                    <h3 class="card-title">Square Cookies (方塊酥)</h3>
+                    <div class="card-price">Crispy Snack</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Hualien">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/hualien_mochi.jpg" class="card-img" alt="Mochi" onerror="this.src='https://placehold.co/400x400/eee/999?text=Mochi'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Hualien</span>
+                    <h3 class="card-title">Handmade Mochi (麻糬)</h3>
+                    <div class="card-price">Chewy Delight</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Tainan">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/tainan_shrimp.jpg" class="card-img" alt="Shrimp Crackers" onerror="this.src='https://placehold.co/400x400/eee/999?text=Shrimp+Crackers'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Tainan</span>
+                    <h3 class="card-title">Anping Shrimp Crackers (蝦餅)</h3>
+                    <div class="card-price">Local Favorite</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Yilan">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/yilan_biscuit.jpg" class="card-img" alt="Ox-tongue Biscuit" onerror="this.src='https://placehold.co/400x400/eee/999?text=Ox+Tongue+Biscuit'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Yilan</span>
+                    <h3 class="card-title">Ox-tongue Biscuit (牛舌餅)</h3>
+                    <div class="card-price">Thin & Crispy</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Kaohsiung">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/kaohsiung_roe.jpg" class="card-img" alt="Mullet Roe" onerror="this.src='https://placehold.co/400x400/eee/999?text=Mullet+Roe'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Kaohsiung</span>
+                    <h3 class="card-title">Wild Mullet Roe (烏魚子)</h3>
+                    <div class="card-price">Premium Gift</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Taipei">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/taipei_nougat.jpg" class="card-img" alt="Nougat" onerror="this.src='https://placehold.co/400x400/eee/999?text=Nougat'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Taipei</span>
                     <h3 class="card-title">French Nougat (牛軋糖)</h3>
-                    <p class="card-desc">
-                        A chewy, milky treat packed with crunchy almonds or peanuts. "Sugar & Spice" (糖村) is the most famous brand, known for using premium French butter.
-                    </p>
+                    <div class="card-price">Sweet Treat</div>
                 </div>
-            </div>
+            </a>
 
-            <div class="souvenir-card">
+            <a href="#" class="product-card" data-city="Penghu">
                 <div class="card-img-box">
-                    <img src="/image/souvenirs/suncake.jpg" alt="Sun Cake" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Sun+Cake'">
+                    <img src="/image/souvenirs/penghu_cake.jpg" class="card-img" alt="Brown Sugar Cake" onerror="this.src='https://placehold.co/400x400/eee/999?text=Brown+Sugar+Cake'">
                 </div>
-                <div class="card-content">
-                    <span class="card-cat">Pastry</span>
-                    <h3 class="card-title">Taichung Sun Cake (太陽餅)</h3>
-                    <p class="card-desc">
-                        A round, flaky pastry with a sweet maltose filling. Originating from Taichung, it's best enjoyed with hot tea.
-                    </p>
+                <div class="card-info">
+                    <span class="card-tag">Penghu</span>
+                    <h3 class="card-title">Brown Sugar Cake (黑糖糕)</h3>
+                    <div class="card-price">Island Specialty</div>
                 </div>
-            </div>
+            </a>
 
-            <div class="souvenir-card">
+            <a href="#" class="product-card" data-city="Kinmen">
                 <div class="card-img-box">
-                    <img src="/image/souvenirs/dried_fruit.jpg" alt="Dried Fruit" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Dried+Mango'">
+                    <img src="/image/souvenirs/kinmen_candy.jpg" class="card-img" alt="Peanut Candy" onerror="this.src='https://placehold.co/400x400/eee/999?text=Peanut+Candy'">
                 </div>
-                <div class="card-content">
-                    <span class="card-cat">Snack</span>
-                    <h3 class="card-title">Dried Mango (愛文芒果乾)</h3>
-                    <p class="card-desc">
-                        Made from the famous Irwin (Aiwen) mangoes grown in Tainan. Chewy, fragrant, and purely natural without artificial sweeteners.
-                    </p>
+                <div class="card-info">
+                    <span class="card-tag">Kinmen</span>
+                    <h3 class="card-title">Peanut Candy (貢糖)</h3>
+                    <div class="card-price">Traditional</div>
                 </div>
-            </div>
+            </a>
 
-            <div class="souvenir-card">
+            <a href="#" class="product-card" data-city="Nantou">
                 <div class="card-img-box">
-                    <img src="/image/souvenirs/whisky.jpg" alt="Kavalan Whisky" class="card-img" onerror="this.src='https://placehold.co/600x400/eee/999?text=Kavalan+Whisky'">
+                    <img src="/image/souvenirs/nantou_tea.jpg" class="card-img" alt="Sun Moon Lake Tea" onerror="this.src='https://placehold.co/400x400/eee/999?text=Black+Tea'">
                 </div>
-                <div class="card-content">
-                    <span class="card-cat">Alcohol</span>
-                    <h3 class="card-title">Kavalan Whisky (葛瑪蘭威士忌)</h3>
-                    <p class="card-desc">
-                        Taiwan's pride. This award-winning single malt whisky from Yilan has beaten Scottish brands in blind taste tests. A premium gift choice.
-                    </p>
+                <div class="card-info">
+                    <span class="card-tag">Nantou</span>
+                    <h3 class="card-title">Sun Moon Lake Black Tea (紅茶)</h3>
+                    <div class="card-price">Beverage</div>
                 </div>
-            </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Taitung">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/taitung_sakya.jpg" class="card-img" alt="Custard Apple Cake" onerror="this.src='https://placehold.co/400x400/eee/999?text=Sakya+Cake'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Taitung</span>
+                    <h3 class="card-title">Custard Apple Cake (釋迦餅)</h3>
+                    <div class="card-price">Fruit Pastry</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="New Taipei">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/tamsui_iron_egg.jpg" class="card-img" alt="Iron Eggs" onerror="this.src='https://placehold.co/400x400/eee/999?text=Iron+Eggs'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">New Taipei (Tamsui)</span>
+                    <h3 class="card-title">Iron Eggs (鐵蛋)</h3>
+                    <div class="card-price">Chewy Snack</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Pingtung">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/pingtung_tuna.jpg" class="card-img" alt="Tuna Floss" onerror="this.src='https://placehold.co/400x400/eee/999?text=Tuna+Floss'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Pingtung</span>
+                    <h3 class="card-title">Bluefin Tuna Floss (鮪魚鬆)</h3>
+                    <div class="card-price">Seafood</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Tainan">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/tainan_mango.jpg" class="card-img" alt="Dried Mango" onerror="this.src='https://placehold.co/400x400/eee/999?text=Dried+Mango'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Tainan</span>
+                    <h3 class="card-title">Yujing Dried Mango (芒果乾)</h3>
+                    <div class="card-price">Fruit Snack</div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-city="Yilan">
+                <div class="card-img-box">
+                    <img src="/image/souvenirs/yilan_duck.jpg" class="card-img" alt="Smoked Duck" onerror="this.src='https://placehold.co/400x400/eee/999?text=Smoked+Duck'">
+                </div>
+                <div class="card-info">
+                    <span class="card-tag">Yilan</span>
+                    <h3 class="card-title">Smoked Duck (鴨賞)</h3>
+                    <div class="card-price">Savory Gift</div>
+                </div>
+            </a>
 
         </div>
     </div>
 
     <%- include('../partials/footer') %>
     <script src="/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Banner Rotation Logic (1 second interval)
+            const slides = document.querySelectorAll('.ad-slide');
+            let currentSlide = 0;
+            const slideInterval = 1000; // 1秒換一張 (依需求設定，建議可改為 3000ms 較舒適)
+
+            if(slides.length > 0) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, slideInterval);
+            }
+
+            // 2. City Filter Logic
+            const cityFilter = document.getElementById('cityFilter');
+            const products = document.querySelectorAll('.product-card');
+
+            cityFilter.addEventListener('change', (e) => {
+                const selectedCity = e.target.value;
+
+                products.forEach(card => {
+                    const productCity = card.getAttribute('data-city');
+                    
+                    if (selectedCity === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        // 檢查產品的城市標籤是否包含選中的城市 (部分匹配或完全匹配)
+                        // 例如 data-city="New Taipei" 選中 "Taipei" -> 不應顯示
+                        // 所以使用嚴格比對或 includes
+                        if (productCity.includes(selectedCity)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

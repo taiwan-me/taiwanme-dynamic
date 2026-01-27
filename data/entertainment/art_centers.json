@@ -1,0 +1,414 @@
+{
+  "id": "art_centers",
+  "title": "Art Centers & Museums",
+  "intro": "Immerse yourself in Taiwan's rich history, diverse culture, and modern art at these world-class museums.",
+  "heroImage": "/image/entertainment/art_banner.jpg",
+  "tags": [
+    "Art",
+    "History",
+    "Culture",
+    "Museum"
+  ],
+  "spots": [
+    {
+      "name": "National Museum of Marine Science and Technology (國立海洋科技博物館)",
+      "city": "Keelung",
+      "image": "/image/entertainment/keelung_nmmst.jpg",
+      "description": "Taiwan's most important marine science museum, dedicated to marine science, technology, and ecology.",
+      "link": "https://www.nmmst.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/ppgEFS9HqHZpVLc69"
+    },
+    {
+      "name": "Keelung Museum of Art (基隆美術館)",
+      "city": "Keelung",
+      "image": "/image/entertainment/keelung_art.jpg",
+      "description": "Formerly the Keelung Cultural Center, this is the city's primary venue for art and cultural exhibitions.",
+      "link": "https://www.klccab.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/s5X19riHsAgfAe8HA"
+    },
+    {
+      "name": "YM Oceanic Culture and Art Museum (陽明海洋文化藝術館)",
+      "city": "Keelung",
+      "image": "/image/entertainment/keelung_ym.jpg",
+      "description": "Located near the harbor, it introduces oceanic culture and the history of shipping.",
+      "link": "https://www.ocam.org.tw/",
+      "mapLink": "https://maps.app.goo.gl/dKX8BGQVSZxLS7G68"
+    },
+    {
+      "name": "National Palace Museum (國立故宮博物院)",
+      "city": "Taipei",
+      "image": "/image/entertainment/npm.jpg",
+      "description": "Houses a world-class collection of Chinese artifacts. The Jadeite Cabbage and Meat-shaped Stone are famous treasures.",
+      "link": "https://www.npm.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/WYof5QA7t1jxaVa77"
+    },
+    {
+      "name": "Taipei Fine Arts Museum (臺北市立美術館)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tfam.jpg",
+      "description": "Taiwan's first modern art museum and an iconic venue for contemporary art.",
+      "link": "https://www.tfam.museum/",
+      "mapLink": "https://maps.app.goo.gl/BRPHM1w2RmdPXZzv5"
+    },
+    {
+      "name": "National Museum of History (國立歷史博物館)",
+      "city": "Taipei",
+      "image": "/image/entertainment/nmh.jpg",
+      "description": "Focuses primarily on historical artifacts from Taiwan and China.",
+      "link": "https://www.nmh.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/NjQGLpzotvgtVeqd8"
+    },
+    {
+      "name": "Museum of Contemporary Art Taipei (台北當代藝術館)",
+      "city": "Taipei",
+      "image": "/image/entertainment/moca.jpg",
+      "description": "Located in a historic building, MOCA Taipei focuses exclusively on contemporary and avant-garde art.",
+      "link": "https://www.mocataipei.org.tw/",
+      "mapLink": "https://maps.app.goo.gl/QjEejJ98aGhC5Kur7"
+    },
+    {
+      "name": "National Taiwan Museum (國立臺灣博物館)",
+      "city": "Taipei",
+      "image": "/image/entertainment/ntm.jpg",
+      "description": "Taiwan's oldest museum, showcasing history and natural science.",
+      "link": "https://www.ntm.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/MBg2jAgsFnxNYGZaA"
+    },
+    {
+      "name": "Huashan 1914 Creative Park (華山1914文化創意產業園區)",
+      "city": "Taipei",
+      "image": "/image/entertainment/huashan.jpg",
+      "description": "A major center for large-scale special exhibitions and cultural events hosted in repurposed industrial warehouses.",
+      "link": "https://www.huashan1914.com/",
+      "mapLink": "https://maps.app.goo.gl/1mEqepaNCYG6wgbt7"
+    },
+    {
+      "name": "MoNTUE (北師美術館)",
+      "city": "Taipei",
+      "image": "/image/entertainment/montue.jpg",
+      "description": "A museum with an academic and experimental nature, known for high-quality curation.",
+      "link": "https://montue.ntue.edu.tw/",
+      "mapLink": "https://maps.app.goo.gl/rCD4Nr9qr7CdrVR66"
+    },
+    {
+      "name": "Yingge Ceramics Museum (新北市立鶯歌陶瓷博物館)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/yingge_ceramics.jpg",
+      "description": "Located in the heart of Taiwan's pottery town, dedicated to ceramic art and history.",
+      "link": "https://www.ceramics.ntpc.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/QHL6f9KSd8tr58GJ6"
+    },
+    {
+      "name": "Shihsanhang Museum of Archaeology (新北市立十三行博物館)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/shihsanhang.jpg",
+      "description": "An archaeological museum dedicated to the prehistoric Iron Age culture of Taiwan.",
+      "link": "https://www.sshm.ntpc.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/tKVW9WBCiXY9dfuD8"
+    },
+    {
+      "name": "Gold Museum (新北市立黃金博物館)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/gold_museum.jpg",
+      "description": "Located in Jinguashi, preserving the history of the gold mining industry in the area.",
+      "link": "https://www.gep.ntpc.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/3YSbQmoCqNBJJpyQ9Juming"
+    },
+    {
+      "name": "Juming Museum (朱銘美術館)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/juming.jpg",
+      "description": "Taiwan's largest outdoor sculpture museum, located in Jinshan, featuring works by Ju Ming.",
+      "link": "https://www.juming.org.tw/",
+      "mapLink": "https://maps.app.goo.gl/zKkWJufMauYfyFoY8"
+    },
+    {
+      "name": "Museum of World Religions (世界宗教博物館)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/mwr.jpg",
+      "description": "Located in Yonghe, this museum introduces major world religions and promotes tolerance.",
+      "link": "https://www.mwr.org.tw/",
+      "mapLink": "https://maps.app.goo.gl/M2SYh9WVudBuY74K8"
+    },
+    {
+      "name": "Taoyuan Children's Art Museum (桃園市兒童美術館)",
+      "city": "Taoyuan",
+      "image": "/image/entertainment/taoyuan_children_art.jpg",
+      "description": "An art experience space designed specifically for children.",
+      "link": "https://tmofa.tycg.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/TrvidtP55owpgMsD7"
+    },
+    {
+      "name": "Hengshan Calligraphy Art Center (橫山書法藝術館)",
+      "city": "Taoyuan",
+      "image": "/image/entertainment/hengshan.jpg",
+      "description": "Taiwan's first official museum dedicated to the art of calligraphy.",
+      "link": "https://tmofa.tycg.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/3QJHUnJETeaHoN9s6"
+    },
+    {
+      "name": "Daxi Wood Art Ecomuseum (大溪木藝生態博物館)",
+      "city": "Taoyuan",
+      "image": "/image/entertainment/daxi_wood.jpg",
+      "description": "A 'museum without walls' preserving the woodcraft culture and historic buildings of Daxi.",
+      "link": "https://wem.tycg.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/B7ffbk5yEeVMiWzD6"
+    },
+    {
+      "name": "Hsinchu City Art Gallery (新竹市美術館)",
+      "city": "Hsinchu City",
+      "image": "/image/entertainment/hsinchu_art.jpg",
+      "description": "A Japanese-era brick building serving as a venue for contemporary art exhibitions.",
+      "link": "https://hsinchucitymuseum.hccg.gov.tw/home/zh-tw/building/353",
+      "mapLink": "https://maps.app.goo.gl/QmUKuWmz7J2fLGLM7"
+    },
+    {
+      "name": "Glass Museum of Hsinchu City (新竹市玻璃工藝博物館)",
+      "city": "Hsinchu City",
+      "image": "/image/entertainment/hsinchu_glass.jpg",
+      "description": "Showcases the famous glass craftsmanship and industry of Hsinchu.",
+      "link": "https://hsinchucitymuseum.hccg.gov.tw/home/zh-tw/building/349",
+      "mapLink": "https://maps.app.goo.gl/7jQTWDESRMgBoyzD8"
+    },
+    {
+      "name": "Xiao Ru Song Art Park (蕭如松藝術園區)",
+      "city": "Hsinchu County",
+      "image": "/image/entertainment/xiaorusong.jpg",
+      "description": "Memorial park for the Hakka watercolor painter Xiao Ru Song, featuring preserved Japanese dormitories.",
+      "link": "https://www.facebook.com/hsiaojusun/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/jK48ZogP1eP7gJTc6"
+    },
+    {
+      "name": "Lanyang Museum (蘭陽博物館)",
+      "city": "Yilan",
+      "image": "/image/entertainment/lanyang.jpg",
+      "description": "Famous for its architecture resembling a cuesta rock formation, it exhibits Yilan's geography and culture.",
+      "link": "https://www.lym.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/3Km8qyKT7C4uALHz9National"
+    },
+    {
+      "name": "National Center for Traditional Arts (國立傳統藝術中心)",
+      "city": "Yilan",
+      "image": "/image/entertainment/ncfta.jpg",
+      "description": "A large park dedicated to preserving and performing Taiwan's traditional crafts and theater.",
+      "link": "https://www.ncfta.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/uMGwAfx9F13cyfj19"
+    },
+    {
+      "name": "Sanyi Wood Sculpture Museum (三義木雕博物館)",
+      "city": "Miaoli",
+      "image": "/image/entertainment/sanyi_wood.jpg",
+      "description": "Taiwan's only public museum dedicated to the art of wood sculpture.",
+      "link": "https://wood.mlc.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/JzmgymgkV7AkJj8h8"
+    },
+    {
+      "name": "Taiwan Hakka Culture Development Center (臺灣客家文化館)",
+      "city": "Miaoli",
+      "image": "/image/entertainment/hakka_miaoli.jpg",
+      "description": "Located in Tongluo, this museum showcases Hakka culture and history.",
+      "link": "https://thcdc.hakka.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/d5t5sxqHnXqapjMc8"
+    },
+    {
+      "name": "National Taiwan Museum of Fine Arts (國立臺灣美術館)",
+      "city": "Taichung",
+      "image": "/image/entertainment/ntmofa.jpg",
+      "description": "The only national-level fine arts museum in Taiwan, featuring a vast campus and sculpture park.",
+      "link": "https://www.ntmofa.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/p1nAeS2v2PP9NT3b8"
+    },
+    {
+      "name": "National Museum of Natural Science (國立自然科學博物館)",
+      "city": "Taichung",
+      "image": "/image/entertainment/nmns.jpg",
+      "description": "One of the most visited museums in Taiwan, covering natural history, science, and anthropology.",
+      "link": "https://www.nmns.edu.tw/",
+      "mapLink": "https://maps.app.goo.gl/ucgvNgLw3T3kiCnT9"
+    },
+    {
+      "name": "National Taichung Theater (臺中國家歌劇院)",
+      "city": "Taichung",
+      "image": "/image/entertainment/ntt.jpg",
+      "description": "Designed by Toyo Ito, this performance venue is an architectural masterpiece with internal exhibition spaces.",
+      "link": "https://www.npac-ntt.org/",
+      "mapLink": "https://maps.app.goo.gl/j5uqpu4knFJwZEyz6"
+    },
+    {
+      "name": "Asia University Museum of Modern Art (亞洲大學現代美術館)",
+      "city": "Taichung",
+      "image": "/image/entertainment/asia_modern.jpg",
+      "description": "Designed by Tadao Ando, housing a collection of modern sculptures and paintings.",
+      "link": "https://asiamodern.asia.edu.tw/",
+      "mapLink": "https://maps.app.goo.gl/Zprdn7qcmf9B5Zaw6"
+    },
+    {
+      "name": "Changhua County Art Museum (彰化縣立美術館)",
+      "city": "Changhua",
+      "image": "/image/entertainment/changhua_art.jpg",
+      "description": "A key venue for modern art exhibitions in Central Taiwan.",
+      "link": "https://fam.bocach.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/nZFkEj485arLan1x7"
+    },
+    {
+      "name": "Yu-Hsiu Museum of Art (毓繡美術館)",
+      "city": "Nantou",
+      "image": "/image/entertainment/yuhsiu.jpg",
+      "description": "A private museum in the mountains of Caotun, famous for contemporary realism art (Reservation required).",
+      "link": "https://yu-hsiu.org/",
+      "mapLink": "https://maps.app.goo.gl/3QNmuMc7dYS8JsqV6"
+    },
+    {
+      "name": "Yunlin Hand Puppet Museum (雲林布袋戲館)",
+      "city": "Yunlin",
+      "image": "/image/entertainment/yunlin_puppet.jpg",
+      "description": "Located in Huwei, exhibiting the history and culture of Taiwanese puppetry.",
+      "link": "https://www.facebook.com/yunlin.puppet/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/4bu8mKEMukCmbaTo7"
+    },
+    {
+      "name": "Chiayi Art Museum (嘉義市立美術館)",
+      "city": "Chiayi City",
+      "image": "/image/entertainment/chiayi_art.jpg",
+      "description": "Converted from the old Tobacco and Liquor Bureau, a landmark blending old and new architecture.",
+      "link": "https://chiayiartmuseum.chiayi.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/1TLivpJqAL21WPEBA"
+    },
+    {
+      "name": "Southern Branch of the National Palace Museum (故宮南院)",
+      "city": "Chiayi County",
+      "image": "/image/entertainment/npm_south.jpg",
+      "description": "Positioned as an Asian Art and Culture Museum with architecture inspired by Chinese calligraphy.",
+      "link": "https://south.npm.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/sihivax7zBVfoM6XA"
+    },
+    {
+      "name": "Chimei Museum (奇美博物館)",
+      "city": "Tainan",
+      "image": "/image/entertainment/chimei.jpg",
+      "description": "A European-style palace housing a rich collection of Western art, musical instruments, and arms.",
+      "link": "https://www.chimeimuseum.org/",
+      "mapLink": "https://maps.app.goo.gl/SpxibVsSAyzktp1n7"
+    },
+    {
+      "name": "Tainan Art Museum (臺南市美術館)",
+      "city": "Tainan",
+      "image": "/image/entertainment/tnam.jpg",
+      "description": "Consists of Building 1 (historic) and Building 2 (modern), serving as a new art landmark in Tainan.",
+      "link": "https://www.tnam.museum/",
+      "mapLink": "https://maps.app.goo.gl/yc19qha66t8piSam6"
+    },
+    {
+      "name": "National Museum of Taiwan History (國立臺灣歷史博物館)",
+      "city": "Tainan",
+      "image": "/image/entertainment/nmth.jpg",
+      "description": "Located in Annan District, it comprehensively narrates the history of Taiwan.",
+      "link": "https://www.nmth.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/DL42FTChK1u9gFK96"
+    },
+    {
+      "name": "National Museum of Taiwan Literature (國立臺灣文學館)",
+      "city": "Tainan",
+      "image": "/image/entertainment/nmtl.jpg",
+      "description": "Taiwan's first national museum dedicated to literature, housed in a historic hall.",
+      "link": "https://www.nmtl.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/4XPmtt4NZRTNuPxf7"
+    },
+    {
+      "name": "Kaohsiung Museum of Fine Arts (高雄市立美術館)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/kmfa.jpg",
+      "description": "The most important public art museum in Southern Taiwan, located within an ecological park.",
+      "link": "https://www.kmfa.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/TsY8bsTEVJyGnkqF6"
+    },
+    {
+      "name": "National Science and Technology Museum (國立科學工藝博物館)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/nstm.jpg",
+      "description": "A museum of applied science and industrial technology.",
+      "link": "https://www.nstm.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/8twewDTagq7LjNLT7"
+    },
+    {
+      "name": "Weiwuying National Kaohsiung Center for the Arts (衛武營國家藝術文化中心)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/weiwuying.jpg",
+      "description": "The world's largest single-roof performing arts center, also featuring exhibition spaces.",
+      "link": "https://www.npac-weiwuying.org/",
+      "mapLink": "https://maps.app.goo.gl/2MRW56fovVmZyeSQ8"
+    },
+    {
+      "name": "Pier-2 Art Center (駁二藝術特區)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/pier2.jpg",
+      "description": "An open contemporary art center created from repurposed warehouses.",
+      "link": "https://pier2.org/",
+      "mapLink": "https://maps.app.goo.gl/PS7mrZeBRzPhFnv78"
+    },
+    {
+      "name": "National Museum of Marine Biology and Aquarium (國立海洋生物博物館)",
+      "city": "Pingtung",
+      "image": "/image/entertainment/nmmba.jpg",
+      "description": "A world-class aquarium and museum focusing on marine ecology education.",
+      "link": "https://www.nmmba.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/WdQmXDsvBFxADb2eA"
+    },
+    {
+      "name": "Pingtung Art Museum (屏東美術館)",
+      "city": "Pingtung",
+      "image": "/image/entertainment/pingtung_art.jpg",
+      "description": "Taiwan's first township-level art museum, converted from the old City Hall.",
+      "link": "https://ptam.ptcg.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/mUUNG2BF7cFQta6M7"
+    },
+    {
+      "name": "Pingyan 1936 Culture Base (屏菸1936文化基地)",
+      "city": "Pingtung",
+      "image": "/image/entertainment/pingyan1936.jpg",
+      "description": "A large museum complex converted from an old tobacco factory, housing Hakka and Indigenous museums.",
+      "link": "https://www.cultural.pthg.gov.tw/pt1936/Default.aspx",
+      "mapLink": "https://maps.app.goo.gl/Jq9nee5AGM9nBeML8"
+    },
+    {
+      "name": "Hualien County Stone Sculpture Museum (花蓮縣石雕博物館)",
+      "city": "Hualien",
+      "image": "/image/entertainment/hualien_stone.jpg",
+      "description": "The first museum in Taiwan dedicated to stone sculpture.",
+      "link": "https://stone.hccc.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/bLj4zdqYJkeXZJEH8"
+    },
+    {
+      "name": "National Museum of Prehistory (國立臺灣史前文化博物館)",
+      "city": "Taitung",
+      "image": "/image/entertainment/nmp.jpg",
+      "description": "Showcases the rich prehistoric culture of Taiwan and Austronesian heritage.",
+      "link": "https://www.nmp.gov.tw/",
+      "mapLink": "https://maps.app.goo.gl/1bWEmCP2ibJFYZoS8"
+    },
+    {
+      "name": "Taitung Art Museum (臺東美術館)",
+      "city": "Taitung",
+      "image": "/image/entertainment/taitung_art.jpg",
+      "description": "A small art museum featuring design elements inspired by the nature of Eastern Taiwan.",
+      "link": "https://tm.ccl.ttct.edu.tw/",
+      "mapLink": "https://maps.app.goo.gl/MWySLLheZumVpvAb9"
+    },
+    {
+      "name": "Penghu Living Museum (澎湖生活博物館)",
+      "city": "Penghu",
+      "image": "/image/entertainment/penghu_living.jpg",
+      "description": "Introduces the daily life, history, and marine culture of the Penghu Islands.",
+      "link": "https://www.phlm.nat.gov.tw/ch/index.jsp",
+      "mapLink": "https://maps.app.goo.gl/jRGA4JczCAHYL2YB7"
+    },
+    {
+      "name": "Kinmen Cultural Park - History and Folk Museum (金門文化園區歷史民俗博物館)",
+      "city": "Kinmen",
+      "image": "/image/entertainment/kinmen_folk.jpg",
+      "description": "The largest museum in Kinmen, showcasing Minnan culture and local history.",
+      "link": "https://museums.moc.gov.tw/MusData/Detail?museumsId=f4d305f7-ec3f-455d-b9d9-955cf11ece00",
+      "mapLink": "https://maps.app.goo.gl/9HwuggCixTDCgQ3J8"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "id": "amusement_parks",
+  "title": "Amusement Parks in Taiwan",
+  "intro": "Discover the most thrilling rides, family-friendly theme parks, and cultural resorts across Taiwan.",
+  "heroImage": "/image/entertainment/amusement_banner.jpg",
+  "tags": ["Family", "Fun", "Rides", "Culture", "Nature"],
+  "spots": [
+    {
+      "name": "Taipei Children's Amusement Park (臺北市立兒童新樂園)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tcp.jpg",
+      "description": "An affordable, family-friendly park operated by the Taipei Metro. Features 13 major rides and an indoor play area, perfect for younger children.",
+      "link": "https://www.tcap.taipei/",
+      "mapLink": "https://maps.app.goo.gl/DqDn1VEGFpDg8XBbA"
+    },
+    {
+      "name": "Yehliu Ocean World (野柳海洋世界)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/yehliu_ocean.jpg",
+      "description": "Located beside the famous Geopark, featuring marine life exhibits and high-diving performances. A core attraction of the North Coast.",
+      "link": "https://www.oceanworld.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/L6WzwPcjVmXzTmJz6"
+    },
+    {
+      "name": "Yun Hsien Resort (雲仙樂園)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/yun_hsien.jpg",
+      "description": "The only park in Taiwan accessible solely by cable car. A secluded spot in Wulai famous for Atayal culture, ferns, and fireflies.",
+      "link": "https://www.yun-hsien.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/bbHJeD6pVJQH58Ee7"
+    },
+    {
+      "name": "Window on World Theme Park (小人國主題樂園)",
+      "city": "Taoyuan",
+      "image": "/image/entertainment/window_on_world.jpg",
+      "description": "Famous for its exquisite miniature models of world landmarks. The park also features indoor/outdoor rides and a water park.",
+      "link": "https://www.wow.com.tw/index.aspx",
+      "mapLink": "https://maps.app.goo.gl/JncVuR8P6B6jqrPi9"
+    },
+    {
+      "name": "Leofoo Village Theme Park (六福村主題遊樂園)",
+      "city": "Hsinchu",
+      "image": "/image/entertainment/leofoo.jpg",
+      "description": "Known as the 'Disney of Taiwan', combining a safari zoo with a mechanical theme park. Features the iconic 'Screaming Condor' ride.",
+      "link": "https://www.leofoo.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/nEygpAYj5UZEto1w7"
+    },
+    {
+      "name": "Little Ding-Dong Science Theme Park (小叮噹科學主題樂園)",
+      "city": "Hsinchu",
+      "image": "/image/entertainment/little_ding_dong.jpg",
+      "description": "An educational park focusing on scientific principles like optics and acoustics. Also houses Taiwan's largest indoor ski resort.",
+      "link": "https://www.ding-dong.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/ziyhYFYysFuaSL9u6"
+    },
+    {
+      "name": "Wan Ruey Forest Park (萬瑞森林樂園)",
+      "city": "Hsinchu",
+      "image": "/image/entertainment/wan_ruey.jpg",
+      "description": "Situated in Hengshan Township, this forest park offers cabin accommodation, camping, and mountain training facilities surrounded by natural beauty.",
+      "link": "https://wanruey.weebly.com/",
+      "mapLink": "https://maps.app.goo.gl/Bs9Pnobg7g6iuoSz6"
+    },
+    {
+      "name": "West Lake Resortopia (西湖渡假村)",
+      "city": "Miaoli",
+      "image": "/image/entertainment/west_lake.jpg",
+      "description": "A European-style resort famous for its Andersen fairy tale themes and the stunning Tung Blossom season.",
+      "link": "https://www.westlake.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/QtgphxiCT5VK41iT7"
+    },
+    {
+      "name": "Shangrila Paradise (香格里拉樂園)",
+      "city": "Miaoli",
+      "image": "/image/entertainment/shangrila.jpg",
+      "description": "Combines Hakka culture with vintage amusement rides. It is also home to 'CMP Village', a popular glamping and cultural aesthetics site.",
+      "link": "https://www.shangrila.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/dxMT96fcruua1izA6"
+    },
+    {
+      "name": "Lihpao Land (麗寶樂園)",
+      "city": "Taichung",
+      "image": "/image/entertainment/lihpao.jpg",
+      "description": "Central Taiwan's largest resort with land/water parks, an outlet mall, a racing circuit, and the 'Sky Dream' Ferris wheel.",
+      "link": "https://www.lihpaoresort.com/",
+      "mapLink": "https://maps.app.goo.gl/8usfMv4XSbzgdwzh6"
+    },
+    {
+      "name": "Dongshih Forest Garden (東勢林場遊樂區)",
+      "city": "Taichung",
+      "image": "/image/entertainment/dongshih.jpg",
+      "description": "Known as the 'Yangmingshan of Central Taiwan'. A prime spot for eco-tourism, firefly watching, and forest bathing.",
+      "link": "https://www.tsfa.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/UA8QicvGg2k2dKCL6"
+    },
+    {
+      "name": "Formosan Aboriginal Culture Village (九族文化村)",
+      "city": "Nantou",
+      "image": "/image/entertainment/formosan_aboriginal.jpg",
+      "description": "Preserves the heritage of Taiwan's indigenous tribes. Features cultural shows, rides, and a cable car connection to Sun Moon Lake.",
+      "link": "https://www.nine.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/TvnWbA5p1C34i6Mb8"
+    },
+    {
+      "name": "Atayal Resort (泰雅渡假村)",
+      "city": "Nantou",
+      "image": "/image/entertainment/atayal.jpg",
+      "description": "Located in Guoxing Township, offering high-altitude skywalks, hot springs, and immersive Atayal indigenous culture experiences.",
+      "link": "https://www.atayal.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/ue8PFUuoToxzdsMm9v"
+    },
+    {
+      "name": "Sun-Link-Sea Forest Resort (杉林溪森林生態渡假園區)",
+      "city": "Nantou",
+      "image": "/image/entertainment/sun_link_sea.jpg",
+      "description": "A high-altitude forest park famous for its waterfalls, hydrangeas, and peony flower seasons. Great for hiking.",
+      "link": "https://www.goto307.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/5dWG34TzmGG9wCuW8"
+    },
+    {
+      "name": "Janfusun Fancyworld (劍湖山世界)",
+      "city": "Yunlin",
+      "image": "/image/entertainment/janfusun.jpg",
+      "description": "A major landmark in Southern Taiwan featuring the G5 Diving Machine coaster and massive New Year's Eve fireworks.",
+      "link": "https://www.janfusun.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/kGyDsBjmbT3ob4Dp8"
+    },
+    {
+      "name": "Wanpi World Safari Zoo (頑皮世界野生動物園)",
+      "city": "Tainan",
+      "image": "/image/entertainment/wanpi_world.jpg",
+      "description": "Southern Taiwan's largest semi-open zoo. Emphasizes close interaction with animals like capybaras and giraffes.",
+      "link": "https://www.wanpiworldzoo.com.tw/index.php?lang=tw",
+      "mapLink": "https://maps.app.goo.gl/oaUXeyohJ5br2zGY7"
+    },
+    {
+      "name": "Liuying Jianshanpi Resort (柳營尖山埤渡假村)",
+      "city": "Tainan",
+      "image": "/image/entertainment/jianshanpi.jpg",
+      "description": "A scenic lakeside resort managed by Taiwan Sugar Corp. Offers paintball, canoeing, lake cruises, and wooden cabin stays.",
+      "link": "https://www.taisugar.com.tw/resting/jianshanpi/",
+      "mapLink": "https://maps.app.goo.gl/bnY5AbfsPGUGczHs7"
+    },
+    {
+      "name": "E-DA Theme Park (義大遊樂世界)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/eda.jpg",
+      "description": "A Greek-themed park part of a massive resort complex with an outlet mall and hotels. Offers a romantic vacation vibe.",
+      "link": "http://www.edathemepark.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/obha9LFihWLqQs136"
+    },
+    {
+      "name": "Suzuka Circuit Park (鈴鹿賽道樂園)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/suzuka.jpg",
+      "description": "The only driving-themed park in Taiwan, authorized by Japan's Suzuka Circuit. Features a professional go-kart track.",
+      "link": "http://www.suzukacircuitpark.com/",
+      "mapLink": "https://maps.app.goo.gl/ASvweyGPp6oQRtn8A"
+    },
+    {
+      "name": "Xiao Kenting Resort (小墾丁渡假村)",
+      "city": "Pingtung",
+      "image": "/image/entertainment/xiao_kenting.jpg",
+      "description": "A log cabin resort located in Manzhou Township. Famous for its starry skies and ecological tours, offering a peaceful escape from the beach crowds.",
+      "link": "https://www.kentington.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/yTG2NaXXSGT5nEzaA"
+    },
+    {
+      "name": "Dancewoods Japanese Theme Park (綠舞日式主題園區)",
+      "city": "Yilan",
+      "image": "/image/entertainment/green_dance.jpg",
+      "description": "Taiwan's first Japanese garden-themed park. Offers Yukata experiences, matcha tea ceremonies, and interactions with cute animals like capybaras.",
+      "link": "https://www.dwsresort.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/nVRdZhkbYSUA43VJ9"
+    },
+    {
+      "name": "Farglory Ocean Park (遠雄海洋公園)",
+      "city": "Hualien",
+      "image": "/image/entertainment/farglory.jpg",
+      "description": "Taiwan's only international marine theme park. Built along the coast, offering dolphin shows and stunning Pacific Ocean views.",
+      "link": "https://www.farglory-oceanpark.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/5b44kGyQJwD2ZRu26"
+    },
+    {
+      "name": "Yiyuan Resort (怡園渡假村)",
+      "city": "Hualien",
+      "image": "/image/entertainment/yiyuan.jpg",
+      "description": "An eco-friendly resort known as a 'Home for Old Trees', featuring over 3,000 transplanted trees, pools, and slides for family fun.",
+      "link": "http://www.yiyuanresort.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/CUy1T7FtdVuuo75fA"
+    }
+  ]
+}

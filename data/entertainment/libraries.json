@@ -1,0 +1,41 @@
+{
+  "id": "libraries",
+  "title": "Public Libraries in Taiwan",
+  "intro": "Explore the most beautiful and quietest reading spaces across Taiwan.",
+  "heroImage": "/image/entertainment/library_hero.jpg",
+  "tags": ["Reading", "Architecture", "Quiet"],
+  "spots": [
+    {
+      "name": "Taipei Public Library Beitou Branch",
+      "city": "Taipei",
+      "image": "/image/entertainment/beitou_lib.jpg",
+      "description": "Taiwan's first green library, famous for its wooden architecture nestled in the park.",
+      "link": "https://tpml.gov.taipei/",
+      "mapLink": "https://goo.gl/maps/123"
+    },
+    {
+      "name": "Kaohsiung Main Public Library",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/ks_lib.jpg",
+      "description": "A stunning green building with a hanging garden offering views of the harbor.",
+      "link": "https://www.ksml.edu.tw/",
+      "mapLink": "https://goo.gl/maps/456"
+    },
+    {
+      "name": "National Library of Public Information",
+      "city": "Taichung",
+      "image": "/image/entertainment/tc_lib.jpg",
+      "description": "Known for its unique white stream-like architecture.",
+      "link": "https://www.nlpi.edu.tw/",
+      "mapLink": "https://goo.gl/maps/789"
+    },
+    {
+      "name": "Tainan Public Library (New Main Library)",
+      "city": "Tainan",
+      "image": "/image/entertainment/tn_lib.jpg",
+      "description": "A modern cultural hub with a distinctive gold-colored exterior.",
+      "link": "https://www.tnpl.tn.edu.tw/",
+      "mapLink": "https://goo.gl/maps/101"
+    }
+  ]
+}

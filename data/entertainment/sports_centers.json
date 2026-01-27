@@ -1,0 +1,41 @@
+{
+  "id": "sports_centers",
+  "title": "Sports Centers & Gyms",
+  "intro": "Stay active with these top-rated sports facilities.",
+  "heroImage": "/image/entertainment/sports_hero.jpg",
+  "tags": ["Fitness", "Swimming", "Badminton"],
+  "spots": [
+    {
+      "name": "Taipei Da-an Sports Center",
+      "city": "Taipei",
+      "image": "/image/entertainment/daan_sports.jpg",
+      "description": "Features swimming pools, gym, and badminton courts.",
+      "link": "https://dasc.cyc.org.tw/",
+      "mapLink": "https://goo.gl/maps/sport1"
+    },
+    {
+      "name": "New Taipei Banqiao Sports Center",
+      "city": "New Taipei",
+      "image": "/image/entertainment/banqiao_sports.jpg",
+      "description": "A comprehensive facility for residents in New Taipei City.",
+      "link": "https://bqs.cyc.org.tw/",
+      "mapLink": "https://goo.gl/maps/sport2"
+    },
+    {
+      "name": "Kaohsiung Fengshan Sports Center",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/fengshan_sports.jpg",
+      "description": "Modern equipment and spacious exercise areas.",
+      "link": "https://kfsc.cyc.org.tw/",
+      "mapLink": "https://goo.gl/maps/sport3"
+    },
+    {
+      "name": "Taichung Chao Ma Sports Center",
+      "city": "Taichung",
+      "image": "/image/entertainment/chaoma_sports.jpg",
+      "description": "Known for its professional badminton courts and eco-friendly design.",
+      "link": "https://cmcsc.cyc.org.tw/",
+      "mapLink": "https://goo.gl/maps/sport4"
+    }
+  ]
+}
