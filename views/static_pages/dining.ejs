@@ -64,10 +64,16 @@
         }
 
         /* ========================================= */
-        /* 3. Resource Sections */
+        /* 3. Resource Sections (✅ 點點背景)       */
         /* ========================================= */
         .resource-section {
-            background: #fff;
+            /* 基底顏色 */
+            background-color: #fff;
+            
+            /* ✅ CSS 點點背景魔法 */
+            background-image: radial-gradient(#e0e0e0 1.5px, transparent 1.5px);
+            background-size: 24px 24px; /* 控制點點的間距 */
+
             border: 2px solid #eee;
             border-radius: 16px;
             padding: 50px;
@@ -87,11 +93,17 @@
         .res-title { 
             font-size: 2rem; font-weight: 700; color: #333; margin-bottom: 20px; 
             text-transform: uppercase; letter-spacing: 1px; font-family: serif;
+            background-color: #fff; /* 標題背後加白底，確保文字清晰 */
+            display: inline-block;
+            padding: 0 10px;
         }
         
         .res-desc { 
             color: #666; line-height: 1.8; margin-bottom: 40px; font-size: 1.05rem;
-            max-width: 700px; margin-left: auto; margin-right: auto; 
+            max-width: 700px; margin-left: auto; margin-right: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* 微微半透明白底 */
+            padding: 10px;
+            border-radius: 8px;
         }
         
         /* ========================================= */
@@ -108,7 +120,7 @@
             flex-direction: column;
             justify-content: center;
             text-decoration: none;
-            background: #fafafa;
+            background: #fff; /* 連結卡片保持純白背景 */
             padding: 25px;
             border-radius: 10px;
             border: 1px solid #e0e0e0;
@@ -199,6 +211,28 @@
                 <a href="https://guide.michelin.com/tw/en/restaurants/vegetarian" target="_blank" class="auth-link">
                     <span class="link-name">Michelin Guide (Vegetarian)</span>
                     <span class="link-url">guide.michelin.com</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="resource-section">
+            <span class="res-icon">🧋</span>
+            <h2 class="res-title">Taiwan Night Markets</h2>
+            <p class="res-desc">
+                The heart and soul of Taiwanese cuisine beats in its night markets. From the Michelin-recommended street stalls (Bib Gourmand) to local favorites, this is where you taste the real Taiwan. Don't miss the Bubble Tea and Stinky Tofu!
+            </p>
+            <div class="link-grid">
+                <a href="https://eng.taiwan.net.tw/m1.aspx?sNo=0002092" target="_blank" class="auth-link">
+                    <span class="link-name">Taiwan Tourism Bureau (Night Markets)</span>
+                    <span class="link-url">eng.taiwan.net.tw</span>
+                </a>
+                <a href="https://guide.michelin.com/tw/en/selection/taiwan/bib-gourmand" target="_blank" class="auth-link">
+                    <span class="link-name">Michelin Bib Gourmand (Street Food)</span>
+                    <span class="link-url">guide.michelin.com</span>
+                </a>
+                <a href="https://www.travelking.com.tw/eng/tourguide/nightmarket/" target="_blank" class="auth-link">
+                    <span class="link-name">Travel King Night Market Guide</span>
+                    <span class="link-url">travelking.com.tw</span>
                 </a>
             </div>
         </div>
