@@ -1,41 +1,385 @@
 {
   "id": "bookstores",
-  "title": "Bookstores & Stationery",
-  "intro": "Discover independent bookstores and stationery havens.",
-  "heroImage": "/image/entertainment/bookstore_hero.jpg",
-  "tags": ["Books", "Stationery", "Culture"],
+  "title": "Bookstores",
+  "intro": "Discover the most beautiful and unique reading spaces across Taiwan, from massive flagship stores to cozy independent bookshops.",
+  "heroImage": "/image/entertainment/bookstore_banner.jpg",
+  "tags": ["Books", "Culture", "Lifestyle", "Design"],
   "spots": [
     {
-      "name": "Eslite Spectrum Songyan",
-      "city": "Taipei",
-      "image": "/image/entertainment/eslite.jpg",
-      "description": "A cultural landmark combining books, design, and lifestyle.",
-      "link": "https://www.eslitecorp.com/",
-      "mapLink": "https://goo.gl/maps/book1"
+      "name": "Eslite Spectrum Pingtung (誠品生活 屏東店)",
+      "city": "Pingtung",
+      "image": "/image/entertainment/pt_eslite.jpg",
+      "description": "Located on the 5th floor of Pacific Department Store. A refined reading space serving book lovers in Pingtung City.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/E2m28hSkXMBsE1De6"
     },
     {
-      "name": "Tsutaya Bookstore (Nangang)",
-      "city": "Taipei",
-      "image": "/image/entertainment/tsutaya.jpg",
-      "description": "One of the most beautiful bookstores from Japan, offering a cozy reading environment.",
+      "name": "Eslite Spectrum Kaohsiung Far Eastern (誠品生活 高雄大遠百店)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/ks_eslite_fe.jpg",
+      "description": "Located in the Sanduo Shopping District (17F). Famous for its stepped reading area offering excellent views of the harbor city.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/k4m7oqCZ4fTQ2HVz5"
+    },
+    {
+      "name": "Kingstone Books Sanduo (金石堂 高雄三多店)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/ks_kingstone_sanduo.jpg",
+      "description": "[New in 2024] Located in Shin Kong Mitsukoshi (2F). A modern, bright reading space serving the Sanduo commercial area.",
+      "link": "https://www.kingstone.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/gonQdUMUZzXoJXHt6"
+    },
+    {
+      "name": "Eslite Spectrum Pier-2 (誠品生活 駁二店)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/ks_eslite_pier2.jpg",
+      "description": "Located in Warehouse C4 of the Pier-2 Art Center. The closest Eslite to the sea, featuring a unique industrial design.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/uvf2XyyxuJ3Ljn2T8"
+    },
+    {
+      "name": "TSUTAYA BOOKSTORE Kaohsiung Talee (高雄大立店)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/ks_tsutaya.jpg",
+      "description": "The first Tsutaya in Southern Taiwan. Features a refined red brick design and combines with WIRED CHAYA tea house.",
       "link": "http://tsutaya.com.tw/",
-      "mapLink": "https://goo.gl/maps/book2"
+      "mapLink": "https://maps.app.goo.gl/6CTzvT4h8Gttm8kv8"
     },
     {
-      "name": "Miyahara Ice Cream (Dawn Cake)",
-      "city": "Taichung",
-      "image": "/image/entertainment/miyahara.jpg",
-      "description": "Famous for its Harry Potter-like interior, originally an eye clinic.",
-      "link": "https://www.dawncake.com.tw/",
-      "mapLink": "https://goo.gl/maps/book3"
+      "name": "Takao Books (三餘書店)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/ks_takao.jpg",
+      "description": "The most representative independent bookstore in Kaohsiung. Located in an old house, focusing on local culture and social issues.",
+      "link": "https://www.takaobooks.tw/",
+      "mapLink": "https://maps.app.goo.gl/vt5NXB4DSwJcfcLRA"
     },
     {
-      "name": "Ubuntu Bookstore",
+      "name": "Chengfeng Books (承風書店)",
+      "city": "Kaohsiung",
+      "image": "/image/entertainment/ks_chengfeng.jpg",
+      "description": "Located on the 7th floor of TAI Urban Resort. Offers a stunning high-altitude view of the harbor.",
+      "link": "https://www.taiurbanresort.com.tw/facility-detail/7_bookstore/",
+      "mapLink": "https://maps.app.goo.gl/ctoNuHPdDH86mWNY8"
+    },
+    {
+      "name": "Eslite Spectrum T.S. Mall (誠品生活 南紡店)",
       "city": "Tainan",
-      "image": "/image/entertainment/ubuntu.jpg",
-      "description": "A beautiful independent bookstore by the canal.",
-      "link": "https://www.facebook.com/ubuntubook/",
-      "mapLink": "https://goo.gl/maps/book4"
+      "image": "/image/entertainment/tn_eslite_ts.jpg",
+      "description": "The largest Eslite bookstore in Tainan, located within the T.S. Mall. A comprehensive cultural hub.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/wXfQyNWt4ZxB6kDT7"
+    },
+    {
+      "name": "Ubuntu Bookstore Huanhe (烏邦圖書店 環河店)",
+      "city": "Tainan",
+      "image": "/image/entertainment/tn_ubuntu.jpg",
+      "description": "Known as the 'Bookstore Floating on Water'. A pure white space located right next to the Anping Canal.",
+      "link": "https://www.facebook.com/ubuntubook01/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/KJHG7WbNPViTap3h7"
+    },
+    {
+      "name": "Ubuntu Bookstore Main Library (烏邦圖書店 總圖店)",
+      "city": "Tainan",
+      "image": "/image/entertainment/tn_ubuntu_main.jpg",
+      "description": "Located inside the Tainan Public Library Main Branch. A quiet and artistic reading corner.",
+      "link": "https://www.facebook.com/ubuntubook01/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/fkdMZVnBRUCmd7pK7"
+    },
+    {
+      "name": "Cheng-Chung Bookstores (政大書城)",
+      "city": "Tainan",
+      "image": "/image/entertainment/tn_chengchung.jpg",
+      "description": "A legendary book haven for locals located on Ximen Road. Known for its generous discounts and wide selection.",
+      "link": "https://www.facebook.com/zdbook/",
+      "mapLink": "https://maps.app.goo.gl/nSQNydXqf5enZLek9"
+    },
+    {
+      "name": "Nannan Books (南南本屋)",
+      "city": "Tainan",
+      "image": "/image/entertainment/tn_nannan.jpg",
+      "description": "A hidden gem in the alleyways of Tainan, offering a curated selection of books and a cozy atmosphere.",
+      "link": "https://www.facebook.com/nannanbooks/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/nk9LFSCVxwCyaJPPA"
+    },
+    {
+      "name": "Eslite Spectrum Chiayi Art Museum (嘉義美術館限定店)",
+      "city": "Chiayi",
+      "image": "/image/entertainment/cy_eslite.jpg",
+      "description": "Housed in the historic wing of the art museum. Features beautiful lake-green door frames and vintage window grilles.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/adFTZwCh7skUypnL7"
+    },
+    {
+      "name": "Kingstone Books Nice Plaza (金石堂 嘉義耐斯店)",
+      "city": "Chiayi",
+      "image": "/image/entertainment/cy_kingstone.jpg",
+      "description": "Located in Nice Plaza. A key bookstore serving the Chiayi region with a comfortable reading environment.",
+      "link": "https://www.kingstone.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/mzR3vi5ETnphkon1A"
+    },
+    {
+      "name": "Hong Ya Book (洪雅書房)",
+      "city": "Chiayi",
+      "image": "/image/entertainment/cy_hongya.jpg",
+      "description": "A legendary independent bookstore known for its active engagement in social movements and environmental issues.",
+      "link": "https://www.facebook.com/hoanyabookstore/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/TEKfWHeQcvLLzbqu5"
+    },
+    {
+      "name": "Books.com.tw Dream Plaza (博客來實體旗艦店)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tp_books_dream.jpg",
+      "description": "[New in 2025] The first physical flagship store of Taiwan's largest online bookseller, located in Xinyi District. Open 24 hours.",
+      "link": "https://www.books.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/bK6PMMgAN6tG91J89"
+    },
+    {
+      "name": "Eslite Spectrum Songyan (誠品生活松菸店)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tp_eslite_songyan.jpg",
+      "description": "The new 24-hour bookstore successor. Located in the Songshan Cultural Park, combining a cinema, performance hall, and vinyl records.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/6aQMnyjKCYPvo6Dg9"
+    },
+    {
+      "name": "TSUTAYA BOOKSTORE Xinyi (信義店)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tp_tsutaya_xinyi.jpg",
+      "description": "Located in Uni-President Department Store. Offers a refined lifestyle reading experience in the heart of Xinyi District.",
+      "link": "http://tsutaya.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/yjeGYaiKjvyrT8rv6Eslite"
+    },
+    {
+      "name": "Eslite Spectrum NTU (誠品生活 台大店)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tp_eslite_ntu.jpg",
+      "description": "Located in Da'an District near National Taiwan University. A hub for academic and literary works.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/iHR7hyGnwndgvPXFA"
+    },
+    {
+      "name": "Boven Magazine Library (Boven 雜誌圖書館)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tp_boven.jpg",
+      "description": "Located in Da'an District. The world's first library dedicated to magazines. A must-visit for designers (Entrance fee required).",
+      "link": "https://www.facebook.com/boven437/",
+      "mapLink": "https://maps.app.goo.gl/4rxSTuQBxVirwuU99"
+    },
+    {
+      "name": "Eslite Spectrum Nanxi (誠品生活 南西店)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tp_eslite_nanxi.jpg",
+      "description": "Located in the trendy Zhongshan District. Formerly a cinema, it retains a high-ceiling theater-like reading space.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/oZuaYMzAeWr6WHvD6"
+    },
+    {
+      "name": "Eslite R79 (誠品 R79)",
+      "city": "Taipei",
+      "image": "/image/entertainment/tp_eslite_r79.jpg",
+      "description": "Taiwan's longest underground book street, connecting Zhongshan and Shuanglian MRT stations. A cultural promenade.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/qHrRawkJn8jNu3HX6"
+    },
+    {
+      "name": "Eslite Spectrum Xindian (誠品生活新店)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/ntp_eslite_xindian.jpg",
+      "description": "Located in Yes!Life Mall. Features a spectacular 30-meter high atrium and massive red brick arches.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/WJVe17pn15783R8P9"
+    },
+    {
+      "name": "Small Books (小小書房)",
+      "city": "New Taipei",
+      "image": "/image/entertainment/ntp_smallbooks.jpg",
+      "description": "Hidden in the alleys of Yonghe. A small but influential independent bookstore with deep cultural roots.",
+      "link": "https://www.facebook.com/smallbookpub/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/62sHjNRrnFKSrN5t8"
+    },
+    {
+      "name": "Sea To See Bookstore (見書店)",
+      "city": "Keelung",
+      "image": "/image/entertainment/kl_seatosee.jpg",
+      "description": "Located in E-Square, this independent bookstore features a blue ocean-themed design representing Keelung's harbor spirit.",
+      "link": "https://www.facebook.com/seatoseebookafe/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/cekqpAMXs5mFuQ6C6"
+    },
+    {
+      "name": "TSUTAYA BOOKSTORE Taoyuan Arts Plaza (桃園藝文店)",
+      "city": "Taoyuan",
+      "image": "/image/entertainment/ty_tsutaya.jpg",
+      "description": "Hailed as one of the most beautiful Tsutaya stores in Taiwan, located in the cultural arts district.",
+      "link": "http://tsutaya.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/faCYjgohC6dR4F4B8"
+    },
+    {
+      "name": "Qing Geng Yu Du Bookstore (晴耕雨讀小書院)",
+      "city": "Taoyuan",
+      "image": "/image/entertainment/ty_qinggeng.jpg",
+      "description": "A charming countryside bookstore in Longtan with a grassy lawn, embodying the lifestyle of 'farming when sunny, reading when rainy'.",
+      "link": "https://www.facebook.com/lifestylebookstore/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/cDFtQv6qHPQa7rZZ9"
+    },
+    {
+      "name": "TSUTAYA BOOKSTORE Hsinchu Nanya (新竹湳雅店)",
+      "city": "Hsinchu",
+      "image": "/image/entertainment/hc_tsutaya.jpg",
+      "description": "Features a stunning two-story high circular book wall that offers a visually immersive reading experience.",
+      "link": "http://tsutaya.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/Y1xcqu5mrwjSCsg16"
+    },
+    {
+      "name": "Or Book Store (或者書店)",
+      "city": "Hsinchu",
+      "image": "/image/entertainment/hc_or.jpg",
+      "description": "Located in the New Tile House Hakka Cultural District, combining reading with dining in a cultural setting.",
+      "link": "https://www.orlifestyles.com/",
+      "mapLink": "https://maps.app.goo.gl/KJhux59BRcQrEEKL8"
+    },
+    {
+      "name": "Eslite Spectrum Park Lane (勤美綠園道店)",
+      "city": "Taichung",
+      "image": "/image/entertainment/tc_eslite_park.jpg",
+      "description": "Famous for its vertical garden walls and location along the Calligraphy Greenway, creating a nature-infused reading vibe.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/9rb5rnmz69ybyRda9"
+    },
+    {
+      "name": "TSUTAYA BOOKSTORE Taichung Municipal (台中市政店)",
+      "city": "Taichung",
+      "image": "/image/entertainment/tc_tsutaya_municipal.jpg",
+      "description": "Located in the 7th Redevelopment Zone. A spacious and stylish bookstore offering a premium lifestyle experience.",
+      "link": "http://tsutaya.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/RcqSTW33bnmuGXLa9"
+    },
+    {
+      "name": "Central Bookstore (中央書局)",
+      "city": "Taichung",
+      "image": "/image/entertainment/tc_central.jpg",
+      "description": "A century-old cultural landmark in Taichung's Central District, recently revitalized as a modern reading and dining space.",
+      "link": "https://www.facebook.com/centralbook.1927/",
+      "mapLink": "https://maps.app.goo.gl/w4xzZTFHaeHU8FD17"
+    },
+    {
+      "name": "TSUTAYA BOOKSTORE Sun Moon Town (日月町店)",
+      "city": "Nantou",
+      "image": "/image/entertainment/nt_tsutaya.jpg",
+      "description": "[New in 2024] Located in Puli on the way to Sun Moon Lake. A lifestyle bookstore combining exhibitions and dining.",
+      "link": "http://tsutaya.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/gUUynDtCoS1WiD886"
+    },
+    {
+      "name": "Nanfang Bookstore (南方書店)",
+      "city": "Changhua",
+      "image": "/image/entertainment/ch_nanfang.jpg",
+      "description": "A historic bookstore near Changhua Railway Station with a retro atmosphere, witnessing the city's history.",
+      "link": "https://www.facebook.com/nanfangbookstore/",
+      "mapLink": "https://maps.app.goo.gl/NkHq8T2Cbdh2qvJX7"
+    },
+    {
+      "name": "Rirong Book House (日榮本屋)",
+      "city": "Miaoli",
+      "image": "/image/entertainment/ml_rirong.jpg",
+      "description": "A warm independent bookstore located near Miaoli Railway Station, fostering local connections.",
+      "link": "https://www.facebook.com/thewaywewish/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/yDCZaCayvo9mEMHS8"
+    },
+    {
+      "name": "Eslite Spectrum Huwei (誠品生活虎尾店)",
+      "city": "Yunlin",
+      "image": "/image/entertainment/yl_eslite.jpg",
+      "description": "Located inside the historic Huwei Contract Office, formerly a police station. A unique blend of history and books.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/QMU11FkdC9qmpmsP8"
+    },
+    {
+      "name": "Salon de Huwei (虎尾厝沙龍)",
+      "city": "Yunlin",
+      "image": "/image/entertainment/yl_salon.jpg",
+      "description": "An independent bookstore hidden in an old alley house, exuding a strong atmosphere of European salons.",
+      "link": "https://www.facebook.com/huweisalon/",
+      "mapLink": "https://maps.app.goo.gl/8v5MNXCCU8n13ken7"
+    },
+    {
+      "name": "Eslite Spectrum Yilan (誠品生活 宜蘭店)",
+      "city": "Yilan",
+      "image": "/image/entertainment/yl_eslite_yilan.jpg",
+      "description": "Located in Luna Plaza. A key cultural landmark for residents and visitors in Yilan City.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/69rEJEyf3USuzpcv8"
+    },
+    {
+      "name": "Old Book Cabinet (舊書櫃)",
+      "city": "Yilan",
+      "image": "/image/entertainment/yl_oldbook.jpg",
+      "description": "A nostalgic used bookstore converted from an old warehouse next to Yilan Train Station.",
+      "link": "https://www.facebook.com/yilanbooks/",
+      "mapLink": "https://maps.app.goo.gl/tgWNvjXk1rfCte4z6"
+    },
+    {
+      "name": "Eslite Spectrum Hualien (誠品生活 花蓮店)",
+      "city": "Hualien",
+      "image": "/image/entertainment/hl_eslite.jpg",
+      "description": "Located in Far Eastern Department Store. Provides a rich selection of books and lifestyle products for Eastern Taiwan.",
+      "link": "https://meet.eslite.com/",
+      "mapLink": "https://maps.app.goo.gl/W5qRoTp7tdmQawi57"
+    },
+    {
+      "name": "Time Used Books (時光二手書店)",
+      "city": "Hualien",
+      "image": "/image/entertainment/hl_time.jpg",
+      "description": "A cozy Japanese-style wooden house bookstore with cats, offering a peaceful reading environment.",
+      "link": "https://www.facebook.com/p/%E6%99%82%E5%85%89%E4%BA%8C%E6%89%8B%E6%9B%B8%E5%BA%97-100057611943401/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/QXEgcBEm9WtcqRGPA"
+    },
+    {
+      "name": "Kingstone Books Taitung (金石堂 台東店)",
+      "city": "Taitung",
+      "image": "/image/entertainment/tt_kingstone.jpg",
+      "description": "Located on Zhonghua Road. The main chain bookstore serving the Taitung community.",
+      "link": "https://www.kingstone.com.tw/",
+      "mapLink": "https://maps.app.goo.gl/7cYp9kTtgQDFsxZt9"
+    },
+    {
+      "name": "Huang Huang Used Books (晃晃二手書店)",
+      "city": "Taitung",
+      "image": "/image/entertainment/tt_huanghuang.jpg",
+      "description": "A hub for backpackers and work-exchange travelers, offering books, accommodation, and local stories.",
+      "link": "https://www.facebook.com/089catbooks/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/EFao282dkQT8W4ca6"
+    },
+    {
+      "name": "Along the Chrysanthemum (沿菊書店)",
+      "city": "Penghu",
+      "image": "/image/entertainment/ph_along.jpg",
+      "description": "Located in the Duhsing 10th Village, this bookstore is deeply rooted in Penghu's local culture and history.",
+      "link": "https://www.facebook.com/penghubook/",
+      "mapLink": "https://maps.app.goo.gl/uM5yuQfz1t7NW8ye7"
+    },
+    {
+      "name": "Red Balloon Books (紅氣球書屋)",
+      "city": "Pingtung",
+      "image": "/image/entertainment/pt_redballoon.jpg",
+      "description": "Taiwan's southernmost independent bookstore in Hengchun. Combines a homestay with selected books.",
+      "link": "https://www.facebook.com/Lbrbooks/",
+      "mapLink": "https://maps.app.goo.gl/spVVvZ4S5LMKQ3Ue8"
+    },
+    {
+      "name": "Akau Books (繫。本屋)",
+      "city": "Pingtung",
+      "image": "/image/entertainment/pt_akau.jpg",
+      "description": "Located within the Victory Star Village. Dedicated to researching Pingtung's diverse ethnic groups and food culture.",
+      "link": "https://www.facebook.com/akaubooks/?locale=zh_TW",
+      "mapLink": "https://maps.app.goo.gl/tsW7xAig3L57hoXv9"
+    },
+    {
+      "name": "New Kinmen Bookstore (新金門書局)",
+      "city": "Kinmen",
+      "image": "/image/entertainment/km_newkinmen.jpg",
+      "description": "A historic local bookstore serving the Kinmen islands, preserving the reading culture of the front line.",
+      "link": "#",
+      "mapLink": "https://maps.app.goo.gl/g5PeUTGuq1SZy6ge6"
     }
   ]
 }
